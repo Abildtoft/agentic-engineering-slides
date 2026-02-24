@@ -1,5 +1,6 @@
 ---
 layout: section
+transition: section-shift
 ---
 
 # The Shift Is Here
@@ -7,6 +8,7 @@ layout: section
 Where we are, and why it feels different this time
 
 <!--
+[T+01:00 | S1 slide 1 of 9 | 0.5min]
 Opening energy: you're here because something changed. Not gradually — suddenly.
 Most of you use Copilot daily. That's table stakes now. But something bigger happened while we were all getting comfortable with autocomplete.
 Let me show you.
@@ -18,9 +20,10 @@ layout: fact
 
 # 4%
 
-of all code on GitHub is now produced by Claude Code
+of all code on GitHub was produced by Claude Code (as of February 2026)
 
 <!--
+[T+02:15 | S1 slide 2 of 9 | 1min]
 Source: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
 That's one tool. Not all AI — just Claude Code. And that number is growing fast.
@@ -49,6 +52,7 @@ Let that sink in before we go further.
 </v-click>
 
 <!--
+[T+04:00 | S1 slide 3 of 9 | 2min]
 Walk through each level. The audience is mostly at level 1 — meet them there.
 - Autocomplete: you type, it guesses. Feels like a faster IDE.
 - AI-assisted: you describe what you want changed, it rewrites. Feels like pair programming.
@@ -65,6 +69,7 @@ layout: quote
 Grady Booch
 
 <!--
+[T+05:15 | S1 slide 4 of 9 | 1.5min]
 Source: Grady Booch, X post (x.com/Grady_Booch/status/2013331606795362398)
 
 Booch is one of the founders of UML, decades of software architecture thinking.
@@ -80,6 +85,7 @@ layout: statement
 # The future of software engineering isn't syntax — it's turning ambiguity into clarity
 
 <!--
+[T+06:00 | S1 slide 5 of 9 | 1min]
 Source: Grady Booch (same thread)
 
 This is the distilled insight. The real work was never typing code.
@@ -97,6 +103,7 @@ layout: quote
 Head of Claude Code
 
 <!--
+[T+07:15 | S1 slide 6 of 9 | 1.5min]
 Source: Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
 
 Full quote: "The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
@@ -112,6 +119,7 @@ layout: statement
 # By summer 2026, people working with frontier AI will feel like they live in a parallel world
 
 <!--
+[T+08:00 | S1 slide 7 of 9 | 1min]
 Source: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
 
 Clark's point: the AI economy moves fast relative to everything else. Unlike crypto, it already touches real economic activity.
@@ -130,6 +138,7 @@ Transition: let me show you what the agentic side actually looks like.
 2. Claude Code agentic — describe the same task in natural language, watch it plan and execute
 
 <!--
+[T+10:45 | S1 slide 8 of 9 | 3min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Setup: have both tools ready in split terminals or switch between them.
@@ -137,6 +146,7 @@ Setup: have both tools ready in split terminals or switch between them.
 - Claude Code: give the same task as a prompt. Show it plan, write the code, create tests, iterate. You're reviewing.
 The contrast should be visceral — same task, completely different workflow.
 Keep it to ~3 minutes. Don't over-explain — let the demo speak.
+FALLBACK: If either tool is unresponsive, narrate the contrast verbally: "In Copilot, you drive line by line. In Claude Code, you describe the task and review the result. Same problem, different relationship to the code." Advance to the next slide.
 -->
 
 ---
@@ -147,6 +157,7 @@ class: text-center
 # What's your experience been with Copilot so far?
 
 <!--
+[T+15:45 | S1 slide 9 of 9 | 6min DISCUSSION]
 DISCUSSION PROMPT — pause here for 5-7 minutes.
 
 Goal: get the room talking. Everyone has Copilot, so everyone has an opinion.

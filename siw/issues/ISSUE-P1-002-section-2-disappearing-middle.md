@@ -29,7 +29,7 @@ This section bridges from "here's what's happening" (Section 1) to "here's what 
 - [x] Discussion prompt: "For product/UX — how does your work change when building is fast and cheap? For devs — what part of your work feels most at risk?"
 - [x] Accessible to non-developer roles
 - [x] One idea per slide
-- [x] `npm run dev` renders without errors
+- [x] `yarn dev` renders without errors
 
 ## Validation
 

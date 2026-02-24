@@ -1,6 +1,6 @@
 # ISSUE-P1-006: Section 4 — Cognitive Debt
 
-**Status:** Ready | **Priority:** High | **Phase:** 1 | **Related:** Blocked by G-001
+**Status:** DONE | **Priority:** High | **Phase:** 1 | **Related:** Blocked by G-001
 
 ## Problem
 
@@ -26,21 +26,21 @@ After the excitement of Section 3 (the toolkit), this section is the counterweig
 
 ## Acceptance Criteria
 
-- [ ] 12-15 slides created
-- [ ] Sources referenced: `cognitive-debt.md`, `more-on-cognitive-debt.md`, `vibe-coding-paralysis.md`, `outsourcing-understanding-to-ai.md`, `senior-engineer-quitting.md`, `not-zero-effort.md`, `agent-psychosis.md`, `osmani-on-anthropic-study.md`
-- [ ] Cognitive debt is clearly defined early in the section
-- [ ] Other risks are framed as manifestations of cognitive debt
-- [ ] Antidote bridge leads naturally to Section 5
-- [ ] Every slide has presenter notes
-- [ ] Discussion prompt at end
-- [ ] One idea per slide
-- [ ] `npm run dev` renders without errors
+- [x] 12-15 slides created (15 slides)
+- [x] Sources referenced: `cognitive-debt.md`, `more-on-cognitive-debt.md`, `vibe-coding-paralysis.md`, `outsourcing-understanding-to-ai.md`, `senior-engineer-quitting.md`, `not-zero-effort.md`, `agent-psychosis.md`, `osmani-on-anthropic-study.md`
+- [x] Cognitive debt is clearly defined early in the section (slides 2-3)
+- [x] Other risks are framed as manifestations of cognitive debt (slides 7-13)
+- [x] Antidote bridge leads naturally to Section 5 (slide 14)
+- [x] Every slide has presenter notes
+- [x] Discussion prompt at end (slide 15)
+- [x] One idea per slide
+- [x] `yarn build` succeeds without errors
 
 ## Validation
 
-- [ ] Slide count within range
-- [ ] All eight sources represented
-- [ ] Emotional impact: this section should make people pause and reflect
+- [x] Slide count within range (15)
+- [x] All eight sources represented
+- [x] Emotional impact: intellectual grounding → visceral recognition → existential weight → hope/agency → discussion
 
 ---
 
@@ -59,3 +59,25 @@ After the excitement of Section 3 (the toolkit), this section is the counterweig
 ### Dependencies
 - Blocked by: G-001
 - Blocks: None
+
+## Resolution
+
+Replaced placeholder stub with 15 slides in `sections/04-cognitive-debt.md`:
+
+1. Section divider with transition from S3
+2. Naur quote — "a program is a theory" (intellectual anchor)
+3. Cognitive debt defined — 3 v-clicks contrasting with technical debt
+4. Storey's student team — two-part wall-at-week-7-8 quote sequence
+5. Willison's confession — "lost my mental model"
+6. Statement: "Velocity without understanding is not sustainable" (hinge)
+7. Confidence spiral — crutch → habit → addiction
+8. Patterns of paralysis — "Ralph Wiggum loops"
+9. Two-column manifestations: planning loop, coherence bottleneck, context collapse, completionist trap
+10. Outsourcing understanding — "seven times seven" calculator analogy
+11. Senior engineer who quit — 15 years, loved craft, disappeared
+12. Agent psychosis — Ronacher statement
+13. Not zero effort — "completely hollow" + turn to choice
+14. The antidote — ask why, one human understands, document the why (bridge to S5)
+15. Discussion prompt — "Have you felt any of this?"
+
+Build verified: `yarn build` succeeds.

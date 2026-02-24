@@ -1,5 +1,6 @@
 ---
 layout: section
+transition: section-shift
 ---
 
 # The Disappearing Middle
@@ -7,6 +8,7 @@ layout: section
 What's actually changing about how software gets made
 
 <!--
+[T+16:00 | S2 slide 1 of 12 | 0.5min]
 Transition from Section 1: "We've established the shift is real and accelerating. Now let's look at what's actually changing about the work itself."
 This section is for everyone in the room — not just developers. If you're in product or UX, pay close attention. Your work is in this story too.
 -->
@@ -27,6 +29,7 @@ This section is for everyone in the room — not just developers. If you're in p
 </v-click>
 
 <!--
+[T+17:45 | S2 slide 2 of 12 | 2min]
 Source: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
 
 Before we talk about what's changing, let's name what existed. For decades, the middle was where most of the work lived. You had an idea on one end and a shipped product on the other. Everything in between — writing code, debugging, integrating, testing — that was the job.
@@ -41,6 +44,7 @@ layout: statement
 # "My belief is that this is changing."
 
 <!--
+[T+18:30 | S2 slide 3 of 12 | 1min]
 Source: Karri Saarinen (same post)
 
 Understatement from the CEO of Linear — a company whose entire product is a tool for managing that middle.
@@ -66,6 +70,7 @@ Nadh, 2025
 </v-click>
 
 <!--
+[T+20:15 | S2 slide 4 of 12 | 2min]
 Source: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
 
 This is probably the most famous quote in software engineering. And it just inverted.
@@ -82,6 +87,7 @@ layout: statement
 # The machinery for creating code is now a commodity. What remains is critical thinking and foundational human skills.
 
 <!--
+[T+21:00 | S2 slide 5 of 12 | 1min]
 Source: Nadh (same essay)
 
 Distilled insight from the Linus inversion. Let this sit.
@@ -99,6 +105,7 @@ layout: quote
 Andrej Karpathy
 
 <!--
+[T+22:15 | S2 slide 6 of 12 | 1.5min]
 Source: Andrej Karpathy (x.com/karpathy/status/2015883857489522876)
 
 Karpathy was a founding member of OpenAI and led Tesla's AI division. This is not a hot take — it's a diagnosis.
@@ -117,6 +124,7 @@ layout: quote
 Andrew Chen
 
 <!--
+[T+23:30 | S2 slide 7 of 12 | 1.5min]
 Source: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
 
 This is the slide where product and UX people should sit up.
@@ -147,6 +155,7 @@ For UX designers: your prototyping tools already moved in this direction. Now th
 </v-click>
 
 <!--
+[T+25:15 | S2 slide 8 of 12 | 2min]
 Source: Shubham Saboo, "The Modern AI PM in the Age of Agents" (x.com/Saboo_Shubham_/status/2008742211194913117)
 
 The PM role used to be translation. You were the bridge between "what people need" and "what gets built." The value was in that translation layer.
@@ -162,6 +171,7 @@ layout: statement
 # The time between "I know what we should build" and "here it is" collapsed. But the work of knowing what to build didn't get easier. It got more important.
 
 <!--
+[T+26:00 | S2 slide 9 of 12 | 1min]
 Source: Shubham Saboo (same post)
 
 This is the key counterpoint to any naive "AI replaces everyone" reading.
@@ -185,6 +195,7 @@ layout: quote
 Lenny Sanudo, creator of the Design Sprint
 
 <!--
+[T+27:15 | S2 slide 10 of 12 | 1.5min]
 Source: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
 
 The practical consequence of everything we've discussed.
@@ -199,6 +210,19 @@ layout: two-cols
 
 # What's Compressing vs. What's Expanding
 
+::left::
+
+<v-click>
+
+**Compressing**
+
+- Writing implementation code
+- Translating specs to code
+- Managing handoffs between roles
+- Estimation based on build cost
+
+</v-click>
+
 ::right::
 
 <v-click>
@@ -212,16 +236,8 @@ layout: two-cols
 
 </v-click>
 
-::left::
-
-**Compressing**
-
-- Writing implementation code
-- Translating specs to code
-- Managing handoffs between roles
-- Estimation based on build cost
-
 <!--
+[T+29:00 | S2 slide 11 of 12 | 2min]
 Summary slide — synthesizes the section.
 Walk through each pair briefly. Left side: these things still happen, but they take less time and fewer people. Right side: these things always mattered, but now they are the entire job.
 Key point for the mixed audience: notice that the "expanding" column is not role-specific. Problem definition is a product skill. Evaluating quality is a UX skill. Forming clear intent is an engineering skill. Understanding users is everyone's skill.
@@ -238,7 +254,9 @@ class: text-center
 # For devs — what part of your work feels most at risk?
 
 <!--
-DISCUSSION PROMPT — pause here for 7-10 minutes. This is a longer discussion than Section 1 because the audience has more to react to.
+[T+35:45 | S2 slide 12 of 12 | 8min DISCUSSION]
+DISCUSSION PROMPT — pause here for 5-7 minutes.
+ABORT POINT: If running 10+ minutes over at this point, shorten this discussion to 3 minutes and skip to S3a.
 
 The dual-prompt is intentional: it gives each sub-audience a specific entry point.
 For product/UX, prompt follow-ups:

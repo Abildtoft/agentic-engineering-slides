@@ -11,6 +11,9 @@ fonts:
 favicon: /favicon.svg
 defaults:
   transition: fade
+duration: 162min
+timer: countdown
+layout: cover
 ---
 
 <img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
@@ -18,16 +21,6 @@ defaults:
 # Agentic Engineering
 
 February 26th, 2026, Copenhagen
-
-<style>
-.logo-breathe {
-  animation: breathe 4s ease-in-out infinite;
-}
-@keyframes breathe {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.03) rotate(0.5deg); }
-}
-</style>
 
 ---
 src: ./sections/01-the-shift.md
