@@ -137,6 +137,7 @@ You prompt again → you understand less → you defer more
 Source: "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
 Walk through the spiral slowly. Each step feels rational in the moment — of course you prompt again when something breaks, the tool is right there. But each loop erodes your own judgment.
+The deeper mechanism (Husom, "Outsourcing Thinking"): even if you're still thinking just as hard, what you think about changes. Constructing a solution from scratch and reviewing someone else's solution are categorically different cognitive acts. One builds mental models; the other consumes them. Each loop through the spiral shifts more of your thinking from construction to consumption — and that difference compounds.
 "The tool that was supposed to give you confidence — 'I can build anything now!' — slowly takes it away."
 Ask the room to notice whether they recognize this pattern. No hands needed — just internal recognition.
 -->
@@ -173,10 +174,10 @@ For the audience: ask them to notice whether they've seen this. "Has anyone watc
 -->
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-# When Cognitive Debt Compounds
+# When Debt Compounds
 
 ::left::
 

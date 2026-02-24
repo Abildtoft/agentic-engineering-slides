@@ -30,6 +30,8 @@ Source: Developer Pipeline Getting Strangled (linkedin.com)
 
 The muscle memory of software engineering develops through repetition and guided practice. Knowing when to trust your instincts. Recognizing antipatterns. Understanding second-order consequences of technical decisions.
 
+Jazz analogy (Husom, "Outsourcing Thinking"): good improvisation doesn't come from practicing improvisation — it comes from deeply internalizing harmony, rhythm, and theory through years of repetitive immersion. Skip the scales and you can play notes, but you can't improvise. Same with engineering: skip the implementation reps and you can prompt agents, but you can't architect systems.
+
 AI agents can generate code, but they cannot transfer the tacit knowledge that separates someone who can review AI output from someone who can architect systems.
 
 This is a rhetorical question — don't answer it yet. Let the audience sit with it.
@@ -341,7 +343,7 @@ Bridge: "So let's name what we're saying clearly."
 -->
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
 # What Survives
