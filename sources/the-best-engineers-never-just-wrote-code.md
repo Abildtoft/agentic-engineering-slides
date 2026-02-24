@@ -1,0 +1,5 @@
+# The Best Engineers Never Just Wrote Code
+
+The best engineers never just wrote code. They were clarity merchants. The collapse of the implementation middle isn't making engineering less important but it's revealing what was always important: understanding problems so clearly that the code (now, the spec for our agents) becomes more obvious. The engineers who will thrive aren't those who can translate specs to code fastest. They're the ones who can: 1. Shape ambiguous problems into actionable intent 2. Design the context architecture that makes good outcomes inevitable 3. Judge what matters from what merely works This mirrors what others have observed about business model shifts: when distribution costs drop to zero, value accrues to curation and taste. When implementation costs approach zero, value accrues to problem formulation and judgment. The tools that win won't just accelerate the middle but I think they'll eliminate the need for it to exist separately at all. The craft evolves. It always has. But it remains craft
+
+https://x.com/addyosmani/status/2007899127925854536

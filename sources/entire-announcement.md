@@ -1,0 +1,9 @@
+# Entire Announcement
+
+In the last few months alone, the fundamental role of a developer has been refactored. From Anthropic's Claude Code with Opus 4.6, to OpenAI's latest GPT-5.3-Codex agentic coding model, to Cursor's Composer 1.5 and more, advancements in agentic intelligence have turned the flow of coding on its head. The terminal is becoming the new center of gravity, as developers prompt fleets of agents across multiple terminal windows at once. Spec-driven development is becoming the primary driver of code generation. Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously. As a result, massive volumes of code are being generated faster than any human can reasonably understand.
+
+**Yet today, we still rely on a software development lifecycle built before the era of the cloud, inherently designed for human-to-human collaboration.** And the cracks are forming. Issues were designed for human planning and tracking, not as structured, machine-readable units of work. Git repositories were never extended to version everything developers build with in the AI era. Pull requests simply do not scale for large monorepos. Every day, agents are being choked and throttled by centralized API capacity and rate limits. The truth is: the entire software ecosystem is being bottlenecked by a manual system of production that was never designed for the era of AI in the first place. A system that cannot be retrofitted for what's ahead.
+
+Just like when automotive companies replaced the traditional craft-based production system with the moving assembly line, we must now reimagine the entire software development lifecycle for a world where machines are the primary producers of code. Creating the assembly line for the era of agents.
+
+https://entire.io/blog/hello-entire-world?ref=share

@@ -1,0 +1,69 @@
+:root {
+  --melatech-primary: #186346;
+  --melatech-dark: #282625;
+  --melatech-bg: #FFFFFF;
+  --melatech-bg-alt: #11402E;
+  --melatech-link: #3898EC;
+  --melatech-gray: #F8F8F8;
+
+  --slidev-theme-primary: #186346;
+  --slidev-code-background: #F8F8F8;
+  --slidev-code-foreground: #282625;
+}
+
+.slidev-layout {
+  color: #282625;
+  font-family: 'Inter', sans-serif;
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: #282625;
+  font-weight: 600;
+}
+
+.slidev-layout h6 {
+  color: #186346;
+  font-weight: 600;
+}
+
+.slidev-layout a {
+  color: #186346;
+  border-color: #186346;
+}
+
+.slidev-layout blockquote {
+  border-color: #186346;
+}
+
+.slidev-layout.cover,
+.slidev-layout.section {
+  background: #11402E;
+  color: #FFFFFF;
+}
+
+.slidev-layout.cover h1,
+.slidev-layout.cover h2,
+.slidev-layout.cover p,
+.slidev-layout.section h1,
+.slidev-layout.section h2,
+.slidev-layout.section p {
+  color: #FFFFFF;
+}
+
+.slidev-layout.statement h1 {
+  color: #186346;
+}
+
+.slidev-layout.quote h1 {
+  color: #282625;
+  font-style: italic;
+  font-weight: 400;
+  border-left: 4px solid #186346;
+  padding-left: 1rem;
+}
+
+.slidev-layout.fact h1 {
+  color: #186346;
+}

@@ -1,0 +1,5 @@
+# On Subtraction
+
+adding is easy. someone asks for a feature, you build it. user hits a bug, you patch it. flow feels blocked, you add a shortcut. new trendy idea, you add a new concept. repeat until you have 50 buttons and no one knows where to start. the hard part isn't building anymore. it's choosing: - what to make – and what to leave out - how to make it – so it strengthens the system instead of fragmenting it - what to remove – even when it works, if it doesn't belong addition is momentum. subtraction takes conviction. you have to see the whole, not just the parts. you have to believe that fewer things, done right, will carry more weight than a hundred things scattered. most products don't die from missing features. they die from accumulation. from losing clarity. from becoming everything and meaning nothing. think slower, then act fast. slow down after the burst. tie it all back. so the foundation can carry what comes next. keep focused, and simplify.
+
+https://x.com/ryolu_/status/2015824853121477198

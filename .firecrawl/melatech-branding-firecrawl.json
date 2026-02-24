@@ -1,0 +1,63 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Inter",
+        "role": "body"
+      }
+    ],
+    "colors": {
+      "primary": "#186346",
+      "accent": "#186346",
+      "background": "#FFFFFF",
+      "textPrimary": "#282625",
+      "link": "#3898EC"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Inter",
+        "heading": "Inter"
+      },
+      "fontStacks": {
+        "heading": ["Inter", "sans-serif"],
+        "body": ["Inter", "sans-serif"],
+        "paragraph": ["Inter", "sans-serif"]
+      },
+      "fontSizes": {
+        "h1": "38px",
+        "h2": "38px",
+        "body": "19.008px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "6px"
+    },
+    "components": {
+      "buttonPrimary": {
+        "background": "#186346",
+        "textColor": "#FFFFFF",
+        "borderColor": "#186346",
+        "borderRadius": "6px",
+        "shadow": "none"
+      },
+      "buttonSecondary": {
+        "background": "#FFFFFF",
+        "textColor": "#282625",
+        "borderColor": "#186346",
+        "borderRadius": "8px",
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "logo": "https://cdn.prod.website-files.com/6731c3cbd44bcf05ce1ccc8a/677e594384ed593efae2c585_logo%20name%20big.svg",
+      "favicon": "https://cdn.prod.website-files.com/6731c3cbd44bcf05ce1ccc8a/6788f1594356cbada783c53b_logo%20for%20browser.jpg"
+    },
+    "personality": {
+      "tone": "modern",
+      "energy": "medium",
+      "targetAudience": "tech-savvy professionals"
+    }
+  }
+}
