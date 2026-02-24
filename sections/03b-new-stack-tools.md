@@ -8,10 +8,51 @@ transition: section-shift
 Skills, MCP, and guardrails — the building blocks of agentic workflows
 
 <!--
-[T+53:00 | S3b slide 1 of 11 | 0.5min]
-Transition from Section 3a: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them. Three building blocks, each demonstrated with a real plugin I use daily."
+[T+53:00 | S3b slide 1 of 12 | 0.5min]
+Transition from Section 3a: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them."
+
+Introduce the plugin: "Everything I'm about to show you comes from a single Claude Code plugin I built and use daily — kramme-cc-workflow. It's open source, it's on GitHub. It packages 45 skills, 20 specialist agents, and 5 hooks into one installable unit. Think of it as a workflow-in-a-box: PR lifecycle, code quality, structured implementation, review automation — all as markdown files the agent reads and follows."
+
+"I'll use it to demonstrate all three building blocks: skills, MCP, and hooks. But the point isn't this specific plugin — it's the pattern. Anyone can build one of these. The components are just markdown, shell scripts, and configuration."
+
 Frame briefly: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks).
 This part stays practical and concrete — the demos carry the weight.
+-->
+
+---
+
+# kramme-cc-workflow
+
+<v-click>
+
+A Claude Code plugin — **45 skills**, **20 specialist agents**, **5 hooks**. Open source, installable in one command.
+
+</v-click>
+<v-click>
+
+PR lifecycle, code quality, structured implementation, review automation — all as **markdown files** the agent reads and follows.
+
+</v-click>
+<v-click>
+
+**The point isn't this plugin. It's the pattern.** Anyone can build one. The components are markdown, shell scripts, and configuration.
+
+</v-click>
+
+<!--
+[T+54:00 | S3b slide 2 of 12 | 1.5min]
+This is the "meet the tool" slide. Everything in S3b and S3c will reference this plugin — introduce it properly here so the audience has a frame.
+
+kramme-cc-workflow is a real, open-source Claude Code plugin I built and use daily. It packages workflow automation into three component types:
+- Skills (45): markdown playbooks the agent follows — /commit, /pr-review, /siw-implement, /verify
+- Agents (20): specialist reviewers — security, a11y, architecture, UX, performance, logic, silent-failure-hunter
+- Hooks (5): shell scripts that fire on events — block destructive commands, auto-format, surface PR/issue links
+
+It's on GitHub (Abildtoft/kramme-cc-workflow) and listed on the Resources slide at the end.
+
+The key message: this is not a proprietary product. It's a pattern. The plugin is just markdown files, shell scripts, and a JSON manifest. Anyone in this room could build their own version for their own workflow. The value is in the pattern, not the specific implementation.
+
+This presentation was built using this plugin — the audience is looking at its output right now.
 -->
 
 ---
@@ -25,12 +66,7 @@ This part stays practical and concrete — the demos carry the weight.
 </v-click>
 <v-click>
 
-kramme-cc-workflow ships 48 skills — PR lifecycle, code quality, git ops, structured workflows. (Think of each as a playbook the agent follows.)
-
-</v-click>
-<v-click>
-
-Invoke with `/skill-name`. The agent reads the markdown and executes the instructions.
+`/commit`, `/pr-review`, `/siw-implement`, `/verify` — invoke with a slash command, the agent reads the markdown and executes.
 
 </v-click>
 <v-click>
@@ -40,10 +76,10 @@ Invoke with `/skill-name`. The agent reads the markdown and executes the instruc
 </v-click>
 
 <!--
-[T+54:30 | S3b slide 2 of 11 | 2min]
+[T+55:30 | S3b slide 3 of 12 | 2min]
 Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
 For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
-The 48 number is real — walk through categories briefly: /pr-review, /commit, /security-scan, /plan. Each is a markdown file anyone can read, modify, or create.
+Walk through a few categories briefly: /commit (writes commit messages following project conventions), /pr-review (runs a multi-agent code review), /siw-implement (picks up a spec issue and implements it end-to-end), /verify (runs tests, linting, type checking for affected code).
 Key insight: skills are composable, version-controlled, and human-readable. No black boxes. You can open the file, read the instructions, and understand exactly what the agent will do.
 For product/UX: you could write a skill for design review, accessibility checks, or copy editing. The format is the same — markdown instructions.
 -->
@@ -59,7 +95,7 @@ For product/UX: you could write a skill for design review, accessibility checks,
 3. Show the output — the agent followed the recipe
 
 <!--
-[T+57:00 | S3b slide 3 of 11 | 3min DEMO]
+[T+57:00 | S3b slide 4 of 12 | 3min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
@@ -79,7 +115,7 @@ layout: quote
 Laura Tacho, via Martin Fowler
 
 <!--
-[T+58:15 | S3b slide 4 of 11 | 1.5min]
+[T+58:15 | S3b slide 5 of 12 | 1.5min]
 Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 
 This bridges from Skills to the next two tools — MCP and Hooks.
@@ -90,27 +126,62 @@ Fowler also notes the sad irony: some organizations are investing in agent docum
 
 ---
 
-# Guardrails
+# LLMs Are Stochastic
 
 <v-click>
 
-**Shaping what the agent *can't* do is as important as shaping what it can.**
+**Same prompt, different result every time.** This is not a bug — it's the nature of the tool.
 
 </v-click>
 <v-click>
 
-Context engineering shapes knowledge. Specs shape direction. Guardrails shape boundaries.
+We instinctively value "oneshotting" — getting it right the first time. But optimizing for first-attempt perfection fights the model's strengths.
 
 </v-click>
 <v-click>
 
-Hooks, verification loops, safety rules, CLAUDE.md constraints — all guardrails. Different mechanisms, same principle.
+**Design for iteration instead:** generate → evaluate → refine → repeat.
+
+</v-click>
+<v-click>
+
+The engineers getting the most from AI stopped crafting the perfect prompt. They started building fast feedback loops.
 
 </v-click>
 
 <!--
-[T+59:30 | S3b slide 5 of 11 | 1.5min]
-This names the concept explicitly. The audience has seen context engineering (what the agent knows) and spec-driven development (what the agent does). Guardrails complete the triad: what the agent can't do.
+[T+59:00 | S3b slide 6 of 12 | 2min]
+This is the conceptual bridge to guardrails.
+
+LLMs are fundamentally stochastic: the same prompt can produce different results every time. This isn't a flaw — it's a feature of how the models work. But it means the "oneshot" mindset — get it right the first time — is the wrong optimization target.
+The engineers getting the best results have shifted from "write the perfect prompt" to "build infrastructure for fast iteration." Generate, evaluate, refine, repeat. Each cycle takes seconds, not hours.
+This is why guardrails matter so much. Tests, hooks, verification loops — they're not just safety nets. They're the infrastructure that makes rapid iteration efficient. You can let the agent try, fail, and retry because the guardrails catch mistakes automatically.
+The shift: from "write it once, correctly" to "converge on correctness through fast feedback loops."
+-->
+
+---
+
+# Guardrails
+
+<v-click>
+
+**Guardrails are the infrastructure that make iteration safe and fast.**
+
+</v-click>
+<v-click>
+
+Without them, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+
+</v-click>
+<v-click>
+
+Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — and enable speed.
+
+</v-click>
+
+<!--
+[T+59:30 | S3b slide 7 of 12 | 1.5min]
+Connect directly to the previous slide: if LLMs are stochastic and we're designing for iteration, guardrails are what make that iteration loop viable. Without guardrails, every agent attempt needs a human looking over its shoulder. With guardrails, the agent can try, fail, learn from the failure signal, and retry — all autonomously.
 The word "guardrails" is intuitive for the non-dev audience. Everyone understands highway guardrails — they don't steer the car, but they prevent the car from going off a cliff.
 Key insight: guardrails are not about distrust. They're about design. You put guardrails on a highway not because drivers are bad, but because the system should be safe by default.
 Connect forward: "Let me show you three guardrail mechanisms — starting with the one you already know: tests."
@@ -122,12 +193,17 @@ Connect forward: "Let me show you three guardrail mechanisms — starting with t
 
 <v-click>
 
-**Unit tests** verify the agent's work at the function level — fast feedback, immediate correction.
+**Tests close the iteration loop.** Agent writes code → tests run → failure signals what to fix → agent retries.
 
 </v-click>
 <v-click>
 
-**Integration and e2e tests** verify the system still works after the agent changes it — the safety net humans already trust.
+**Unit tests** — tightest loop. Seconds between attempt and feedback. The agent self-corrects without waiting for you.
+
+</v-click>
+<v-click>
+
+**Integration and e2e tests** — wider net. Catches regressions the agent can't see from a single file.
 
 </v-click>
 <v-click>
@@ -137,11 +213,11 @@ Tests are executable specifications. They don't just catch bugs — they tell th
 </v-click>
 
 <!--
-[T+61:00 | S3b slide 6 of 11 | 1.5min]
+[T+61:00 | S3b slide 8 of 12 | 1.5min]
 Tests are the guardrail mechanism every developer already uses. Frame this as familiar ground before introducing MCP and hooks.
-Unit tests: the agent writes a function, runs the test, sees it fail, fixes it. This is the tightest feedback loop — seconds, not minutes.
+The key reframe from the stochastic slide: tests aren't just quality assurance — they're the feedback signal that drives the iteration loop. A failing test isn't a problem. It's information the agent uses to self-correct.
+Unit tests: the agent writes a function, runs the test, sees it fail, fixes it. This is the tightest feedback loop — seconds, not minutes. This is why stochastic output doesn't matter — the agent converges on correctness through rapid iteration.
 Integration and e2e tests: the agent changes a component, the test suite catches a regression three layers away. Without these, the agent would ship broken code confidently.
-Key reframe: tests aren't just quality assurance — they're agent guidance. A failing test is a signal the agent can act on autonomously. A passing test suite is evidence the agent's work is correct.
 Connect to Monarch's "validation/verification loops" philosophy: tests are the most established verification loop in software engineering. Hooks and MCP are newer mechanisms, but tests have been doing this for decades.
 Transition: "Tests verify correctness. But what if the agent needs to reach beyond the codebase?"
 -->
@@ -167,7 +243,7 @@ Real examples: Linear (project management), browser automation, database queries
 </v-click>
 
 <!--
-[T+62:30 | S3b slide 7 of 11 | 2min]
+[T+62:30 | S3b slide 8 of 12 | 2min]
 Source: Entire announcement (entire.io/blog/hello-entire-world)
 "Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously." MCP is the protocol that enables this interoperability.
 
@@ -183,31 +259,33 @@ Key insight: MCP turns the agent from "a thing that writes code" into "a thing t
 
 <v-click>
 
-**Before the agent acts** — Intercept and validate. Block dangerous commands, enforce safety rules.
+**PreToolUse** — `block-rm-rf.sh` intercepts destructive commands before execution. `noninteractive-git.sh` blocks `git rebase -i` and other editor-opening commands.
 
 </v-click>
 <v-click>
 
-**After the agent acts** — React automatically. Auto-format saved files, run linters, update indexes.
+**PostToolUse** — `auto-format.sh` runs on every Write/Edit. Detects Prettier, Biome, Ruff, gofmt — formats the file before the agent sees the result.
 
 </v-click>
 <v-click>
 
-**When work completes** — Surface results. Show PR links, notify stakeholders, run final checks.
+**Stop** — `context-links.sh` detects the Linear issue from the branch name and surfaces the open PR URL when the agent finishes.
 
 </v-click>
 
 <!--
-[T+64:30 | S3b slide 8 of 11 | 2min]
+[T+64:30 | S3b slide 9 of 12 | 2min]
 Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 "Carefully design validation/verification loops. Creating ways for AI to validate its own work allows it to run more autonomously with less input from you."
 
-Hooks are the verification loops Monarch describes. They're the engineering discipline that makes autonomy safe.
-Walk through the three types with real examples from the plugin:
-- PreToolUse: the agent tries to run rm -rf / — the hook catches it, blocks it, logs a warning. The agent never executes the command. Same for git push --force to main.
-- PostToolUse: the agent saves a TypeScript file — the hook runs Prettier automatically. No manual formatting step.
-- Stop: the agent finishes implementing an issue — the hook surfaces the PR URL and any related Linear issues so you can review immediately.
-Key insight for the audience: hooks are how you build trust with autonomous agents. You don't need to watch every command — you set the guardrails and let the agent work within them.
+These are real hooks from the kramme-cc-workflow plugin — the same plugin powering this talk's workflow.
+
+Walk through the three types:
+- PreToolUse (block-rm-rf.sh): the agent tries to run rm -rf — the hook catches every variant (sudo rm, /bin/rm, find -delete, shred, xargs rm) and blocks it, recommending `trash` instead. The noninteractive-git hook blocks git rebase -i, git commit without -m, and other commands that would open an editor the agent can't control.
+- PostToolUse (auto-format.sh): triggered on every Write or Edit. Auto-detects the project's formatter (Prettier, Biome, Ruff, Black, gofmt, rustfmt, shfmt) and formats the file. Caches detection results so it's fast. No manual formatting step ever needed.
+- Stop (context-links.sh): when the agent stops, it reads the branch name, extracts the Linear issue ID, looks up the open PR/MR (GitHub or GitLab), and surfaces both URLs. You always know where to review.
+
+Key insight: hooks are how you build trust with autonomous agents. You don't watch every command — you design the system they operate in.
 
 Source: Coordination is the hardest engineering problem (x.com/PirouneB/status/2022783395139318007)
 "Someone has to handle failure cascading." Hooks are one mechanism for catching failures before they cascade.
@@ -220,7 +298,7 @@ layout: statement
 # You don't make agents trustworthy by watching them. You make them trustworthy by designing the system they operate in.
 
 <!--
-[T+66:30 | S3b slide 9 of 11 | 1min]
+[T+66:30 | S3b slide 10 of 12 | 1min]
 Source: Monarch's Philosophy — "design that system (you + AI), figuring out your role in it, since you will ultimately own the output."
 
 This distills the entire section's thesis. Skills give agents capabilities. Tests give agents feedback. MCP gives agents reach. Hooks give agents constraints. Together, they form a system you can trust to operate autonomously.
@@ -240,7 +318,7 @@ Transition: "Let me show you MCP and Hooks working together."
 3. Hook surfacing results — Stop hook showing PR link on completion
 
 <!--
-[T+67:30 | S3b slide 10 of 11 | 4.5min DEMO]
+[T+67:30 | S3b slide 11 of 12 | 4.5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Part 1 — MCP (~2 min):
@@ -267,7 +345,7 @@ class: text-center
 # Which of these three — skills, MCP, or hooks — would fit into your current workflow with the least friction?
 
 <!--
-[T+68:00 | S3b slide 11 of 11 | 4min DISCUSSION]
+[T+68:00 | S3b slide 12 of 12 | 4min DISCUSSION]
 DISCUSSION PROMPT — pause here for 3-5 minutes. This breaks the long stretch between S3a and S3c discussions.
 
 This is a practical, low-stakes question. Everyone should be able to answer it.

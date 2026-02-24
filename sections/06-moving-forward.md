@@ -88,6 +88,12 @@ layout: quote
 
 Oxide Computer Company
 
+<v-click>
+
+# "This isn't a productivity question. It's a question about what kind of work — and lives — we want to build."
+
+</v-click>
+
 <!--
 [T+142:30 | S6 slide 4 of 10 | 1.5min]
 Source: Oxide Computer Company, "Using LLMs at Oxide" (rfd.shared.oxide.computer/rfd/0576)
@@ -103,13 +109,15 @@ The three layers of responsibility are worth naming explicitly:
 
 This is the organisational translation of Ronacher's individual accountability. It's not a rule — it's a value. And values travel differently than rules.
 
+The v-click broadens from one company's policy to the universal question (inspired by Husom, "Outsourcing Thinking"): deciding which human activities to protect from automation is a values choice, not a productivity optimization. We don't have to frame every AI adoption decision as "is this more efficient?" — we can ask "is this the kind of work we want humans to keep doing?" That reframe is what separates intentional adoption from drift.
+
 For managers in the room: this is the conversation to take back to your team. Not "what's our AI policy?" — but "what's our responsibility framework, and how does AI fit into it?"
 
 Bridge: "Values are the what. Now let's talk about the how — the practical advice for the next two years."
 -->
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
 # The Next Two Years
@@ -120,9 +128,9 @@ layout: two-cols
 
 **If you're earlier in your career**
 
-Leverage AI to punch above your weight — but understand and explain every line. Focus on skills AI can't replace: communication, problem decomposition, domain knowledge.
-
-"Don't be just another new grad who needs training — be an immediately useful engineer who learns quickly."
+- Use AI to punch above your weight
+- Understand and explain every line
+- Build skills AI can't replace: communication, decomposition, domain knowledge
 
 </v-click>
 
@@ -132,9 +140,9 @@ Leverage AI to punch above your weight — but understand and explain every line
 
 **If you're more senior**
 
-Your value is in multiplying the whole team's output, not just your own code. Fewer juniors means more grunt work on your plate — lean on automation, but invest in mentorship.
-
-Be frank with management about the risks of all-senior teams.
+- Your value is multiplying the team, not writing code
+- Lean on automation for the grunt work
+- Invest in mentorship — and be frank about all-senior team risks
 
 </v-click>
 

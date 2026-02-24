@@ -96,6 +96,10 @@
   padding-left: 1.5rem;
 }
 
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
 .slidev-vclick-target {
   transition: opacity 200ms ease;
 }

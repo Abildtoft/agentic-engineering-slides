@@ -57,12 +57,7 @@ Let's look at each discipline.
 </v-click>
 <v-click>
 
-`CLAUDE.md` — Project conventions, patterns, constraints. Read by the agent on every session start.
-
-</v-click>
-<v-click>
-
-`AGENTS.md` — Agent-specific instructions, workflow definitions, role descriptions.
+`AGENTS.md` — Project conventions, patterns, constraints, workflow definitions. Read by the agent on every session start.
 
 </v-click>
 <v-click>
@@ -77,8 +72,7 @@ Source: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.ht
 "The Venn Diagram of Developer Experience and Agent Experience is a circle."
 
 The same clarity you'd give a new team member, you now give your agent.
-CLAUDE.md: a markdown file at the root of your repo. Claude Code reads it automatically. It contains your project's conventions — what framework you use, how tests work, what patterns to follow. Think of it as onboarding docs, but the reader is an AI.
-AGENTS.md: goes deeper. Defines workflows, roles, and agent-specific behavior. If CLAUDE.md is "here's the project," AGENTS.md is "here's how to work in it."
+AGENTS.md: a markdown file at the root of your repo that the agent reads on every session start. It contains your project's conventions — what framework you use, how tests work, what patterns to follow, workflow definitions, and agent-specific behavior. Think of it as onboarding docs, but the reader is an AI. (Claude Code uses the name CLAUDE.md — same concept, non-standard naming.)
 Real example: the presentation you're looking at right now was built with a CLAUDE.md that specifies Slidev conventions, Yarn 4, the multi-file structure. The agent followed those conventions because they were in the context.
 Key insight: the quality of your agent's output is directly proportional to the quality of the context you provide.
 For PMs and UX: design system docs, product requirements, domain glossaries — they're all context now.
