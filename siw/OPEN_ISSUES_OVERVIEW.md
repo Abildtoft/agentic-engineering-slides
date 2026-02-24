@@ -10,8 +10,8 @@
 
 | # | Title | Status | Priority | Related |
 |---|-------|--------|----------|---------|
-| P1-001 | Section 1 — The Shift Is Here | Ready | High | G-001 |
-| P1-002 | Section 2 — The Disappearing Middle | Ready | High | G-001 |
+| P1-001 | Section 1 — The Shift Is Here | DONE | High | G-001 |
+| P1-002 | Section 2 — The Disappearing Middle | DONE | High | G-001 |
 | P1-003 | Section 3a — The New Stack: Concepts | Ready | High | G-001 |
 | P1-004 | Section 3b — The New Stack: Tools | Ready | High | G-001 |
 | P1-005 | Section 3c — The New Stack: Composed | Ready | High | G-001 |
