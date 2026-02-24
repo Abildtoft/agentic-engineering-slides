@@ -8,7 +8,7 @@ transition: section-shift
 Skills, MCP, and guardrails — the building blocks of agentic workflows
 
 <!--
-[T+53:00 | S3b slide 1 of 10 | 0.5min]
+[T+53:00 | S3b slide 1 of 11 | 0.5min]
 Transition from Section 3a: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them. Three building blocks, each demonstrated with a real plugin I use daily."
 Frame briefly: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks).
 This part stays practical and concrete — the demos carry the weight.
@@ -40,7 +40,7 @@ Invoke with `/skill-name`. The agent reads the markdown and executes the instruc
 </v-click>
 
 <!--
-[T+54:30 | S3b slide 2 of 10 | 2min]
+[T+54:30 | S3b slide 2 of 11 | 2min]
 Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
 For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
 The 48 number is real — walk through categories briefly: /pr-review, /commit, /security-scan, /plan. Each is a markdown file anyone can read, modify, or create.
@@ -59,7 +59,7 @@ For product/UX: you could write a skill for design review, accessibility checks,
 3. Show the output — the agent followed the recipe
 
 <!--
-[T+57:00 | S3b slide 3 of 10 | 3min DEMO]
+[T+57:00 | S3b slide 3 of 11 | 3min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
@@ -79,7 +79,7 @@ layout: quote
 Laura Tacho, via Martin Fowler
 
 <!--
-[T+58:15 | S3b slide 4 of 10 | 1.5min]
+[T+58:15 | S3b slide 4 of 11 | 1.5min]
 Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 
 This bridges from Skills to the next two tools — MCP and Hooks.
@@ -109,11 +109,41 @@ Hooks, verification loops, safety rules, CLAUDE.md constraints — all guardrail
 </v-click>
 
 <!--
-[T+59:30 | S3b slide 5 of 10 | 1.5min]
+[T+59:30 | S3b slide 5 of 11 | 1.5min]
 This names the concept explicitly. The audience has seen context engineering (what the agent knows) and spec-driven development (what the agent does). Guardrails complete the triad: what the agent can't do.
 The word "guardrails" is intuitive for the non-dev audience. Everyone understands highway guardrails — they don't steer the car, but they prevent the car from going off a cliff.
 Key insight: guardrails are not about distrust. They're about design. You put guardrails on a highway not because drivers are bad, but because the system should be safe by default.
-Connect forward: "The next three slides show you the primary mechanism for guardrails: hooks."
+Connect forward: "Let me show you three guardrail mechanisms — starting with the one you already know: tests."
+-->
+
+---
+
+# Tests as Guardrails
+
+<v-click>
+
+**Unit tests** verify the agent's work at the function level — fast feedback, immediate correction.
+
+</v-click>
+<v-click>
+
+**Integration and e2e tests** verify the system still works after the agent changes it — the safety net humans already trust.
+
+</v-click>
+<v-click>
+
+Tests are executable specifications. They don't just catch bugs — they tell the agent what "done" looks like.
+
+</v-click>
+
+<!--
+[T+61:00 | S3b slide 6 of 11 | 1.5min]
+Tests are the guardrail mechanism every developer already uses. Frame this as familiar ground before introducing MCP and hooks.
+Unit tests: the agent writes a function, runs the test, sees it fail, fixes it. This is the tightest feedback loop — seconds, not minutes.
+Integration and e2e tests: the agent changes a component, the test suite catches a regression three layers away. Without these, the agent would ship broken code confidently.
+Key reframe: tests aren't just quality assurance — they're agent guidance. A failing test is a signal the agent can act on autonomously. A passing test suite is evidence the agent's work is correct.
+Connect to Monarch's "validation/verification loops" philosophy: tests are the most established verification loop in software engineering. Hooks and MCP are newer mechanisms, but tests have been doing this for decades.
+Transition: "Tests verify correctness. But what if the agent needs to reach beyond the codebase?"
 -->
 
 ---
@@ -137,7 +167,7 @@ Real examples: Linear (project management), browser automation, database queries
 </v-click>
 
 <!--
-[T+61:00 | S3b slide 6 of 10 | 2min]
+[T+62:30 | S3b slide 7 of 11 | 2min]
 Source: Entire announcement (entire.io/blog/hello-entire-world)
 "Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously." MCP is the protocol that enables this interoperability.
 
@@ -168,7 +198,7 @@ Key insight: MCP turns the agent from "a thing that writes code" into "a thing t
 </v-click>
 
 <!--
-[T+63:00 | S3b slide 7 of 10 | 2min]
+[T+64:30 | S3b slide 8 of 11 | 2min]
 Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 "Carefully design validation/verification loops. Creating ways for AI to validate its own work allows it to run more autonomously with less input from you."
 
@@ -190,10 +220,10 @@ layout: statement
 # You don't make agents trustworthy by watching them. You make them trustworthy by designing the system they operate in.
 
 <!--
-[T+65:00 | S3b slide 8 of 10 | 1min]
+[T+66:30 | S3b slide 9 of 11 | 1min]
 Source: Monarch's Philosophy — "design that system (you + AI), figuring out your role in it, since you will ultimately own the output."
 
-This distills the entire section's thesis. Skills give agents capabilities. MCP gives agents reach. Hooks give agents constraints. Together, they form a system you can trust to operate autonomously.
+This distills the entire section's thesis. Skills give agents capabilities. Tests give agents feedback. MCP gives agents reach. Hooks give agents constraints. Together, they form a system you can trust to operate autonomously.
 For the audience: this is the same principle as any engineering system. You don't make a pipeline reliable by watching every step. You build in monitoring, circuit breakers, and rollback mechanisms. Hooks are the circuit breakers for agentic workflows.
 Let this sit for a moment before moving to the demo.
 Transition: "Let me show you MCP and Hooks working together."
@@ -210,7 +240,7 @@ Transition: "Let me show you MCP and Hooks working together."
 3. Hook surfacing results — Stop hook showing PR link on completion
 
 <!--
-[T+66:00 | S3b slide 9 of 10 | 4.5min DEMO]
+[T+67:30 | S3b slide 10 of 11 | 4.5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Part 1 — MCP (~2 min):
@@ -237,7 +267,7 @@ class: text-center
 # Which of these three — skills, MCP, or hooks — would fit into your current workflow with the least friction?
 
 <!--
-[T+66:30 | S3b slide 10 of 10 | 4min DISCUSSION]
+[T+68:00 | S3b slide 11 of 11 | 4min DISCUSSION]
 DISCUSSION PROMPT — pause here for 3-5 minutes. This breaks the long stretch between S3a and S3c discussions.
 
 This is a practical, low-stakes question. Everyone should be able to answer it.
