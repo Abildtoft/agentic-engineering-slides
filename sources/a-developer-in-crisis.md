@@ -1,0 +1,6 @@
+# A Developer in Crisis
+
+The overwhelming sentiment is that the developer's job is evolving, not disappearing. Your 10,000 hours aren't useless; they're just being reallocated. Many agree the hierarchy of skills is shifting: * Architecture & patterns > code * Engineering > coding * Understanding business needs > technical acumen * Reviewing code > writing code
+That said, there's a strong undercurrent of grief from devs who genuinely _love_ the craft of coding. Many feel like they're being turned into "project managers for an AI," which sucks the joy out of the work for them. They're comparing their situation to what artists are currently going through.
+However, a huge point of agreement is that experience is now a superpower. A seasoned dev using Claude will run circles around a "vibe coder" with the same tool. You need that deep knowledge to ask the right questions, spot hallucinations (and users say Claude can be "delusional"), and actually architect a robust system. AI in the hands of a novice produces slop.
+Plenty of users are also pointing out that this isn't new. Farmers, draftsmen, and even "computers" (the human job) have all faced similar tech disruptions. Welcome to evolution, I guess.

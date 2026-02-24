@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "firecrawl": {
+      "source": "firecrawl/cli",
+      "sourceType": "github",
+      "computedHash": "b404f2a5fab78d950e67c406bd27e1fddadb9c83480dd463d156f5c4ad1e5eb4"
+    },
+    "slidev": {
+      "source": "slidevjs/slidev",
+      "sourceType": "github",
+      "computedHash": "320b8bc23ecde7db7deb6b33d295707928e407f3b74ba9906b4afda26cce9e03"
+    }
+  }
+}

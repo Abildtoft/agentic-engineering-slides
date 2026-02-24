@@ -1,0 +1,154 @@
+Job ID: 019c8c7a-536c-762f-b2e7-a5af36083188
+Status: completed
+Credits Used: 0
+Expires: Feb 24, 2026, 10:52 PM
+
+Result:
+{
+  "brand_colors": {
+    "primary": {
+      "name": "Green",
+      "hex": "#11402E",
+      "rgb": "rgb(17, 64, 46)",
+      "usage": "Primary brand color used in buttons (btn-primary-green), backgrounds (greenbg, green-bg), and accent text",
+      "note": "Extracted from inline CSS in page source"
+    },
+    "secondary_colors": [
+      {
+        "name": "Black",
+        "hex": [
+          "#000000",
+          "#3F3F3F"
+        ],
+        "usage": "Text, button backgrounds (btn-secondary-black)"
+      },
+      {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "usage": "Text on dark backgrounds, button text, backgrounds"
+      },
+      {
+        "name": "Light Gray",
+        "hex": [
+          "#EAEAEA",
+          "#F8F8F8"
+        ],
+        "usage": "Section backgrounds (f8bg)"
+      },
+      {
+        "name": "Red Accent",
+        "hex": "#FF0033",
+        "usage": "Minor accent color (appears in some UI elements)"
+      }
+    ]
+  },
+  "typography": {
+    "primary_fonts": [
+      {
+        "name": "Inter",
+        "weights": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "usage": "Primary typeface for body text and headings"
+      },
+      {
+        "name": "DM Sans",
+        "weights": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "usage": "Secondary typeface for body text"
+      }
+    ],
+    "monospace_font": {
+      "name": "Inconsolata",
+      "weights": [
+        400,
+        700
+      ],
+      "usage": "Code or technical content (if applicable)"
+    }
+  },
+  "logo": {
+    "primary_logo_url": "https://cdn.prod.website-files.com/6735bd28dd6a66d4b9ee4468/6768381a026786cdd33388fa_logo-desktop%20(1)%201.svg",
+    "format": "SVG",
+    "description": "Desktop logo variant - vector format",
+    "note": "Melatech wordmark/logomark"
+  },
+  "taglines_and_slogans": {
+    "main_tagline": "Empowering clinicians through technology",
+    "mission_statement": "Our mission is to transform healthcare through software built by clinicians, for clinicians.",
+    "secondary_phrases": [
+      "Digital Empowerment of Primary Care",
+      "About Melatech"
+    ]
+  },
+  "visual_style": {
+    "button_styles": [
+      {
+        "name": "Primary Green Button",
+        "class": "btn-primary-green",
+        "usage": "Primary CTAs (Learn more, Order now)"
+      },
+      {
+        "name": "Secondary Black Button",
+        "class": "btn-secondary-black",
+        "usage": "Secondary CTAs (Get started, Learn more)"
+      },
+      {
+        "name": "Secondary Green Button",
+        "class": "btn-secondary-green",
+        "usage": "Alternative CTAs"
+      }
+    ],
+    "background_styles": [
+      {
+        "name": "Green Background",
+        "class": "greenbg / green-bg",
+        "description": "Solid green background sections"
+      },
+      {
+        "name": "Light Gray Background",
+        "class": "f8bg",
+        "description": "Light neutral background (#F8F8F8 estimated)"
+      },
+      {
+        "name": "Transparent Background",
+        "class": "transparentbg",
+        "description": "Sections with no background color"
+      }
+    ],
+    "layout_framework": "Webflow",
+    "design_characteristics": [
+      "Clean, modern interface",
+      "Container-based layouts",
+      "Green as primary accent color throughout",
+      "High contrast text (black on white, white on green/black)",
+      "Professional healthcare aesthetic",
+      "Focus on readability and accessibility"
+    ]
+  },
+  "brand_voice": {
+    "tone": "Professional, clinical, trustworthy",
+    "key_themes": [
+      "Clinician empowerment",
+      "Technology-driven healthcare",
+      "Built by clinicians for clinicians",
+      "Efficiency and workflow optimization",
+      "Patient care improvement"
+    ]
+  },
+  "products_mentioned": [
+    "Dermloop - Software for management of skin conditions",
+    "Dermkit - Digital dermoscope for high-quality image capture",
+    "Dermloop Learn - Educational platform for diagnostician training"
+  ],
+  "screenshot_url": "https://storage.googleapis.com/firecrawl-scrape-media/screenshot-c122beaf-bf10-4a96-aa98-29f8eff06c4e.png?GoogleAccessId=scrape-bucket-accessor%40firecrawl.iam.gserviceaccount.com&Expires=1772488320&Signature=Ym4IgocMFuS0LRAd%2FeX1us7bA3Rl1szD9AybsHuLije%2FA6806SRWUvr9oBGRJoOkQnCPRgZEJPPFHBC63i95Dw5ZLpwSXtXl1KzpRl%2FI3kxotoLzB6yOPS%2FxZA3xqoHYF85eC6MRGzeV2rMAV08igFlBwNyniHtMjrS1ojb68f%2B6kCHeDZt%2FAL7thVDmxpGHBova7ATWzT42tPGLdcOAWG10mdbSlVNUoCWW84y6zjQhmbS%2B5BkDzPcuJU5l%2FnD1nnlkGM%2FQvZIHNYsPuDaOwYc%2Fgr3YxkYW9f%2FOreq8oytLJVctXqRYUGWA23%2BsCBuJjrWvw%2FJ3cjwVHI0%2FJDeWMw%3D%3D"
+}
