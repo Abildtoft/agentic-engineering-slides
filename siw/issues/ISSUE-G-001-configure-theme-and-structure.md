@@ -24,18 +24,18 @@ The current setup uses `theme: default` with a single `slides.md`. With 68-84 sl
 
 ## Acceptance Criteria
 
-- [ ] Theme is chosen and installed (if not default)
-- [ ] Headmatter is configured with title, author, transition defaults
-- [ ] File structure decision is made and documented
-- [ ] If multi-file: section files are created with placeholder content
-- [ ] `npm run dev` shows a styled cover slide
-- [ ] AGENTS.md is updated with any new conventions
+- [x] Theme is chosen and installed (if not default)
+- [x] Headmatter is configured with title, author, transition defaults
+- [x] File structure decision is made and documented
+- [x] If multi-file: section files are created with placeholder content
+- [x] `yarn dev` shows a styled cover slide
+- [x] AGENTS.md is updated with any new conventions
 
 ## Validation
 
-- [ ] `npm run dev` renders without errors
-- [ ] Cover slide looks professional and matches intended aesthetic
-- [ ] Layout test: verify key layouts (cover, center, default, two-cols, quote, section) render correctly with the theme
+- [x] `yarn dev` renders without errors
+- [x] Cover slide looks professional and matches intended aesthetic
+- [x] Layout test: verify key layouts (cover, center, default, two-cols, quote, section) render correctly with the theme
 
 ---
 

@@ -1,6 +1,6 @@
 # ISSUE-P1-002: Section 2 — The Disappearing Middle
 
-**Status:** Ready | **Priority:** High | **Phase:** 1 | **Related:** Blocked by G-001
+**Status:** DONE | **Priority:** High | **Phase:** 1 | **Related:** Blocked by G-001
 
 ## Problem
 
@@ -23,19 +23,19 @@ This section bridges from "here's what's happening" (Section 1) to "here's what 
 
 ## Acceptance Criteria
 
-- [ ] 10-12 slides created
-- [ ] Sources referenced: `disappearing-middle-of-software-work.md`, `code-is-cheap.md`, `karpathy-coding-vs-building.md`, `prototype-is-the-new-prd.md`, `modern-ai-pm.md`, `sprints-cost-of-building-zero.md`
-- [ ] Every slide has presenter notes
-- [ ] Discussion prompt: "For product/UX — how does your work change when building is fast and cheap? For devs — what part of your work feels most at risk?"
-- [ ] Accessible to non-developer roles
-- [ ] One idea per slide
-- [ ] `npm run dev` renders without errors
+- [x] 10-12 slides created
+- [x] Sources referenced: `disappearing-middle-of-software-work.md`, `code-is-cheap.md`, `karpathy-coding-vs-building.md`, `prototype-is-the-new-prd.md`, `modern-ai-pm.md`, `sprints-cost-of-building-zero.md`
+- [x] Every slide has presenter notes
+- [x] Discussion prompt: "For product/UX — how does your work change when building is fast and cheap? For devs — what part of your work feels most at risk?"
+- [x] Accessible to non-developer roles
+- [x] One idea per slide
+- [x] `yarn dev` renders without errors
 
 ## Validation
 
-- [ ] Slide count within range
-- [ ] All six sources represented
-- [ ] Read-through: UX/product audience members can follow the argument
+- [x] Slide count within range
+- [x] All six sources represented
+- [x] Read-through: UX/product audience members can follow the argument
 
 ---
 
@@ -52,3 +52,22 @@ This section bridges from "here's what's happening" (Section 1) to "here's what 
 ### Dependencies
 - Blocked by: G-001
 - Blocks: None
+
+## Resolution
+
+12 slides written to `sections/02-disappearing-middle.md`:
+
+1. Section divider (section layout)
+2. The Middle of Software Work — defines the concept with Karri Saarinen quote (progressive reveal)
+3. "My belief is that this is changing." (statement)
+4. Linus inversion — "Talk is cheap" → "Good talk is exponentially more valuable" (quote, progressive reveal)
+5. Code as commodity, critical thinking as bottleneck (statement)
+6. Karpathy: coding vs. building split (quote)
+7. Andrew Chen: prototype is the new PRD (quote)
+8. PM translation layer compressing — Before/Now/spec-is-product (progressive reveal)
+9. "Knowing what to build didn't get easier. It got more important." (statement)
+10. Lenny Sanudo: sprints repurposed when building costs → zero (quote)
+11. Compressing vs. Expanding two-column summary (two-cols)
+12. Dual discussion prompt for product/UX and devs (center)
+
+All 6 sources represented. Narrative arc: establish compression → show inversion → show role changes → synthesize → discuss.
