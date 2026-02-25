@@ -22,7 +22,9 @@ Energy: measured, strategic. Not panic — perspective.
 layout: statement
 ---
 
-# If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
+<h1>If we skip the 10,000 hours of practice<br />
+and jump straight to "overseer of AI output" —<br />
+are we actually training architects?</h1>
 
 <!--
 [T+116:15 | S5 slide 2 of 15 | 1min]
@@ -45,7 +47,9 @@ Bridge: "This question has a concrete answer from Harvard Business Review."
 layout: quote
 ---
 
-# "What I hear most often from executives is not that they fear AI will replace empathy. It's that they fear it will replace the contexts in which empathy is developed."
+<h1>"What I hear most often from executives is not that they fear AI will replace empathy.<br />
+It's that they fear it will replace the contexts<br />
+in which empathy is developed."</h1>
 
 Harvard Business Review
 
@@ -103,13 +107,17 @@ Bridge: "So if the tool is always right — and always available — what does t
 layout: quote
 ---
 
-# "The part of 'everyone becomes a manager' in AI that I didn't really think about until now was the mental fatigue of context switching and keeping many tasks going at once... and now you all get to enjoy it too."
+<h1>"The part of 'everyone becomes a manager' in AI<br />
+that I didn't really think about until now<br />
+was the mental fatigue of context switching<br />
+and keeping many tasks going at once...<br />
+and now you all get to enjoy it too."</h1>
 
 Camille Fournier
 
 <v-click>
 
-# "Programmers will still be accountable for code generated under their watch."
+## "Programmers will still be accountable for code generated under their watch."
 
 Martin Fowler
 
@@ -206,7 +214,8 @@ Pivot: "That's the risk. Now let's talk about what survives. Because the news is
 layout: statement
 ---
 
-# The collapse of the implementation middle isn't making engineering less important — it's revealing what was always important.
+<h1>The collapse of the implementation middle isn't making engineering less important —<br />
+it's revealing what was always important.</h1>
 
 <!--
 [T+124:15 | S5 slide 8 of 15 | 1min]
@@ -274,7 +283,7 @@ Paul Graham
 
 <v-click>
 
-# "The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
+## "The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
 
 Addy Osmani
 
@@ -431,7 +440,7 @@ class: text-center
 
 # How does your team develop junior talent today?
 
-# What does "taste" mean in your product?
+<h2 class="mt-8">What does "taste" mean in your product?</h2>
 
 <!--
 [T+139:00 | S5 slide 15 of 15 | 8min DISCUSSION]

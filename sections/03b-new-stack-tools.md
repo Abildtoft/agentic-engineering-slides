@@ -68,9 +68,11 @@ class: text-center
 
 <img src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." class="mx-auto w-full max-w-6xl" />
 
+<p class="mt-4 text-lg opacity-85">APIs are tools. Skills are recipes. MCP is the kitchen.</p>
+
 <v-click>
 
-Hooks are the guardrails around this kitchen.
+<p class="mt-2 text-xl font-semibold">Hooks are the guardrails around this kitchen.</p>
 
 </v-click>
 

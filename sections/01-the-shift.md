@@ -57,14 +57,33 @@ Walk through each reveal. The cumulative effect is the point — no single data 
 -->
 
 ---
-
 layout: quote
-
+class: quote-long
 ---
 
-# "You have to transport yourself to the current moment. It's not Sonnet 3.5 anymore. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"You have to transport yourself to the current moment.</div>
 
-Boris Cherny, Head of Claude Code
+  <v-click>
+    <div class="quote-progressive-line">It's not Sonnet 3.5 anymore.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">The new models are just completely, completely different.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">The model changes so often that I sometimes get stuck in this old way of thinking.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">I find that new people on the team do stuff in a more AGI forward way than I do."</div>
+  </v-click>
+</div>
+
+<v-click>
+  Boris Cherny, Head of Claude Code
+</v-click>
 
 <!--
 [T+03:00 | S1 slide 3 of 9 | 1.5min]
@@ -77,14 +96,15 @@ Your mental model of what AI can do is probably already outdated.
 -->
 
 ---
-
 layout: fact
-
 ---
 
 # 4%
 
-of new code in public GitHub repos was produced by Claude Code (as of February 2026)
+<h2 class="mt-8 leading-tight max-w-4xl">
+of new code in public GitHub repos was produced by Claude Code<br />
+(as of February 2026)
+</h2>
 
 <!--
 [T+03:15 | S1 slide 4 of 9 | 1min]
@@ -133,9 +153,7 @@ The Anthropic/OpenAI stat is the extreme case — frontier teams are fully dogfo
 -->
 
 ---
-
 layout: quote
-
 ---
 
 # "The entire history of software engineering is one of rising levels of abstraction"
@@ -153,9 +171,7 @@ Grace Hopper faced the same skepticism when she introduced the compiler: "real p
 -->
 
 ---
-
 layout: statement
-
 ---
 
 # The future of software engineering isn't syntax — it's turning ambiguity into clarity
@@ -171,9 +187,7 @@ Transition: but here's the thing — this shift isn't happening at a normal pace
 -->
 
 ---
-
 layout: quote
-
 ---
 
 # "By summer 2026, people working with frontier AI will feel like they live in a parallel world"

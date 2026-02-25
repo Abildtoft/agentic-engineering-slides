@@ -24,7 +24,10 @@ Energy: calm and resolved. Not a victory lap. An honest landing.
 layout: quote
 ---
 
-# "I too am the bottleneck now. But you know what? Two years ago, I too was the bottleneck. I was the bottleneck all along."
+<h1>"I too am the bottleneck now.<br />
+But you know what?<br />
+Two years ago, I too was the bottleneck.<br />
+I was the bottleneck all along."</h1>
 
 Armin Ronacher
 
@@ -104,7 +107,7 @@ Oxide Computer Company
 
 <v-click>
 
-# "This isn't a productivity question. It's a question about what kind of work — and lives — we want to build."
+## "This isn't a productivity question. It's a question about what kind of work — and lives — we want to build."
 
 </v-click>
 
@@ -223,13 +226,15 @@ Bridge: "That's the near-term. Now: the bigger picture."
 layout: quote
 ---
 
-# "How did you do it? How did you evolve, how did you survive this technological adolescence without destroying yourself?"
+<h1>"How did you do it?<br />
+How did you evolve, how did you survive this technological adolescence<br />
+without destroying yourself?"</h1>
 
 Carl Sagan, Contact — cited by Dario Amodei
 
 <v-click>
 
-# "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our systems possess the maturity to wield it."
+## "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our systems possess the maturity to wield it."
 
 Dario Amodei — The Adolescence of Technology
 

@@ -27,6 +27,11 @@ This section is for everyone in the room — not just developers. If you're in p
 "Turning intent into something real meant opening the codebase, booting up the environment, and writing the code. That middle absorbed most of the time, attention, and craft of software teams."
 
 </v-click>
+<v-click>
+
+## "My belief is that this is changing."
+
+</v-click>
 
 <!--
 [T+17:45 | S2 slide 2 of 11 | 2min]
@@ -35,17 +40,6 @@ Source: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/20075342810111554
 Before we talk about what's changing, let's name what existed. For decades, the middle was where most of the work lived. You had an idea on one end and a shipped product on the other. Everything in between — writing code, debugging, integrating, testing — that was the job.
 For product and UX too: your specs, your designs, your requirements — they all fed into this middle. The middle is where your intent met reality.
 Seniority was measured by how well you navigated this middle.
--->
-
----
-layout: statement
----
-
-# "My belief is that this is changing."
-
-<!--
-[T+18:30 | S2 slide 3 of 11 | 1min]
-Source: Karri Saarinen (same post)
 
 Understatement from the CEO of Linear — a company whose entire product is a tool for managing that middle.
 The implementation layer — the part between "I know what to build" and "here it is" — is compressing. Not disappearing entirely, but the time and effort it absorbs is shrinking fast.
@@ -63,7 +57,7 @@ Linus Torvalds, 2000
 
 <v-click>
 
-# "For the first time ever, good talk is exponentially more valuable than good code."
+## "For the first time ever, good talk is exponentially more valuable than good code."
 
 Nadh, 2025
 
@@ -115,27 +109,6 @@ Both are valid. But AI makes the first one less scarce and the second one more v
 Ask the room (rhetorically): which one do you identify with more? And for the product/UX people — where do you see yourselves in this split?
 -->
 
----
-layout: quote
----
-
-# "The prototype is the new PRD. If your team needs a 20-page product strategy doc, you're already behind someone with a weekend prototype."
-
-Andrew Chen
-
-<!--
-[T+23:30 | S2 slide 7 of 11 | 1.5min]
-Source: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
-
-This is the slide where product and UX people should sit up.
-A PRD was the artifact that bridged product thinking and engineering execution — 20 pages of requirements, edge cases, acceptance criteria.
-When building is fast and cheap, you can just... build it. Try it. Feel it. "The ability to feel how good a product is, from actually using it, beats all the theorizing and market analysis and user research."
-This does not mean product thinking is dead. It means the artifact changes. Instead of describing what to build, you show what to build.
-For UX designers: your prototyping tools already moved in this direction. Now the prototype can be the real thing.
--->
-
----
-
 # The Translation Layer Is Compressing
 
 <v-click>
@@ -168,7 +141,9 @@ Same dynamic as the developer split: the "middle" of PM work is compressing. Wha
 layout: statement
 ---
 
-# The time between "I know what we should build" and "here it is" collapsed. But the work of knowing what to build didn't get easier. It got more important.
+<h1>The time between "I know what we should build" and "here it is" collapsed.<br />
+But the work of knowing what to build didn't get easier.<br />
+It got more important.</h1>
 
 <!--
 [T+26:00 | S2 slide 9 of 11 | 1min]
@@ -190,7 +165,9 @@ This applies across every role:
 layout: quote
 ---
 
-# "Sprints are no longer about reducing uncertainty in the face of high costs. Today they are about deciding what to do and how to stand out when the cost of building moves toward zero."
+<h1>"Sprints are no longer about reducing uncertainty in the face of high costs.<br />
+Today they are about deciding what to do and how to stand out<br />
+when the cost of building moves toward zero."</h1>
 
 Lenny Sanudo, creator of the Design Sprint
 
@@ -206,13 +183,36 @@ Transition: let's discuss.
 -->
 
 ---
+layout: quote
+---
+
+<h1>"The prototype is the new PRD.<br />
+If your team needs a 20-page product strategy doc,<br />
+you're already behind someone with a weekend prototype."</h1>
+
+Andrew Chen
+
+<!--
+[T+23:30 | S2 slide 7 of 11 | 1.5min]
+Source: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+This is the slide where product and UX people should sit up.
+A PRD was the artifact that bridged product thinking and engineering execution — 20 pages of requirements, edge cases, acceptance criteria.
+When building is fast and cheap, you can just... build it. Try it. Feel it. "The ability to feel how good a product is, from actually using it, beats all the theorizing and market analysis and user research."
+This does not mean product thinking is dead. It means the artifact changes. Instead of describing what to build, you show what to build.
+For UX designers: your prototyping tools already moved in this direction. Now the prototype can be the real thing.
+-->
+
+---
 layout: center
 class: text-center
 ---
 
-# For product/UX — how does your work change when building is fast and cheap?
+<h1>For product/UX — how does your work change<br />
+when building is fast and cheap?</h1>
 
-# For devs — what part of your work feels most at risk?
+<h2 class="mt-8">For devs — what part of your work feels<br />
+most at risk?</h2>
 
 <!--
 [T+29:00 | S2 slide 11 of 11 | 8min DISCUSSION]

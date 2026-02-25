@@ -68,7 +68,7 @@ Margaret-Anne Storey
 
 <v-click>
 
-# "No one on the team could explain why certain design decisions had been made."
+## "No one on the team could explain why certain design decisions had been made."
 
 </v-click>
 
@@ -85,7 +85,8 @@ This is not hypothetical. It happened in an academic setting with full supervisi
 layout: quote
 ---
 
-# "I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
+<h1>"I no longer have a firm mental model of what my projects can do and how they work,<br />
+which means each additional feature becomes harder to reason about."</h1>
 
 Simon Willison
 
@@ -227,11 +228,13 @@ Don't linger on each pattern — the recognition should be fast and uncomfortabl
 layout: quote
 ---
 
-# "I caught myself asking the AI for the umpteenth time how to do a certain if conditional. Why have I not internalized this? Because I've outsourced it to the AI."
+<h1>"I caught myself asking the AI for the umpteenth time how to do a certain if conditional.<br />
+Why have I not internalized this?<br />
+Because I've outsourced it to the AI."</h1>
 
 <v-click>
 
-# "You will actually turn yourself into an idiot if you can't do seven times seven real quick in your head."
+## "You will actually turn yourself into an idiot if you can't do seven times seven real quick in your head."
 
 </v-click>
 
@@ -292,11 +295,13 @@ This connects all the patterns: the confidence spiral, the outsourced understand
 layout: quote
 ---
 
-# "If we treat them as a substitute for effort, we're barely a step away from grift — and I really believe we'll wake up one day, completely hollow."
+<h1>"If we treat them as a substitute for effort,<br />
+we're barely a step away from grift — and I really believe<br />
+we'll wake up one day, completely hollow."</h1>
 
 <v-click>
 
-# "We don't have to treat AI as a zero-effort shortcut to success."
+## "We don't have to treat AI as a zero-effort shortcut to success."
 
 </v-click>
 
@@ -335,7 +340,14 @@ Transition: "So what does non-hollow look like? What is the antidote?"
 Source: Addy Osmani on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4) and Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 Osmani: "AI doesn't make you dumber, but passive reliance does. The difference is asking 'why' vs. treating it like a code vending machine."
+
 Storey's concrete mitigations: require human understanding, document the why, create regular checkpoints where teams rebuild shared understanding.
+
+THE COMMIT MESSAGE EXAMPLE — use when landing the third bullet:
+"We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
+
+This grounds the antidote in daily practice: documentation of the why is not about the mechanical act of typing — it's about the cognitive act of understanding. AI can draft the commit message. The human must own the meaning.
+
 Connect back to Section 3: context engineering and spec-driven development are not just productivity tools — they are cognitive debt prevention. The CLAUDE.md you write is documentation of the why. The spec you author is proof of understanding. The verification loop is the checkpoint. And the guardrails from S3b — hooks that detect repetitive failures, constraints that force agents to stop and report — are specifically designed to break Ralph Wiggum loops before they start.
 The new stack is the antidote — if used with intention. That's the bridge to Section 5: what skills and practices actually matter.
 -->
@@ -347,7 +359,7 @@ class: text-center
 
 # Have you felt any of this?
 
-# Do you understand what your tools produce?
+<h2 class="mt-8">Do you understand what your tools produce?</h2>
 
 <!--
 [T+113:30 | S4 slide 15 of 15 | 8min DISCUSSION]

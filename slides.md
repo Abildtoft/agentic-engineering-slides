@@ -10,7 +10,7 @@ fonts:
   provider: google
 favicon: /favicon.svg
 defaults:
-  transition: fade
+  transition: none
 duration: 162min
 timer: countdown
 layout: cover
