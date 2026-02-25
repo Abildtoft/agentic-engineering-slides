@@ -81,6 +81,12 @@ Bridge: "Which brings us to what this looks like as a team value."
 -->
 
 ---
+layout: statement
+---
+
+# The bottleneck isn't technology, it's expert knowledge extraction.
+
+---
 layout: quote
 ---
 

@@ -40,6 +40,11 @@ It wasn't one model release — it was the convergence of **models good enough**
 </v-click>
 <v-click>
 
+No single metric proves it — the pattern across metrics does.
+
+</v-click>
+<v-click>
+
 **The skeptics were right for three years. Then the curve bent.**
 
 </v-click>
@@ -98,7 +103,7 @@ Let that sink in before we go further.
 
 <v-click>
 
-**Spotify** — Best developers haven't written a line of code since December
+**Spotify** — leadership reports top developers shifted heavily away from manual coding since December
 
 </v-click>
 <v-click>
@@ -113,7 +118,7 @@ Let that sink in before we go further.
 </v-click>
 <v-click>
 
-**Anthropic & OpenAI** — Top engineers report 100% AI-written code
+**Anthropic & OpenAI** — frontier teams report near-total AI-generated code
 
 </v-click>
 
@@ -124,9 +129,9 @@ Source: Google CEO Sundar Pichai, earnings call
 Source: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
 Source: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
 
-Walk through each one. The point is cumulative shock — this isn't one company or one tool. It's the entire industry moving at once.
+Walk through each one. The point is cumulative signal — this isn't one company or one tool. It's the industry moving in the same direction.
 Spotify's example is especially vivid: engineers fix bugs from Slack on their phone during their commute, get a new build pushed back, and merge to production before arriving at the office. That's not autocomplete. That's a fundamentally different relationship to code.
-The Anthropic/OpenAI stat is the extreme case — the people building the AI tools are fully dogfooding them.
+The Anthropic/OpenAI stat is the extreme case — frontier teams are fully dogfooding the tooling they're building.
 -->
 
 ---

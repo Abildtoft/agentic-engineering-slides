@@ -156,26 +156,25 @@ Transition: let me show you what both of these concepts look like in practice.
 
 **What to show:**
 
-1. Context engineering — open the kramme-cc-workflow CLAUDE.md and AGENTS.md, show how they shape agent behavior
+1. Context engineering — open a project's CLAUDE.md and AGENTS.md, show how they shape agent behavior
 2. SIW workflow — walk through spec → issues → focused implementation on this presentation
 
 <!--
-[T+47:30 | S3a slide 7 of 8 | 5.5min DEMO]
+[T+47:30 | S3a slide 7 of 8 | 4min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
-Part 1 — Context engineering (~3 min):
-- Open the project's CLAUDE.md. Show the structure: project conventions, stack info, file structure, guidelines.
-- Open AGENTS.md. Show how it defines the multi-file convention, section-to-issue mapping, guidelines.
+Part 1 — Context engineering (~2 min):
+- Open a project's CLAUDE.md/AGENTS.md. Show the structure: conventions, stack info, file structure, and guidelines.
 - Key point: "Every time Claude Code starts a session in this project, it reads these files first. That's why it knows to use Yarn, not npm. That's why it creates slides with the right layout patterns."
 
-Part 2 — SIW workflow (~3 min):
+Part 2 — SIW workflow (~2 min):
 - Show siw/PRESENTATION_PLAN.md — the spec.
 - Show siw/OPEN_ISSUES_OVERVIEW.md — work broken into issues with status tracking.
 - Show a specific issue file (e.g., ISSUE-P1-002) — focused scope, clear acceptance criteria.
 - Show the resulting section file — the agent's output, constrained by the spec.
-- "This presentation is being built using the workflow I'm describing. It's not a toy demo — you're looking at the output."
+- "This is the same loop any team can run — define intent, execute in small chunks, verify continuously."
 
-Keep total demo to 5-6 minutes. The demo is the proof that these concepts work.
+Keep total demo to 4-5 minutes. The demo is the proof that these concepts work.
 FALLBACK: If the live demo is unresponsive, open the files directly in your editor (CLAUDE.md, AGENTS.md, siw/PRESENTATION_PLAN.md, an issue file) and walk through them as static examples. The files themselves are the proof — no running tool needed.
 -->
 
@@ -187,8 +186,8 @@ class: text-center
 # What context would your agents need to be effective in your codebase?
 
 <!--
-[T+52:30 | S3a slide 8 of 8 | 6min DISCUSSION]
-DISCUSSION PROMPT — pause here for 5-7 minutes.
+[T+52:30 | S3a slide 8 of 8 | 4min DISCUSSION]
+DISCUSSION PROMPT — pause here for 3-5 minutes.
 
 This question is deliberately practical and forward-looking, not abstract.
 Prompt follow-ups:

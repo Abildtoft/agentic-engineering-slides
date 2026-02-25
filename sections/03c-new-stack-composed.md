@@ -42,7 +42,7 @@ Source: Addy Osmani (addyo.substack.com/p/my-llm-coding-workflow-going-into)
 "Break the project into iterative steps or tickets and tackle them one by one."
 
 A harness is the composed version of what 3a and 3b introduced separately. Context engineering gives the agent knowledge. Specs give it direction. Skills, MCP, and hooks give it capabilities and guardrails. A harness wires them into a repeating loop.
-SIW in kramme-cc-workflow: you write a spec, it gets broken into issues with acceptance criteria, the agent picks up an issue, plans, implements, validates, and requests review. This presentation was built this way — the audience is looking at SIW output right now.
+In one concrete implementation (SIW): you write a spec, it gets broken into issues with acceptance criteria, the agent picks up an issue, plans, implements, validates, and requests review.
 The harness is not about making the agent faster. It's about making the agent's work reviewable and iterative. Each loop is small enough to verify, large enough to be useful.
 Transition: a harness with one agent and one human. What happens when you add specialized agents?
 -->
@@ -143,27 +143,27 @@ Transition: let me show you the full composed system in action.
 3. Team-based execution — parallel agents working a task list
 
 <!--
-[T+82:30 | S3c slide 6 of 9 | 7min DEMO]
+[T+82:30 | S3c slide 6 of 9 | 5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
-Part 1 — SIW harness (~3 min):
+Part 1 — SIW harness (~2 min):
 - Open the SIW workflow in the kramme-cc-workflow project.
 - Show siw/PRESENTATION_PLAN.md (the spec). Show siw/OPEN_ISSUES_OVERVIEW.md (the work breakdown). Show a specific issue file with acceptance criteria.
 - Show the agent picking up the issue and running the loop: plan, implement, validate.
-- "This presentation is being built using the workflow I'm describing. The slide you're looking at was produced by the SIW harness."
+- "This workflow is portable: spec, issue breakdown, focused implementation, verification, and review."
 
-Part 2 — Multi-agent review (~3 min):
+Part 2 — Multi-agent review (~2 min):
 - Trigger /review on a PR or diff.
 - Show the agent reading review agent definitions (the markdown persona files).
 - Show it fanning out to multiple reviewers.
 - Show the aggregated output — findings by category, severity, recommendation.
 - The audience should see that 20 perspectives ran in the time it takes to read the diff once.
 
-Part 3 — Team execution (~2 min):
+Part 3 — Team execution (~1 min):
 - Show a team-based execution: the lead agent breaking a task into subtasks, spawning workers, coordinating results.
 - This is the "fleet of agents" pattern. If time is short, show the team configuration and describe the execution flow verbally.
 
-Total: ~6-8 minutes. This is the centerpiece demo of Section 3 — it brings together everything from concepts, tools, and composed systems.
+Total: ~4-6 minutes. This is the centerpiece demo of Section 3 — it brings together everything from concepts, tools, and composed systems.
 FALLBACK: If the live demo fails, walk through the SIW files statically (siw/PRESENTATION_PLAN.md, an issue file, the resulting section file). For multi-agent review, show the agent markdown persona files in the .agents/ directory and describe the fan-out pattern verbally. For team execution, describe the pattern over the slide bullets — the concept is clear without a live demo.
 ABORT POINT: If running 10+ minutes over at this point, skip Part 3 (team execution) and describe it verbally in 30 seconds.
 Transition: before we discuss, a few open-source starting points if you want to try this yourself.
@@ -210,8 +210,8 @@ class: text-center
 What would you try first?
 
 <!--
-[T+85:45 | S3c slide 8 of 9 | 6min DISCUSSION]
-DISCUSSION PROMPT — pause here for 5-7 minutes. This closes all of Section 3 (concepts, tools, composed systems).
+[T+85:45 | S3c slide 8 of 9 | 4min DISCUSSION]
+DISCUSSION PROMPT — pause here for 3-5 minutes. This closes all of Section 3 (concepts, tools, composed systems).
 
 The dual prompt is deliberate: "most relevant" invites reflection on current needs; "try first" invites commitment to action.
 Prompt follow-ups:
@@ -220,20 +220,5 @@ Prompt follow-ups:
 - "For product/UX: which of these patterns would change how you work with your dev team?"
 - "What feels achievable in the next month? What feels like a six-month investment?"
 Listen for: practical ideas about what to try, questions about team adoption, and — critically — concerns about complexity. The complexity concerns are the bridge.
-Bridge to Section 4: after the discussion, say: "You may have noticed something in that last section. Each layer we added — from a single harness to specialized agents to multi-agent teams — added power. But it also added coordination cost. More things to understand, more things that can break, more things you didn't personally write. That accumulation has a name." Transition to the break slide.
--->
-
----
-layout: center
-class: text-center
----
-
-# Break
-
-Back in 5 minutes
-
-<!--
-[T+91:45 | S3c slide 9 of 9 | 5min BREAK]
-COMFORT BREAK — This falls at approximately the session midpoint. Announce: "Good stopping point. Let's take five minutes." Adjust the countdown timer when resuming.
-After the break, transition to Section 4: Cognitive Debt.
+Bridge to Section 4: after the discussion, say: "You may have noticed something in that last section. Each layer we added — from a single harness to specialized agents to multi-agent teams — added power. But it also added coordination cost. More things to understand, more things that can break, more things you didn't personally write. That accumulation has a name." Transition directly to Section 4: Cognitive Debt.
 -->

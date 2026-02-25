@@ -5,11 +5,11 @@ transition: section-shift
 
 # The Junior Pipeline & What Matters
 
-The long-term risk and the skills that survive
+From individual practice to team capability
 
 <!--
 [T+115:30 | S5 slide 1 of 14 | 0.5min]
-Transition from Section 4: everything we just discussed — cognitive debt, the confidence spiral, outsourced understanding — those are individual risks. They affect you, today, in your work.
+Transition from Section 4: everything we just discussed — cognitive debt, the confidence spiral, outsourced understanding — are individual risks. The next question is what happens at team and profession level, even when individuals use AI responsibly.
 
 Now let's zoom out to the structural question: what happens to the next generation of engineers? And then: what skills actually matter in this new world?
 
@@ -141,7 +141,7 @@ Bridge: "So if this is the reality, what should juniors actually focus on?"
 </v-click>
 <v-click>
 
-**Now:** Writing code is no longer the bottleneck. Syntax and frameworks are becoming interchangeable.
+**Now:** Writing code is no longer the primary constraint. Syntax and frameworks are becoming interchangeable.
 
 </v-click>
 <v-click>
@@ -419,7 +419,7 @@ For the taste question, follow-ups:
 
 What to listen for: concrete examples of junior development challenges, recognition that taste is hard to define, anxiety about the pipeline problem from managers, energy from ICs about the "what matters" list.
 
-We've been saying "bottleneck" a lot. In the next section, I want to flip that word — because being the bottleneck isn't the problem. It's the point.
+We've been saying "constraint" in different ways throughout this talk. In the next section, I want to flip the framing — because being the constraint isn't the problem. It's the point.
 
 Transition to Section 6: "We've mapped the risk and named what matters. Now: what do you actually do about it? That's where we're going next."
 -->

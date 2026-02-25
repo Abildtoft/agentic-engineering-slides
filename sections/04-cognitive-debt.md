@@ -5,7 +5,7 @@ transition: section-shift
 
 # Cognitive Debt
 
-The hidden cost of going fast
+The hidden cost of going fast without understanding
 
 <!--
 [T+92:45 | S4 slide 1 of 15 | 0.5min]
@@ -128,7 +128,7 @@ You prompt again → you understand less → you defer more
 </v-click>
 <v-click>
 
-**"The prompting becomes a crutch. Then a habit. Then an addiction."**
+**The prompting loop can become dependency: convenience now, weaker judgment later.**
 
 </v-click>
 
@@ -277,7 +277,7 @@ Connect to Section 2's Karpathy split: "those who primarily liked coding" are wa
 layout: statement
 ---
 
-# Agent Psychosis: when the tool you depend on becomes a source of anxiety rather than empowerment.
+# When Dependence Becomes Anxiety
 
 <!--
 [T+109:00 | S4 slide 12 of 15 | 1min]
