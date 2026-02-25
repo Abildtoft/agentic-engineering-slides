@@ -8,7 +8,7 @@ transition: section-shift
 From individual practice to team capability
 
 <!--
-[T+115:30 | S5 slide 1 of 14 | 0.5min]
+[T+115:30 | S5 slide 1 of 15 | 0.5min]
 Transition from Section 4: everything we just discussed — cognitive debt, the confidence spiral, outsourced understanding — are individual risks. The next question is what happens at team and profession level, even when individuals use AI responsibly.
 
 Now let's zoom out to the structural question: what happens to the next generation of engineers? And then: what skills actually matter in this new world?
@@ -25,7 +25,7 @@ layout: statement
 # If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
 
 <!--
-[T+116:15 | S5 slide 2 of 14 | 1min]
+[T+116:15 | S5 slide 2 of 15 | 1min]
 Source: Developer Pipeline Getting Strangled (linkedin.com)
 
 The muscle memory of software engineering develops through repetition and guided practice. Knowing when to trust your instincts. Recognizing antipatterns. Understanding second-order consequences of technical decisions.
@@ -50,7 +50,7 @@ layout: quote
 Harvard Business Review
 
 <!--
-[T+117:30 | S5 slide 3 of 14 | 1.5min]
+[T+117:30 | S5 slide 3 of 15 | 1.5min]
 Source: AI is Changing How We Learn at Work (hbr.org/2025/12/ai-is-changing-how-we-learn-at-work)
 
 The HBR article describes executives reflecting on their own pathways to mastery: "countless hours of practice, moments of intense insight, wisdom gained from failure, mentors who gave them feedback." All experiential learning that shaped their expertise, resilience, judgment and identity.
@@ -83,7 +83,7 @@ It starts with major decisions. Then breakfast. Then how to move each muscle in 
 </v-click>
 
 <!--
-[T+119:15 | S5 slide 4 of 14 | 2min]
+[T+119:15 | S5 slide 4 of 15 | 2min]
 Source: Tech's New Generation and the End of Thinking — Sam Kriss, Harper's Magazine (harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/)
 
 Parable by Scott Alexander, "The Whispering Earring" — buried in the treasure-vaults of Til Iosophrang. A little topaz gem that speaks to you, beginning with "Better for you if you..."
@@ -116,7 +116,7 @@ Martin Fowler
 </v-click>
 
 <!--
-[T+120:30 | S5 slide 5 of 14 | 1.5min]
+[T+120:30 | S5 slide 5 of 15 | 1.5min]
 Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 
 Fournier is the author of "The Manager's Path" — one of the most respected voices on engineering management. Her insight: we're giving developers all the worst parts of management (context switching, coordination overhead) without the organisational support managers get. The "and now you all get to enjoy it too" lands the joke — let the audience laugh.
@@ -151,7 +151,7 @@ Bridge: "So if this is the reality, what should juniors actually focus on?"
 </v-click>
 
 <!--
-[T+122:00 | S5 slide 6 of 14 | 2min]
+[T+122:00 | S5 slide 6 of 15 | 2min]
 Source: Junior Developers Should Go ALL-IN on System Design (linkedin.com/posts/lukasz2_junior-developers-should-go-all-in-on-system-activity-7422568656930299905-sW94)
 
 The old division of labour made sense when writing code was the bottleneck. It no longer is.
@@ -188,7 +188,7 @@ Seniors who see mentorship as **force multiplication**, not a tax on their produ
 </v-click>
 
 <!--
-[T+123:45 | S5 slide 7 of 14 | 2min]
+[T+123:45 | S5 slide 7 of 15 | 2min]
 Source: Developer Pipeline Getting Strangled (linkedin.com)
 
 The resolution isn't either/or. It's not "ban AI for juniors" or "let them vibe-code unsupervised." It's a structured hybrid.
@@ -209,7 +209,7 @@ layout: statement
 # The collapse of the implementation middle isn't making engineering less important — it's revealing what was always important.
 
 <!--
-[T+124:15 | S5 slide 8 of 14 | 1min]
+[T+124:15 | S5 slide 8 of 15 | 1min]
 Source: The Best Engineers Never Just Wrote Code — Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
 Osmani's full framing: "The best engineers never just wrote code. They were clarity merchants."
@@ -246,7 +246,7 @@ Bridge: "So what are those skills? Let's name them."
 </v-click>
 
 <!--
-[T+126:45 | S5 slide 9 of 14 | 2min]
+[T+126:45 | S5 slide 9 of 15 | 2min]
 Source: The Best Engineers Never Just Wrote Code — Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
 Osmani's three capabilities of the engineers who will thrive. Walk through each:
@@ -281,7 +281,7 @@ Addy Osmani
 </v-click>
 
 <!--
-[T+128:00 | S5 slide 10 of 14 | 1.5min]
+[T+128:00 | S5 slide 10 of 15 | 1.5min]
 Source: Paul Graham (x.com/paulg/status/2022604692178522562)
 Source: Addy Osmani + Boris Cherny (x.com/addyosmani/status/2022822356050399673)
 
@@ -303,7 +303,7 @@ layout: statement
 # Most products don't die from missing features. They die from accumulation.
 
 <!--
-[T+128:45 | S5 slide 11 of 14 | 1min]
+[T+128:45 | S5 slide 11 of 15 | 1min]
 Source: On Subtraction (x.com/ryolu_/status/2015824853121477198)
 
 The full argument: adding is easy. Someone asks for a feature, you build it. User hits a bug, you patch it. Repeat until you have 50 buttons and no one knows where to start.
@@ -316,7 +316,38 @@ This is the skill AI makes harder, not easier. AI can build anything you ask for
 
 For all roles: think about the last feature your team shipped that made the product worse by existing. That's what subtraction prevents.
 
-Bridge: "And when you're orchestrating multiple agents, the coordination challenge is its own form of systems thinking."
+Bridge: "That subtraction instinct — let's make it concrete for product leaders."
+-->
+
+---
+layout: statement
+---
+
+# PMs don't just ship features. They kill them.
+
+<v-click>
+
+Shipping isn't the job. Shipping the right product is.
+
+</v-click>
+<v-click>
+
+A great PM doesn't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
+
+</v-click>
+
+<!--
+[T+129:15 | S5 slide 12 of 15 | 1min]
+
+No attribution — this is synthesis, not a quote.
+
+Every product leader in the room needs to hear this. The PM who can articulate intent, prototype fast, and ship with agents still has to answer the question that always separated good PMs from great ones: what should not exist?
+
+When building is cheap, "yes" gets easier. The conviction to say no — to kill the feature that took three sprints, to cut the scope that everyone loves — does not get cheaper. It gets more important.
+
+The sentence to land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
+
+Bridge: "And when you're orchestrating multiple agents, that coordination challenge is its own form of systems thinking."
 -->
 
 ---
@@ -328,7 +359,7 @@ layout: quote
 Pirouette B
 
 <!--
-[T+129:45 | S5 slide 12 of 14 | 1min]
+[T+130:45 | S5 slide 13 of 15 | 1min]
 Source: Coordination is Quietly Becoming the Hardest Engineering Problem (x.com/PirouneB/status/2022783395139318007)
 
 When you have multiple agents working in parallel, someone has to version the prompts, manage shared state, handle failure cascading, and decide which agent gets which context window.
@@ -375,7 +406,7 @@ layout: two-cols-header
 </v-click>
 
 <!--
-[T+131:15 | S5 slide 13 of 14 | 2min]
+[T+132:15 | S5 slide 14 of 15 | 2min]
 Synthesis of the section's argument. Both columns should feel honest — not dismissive of the left, not utopian about the right.
 
 The left column isn't "worthless" — it's "less scarce." These skills still matter. They're just no longer the bottleneck.
@@ -401,7 +432,7 @@ class: text-center
 # What does "taste" mean in your product?
 
 <!--
-[T+138:00 | S5 slide 14 of 14 | 8min DISCUSSION]
+[T+139:00 | S5 slide 15 of 15 | 8min DISCUSSION]
 DISCUSSION PROMPT — pause here for 5-7 minutes.
 ABORT POINT: If running 10+ minutes over, shorten to 3 minutes focusing on the "taste" question only, then move directly to S6.
 
