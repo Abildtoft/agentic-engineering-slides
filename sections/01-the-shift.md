@@ -5,7 +5,7 @@ transition: section-shift
 
 # The Shift Is Here
 
-Yes, we've heard this before. Something changed.
+Yes, you've heard this before. But something's changed.
 
 <!--
 [T+01:00 | S1 slide 1 of 9 | 0.5min]
@@ -26,11 +26,6 @@ It wasn't one model release — it was the convergence of **models good enough**
 <v-click>
 
 **December 2025** — Anthropic, Google, and OpenAI all shipped major updates in a single 30-day window
-
-</v-click>
-<v-click>
-
-**SWE-bench scores** — real-world GitHub issue resolution: ~38% (mid-2024) → 49% (Oct 2024) → 73%+ (2025)
 
 </v-click>
 <v-click>
@@ -57,16 +52,15 @@ Source: RedMonk, shift from "AI Code Assistants" to "Agentic IDEs" (redmonk.com/
 
 Walk through each reveal. The cumulative effect is the point — no single data point proves "inflection," but together they do.
 - December 2025: not one company, three. Anthropic, Google, OpenAI all shipped within 30 days of each other. Claude Code launched as CLI in February 2025, Cursor shipped agentic editing, OpenAI launched Codex, Google launched Antigravity.
-- SWE-bench: the industry's standard benchmark for real-world GitHub issue resolution. The jump from 38% to 73% happened in roughly a year.
 - The vocabulary shift (RedMonk): when analysts stop calling something an "assistant" and start calling it an "agent," the framing has moved from tool to collaborator.
 - Close with the skeptics line. Let it land.
 -->
 
 ---
-layout: quote
----
 
-# "You have to transport yourself to the current moment. It's not Sonnet 3.5 anymore. The new models are just completely, completely different."
+## layout: quote
+
+# "You have to transport yourself to the current moment. It's not Sonnet 3.5 anymore. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
 
 Boris Cherny, Head of Claude Code
 
@@ -81,8 +75,8 @@ Your mental model of what AI can do is probably already outdated.
 -->
 
 ---
-layout: fact
----
+
+## layout: fact
 
 # 4%
 
@@ -135,8 +129,8 @@ The Anthropic/OpenAI stat is the extreme case — frontier teams are fully dogfo
 -->
 
 ---
-layout: quote
----
+
+## layout: quote
 
 # "The entire history of software engineering is one of rising levels of abstraction"
 
@@ -153,8 +147,8 @@ Grace Hopper faced the same skepticism when she introduced the compiler: "real p
 -->
 
 ---
-layout: statement
----
+
+## layout: statement
 
 # The future of software engineering isn't syntax — it's turning ambiguity into clarity
 
@@ -169,8 +163,8 @@ Transition: but here's the thing — this shift isn't happening at a normal pace
 -->
 
 ---
-layout: quote
----
+
+## layout: quote
 
 # "By summer 2026, people working with frontier AI will feel like they live in a parallel world"
 
@@ -187,8 +181,10 @@ Don't answer yet — let me ask a simpler question first.
 -->
 
 ---
+
 layout: center
 class: text-center
+
 ---
 
 # Has your day-to-day actually changed in the last six months?

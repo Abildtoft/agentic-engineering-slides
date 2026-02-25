@@ -8,7 +8,7 @@ transition: section-shift
 Skills, MCP, and guardrails — reusable building blocks for agentic workflows
 
 <!--
-[T+53:00 | S3b slide 1 of 13 | 0.5min]
+[T+53:00 | S3b slide 1 of 14 | 0.5min]
 Transition from Section 3a: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them."
 
 Introduce the framing: "I'll use one concrete plugin as an example, but the point is the pattern. The same approach works with any toolchain."
@@ -17,6 +17,48 @@ Introduce the framing: "I'll use one concrete plugin as an example, but the poin
 
 Frame: we'll start with a design philosophy (LLMs are stochastic — design for iteration), then three building blocks: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks and tests).
 This part stays practical and concrete — the demos carry the weight.
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Quick Room Check
+
+<v-click>
+
+First pass: raise your hand if you've heard the term.
+
+</v-click>
+
+<v-clicks>
+
+- `MCP`
+- `Skills`
+- `Claude Code / Codex / OpenCode`
+- `Hooks`
+- `Agent swarms` (multi-agent workflows)
+
+</v-clicks>
+
+<v-click>
+
+Second pass: keep your hand up if you've used at least one in real work.
+
+</v-click>
+
+<!--
+[T+53:30 | S3b slide 2 of 14 | 1min]
+Fast calibration before definitions.
+Run this as two quick passes:
+1) "You've heard the term."
+2) "You've used it in real work."
+
+Use what you see to set depth:
+- Mostly new to terms: define each term in one sentence and slow the demos slightly.
+- Mixed familiarity: keep defaults and anchor with analogies.
+- Highly familiar room: move faster and spend more time on composition patterns in Section 3c.
 -->
 
 ---
@@ -53,7 +95,7 @@ Implements PR lifecycle, code quality, structured implementation, and review aut
 </v-click>
 
 <!--
-[T+54:00 | S3b slide 2 of 13 | 1.5min]
+[T+54:00 | S3b slide 3 of 14 | 1.5min]
 This is the "meet the tool" slide. Everything in S3b and S3c will reference this plugin — introduce it properly here so the audience has a frame.
 
 kramme-cc-workflow is a real, open-source Claude Code plugin I built and use daily. It packages workflow automation into three component types:
@@ -101,7 +143,7 @@ The engineers getting the most from AI stopped crafting the perfect prompt. They
 </v-click>
 
 <!--
-[T+55:30 | S3b slide 3 of 13 | 2min]
+[T+55:30 | S3b slide 4 of 14 | 2min]
 This is the design philosophy that explains why the building blocks exist.
 
 LLMs are fundamentally stochastic: the same prompt can produce different results every time. This isn't a flaw — it's a feature of how the models work. But it means the "oneshot" mindset — get it right the first time — is the wrong optimization target.
@@ -131,7 +173,7 @@ Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries**
 </v-click>
 
 <!--
-[T+56:15 | S3b slide 4 of 13 | 1.5min]
+[T+56:15 | S3b slide 5 of 14 | 1.5min]
 Connect directly to the previous slide: if LLMs are stochastic and we're designing for iteration, guardrails are what make that iteration loop viable. Without guardrails, every agent attempt needs a human looking over its shoulder. With guardrails, the agent can try, fail, learn from the failure signal, and retry — all autonomously.
 The word "guardrails" is intuitive for the non-dev audience. Everyone understands highway guardrails — they don't steer the car, but they prevent the car from going off a cliff.
 Key insight: guardrails are not about distrust. They're about design. You put guardrails on a highway not because drivers are bad, but because the system should be safe by default.
@@ -159,7 +201,7 @@ Connect forward: "That's the philosophy. Now let me show you the building blocks
 </v-click>
 
 <!--
-[T+57:30 | S3b slide 5 of 13 | 2min]
+[T+57:30 | S3b slide 6 of 14 | 2min]
 Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
 For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
 Walk through a few categories briefly: /commit (writes commit messages following project conventions), /pr-review (runs a multi-agent code review), /siw-implement (picks up a spec issue and implements it end-to-end), /verify (runs tests, linting, type checking for affected code).
@@ -178,7 +220,7 @@ For product/UX: you could write a skill for design review, accessibility checks,
 3. Show the output — the agent followed the recipe
 
 <!--
-[T+59:00 | S3b slide 6 of 13 | 2.5min DEMO]
+[T+59:00 | S3b slide 7 of 14 | 2.5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
@@ -198,7 +240,7 @@ layout: quote
 Laura Tacho, via Martin Fowler
 
 <!--
-[T+60:15 | S3b slide 7 of 13 | 1.5min]
+[T+60:15 | S3b slide 8 of 14 | 1.5min]
 Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 
 This bridges from Skills to the guardrail mechanisms and MCP.
@@ -233,7 +275,7 @@ Tests are executable specifications. They don't just catch bugs — they tell th
 </v-click>
 
 <!--
-[T+61:00 | S3b slide 8 of 13 | 1.5min]
+[T+61:00 | S3b slide 9 of 14 | 1.5min]
 Tests are the guardrail mechanism every developer already uses. Frame this as familiar ground before introducing MCP and hooks.
 The key reframe from the stochastic slide: tests aren't just quality assurance — they're the feedback signal that drives the iteration loop. A failing test isn't a problem. It's information the agent uses to self-correct.
 Unit tests: the agent writes a function, runs the test, sees it fail, fixes it. This is the tightest feedback loop — seconds, not minutes. This is why stochastic output doesn't matter — the agent converges on correctness through rapid iteration.
@@ -263,7 +305,7 @@ Real examples: Linear (project management), browser automation, database queries
 </v-click>
 
 <!--
-[T+62:30 | S3b slide 9 of 13 | 2min]
+[T+62:30 | S3b slide 10 of 14 | 2min]
 Source: Entire announcement (entire.io/blog/hello-entire-world)
 "Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously." MCP is the protocol that enables this interoperability.
 
@@ -303,7 +345,7 @@ Type and behavior are separate dimensions.
 </v-click>
 
 <!--
-[T+64:30 | S3b slide 10 of 13 | 2min]
+[T+64:30 | S3b slide 11 of 14 | 2min]
 Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 "Carefully design validation/verification loops. Creating ways for AI to validate its own work allows it to run more autonomously with less input from you."
 
@@ -331,7 +373,7 @@ layout: statement
 # You don't make agents trustworthy by watching them. You make them trustworthy by designing the system they operate in.
 
 <!--
-[T+66:30 | S3b slide 11 of 13 | 1min]
+[T+66:30 | S3b slide 12 of 14 | 1min]
 Source: Monarch's Philosophy — "design that system (you + AI), figuring out your role in it, since you will ultimately own the output."
 
 This distills the entire section's thesis. Skills give agents capabilities. Tests give agents feedback. MCP gives agents reach. Hooks give agents constraints. Together, they form a system you can trust to operate autonomously.
@@ -351,7 +393,7 @@ Transition: "Let me show you MCP and Hooks working together."
 3. Hook surfacing results — Stop hook showing PR link on completion
 
 <!--
-[T+67:30 | S3b slide 12 of 13 | 3.5min DEMO]
+[T+67:30 | S3b slide 13 of 14 | 3.5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Part 1 — MCP (~1.5 min):
@@ -378,7 +420,7 @@ class: text-center
 # Which of these three — skills, MCP, or hooks — would fit into your current workflow with the least friction?
 
 <!--
-[T+68:00 | S3b slide 13 of 13 | 3min DISCUSSION]
+[T+68:00 | S3b slide 14 of 14 | 3min DISCUSSION]
 DISCUSSION PROMPT — pause here for 2-4 minutes. This breaks the long stretch between S3a and S3c discussions.
 
 This is a practical, low-stakes question. Everyone should be able to answer it.
