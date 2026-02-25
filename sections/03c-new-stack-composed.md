@@ -8,7 +8,9 @@ transition: section-shift
 Harnesses, verification loops, and multi-agent teams
 
 <!--
-[T+70:45 | S3c slide 1 of 9 | 0.5min]
+[T+75:45 | S3c slide 1 of 8 | 0.5min]
+NOTE: The audience has just returned from a 5-minute break. Energy should be reset.
+
 Transition from Section 3b: "You've seen the three building blocks — skills for capabilities, MCP for integration, hooks for safety. Now: what happens when you compose them into systems that work autonomously?"
 Section 3c covers three levels of composition: a single verification loop (harness), specialized agents working in parallel, and full multi-agent teams. Each adds power — and coordination complexity.
 -->
@@ -34,7 +36,7 @@ The human defines the spec and owns verification. The agent executes and self-ch
 </v-click>
 
 <!--
-[T+72:30 | S3c slide 2 of 9 | 2min]
+[T+72:30 | S3c slide 2 of 8 | 2min]
 Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 "Creating ways for AI to validate its own work allows it to run more autonomously with less input from you."
 
@@ -56,7 +58,7 @@ layout: quote
 Monarch Engineering
 
 <!--
-[T+73:15 | S3c slide 3 of 9 | 1min]
+[T+73:15 | S3c slide 3 of 8 | 1min]
 Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 
 This captures the core insight of the harness pattern. Autonomy isn't granted — it's earned through verification loops. The human decides where to be involved: reviewing the plan, reviewing the output, or both. The agent handles everything in between.
@@ -86,7 +88,7 @@ One PR, twenty perspectives. Each agent knows only its domain and reviews only t
 </v-click>
 
 <!--
-[T+75:00 | S3c slide 4 of 9 | 2min]
+[T+75:00 | S3c slide 4 of 8 | 2min]
 Source: Entire announcement (entire.io/blog/hello-entire-world)
 "Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously."
 
@@ -118,9 +120,8 @@ Orchestration layer handles shared state, failure cascading, and context allocat
 </v-click>
 
 <!--
-[T+76:30 | S3c slide 5 of 9 | 2min]
-Source: Coordination is Quietly Becoming the Hardest Engineering Problem (x.com/PirouneB)
-"Coordination is quietly becoming the hardest engineering problem. When you have multiple agents working in parallel, someone has to version the prompts, manage shared state, handle failure cascading, and decide which agent gets which context window. That orchestration layer needs the same rigor as any distributed system... except the components are nondeterministic."
+[T+76:30 | S3c slide 5 of 8 | 2min]
+Source: Coordination is Quietly Becoming the Hardest Engineering Problem (x.com/PirouneB) — the orchestration challenge is explored in depth on S5's Pirouette B quote slide.
 
 Source: Entire announcement (entire.io/blog/hello-entire-world)
 "The terminal is becoming the new center of gravity, as developers prompt fleets of agents across multiple terminal windows at once."
@@ -143,7 +144,7 @@ Transition: let me show you the full composed system in action.
 3. Team-based execution — parallel agents working a task list
 
 <!--
-[T+82:30 | S3c slide 6 of 9 | 5min DEMO]
+[T+82:30 | S3c slide 6 of 8 | 5min DEMO]
 DEMO SLIDE — do not present this text, use it as a guide.
 
 Part 1 — SIW harness (~2 min):
@@ -166,38 +167,7 @@ Part 3 — Team execution (~1 min):
 Total: ~4-6 minutes. This is the centerpiece demo of Section 3 — it brings together everything from concepts, tools, and composed systems.
 FALLBACK: If the live demo fails, walk through the SIW files statically (siw/PRESENTATION_PLAN.md, an issue file, the resulting section file). For multi-agent review, show the agent markdown persona files in the .agents/ directory and describe the fan-out pattern verbally. For team execution, describe the pattern over the slide bullets — the concept is clear without a live demo.
 ABORT POINT: If running 10+ minutes over at this point, skip Part 3 (team execution) and describe it verbally in 30 seconds.
-Transition: before we discuss, a few open-source starting points if you want to try this yourself.
--->
-
----
-
-# Starting Points
-
-<v-click>
-
-**Superpowers** — Design-first agentic skills framework. Composable skill library with autonomous planning and execution.
-
-</v-click>
-<v-click>
-
-**GET SHIT DONE** — Phase-based meta-prompting with XML-structured tasks and multi-agent orchestration.
-
-</v-click>
-<v-click>
-
-**Compound Engineering Plugin** — Claude Code plugin with /plan, /work, /review commands. 80% planning, 20% execution.
-
-</v-click>
-
-<!--
-[T+83:45 | S3c slide 7 of 9 | 1.5min]
-These three open-source repos each take a different angle on the composed systems we just demonstrated:
-- Superpowers (obra/Jesse): skills-first. Composable skill library with TDD, debugging, code review, and autonomous planning. Closest to the "specialized agents" pattern. github.com/obra/superpowers
-- GET SHIT DONE (TÂCHES): process-first. Enforces strict phases (init → discuss → research → plan → execute → test) with XML task definitions. Closest to the "harness" pattern. github.com/gsd-build/get-shit-done
-- Compound Engineering Plugin (EveryInc): lightest-touch. Plugs into Claude Code with opinionated commands. Core insight is the 80/20 planning-to-execution split. Closest to a starter harness. github.com/EveryInc/compound-engineering-plugin
-
-All three are open-source and actively maintained. Links will be in the shared slides.
-You don't have to build from scratch. Pick the one whose philosophy matches yours and adapt it.
+Transition: let's discuss before we wrap up this section.
 -->
 
 ---
@@ -210,7 +180,7 @@ class: text-center
 What would you try first?
 
 <!--
-[T+85:45 | S3c slide 8 of 9 | 4min DISCUSSION]
+[T+85:45 | S3c slide 7 of 8 | 4min DISCUSSION]
 DISCUSSION PROMPT — pause here for 3-5 minutes. This closes all of Section 3 (concepts, tools, composed systems).
 
 The dual prompt is deliberate: "most relevant" invites reflection on current needs; "try first" invites commitment to action.
@@ -220,5 +190,7 @@ Prompt follow-ups:
 - "For product/UX: which of these patterns would change how you work with your dev team?"
 - "What feels achievable in the next month? What feels like a six-month investment?"
 Listen for: practical ideas about what to try, questions about team adoption, and — critically — concerns about complexity. The complexity concerns are the bridge.
+CLOCK CHECK: Target time is T+90:00. If you're at T+100:00 or later, compress remaining discussions (S4, S5) to 3 minutes each and skip Part 3 of the S3c demo if you haven't already. That recovers ~10 minutes.
+
 Bridge to Section 4: after the discussion, say: "You may have noticed something in that last section. Each layer we added — from a single harness to specialized agents to multi-agent teams — added power. But it also added coordination cost. More things to understand, more things that can break, more things you didn't personally write. That accumulation has a name." Transition directly to Section 4: Cognitive Debt.
 -->

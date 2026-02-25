@@ -8,7 +8,7 @@ transition: section-shift
 You were always the bottleneck. Here's what to do about it.
 
 <!--
-[T+138:30 | S6 slide 1 of 10 | 0.5min]
+[T+138:30 | S6 slide 1 of 11 | 0.5min]
 Transition from Section 5: "We've mapped the risk and named what matters. Now: what do you actually do about it?"
 
 The audience has been through 2+ hours of diagnosis. S1 named the shift. S2 named the compression. S3 gave them tools. S4 named the hidden cost. S5 named the structural risk and the skills that survive.
@@ -29,10 +29,12 @@ layout: quote
 Armin Ronacher
 
 <!--
-[T+139:45 | S6 slide 2 of 10 | 1.5min]
+[T+139:45 | S6 slide 2 of 11 | 1.5min]
 Source: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
 
 Ronacher created Flask — one of the most widely used Python frameworks in the world. He's not someone who fears technology. He's someone who builds it.
+
+Callback: the word "bottleneck" has appeared throughout this talk — the middle of the software pipeline (S2), coherence (S4), judgment and taste (S5). Each time it pointed somewhere different. Now Ronacher points it at the person in the mirror. That's the reframe: the bottleneck was never the code, the tools, or the process. It was always you.
 
 His argument: AI didn't create a new bottleneck — it revealed the one that was always there. The human who carries responsibility for what ships is the constraint. That was true before AI. It's still true now. "The machine did not really change that."
 
@@ -64,7 +66,7 @@ Every time a bottleneck is removed, the constraint moves upstream — **not away
 </v-click>
 
 <!--
-[T+141:15 | S6 slide 3 of 10 | 2min]
+[T+141:15 | S6 slide 3 of 11 | 2min]
 Source: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
 
 Walk through each reveal:
@@ -86,6 +88,12 @@ layout: statement
 
 # The bottleneck isn't technology, it's expert knowledge extraction.
 
+<!--
+[T+142:30 | S6 slide 4 of 11 | 0.5min]
+Let this statement land. It connects Ronacher's bottleneck cascade to the organizational reality: the constraint isn't the tools, it's getting the knowledge out of expert heads and into systems (specs, context, documentation) that agents can use.
+Bridge: "One company has articulated what this means as a value."
+-->
+
 ---
 layout: quote
 ---
@@ -101,7 +109,7 @@ Oxide Computer Company
 </v-click>
 
 <!--
-[T+142:30 | S6 slide 4 of 10 | 1.5min]
+[T+143:00 | S6 slide 5 of 11 | 1.5min]
 Source: Oxide Computer Company, "Using LLMs at Oxide" (rfd.shared.oxide.computer/rfd/0576)
 
 Oxide builds server hardware — they make things that have to work, in datacenters, under real loads, for real customers. Software failures there have physical consequences.
@@ -153,7 +161,7 @@ layout: two-cols-header
 </v-click>
 
 <!--
-[T+144:15 | S6 slide 5 of 10 | 2min]
+[T+144:30 | S6 slide 6 of 11 | 2min]
 Source: "The Next Two Years of Software Engineering" (sources/next-two-years-of-software-engineering.md)
 
 Two audiences, two distinct challenges — and the two-cols layout makes the duality visible.
@@ -190,7 +198,7 @@ Bridge: "Let me show you what that human role actually looks like in practice."
 </v-click>
 
 <!--
-[T+147:15 | S6 slide 6 of 10 | 3.5min DEMO]
+[T+147:15 | S6 slide 7 of 11 | 3.5min DEMO]
 DEMO PLACEHOLDER — ~3-4 minutes.
 
 This is not a new demo. It's a re-reading of the Section 3 demo through the lens of everything that followed.
@@ -228,7 +236,7 @@ Dario Amodei — The Adolescence of Technology
 </v-click>
 
 <!--
-[T+148:30 | S6 slide 7 of 10 | 1.5min]
+[T+148:30 | S6 slide 8 of 11 | 1.5min]
 Source: Dario Amodei, "The Adolescence of Technology" (darioamodei.com/essay/the-adolescence-of-technology)
 
 Amodei is the CEO of Anthropic — the company that built Claude. This is not an outsider's observation. It's the person building the most capable AI systems in the world reflecting on what they're building.
@@ -253,7 +261,7 @@ layout: statement
 # The craft evolves. It always has. But it remains craft.
 
 <!--
-[T+149:15 | S6 slide 8 of 10 | 1min]
+[T+149:15 | S6 slide 9 of 11 | 1min]
 Source: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
 This is the closing line of Osmani's essay. It was cited in S5's presenter notes but deliberately held back from appearing on a slide — this is its first direct appearance on screen.
@@ -278,7 +286,7 @@ class: text-center
 # What's one thing you'll do differently starting tomorrow?
 
 <!--
-[T+156:00 | S6 slide 9 of 10 | 6min DISCUSSION]
+[T+156:00 | S6 slide 10 of 11 | 6min DISCUSSION]
 DISCUSSION PROMPT — pause here for 6-8 minutes. This is the final prompt of the talk.
 
 Single question, not two. The dual-prompt structure was right for S2, S4, and S5 where the content had two distinct threads. Here, the single question focuses energy and creates a commitment, not an analysis.
@@ -308,6 +316,6 @@ Close the discussion by reading back a few of the most concrete answers you hear
 - [**Compound Engineering Plugin**](https://github.com/EveryInc/compound-engineering-plugin)
 
 <!--
-[T+162:00 | S6 slide 10 of 10 | 0.5min]
+[T+162:00 | S6 slide 11 of 11 | 0.5min]
 Leave this slide up as people leave. It gives them something concrete to photograph or note down.
 -->

@@ -347,7 +347,7 @@ When building is cheap, "yes" gets easier. The conviction to say no — to kill 
 
 The sentence to land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
 
-Bridge: "And when you're orchestrating multiple agents, that coordination challenge is its own form of systems thinking."
+Bridge — make the audience split explicit: "That's what matters for product people: taste, subtraction, the courage to say no. For engineers, the challenge looks different — it's about coordination."
 -->
 
 ---
@@ -362,6 +362,8 @@ Pirouette B
 [T+130:45 | S5 slide 13 of 15 | 1min]
 Source: Coordination is Quietly Becoming the Hardest Engineering Problem (x.com/PirouneB/status/2022783395139318007)
 
+This is the engineering counterpart to the product slides we just saw. Product people need taste and subtraction. Engineers need systems thinking and coordination.
+
 When you have multiple agents working in parallel, someone has to version the prompts, manage shared state, handle failure cascading, and decide which agent gets which context window.
 
 This is systems thinking applied to a new domain. The principles of distributed systems — eventual consistency, failure isolation, coordination protocols — apply directly. But the components are nondeterministic, which makes it harder.
@@ -370,7 +372,7 @@ Connect to Section 3: the composed systems we described (harnesses, multi-agent 
 
 For the room: this is why "everyone becomes a manager" (Fournier, slide 5) is not just a metaphor. Managing nondeterministic agents requires the same skills as managing nondeterministic humans — but without the social shortcuts.
 
-Bridge: "So let's name what we're saying clearly."
+Bridge: "So let's name what we're saying — for both audiences — clearly."
 -->
 
 ---
@@ -449,6 +451,8 @@ For the taste question, follow-ups:
 - "What would subtraction look like in your current sprint?"
 
 What to listen for: concrete examples of junior development challenges, recognition that taste is hard to define, anxiety about the pipeline problem from managers, energy from ICs about the "what matters" list.
+
+CLOCK CHECK: Target time is T+147:00. If you're at T+155:00 or later, you have ~7 minutes for all of S6. Drop the S6 demo entirely, compress the closing discussion to 2 minutes, and deliver the final statement directly.
 
 We've been saying "constraint" in different ways throughout this talk. In the next section, I want to flip the framing — because being the constraint isn't the problem. It's the point.
 

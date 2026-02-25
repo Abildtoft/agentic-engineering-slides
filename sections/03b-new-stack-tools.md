@@ -13,9 +13,9 @@ Transition from Section 3a: "You've seen the concepts — context engineering an
 
 Introduce the framing: "I'll use one concrete plugin as an example, but the point is the pattern. The same approach works with any toolchain."
 
-"We'll use that example to demonstrate all three building blocks: skills, MCP, and hooks. These are portable concepts, not tied to one vendor."
+"But before the tools themselves, I want to name something about the medium we're working in. It changes how we design."
 
-Frame briefly: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks).
+Frame: we'll start with a design philosophy (LLMs are stochastic — design for iteration), then three building blocks: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks and tests).
 This part stays practical and concrete — the demos carry the weight.
 -->
 
@@ -64,75 +64,15 @@ kramme-cc-workflow is a real, open-source Claude Code plugin I built and use dai
 It's on GitHub (Abildtoft/kramme-cc-workflow) and listed on the Resources slide at the end.
 
 The key message: this is not a proprietary product. It's a pattern. The plugin is just markdown files, shell scripts, and a JSON manifest. Anyone in this room could build their own version for their own workflow.
--->
 
----
+Other open-source starting points worth mentioning (links on the Resources slide at the end):
+- Superpowers (obra/Jesse): skills-first. Composable skill library with TDD, debugging, code review, and autonomous planning. github.com/obra/superpowers
+- GET SHIT DONE (TÂCHES): process-first. Enforces strict phases (init → discuss → research → plan → execute → test) with XML task definitions. github.com/gsd-build/get-shit-done
+- Compound Engineering Plugin (EveryInc): lightest-touch. Plugs into Claude Code with opinionated commands. 80/20 planning-to-execution split. github.com/EveryInc/compound-engineering-plugin
 
-# Skills
+You don't have to build from scratch. Pick the one whose philosophy matches yours and adapt it.
 
-<v-click>
-
-**A skill is a markdown file with instructions the agent follows on demand.**
-
-</v-click>
-<v-click>
-
-`/commit`, `/pr-review`, `/siw-implement`, `/verify` — invoke with a slash command, the agent reads the markdown and executes.
-
-</v-click>
-<v-click>
-
-**"You're not writing code. You're writing recipes."**
-
-</v-click>
-
-<!--
-[T+55:30 | S3b slide 3 of 13 | 2min]
-Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
-For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
-Walk through a few categories briefly: /commit (writes commit messages following project conventions), /pr-review (runs a multi-agent code review), /siw-implement (picks up a spec issue and implements it end-to-end), /verify (runs tests, linting, type checking for affected code).
-Key insight: skills are composable, version-controlled, and human-readable. No black boxes. You can open the file, read the instructions, and understand exactly what the agent will do.
-For product/UX: you could write a skill for design review, accessibility checks, or copy editing. The format is the same — markdown instructions.
--->
-
----
-
-# Demo: Skills
-
-**What to show:**
-
-1. Open a skill file — show it's just markdown with instructions
-2. Invoke the skill with `/skill-name` — show the agent reading and executing it
-3. Show the output — the agent followed the recipe
-
-<!--
-[T+57:00 | S3b slide 4 of 13 | 2.5min DEMO]
-DEMO SLIDE — do not present this text, use it as a guide.
-
-Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
-Open the markdown file first. Let them see it's readable English, not code. "This is the entire skill. There's no binary, no API, no SDK. It's instructions."
-Then invoke it. Show the agent reading the file and following the steps.
-Time: ~2-3 minutes. Keep it tight. The point is: skills are simple, transparent, and powerful.
-FALLBACK: If the live invocation fails, open the skill markdown file in your editor and walk through its instructions as a static example. The file IS the skill — showing it is enough to make the point.
-Transition: "Skills give agents capabilities. But what if the agent needs to reach beyond the codebase — talk to Linear, query a database, control a browser?"
--->
-
----
-layout: quote
----
-
-# "The Venn Diagram of Developer Experience and Agent Experience is a circle"
-
-Laura Tacho, via Martin Fowler
-
-<!--
-[T+58:15 | S3b slide 5 of 13 | 1.5min]
-Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
-
-This bridges from Skills to the next two tools — MCP and Hooks.
-The point: the same tooling that makes developers productive makes agents productive. MCP is the plumbing that connects agents to your existing tools. Hooks are the guardrails that keep them safe.
-For the mixed audience: everything you invest in developer experience — smooth tooling, clear APIs, good documentation — now pays double. Your human team AND your agents benefit.
-Fowler also notes the sad irony: some organizations are investing in agent documentation that they never invested in for human developers. Same docs, different motivation.
+Transition: "Before we dive into the building blocks, I want to name something about the medium we're working in."
 -->
 
 ---
@@ -161,12 +101,12 @@ The engineers getting the most from AI stopped crafting the perfect prompt. They
 </v-click>
 
 <!--
-[T+59:00 | S3b slide 6 of 13 | 2min]
-This is the conceptual bridge to guardrails.
+[T+55:30 | S3b slide 3 of 13 | 2min]
+This is the design philosophy that explains why the building blocks exist.
 
 LLMs are fundamentally stochastic: the same prompt can produce different results every time. This isn't a flaw — it's a feature of how the models work. But it means the "oneshot" mindset — get it right the first time — is the wrong optimization target.
 The engineers getting the best results have shifted from "write the perfect prompt" to "build infrastructure for fast iteration." Generate, evaluate, refine, repeat. Each cycle takes seconds, not hours.
-This is why guardrails matter so much. Tests, hooks, verification loops — they're not just safety nets. They're the infrastructure that makes rapid iteration efficient. You can let the agent try, fail, and retry because the guardrails catch mistakes automatically.
+This is why the tools we're about to see matter. Tests, hooks, verification loops — they're not just safety nets. They're the infrastructure that makes rapid iteration efficient. You can let the agent try, fail, and retry because the guardrails catch mistakes automatically.
 The shift: from "write it once, correctly" to "converge on correctness through fast feedback loops."
 -->
 
@@ -191,11 +131,80 @@ Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries**
 </v-click>
 
 <!--
-[T+59:30 | S3b slide 7 of 13 | 1.5min]
+[T+56:15 | S3b slide 4 of 13 | 1.5min]
 Connect directly to the previous slide: if LLMs are stochastic and we're designing for iteration, guardrails are what make that iteration loop viable. Without guardrails, every agent attempt needs a human looking over its shoulder. With guardrails, the agent can try, fail, learn from the failure signal, and retry — all autonomously.
 The word "guardrails" is intuitive for the non-dev audience. Everyone understands highway guardrails — they don't steer the car, but they prevent the car from going off a cliff.
 Key insight: guardrails are not about distrust. They're about design. You put guardrails on a highway not because drivers are bad, but because the system should be safe by default.
-Connect forward: "Let me show you three guardrail mechanisms — starting with the one you already know: tests."
+Connect forward: "That's the philosophy. Now let me show you the building blocks — starting with skills."
+-->
+
+---
+
+# Skills
+
+<v-click>
+
+**A skill is a markdown file with instructions the agent follows on demand.**
+
+</v-click>
+<v-click>
+
+`/commit`, `/pr-review`, `/siw-implement`, `/verify` — invoke with a slash command, the agent reads the markdown and executes.
+
+</v-click>
+<v-click>
+
+**"You're not writing code. You're writing recipes."**
+
+</v-click>
+
+<!--
+[T+57:30 | S3b slide 5 of 13 | 2min]
+Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
+For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
+Walk through a few categories briefly: /commit (writes commit messages following project conventions), /pr-review (runs a multi-agent code review), /siw-implement (picks up a spec issue and implements it end-to-end), /verify (runs tests, linting, type checking for affected code).
+Key insight: skills are composable, version-controlled, and human-readable. No black boxes. You can open the file, read the instructions, and understand exactly what the agent will do.
+For product/UX: you could write a skill for design review, accessibility checks, or copy editing. The format is the same — markdown instructions.
+-->
+
+---
+
+# Demo: Skills
+
+**What to show:**
+
+1. Open a skill file — show it's just markdown with instructions
+2. Invoke the skill with `/skill-name` — show the agent reading and executing it
+3. Show the output — the agent followed the recipe
+
+<!--
+[T+59:00 | S3b slide 6 of 13 | 2.5min DEMO]
+DEMO SLIDE — do not present this text, use it as a guide.
+
+Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
+Open the markdown file first. Let them see it's readable English, not code. "This is the entire skill. There's no binary, no API, no SDK. It's instructions."
+Then invoke it. Show the agent reading the file and following the steps.
+Time: ~2-3 minutes. Keep it tight. The point is: skills are simple, transparent, and powerful.
+FALLBACK: If the live invocation fails, open the skill markdown file in your editor and walk through its instructions as a static example. The file IS the skill — showing it is enough to make the point.
+Transition: "Skills give agents capabilities. Now let's look at the guardrail mechanisms that keep them safe — and the plumbing that lets them reach beyond the codebase."
+-->
+
+---
+layout: quote
+---
+
+# "The Venn Diagram of Developer Experience and Agent Experience is a circle"
+
+Laura Tacho, via Martin Fowler
+
+<!--
+[T+60:15 | S3b slide 7 of 13 | 1.5min]
+Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
+
+This bridges from Skills to the guardrail mechanisms and MCP.
+The point: the same tooling that makes developers productive makes agents productive. Tests verify correctness. MCP connects agents to your existing tools. Hooks enforce safety.
+For the mixed audience: everything you invest in developer experience — smooth tooling, clear APIs, good documentation — now pays double. Your human team AND your agents benefit.
+Fowler also notes the sad irony: some organizations are investing in agent documentation that they never invested in for human developers. Same docs, different motivation.
 -->
 
 ---
@@ -378,5 +387,10 @@ Prompt follow-ups:
 - "For product/UX: could you imagine writing a skill — a markdown playbook — for design review or copy editing?"
 - "What external tools would you most want an agent to connect to via MCP?"
 Listen for: practical ideas, existing workflows that map to these concepts, and comfort level with each tool.
-Transition to Section 3c: "You've now seen three building blocks: skills for capabilities, MCP for integration, hooks for safety. Next: what happens when you compose them into larger systems — harnesses, verification loops, and multi-agent teams."
+
+BREAK: After the discussion winds down, announce a 5-minute break. "We're about halfway through. Let's take five minutes — stretch, refill your coffee. When we come back, we'll see what happens when you compose these building blocks into larger systems."
+
+This is the ~70-minute mark. Attention naturally drops here. The break resets energy before S3c and — crucially — before the S4 emotional pivot, which needs the audience alert.
+
+After the break, transition to Section 3c: "You've now seen three building blocks: skills for capabilities, MCP for integration, hooks for safety. Next: what happens when you compose them into larger systems — harnesses, verification loops, and multi-agent teams."
 -->

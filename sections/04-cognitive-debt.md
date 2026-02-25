@@ -99,7 +99,7 @@ If Willison — who understands these tools better than almost anyone — experi
 -->
 
 ---
-layout: fact
+layout: statement
 ---
 
 # Velocity without understanding is not sustainable.
@@ -366,6 +366,8 @@ FACILITATION: This discussion carries professional risk — people admitting "I 
 2. Frame as observational, not confessional: "You don't need to share specifics — I'm curious about patterns you recognize."
 3. Consider 2 minutes in pairs before full-room discussion (reduces exposure).
 Listen for: vulnerability, recognition, stories of their own cognitive debt experiences.
+
+CLOCK CHECK: Target time is T+121:30. If you're at T+130:00 or later, you have ~32 minutes for S5 + S6. Compress the S5 discussion to 3 minutes (taste question only) and trim the S6 demo to verbal walkthrough. That keeps the closing on time.
 
 This discussion bridges directly to Section 5. After it winds down: "Everything we just named — the spirals, the patterns, the lost understanding — they all point to the same question: what skills actually matter when AI can write the code? That's where we're going next."
 -->
