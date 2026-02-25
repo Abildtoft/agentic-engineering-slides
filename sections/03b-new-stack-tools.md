@@ -270,22 +270,26 @@ Key insight: MCP turns the agent from "a thing that writes code" into "a thing t
 
 <v-click>
 
-**Hooks allow you to add context, validate actions, enforce policies, loop the agent to continue to iterate, and more.**
+**Hook type tells you when it runs (lifecycle), not what policy it enforces.**
 
 </v-click>
 <v-click>
 
-**PreToolUse** — validate actions and enforce policies before execution.
+**Types (when):**
+`PreToolUse` = before a tool runs
+`PostToolUse` = after a tool runs
+`Stop` = when the agent is about to hand back control
 
 </v-click>
 <v-click>
 
-**PostToolUse** — add context and feedback after each edit.
+**Examples (what):**
+Block destructive commands, auto-format edits, or surface PR/issue links.
 
 </v-click>
 <v-click>
 
-**Stop** — loop the agent with the right next context to continue iterating.
+Type and behavior are separate dimensions.
 
 </v-click>
 
@@ -296,7 +300,11 @@ Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-b
 
 These are real hooks from a production workflow plugin — concrete examples of the pattern.
 
-Walk through the three types:
+Walk through the distinction first:
+- Hook type = when it runs (PreToolUse, PostToolUse, Stop).
+- Hook behavior = what it does (block commands, format/lint, add links/context).
+
+Then map one example per type:
 - PreToolUse: blocks risky operations and commands that strand the agent in interactive editors.
 - PostToolUse: auto-formats and runs lightweight quality checks after edits.
 - Stop: surfaces relevant issue/PR links and next actions at handoff.
