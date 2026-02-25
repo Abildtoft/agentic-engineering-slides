@@ -58,7 +58,9 @@ Walk through each reveal. The cumulative effect is the point — no single data 
 
 ---
 
-## layout: quote
+layout: quote
+
+---
 
 # "You have to transport yourself to the current moment. It's not Sonnet 3.5 anymore. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
 
@@ -76,7 +78,9 @@ Your mental model of what AI can do is probably already outdated.
 
 ---
 
-## layout: fact
+layout: fact
+
+---
 
 # 4%
 
@@ -130,7 +134,9 @@ The Anthropic/OpenAI stat is the extreme case — frontier teams are fully dogfo
 
 ---
 
-## layout: quote
+layout: quote
+
+---
 
 # "The entire history of software engineering is one of rising levels of abstraction"
 
@@ -148,7 +154,9 @@ Grace Hopper faced the same skepticism when she introduced the compiler: "real p
 
 ---
 
-## layout: statement
+layout: statement
+
+---
 
 # The future of software engineering isn't syntax — it's turning ambiguity into clarity
 
@@ -164,7 +172,9 @@ Transition: but here's the thing — this shift isn't happening at a normal pace
 
 ---
 
-## layout: quote
+layout: quote
+
+---
 
 # "By summer 2026, people working with frontier AI will feel like they live in a parallel world"
 
@@ -181,10 +191,8 @@ Don't answer yet — let me ask a simpler question first.
 -->
 
 ---
-
 layout: center
 class: text-center
-
 ---
 
 # Has your day-to-day actually changed in the last six months?
