@@ -32,18 +32,13 @@ Raise one hand if you've heard of it. Two if you've used it.
 <div class="text-left inline-block">
 <v-clicks>
 
-- `AI-driven PRD tools`
 - `AI-driven prototyping (MagicPatterns, Figma Make, Lovable, etc.)`
-- `Cursor / Antigravity`
-- `Claude Code / Codex / Gemini CLI / GitHub Copilot CLI / OpenCode`
+- `Agentic IDEs (Cursor, Windsurf, Antigravity)`
+- `Coding agents (Claude Code, Codex, Gemini CLI)`
 - `AGENTS.md / CLAUDE.md`
-- `MCP`
-- `Skills`
-- `Custom Agents`
-- `Hooks`
+- `MCP, Skills, Hooks`
 - `Spec-driven development`
-- `Agent swarms (multi-agent workflows)`
-- `Ralph Wiggum loops (if you know, you know)`
+- `Custom agents and agent swarms`
 
 </v-clicks>
 </div>

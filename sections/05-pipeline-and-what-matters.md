@@ -187,7 +187,55 @@ KEY POINTS:
 - Cheap execution increases the value of taste and prioritization
 - Land the idea that judgment became more visible, not more optional
 
-BRIDGE: "But taste isn't just about choosing what to build. It's also about what not to build."
+BRIDGE: "But taste isn't just about choosing what to build. It changes how we plan, how we validate, and what not to build."
+-->
+
+---
+layout: quote
+---
+
+<h1>"Sprints are no longer about reducing uncertainty in the face of high costs.<br />
+Today they are about deciding what to do and how to stand out<br />
+when the cost of building moves toward zero."</h1>
+
+Lenny Sanudo, creator of the Design Sprint
+
+<!--
+SOURCE: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
+
+KEY POINTS:
+- Translate the judgment thesis into planning mechanics teams already know
+- Cost-to-build assumptions inside Agile rituals are changing
+- The new constraint is selection quality, not implementation throughput
+
+DELIVERY:
+- Prompt the room to reflect on their current planning rituals
+
+BRIDGE: "And if strategy docs stay static while build speed jumps, prototypes win."
+-->
+
+---
+layout: quote
+---
+
+<h1>"The prototype is the new PRD.<br />
+If your team needs a 20-page product strategy doc,<br />
+you're already behind someone with a weekend prototype."</h1>
+
+Andrew Chen
+
+<!--
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- Make the artifact shift explicit: from document-first to experience-first
+- Clarify that strategy still matters; the medium of validation changes
+- Connect this to design, product, and engineering convergence
+
+DELIVERY:
+- Directly address product/UX people in the room
+
+BRIDGE: "But taste and speed also have a shadow side."
 -->
 
 ---

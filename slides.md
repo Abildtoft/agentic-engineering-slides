@@ -35,7 +35,7 @@ layout: statement
 - Inflection Point
 - The Disappearing Middle
 - The New Stack: Core Concepts
-- The New Stack: Tools
+- The New Stack: Tools → Harness Engineering
 - **DEMO TIME**
 
 *Right around here we will have hit peak hype.*
@@ -60,10 +60,6 @@ src: ./sections/03a-new-stack-concepts.md
 
 ---
 src: ./sections/03b-new-stack-tools.md
----
-
----
-src: ./sections/03c-new-stack-composed.md
 ---
 
 ---

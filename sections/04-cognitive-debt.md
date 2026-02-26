@@ -297,6 +297,11 @@ BRIDGE: "So what does non-hollow look like? What is the antidote?"
 **The output** — shipped, understood, owned. Document not just what changed, but **why.**
 
 </v-click>
+<v-click>
+
+**A simple test:** Can you explain every commit message you submitted this week — not just what changed, but why? If not, the debt is already accumulating.
+
+</v-click>
 
 <!--
 
@@ -311,5 +316,5 @@ KEY POINTS:
 DELIVERY:
 - THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
 
-BRIDGE: "What skills and practices actually matter?" (to Section 5)
+BRIDGE: "The antidote works — if you have competent humans in the loop. But what happens to the pipeline that produces those humans? That's what we need to talk about next."
 -->

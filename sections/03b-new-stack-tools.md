@@ -50,6 +50,19 @@ We instinctively value "oneshotting" — getting it right the first time. But op
 **Design for iteration instead:** generate → evaluate → refine → repeat.
 
 </v-click>
+
+<!--
+KEY POINTS:
+- Anchor the section with one design truth: outputs are nondeterministic
+- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
+
+BRIDGE: "So how do we make iteration productive?"
+-->
+
+---
+
+# Design the System, Not the Prompt
+
 <v-click>
 
 The engineers getting the most from AI stopped crafting the perfect prompt. They started building fast feedback loops.
@@ -68,8 +81,7 @@ You don't make agents trustworthy by watching them. You make them trustworthy by
 
 <!--
 KEY POINTS:
-- Anchor the section with one design truth: outputs are nondeterministic
-- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
+- Shift from prompt craft to system design
 - Set up guardrails as an enabler of speed, not only safety
 
 BRIDGE: "That's the design philosophy. Now: what makes iteration safe?"
@@ -92,6 +104,12 @@ My personal set of **recipes and guardrails** — tailored to how I work.
 <v-click>
 
 Inspired by open-source tools like **Superpowers**, **GET SHIT DONE**, and **Compound Engineering** — but shaped to my workflow.
+
+</v-click>
+
+<v-click>
+
+**Your workflow will look different — and should.** The numbers don't matter. The pattern does.
 
 </v-click>
 
@@ -182,35 +200,34 @@ BRIDGE: "Before external tools, we still need strong local context."
 
 ---
 
-# AGENTS.md / CLAUDE.md
+# AGENTS.md in Practice
 
 <v-click>
 
-**A markdown file at the root of your repo that tells the agent how to work here.**
+**You've seen the concept. Here's what makes it work at scale.**
 
 </v-click>
 <v-click>
 
-Project conventions, architecture decisions, build commands, test patterns — everything a new team member would need on day one.
+**Nesting** — Put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones. `src/api/AGENTS.md` can specify API patterns without repeating the global config.
 
 </v-click>
 <v-click>
 
-The same file that helps agents helps new hires. **Invest once, benefit twice.**
+**Layering** — Root file: project-wide rules. Directory files: domain-specific constraints. The agent reads all applicable layers.
 
 </v-click>
-
 <v-click>
 
-... And you can have more, nested AGENTS.md files in your repository.
+Start with one file at the root. Add directory-level files only when you see repeated mistakes.
 
 </v-click>
 
 <!--
 KEY POINTS:
-- Position this as the default starting point for most teams
-- Same artifact serves two audiences: new teammates and agents
-- Local conventions reduce variance and failure loops
+- Builds on S3a's conceptual intro — this slide is about operational patterns
+- Nesting is the key practical detail most teams miss
+- "Start with one, add when you see repeated mistakes" prevents over-engineering
 
 BRIDGE: "Once local context is stable, skills package repeatable workflows."
 -->
@@ -296,11 +313,6 @@ BRIDGE: "Let me show you which ones I use every day."
 - **Magic Patterns** — design-to-code integration
 - **Granola** — meeting notes
 
-<v-click>
-
-Nine servers, zero custom integration code. Each one is a `npm install` away.
-
-</v-click>
 
 <!--
 KEY POINTS:
@@ -485,4 +497,59 @@ KEY POINTS:
 - This is the setup for naming the discipline on the next slide
 
 BRIDGE: This leads directly into the Harness Engineering statement — the discipline of designing these systems IS the new engineering.
+-->
+
+---
+layout: statement
+---
+
+<h1>Harness Engineering</h1>
+
+<img src="/verification-loop.png" class="mx-auto h-40 mt-2 mb-2" />
+
+<v-click>
+
+Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline.**
+
+</v-click>
+<v-click>
+
+Humans remain in the loop — but at a different layer. We prioritize work, translate feedback into acceptance criteria, and validate outcomes.
+
+</v-click>
+<v-click>
+
+Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harness so it doesn't fail that way again.
+
+</v-click>
+<v-click>
+
+> "The model is the engine. The harness is the car." — **Mitchell Hashimoto**
+
+</v-click>
+
+<!--
+SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
+SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
+
+KEY POINTS:
+- Name the discipline that ties all prior concepts together
+- Treat each v-click as a recap ladder from parts to operating model
+- Emphasize failure-as-signal: improve the harness, not just the output
+- This is the conceptual peak before the live demo
+
+BRIDGE: "Now let's watch this operating model in motion."
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Demo Time
+
+<!--
+DELIVERY:
+- Quick reset slide before context switch to live workflow
+- State what the demo will prove: speed with guardrails and human accountability
 -->

@@ -171,8 +171,15 @@ KEY POINTS:
 - Three-part cadence: change is real, change is historical, craft remains
 - Reinforce continuity so the ending feels grounded, not apocalyptic
 
-BRIDGE: "Close with the wider societal question these choices now raise."
 -->
+
+---
+layout: cover
+---
+
+<img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
+
+# Thank You
 
 ---
 layout: quote
@@ -196,7 +203,7 @@ Carl Sagan, Contact — cited by Dario Amodei
 SOURCE: Dario Amodei, "The Adolescence of Technology" (darioamodei.com/essay/the-adolescence-of-technology)
 
 KEY POINTS:
-- Final slide — the question that lingers after the talk ends
+- Bonus slide — the question that lingers after the talk ends
 - Amodei is the CEO of Anthropic — not an outsider's observation, but the person building the most capable AI systems reflecting on what they're building
 - Contact framing: the question is asked by someone who found something extraordinary and is now asked "are you ready for this?"
 - "Deeply unclear" — the outcome depends on what choices are made, including by the people in this room
