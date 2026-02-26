@@ -194,6 +194,31 @@ BRIDGE: (cumulative weight carries into the Booch quote that follows)
 -->
 
 ---
+layout: quote
+---
+
+# "By summer 2026, people working with frontier AI will feel like they live in a parallel world"
+
+Jack Clark, co-founder of Anthropic
+
+<!--
+[T+08:00 | S1 slide 8 of 9 | 1min]
+
+SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
+
+KEY POINTS:
+- The AI economy moves fast relative to everything else
+- Unlike crypto, it already touches real economic activity
+- This isn't about early adopters being smug — it's a genuine divergence in capability
+- The question for this room: which side of that divide do you want to be on?
+
+DELIVERY:
+- Don't answer the question for them — let it hang
+
+BRIDGE: "Don't answer yet — let me ask a simpler question first."
+-->
+
+---
 layout: center
 class: text-center
 ---
@@ -235,29 +260,3 @@ DELIVERY:
 - Mixed familiarity: keep defaults and anchor with analogies
 - Highly familiar room: move faster and spend more time on composition patterns in Section 3c
 -->
-
----
-layout: quote
----
-
-# "By summer 2026, people working with frontier AI will feel like they live in a parallel world"
-
-Jack Clark, co-founder of Anthropic
-
-<!--
-[T+08:00 | S1 slide 8 of 9 | 1min]
-
-SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
-
-KEY POINTS:
-- The AI economy moves fast relative to everything else
-- Unlike crypto, it already touches real economic activity
-- This isn't about early adopters being smug — it's a genuine divergence in capability
-- The question for this room: which side of that divide do you want to be on?
-
-DELIVERY:
-- Don't answer the question for them — let it hang
-
-BRIDGE: "Don't answer yet — let me ask a simpler question first."
--->
-
