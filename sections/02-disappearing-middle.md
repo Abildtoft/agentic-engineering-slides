@@ -150,7 +150,7 @@ BRIDGE: (flows into the distilled statement on the next slide)
 layout: statement
 ---
 
-<h1>The time between "I know what we should build" and "here it is" collapsed.<br />
+<h1>The time between "We should build this" and "here it is" is collapsing.<br />
 But the work of knowing what to build didn't get easier.<br />
 It got more important.</h1>
 

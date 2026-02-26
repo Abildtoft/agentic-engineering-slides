@@ -3,7 +3,7 @@ layout: section
 transition: section-shift
 ---
 
-# The New Stack: Concepts
+# The New Stack: Core Concepts
 
 Context engineering, spec-driven development, and the new role of the engineer
 

@@ -8,17 +8,22 @@ layout: statement
 
 <v-click>
 
-Humans always remain in the loop, but work at a different layer of abstraction than we used to.
+Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline.**
 
 </v-click>
 <v-click>
 
-We prioritize work, translate user feedback into acceptance criteria, and validate outcomes.
+Humans remain in the loop — but at a different layer. We prioritize work, translate feedback into acceptance criteria, and validate outcomes.
 
 </v-click>
 <v-click>
 
-When the agent struggles, we treat it as a signal: identify what is missing — tools, guardrails, documentation — and feed it back into the repository and tooling.
+Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harnesss so it doesn't fail that way again.
+
+</v-click>
+<v-click>
+
+> "The model is the engine. The harness is the car." — **Mitchell Hashimoto**
 
 </v-click>
 
@@ -27,9 +32,12 @@ SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
 
 KEY POINTS:
+- This slide should LAND. Everything in S3a and S3b built to this moment — now name it.
+- The list in v-click 1 is a deliberate callback to every concept the audience just learned. Let it breathe — pause after "All one discipline."
 - Hashimoto coined "harness engineering": anytime an agent makes a mistake, engineer a solution so the agent never makes that mistake again
-- The model is the engine; the harness is the car
+- The model is the engine; the harness is the car — this metaphor gives the audience a handle to remember the concept
 - Harness engineering is not just context engineering — context gives information, harness creates a system where the agent doesn't need supervision
+- Humans remain in the loop but at a different layer: prioritizing work, translating feedback into acceptance criteria, validating outcomes
 - Every agent failure is a signal to improve the system, not a reason to revert to manual work
 -->
 

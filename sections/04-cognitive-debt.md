@@ -297,21 +297,21 @@ BRIDGE: "So what does non-hollow look like? What is the antidote?"
 
 ---
 
-# The Antidote
+# The Antidote — The Human in the Loop
 
 <v-click>
 
-**Ask "why," not just "what."** The tool isn't the risk. Surrendering your judgment to it is.
+**The spec** — the intent, authored by a human. Ask "why," not just "what."
 
 </v-click>
 <v-click>
 
-**At least one human must fully understand each AI-generated change before it ships.**
+**The harness in motion** — the agent executing, the human reviewing. At least one human must fully understand each change before it ships.
 
 </v-click>
 <v-click>
 
-**Document not just what changed, but why.** Rebuild the shared theory of the system.
+**The output** — shipped, understood, owned. Document not just what changed, but **why.**
 
 </v-click>
 
@@ -322,14 +322,14 @@ SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-progra
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 KEY POINTS:
+- Three stages of human accountability: spec (intent), harness (review), output (ownership)
 - Osmani: "AI doesn't make you dumber, but passive reliance does. The difference is asking 'why' vs. treating it like a code vending machine."
 - Storey's concrete mitigations: require human understanding, document the why, create regular checkpoints where teams rebuild shared understanding
-- Documentation of the why is not about typing — it's about the cognitive act of understanding
-- AI can draft the commit message; the human must own the meaning
+- The spec is where a human formulates the problem and makes a judgment about what matters
+- The harness is where accountability lives — watch where the agent stops and returns to you
+- The output is not generated, not rubber-stamped — it's owned
 - Connect back to Section 3: context engineering and spec-driven development are cognitive debt prevention
-- The CLAUDE.md you write is documentation of the why; the spec you author is proof of understanding
 - The verification loop is the checkpoint; hooks from S3b break Ralph Wiggum loops before they start
-- The new stack is the antidote — if used with intention
 
 DELIVERY:
 - THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."

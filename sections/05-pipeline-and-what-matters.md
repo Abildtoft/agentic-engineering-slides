@@ -259,6 +259,13 @@ BRIDGE: "That's what matters for product people: taste, subtraction, the courage
 
 
 ---
+layout: section
+transition: section-shift
+---
+
+# Let's Wrap Up
+
+---
 layout: two-cols-header
 ---
 
