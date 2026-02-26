@@ -242,6 +242,8 @@ Because I've outsourced it to the AI."</h1>
 
 ## "You will actually turn yourself into an idiot if you can't do seven times seven real quick in your head."
 
+Matija Grcic
+
 </v-click>
 
 <!--

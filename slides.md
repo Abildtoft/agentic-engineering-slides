@@ -23,6 +23,30 @@ layout: cover
 February 26th, 2026, Copenhagen
 
 ---
+layout: statement
+---
+
+# Hi, I'm Mikkel.
+
+---
+
+# Simplified Agenda
+
+- Inflection Point
+- The Disappearing Middle
+- The New Stack: Core Concepts
+- The New Stack: Tools
+- **DEMO TIME**
+
+*Right around here we will have hit peak hype.*
+
+*And then...*
+
+- Cognitive Debt
+- The Junior Pipeline
+- Let's Wrap Up
+
+---
 src: ./sections/01-the-shift.md
 ---
 

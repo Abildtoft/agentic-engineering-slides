@@ -18,7 +18,7 @@ Humans remain in the loop — but at a different layer. We prioritize work, tran
 </v-click>
 <v-click>
 
-Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harnesss so it doesn't fail that way again.
+Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harness so it doesn't fail that way again.
 
 </v-click>
 <v-click>
@@ -41,5 +41,16 @@ KEY POINTS:
 - Every agent failure is a signal to improve the system, not a reason to revert to manual work
 -->
 
+---
+layout: center
+class: text-center
+---
 
+# Demo Time
+
+<!--
+DELIVERY:
+- Transition from concepts to live demonstration
+- Use this moment to let the audience reset before the demo
+-->
 

@@ -20,10 +20,8 @@ BRIDGE: "You've seen the concepts — context engineering and spec-driven develo
 -->
 
 ---
-
 layout: center
 class: text-center
-
 ---
 
 <img src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." class="mx-auto w-full max-w-6xl" />
@@ -62,7 +60,7 @@ The engineers getting the most from AI stopped crafting the perfect prompt. They
 </v-click>
 <v-click>
 
-> "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — **Pirouette B**
+> "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — **Pirouette B**, software engineer
 
 </v-click>
 <v-click>

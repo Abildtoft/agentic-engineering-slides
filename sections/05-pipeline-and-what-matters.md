@@ -76,6 +76,8 @@ BRIDGE: "There's a parable that makes this risk vivid."
 
 
 ---
+layout: default
+---
 
 # Raising the Bar for Juniors
 
