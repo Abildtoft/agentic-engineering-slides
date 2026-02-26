@@ -32,13 +32,12 @@ SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
 
 KEY POINTS:
-- This slide should LAND. Everything in S3a and S3b built to this moment — now name it.
-- The list in v-click 1 is a deliberate callback to every concept the audience just learned. Let it breathe — pause after "All one discipline."
-- Hashimoto coined "harness engineering": anytime an agent makes a mistake, engineer a solution so the agent never makes that mistake again
-- The model is the engine; the harness is the car — this metaphor gives the audience a handle to remember the concept
-- Harness engineering is not just context engineering — context gives information, harness creates a system where the agent doesn't need supervision
-- Humans remain in the loop but at a different layer: prioritizing work, translating feedback into acceptance criteria, validating outcomes
-- Every agent failure is a signal to improve the system, not a reason to revert to manual work
+- Name the discipline that ties all prior concepts together
+- Treat each v-click as a recap ladder from parts to operating model
+- Emphasize failure-as-signal: improve the harness, not just the output
+- This is the conceptual peak before the live demo
+
+BRIDGE: "Now let's watch this operating model in motion."
 -->
 
 ---
@@ -50,7 +49,6 @@ class: text-center
 
 <!--
 DELIVERY:
-- Transition from concepts to live demonstration
-- Use this moment to let the audience reset before the demo
+- Quick reset slide before context switch to live workflow
+- State what the demo will prove: speed with guardrails and human accountability
 -->
-

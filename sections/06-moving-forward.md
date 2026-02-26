@@ -21,16 +21,14 @@ Every time a bottleneck is removed, the constraint moves upstream — **not away
 </v-click>
 
 <!--
-[T+141:15 | S6 slide 3 of 11 | 2min]
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
 
 KEY POINTS:
-- Walk through each reveal:
-  1. Textile industry bottleneck cascade from the industrial revolution — each time one stage accelerated, the constraint moved to the previous stage; counter-narrative to "AI solves everything" — it moves the problem, it doesn't eliminate it
-  2. Same pattern now: AI writes code faster, review becomes the bottleneck, review gets AI-assisted, accountability moves upstream to the human who sets intent and verifies output — we are in the middle of that cascade
-  3. Connects Ronacher's bottleneck cascade to organizational reality: the constraint isn't the tools, it's getting knowledge out of expert heads and into systems (specs, context, documentation) that agents can use
-- Connect to S4: confidence spiral and outsourced understanding aren't just individual risks — they're accountability risks; if you don't understand what you ship, you cannot carry responsibility for it
+- Use this as the opening lens for the final coda after "What Survives"
+- Core pattern: bottlenecks migrate upstream as each layer gets automated
+- Present-day implication: knowledge capture and accountability become the real constraints
+- Connect back to section 4: comprehension is now a governance requirement
 
 BRIDGE: "Which brings us to what this looks like as a team value."
 -->
@@ -66,16 +64,14 @@ layout: two-cols-header
 </v-click>
 
 <!--
-[T+144:30 | S6 slide 6 of 11 | 2min]
 
 SOURCE: "The Next Two Years of Software Engineering" (sources/next-two-years-of-software-engineering.md)
 
 KEY POINTS:
-- Two audiences, two distinct challenges — two-cols layout makes the duality visible
-- For juniors/earlier-career: opportunity is real — AI lets you build bigger things, punch above your weight, demonstrate senior-level output on day one; but the trap is dependency (building things you can't explain); "understand and explain every line if not most" is the key practice
-- Framing "be immediately useful" shifts from anxiety ("am I competing with AI?") to agency ("I can create more value than my title suggests")
-- For seniors: "fewer juniors means more grunt work landing on your plate" — the automation response is right, not heroic solo execution; mentorship investment is both systemic responsibility and practical survival strategy
-- Both columns converge: your value is relational and multiplicative, not isolated and additive — AI does isolated work, humans do multiplicative work
+- Split the room intentionally: early-career and senior responsibilities differ
+- Juniors: leverage AI, but enforce explainability as a hard rule
+- Seniors: design systems, multiply others, and keep mentorship pathways alive
+- Shared conclusion: human value is increasingly multiplicative
 
 BRIDGE: "Let me show you what that human role actually looks like in practice."
 -->
@@ -103,16 +99,15 @@ The future of software engineering isn't syntax — it's **turning ambiguity int
 </v-click>
 
 <!--
-[T+149:15 | S6 slide 9 of 11 | 1min]
 
 SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
-- Closing line of Osmani's essay — cited in S5 notes but deliberately held back from appearing on a slide until now
-- Twelve words of philosophical weight:
-  - "The craft evolves" — the tools change (assembly, languages, frameworks, agents)
-  - "It always has" — historical reassurance, this is not the first time
-  - "But it remains craft" — judgment, taste, responsibility for what you build does not change
+- This is the final thesis restatement before the closing quote
+- Three-part cadence: change is real, change is historical, craft remains
+- Reinforce continuity so the ending feels grounded, not apocalyptic
+
+BRIDGE: "Close with the wider societal question these choices now raise."
 -->
 
 ---

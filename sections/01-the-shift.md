@@ -8,18 +8,16 @@ transition: section-shift
 Yes, you've heard this before. But something's changed.
 
 <!--
-[T+01:00 | S1 slide 1 of 9 | 0.5min]
-
 KEY POINTS:
-- Name the elephant: audience has sat through the AI hype cycle since Copilot (2021) and ChatGPT (2022)
-- Every quarter promised transformation; every quarter delivered "fine" — useful autocomplete, decent boilerplate
-- The skepticism is well-earned — three years of "this changes everything" with no fundamental change
+- Open by validating skepticism before making claims
+- Frame this as a shift in outcomes, not a shift in hype language
+- Set up the next slide as evidence, not opinion
 
 DELIVERY:
-- Open by validating the room's skepticism: "That skepticism is well-earned"
-- Pivot tone at the end: "But around December 2025, something shifted — not in the announcements, in the production numbers"
+- Calm, low-drama tone; this slide earns trust
+- Land the line: "something changed"
 
-BRIDGE: "Let me show you what I mean."
+BRIDGE: "Let me show you the pattern that changed."
 -->
 
 ---
@@ -53,23 +51,21 @@ No single metric proves it — the pattern across metrics does.
 </v-click>
 
 <!--
-[T+02:15 | S1 slide 2 of 9 | 1.5min]
-
 SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
 SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
 SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 
 KEY POINTS:
-- Cumulative effect is the point — no single data point proves "inflection," but together they do
-- December 2025: not one company but three — Anthropic, Google, OpenAI all shipped within 30 days
-- Claude Code launched as CLI Feb 2025; Cursor shipped agentic editing; OpenAI launched Codex; Google launched Antigravity
-- Vocabulary shift (RedMonk): when analysts rename "assistant" to "agent," the framing moves from tool to collaborator
+- This is the thesis slide for section 1
+- Emphasize convergence: model quality + tooling maturity + production adoption
+- The December window matters because multiple frontier labs moved at once
+- Vocabulary shift from "assistant" to "agent" signals a workflow shift, not just branding
 
 DELIVERY:
-- Walk through each reveal one at a time
-- Close with the skeptics line — let it land with a pause
+- Reveal each bullet deliberately; don't rush to the conclusion
+- Pause after "the curve bent"
 
-BRIDGE: (built into slide: "The skeptics were right for three years. Then the curve bent.")
+BRIDGE: "If the people building these systems say old assumptions are stale, we should listen."
 -->
 
 ---
@@ -102,21 +98,18 @@ class: quote-long
 </v-click>
 
 <!--
-[T+03:00 | S1 slide 3 of 9 | 1.5min]
-
 SOURCE: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
 
 KEY POINTS:
-- The person building the tool can't keep up with the capabilities of their own tool
-- New team members outperform veterans because they don't carry baggage of what the model couldn't do 6 months ago
-- Your mental model of what AI can do is probably already outdated
+- This quote reframes resistance as stale mental models, not intelligence
+- Expertise can become inertia when capabilities shift quickly
+- Newcomers can outperform by starting with current constraints, not historical ones
 
 DELIVERY:
-- Let the progressive quote build tension — each reveal adds weight
-- Pause after the author reveal to let credibility land
-- Cherny: "The model changes so often that I sometimes get stuck in this old way of thinking"
+- Let the progressive reveal do the work
+- Keep commentary short; preserve the quote's emotional weight
 
-BRIDGE: (implicit — the audience internalizes that even experts lag behind the tools)
+BRIDGE: "Now let's anchor this in one hard number."
 -->
 
 ---
@@ -131,18 +124,16 @@ of new code in public GitHub repos was produced by Claude Code<br />
 </h2>
 
 <!--
-[T+03:15 | S1 slide 4 of 9 | 1min]
-
 SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
 KEY POINTS:
-- That's one tool — not all AI, just Claude Code
-- The number is growing fast
-- This isn't a demo anymore — it's production reality
+- 4% is meaningful because it is one tool in public repos, not total AI output
+- Position this as adoption evidence, not a victory lap
+- Move the room from novelty mindset to production mindset
 
 DELIVERY:
-- Let the "4%" number sit in silence for a beat
-- Emphasize "one tool" — the total AI footprint is much larger
+- Let "4%" breathe before explaining
+- Stress "one tool" to avoid overclaiming
 
 BRIDGE: "Let that sink in before we go further."
 -->
@@ -173,24 +164,22 @@ BRIDGE: "Let that sink in before we go further."
 </v-click>
 
 <!--
-[T+04:00 | S1 slide 5 of 9 | 1.5min]
-
 SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
 SOURCE: Google CEO Sundar Pichai, earnings call
 SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
 SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
 
 KEY POINTS:
-- Cumulative signal — not one company or one tool, the entire industry is moving in the same direction
-- Spotify example is especially vivid: engineers fix bugs from Slack on their phone during commute, get a new build pushed, merge to production before arriving at the office
-- That's not autocomplete — that's a fundamentally different relationship to code
-- Anthropic/OpenAI is the extreme case: frontier teams fully dogfooding the tooling they build
+- Broaden from one metric to cross-industry signal
+- Keep Spotify as the vivid story; treat others as corroboration
+- Frame this as workflow change, not just speed improvement
+- End with the implication: divergence between teams will widen
 
 DELIVERY:
-- Walk through each reveal one at a time
-- Linger on Spotify — the commute anecdote makes it concrete
+- One beat per company
+- Spend most time on Spotify, then compress the rest
 
-BRIDGE: (cumulative weight carries into the Booch quote that follows)
+BRIDGE: "That is why this next prediction sounds less like hype and more like trajectory."
 -->
 
 ---
@@ -202,18 +191,15 @@ layout: quote
 Jack Clark, co-founder of Anthropic
 
 <!--
-[T+08:00 | S1 slide 8 of 9 | 1min]
-
 SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
 
 KEY POINTS:
-- The AI economy moves fast relative to everything else
-- Unlike crypto, it already touches real economic activity
-- This isn't about early adopters being smug — it's a genuine divergence in capability
-- The question for this room: which side of that divide do you want to be on?
+- This is the section-1 synthesis in one sentence
+- The "parallel world" idea frames urgency without panic
+- Land the audience question: adoption is now a strategic choice
 
 DELIVERY:
-- Don't answer the question for them — let it hang
+- Ask the question and leave silence
 
 BRIDGE: "Don't answer yet — let me ask a simpler question first."
 -->
@@ -252,11 +238,14 @@ Raise one hand if you've heard of it. Two if you've used it.
 
 <!--
 KEY POINTS:
-- Fast calibration before definitions
-- Two quick passes: (1) "You've heard the term." (2) "You've used it in real work."
+- Calibrate vocabulary and maturity in the room
+- Fast show-of-hands creates shared context for the next sections
+- Use this to decide how fast to move in tooling and workflow slides
 
 DELIVERY:
 - Mostly new to terms: define each term in one sentence and slow the demos slightly
 - Mixed familiarity: keep defaults and anchor with analogies
 - Highly familiar room: move faster and spend more time on composition patterns in Section 3c
+
+BRIDGE: "Now that we have a room baseline, let's examine what is actually changing in software work."
 -->
