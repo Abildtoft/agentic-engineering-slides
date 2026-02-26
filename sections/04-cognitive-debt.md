@@ -248,8 +248,6 @@ DELIVERY:
 BRIDGE: "So the risk is real, but it is not inevitable."
 -->
 
-
-
 ---
 layout: quote
 ---

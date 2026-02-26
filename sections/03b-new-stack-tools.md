@@ -97,7 +97,7 @@ Inspired by open-source tools like **Superpowers**, **GET SHIT DONE**, and **Com
 
 <v-click>
 
-Lets take the concepts first, then demo.
+Let's take the concepts first, then demo.
 
 </v-click>
 
@@ -281,45 +281,7 @@ KEY POINTS:
 DELIVERY:
 - For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms
 
-BRIDGE: "Let me show you what that looks like in code."
--->
-
----
-
-# MCP: What a Server Looks Like
-
-```ts
-const server = new McpServer({
-  name: "my-server",
-  version: "1.0.0",
-});
-
-server.tool(
-  "get_weather",
-  "Fetches current weather for a city",
-  { city: z.string() },
-  async ({ city }) => {
-    const data = await fetchWeather(city);
-    return {
-      content: [{ type: "text", text: JSON.stringify(data) }],
-    };
-  },
-);
-```
-
-<v-click>
-
-A name, a version, and tool definitions. **That's it.**
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Demystify with minimal code anatomy
-- Highlight self-describing interface design (name, schema, handler)
-- Keep this brief; the point is accessibility of the pattern
-
-BRIDGE: "Now let's make it concrete with real MCPs in daily use."
+BRIDGE: "Let me show you which ones I use every day."
 -->
 
 ---

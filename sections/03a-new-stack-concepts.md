@@ -17,6 +17,52 @@ BRIDGE: "We've named the shift — the middle is compressing, value moves to int
 -->
 
 ---
+layout: center
+class: text-center
+---
+
+# Quick Room Check
+
+<v-click>
+
+Raise one hand if you've heard of it. Two if you've used it.
+
+</v-click>
+
+<div class="text-left inline-block">
+<v-clicks>
+
+- `AI-driven PRD tools`
+- `AI-driven prototyping (MagicPatterns, Figma Make, Lovable, etc.)`
+- `Cursor / Antigravity`
+- `Claude Code / Codex / Gemini CLI / GitHub Copilot CLI / OpenCode`
+- `AGENTS.md / CLAUDE.md`
+- `MCP`
+- `Skills`
+- `Custom Agents`
+- `Hooks`
+- `Spec-driven development`
+- `Agent swarms (multi-agent workflows)`
+- `Ralph Wiggum loops (if you know, you know)`
+
+</v-clicks>
+</div>
+
+<!--
+KEY POINTS:
+- Calibrate vocabulary and maturity in the room before the practical sections
+- Fast show-of-hands creates shared context for tooling and workflow slides
+- Use this to decide pacing for Section 3
+
+DELIVERY:
+- Mostly new to terms: define each term in one sentence and slow the demos slightly
+- Mixed familiarity: keep defaults and anchor with analogies
+- Highly familiar room: move faster and spend more time on composition patterns
+
+BRIDGE: "Now that we have a baseline, let's start with the two core disciplines."
+-->
+
+---
 
 # From Writing Code to Designing Systems
 
@@ -161,6 +207,6 @@ KEY POINTS:
 - Connect to lived experience: narrow tasks outperform vague mega-prompts
 - Reinforce: unit of work is now the scoped spec
 
-BRIDGE: "Let me show you what both of these concepts look like in practice."
+BRIDGE: "The practice comes in the demo. First, the building blocks that make context and specs operational."
 -->
 
