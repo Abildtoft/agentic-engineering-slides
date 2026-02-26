@@ -78,11 +78,19 @@ The engineers getting the most from AI stopped crafting the perfect prompt. They
 You don't make agents trustworthy by watching them. You make them trustworthy by **designing the system they operate in.**
 
 </v-click>
+<v-click>
+
+> "If the AI is asking you to do something — check the PR, tell me the CI status — you should really be thinking about how to teach it to just do that for itself." — **Brian Lovin**
+
+</v-click>
 
 <!--
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+
 KEY POINTS:
 - Shift from prompt craft to system design
 - Set up guardrails as an enabler of speed, not only safety
+- Every repeated human intervention is a signal that the harness is incomplete
 
 BRIDGE: "That's the design philosophy. Now: what makes iteration safe?"
 -->
