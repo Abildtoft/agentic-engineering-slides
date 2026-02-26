@@ -9,42 +9,105 @@ What's actually changing about how software gets made
 
 <!--
 [T+16:00 | S2 slide 1 of 11 | 0.5min]
-Transition from Section 1: "We've established the shift is real and accelerating. Now let's look at what's actually changing about the work itself."
-This section is for everyone in the room — not just developers. If you're in product or UX, pay close attention. Your work is in this story too.
+
+KEY POINTS:
+- This section is for everyone in the room — not just developers
+- If you're in product or UX, pay close attention — your work is in this story too
+
+BRIDGE: "We've established the shift is real and accelerating. Now let's look at what's actually changing about the work itself."
 -->
 
 ---
 
 # The Middle of Software Work
 
+<img src="/disappearing-middle.png" class="mx-auto w-full max-w-lg mt-2 mb-4" />
+
 <v-click>
 
-**Idea** &nbsp; → &nbsp; _the middle_ &nbsp; → &nbsp; **Shipped product**
+"That middle absorbed most of the time, attention, and craft of software teams."
 
 </v-click>
 <v-click>
 
-"Turning intent into something real meant opening the codebase, booting up the environment, and writing the code. That middle absorbed most of the time, attention, and craft of software teams."
-
-</v-click>
-<v-click>
-
-## "My belief is that this is changing."
+## This is changing.
 
 </v-click>
 
 <!--
 [T+17:45 | S2 slide 2 of 11 | 2min]
-Source: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
 
-Before we talk about what's changing, let's name what existed. For decades, the middle was where most of the work lived. You had an idea on one end and a shipped product on the other. Everything in between — writing code, debugging, integrating, testing — that was the job.
-For product and UX too: your specs, your designs, your requirements — they all fed into this middle. The middle is where your intent met reality.
-Seniority was measured by how well you navigated this middle.
+SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
 
-Understatement from the CEO of Linear — a company whose entire product is a tool for managing that middle.
-The implementation layer — the part between "I know what to build" and "here it is" — is compressing. Not disappearing entirely, but the time and effort it absorbs is shrinking fast.
-Think about what Section 1 showed: agentic tools don't just speed up typing. They compress the entire cycle of plan-write-test-iterate.
-If the middle was 80% of the effort, what happens when it drops to 20%?
+KEY POINTS:
+- For decades, the middle was where most of the work lived — writing code, debugging, integrating, testing
+- For product and UX too: specs, designs, requirements all fed into this middle — where intent met reality
+- Seniority was measured by how well you navigated this middle
+- Understatement from the CEO of Linear — a company whose entire product manages that middle
+- The implementation layer is compressing — not disappearing, but the time and effort it absorbs is shrinking fast
+- Agentic tools don't just speed up typing — they compress the entire plan-write-test-iterate cycle
+
+DELIVERY:
+- Name what existed before explaining the change
+- Land the rhetorical question at the end
+
+BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?"
+-->
+
+---
+
+# The Translation Layer Is Compressing
+
+<img src="/translation-layer-compression.png" class="mx-auto w-full max-w-lg mt-2 mb-4" />
+
+<v-click>
+
+**"The spec is becoming the product."**
+
+</v-click>
+
+<!--
+[T+25:15 | S2 slide 8 of 11 | 2min]
+
+SOURCE: Shubham Saboo, "The Modern AI PM in the Age of Agents" (x.com/Saboo_Shubham_/status/2008742211194913117)
+
+KEY POINTS:
+- The PM role used to be translation — the bridge between "what people need" and "what gets built"
+- That layer is compressing: agents can take a well-formed problem and produce working code
+- You're no longer translating for engineers — you're forming intent clearly enough for agents to act directly
+- Both empowering and threatening: PMs who articulate clear intent become more powerful; PMs who managed handoffs have less to do
+- Same dynamic as the developer split: the "middle" of PM work is compressing
+- What remains is knowing what to build
+
+DELIVERY:
+- Speak directly to any PMs/product people in the room
+- Acknowledge both the opportunity and the threat — don't sugarcoat
+
+BRIDGE: (leads into the key counterpoint statement on the next slide)
+-->
+
+---
+layout: statement
+---
+
+# The machinery for creating code is now a commodity. What remains is critical thinking and foundational human skills.
+
+<!--
+[T+21:00 | S2 slide 5 of 11 | 1min]
+
+SOURCE: Nadh (same essay)
+
+KEY POINTS:
+- "Foundational human skills" = articulating problems, making judgment calls, understanding users, sensing quality
+- These are not new skills — they're skills this room already has
+- They're just suddenly the bottleneck
+- The machinery is available to everyone — no special training needed, just critical thinking and competence
+
+DELIVERY:
+- Let the statement sit — this is a distilled insight, not a data slide
+- Reassure: the room already has these skills
+
+BRIDGE: "So if there's a split happening, what does it look like?"
 -->
 
 ---
@@ -65,76 +128,22 @@ Nadh, 2025
 
 <!--
 [T+20:15 | S2 slide 4 of 11 | 2min]
-Source: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
 
-This is probably the most famous quote in software engineering. And it just inverted.
-For 25 years, code was the proof. Talking about what you'd build was considered cheap. Doing the work — writing the code — was what mattered.
-Now: an experienced developer who can imagine, articulate, define problem statements, architect and engineer has a massive advantage. Knowledge of specific syntax and frameworks is no longer the bottleneck.
-Even Linus himself merged AI-generated code and said: "Is this much better than I could do by hand? Sure is."
-For the non-devs: this is huge. The skill you've always had — articulating what needs to exist and why — just became the most valuable skill in the building process.
--->
+SOURCE: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
 
----
-layout: statement
----
+KEY POINTS:
+- Probably the most famous quote in software engineering — and it just inverted
+- For 25 years, code was the proof; talking about what you'd build was considered cheap
+- Now: developers who can imagine, articulate, define problem statements, and architect have a massive advantage
+- Knowledge of specific syntax and frameworks is no longer the bottleneck
+- Linus himself merged AI-generated code: "Is this much better than I could do by hand? Sure is."
+- For non-devs: the skill you've always had — articulating what needs to exist and why — just became the most valuable skill in the building process
 
-# The machinery for creating code is now a commodity. What remains is critical thinking and foundational human skills.
+DELIVERY:
+- Let the Torvalds quote land first, then reveal the inversion
+- Directly address non-devs — this is their moment in the talk
 
-<!--
-[T+21:00 | S2 slide 5 of 11 | 1min]
-Source: Nadh (same essay)
-
-Distilled insight from the Linus inversion. Let this sit.
-"Foundational human skills" — articulating problems, making judgment calls, understanding users, sensing quality. These are not new skills. They're skills this room already has. They're just suddenly the bottleneck.
-The machinery is available to everyone. No special training needed. Just good old critical thinking and competence to run the machinery.
-Transition: so if there's a split happening, what does it look like?
--->
-
----
-layout: quote
----
-
-# "LLM coding will split up engineers based on those who primarily liked coding and those who primarily liked building"
-
-Andrej Karpathy
-
-<!--
-[T+22:15 | S2 slide 6 of 11 | 1.5min]
-Source: Andrej Karpathy (x.com/karpathy/status/2015883857489522876)
-
-Karpathy was a founding member of OpenAI and led Tesla's AI division. This is not a hot take — it's a diagnosis.
-"Coding" = the craft of writing elegant, efficient code. The syntax, the patterns, the clever solutions.
-"Building" = the work of making something that solves a problem. Understanding what users need, making architecture decisions, shipping something that works.
-Both are valid. But AI makes the first one less scarce and the second one more valuable.
-Ask the room (rhetorically): which one do you identify with more? And for the product/UX people — where do you see yourselves in this split?
--->
-
-# The Translation Layer Is Compressing
-
-<v-click>
-
-**Before:** PM talks to customers, writes specs, hands them to engineers
-
-</v-click>
-<v-click>
-
-**Now:** PM forms intent clearly enough that agents can act on it directly
-
-</v-click>
-<v-click>
-
-**"The spec is becoming the product."**
-
-</v-click>
-
-<!--
-[T+25:15 | S2 slide 8 of 11 | 2min]
-Source: Shubham Saboo, "The Modern AI PM in the Age of Agents" (x.com/Saboo_Shubham_/status/2008742211194913117)
-
-The PM role used to be translation. You were the bridge between "what people need" and "what gets built." The value was in that translation layer.
-That layer is compressing. When agents can take a well-formed problem and produce working code, you're no longer translating for engineers. You're forming intent clearly enough that agents can act on it directly.
-This is both empowering and threatening. The PM who can articulate clear intent becomes more powerful than ever. The PM who primarily managed the handoff process has less to do.
-Same dynamic as the developer split: the "middle" of PM work is compressing. What remains is knowing what to build.
+BRIDGE: (flows into the distilled statement on the next slide)
 -->
 
 ---
@@ -147,18 +156,25 @@ It got more important.</h1>
 
 <!--
 [T+26:00 | S2 slide 9 of 11 | 1min]
-Source: Shubham Saboo (same post)
 
-This is the key counterpoint to any naive "AI replaces everyone" reading.
-Building got cheaper. Deciding what to build did not. In fact, it got harder because:
-- You can build more things faster, so you need better judgment about what's worth building
-- Bad decisions compound faster when execution is instant
-- The feedback loop tightens — you have to be ready to evaluate, not just specify
+SOURCE: Shubham Saboo (same post)
 
-This applies across every role:
-- Devs need better architecture judgment (more gets built, faster)
-- Product needs sharper problem identification (no hiding behind slow execution)
-- UX needs faster taste-making (prototypes replace mockups)
+KEY POINTS:
+- Key counterpoint to any naive "AI replaces everyone" reading
+- Building got cheaper — deciding what to build did not
+- It got harder because:
+  - You can build more things faster, so you need better judgment about what's worth building
+  - Bad decisions compound faster when execution is instant
+  - The feedback loop tightens — you have to be ready to evaluate, not just specify
+- Applies across every role:
+  - Devs: better architecture judgment (more gets built, faster)
+  - Product: sharper problem identification (no hiding behind slow execution)
+  - UX: faster taste-making (prototypes replace mockups)
+
+DELIVERY:
+- Let the statement on screen breathe — then add the role-specific breakdown verbally
+
+BRIDGE: (flows into the Lenny Sanudo quote about sprints)
 -->
 
 ---
@@ -173,13 +189,22 @@ Lenny Sanudo, creator of the Design Sprint
 
 <!--
 [T+27:15 | S2 slide 10 of 11 | 1.5min]
-Source: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
 
-The practical consequence of everything we've discussed.
-The entire Agile/Scrum framework was designed for a world where building was expensive and risky. Sprints existed to manage uncertainty when each iteration cost weeks of engineering time.
-When building costs approach zero, the bottleneck shifts entirely to decision quality. What should we build? How do we differentiate? What is worth our users' attention?
-For this team specifically: think about your sprint planning. How much time is spent on estimation and prioritization based on engineering cost? What if that variable mostly went away?
-Transition: let's discuss.
+SOURCE: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
+
+KEY POINTS:
+- The practical consequence of everything we've discussed
+- Agile/Scrum was designed for a world where building was expensive and risky
+- Sprints existed to manage uncertainty when each iteration cost weeks of engineering time
+- When building costs approach zero, the bottleneck shifts entirely to decision quality
+- What should we build? How do we differentiate? What is worth our users' attention?
+
+DELIVERY:
+- Make it concrete for the room: think about your sprint planning
+- How much time is spent on estimation and prioritization based on engineering cost?
+- What if that variable mostly went away?
+
+BRIDGE: "Let's discuss."
 -->
 
 ---
@@ -194,38 +219,90 @@ Andrew Chen
 
 <!--
 [T+23:30 | S2 slide 7 of 11 | 1.5min]
-Source: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
 
-This is the slide where product and UX people should sit up.
-A PRD was the artifact that bridged product thinking and engineering execution — 20 pages of requirements, edge cases, acceptance criteria.
-When building is fast and cheap, you can just... build it. Try it. Feel it. "The ability to feel how good a product is, from actually using it, beats all the theorizing and market analysis and user research."
-This does not mean product thinking is dead. It means the artifact changes. Instead of describing what to build, you show what to build.
-For UX designers: your prototyping tools already moved in this direction. Now the prototype can be the real thing.
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- This is the slide where product and UX people should sit up
+- A PRD bridged product thinking and engineering execution — 20 pages of requirements, edge cases, acceptance criteria
+- When building is fast and cheap, you can just build it, try it, feel it
+- Chen: "The ability to feel how good a product is, from actually using it, beats all the theorizing and market analysis and user research"
+- Product thinking isn't dead — the artifact changes: instead of describing what to build, you show what to build
+- For UX designers: prototyping tools already moved this way — now the prototype can be the real thing
+
+DELIVERY:
+- Directly address product/UX people in the room
+- Emphasize the shift from documentation to demonstration
+
+BRIDGE: (flows into the convergence statement)
 -->
 
 ---
-layout: center
-class: text-center
+layout: statement
 ---
 
-<h1>For product/UX — how does your work change<br />
-when building is fast and cheap?</h1>
-
-<h2 class="mt-8">For devs — what part of your work feels<br />
-most at risk?</h2>
+<h1>The walls between design, product, and engineering were built from implementation complexity.<br />
+As that complexity compresses — so do the walls.</h1>
 
 <!--
-[T+29:00 | S2 slide 11 of 11 | 8min DISCUSSION]
-DISCUSSION PROMPT — pause here for 5-7 minutes.
-ABORT POINT: If running 10+ minutes over at this point, shorten this discussion to 3 minutes and skip to S3a.
+[T+25:00 | S2 slide 12 of 13 | 1.5min]
 
-The dual-prompt is intentional: it gives each sub-audience a specific entry point.
-For product/UX, prompt follow-ups:
-- "If you could prototype in real code tomorrow, what would you try first?"
-- "What does your role look like if specs become prototypes?"
-For devs, prompt follow-ups:
-- "Is the risk in what AI can do, or in what the organization decides it needs humans for?"
-- "What's the part of your work that feels uniquely human?"
-Listen for: tension between excitement and anxiety, recognition of the convergence theme, specific examples from their own workflow.
-This discussion directly sets up Section 3: "OK, so the work is changing — what do you actually need to learn?"
+KEY POINTS:
+- This is the synthesis of everything in the section — the punchline of "The Disappearing Middle"
+- Designers created mockups because you couldn't feel the real thing until it was built — implementation distance required artifacts
+- PMs wrote specs because translating customer needs into buildable units required a dedicated practice
+- Engineers owned code because writing it was the bottleneck
+- All three disciplines existed as separate roles because the implementation layer was thick enough to need specialists on each side of it
+- As that layer compresses, the specialisations built around it lose their structural justification — not their value, but their separateness
+- What remains for all three is the same: clarity about what should exist, judgment about whether it's right, taste for what to leave out
+
+DELIVERY:
+- Let the statement land — this should feel like a reveal, not an argument
+- Pause before the next slide — let the room process the implication
+
+BRIDGE: "So if the walls dissolve — what are we left with?"
 -->
+
+---
+
+# One Surviving Skill Set
+
+<v-click>
+
+**Design** — from creating artifacts to articulating intent and judging quality
+
+</v-click>
+<v-click>
+
+**Product** — from translating requirements to forming problem statements and owning "why"
+
+</v-click>
+<v-click>
+
+**Engineering** — from writing code to designing systems and verifying correctness
+
+</v-click>
+<v-click>
+
+## Three job titles. One job: turning ambiguity into clarity.
+
+</v-click>
+
+<!--
+[T+26:30 | S2 slide 13 of 13 | 2min]
+
+KEY POINTS:
+- Walk through each role's compression concretely:
+  - Design: the mockup was a proxy for the product — when you can build the real thing in hours, the proxy loses its purpose; what survives is the designer's eye for quality, intent, and coherence
+  - Product: the spec was a translation layer between customer pain and engineering capacity — when agents can act on clear intent directly, what survives is knowing what problem to solve and why
+  - Engineering: code was the bottleneck — when agents write code, what survives is architecture, systems thinking, and the judgment to verify correctness
+- The closing line echoes S1's thesis ("The future of software engineering isn't syntax — it's turning ambiguity into clarity") and extends it to all three roles
+- This is not "everyone becomes an engineer" or "engineers become PMs" — it's that the surviving skill set is the same across all three
+
+DELIVERY:
+- Reveal each role one at a time, let the pattern emerge
+- Land the closing line with weight — it's the thesis of the entire section
+
+BRIDGE: "Let's discuss what this means for you."
+-->
+

@@ -9,9 +9,17 @@ Yes, you've heard this before. But something's changed.
 
 <!--
 [T+01:00 | S1 slide 1 of 9 | 0.5min]
-Start by naming the elephant: "We've all sat through the AI hype cycle. GitHub Copilot launched in 2021. ChatGPT in 2022. Every quarter since, someone announced that AI would transform software engineering. And every quarter, the actual experience was... fine. Useful autocomplete. Decent boilerplate. Nothing that changed how you fundamentally work."
-Validate the skepticism: "That skepticism is well-earned. Most of you have been hearing 'this changes everything' for three years while your day-to-day stayed roughly the same."
-The pivot: "But around December 2025, something shifted. Not in the announcements — in the production numbers. Let me show you what I mean."
+
+KEY POINTS:
+- Name the elephant: audience has sat through the AI hype cycle since Copilot (2021) and ChatGPT (2022)
+- Every quarter promised transformation; every quarter delivered "fine" — useful autocomplete, decent boilerplate
+- The skepticism is well-earned — three years of "this changes everything" with no fundamental change
+
+DELIVERY:
+- Open by validating the room's skepticism: "That skepticism is well-earned"
+- Pivot tone at the end: "But around December 2025, something shifted — not in the announcements, in the production numbers"
+
+BRIDGE: "Let me show you what I mean."
 -->
 
 ---
@@ -46,14 +54,22 @@ No single metric proves it — the pattern across metrics does.
 
 <!--
 [T+02:15 | S1 slide 2 of 9 | 1.5min]
-Source: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
-Source: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
-Source: RedMonk, shift from "AI Code Assistants" to "Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 
-Walk through each reveal. The cumulative effect is the point — no single data point proves "inflection," but together they do.
-- December 2025: not one company, three. Anthropic, Google, OpenAI all shipped within 30 days of each other. Claude Code launched as CLI in February 2025, Cursor shipped agentic editing, OpenAI launched Codex, Google launched Antigravity.
-- The vocabulary shift (RedMonk): when analysts stop calling something an "assistant" and start calling it an "agent," the framing has moved from tool to collaborator.
-- Close with the skeptics line. Let it land.
+SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
+SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
+SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
+
+KEY POINTS:
+- Cumulative effect is the point — no single data point proves "inflection," but together they do
+- December 2025: not one company but three — Anthropic, Google, OpenAI all shipped within 30 days
+- Claude Code launched as CLI Feb 2025; Cursor shipped agentic editing; OpenAI launched Codex; Google launched Antigravity
+- Vocabulary shift (RedMonk): when analysts rename "assistant" to "agent," the framing moves from tool to collaborator
+
+DELIVERY:
+- Walk through each reveal one at a time
+- Close with the skeptics line — let it land with a pause
+
+BRIDGE: (built into slide: "The skeptics were right for three years. Then the curve bent.")
 -->
 
 ---
@@ -87,12 +103,20 @@ class: quote-long
 
 <!--
 [T+03:00 | S1 slide 3 of 9 | 1.5min]
-Source: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
 
-Full quote: "The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
-The person building the tool can't keep up with the capabilities of their own tool.
-New team members are more capable because they don't carry the baggage of what the model couldn't do 6 months ago.
-Your mental model of what AI can do is probably already outdated.
+SOURCE: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
+
+KEY POINTS:
+- The person building the tool can't keep up with the capabilities of their own tool
+- New team members outperform veterans because they don't carry baggage of what the model couldn't do 6 months ago
+- Your mental model of what AI can do is probably already outdated
+
+DELIVERY:
+- Let the progressive quote build tension — each reveal adds weight
+- Pause after the author reveal to let credibility land
+- Cherny: "The model changes so often that I sometimes get stuck in this old way of thinking"
+
+BRIDGE: (implicit — the audience internalizes that even experts lag behind the tools)
 -->
 
 ---
@@ -108,11 +132,19 @@ of new code in public GitHub repos was produced by Claude Code<br />
 
 <!--
 [T+03:15 | S1 slide 4 of 9 | 1min]
-Source: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
-That's one tool. Not all AI — just Claude Code. And that number is growing fast.
-This isn't a demo anymore. It's production reality.
-Let that sink in before we go further.
+SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
+
+KEY POINTS:
+- That's one tool — not all AI, just Claude Code
+- The number is growing fast
+- This isn't a demo anymore — it's production reality
+
+DELIVERY:
+- Let the "4%" number sit in silence for a beat
+- Emphasize "one tool" — the total AI footprint is much larger
+
+BRIDGE: "Let that sink in before we go further."
 -->
 
 ---
@@ -142,48 +174,66 @@ Let that sink in before we go further.
 
 <!--
 [T+04:00 | S1 slide 5 of 9 | 1.5min]
-Source: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
-Source: Google CEO Sundar Pichai, earnings call
-Source: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
-Source: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
 
-Walk through each one. The point is cumulative signal — this isn't one company or one tool. It's the industry moving in the same direction.
-Spotify's example is especially vivid: engineers fix bugs from Slack on their phone during their commute, get a new build pushed back, and merge to production before arriving at the office. That's not autocomplete. That's a fundamentally different relationship to code.
-The Anthropic/OpenAI stat is the extreme case — frontier teams are fully dogfooding the tooling they're building.
+SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
+SOURCE: Google CEO Sundar Pichai, earnings call
+SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
+SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
+
+KEY POINTS:
+- Cumulative signal — not one company or one tool, the entire industry is moving in the same direction
+- Spotify example is especially vivid: engineers fix bugs from Slack on their phone during commute, get a new build pushed, merge to production before arriving at the office
+- That's not autocomplete — that's a fundamentally different relationship to code
+- Anthropic/OpenAI is the extreme case: frontier teams fully dogfooding the tooling they build
+
+DELIVERY:
+- Walk through each reveal one at a time
+- Linger on Spotify — the commute anecdote makes it concrete
+
+BRIDGE: (cumulative weight carries into the Booch quote that follows)
 -->
 
 ---
-layout: quote
+layout: center
+class: text-center
 ---
 
-# "The entire history of software engineering is one of rising levels of abstraction"
+# Quick Room Check
 
-Grady Booch
+<v-click>
+
+Raise one hand if you've heard of it. Two if you've used it.
+
+</v-click>
+
+<div class="text-left inline-block">
+<v-clicks>
+
+- `AI-driven PRD tools`
+- `AI-driven prototyping (MagicPatterns, Figma Make, Lovable, etc.)`
+- `Cursor / Antigravity`
+- `Claude Code / Codex / Gemini CLI / GitHub Copilot CLI / OpenCode`
+- `AGENTS.md / CLAUDE.md`
+- `MCP`
+- `Skills`
+- `Custom Agents`
+- `Hooks`
+- `Spec-driven development`
+- `Agent swarms (multi-agent workflows)`
+- `Ralph Wiggum loops`
+
+</v-clicks>
+</div>
 
 <!--
-[T+06:15 | S1 slide 6 of 9 | 1.5min]
-Source: Grady Booch, X post (x.com/Grady_Booch/status/2013331606795362398)
+KEY POINTS:
+- Fast calibration before definitions
+- Two quick passes: (1) "You've heard the term." (2) "You've used it in real work."
 
-Booch is one of the founders of UML, decades of software architecture thinking.
-His point: this has happened before. Assembly → compilers → high-level languages → frameworks → AI.
-Each time, the previous layer didn't disappear — it just stopped being the thing humans focused on.
-Grace Hopper faced the same skepticism when she introduced the compiler: "real programmers write assembly."
--->
-
----
-layout: statement
----
-
-# The future of software engineering isn't syntax — it's turning ambiguity into clarity
-
-<!--
-[T+07:00 | S1 slide 7 of 9 | 1min]
-Source: Grady Booch (same thread)
-
-This is the distilled insight. The real work was never typing code.
-It was always: what should we build? Why? How do we know it's right?
-Those questions don't go away when code generation becomes cheap. They become the whole job.
-Transition: but here's the thing — this shift isn't happening at a normal pace.
+DELIVERY:
+- Mostly new to terms: define each term in one sentence and slow the demos slightly
+- Mixed familiarity: keep defaults and anchor with analogies
+- Highly familiar room: move faster and spend more time on composition patterns in Section 3c
 -->
 
 ---
@@ -196,32 +246,18 @@ Jack Clark, co-founder of Anthropic
 
 <!--
 [T+08:00 | S1 slide 8 of 9 | 1min]
-Source: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
 
-Clark's point: the AI economy moves fast relative to everything else. Unlike crypto, it already touches real economic activity.
-This isn't about early adopters being smug — it's about a genuine divergence in capability.
-The question for this room: which side of that divide do you want to be on?
-Don't answer yet — let me ask a simpler question first.
+SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
+
+KEY POINTS:
+- The AI economy moves fast relative to everything else
+- Unlike crypto, it already touches real economic activity
+- This isn't about early adopters being smug — it's a genuine divergence in capability
+- The question for this room: which side of that divide do you want to be on?
+
+DELIVERY:
+- Don't answer the question for them — let it hang
+
+BRIDGE: "Don't answer yet — let me ask a simpler question first."
 -->
 
----
-layout: center
-class: text-center
----
-
-# Has your day-to-day actually changed in the last six months?
-
-<!--
-[T+09:00 | S1 slide 9 of 9 | 2min]
-TEMPERATURE CHECK — not a full discussion. Show of hands, quick pulse.
-
-"Before we go further — a quick reality check. Raise your hand if your actual day-to-day work has meaningfully changed because of AI tools in the last six months."
-
-Read the room. If most hands go up: "Good — you're living this. What follows will give you a framework for what you're experiencing." If few hands: "That's honest. Hold onto that — by the end of this session, I want you to decide whether that changes."
-
-This grounds the S1 evidence in personal experience before S2 reframes it. The audience goes from "interesting data about other companies" to "what about me?"
-
-Keep to 2 minutes max. No deep discussion — just the pulse and a one-line framing response.
-
-Transition to S2: "Now let's look at what's actually changing about how the work gets done."
--->

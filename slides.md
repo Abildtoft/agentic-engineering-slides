@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Agentic Engineering
+title: Harness Engineering
 titleTemplate: '%s'
 author: Melatech
 colorSchema: light
@@ -18,7 +18,7 @@ layout: cover
 
 <img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
 
-# Agentic Engineering
+# Harness Engineering
 
 February 26th, 2026, Copenhagen
 
