@@ -71,15 +71,11 @@ BRIDGE: "The pattern sounds abstract, so let's ground it in a concrete case."
 layout: quote
 ---
 
-# "We gave a student team AI coding tools and tracked them for 10 weeks. The first few weeks were remarkably productive."
-
-Margaret-Anne Storey
-
-<v-click>
-
-## "By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
-
-</v-click>
+<QuotePair
+  first="We gave a student team AI coding tools and tracked them for 10 weeks. The first few weeks were remarkably productive."
+  firstAttribution="Margaret-Anne Storey"
+  second="By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
+/>
 
 <!--
 
@@ -136,7 +132,7 @@ BRIDGE: "So what does this look like when it compounds? Let me show you the patt
 
 # The Confidence Spiral
 
-<img src="/confidence-spiral.png" class="mx-auto w-full max-w-lg mt-2 mb-4" />
+<SlideImage src="/confidence-spiral.png" alt="The confidence spiral diagram" />
 
 <v-click>
 

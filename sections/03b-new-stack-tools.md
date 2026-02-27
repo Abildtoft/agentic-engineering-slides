@@ -21,7 +21,7 @@ layout: center
 class: text-center
 ---
 
-<img src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." class="mx-auto w-full max-w-6xl" />
+<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." size="xl" />
 
 <p class="mt-4 text-lg opacity-85">APIs are tools. Skills are recipes. MCP is the kitchen.</p>
 
@@ -140,7 +140,7 @@ BRIDGE: "With that framing, let's start with guardrails."
 
 # Guardrails
 
-<img src="/guardrails-bowling.jpg" class="mx-auto h-52 mt-1 mb-2" />
+<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
 
 <v-click>
 
@@ -513,7 +513,7 @@ layout: statement
 
 <h1>Harness Engineering</h1>
 
-<img src="/verification-loop.png" class="mx-auto h-40 mt-2 mb-2" />
+<SlideImage src="/verification-loop.png" alt="Verification loop diagram" size="xs" />
 
 <v-click>
 

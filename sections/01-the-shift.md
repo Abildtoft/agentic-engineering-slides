@@ -116,12 +116,11 @@ BRIDGE: "Now let's anchor this in one hard number."
 layout: fact
 ---
 
-# 4%
-
-<h2 class="mt-8 leading-tight max-w-4xl">
-of new code in public GitHub repos was produced by Claude Code<br />
-(as of February 2026)
-</h2>
+<BigNumber
+  value="4%"
+  label="of new code in public GitHub repos was produced by Claude Code"
+  sublabel="(as of February 2026)"
+/>
 
 <!--
 SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
