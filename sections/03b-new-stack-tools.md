@@ -33,44 +33,16 @@ class: text-center
 
 ---
 
-# LLMs Are Stochastic
-
-<v-click>
-
-**Same prompt, different result every time.** This is not a bug — it's the nature of the tool.
-
-</v-click>
-<v-click>
-
-We instinctively value "oneshotting" — getting it right the first time. But optimizing for first-attempt perfection fights the model's strengths.
-
-</v-click>
-<v-click>
-
-**Design for iteration instead:** generate → evaluate → refine → repeat.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Anchor the section with one design truth: outputs are nondeterministic
-- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
-
-BRIDGE: "So how do we make iteration productive?"
--->
-
----
-
 # Design the System, Not the Prompt
 
 <v-click>
 
-The engineers getting the most from AI stopped crafting the perfect prompt. They started building fast feedback loops.
+**LLMs are stochastic.** Same prompt, different result every time. Optimizing for first-attempt perfection fights the model's strengths.
 
 </v-click>
 <v-click>
 
-> "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — **Pirouette B**, software engineer
+**Design for iteration instead:** generate → evaluate → refine → repeat. The engineers getting the most from AI stopped crafting the perfect prompt — they started building fast feedback loops.
 
 </v-click>
 <v-click>
@@ -80,7 +52,7 @@ You don't make agents trustworthy by watching them. You make them trustworthy by
 </v-click>
 <v-click>
 
-> "If the AI is asking you to do something — check the PR, tell me the CI status — you should really be thinking about how to teach it to just do that for itself." — **Brian Lovin**
+Every repeated human intervention is a signal that the harness is incomplete.
 
 </v-click>
 
@@ -88,9 +60,15 @@ You don't make agents trustworthy by watching them. You make them trustworthy by
 SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
 
 KEY POINTS:
+- Anchor with one design truth: outputs are nondeterministic
+- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
 - Shift from prompt craft to system design
 - Set up guardrails as an enabler of speed, not only safety
 - Every repeated human intervention is a signal that the harness is incomplete
+
+DELIVERY:
+- Quotes for speaker notes: "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
+- "If the AI is asking you to do something — check the PR, tell me the CI status — you should really be thinking about how to teach it to just do that for itself." — Brian Lovin
 
 BRIDGE: "That's the design philosophy. Now: what makes iteration safe?"
 -->
@@ -296,37 +274,22 @@ An MCP server exposes three types of capabilities:
 - **Prompts** — reusable prompt templates the client can retrieve
 
 </v-click>
+<v-click>
+
+**Examples I use daily:** Linear, Context7, Nx MCP, Chrome DevTools / Playwright, Markitdown, Magic Patterns, Granola — one protocol, many systems, no bespoke glue code.
+
+</v-click>
 
 <!--
 KEY POINTS:
 - Define MCP as the interoperability layer, not another proprietary feature
 - Keep the three capability types practical and memorable
 - Emphasize workflow participation: agents can now act across systems
+- Real-world examples anchor MCP beyond theory
+- Emphasize breadth: planning, docs, browser, design, knowledge capture
 
 DELIVERY:
 - For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms
-
-BRIDGE: "Let me show you which ones I use every day."
--->
-
----
-
-# MCPs I Use Daily
-
-- **Linear** — issue tracking and project management
-- **Context7** — up-to-date library documentation
-- **Nx MCP** — monorepo workspace tools
-- **Chrome DevTools** / **Playwright** — browser automation and testing
-- **Markitdown** — document-to-markdown conversion
-- **Magic Patterns** — design-to-code integration
-- **Granola** — meeting notes
-
-
-<!--
-KEY POINTS:
-- Real-world examples anchor MCP beyond theory
-- Emphasize breadth: planning, docs, browser, design, knowledge capture
-- Main takeaway: one protocol, many systems, no bespoke glue code per toolchain
 
 BRIDGE: "MCP connects agents to tools. Now: how do you enforce boundaries?"
 -->
@@ -394,33 +357,9 @@ A **specialized agent** narrows that loop. It gets a focused persona, a constrai
 Each agent is a markdown file — persona, constraints, evaluation criteria — with optional scripts and tools scoped just to it. **A mini MCP per agent.**
 
 </v-click>
-
-<!--
-KEY POINTS:
-- Define an agent operationally, not mystically
-- Specialization narrows scope, tools, and evaluation criteria
-- Treat each specialized agent as a testable, versioned component
-
-BRIDGE: "The concept is simple. Why does it actually work better than one general-purpose agent?"
--->
-
----
-
-# Why Specialization Works
-
 <v-click>
 
-**An LLM's context window is finite.** The more concerns you load into it, the shallower its attention on each one.
-
-</v-click>
-<v-click>
-
-One agent reviewing for security, accessibility, performance, and architecture at once will be mediocre at all four.
-
-</v-click>
-<v-click>
-
-**Single-responsibility principle — but for agents.** One persona, one evaluation lens, one job.
+**Single-responsibility principle — but for agents.** Context windows are finite — the more concerns you load, the shallower the attention. One persona, one evaluation lens, one job.
 
 </v-click>
 <v-click>
@@ -430,13 +369,15 @@ A focused agent doesn't just perform better — it's easier to test, debug, and 
 </v-click>
 
 <!--
-SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
-SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
-
 KEY POINTS:
+- Define an agent operationally, not mystically
+- Specialization narrows scope, tools, and evaluation criteria
+- Treat each specialized agent as a testable, versioned component
 - Attention in-context is finite; specialization preserves depth
 - SRP maps cleanly from code modules to agent design
-- Narrow agents are easier to evaluate, debug, and trust
+
+SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
+SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
 
 BRIDGE: "Individual agents each doing one job well. What happens when you need them to work together?"
 -->

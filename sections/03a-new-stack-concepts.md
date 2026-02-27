@@ -114,36 +114,25 @@ The models could already reason about code. The unlock was giving them tools to 
 Project context files — Architecture docs, style guides, domain knowledge. Everything the agent needs to make good decisions.
 
 </v-click>
+<v-click>
+
+**Good documentation went from "nice to have" to the single biggest lever on agent output quality.**
+
+</v-click>
 
 <!--
 SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
+SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
 - The unlock was visibility into real codebases and conventions
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
 - Reuse a human metaphor: "everything a strong new hire needs on day one"
+- Documentation is now production infrastructure, not supporting material
 
 DELIVERY:
 - Call out that product docs and design system docs are first-class context inputs
-
-BRIDGE: "Good documentation went from nice-to-have to the single biggest lever on agent output quality."
--->
-
----
-layout: statement
----
-
-# Good documentation went from "nice to have" to the single biggest lever on agent output quality
-
-<!--
-SOURCE: Martin Fowler / Laura Tacho (martinfowler.com/fragments/2026-02-13.html)
-SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
-
-KEY POINTS:
-- Documentation is now production infrastructure, not supporting material
-- Strong context improves both human onboarding and agent reliability
-- This is a compounding investment slide
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->
@@ -167,6 +156,11 @@ Break work into focused chunks — one function, one bug, one feature at a time.
 Iterate: spec → implement → verify → refine. The human writes the spec and owns the verification. The agent writes the code.
 
 </v-click>
+<v-click>
+
+> "LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time." — **Addy Osmani**
+
+</v-click>
 
 <!--
 SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com/p/my-llm-coding-workflow-going-into)
@@ -178,29 +172,11 @@ KEY POINTS:
 - Sequence matters: spec, implement, verify, refine
 - Verification is part of the workflow contract, not an afterthought
 - Tie to known practices: issue decomposition, acceptance criteria, iterative review
+- Osmani quote is the concise rule-of-thumb: narrow tasks outperform vague mega-prompts
 
 DELIVERY:
 - Keep this practical and procedural
 - Remind the room this applies to product and design workflows too
-
-BRIDGE: "LLMs do best when given focused prompts."
--->
-
----
-layout: quote
----
-
-# "LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time."
-
-Addy Osmani
-
-<!--
-SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com/p/my-llm-coding-workflow-going-into)
-
-KEY POINTS:
-- Use this as the concise rule-of-thumb slide
-- Connect to lived experience: narrow tasks outperform vague mega-prompts
-- Reinforce: unit of work is now the scoped spec
 
 BRIDGE: "The practice comes in the demo. First, the building blocks that make context and specs operational."
 -->

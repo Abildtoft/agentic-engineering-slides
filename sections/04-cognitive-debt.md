@@ -72,40 +72,24 @@ layout: quote
 ---
 
 <QuotePair
-  first="We gave a student team AI coding tools and tracked them for 10 weeks. The first few weeks were remarkably productive."
+  first="We gave a student team AI coding tools and tracked them for 10 weeks. By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
   firstAttribution="Margaret-Anne Storey"
-  second="By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
+  second="I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
+  secondAttribution="Simon Willison"
 />
 
 <!--
 
 SOURCE: Simon Willison, citing Storey (simonwillison.net/2026/Feb/15/cognitive-debt/)
+SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 KEY POINTS:
 - The case arc matters: early acceleration, then sudden comprehension failure
 - Highlight misdiagnosis risk: teams blame code quality when the issue is understanding loss
-- Use this as evidence that cognitive debt compounds nonlinearly
-
-BRIDGE: "And this is not just a student-team problem."
--->
-
----
-layout: quote
----
-
-<h1>"I no longer have a firm mental model of what my projects can do and how they work,<br />
-which means each additional feature becomes harder to reason about."</h1>
-
-Simon Willison
-
-<!--
-
-SOURCE: Simon Willison (simonwillison.net/2026/Feb/15/cognitive-debt/)
-
-KEY POINTS:
-- Validate that this affects highly capable practitioners too
+- Validate that this affects highly capable practitioners too — not just students
 - Position the issue as structural workflow drift, not individual weakness
-- Reinforces urgency without blame
+
+BRIDGE: "It's not just a student-team problem. It's a structural pattern."
 -->
 
 ---
