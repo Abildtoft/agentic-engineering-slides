@@ -148,6 +148,11 @@ BRIDGE: "So what are those skills? Let's name them."
 **Judge what matters** from what merely works
 
 </v-click>
+<v-click>
+
+The work is the same as it always was — **turning ambiguity into clarity.**
+
+</v-click>
 
 <!--
 
@@ -189,30 +194,6 @@ BRIDGE: "But taste isn't just about choosing what to build. It changes how we pl
 layout: quote
 ---
 
-<h1>"Sprints are no longer about reducing uncertainty in the face of high costs.<br />
-Today they are about deciding what to do and how to stand out<br />
-when the cost of building moves toward zero."</h1>
-
-Lenny Sanudo, creator of the Design Sprint
-
-<!--
-SOURCE: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
-
-KEY POINTS:
-- Translate the judgment thesis into planning mechanics teams already know
-- Cost-to-build assumptions inside Agile rituals are changing
-- The new constraint is selection quality, not implementation throughput
-
-DELIVERY:
-- Prompt the room to reflect on their current planning rituals
-
-BRIDGE: "And if strategy docs stay static while build speed jumps, prototypes win."
--->
-
----
-layout: quote
----
-
 <h1>"The prototype is the new PRD.<br />
 If your team needs a 20-page product strategy doc,<br />
 you're already behind someone with a weekend prototype."</h1>
@@ -239,27 +220,9 @@ layout: statement
 
 # Most products don't die from missing features. They die from accumulation.
 
-<!--
-
-SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
-
-KEY POINTS:
-- Subtraction is strategic discipline under cheap build economics
-- Frame addition as default and subtraction as leadership behavior
-- Works across functions: product scope, UX complexity, technical surface area
-
-BRIDGE: "That subtraction instinct — let's make it concrete for product leaders."
--->
-
----
-layout: statement
----
-
-# PMs don't just ship features. They kill them.
-
 <v-click>
 
-Shipping isn't the job. Shipping the right product is.
+PMs don't just ship features. They kill them.
 
 </v-click>
 <v-click>
@@ -270,12 +233,17 @@ A great PM doesn't fall in love with the roadmap. They fall in love with the pro
 
 <!--
 
+SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
+
 KEY POINTS:
-- No attribution — this is synthesis, not a quote
-- Every product leader needs to hear this: the PM who can articulate intent, prototype fast, and ship with agents still must answer what should not exist
-- When building is cheap, "yes" gets easier — the conviction to say no (kill the feature that took three sprints, cut the scope everyone loves) does not get cheaper, it gets more important
+- Subtraction is strategic discipline under cheap build economics
+- Frame addition as default and subtraction as leadership behavior
+- Works across functions: product scope, UX complexity, technical surface area
+- When building is cheap, "yes" gets easier — the conviction to say no does not get cheaper, it gets more important
 
 DELIVERY:
+- Lead with the accumulation line — let it land
+- "PMs kill features" is the punchline — reveal it
 - Land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
 
 BRIDGE: "Let's consolidate the full argument before the final coda."

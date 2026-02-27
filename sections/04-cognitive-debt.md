@@ -201,37 +201,6 @@ BRIDGE: "At this point, the question becomes what we are outsourcing by default.
 layout: quote
 ---
 
-<h1>"I caught myself asking the AI for the umpteenth time how to do a certain if conditional.<br />
-Why have I not internalized this?<br />
-Because I've outsourced it to the AI."</h1>
-
-<v-click>
-
-## "You will actually turn yourself into an idiot if you can't do seven times seven real quick in your head."
-
-Matija Grcic
-
-</v-click>
-
-<!--
-
-SOURCE: Matija Grcic (x.com/matijagrcic/status/2012517043711492558)
-
-KEY POINTS:
-- This quote reframes the issue as skill atrophy, not tooling adoption
-- Preserve the distinction: not anti-tool, anti-outsourcing-core-reasoning
-- Keep emphasis on maintaining mental primitives
-
-DELIVERY:
-- For non-devs: substitute "code" with any domain skill — if you outsource all your judgment to a tool, what remains?
-
-BRIDGE: "So the risk is real, but it is not inevitable."
--->
-
----
-layout: quote
----
-
 <h1>"If we treat them as a substitute for effort,<br />
 we're barely a step away from grift — and I really believe<br />
 we'll wake up one day, completely hollow."</h1>
@@ -245,6 +214,7 @@ we'll wake up one day, completely hollow."</h1>
 <!--
 
 SOURCE: "It is not — and should not be — zero-effort" (sources/not-zero-effort.md)
+SOURCE: Matija Grcic (x.com/matijagrcic/status/2012517043711492558)
 
 KEY POINTS:
 - The emotional low point of the section
@@ -254,6 +224,8 @@ KEY POINTS:
 
 DELIVERY:
 - Let "completely hollow" land before the second reveal
+- Optional verbal color from Grcic: "I caught myself asking the AI for the umpteenth time how to do a certain if conditional. Why have I not internalized this? Because I've outsourced it to the AI."
+- For non-devs: substitute "code" with any domain skill — if you outsource all your judgment to a tool, what remains?
 
 BRIDGE: "So what does non-hollow look like? What is the antidote?"
 -->

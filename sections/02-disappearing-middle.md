@@ -75,27 +75,6 @@ BRIDGE: "If execution is getting commoditized, what stays scarce?"
 -->
 
 ---
-layout: statement
----
-
-# The machinery for creating code is now a commodity. What remains is critical thinking and foundational human skills.
-
-<!--
-SOURCE: Nadh (same essay)
-
-KEY POINTS:
-- Name what "foundational human skills" means in practice: framing, prioritizing, judging tradeoffs
-- Emphasize scarcity shift: these skills moved from "nice" to "critical path"
-- This is a reassurance slide after strong disruption claims
-
-DELIVERY:
-- Let the line stand with minimal commentary
-- Reinforce that this is a role evolution, not role extinction
-
-BRIDGE: "So if there's a split happening, what does it look like?"
--->
-
----
 layout: quote
 ---
 
