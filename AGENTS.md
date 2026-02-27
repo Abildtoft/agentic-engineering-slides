@@ -55,8 +55,7 @@ styles/            # Custom CSS (Melatech brand overrides)
   - `01-the-shift.md` → P1-001
   - `02-disappearing-middle.md` → P1-002
   - `03a-new-stack-concepts.md` → P1-003
-  - `03b-new-stack-tools.md` → P1-004
-  - `03c-new-stack-composed.md` → P1-005
+  - `03b-new-stack-tools.md` → P1-004, P1-005 (Section 3c was consolidated into 3b)
   - `04-cognitive-debt.md` → P1-006
   - `05-pipeline-and-what-matters.md` → P1-007
   - `06-moving-forward.md` → P1-008
