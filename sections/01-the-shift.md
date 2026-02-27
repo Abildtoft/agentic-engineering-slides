@@ -5,13 +5,19 @@ transition: section-shift
 
 # The Shift Is Here
 
-Yes, we've heard this before. Something changed.
+Yes, you've heard this before. But something's changed.
 
 <!--
-[T+01:00 | S1 slide 1 of 8 | 0.5min]
-Start by naming the elephant: "We've all sat through the AI hype cycle. GitHub Copilot launched in 2021. ChatGPT in 2022. Every quarter since, someone announced that AI would transform software engineering. And every quarter, the actual experience was... fine. Useful autocomplete. Decent boilerplate. Nothing that changed how you fundamentally work."
-Validate the skepticism: "That skepticism is well-earned. Most of you have been hearing 'this changes everything' for three years while your day-to-day stayed roughly the same."
-The pivot: "But around December 2025, something shifted. Not in the announcements — in the production numbers. Let me show you what I mean."
+KEY POINTS:
+- Open by validating skepticism before making claims
+- Frame this as a shift in outcomes, not a shift in hype language
+- Set up the next slide as evidence, not opinion
+
+DELIVERY:
+- Calm, low-drama tone; this slide earns trust
+- Land the line: "something changed"
+
+BRIDGE: "Let me show you the pattern that changed."
 -->
 
 ---
@@ -30,12 +36,12 @@ It wasn't one model release — it was the convergence of **models good enough**
 </v-click>
 <v-click>
 
-**SWE-bench scores** — real-world GitHub issue resolution: ~38% (mid-2024) → 49% (Oct 2024) → 73%+ (2025)
+**The vocabulary shifted** — from "AI Code Assistants" to "Agentic IDEs"
 
 </v-click>
 <v-click>
 
-**The vocabulary shifted** — from "AI Code Assistants" to "Agentic IDEs"
+No single metric proves it — the pattern across metrics does.
 
 </v-click>
 <v-click>
@@ -45,34 +51,65 @@ It wasn't one model release — it was the convergence of **models good enough**
 </v-click>
 
 <!--
-[T+02:15 | S1 slide 2 of 8 | 1.5min]
-Source: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
-Source: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
-Source: RedMonk, shift from "AI Code Assistants" to "Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
+SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
+SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
+SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 
-Walk through each reveal. The cumulative effect is the point — no single data point proves "inflection," but together they do.
-- December 2025: not one company, three. Anthropic, Google, OpenAI all shipped within 30 days of each other. Claude Code launched as CLI in February 2025, Cursor shipped agentic editing, OpenAI launched Codex, Google launched Antigravity.
-- SWE-bench: the industry's standard benchmark for real-world GitHub issue resolution. The jump from 38% to 73% happened in roughly a year.
-- The vocabulary shift (RedMonk): when analysts stop calling something an "assistant" and start calling it an "agent," the framing has moved from tool to collaborator.
-- Close with the skeptics line. Let it land.
+KEY POINTS:
+- This is the thesis slide for section 1
+- Emphasize convergence: model quality + tooling maturity + production adoption
+- The December window matters because multiple frontier labs moved at once
+- Vocabulary shift from "assistant" to "agent" signals a workflow shift, not just branding
+
+DELIVERY:
+- Reveal each bullet deliberately; don't rush to the conclusion
+- Pause after "the curve bent"
+
+BRIDGE: "If the people building these systems say old assumptions are stale, we should listen."
 -->
 
 ---
 layout: quote
+class: quote-long
 ---
 
-# "You have to transport yourself to the current moment. It's not Sonnet 3.5 anymore. The new models are just completely, completely different."
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"You have to transport yourself to the current moment.</div>
 
-Boris Cherny, Head of Claude Code
+  <v-click>
+    <div class="quote-progressive-line">It's not Sonnet 3.5 anymore.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">The new models are just completely, completely different.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">The model changes so often that I sometimes get stuck in this old way of thinking.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">I find that new people on the team do stuff in a more AGI forward way than I do."</div>
+  </v-click>
+</div>
+
+<v-click>
+  Boris Cherny, Head of Claude Code
+</v-click>
 
 <!--
-[T+03:00 | S1 slide 3 of 8 | 1.5min]
-Source: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
+SOURCE: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
 
-Full quote: "The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
-The person building the tool can't keep up with the capabilities of their own tool.
-New team members are more capable because they don't carry the baggage of what the model couldn't do 6 months ago.
-Your mental model of what AI can do is probably already outdated.
+KEY POINTS:
+- This quote reframes resistance as stale mental models, not intelligence
+- Expertise can become inertia when capabilities shift quickly
+- Newcomers can outperform by starting with current constraints, not historical ones
+
+DELIVERY:
+- Let the progressive reveal do the work
+- Keep commentary short; preserve the quote's emotional weight
+
+BRIDGE: "Now let's anchor this in one hard number."
 -->
 
 ---
@@ -81,15 +118,24 @@ layout: fact
 
 # 4%
 
-of new code in public GitHub repos was produced by Claude Code (as of February 2026)
+<h2 class="mt-8 leading-tight max-w-4xl">
+of new code in public GitHub repos was produced by Claude Code<br />
+(as of February 2026)
+</h2>
 
 <!--
-[T+03:15 | S1 slide 4 of 8 | 1min]
-Source: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
+SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
-That's one tool. Not all AI — just Claude Code. And that number is growing fast.
-This isn't a demo anymore. It's production reality.
-Let that sink in before we go further.
+KEY POINTS:
+- 4% is meaningful because it is one tool in public repos, not total AI output
+- Position this as adoption evidence, not a victory lap
+- Move the room from novelty mindset to production mindset
+
+DELIVERY:
+- Let "4%" breathe before explaining
+- Stress "one tool" to avoid overclaiming
+
+BRIDGE: "Let that sink in before we go further."
 -->
 
 ---
@@ -98,7 +144,7 @@ Let that sink in before we go further.
 
 <v-click>
 
-**Spotify** — Best developers haven't written a line of code since December
+**Spotify** — leadership reports top developers shifted heavily away from manual coding since December
 
 </v-click>
 <v-click>
@@ -113,54 +159,27 @@ Let that sink in before we go further.
 </v-click>
 <v-click>
 
-**Anthropic & OpenAI** — Top engineers report 100% AI-written code
+**Anthropic & OpenAI** — frontier teams report near-total AI-generated code
 
 </v-click>
 
 <!--
-[T+04:00 | S1 slide 5 of 8 | 1.5min]
-Source: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
-Source: Google CEO Sundar Pichai, earnings call
-Source: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
-Source: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
+SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
+SOURCE: Google CEO Sundar Pichai, earnings call
+SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
+SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
 
-Walk through each one. The point is cumulative shock — this isn't one company or one tool. It's the entire industry moving at once.
-Spotify's example is especially vivid: engineers fix bugs from Slack on their phone during their commute, get a new build pushed back, and merge to production before arriving at the office. That's not autocomplete. That's a fundamentally different relationship to code.
-The Anthropic/OpenAI stat is the extreme case — the people building the AI tools are fully dogfooding them.
--->
+KEY POINTS:
+- Broaden from one metric to cross-industry signal
+- Keep Spotify as the vivid story; treat others as corroboration
+- Frame this as workflow change, not just speed improvement
+- End with the implication: divergence between teams will widen
 
----
-layout: quote
----
+DELIVERY:
+- One beat per company
+- Spend most time on Spotify, then compress the rest
 
-# "The entire history of software engineering is one of rising levels of abstraction"
-
-Grady Booch
-
-<!--
-[T+06:15 | S1 slide 6 of 8 | 1.5min]
-Source: Grady Booch, X post (x.com/Grady_Booch/status/2013331606795362398)
-
-Booch is one of the founders of UML, decades of software architecture thinking.
-His point: this has happened before. Assembly → compilers → high-level languages → frameworks → AI.
-Each time, the previous layer didn't disappear — it just stopped being the thing humans focused on.
-Grace Hopper faced the same skepticism when she introduced the compiler: "real programmers write assembly."
--->
-
----
-layout: statement
----
-
-# The future of software engineering isn't syntax — it's turning ambiguity into clarity
-
-<!--
-[T+07:00 | S1 slide 7 of 8 | 1min]
-Source: Grady Booch (same thread)
-
-This is the distilled insight. The real work was never typing code.
-It was always: what should we build? Why? How do we know it's right?
-Those questions don't go away when code generation becomes cheap. They become the whole job.
-Transition: but here's the thing — this shift isn't happening at a normal pace.
+BRIDGE: "That is why this next prediction sounds less like hype and more like trajectory."
 -->
 
 ---
@@ -172,11 +191,15 @@ layout: quote
 Jack Clark, co-founder of Anthropic
 
 <!--
-[T+08:00 | S1 slide 8 of 8 | 1min]
-Source: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
+SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
 
-Clark's point: the AI economy moves fast relative to everything else. Unlike crypto, it already touches real economic activity.
-This isn't about early adopters being smug — it's about a genuine divergence in capability.
-The question for this room: which side of that divide do you want to be on?
-So let me turn the question to you.
+KEY POINTS:
+- This is the section-1 synthesis in one sentence
+- The "parallel world" idea frames urgency without panic
+- Land the audience question: adoption is now a strategic choice
+
+DELIVERY:
+- Ask the question and leave silence
+
+BRIDGE: "That question — which side of the divide — is what the rest of this session is about. Let's start with what's actually changing."
 -->

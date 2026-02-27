@@ -5,131 +5,71 @@ transition: section-shift
 
 # The Junior Pipeline & What Matters
 
-The long-term risk and the skills that survive
+From individual practice to team capability
 
 <!--
-[T+115:30 | S5 slide 1 of 14 | 0.5min]
-Transition from Section 4: everything we just discussed — cognitive debt, the confidence spiral, outsourced understanding — those are individual risks. They affect you, today, in your work.
 
-Now let's zoom out to the structural question: what happens to the next generation of engineers? And then: what skills actually matter in this new world?
+KEY POINTS:
+- Zoom out from individual practice risk to organizational capability risk
+- Central question: how do teams develop judgment when execution cost collapses?
+- Structure: pipeline pressure first, then enduring capabilities
 
-This section has two parts. First, the pipeline crisis — the systemic risk to the profession. Then, what survives — the skills that become more valuable, not less, when code gets cheap.
+DELIVERY:
+- Energy: measured, strategic — not panic, perspective
 
-Energy: measured, strategic. Not panic — perspective.
+BRIDGE: "Now let's zoom out to the structural question: what happens to the next generation of engineers?"
 -->
 
 ---
 layout: statement
 ---
 
-# If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
+<h1>If we skip the 10,000 hours of practice<br />
+and jump straight to "overseer of AI output" —<br />
+are we actually training architects?</h1>
 
 <!--
-[T+116:15 | S5 slide 2 of 14 | 1min]
-Source: Developer Pipeline Getting Strangled (linkedin.com)
 
-The muscle memory of software engineering develops through repetition and guided practice. Knowing when to trust your instincts. Recognizing antipatterns. Understanding second-order consequences of technical decisions.
+SOURCE: Developer Pipeline Getting Strangled (linkedin.com)
+SOURCE: Husom, "Outsourcing Thinking"
 
-Jazz analogy (Husom, "Outsourcing Thinking"): good improvisation doesn't come from practicing improvisation — it comes from deeply internalizing harmony, rhythm, and theory through years of repetitive immersion. Skip the scales and you can play notes, but you can't improvise. Same with engineering: skip the implementation reps and you can prompt agents, but you can't architect systems.
+KEY POINTS:
+- Frame this as a capability formation problem, not nostalgia for manual coding
+- Prompting output is not the same as building architectural intuition
+- The unresolved part for organizations: how juniors progress toward senior judgment
 
-AI agents can generate code, but they cannot transfer the tacit knowledge that separates someone who can review AI output from someone who can architect systems.
+DELIVERY:
+- Rhetorical question — don't answer it yet, let the audience sit with it
 
-This is a rhetorical question — don't answer it yet. Let the audience sit with it.
-
-The industry keeps saying "juniors will do different work now" — but there isn't yet alignment about what that work actually is, how it builds toward senior capabilities, or whether it creates the judgment AI assistance assumes you already have.
-
-Bridge: "This question has a concrete answer from Harvard Business Review."
+BRIDGE: "This question has a concrete answer from Harvard Business Review."
 -->
 
 ---
 layout: quote
 ---
 
-# "What I hear most often from executives is not that they fear AI will replace empathy. It's that they fear it will replace the contexts in which empathy is developed."
+<h1>"What I hear most often from executives is not that they fear AI will replace empathy.<br />
+It's that they fear it will replace the contexts<br />
+in which empathy is developed."</h1>
 
 Harvard Business Review
 
 <!--
-[T+117:30 | S5 slide 3 of 14 | 1.5min]
-Source: AI is Changing How We Learn at Work (hbr.org/2025/12/ai-is-changing-how-we-learn-at-work)
 
-The HBR article describes executives reflecting on their own pathways to mastery: "countless hours of practice, moments of intense insight, wisdom gained from failure, mentors who gave them feedback." All experiential learning that shaped their expertise, resilience, judgment and identity.
+SOURCE: "AI is Changing How We Learn at Work" (hbr.org/2025/12/ai-is-changing-how-we-learn-at-work)
 
-Empathy here is not just emotional — it's a proxy for all the skills that develop through experiential practice. Pattern recognition. Judgment under uncertainty. Knowing when to push back.
+KEY POINTS:
+- The risk is losing the contexts where judgment is formed
+- Translate "empathy" to role-specific tacit capability (product sense, architectural sense, design taste)
+- Connect this directly to mentorship, practice, and feedback loops
 
-For the mixed audience: substitute "empathy" with any skill your role requires that you learned by doing, not by reading. Product sense. Design intuition. Architectural judgment. That experiential pathway is what's at risk.
-
-Bridge: "There's a parable that makes this risk vivid."
+BRIDGE: "So what does this imply for how we train juniors now?"
 -->
 
----
 
-# The Whispering Earring
-
-<v-click>
-
-A magical earring that whispers the answer to every question. Its advice is never wrong.
-
-</v-click>
-<v-click>
-
-It starts with major decisions. Then breakfast. Then how to move each muscle in your body.
-
-</v-click>
-<v-click>
-
-"The wearer lives an abnormally successful life. After they die, the priests find **their brain has almost entirely rotted away** — except for the parts associated with reflexive action."
-
-</v-click>
-
-<!--
-[T+119:15 | S5 slide 4 of 14 | 2min]
-Source: Tech's New Generation and the End of Thinking — Sam Kriss, Harper's Magazine (harpers.org/archive/2026/03/childs-play-sam-kriss-ai-startup-roy-lee/)
-
-Parable by Scott Alexander, "The Whispering Earring" — buried in the treasure-vaults of Til Iosophrang. A little topaz gem that speaks to you, beginning with "Better for you if you..."
-
-The story is about choice atrophy through passive reliance. The earring is not malicious. It's helpful. That's what makes it dangerous.
-
-The first time you put it on, it whispers: "Better for you if you take me off." But you don't. Because the advice is never wrong.
-
-Connect to cognitive debt: the confidence spiral from Section 4 is the earring in miniature. Each time you defer to the tool, you lose a little capacity. Not because the tool is bad, but because you stopped exercising the muscle.
-
-For non-devs: think about any skill you developed through struggle. What happens if the struggle disappears?
-
-Bridge: "So if the tool is always right — and always available — what does that do to the people using it?"
--->
 
 ---
-layout: quote
----
-
-# "The part of 'everyone becomes a manager' in AI that I didn't really think about until now was the mental fatigue of context switching and keeping many tasks going at once... and now you all get to enjoy it too."
-
-Camille Fournier
-
-<v-click>
-
-# "Programmers will still be accountable for code generated under their watch."
-
-Martin Fowler
-
-</v-click>
-
-<!--
-[T+120:30 | S5 slide 5 of 14 | 1.5min]
-Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
-
-Fournier is the author of "The Manager's Path" — one of the most respected voices on engineering management. Her insight: we're giving developers all the worst parts of management (context switching, coordination overhead) without the organisational support managers get. The "and now you all get to enjoy it too" lands the joke — let the audience laugh.
-
-Tacho's DevEx = AgentEx framing (paraphrased here — the verbatim quote appears on-screen in Section 3b): the same practices that help developers (clear docs, good naming, consistent APIs) help agents too. Investing in developer experience is now a dual-purpose investment.
-
-Fowler's overarching point from the same piece: programmers will still be accountable for the code generated under their watch. You're accountable for code you didn't write and may not fully understand — a new kind of professional burden.
-
-Connect to the pipeline: juniors entering the field now face both problems simultaneously — they must oversee code they cannot yet evaluate, and they experience the management fatigue that took seniors years to develop coping strategies for.
-
-Bridge: "So if this is the reality, what should juniors actually focus on?"
--->
-
+layout: default
 ---
 
 # Raising the Bar for Juniors
@@ -141,7 +81,7 @@ Bridge: "So if this is the reality, what should juniors actually focus on?"
 </v-click>
 <v-click>
 
-**Now:** Writing code is no longer the bottleneck. Syntax and frameworks are becoming interchangeable.
+**Now:** Writing code is no longer the primary constraint. Syntax and frameworks are becoming interchangeable.
 
 </v-click>
 <v-click>
@@ -151,78 +91,42 @@ Bridge: "So if this is the reality, what should juniors actually focus on?"
 </v-click>
 
 <!--
-[T+122:00 | S5 slide 6 of 14 | 2min]
-Source: Junior Developers Should Go ALL-IN on System Design (linkedin.com/posts/lukasz2_junior-developers-should-go-all-in-on-system-activity-7422568656930299905-sW94)
 
-The old division of labour made sense when writing code was the bottleneck. It no longer is.
+SOURCE: "Junior Developers Should Go ALL-IN on System Design" (linkedin.com/posts/lukasz2_junior-developers-should-go-all-in-on-system-activity-7422568656930299905-sW94)
 
-With AI, inference is fast and cheap. Writing code in one stack today and another tomorrow is normal. Code is increasingly disposable.
+KEY POINTS:
+- Clarify the before/now shift in entry-level expectations
+- Output capacity increases quickly; judgment still develops slowly
+- Main message: bar is moving from syntax execution to system thinking
 
-This is both empowering and daunting. Juniors now have access to tools that let them produce working software on day one. But the skill that matters — system design, problem decomposition, architectural judgment — is what traditionally took years of implementation experience to develop.
+DELIVERY:
+- For managers in the room: how are you restructuring junior onboarding? Optimising for code output or for judgment development?
 
-For managers in the room: how are you restructuring junior onboarding? Are you optimising for code output or for judgment development?
-
-This raises the bar. It doesn't lower it.
-
-Bridge: "One proposal for how to handle this..."
+BRIDGE: "This can feel alarming, but it also clarifies what has always mattered."
 -->
 
----
-
-# Trio-Programming
-
-<v-click>
-
-Juniors work **alongside AI** — but with senior oversight and deliberate skill-building, not just task completion.
-
-</v-click>
-<v-click>
-
-Seniors who see mentorship as **force multiplication**, not a tax on their productivity.
-
-</v-click>
-<v-click>
-
-"If companies optimise purely for cost-per-line-of-code today, we'll pay for it in a **leadership vacuum** in the coming years."
-
-</v-click>
-
-<!--
-[T+123:45 | S5 slide 7 of 14 | 2min]
-Source: Developer Pipeline Getting Strangled (linkedin.com)
-
-The resolution isn't either/or. It's not "ban AI for juniors" or "let them vibe-code unsupervised." It's a structured hybrid.
-
-Trio-programming: senior + junior + AI agent. The senior provides judgment and context. The AI provides implementation speed. The junior develops understanding through guided practice with both.
-
-The key cultural shift: mentorship needs to be seen as force multiplication, not overhead. Companies that treat junior development as a cost to minimise will find themselves without senior engineers in five years.
-
-The leadership vacuum warning is the systemic consequence of all the individual cognitive debt we discussed in Section 4.
-
-Pivot: "That's the risk. Now let's talk about what survives. Because the news is not all bad."
--->
 
 ---
 layout: statement
 ---
 
-# The collapse of the implementation middle isn't making engineering less important — it's revealing what was always important.
+<h1>The collapse of the implementation middle isn't making engineering less important —<br />
+it's revealing what was always important.</h1>
 
 <!--
-[T+124:15 | S5 slide 8 of 14 | 1min]
-Source: The Best Engineers Never Just Wrote Code — Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
-Osmani's full framing: "The best engineers never just wrote code. They were clarity merchants."
+SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
-This is the hinge of the section. Everything before this slide was about risk. Everything after is about what matters.
+KEY POINTS:
+- Osmani: "The best engineers never just wrote code. They were clarity merchants."
+- This is the hinge of the section — everything before was about risk, everything after is about what matters
+- Key verbal distinction: "AI doesn't make you dumber — passive reliance does"
+- "Revealing" is the key word — these are not new skills, they were always underneath the implementation work; AI exposed them by removing the layer that obscured them
 
-Key distinction to make verbally: "AI doesn't make you dumber — passive reliance does." The Whispering Earring isn't dangerous because it exists — it's dangerous because you stop thinking. The outcome is in your hands, not predetermined.
+DELIVERY:
+- Let this statement sit — it should feel like a shift in energy, from alarm to clarity
 
-The word "revealing" is key. These are not new skills. They are the skills that were always underneath the implementation work. AI didn't create them — it exposed them by removing the layer that obscured them.
-
-Let this statement sit. It should feel like a shift in energy — from alarm to clarity.
-
-Bridge: "So what are those skills? Let's name them."
+BRIDGE: "So what are those skills? Let's name them."
 -->
 
 ---
@@ -246,22 +150,15 @@ Bridge: "So what are those skills? Let's name them."
 </v-click>
 
 <!--
-[T+126:45 | S5 slide 9 of 14 | 2min]
-Source: The Best Engineers Never Just Wrote Code — Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
-Osmani's three capabilities of the engineers who will thrive. Walk through each:
+SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
-1. Problem formulation — the ability to take a messy situation and articulate what needs to be true. This is what Section 3's spec-driven development operationalises.
+KEY POINTS:
+- Walk each capability with one concrete interpretation
+- Show cross-role applicability: these are not engineering-only traits
+- Connect back to sections 3 and 4: context quality and judgment quality are coupled
 
-2. Context architecture — the CLAUDE.md, the AGENTS.md, the documentation that shapes agent behaviour. This isn't documentation for its own sake. It's infrastructure for AI-assisted work.
-
-3. Judgment — knowing the difference between "it works" and "it's right." This is the skill cognitive debt erodes most.
-
-For product/UX: every one of these applies to you. Problem formulation is product work. Context architecture is design systems. Judgment is taste.
-
-"The craft evolves. It always has. But it remains craft."
-
-Bridge: "Osmani calls it judgment. Paul Graham calls it something simpler."
+BRIDGE: "Osmani calls it judgment. Paul Graham calls it something simpler."
 -->
 
 ---
@@ -274,26 +171,71 @@ Paul Graham
 
 <v-click>
 
-# "The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
+## "The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
 
 Addy Osmani
 
 </v-click>
 
 <!--
-[T+128:00 | S5 slide 10 of 14 | 1.5min]
-Source: Paul Graham (x.com/paulg/status/2022604692178522562)
-Source: Addy Osmani + Boris Cherny (x.com/addyosmani/status/2022822356050399673)
 
-Graham's insight is devastating in its simplicity. When building is cheap, choosing what to build is the entire game.
+SOURCE: Paul Graham (x.com/paulg/status/2022604692178522562)
+SOURCE: Addy Osmani + Boris Cherny (x.com/addyosmani/status/2022822356050399673)
 
-Osmani and Cherny elaborate: judgment, taste, systems thinking. These are the skills that were always the real bottleneck. AI didn't create a new bottleneck — it removed the noise that hid the real one.
+KEY POINTS:
+- This is the compression of the argument into one selection principle
+- Cheap execution increases the value of taste and prioritization
+- Land the idea that judgment became more visible, not more optional
 
-Boris Cherny's addition: "Someone has to prompt the Claudes, talk to customers, coordinate with other teams, decide what to build next. Engineering is changing and great engineers are more important than ever."
+BRIDGE: "But taste isn't just about choosing what to build. It changes how we plan, how we validate, and what not to build."
+-->
 
-For UX/product people specifically: "taste" is literally your professional skill. The tools have changed. The need for taste hasn't — it has intensified.
+---
+layout: quote
+---
 
-Bridge: "But taste isn't just about choosing what to build. It's also about what not to build."
+<h1>"Sprints are no longer about reducing uncertainty in the face of high costs.<br />
+Today they are about deciding what to do and how to stand out<br />
+when the cost of building moves toward zero."</h1>
+
+Lenny Sanudo, creator of the Design Sprint
+
+<!--
+SOURCE: Lenny Sanudo (x.com/lennysan/status/2024300694891864304)
+
+KEY POINTS:
+- Translate the judgment thesis into planning mechanics teams already know
+- Cost-to-build assumptions inside Agile rituals are changing
+- The new constraint is selection quality, not implementation throughput
+
+DELIVERY:
+- Prompt the room to reflect on their current planning rituals
+
+BRIDGE: "And if strategy docs stay static while build speed jumps, prototypes win."
+-->
+
+---
+layout: quote
+---
+
+<h1>"The prototype is the new PRD.<br />
+If your team needs a 20-page product strategy doc,<br />
+you're already behind someone with a weekend prototype."</h1>
+
+Andrew Chen
+
+<!--
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- Make the artifact shift explicit: from document-first to experience-first
+- Clarify that strategy still matters; the medium of validation changes
+- Connect this to design, product, and engineering convergence
+
+DELIVERY:
+- Directly address product/UX people in the room
+
+BRIDGE: "But taste and speed also have a shadow side."
 -->
 
 ---
@@ -303,123 +245,43 @@ layout: statement
 # Most products don't die from missing features. They die from accumulation.
 
 <!--
-[T+128:45 | S5 slide 11 of 14 | 1min]
-Source: On Subtraction (x.com/ryolu_/status/2015824853121477198)
 
-The full argument: adding is easy. Someone asks for a feature, you build it. User hits a bug, you patch it. Repeat until you have 50 buttons and no one knows where to start.
+SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
 
-When building is cheap, the temptation to add is overwhelming. The cost of subtraction goes up, not down, because saying "no" to something that costs almost nothing to build requires conviction.
+KEY POINTS:
+- Subtraction is strategic discipline under cheap build economics
+- Frame addition as default and subtraction as leadership behavior
+- Works across functions: product scope, UX complexity, technical surface area
 
-"Addition is momentum. Subtraction takes conviction. You have to see the whole, not just the parts."
-
-This is the skill AI makes harder, not easier. AI can build anything you ask for. It cannot tell you what to leave out.
-
-For all roles: think about the last feature your team shipped that made the product worse by existing. That's what subtraction prevents.
-
-Bridge: "And when you're orchestrating multiple agents, the coordination challenge is its own form of systems thinking."
+BRIDGE: "That subtraction instinct — let's make it concrete for product leaders."
 -->
 
 ---
-layout: quote
+layout: statement
 ---
 
-# "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic."
-
-Pirouette B
-
-<!--
-[T+129:45 | S5 slide 12 of 14 | 1min]
-Source: Coordination is Quietly Becoming the Hardest Engineering Problem (x.com/PirouneB/status/2022783395139318007)
-
-When you have multiple agents working in parallel, someone has to version the prompts, manage shared state, handle failure cascading, and decide which agent gets which context window.
-
-This is systems thinking applied to a new domain. The principles of distributed systems — eventual consistency, failure isolation, coordination protocols — apply directly. But the components are nondeterministic, which makes it harder.
-
-Connect to Section 3: the composed systems we described (harnesses, multi-agent teams) need exactly this kind of engineering rigour. The skill isn't "prompting" — it's systems design.
-
-For the room: this is why "everyone becomes a manager" (Fournier, slide 5) is not just a metaphor. Managing nondeterministic agents requires the same skills as managing nondeterministic humans — but without the social shortcuts.
-
-Bridge: "So let's name what we're saying clearly."
--->
-
----
-layout: two-cols-header
----
-
-# What Survives
-
-::left::
+# PMs don't just ship features. They kill them.
 
 <v-click>
 
-**At Risk**
-
-- Syntax and framework knowledge
-- Routine implementation
-- Translation and handoff work
-- Speed of code production
+Shipping isn't the job. Shipping the right product is.
 
 </v-click>
-
-::right::
-
 <v-click>
 
-**More Valuable Than Ever**
-
-- Problem formulation and judgment
-- Taste and the courage to subtract
-- Systems thinking and coordination
-- Mentorship and knowledge transfer
+A great PM doesn't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
 
 </v-click>
 
 <!--
-[T+131:15 | S5 slide 13 of 14 | 2min]
-Synthesis of the section's argument. Both columns should feel honest — not dismissive of the left, not utopian about the right.
 
-The left column isn't "worthless" — it's "less scarce." These skills still matter. They're just no longer the bottleneck.
+KEY POINTS:
+- No attribution — this is synthesis, not a quote
+- Every product leader needs to hear this: the PM who can articulate intent, prototype fast, and ship with agents still must answer what should not exist
+- When building is cheap, "yes" gets easier — the conviction to say no (kill the feature that took three sprints, cut the scope everyone loves) does not get cheaper, it gets more important
 
-The right column isn't new. These are the skills the best engineers, product people, and designers always had. The difference is that they're now the entire job, not a complement to implementation work.
+DELIVERY:
+- Land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
 
-Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If it's primarily on the right, the tools just made you more powerful."
-
-This echoes Section 2's "Compressing vs. Expanding" slide but adds specificity after three more sections of argument.
-
-Sources: Osmani (clarity merchants, bottleneck), Graham (taste), On Subtraction (conviction), Pirouette B (coordination), Developer Pipeline (mentorship)
-
-Bridge: "That brings us to the question this room needs to discuss."
--->
-
----
-layout: center
-class: text-center
----
-
-# How does your team develop junior talent today?
-
-# What does "taste" mean in your product?
-
-<!--
-[T+138:00 | S5 slide 14 of 14 | 8min DISCUSSION]
-DISCUSSION PROMPT — pause here for 5-7 minutes.
-ABORT POINT: If running 10+ minutes over, shorten to 3 minutes focusing on the "taste" question only, then move directly to S6.
-
-The dual prompt mirrors the section's two-part structure: pipeline (first question) and what matters (second question).
-
-For the pipeline question, follow-ups:
-- "What does your junior onboarding look like? Is it optimised for task completion or judgment development?"
-- "Who mentors your juniors? How much of that mentorship is about understanding, not just output?"
-- "If AI handles the implementation tasks juniors used to learn from, what replaces that learning?"
-
-For the taste question, follow-ups:
-- "Can you articulate what 'good' looks like in your product? Could you explain it to an agent?"
-- "When was the last time you said no to a feature that would have been easy to build?"
-- "What would subtraction look like in your current sprint?"
-
-What to listen for: concrete examples of junior development challenges, recognition that taste is hard to define, anxiety about the pipeline problem from managers, energy from ICs about the "what matters" list.
-
-We've been saying "bottleneck" a lot. In the next section, I want to flip that word — because being the bottleneck isn't the problem. It's the point.
-
-Transition to Section 6: "We've mapped the risk and named what matters. Now: what do you actually do about it? That's where we're going next."
+BRIDGE: "Let's consolidate the full argument before the final coda."
 -->

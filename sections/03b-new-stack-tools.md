@@ -5,124 +5,31 @@ transition: section-shift
 
 # The New Stack: Tools
 
-Skills, MCP, and guardrails — the building blocks of agentic workflows
+Skills, MCP, etc.— reusable building blocks for agentic workflows
 
 <!--
-[T+53:00 | S3b slide 1 of 12 | 0.5min]
-Transition from Section 3a: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them."
+KEY POINTS:
+- This section translates principles into concrete building blocks
+- Use one workflow as an example, but keep the pattern tool-agnostic
+- Order here matters: mental model first, then components, then composition
 
-Introduce the plugin: "Everything I'm about to show you comes from a single Claude Code plugin I built and use daily — kramme-cc-workflow. It's open source, it's on GitHub. It packages 45 skills, 20 specialist agents, and 5 hooks into one installable unit. Think of it as a workflow-in-a-box: PR lifecycle, code quality, structured implementation, review automation — all as markdown files the agent reads and follows."
-
-"I'll use it to demonstrate all three building blocks: skills, MCP, and hooks. But the point isn't this specific plugin — it's the pattern. Anyone can build one of these. The components are just markdown, shell scripts, and configuration."
-
-Frame briefly: Skills (reusable capabilities), MCP (external connections), Guardrails (boundaries and safety — implemented through hooks).
-This part stays practical and concrete — the demos carry the weight.
+BRIDGE: "You've seen the concepts — context engineering and spec-driven development. Now let's look at the specific tools that implement them."
 -->
 
 ---
-
-# kramme-cc-workflow
-
-<v-click>
-
-A Claude Code plugin — **45 skills**, **20 specialist agents**, **5 hooks**. Open source, installable in one command.
-
-</v-click>
-<v-click>
-
-PR lifecycle, code quality, structured implementation, review automation — all as **markdown files** the agent reads and follows.
-
-</v-click>
-<v-click>
-
-**The point isn't this plugin. It's the pattern.** Anyone can build one. The components are markdown, shell scripts, and configuration.
-
-</v-click>
-
-<!--
-[T+54:00 | S3b slide 2 of 12 | 1.5min]
-This is the "meet the tool" slide. Everything in S3b and S3c will reference this plugin — introduce it properly here so the audience has a frame.
-
-kramme-cc-workflow is a real, open-source Claude Code plugin I built and use daily. It packages workflow automation into three component types:
-- Skills (45): markdown playbooks the agent follows — /commit, /pr-review, /siw-implement, /verify
-- Agents (20): specialist reviewers — security, a11y, architecture, UX, performance, logic, silent-failure-hunter
-- Hooks (5): shell scripts that fire on events — block destructive commands, auto-format, surface PR/issue links
-
-It's on GitHub (Abildtoft/kramme-cc-workflow) and listed on the Resources slide at the end.
-
-The key message: this is not a proprietary product. It's a pattern. The plugin is just markdown files, shell scripts, and a JSON manifest. Anyone in this room could build their own version for their own workflow. The value is in the pattern, not the specific implementation.
-
-This presentation was built using this plugin — the audience is looking at its output right now.
--->
-
+layout: center
+class: text-center
 ---
 
-# Skills
+<img src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." class="mx-auto w-full max-w-6xl" />
+
+<p class="mt-4 text-lg opacity-85">APIs are tools. Skills are recipes. MCP is the kitchen.</p>
 
 <v-click>
 
-**A skill is a markdown file with instructions the agent follows on demand.**
+<p class="mt-2 text-xl font-semibold">Hooks are the guardrails around this kitchen.</p>
 
 </v-click>
-<v-click>
-
-`/commit`, `/pr-review`, `/siw-implement`, `/verify` — invoke with a slash command, the agent reads the markdown and executes.
-
-</v-click>
-<v-click>
-
-**"You're not writing code. You're writing recipes."**
-
-</v-click>
-
-<!--
-[T+55:30 | S3b slide 3 of 12 | 2min]
-Skills connect to Osmani's "break into focused chunks" principle — skills are pre-packaged focused chunks the agent can follow.
-For the non-dev audience: think of a skill like a playbook. A PR review skill contains the checklist, the patterns to look for, the output format. The agent follows it step by step.
-Walk through a few categories briefly: /commit (writes commit messages following project conventions), /pr-review (runs a multi-agent code review), /siw-implement (picks up a spec issue and implements it end-to-end), /verify (runs tests, linting, type checking for affected code).
-Key insight: skills are composable, version-controlled, and human-readable. No black boxes. You can open the file, read the instructions, and understand exactly what the agent will do.
-For product/UX: you could write a skill for design review, accessibility checks, or copy editing. The format is the same — markdown instructions.
--->
-
----
-
-# Demo: Skills
-
-**What to show:**
-
-1. Open a skill file — show it's just markdown with instructions
-2. Invoke the skill with `/skill-name` — show the agent reading and executing it
-3. Show the output — the agent followed the recipe
-
-<!--
-[T+57:00 | S3b slide 4 of 12 | 3min DEMO]
-DEMO SLIDE — do not present this text, use it as a guide.
-
-Suggested skill to demo: /commit or /pr-review — both are relatable and show clear before/after.
-Open the markdown file first. Let them see it's readable English, not code. "This is the entire skill. There's no binary, no API, no SDK. It's instructions."
-Then invoke it. Show the agent reading the file and following the steps.
-Time: ~3 minutes. Keep it tight. The point is: skills are simple, transparent, and powerful.
-FALLBACK: If the live invocation fails, open the skill markdown file in your editor and walk through its instructions as a static example. The file IS the skill — showing it is enough to make the point.
-Transition: "Skills give agents capabilities. But what if the agent needs to reach beyond the codebase — talk to Linear, query a database, control a browser?"
--->
-
----
-layout: quote
----
-
-# "The Venn Diagram of Developer Experience and Agent Experience is a circle"
-
-Laura Tacho, via Martin Fowler
-
-<!--
-[T+58:15 | S3b slide 5 of 12 | 1.5min]
-Source: Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
-
-This bridges from Skills to the next two tools — MCP and Hooks.
-The point: the same tooling that makes developers productive makes agents productive. MCP is the plumbing that connects agents to your existing tools. Hooks are the guardrails that keep them safe.
-For the mixed audience: everything you invest in developer experience — smooth tooling, clear APIs, good documentation — now pays double. Your human team AND your agents benefit.
-Fowler also notes the sad irony: some organizations are investing in agent documentation that they never invested in for human developers. Same docs, different motivation.
--->
 
 ---
 
@@ -143,34 +50,101 @@ We instinctively value "oneshotting" — getting it right the first time. But op
 **Design for iteration instead:** generate → evaluate → refine → repeat.
 
 </v-click>
+
+<!--
+KEY POINTS:
+- Anchor the section with one design truth: outputs are nondeterministic
+- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
+
+BRIDGE: "So how do we make iteration productive?"
+-->
+
+---
+
+# Design the System, Not the Prompt
+
 <v-click>
 
 The engineers getting the most from AI stopped crafting the perfect prompt. They started building fast feedback loops.
 
 </v-click>
+<v-click>
+
+> "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — **Pirouette B**, software engineer
+
+</v-click>
+<v-click>
+
+You don't make agents trustworthy by watching them. You make them trustworthy by **designing the system they operate in.**
+
+</v-click>
+<v-click>
+
+> "If the AI is asking you to do something — check the PR, tell me the CI status — you should really be thinking about how to teach it to just do that for itself." — **Brian Lovin**
+
+</v-click>
 
 <!--
-[T+59:00 | S3b slide 6 of 12 | 2min]
-This is the conceptual bridge to guardrails.
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
 
-LLMs are fundamentally stochastic: the same prompt can produce different results every time. This isn't a flaw — it's a feature of how the models work. But it means the "oneshot" mindset — get it right the first time — is the wrong optimization target.
-The engineers getting the best results have shifted from "write the perfect prompt" to "build infrastructure for fast iteration." Generate, evaluate, refine, repeat. Each cycle takes seconds, not hours.
-This is why guardrails matter so much. Tests, hooks, verification loops — they're not just safety nets. They're the infrastructure that makes rapid iteration efficient. You can let the agent try, fail, and retry because the guardrails catch mistakes automatically.
-The shift: from "write it once, correctly" to "converge on correctness through fast feedback loops."
+KEY POINTS:
+- Shift from prompt craft to system design
+- Set up guardrails as an enabler of speed, not only safety
+- Every repeated human intervention is a signal that the harness is incomplete
+
+BRIDGE: "That's the design philosophy. Now: what makes iteration safe?"
+-->
+
+---
+
+# We will exemplify with kramme-cc-workflow
+
+<v-click>
+
+My personal set of **recipes and guardrails** — tailored to how I work.
+
+</v-click>
+<v-click>
+
+**45 skills**, **20 specialist agents**, **5 hooks** — encoding commit hygiene, PR review, structured implementation, and code quality standards.
+
+</v-click>
+<v-click>
+
+Inspired by open-source tools like **Superpowers**, **GET SHIT DONE**, and **Compound Engineering** — but shaped to my workflow.
+
+</v-click>
+
+<v-click>
+
+**Your workflow will look different — and should.** The numbers don't matter. The pattern does.
+
+</v-click>
+
+<v-click>
+
+Let's take the concepts first, then demo.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- This is the concrete reference implementation for the remaining slides
+- Emphasize "adaptable pattern," not "copy my setup"
+- The value is explicit workflow design encoded in files
+
+BRIDGE: "With that framing, let's start with guardrails."
 -->
 
 ---
 
 # Guardrails
 
+<img src="/guardrails-bowling.jpg" class="mx-auto h-52 mt-1 mb-2" />
+
 <v-click>
 
-**Guardrails are the infrastructure that make iteration safe and fast.**
-
-</v-click>
-<v-click>
-
-Without them, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
 
 </v-click>
 <v-click>
@@ -178,19 +152,30 @@ Without them, every iteration needs human review. With them, the agent can try �
 Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — and enable speed.
 
 </v-click>
+<v-click>
+
+> "The Venn Diagram of Developer Experience and Agent Experience is a circle" — **Laura Tacho**, via Martin Fowler
+
+</v-click>
 
 <!--
-[T+59:30 | S3b slide 7 of 12 | 1.5min]
-Connect directly to the previous slide: if LLMs are stochastic and we're designing for iteration, guardrails are what make that iteration loop viable. Without guardrails, every agent attempt needs a human looking over its shoulder. With guardrails, the agent can try, fail, learn from the failure signal, and retry — all autonomously.
-The word "guardrails" is intuitive for the non-dev audience. Everyone understands highway guardrails — they don't steer the car, but they prevent the car from going off a cliff.
-Key insight: guardrails are not about distrust. They're about design. You put guardrails on a highway not because drivers are bad, but because the system should be safe by default.
-Connect forward: "Let me show you three guardrail mechanisms — starting with the one you already know: tests."
+KEY POINTS:
+- Guardrails convert stochastic generation into controlled iteration
+- Clarify boundary between autonomy and supervision
+- Keep the metaphor simple: constraints increase safe operating speed
+
+BRIDGE: "The most familiar guardrail is tests."
 -->
 
 ---
 
 # Tests as Guardrails
 
+<v-click>
+
+**TDD is more relevant than ever.** Write the test first — it becomes the spec the agent implements against.
+
+</v-click>
 <v-click>
 
 **Tests close the iteration loop.** Agent writes code → tests run → failure signals what to fix → agent retries.
@@ -213,13 +198,84 @@ Tests are executable specifications. They don't just catch bugs — they tell th
 </v-click>
 
 <!--
-[T+61:00 | S3b slide 8 of 12 | 1.5min]
-Tests are the guardrail mechanism every developer already uses. Frame this as familiar ground before introducing MCP and hooks.
-The key reframe from the stochastic slide: tests aren't just quality assurance — they're the feedback signal that drives the iteration loop. A failing test isn't a problem. It's information the agent uses to self-correct.
-Unit tests: the agent writes a function, runs the test, sees it fail, fixes it. This is the tightest feedback loop — seconds, not minutes. This is why stochastic output doesn't matter — the agent converges on correctness through rapid iteration.
-Integration and e2e tests: the agent changes a component, the test suite catches a regression three layers away. Without these, the agent would ship broken code confidently.
-Connect to Monarch's "validation/verification loops" philosophy: tests are the most established verification loop in software engineering. Hooks and MCP are newer mechanisms, but tests have been doing this for decades.
-Transition: "Tests verify correctness. But what if the agent needs to reach beyond the codebase?"
+KEY POINTS:
+- Reframe tests as runtime contracts for agent behavior
+- Unit tests optimize iteration speed; broader tests protect system behavior
+- "Executable definition of done" is the key phrase
+
+BRIDGE: "Before external tools, we still need strong local context."
+-->
+
+---
+
+# AGENTS.md in Practice
+
+<v-click>
+
+**You've seen the concept. Here's what makes it work at scale.**
+
+</v-click>
+<v-click>
+
+**Nesting** — Put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones. `src/api/AGENTS.md` can specify API patterns without repeating the global config.
+
+</v-click>
+<v-click>
+
+**Layering** — Root file: project-wide rules. Directory files: domain-specific constraints. The agent reads all applicable layers.
+
+</v-click>
+<v-click>
+
+Start with one file at the root. Add directory-level files only when you see repeated mistakes.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Builds on S3a's conceptual intro — this slide is about operational patterns
+- Nesting is the key practical detail most teams miss
+- "Start with one, add when you see repeated mistakes" prevents over-engineering
+
+BRIDGE: "Once local context is stable, skills package repeatable workflows."
+-->
+
+---
+
+# Skills
+
+<v-click>
+
+**A skill is a markdown file with instructions the agent follows on demand.**
+
+</v-click>
+<v-click>
+
+Two types: **user-invocable** — you trigger it with a slash command (`/kramme:git:commit-message`, `/kramme:verify:run`). **Model-invocable** — the agent discovers and triggers it autonomously when the situation fits.
+
+</v-click>
+<v-click>
+
+`/kramme:git:commit-message`, `/kramme:siw:continue`, `/kramme:verify:run`, `/kramme:code:refactor-pass` — invoke with a slash command, the agent reads the markdown and executes.
+
+</v-click>
+<v-click>
+
+**"You're not writing code. You're writing recipes."**
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Skills are reusable playbooks encoded in markdown
+- Distinguish invocation models clearly: human-triggered vs model-triggered
+- Keep examples short; emphasize composability and transparency
+- Tie back to spec-driven work: skills reduce ambiguity in repeated tasks
+
+DELIVERY:
+- For product/UX: you could write a skill for design review, accessibility checks, or copy editing — same format, markdown instructions
+
+BRIDGE: "Skills orchestrate internal workflows. MCP connects those workflows to external systems."
 -->
 
 ---
@@ -228,29 +284,51 @@ Transition: "Tests verify correctness. But what if the agent needs to reach beyo
 
 <v-click>
 
-**A standard way for agents to connect to external tools, databases, and APIs.**
+**A standard way for agents to connect to external tools, databases, and APIs.** Think of it as USB for AI.
 
 </v-click>
 <v-click>
 
-Think of it as USB for AI — a standard way for agents to connect to any tool.
+An MCP server exposes three types of capabilities:
 
-</v-click>
-<v-click>
-
-Real examples: Linear (project management), browser automation, database queries, Slack integration.
+- **Tools** — functions the LLM can call (like API endpoints)
+- **Resources** — read-only data the client can fetch (like files or DB records)
+- **Prompts** — reusable prompt templates the client can retrieve
 
 </v-click>
 
 <!--
-[T+62:30 | S3b slide 8 of 12 | 2min]
-Source: Entire announcement (entire.io/blog/hello-entire-world)
-"Agents now interoperate in parallel, generating and evaluating hundreds of variants simultaneously." MCP is the protocol that enables this interoperability.
+KEY POINTS:
+- Define MCP as the interoperability layer, not another proprietary feature
+- Keep the three capability types practical and memorable
+- Emphasize workflow participation: agents can now act across systems
 
-Analogy for the audience: MCP is like USB for AI. Before USB, every device had its own connector. MCP standardizes how agents talk to tools.
-The kramme-cc-workflow plugin configures MCP servers for Linear and browser automation. When the agent needs to create an issue, it talks to the Linear MCP server. When it needs to check a deployed page, it uses the browser MCP server. No custom integration code — just a standard protocol.
-For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms. The protocol is tool-agnostic.
-Key insight: MCP turns the agent from "a thing that writes code" into "a thing that participates in your workflow."
+DELIVERY:
+- For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms
+
+BRIDGE: "Let me show you which ones I use every day."
+-->
+
+---
+
+# MCPs I Use Daily
+
+- **Linear** — issue tracking and project management
+- **Context7** — up-to-date library documentation
+- **Nx MCP** — monorepo workspace tools
+- **Chrome DevTools** / **Playwright** — browser automation and testing
+- **Markitdown** — document-to-markdown conversion
+- **Magic Patterns** — design-to-code integration
+- **Granola** — meeting notes
+
+
+<!--
+KEY POINTS:
+- Real-world examples anchor MCP beyond theory
+- Emphasize breadth: planning, docs, browser, design, knowledge capture
+- Main takeaway: one protocol, many systems, no bespoke glue code per toolchain
+
+BRIDGE: "MCP connects agents to tools. Now: how do you enforce boundaries?"
 -->
 
 ---
@@ -259,82 +337,216 @@ Key insight: MCP turns the agent from "a thing that writes code" into "a thing t
 
 <v-click>
 
-**PreToolUse** — `block-rm-rf.sh` intercepts destructive commands before execution. `noninteractive-git.sh` blocks `git rebase -i` and other editor-opening commands.
+**Hook type tells you when it runs (lifecycle), not what policy it enforces.**
 
 </v-click>
 <v-click>
 
-**PostToolUse** — `auto-format.sh` runs on every Write/Edit. Detects Prettier, Biome, Ruff, gofmt — formats the file before the agent sees the result.
+**All hook types:**
+
+- `UserPromptSubmit` — before a prompt is processed
+- `PreToolUse` — before a tool runs
+- `PostToolUse` — after a tool runs
+- `Stop` — when the agent hands back control
+- `SubagentStop` — when a subagent finishes
+- `Notification` — when a notification is shown
 
 </v-click>
 <v-click>
 
-**Stop** — `context-links.sh` detects the Linear issue from the branch name and surfaces the open PR URL when the agent finishes.
+**Examples:** Block destructive commands, auto-format edits, enforce commit standards, surface PR/issue links.
+
+</v-click>
+<v-click>
+
+Hook type tells you **when** it runs. What it does is up to you.
 
 </v-click>
 
 <!--
-[T+64:30 | S3b slide 9 of 12 | 2min]
-Source: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
-"Carefully design validation/verification loops. Creating ways for AI to validate its own work allows it to run more autonomously with less input from you."
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+SOURCE: Coordination is the hardest engineering problem (x.com/PirouneB/status/2022783395139318007)
 
-These are real hooks from the kramme-cc-workflow plugin — the same plugin powering this talk's workflow.
+KEY POINTS:
+- Clarify lifecycle vs policy: hook type defines timing, policy defines behavior
+- Hooks are enforcement and observability points in the workflow
+- Use concrete examples so this doesn't stay abstract
 
-Walk through the three types:
-- PreToolUse (block-rm-rf.sh): the agent tries to run rm -rf — the hook catches every variant (sudo rm, /bin/rm, find -delete, shred, xargs rm) and blocks it, recommending `trash` instead. The noninteractive-git hook blocks git rebase -i, git commit without -m, and other commands that would open an editor the agent can't control.
-- PostToolUse (auto-format.sh): triggered on every Write or Edit. Auto-detects the project's formatter (Prettier, Biome, Ruff, Black, gofmt, rustfmt, shfmt) and formats the file. Caches detection results so it's fast. No manual formatting step ever needed.
-- Stop (context-links.sh): when the agent stops, it reads the branch name, extracts the Linear issue ID, looks up the open PR/MR (GitHub or GitLab), and surfaces both URLs. You always know where to review.
+BRIDGE: "Once guardrails are in place, we can discuss specialization."
+-->
 
-Key insight: hooks are how you build trust with autonomous agents. You don't watch every command — you design the system they operate in.
+---
 
-Source: Coordination is the hardest engineering problem (x.com/PirouneB/status/2022783395139318007)
-"Someone has to handle failure cascading." Hooks are one mechanism for catching failures before they cascade.
+# Specialized Agents
+
+<v-click>
+
+An agent is an LLM with a system prompt, a set of tools, and permission to act autonomously in a loop — **read, think, act, observe, repeat.**
+
+</v-click>
+<v-click>
+
+A **specialized agent** narrows that loop. It gets a focused persona, a constrained toolset, and a single job — security review, accessibility audit, architecture check.
+
+</v-click>
+<v-click>
+
+Each agent is a markdown file — persona, constraints, evaluation criteria — with optional scripts and tools scoped just to it. **A mini MCP per agent.**
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Define an agent operationally, not mystically
+- Specialization narrows scope, tools, and evaluation criteria
+- Treat each specialized agent as a testable, versioned component
+
+BRIDGE: "The concept is simple. Why does it actually work better than one general-purpose agent?"
+-->
+
+---
+
+# Why Specialization Works
+
+<v-click>
+
+**An LLM's context window is finite.** The more concerns you load into it, the shallower its attention on each one.
+
+</v-click>
+<v-click>
+
+One agent reviewing for security, accessibility, performance, and architecture at once will be mediocre at all four.
+
+</v-click>
+<v-click>
+
+**Single-responsibility principle — but for agents.** One persona, one evaluation lens, one job.
+
+</v-click>
+<v-click>
+
+A focused agent doesn't just perform better — it's easier to test, debug, and trust.
+
+</v-click>
+
+<!--
+SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
+SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
+
+KEY POINTS:
+- Attention in-context is finite; specialization preserves depth
+- SRP maps cleanly from code modules to agent design
+- Narrow agents are easier to evaluate, debug, and trust
+
+BRIDGE: "Individual agents each doing one job well. What happens when you need them to work together?"
+-->
+
+---
+
+# Agent Teams
+
+<v-click>
+
+A **lead agent** receives a task, breaks it into subtasks, and spawns specialized agents to work on each one — in parallel.
+
+</v-click>
+<v-click>
+
+Workers report back. The lead reviews, coordinates, and merges results. **Same pattern as a tech lead running a sprint.**
+
+</v-click>
+<v-click>
+
+Shared task list, message passing, dependency tracking. The agents coordinate through structure, not conversation.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- This is composition: orchestrating many narrow agents under one control loop
+- Keep the analogy to a tech lead and sprint team
+- Coordination primitives matter more than "chatting" between agents
+
+BRIDGE: "That's what agent teams look like in practice. Now — what's actually hard about this?"
+-->
+
+---
+
+# The Coordination Problem
+
+<v-click>
+
+**Going from one agent to many is not a scaling problem. It's a distributed systems problem.**
+
+</v-click>
+<v-click>
+
+Who gets which context? How do you share state without conflicts? What happens when one agent's output breaks another's assumptions?
+
+</v-click>
+<v-click>
+
+The patterns are familiar — task decomposition, work queues, failure handling. **But every component is nondeterministic.**
+
+</v-click>
+<v-click>
+
+The hard part is no longer getting the agent to write code. **It's designing how agents work together.**
+
+</v-click>
+
+<!--
+SOURCE: PirouneB, "Coordination is Quietly Becoming the Hardest Engineering Problem" (x.com/PirouneB/status/2022783395139318007)
+SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
+
+KEY POINTS:
+- Conclude section 3b with the real hard problem: coordination under nondeterminism
+- Name the three pressure points: context allocation, shared state, cascade control
+- This is the setup for naming the discipline on the next slide
+
+BRIDGE: This leads directly into the Harness Engineering statement — the discipline of designing these systems IS the new engineering.
 -->
 
 ---
 layout: statement
 ---
 
-# You don't make agents trustworthy by watching them. You make them trustworthy by designing the system they operate in.
+<h1>Harness Engineering</h1>
+
+<img src="/verification-loop.png" class="mx-auto h-40 mt-2 mb-2" />
+
+<v-click>
+
+Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline.**
+
+</v-click>
+<v-click>
+
+Humans remain in the loop — but at a different layer. We prioritize work, translate feedback into acceptance criteria, and validate outcomes.
+
+</v-click>
+<v-click>
+
+Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harness so it doesn't fail that way again.
+
+</v-click>
+<v-click>
+
+> "The model is the engine. The harness is the car." — **Mitchell Hashimoto**
+
+</v-click>
 
 <!--
-[T+66:30 | S3b slide 10 of 12 | 1min]
-Source: Monarch's Philosophy — "design that system (you + AI), figuring out your role in it, since you will ultimately own the output."
+SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
+SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
 
-This distills the entire section's thesis. Skills give agents capabilities. Tests give agents feedback. MCP gives agents reach. Hooks give agents constraints. Together, they form a system you can trust to operate autonomously.
-For the audience: this is the same principle as any engineering system. You don't make a pipeline reliable by watching every step. You build in monitoring, circuit breakers, and rollback mechanisms. Hooks are the circuit breakers for agentic workflows.
-Let this sit for a moment before moving to the demo.
-Transition: "Let me show you MCP and Hooks working together."
--->
+KEY POINTS:
+- Name the discipline that ties all prior concepts together
+- Treat each v-click as a recap ladder from parts to operating model
+- Emphasize failure-as-signal: improve the harness, not just the output
+- This is the conceptual peak before the live demo
 
----
-
-# Demo: MCP & Hooks
-
-**What to show:**
-
-1. MCP in action — agent queries Linear or automates browser
-2. Hook catching a dangerous command — PreToolUse blocking `rm -rf`
-3. Hook surfacing results — Stop hook showing PR link on completion
-
-<!--
-[T+67:30 | S3b slide 11 of 12 | 4.5min DEMO]
-DEMO SLIDE — do not present this text, use it as a guide.
-
-Part 1 — MCP (~2 min):
-Show the agent interacting with an MCP server. Preferred: Linear integration (create or query an issue). Alternative: browser automation (navigate to a URL, take a screenshot).
-The audience should see the agent seamlessly reaching beyond the codebase. No custom API code — just the protocol at work.
-
-Part 2 — Hooks (~2-3 min):
-Trigger a PreToolUse hook. Have the agent attempt something the hook catches (e.g., rm -rf or git push --force). Show the block message. This is the "wow" moment for the safety-conscious audience.
-Then show a PostToolUse hook — save a file, watch auto-formatting happen automatically.
-
-Part 3 — Stop hook (~1 min):
-If time permits, show the Stop hook surfacing a PR link when the agent finishes work. Otherwise, mention it verbally.
-
-Total: ~4-5 minutes. The key moment is the hook catching the dangerous command.
-FALLBACK: If MCP or hooks fail to trigger live, describe the scenario verbally while showing the hook configuration file (.claude/settings.json). The config itself shows the before/after/stop pattern. For MCP, show the .mcp.json file — the server definition is the proof that agents connect to external tools.
-Transition to the discussion prompt.
+BRIDGE: "Now let's watch this operating model in motion."
 -->
 
 ---
@@ -342,17 +554,10 @@ layout: center
 class: text-center
 ---
 
-# Which of these three — skills, MCP, or hooks — would fit into your current workflow with the least friction?
+# Demo Time
 
 <!--
-[T+68:00 | S3b slide 12 of 12 | 4min DISCUSSION]
-DISCUSSION PROMPT — pause here for 3-5 minutes. This breaks the long stretch between S3a and S3c discussions.
-
-This is a practical, low-stakes question. Everyone should be able to answer it.
-Prompt follow-ups:
-- "Show of hands — who already uses git hooks or CI checks? That's the same principle as agent hooks."
-- "For product/UX: could you imagine writing a skill — a markdown playbook — for design review or copy editing?"
-- "What external tools would you most want an agent to connect to via MCP?"
-Listen for: practical ideas, existing workflows that map to these concepts, and comfort level with each tool.
-Transition to Section 3c: "You've now seen three building blocks: skills for capabilities, MCP for integration, hooks for safety. Next: what happens when you compose them into larger systems — harnesses, verification loops, and multi-agent teams."
+DELIVERY:
+- Quick reset slide before context switch to live workflow
+- State what the demo will prove: speed with guardrails and human accountability
 -->

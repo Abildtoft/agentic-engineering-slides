@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Agentic Engineering
+title: Harness Engineering
 titleTemplate: '%s'
 author: Melatech
 colorSchema: light
@@ -10,7 +10,7 @@ fonts:
   provider: google
 favicon: /favicon.svg
 defaults:
-  transition: fade
+  transition: none
 duration: 162min
 timer: countdown
 layout: cover
@@ -18,9 +18,33 @@ layout: cover
 
 <img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
 
-# Agentic Engineering
+# Harness Engineering
 
 February 26th, 2026, Copenhagen
+
+---
+layout: statement
+---
+
+# Hi, I'm Mikkel.
+
+---
+
+# Simplified Agenda
+
+- Inflection Point
+- The Disappearing Middle
+- The New Stack: Core Concepts
+- The New Stack: Tools → Harness Engineering
+- **DEMO TIME**
+
+*Right around here we will have hit peak hype.*
+
+*And then...*
+
+- Cognitive Debt
+- The Junior Pipeline
+- Let's Wrap Up
 
 ---
 src: ./sections/01-the-shift.md
@@ -36,10 +60,6 @@ src: ./sections/03a-new-stack-concepts.md
 
 ---
 src: ./sections/03b-new-stack-tools.md
----
-
----
-src: ./sections/03c-new-stack-composed.md
 ---
 
 ---
