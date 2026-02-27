@@ -32,6 +32,40 @@ class: text-center
 </v-click>
 
 ---
+layout: center
+class: text-center
+---
+
+<SlideImage src="/skills-architecture.png" alt="Skills architecture: User query flows to Agent, Skill loader reads SKILL.md files — LLM-driven, non-deterministic execution" size="xl" />
+
+<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>.</p>
+
+<!--
+- User query → Agent → Skill loader reads a SKILL.md file → LLM-driven execution
+- Execution model: non-deterministic (LLM interprets the markdown)
+- Format: Markdown file (SKILL.md)
+- Use case: consistent reasoning or workflows — "recipes, not code"
+- This is the conceptual counterpart to MCP on the next slide
+-->
+
+---
+layout: center
+class: text-center
+---
+
+<SlideImage src="/mcp-architecture.png" alt="MCP architecture: User query flows to Agent, MCP Clients connect to MCP Servers via JSON-RPC — API-driven, schema-constrained execution" size="xl" />
+
+<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
+
+<!--
+- User query → Agent → MCP Client → MCP Server via JSON-RPC → schema-constrained tool calls
+- Execution model: API/schema-constrained at the interface layer (model orchestration remains probabilistic)
+- Format: JSON-RPC tool schema via server
+- Use case: real-world actions or data access
+- Key contrast with Skills: Skills are soft guidance (markdown), MCP is hard contracts (schema)
+-->
+
+---
 
 # We will exemplify with kramme-cc-workflow
 
