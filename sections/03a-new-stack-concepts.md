@@ -5,7 +5,7 @@ transition: section-shift
 
 # The New Stack: Core Concepts
 
-Context engineering, spec-driven development, and the new role of the engineer
+The operating model for turning ambiguity into clarity
 
 <!--
 KEY POINTS:
@@ -38,6 +38,7 @@ Raise one hand if you've heard of it. Two if you've used it.
 - `AGENTS.md / CLAUDE.md`
 - `MCP, Skills, Hooks`
 - `Spec-driven development`
+- `AI-generated product specs and user research synthesis`
 - `Custom agents and agent swarms`
 
 </v-clicks>

@@ -33,48 +33,6 @@ class: text-center
 
 ---
 
-# Design the System, Not the Prompt
-
-<v-click>
-
-**LLMs are stochastic.** Same prompt, different result every time. Optimizing for first-attempt perfection fights the model's strengths.
-
-</v-click>
-<v-click>
-
-**Design for iteration instead:** generate → evaluate → refine → repeat. The engineers getting the most from AI stopped crafting the perfect prompt — they started building fast feedback loops.
-
-</v-click>
-<v-click>
-
-You don't make agents trustworthy by watching them. You make them trustworthy by **designing the system they operate in.**
-
-</v-click>
-<v-click>
-
-Every repeated human intervention is a signal that the harness is incomplete.
-
-</v-click>
-
-<!--
-SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
-
-KEY POINTS:
-- Anchor with one design truth: outputs are nondeterministic
-- Replace "perfect prompt" mindset with "reliable feedback loop" mindset
-- Shift from prompt craft to system design
-- Set up guardrails as an enabler of speed, not only safety
-- Every repeated human intervention is a signal that the harness is incomplete
-
-DELIVERY:
-- Quotes for speaker notes: "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
-- "If the AI is asking you to do something — check the PR, tell me the CI status — you should really be thinking about how to teach it to just do that for itself." — Brian Lovin
-
-BRIDGE: "That's the design philosophy. Now: what makes iteration safe?"
--->
-
----
-
 # We will exemplify with kramme-cc-workflow
 
 <v-click>
@@ -122,6 +80,11 @@ BRIDGE: "With that framing, let's start with guardrails."
 
 <v-click>
 
+**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
+
+</v-click>
+<v-click>
+
 Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
 
 </v-click>
@@ -132,15 +95,22 @@ Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries**
 </v-click>
 <v-click>
 
-> "The Venn Diagram of Developer Experience and Agent Experience is a circle" — **Laura Tacho**, via Martin Fowler
+Every repeated human intervention is a signal that the harness is incomplete.
 
 </v-click>
 
 <!--
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+
 KEY POINTS:
+- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Guardrails convert stochastic generation into controlled iteration
 - Clarify boundary between autonomy and supervision
-- Keep the metaphor simple: constraints increase safe operating speed
+- Every repeated human intervention signals harness incompleteness
+
+DELIVERY:
+- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
+- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
 
 BRIDGE: "The most familiar guardrail is tests."
 -->
@@ -458,7 +428,7 @@ layout: statement
 
 <v-click>
 
-Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline.**
+Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — turning ambiguity into clarity, at scale.**
 
 </v-click>
 <v-click>
@@ -497,8 +467,24 @@ class: text-center
 
 # Demo Time
 
+Context flowing in. Specs driving execution. Guardrails catching failures. A human in the loop.
+
 <!--
 DELIVERY:
+- Prime the audience: what to watch for during the demo
 - Quick reset slide before context switch to live workflow
 - State what the demo will prove: speed with guardrails and human accountability
+-->
+
+---
+layout: statement
+---
+
+# That was the power. Now: what can go wrong?
+
+<!--
+DELIVERY:
+- Post-demo tonal pivot — make the turn visible, not just verbal
+- Let this slide sit for 2-3 seconds before advancing
+- This is the "peak hype" moment the agenda slide foreshadowed
 -->
