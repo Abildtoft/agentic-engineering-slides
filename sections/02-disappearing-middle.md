@@ -19,7 +19,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 # The Middle of Software Work
 
-<img src="/disappearing-middle.png" class="mx-auto w-full max-w-lg mt-2 mb-4" />
+<SlideImage src="/disappearing-middle.png" alt="The disappearing middle of software work" />
 
 <v-click>
 
@@ -51,7 +51,7 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 # The Translation Layer Is Compressing
 
-<img src="/translation-layer-compression.png" class="mx-auto w-full max-w-lg mt-2 mb-4" />
+<SlideImage src="/translation-layer-compression.png" alt="Translation layer compression diagram" />
 
 <v-click>
 
@@ -99,17 +99,12 @@ BRIDGE: "So if there's a split happening, what does it look like?"
 layout: quote
 ---
 
-# "Talk is cheap. Show me the code."
-
-Linus Torvalds, 2000
-
-<v-click>
-
-## "For the first time ever, good talk is exponentially more valuable than good code."
-
-Nadh, 2025
-
-</v-click>
+<QuotePair
+  first="Talk is cheap. Show me the code."
+  firstAttribution="Linus Torvalds, 2000"
+  second="For the first time ever, good talk is exponentially more valuable than good code."
+  secondAttribution="Nadh, 2025"
+/>
 
 <!--
 SOURCE: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)

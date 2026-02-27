@@ -165,17 +165,12 @@ BRIDGE: "Osmani calls it judgment. Paul Graham calls it something simpler."
 layout: quote
 ---
 
-# "When anyone can make anything, the big differentiator is what you choose to make."
-
-Paul Graham
-
-<v-click>
-
-## "The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
-
-Addy Osmani
-
-</v-click>
+<QuotePair
+  first="When anyone can make anything, the big differentiator is what you choose to make."
+  firstAttribution="Paul Graham"
+  second="The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
+  secondAttribution="Addy Osmani"
+/>
 
 <!--
 
