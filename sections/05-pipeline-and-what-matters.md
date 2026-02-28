@@ -86,7 +86,7 @@ layout: default
 </v-click>
 <v-click>
 
-**The new focus:** Deciding what should exist, not just how to type it.
+**The new focus:** Deciding what should exist — whether that's code, a component, or a product direction.
 
 </v-click>
 
@@ -145,7 +145,7 @@ BRIDGE: "So what are those skills? Let's name them."
 </v-click>
 <v-click>
 
-**Judge what matters** from what merely works
+**Judge what matters** — from visual hierarchy to system architecture — from what merely works
 
 </v-click>
 <v-click>

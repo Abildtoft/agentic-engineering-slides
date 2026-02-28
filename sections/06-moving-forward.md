@@ -5,6 +5,8 @@ transition: section-shift
 
 # Let's Wrap Up
 
+What survives when the noise fades
+
 ---
 layout: two-cols-header
 ---
@@ -137,7 +139,41 @@ KEY POINTS:
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
 - Shared conclusion: human value is increasingly multiplicative
 
-BRIDGE: "Let me put that in perspective."
+BRIDGE: "Let me put that in perspective — starting with what you can do this week."
+-->
+
+---
+
+# What to Do Monday
+
+<v-click>
+
+**Start an AGENTS.md file.** One file, in your repo root. Project conventions, patterns, constraints. The single highest-leverage first step.
+
+</v-click>
+<v-click>
+
+**Write one spec before asking AI to build something.** Define what you want, why it matters, and how you'll verify it — before you prompt.
+
+</v-click>
+<v-click>
+
+**Ask yourself: can I explain every commit I submitted this week?** Not what changed — *why.* If not, the debt is already accumulating.
+
+</v-click>
+
+<!--
+
+KEY POINTS:
+- Give the audience something concrete to take home
+- Each item maps back to a core section: AGENTS.md (Section 3A), specs (Section 3A), commit comprehension (Section 4)
+- Keep it grounded and achievable — not aspirational, operational
+
+DELIVERY:
+- This is the "take it home" moment — energy should be practical, not philosophical
+- Each step should feel like something they could start tomorrow
+
+BRIDGE: "And with those practical steps in mind — let me put the bigger picture in perspective."
 -->
 
 ---
@@ -207,4 +243,9 @@ KEY POINTS:
 - Amodei is the CEO of Anthropic — not an outsider's observation, but the person building the most capable AI systems reflecting on what they're building
 - Contact framing: the question is asked by someone who found something extraordinary and is now asked "are you ready for this?"
 - "Deeply unclear" — the outcome depends on what choices are made, including by the people in this room
+
+DELIVERY:
+- CRITICAL: Bridge from the Thank You back to the audience's agency before showing this slide
+- Verbal bridge: "That's the macro question. Your version of it — the one you carry out of this room — is: what kind of engineer, product person, designer do you choose to be? The CEO of the company building the most capable AI systems put it this way..."
+- Let the Sagan reveal land as the final lingering question
 -->

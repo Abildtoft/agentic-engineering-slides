@@ -88,6 +88,10 @@ KEY POINTS:
 - Emphasize ownership: human accountability does not disappear
 - Frame "context + specs + verification" as the new unit of craft
 
+DELIVERY:
+- Acknowledge the room: "Not every organization is there yet. Security reviews, compliance constraints, team skepticism — these are real. What I'll show you are the patterns that work when you can adopt them. Think of this as the target state, not the assumption."
+- This grounds the audience before diving into tooling specifics — especially important if the room includes people from regulated industries
+
 BRIDGE: "Let's look at each discipline."
 -->
 
@@ -112,7 +116,7 @@ The models could already reason about code. The unlock was giving them tools to 
 </v-click>
 <v-click>
 
-Project context files — Architecture docs, style guides, domain knowledge. Everything the agent needs to make good decisions.
+Project context files — Architecture docs, design system docs, style guides, domain knowledge. Everything the agent needs to make good decisions.
 
 </v-click>
 <v-click>
@@ -179,6 +183,6 @@ DELIVERY:
 - Keep this practical and procedural
 - Remind the room this applies to product and design workflows too
 
-BRIDGE: "The practice comes in the demo. First, the building blocks that make context and specs operational."
+BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
 -->
 
