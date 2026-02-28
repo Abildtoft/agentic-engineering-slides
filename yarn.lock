@@ -2487,6 +2487,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"beautiful-mermaid@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "beautiful-mermaid@npm:1.1.3"
+  dependencies:
+    elkjs: "npm:^0.11.0"
+    entities: "npm:^7.0.1"
+  checksum: 10c0/fd2d4a38449257b7666c5f7888c51cb01a2f0d79cb1efb216d3391cb0895c944629eb48ea2fa2781d73fc841888e444af547b1d6a1735df8acf60e58ccc7e9fe
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
@@ -2822,6 +2832,7 @@ __metadata:
   dependencies:
     "@slidev/cli": "npm:^52.0.0"
     "@slidev/theme-default": "npm:latest"
+    beautiful-mermaid: "npm:^1.1.3"
     vue: "npm:^3.5.0"
   languageName: unknown
   linkType: soft
@@ -3490,6 +3501,13 @@ __metadata:
   version: 1.5.302
   resolution: "electron-to-chromium@npm:1.5.302"
   checksum: 10c0/014413f2b4ec3a0e043c68f6c07a760d230b14e36b8549c5b124f386a6318d9641e69be2aa0df1877395dd99922745c1722c8ecb3d72205f0f3b3b3dc44c8442
+  languageName: node
+  linkType: hard
+
+"elkjs@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "elkjs@npm:0.11.0"
+  checksum: 10c0/e3515eab869facd8c7acbb1d7d8a0f61686ec7ec4b42fd5c86b864216ee48a47f85376565d06f3f18d73b5a2c5de47aec7a4126ff059235d2a90099aee481b21
   languageName: node
   linkType: hard
 

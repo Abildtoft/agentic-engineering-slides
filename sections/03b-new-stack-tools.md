@@ -36,15 +36,52 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/skills-architecture.png" alt="Skills architecture: User query flows to Agent, Skill loader reads SKILL.md files — LLM-driven, non-deterministic execution" size="xl" />
+<MermaidDiagram :code="`graph LR
+  U1[User: /commit-message] -->|slash command| A[Agent]
+  U2[Review this PR] -->|prompt matches| A
+  A --> SL[Skill Loader]
+  subgraph User-Invocable
+    SK1[git:commit-message]
+    SK2[verify:run]
+  end
+  subgraph Model-Invocable
+    SK3[code-reviewer]
+    SK4[silent-failure-hunter]
+  end
+  SL -->|explicit load| SK1
+  SL -.->|available| SK2
+  SL -.->|auto-discovered| SK3
+  SL -.->|available| SK4
+  SK1 -->|instructions| LLM[LLM Interprets]
+  SK3 -->|instructions| LLM
+  LLM -->|soft guidance| R[Output]
+`" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>.</p>
 
+<v-click>
+
+<p class="text-base opacity-75"><strong>User-invocable</strong> — triggered by a slash command. You choose when to run it. (<code>/commit-message</code>, <code>/verify:run</code>)</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Model-invocable</strong> — the agent matches your prompt to a skill description and loads it automatically. (<code>code-reviewer</code>, <code>silent-failure-hunter</code>)</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets the markdown instructions. It can adapt, reorder, or reason about them. Non-deterministic by design.</p>
+
+</v-click>
+
 <!--
-- User query → Agent → Skill loader reads a SKILL.md file → LLM-driven execution
-- Execution model: non-deterministic (LLM interprets the markdown)
-- Format: Markdown file (SKILL.md)
-- Use case: consistent reasoning or workflows — "recipes, not code"
+- Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
+- User-invocable: user explicitly triggers with /command — deterministic selection
+- Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
+- Both paths end the same way: skill .md is read, LLM interprets instructions, generates output
+- Dotted arrows = available but not loaded for this invocation
+- Key contrast: "soft guidance" — the LLM can deviate, adapt, reason about the instructions
 - This is the conceptual counterpart to MCP on the next slide
 -->
 
@@ -53,16 +90,50 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/mcp-architecture.png" alt="MCP architecture: User query flows to Agent, MCP Clients connect to MCP Servers via JSON-RPC — API-driven, schema-constrained execution" size="xl" />
+<MermaidDiagram :code="`graph LR
+  U[Create issue from spec] --> A[Agent]
+  A -->|selects tool| C[MCP Client]
+  C -->|JSON-RPC| S[Linear MCP Server]
+  subgraph Capabilities
+    T1[Tool: create_issue]
+    T2[Tool: update_issue]
+    R1[Resource: team_members]
+    P1[Prompt: bug_report]
+  end
+  S --> T1
+  S --> T2
+  S --> R1
+  S --> P1
+  T1 -->|schema-validated| RES[Issue LIN-1234]
+`" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
 
+<v-click>
+
+<p class="text-base opacity-75"><strong>One server, three capability types</strong> — Tools (functions to call), Resources (read-only data), Prompts (reusable templates).</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>JSON-RPC</strong> over a standard protocol. The agent selects a tool, the server validates inputs against a schema.</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Hard contracts</strong> — inputs and outputs are schema-validated. No interpretation, no ambiguity at the interface.</p>
+
+</v-click>
+
 <!--
-- User query → Agent → MCP Client → MCP Server via JSON-RPC → schema-constrained tool calls
-- Execution model: API/schema-constrained at the interface layer (model orchestration remains probabilistic)
-- Format: JSON-RPC tool schema via server
-- Use case: real-world actions or data access
+- User task → Agent selects a tool from the Linear MCP Server via JSON-RPC
+- A single MCP server exposes three capability types: Tools, Resources, Prompts
+- Tools: functions the LLM calls (create_issue, update_issue)
+- Resources: read-only data (team_members list)
+- Prompts: reusable templates (bug_report format)
+- Execution: schema-constrained — input/output validated against a JSON schema
 - Key contrast with Skills: Skills are soft guidance (markdown), MCP is hard contracts (schema)
+- Linear is the primary example, but the same protocol connects to any system
 -->
 
 ---
