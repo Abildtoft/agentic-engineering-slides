@@ -5,6 +5,8 @@ transition: section-shift
 
 # Let's Wrap Up
 
+What survives when the noise fades
+
 ---
 layout: two-cols-header
 ---
@@ -137,7 +139,7 @@ KEY POINTS:
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
 - Shared conclusion: human value is increasingly multiplicative
 
-BRIDGE: "Let me put that in perspective."
+BRIDGE: "And with that in mind — let me put the bigger picture in perspective."
 -->
 
 ---
@@ -207,4 +209,9 @@ KEY POINTS:
 - Amodei is the CEO of Anthropic — not an outsider's observation, but the person building the most capable AI systems reflecting on what they're building
 - Contact framing: the question is asked by someone who found something extraordinary and is now asked "are you ready for this?"
 - "Deeply unclear" — the outcome depends on what choices are made, including by the people in this room
+
+DELIVERY:
+- CRITICAL: Bridge from the Thank You back to the audience's agency before showing this slide
+- Verbal bridge: "That's the macro question. Your version of it — the one you carry out of this room — is: what kind of engineer, product person, designer do you choose to be? The CEO of the company building the most capable AI systems put it this way..."
+- Let the Sagan reveal land as the final lingering question
 -->

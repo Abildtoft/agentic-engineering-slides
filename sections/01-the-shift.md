@@ -118,7 +118,7 @@ layout: fact
 
 <BigNumber
   value="4%"
-  label="of new code in public GitHub repos was produced by Claude Code"
+  label="of new code in public GitHub repos was produced by a single tool — Claude Code"
   sublabel="(as of February 2026)"
 />
 

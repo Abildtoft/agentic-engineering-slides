@@ -87,7 +87,7 @@ Inspired by open-source tools like **Superpowers**, **GET SHIT DONE**, and **Com
 
 <v-click>
 
-**Your workflow will look different — and should.** The numbers don't matter. The pattern does.
+**Your workflow will look different — and should.** For designers, this might be design system governance, accessibility audits, or component specs. The numbers don't matter. The pattern does.
 
 </v-click>
 
@@ -238,7 +238,7 @@ Two types: **user-invocable** — you trigger it with a slash command (`/kramme:
 </v-click>
 <v-click>
 
-`/kramme:git:commit-message`, `/kramme:siw:continue`, `/kramme:verify:run`, `/kramme:code:refactor-pass` — invoke with a slash command, the agent reads the markdown and executes.
+`/kramme:git:commit-message`, `/kramme:siw:continue`, `/kramme:verify:run`, `/kramme:code:refactor-pass`, `/kramme:a11y-auditor` — invoke with a slash command, the agent reads the markdown and executes.
 
 </v-click>
 <v-click>
@@ -280,7 +280,7 @@ An MCP server exposes three types of capabilities:
 </v-click>
 <v-click>
 
-**Examples I use daily:** Linear, Context7, Nx MCP, Chrome DevTools / Playwright, Markitdown, Magic Patterns, Granola — one protocol, many systems, no bespoke glue code.
+**Examples I use daily:** Linear, Context7, Nx MCP, Chrome DevTools / Playwright, Figma, Markitdown, Magic Patterns, Granola — one protocol, many systems, no bespoke glue code.
 
 </v-click>
 

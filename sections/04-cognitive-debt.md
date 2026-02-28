@@ -231,6 +231,24 @@ BRIDGE: "So what does non-hollow look like? What is the antidote?"
 -->
 
 ---
+layout: statement
+---
+
+# This is a choice, not a fate.
+
+<!--
+
+KEY POINTS:
+- Let the room exhale after the emotional valley
+- The previous slide ended with "we don't have to" — this gives that idea its own visual beat
+- Brief pause before the practical antidote checklist
+
+DELIVERY:
+- Short slide — hold for a few seconds, then advance
+- Tone shift: from warning to agency
+-->
+
+---
 
 # The Antidote — The Human in the Loop
 
