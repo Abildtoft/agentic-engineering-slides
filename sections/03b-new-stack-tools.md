@@ -36,15 +36,31 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/skills-architecture.png" alt="Skills architecture: User query flows to Agent, Skill loader reads SKILL.md files — LLM-driven, non-deterministic execution" size="xl" />
+<MermaidDiagram :code="`graph LR
+  U[User: /commit-message] --> A[Agent]
+  A --> SL[Skill Loader]
+  subgraph Skills Library
+    SK1[git:commit-message]
+    SK2[verify:run]
+    SK3[siw:continue]
+    SK4[code:refactor-pass]
+  end
+  SL -->|reads .md| SK1
+  SL -.->|available| SK2
+  SL -.->|available| SK3
+  SL -.->|available| SK4
+  SK1 -->|instructions| LLM[LLM Interprets]
+  LLM -->|soft guidance| R[Commit Message]
+`" size="xl" />
 
-<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>.</p>
+<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>. Markdown instructions, LLM-interpreted — soft guidance, not hard contracts.</p>
 
 <!--
-- User query → Agent → Skill loader reads a SKILL.md file → LLM-driven execution
-- Execution model: non-deterministic (LLM interprets the markdown)
-- Format: Markdown file (SKILL.md)
-- Use case: consistent reasoning or workflows — "recipes, not code"
+- Slash command triggers skill loader → agent reads a specific SKILL.md file
+- The skill is a markdown recipe — the LLM interprets it, not a schema validator
+- Execution model: non-deterministic (LLM interprets the markdown instructions)
+- Dotted arrows = available but not selected; solid arrow = active skill for this invocation
+- Key contrast: "soft guidance" — the LLM can deviate, adapt, reason about the instructions
 - This is the conceptual counterpart to MCP on the next slide
 -->
 
@@ -53,16 +69,34 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/mcp-architecture.png" alt="MCP architecture: User query flows to Agent, MCP Clients connect to MCP Servers via JSON-RPC — API-driven, schema-constrained execution" size="xl" />
+<MermaidDiagram :code="`graph LR
+  U[Create issue from spec] --> A[Agent]
+  A -->|selects tool| C[MCP Client]
+  C -->|JSON-RPC| S[Linear MCP Server]
+  subgraph Capabilities
+    T1[Tool: create_issue]
+    T2[Tool: update_issue]
+    R1[Resource: team_members]
+    P1[Prompt: bug_report]
+  end
+  S --> T1
+  S --> T2
+  S --> R1
+  S --> P1
+  T1 -->|schema-validated| RES[Issue LIN-1234]
+`" size="xl" />
 
-<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
+<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>. JSON-RPC schema, validated inputs/outputs — hard contracts, not soft guidance.</p>
 
 <!--
-- User query → Agent → MCP Client → MCP Server via JSON-RPC → schema-constrained tool calls
-- Execution model: API/schema-constrained at the interface layer (model orchestration remains probabilistic)
-- Format: JSON-RPC tool schema via server
-- Use case: real-world actions or data access
+- User task → Agent selects a tool from the Linear MCP Server via JSON-RPC
+- A single MCP server exposes three capability types: Tools, Resources, Prompts
+- Tools: functions the LLM calls (create_issue, update_issue)
+- Resources: read-only data (team_members list)
+- Prompts: reusable templates (bug_report format)
+- Execution: schema-constrained — input/output validated against a JSON schema
 - Key contrast with Skills: Skills are soft guidance (markdown), MCP is hard contracts (schema)
+- Linear is the primary example, but the same protocol connects to any system
 -->
 
 ---
