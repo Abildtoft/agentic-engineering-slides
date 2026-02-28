@@ -37,29 +37,50 @@ class: text-center
 ---
 
 <MermaidDiagram :code="`graph LR
-  U[User: /commit-message] --> A[Agent]
+  U1[User: /commit-message] -->|slash command| A[Agent]
+  U2[Review this PR] -->|prompt matches| A
   A --> SL[Skill Loader]
-  subgraph Skills Library
+  subgraph User-Invocable
     SK1[git:commit-message]
     SK2[verify:run]
-    SK3[siw:continue]
-    SK4[code:refactor-pass]
   end
-  SL -->|reads .md| SK1
+  subgraph Model-Invocable
+    SK3[code-reviewer]
+    SK4[silent-failure-hunter]
+  end
+  SL -->|explicit load| SK1
   SL -.->|available| SK2
-  SL -.->|available| SK3
+  SL -.->|auto-discovered| SK3
   SL -.->|available| SK4
   SK1 -->|instructions| LLM[LLM Interprets]
-  LLM -->|soft guidance| R[Commit Message]
+  SK3 -->|instructions| LLM
+  LLM -->|soft guidance| R[Output]
 `" size="xl" />
 
-<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>. Markdown instructions, LLM-interpreted — soft guidance, not hard contracts.</p>
+<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>.</p>
+
+<v-click>
+
+<p class="text-base opacity-75"><strong>User-invocable</strong> — triggered by a slash command. You choose when to run it. (<code>/commit-message</code>, <code>/verify:run</code>)</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Model-invocable</strong> — the agent matches your prompt to a skill description and loads it automatically. (<code>code-reviewer</code>, <code>silent-failure-hunter</code>)</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets the markdown instructions. It can adapt, reorder, or reason about them. Non-deterministic by design.</p>
+
+</v-click>
 
 <!--
-- Slash command triggers skill loader → agent reads a specific SKILL.md file
-- The skill is a markdown recipe — the LLM interprets it, not a schema validator
-- Execution model: non-deterministic (LLM interprets the markdown instructions)
-- Dotted arrows = available but not selected; solid arrow = active skill for this invocation
+- Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
+- User-invocable: user explicitly triggers with /command — deterministic selection
+- Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
+- Both paths end the same way: skill .md is read, LLM interprets instructions, generates output
+- Dotted arrows = available but not loaded for this invocation
 - Key contrast: "soft guidance" — the LLM can deviate, adapt, reason about the instructions
 - This is the conceptual counterpart to MCP on the next slide
 -->
@@ -86,7 +107,23 @@ class: text-center
   T1 -->|schema-validated| RES[Issue LIN-1234]
 `" size="xl" />
 
-<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>. JSON-RPC schema, validated inputs/outputs — hard contracts, not soft guidance.</p>
+<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
+
+<v-click>
+
+<p class="text-base opacity-75"><strong>One server, three capability types</strong> — Tools (functions to call), Resources (read-only data), Prompts (reusable templates).</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>JSON-RPC</strong> over a standard protocol. The agent selects a tool, the server validates inputs against a schema.</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Hard contracts</strong> — inputs and outputs are schema-validated. No interpretation, no ambiguity at the interface.</p>
+
+</v-click>
 
 <!--
 - User task → Agent selects a tool from the Linear MCP Server via JSON-RPC
