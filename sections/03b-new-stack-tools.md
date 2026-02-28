@@ -256,60 +256,26 @@ KEY POINTS:
 - Unit tests optimize iteration speed; broader tests protect system behavior
 - "Executable definition of done" is the key phrase
 
-BRIDGE: "Before external tools, we still need strong local context."
+BRIDGE: "Tests close the loop locally. Skills package repeatable workflows."
 -->
 
 ---
 
-# AGENTS.md in Practice
+# Skills in Practice
 
 <v-click>
 
-**You've seen the concept. Here's what makes it work at scale.**
+`/kramme:git:commit-message` — I type a slash command, the agent reads the skill's markdown and writes a commit message following my conventions.
 
 </v-click>
 <v-click>
 
-**Nesting** — Put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones. `src/api/AGENTS.md` can specify API patterns without repeating the global config.
+`/kramme:verify:run` — runs formatting, linting, type checks, and tests for the files I changed. One command, five checks.
 
 </v-click>
 <v-click>
 
-**Layering** — Root file: project-wide rules. Directory files: domain-specific constraints. The agent reads all applicable layers.
-
-</v-click>
-<v-click>
-
-Start with one file at the root. Add directory-level files only when you see repeated mistakes.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Builds on S3a's conceptual intro — this slide is about operational patterns
-- Nesting is the key practical detail most teams miss
-- "Start with one, add when you see repeated mistakes" prevents over-engineering
-
-BRIDGE: "Once local context is stable, skills package repeatable workflows."
--->
-
----
-
-# Skills
-
-<v-click>
-
-**A skill is a markdown file with instructions the agent follows on demand.**
-
-</v-click>
-<v-click>
-
-Two types: **user-invocable** — you trigger it with a slash command (`/kramme:git:commit-message`, `/kramme:verify:run`). **Model-invocable** — the agent discovers and triggers it autonomously when the situation fits.
-
-</v-click>
-<v-click>
-
-`/kramme:git:commit-message`, `/kramme:siw:continue`, `/kramme:verify:run`, `/kramme:code:refactor-pass`, `/kramme:a11y-auditor` — invoke with a slash command, the agent reads the markdown and executes.
+`kramme:code-reviewer` — I don't invoke this one. The agent matches my prompt to the skill description and loads it automatically when I ask for a review.
 
 </v-click>
 <v-click>
@@ -320,50 +286,39 @@ Two types: **user-invocable** — you trigger it with a slash command (`/kramme:
 
 <!--
 KEY POINTS:
-- Skills are reusable playbooks encoded in markdown
-- Distinguish invocation models clearly: human-triggered vs model-triggered
-- Keep examples short; emphasize composability and transparency
-- Tie back to spec-driven work: skills reduce ambiguity in repeated tasks
-
-DELIVERY:
-- For product/UX: you could write a skill for design review, accessibility checks, or copy editing — same format, markdown instructions
+- Concepts already covered in the diagram slide — this slide is purely about concrete examples
+- Each example shows a different invocation model: user-invocable (slash command) vs model-invocable (auto-discovered)
+- Emphasize composability and transparency: skills are markdown you can read and edit
+- For product/UX: you could write a skill for design review, accessibility checks, or copy editing — same format
 
 BRIDGE: "Skills orchestrate internal workflows. MCP connects those workflows to external systems."
 -->
 
 ---
 
-# MCP (Model Context Protocol)
+# MCP in Practice
 
 <v-click>
 
-**A standard way for agents to connect to external tools, databases, and APIs.** Think of it as USB for AI.
+**Linear MCP** — agent creates issues, updates status, reads team members. I say "create an issue from this spec" and the agent calls `create_issue` through the protocol.
 
 </v-click>
 <v-click>
 
-An MCP server exposes three types of capabilities:
-
-- **Tools** — functions the LLM can call (like API endpoints)
-- **Resources** — read-only data the client can fetch (like files or DB records)
-- **Prompts** — reusable prompt templates the client can retrieve
+**Chrome DevTools / Playwright** — agent navigates pages, takes screenshots, fills forms. Browser automation without writing a single test script.
 
 </v-click>
 <v-click>
 
-**Examples I use daily:** Linear, Context7, Nx MCP, Chrome DevTools / Playwright, Figma, Markitdown, Magic Patterns, Granola — one protocol, many systems, no bespoke glue code.
+**One protocol, many systems** — Linear, Context7, Nx, Figma, Markitdown, Magic Patterns, Granola. No bespoke glue code. Think of it as USB for AI.
 
 </v-click>
 
 <!--
 KEY POINTS:
-- Define MCP as the interoperability layer, not another proprietary feature
-- Keep the three capability types practical and memorable
-- Emphasize workflow participation: agents can now act across systems
-- Real-world examples anchor MCP beyond theory
-- Emphasize breadth: planning, docs, browser, design, knowledge capture
-
-DELIVERY:
+- Concepts and capability types already covered in the diagram slide — this slide is purely about concrete daily use
+- Lead with the two most vivid examples (Linear for planning, Chrome DevTools for browser)
+- Close with the breadth to show ecosystem maturity
 - For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms
 
 BRIDGE: "MCP connects agents to tools. Now: how do you enforce boundaries?"
