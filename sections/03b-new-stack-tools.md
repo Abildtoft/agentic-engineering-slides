@@ -17,6 +17,74 @@ BRIDGE: "You've seen the concepts — context engineering and spec-driven develo
 -->
 
 ---
+layout: two-cols-header
+---
+
+# Markdown: The Shared Language
+
+Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, agent definitions — **all markdown.** This is from the repo behind these slides:
+
+::left::
+
+**You write this:**
+
+```md
+# AGENTS.md
+
+## Stack
+- Slidev, Vue 3, UnoCSS
+- Package manager: **Yarn 4**
+
+## Guidelines
+- One idea per slide
+- Use `v-click` for reveals
+```
+
+::right::
+
+<v-click>
+
+<div class="ml-4">
+
+**The agent reads this:**
+
+<div class="p-5 rounded-lg bg-white border border-gray-200 text-gray-800">
+  <div class="text-xl font-bold mb-3">AGENTS.md</div>
+  <div class="text-base font-semibold mt-4 mb-1">Stack</div>
+  <ul class="text-sm my-1 ml-4 list-disc">
+    <li>Slidev, Vue 3, UnoCSS</li>
+    <li>Package manager: <strong>Yarn 4</strong></li>
+  </ul>
+  <div class="text-base font-semibold mt-4 mb-1">Guidelines</div>
+  <ul class="text-sm my-1 ml-4 list-disc">
+    <li>One idea per slide</li>
+    <li>Use <code class="bg-gray-100 text-pink-600 px-1 rounded text-xs">v-click</code> for reveals</li>
+  </ul>
+</div>
+
+</div>
+
+</v-click>
+
+<!--
+KEY POINTS:
+- The left shows raw markdown — plain text anyone can write
+- The right shows what it looks like rendered — structured, scannable, clear
+- The agent parses the same structure: headings become sections, lists become constraints, bold becomes emphasis
+- This is WHY the agentic ecosystem converged on markdown — it sits at the intersection of human readability and machine parsability
+- Connect forward: every tool in section 03b (skills, agents, AGENTS.md) uses markdown as its medium
+
+DELIVERY:
+- Keep this brief — 60-90 seconds maximum
+- Point at the left: "This is what you type." Point at the right: "This is what the agent sees — the same thing you see."
+- If the room raised many hands for AGENTS.md/Skills in the room check, move through quickly
+- If the room was unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
+- For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
+
+BRIDGE: "Now that you know the medium, let's look at the first tool built on it."
+-->
+
+---
 layout: center
 class: text-center
 ---
