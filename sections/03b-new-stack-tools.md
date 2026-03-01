@@ -25,13 +25,7 @@ class: text-center
 
 <v-click>
 
-<p class="mt-4 text-base opacity-75">Each API is a single utensil — one endpoint, one job. The agent picks the right tool for the task.</p>
-
-</v-click>
-
-<v-click>
-
-<p class="mt-2 text-xl font-semibold">Hooks are the guardrails around this kitchen.</p>
+<p class="mt-4 text-base opacity-75">An API is a set of actions one system exposes so another system can trigger them remotely.</p>
 
 </v-click>
 
@@ -52,7 +46,7 @@ class: text-center
 
 <MermaidDiagram :code="`graph LR
   U1[User: /commit-message] -->|slash command| A[Agent]
-  U2[Review this PR] -->|prompt matches| A
+  U2[Check our changes for security issues] -->|prompt matches| A
   A --> SL[Skill Loader]
   subgraph User-Invocable
     SK1[git:commit-message]
