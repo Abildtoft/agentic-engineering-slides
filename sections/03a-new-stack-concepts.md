@@ -101,17 +101,22 @@ BRIDGE: "Let's look at each discipline."
 
 <v-click>
 
-The models could already reason about code. The unlock was giving them tools to read yours. **Your codebase is the prompt.**
+**We always needed context. Now agents can find it themselves.**
 
 </v-click>
 <v-click>
 
-`AGENTS.md` — project conventions, patterns, constraints. Project context files — architecture docs, design system docs, domain knowledge. Everything the agent needs to make good decisions, layered from root to subdirectory.
+Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The unlock was giving agents the tools to progressively discover your codebase: conventions, architecture, domain knowledge.
 
 </v-click>
 <v-click>
 
-**Good documentation went from "nice to have" to the single biggest lever on agent output quality.**
+Think onboarding: everything a strong new hire needs on day one, encoded as `AGENTS.md` and project context files, layered from root to subdirectory. Documentation went from "nice to have" to infrastructure.
+
+</v-click>
+<v-click>
+
+> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
 
 </v-click>
 
@@ -120,17 +125,19 @@ SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.ht
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
-- The unlock was visibility into real codebases and conventions
+- Progressive disclosure: copy-paste → chat-in-IDE → agent reads your whole project
+- The unlock was not smarter models but broader, self-directed access to real codebases
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
-- Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones (e.g. src/api/AGENTS.md for API patterns)
-- Layering: root file = project-wide rules, directory files = domain-specific constraints, agent reads all applicable layers
-- Start with one file at root. Add directory-level files only when you see repeated mistakes.
-- Reuse a human metaphor: "everything a strong new hire needs on day one"
+- Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
+- Layering: root file = project-wide rules, directory files = domain-specific constraints
+- Start with one file at root. Add directory-level files only when you see repeated mistakes
 - Documentation is now production infrastructure, not supporting material
 
 DELIVERY:
+- Land the opener and pause — the audience will nod because they've lived the copy-paste phase
 - Call out that product docs and design system docs are first-class context inputs
+- If the room is technical, mention the inheritance model (root AGENTS.md + subdirectory overrides)
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->

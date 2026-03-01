@@ -108,6 +108,17 @@ layout: fact
   sublabel="Only the ones we can count — the real number is far higher (SemiAnalysis, February 2026)"
 />
 
+<v-click>
+
+<p class="mt-8 text-xl">At current trajectory, <strong>20%+ of all daily commits</strong> by year-end</p>
+
+</v-click>
+<v-click>
+
+<p class="mt-4 text-lg opacity-75">Claude Code is <strong>one year old</strong></p>
+
+</v-click>
+
 <!--
 SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
 SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
@@ -116,34 +127,15 @@ KEY POINTS:
 - 4% counts only commits with explicit Claude Code attribution (co-authored-by trailer, etc.)
 - Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
 - This is the floor, not the ceiling
-- Position this as adoption evidence, not a victory lap
-
-DELIVERY:
-- Let "4%" breathe before explaining
-- Stress "the ones we can count" — let the audience do the mental math
-
-BRIDGE: "And it's accelerating."
--->
-
----
-layout: statement
----
-
-At current trajectory, **20%+ of all daily commits** by year-end
-
-<p class="mt-4 text-sm opacity-60">SemiAnalysis, February 2026</p>
-
-<!--
-SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
-
-KEY POINTS:
 - The growth curve is exponential — 134,608 daily commits at time of tweet
-- This is one tool on public repos; total AI-authored code is far higher
-- Frame as trajectory, not prediction — "at current trajectory" is their language
+- At current trajectory, 20%+ by year-end — frame as trajectory, not prediction
+- Claude Code launched February 2025 — one tool, one year, 4% of all public commits
+- The "one year old" beat is the kicker: let the audience feel the acceleration
 
 DELIVERY:
-- Short pause after "20%+"
-- This is the "where it's going" beat — the 4% slide was "where we are"
+- Let "4%" breathe first
+- Click: "20%+" lands the trajectory
+- Click: "one year old" is the gut punch — pause and let it sink in
 
 BRIDGE: "And it's not just one tool."
 -->
