@@ -119,6 +119,11 @@ But every model has a finite memory — a context window. Not everything fits. C
 > "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
 
 </v-click>
+<v-click>
+
+Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
+
+</v-click>
 
 <!--
 SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
@@ -137,7 +142,7 @@ KEY POINTS:
 
 DELIVERY:
 - Land the opener and pause — the audience will nod because they've lived the copy-paste phase
-- Call out that product docs and design system docs are first-class context inputs
+- Call out that product docs and design system docs are first-class context inputs — if there are designers in the room, anchor this: your Figma component documentation and design tokens are first-class context inputs for agents, same as AGENTS.md for engineers
 - If the room is technical, mention the inheritance model (root AGENTS.md + subdirectory overrides)
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."

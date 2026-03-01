@@ -67,6 +67,7 @@ KEY POINTS:
 - Define the distinction crisply: technical debt in code, cognitive debt in people
 - Main risk: teams can ship clean output while losing comprehension
 - This is the core diagnostic slide for the section
+- For designers: same risk applies — AI generates a complete component library, but no one can explain the spacing scale rationale, the color system logic, or why a particular interaction pattern was chosen. Cognitive debt is not code-specific.
 
 BRIDGE: "The pattern sounds abstract, so let's ground it in a concrete case."
 -->
@@ -313,11 +314,10 @@ BRIDGE: "The antidote works — if you have competent humans in the loop. But wh
 
 ---
 layout: statement
+class: statement-wide
 ---
 
-<h1>If we skip the 10,000 hours of practice<br />
-and jump straight to "overseer of AI output" —<br />
-are we actually training architects?</h1>
+# If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
 
 <!--
 
