@@ -103,7 +103,7 @@ class: text-center
 ---
 
 <MermaidDiagram :code="`graph LR
-  U[User: 'Create issue from spec'] -->|prompt| A[Agent]
+  U[User: 'Create a Linear issue about the bug we just found'] -->|prompt| A[Agent]
   A -->|picks a tool| C[MCP Client]
   C -->|connects to| S[Linear MCP Server]
   subgraph Capabilities
