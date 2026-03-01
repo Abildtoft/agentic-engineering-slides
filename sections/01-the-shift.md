@@ -77,10 +77,6 @@ class: quote-long
   <div class="quote-progressive-line">"You have to transport yourself to the current moment.</div>
 
   <v-click>
-    <div class="quote-progressive-line">It's not Sonnet 3.5 anymore.</div>
-  </v-click>
-
-  <v-click>
     <div class="quote-progressive-line">The new models are just completely, completely different.</div>
   </v-click>
 
