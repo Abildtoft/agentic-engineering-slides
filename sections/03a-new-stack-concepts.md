@@ -192,6 +192,73 @@ DELIVERY:
 - Emphasize "you own the verification" — this is where human judgment stays essential
 - Remind the room this applies to product and design workflows too
 
-BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
+BRIDGE: "In product work, this changes the medium of validation too."
+-->
+
+---
+layout: quote
+---
+
+<h1>"The prototype is the new PRD.<br />
+If your team needs a 20-page product strategy doc,<br />
+you're already behind someone with a weekend prototype."</h1>
+
+Andrew Chen
+
+<!--
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- Make the artifact shift explicit: from document-first to experience-first
+- Clarify that strategy still matters; the medium of validation changes
+- This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
+- This slide fits here because it's a direct consequence of spec-driven development applied to product work
+
+DELIVERY:
+- Directly address product/UX people in the room
+- Tie back: "This is what judgment looks like in product work — knowing which prototype answers the question faster than any document could."
+
+BRIDGE: "You now know the two disciplines. Before we look at the tools, one format keeps coming up. Let me explain why."
+-->
+
+---
+
+# Markdown: The Shared Language
+
+<v-click>
+
+**Plain text with minimal formatting.** Headers, lists, bold, code blocks. No special software needed — any text editor works.
+
+</v-click>
+<v-click>
+
+**Human-readable AND machine-readable.** You can read it. The agent can read it. No compilation, no parsing ambiguity.
+
+</v-click>
+<v-click>
+
+**Versionable like code.** It lives in your repository. Changes are tracked, reviewed, and shared through the same workflow as everything else.
+
+</v-click>
+<v-click>
+
+AGENTS.md, skills, agent definitions, specs — **all markdown.** The tools you're about to see are built on this one format.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Define markdown for non-technical audience members: plain text with light formatting conventions
+- The key insight: markdown sits at the intersection of human readability and machine parsability
+- This is WHY the agentic ecosystem converged on markdown — not because it is the best format for any single use case, but because it is good enough for both humans and agents
+- Connect forward: every tool in section 03b (skills, agents, AGENTS.md) uses markdown as its medium
+
+DELIVERY:
+- Keep this brief — 60-90 seconds maximum
+- If the room raised many hands for AGENTS.md/Skills in the room check, move through quickly
+- If the room was unfamiliar, slow down and give a concrete example: "Imagine writing a checklist in a plain text file. That is markdown."
+- For designers: think of it like writing structured notes — headings, bullet points, emphasis — except those notes become instructions an agent follows
+
+BRIDGE: "Now that you know the medium, let's look at the tools built on it."
 -->
 

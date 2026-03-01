@@ -105,33 +105,41 @@ KEY POINTS:
 - Cheap execution increases the value of taste and prioritization
 - Land the idea that judgment became more visible, not more optional
 
-BRIDGE: "But taste isn't just about choosing what to build. It changes how we plan, how we validate, and what not to build."
+BRIDGE: "But taste isn't just about choosing what to build. It's about coherence."
 -->
 
 ---
-layout: quote
+layout: statement
 ---
 
-<h1>"The prototype is the new PRD.<br />
-If your team needs a 20-page product strategy doc,<br />
-you're already behind someone with a weekend prototype."</h1>
+# We're not bottlenecked by typing speed. We're bottlenecked by coherence.
 
-Andrew Chen
+<v-click>
+
+AI can generate five features in a day. **Integrating them into a system that makes sense is still your job.**
+
+</v-click>
+<v-click>
+
+Focus. Finishing. Judgment. Knowing what to build and why. **These don't scale with AI speed. They scale with you.**
+
+</v-click>
 
 <!--
-SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
 KEY POINTS:
-- Make the artifact shift explicit: from document-first to experience-first
-- Clarify that strategy still matters; the medium of validation changes
-- This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
-- Connect this to design, product, and engineering convergence
+- This directly challenges the "1000x developer" narrative — the bottleneck was never typing
+- Integration doesn't scale with generation speed; it scales with focus and understanding
+- Connects back to cognitive debt: if you can't hold the system in your head, generating more code makes it worse
+- This is the mechanism behind subtraction — you need coherence to know what to leave out
 
 DELIVERY:
-- Directly address product/UX people in the room
-- Tie back: "This is what judgment looks like in product work — knowing which prototype answers the question faster than any document could."
+- Let the first line land — it should feel like a correction to the excitement of the demo
+- "These don't scale with AI speed" is the key insight
 
-BRIDGE: "But taste and speed also have a shadow side."
+BRIDGE: "And when generation is cheap, the hardest discipline becomes knowing what NOT to build."
 -->
 
 ---

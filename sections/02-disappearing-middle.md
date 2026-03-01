@@ -28,6 +28,11 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 </v-click>
 <v-click>
 
+This is where juniors learn. This is where craft gets built.
+
+</v-click>
+<v-click>
+
 ## This is changing.
 
 </v-click>
@@ -38,10 +43,12 @@ SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/20075342810111554
 KEY POINTS:
 - Define "the middle" concretely: translation, implementation, integration, and coordination work
 - Clarify that the middle is compressing, not disappearing
+- Seed the junior pipeline thread early — this pays off in Section 4 when we ask about training architects
 - Reframe seniority: less about throughput in the middle, more about intent and judgment
 
 DELIVERY:
 - Start with the historical baseline, then introduce compression
+- Let "This is where juniors learn" land — plant the seed, don't elaborate yet
 - Let "This is changing" land before moving on
 
 BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?"
@@ -160,5 +167,41 @@ DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
 
-BRIDGE: "We just named the skill — turning ambiguity into clarity. Now let me show you the toolkit: context, specs, and tooling."
+BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
+-->
+
+---
+
+# The Bottleneck Cascade
+
+<v-click>
+
+When weaving sped up, **yarn became the constraint.** When spinning caught up, **fibre became the constraint.** When fibre improved, **cotton had to be automated.**
+
+</v-click>
+<v-click>
+
+Every time a bottleneck is removed, the constraint moves upstream — **not away.**
+
+</v-click>
+<v-click>
+
+The implementation middle is compressing. The constraint is moving to **clarity, judgment, and system design.** That's the new stack.
+
+</v-click>
+
+<!--
+
+SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
+
+KEY POINTS:
+- This gives the audience a durable mental model to carry through the rest of the talk
+- The cascade pattern explains WHY clarity becomes the bottleneck — it's not aspirational, it's mechanical
+- We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
+
+DELIVERY:
+- The weaving/yarn/fibre sequence should feel like a story, not a list
+- Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
+
+BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->
