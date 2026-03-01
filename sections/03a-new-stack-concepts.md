@@ -111,7 +111,7 @@ Copy-pasting snippets into ChatGPT was the first wave — but the context was al
 </v-click>
 <v-click>
 
-Think onboarding: everything a strong new hire needs on day one, encoded as `AGENTS.md` and project context files, layered from root to subdirectory. Documentation went from "nice to have" to infrastructure.
+But every model has a finite memory — a context window. Context engineering is the discipline of optimizing what the agent discovers and when: the right information, in the right order, at the right time. `AGENTS.md`, project docs, layered from root to subdirectory.
 
 </v-click>
 <v-click>
@@ -127,6 +127,7 @@ SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 KEY POINTS:
 - Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
 - The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
+- Finite context window means you can't dump everything in — you must curate the discovery journey
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
 - Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
@@ -148,17 +149,17 @@ BRIDGE: "Context engineering shapes what the agent knows. The second discipline 
 
 <v-click>
 
-**Don't ask for monoliths. Write specs that agents execute.**
+**Context shapes what the agent knows. Specs shape what it does.**
 
 </v-click>
 <v-click>
 
-Break work into focused chunks — one function, one bug, one feature at a time.
+A spec is a scoped unit of work — acceptance criteria, constraints, expected behavior. One function, one bug, one feature. Small enough to fit inside the agent's context window with room to reason.
 
 </v-click>
 <v-click>
 
-Iterate: spec → implement → verify → refine. The human writes the spec and owns the verification. The agent writes the code.
+The cycle: **spec → implement → verify → refine.** You write the spec and own the verification. The agent writes the code.
 
 </v-click>
 <v-click>
@@ -173,7 +174,9 @@ SOURCE: Entire announcement (entire.io/blog/hello-entire-world)
 SOURCE: Monarch's Philosophy (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 
 KEY POINTS:
-- The anti-pattern is monolithic requests; the pattern is scoped executable specs
+- Opens by connecting directly to context engineering — the two disciplines are paired
+- A spec is defined concretely: acceptance criteria, constraints, expected behavior
+- Scoping matters because of the finite context window — a monolithic request floods the window
 - Sequence matters: spec, implement, verify, refine
 - Verification is part of the workflow contract, not an afterthought
 - Tie to known practices: issue decomposition, acceptance criteria, iterative review
@@ -181,6 +184,7 @@ KEY POINTS:
 
 DELIVERY:
 - Keep this practical and procedural
+- Emphasize "you own the verification" — this is where human judgment stays essential
 - Remind the room this applies to product and design workflows too
 
 BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
