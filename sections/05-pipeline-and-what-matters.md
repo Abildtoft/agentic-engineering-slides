@@ -22,10 +22,10 @@ BRIDGE: "We've diagnosed the risks. Now let's name what actually matters."
 
 ---
 layout: statement
+class: statement-wide
 ---
 
-<h1>The compression of the implementation middle isn't making engineering less important —<br />
-it's revealing what was always important.</h1>
+# The compression of the implementation middle isn't making engineering less important — it's revealing what was always important.
 
 <!--
 

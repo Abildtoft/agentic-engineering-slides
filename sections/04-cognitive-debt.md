@@ -314,11 +314,10 @@ BRIDGE: "The antidote works — if you have competent humans in the loop. But wh
 
 ---
 layout: statement
+class: statement-wide
 ---
 
-<h1>If we skip the 10,000 hours of practice<br />
-and jump straight to "overseer of AI output" —<br />
-are we actually training architects?</h1>
+# If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
 
 <!--
 
