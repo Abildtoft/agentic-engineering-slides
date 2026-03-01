@@ -27,9 +27,26 @@ class: text-center
 
 <v-click>
 
+<p class="mt-2 text-base opacity-75">An API is the menu — you place an order, the kitchen sends back your food. You don't need to know how the kitchen works.</p>
+
+</v-click>
+
+<v-click>
+
 <p class="mt-2 text-xl font-semibold">Hooks are the guardrails around this kitchen.</p>
 
 </v-click>
+
+<!--
+KEY ANALOGY — expand this for the audience:
+- An API is a restaurant menu: you (the client) place an order (request), the kitchen (server) sends back your food (response). You don't need to know how the kitchen works — just what's on the menu.
+- APIs = tools on the counter — each one does one thing (whisk, knife, thermometer)
+- Skills = recipes the chef follows — soft guidance, adaptable to the situation
+- MCP = the kitchen itself — standardised layout, appliances, plumbing that connects everything
+- Hooks = safety rails — the fire suppressor, the temperature probe, the timer that beeps
+
+"You're not building the kitchen from scratch. You're equipping it and writing the recipes."
+-->
 
 ---
 layout: center
