@@ -73,14 +73,32 @@ BRIDGE: "The pattern sounds abstract, so let's ground it in a concrete case."
 
 ---
 layout: quote
+class: quote-long
 ---
 
-<QuotePair
-  first="We gave a student team AI coding tools and tracked them for 10 weeks. By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
-  firstAttribution="Margaret-Anne Storey"
-  second="I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
-  secondAttribution="Simon Willison"
-/>
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"We gave a student team AI coding tools and tracked them for 10 weeks.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">Early results were impressive — they were shipping faster than any cohort we'd seen.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">By week 8, one team hit a wall. No one could explain why certain design decisions had been made."</div>
+  </v-click>
+</div>
+
+<v-click>
+  Margaret-Anne Storey
+</v-click>
+
+<v-click>
+
+## "I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
+
+Simon Willison
+
+</v-click>
 
 <!--
 
