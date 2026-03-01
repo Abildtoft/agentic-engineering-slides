@@ -111,7 +111,7 @@ The models could already reason about code. The unlock was giving them tools to 
 </v-click>
 <v-click>
 
-`AGENTS.md` — Project conventions, patterns, constraints, workflow definitions. Read by the agent on every session start.
+`AGENTS.md` — Project conventions, patterns, constraints, workflow definitions. Read by the agent on every session start. Nest them in subdirectories for domain-specific rules.
 
 </v-click>
 <v-click>
@@ -133,6 +133,9 @@ KEY POINTS:
 - The unlock was visibility into real codebases and conventions
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
+- Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones (e.g. src/api/AGENTS.md for API patterns)
+- Layering: root file = project-wide rules, directory files = domain-specific constraints, agent reads all applicable layers
+- Start with one file at root. Add directory-level files only when you see repeated mistakes.
 - Reuse a human metaphor: "everything a strong new hire needs on day one"
 - Documentation is now production infrastructure, not supporting material
 

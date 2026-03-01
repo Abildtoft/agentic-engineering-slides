@@ -158,9 +158,9 @@ Planning becomes procrastination in disguise. You re-plan the same feature three
 </v-click>
 <v-click>
 
-**The Coherence Bottleneck**
+**The Coherence Trap**
 
-Productivity was never the real bottleneck. The bottleneck was always coherence.
+Productivity was never the real constraint. Coherence was — and still is.
 
 </v-click>
 

@@ -155,5 +155,5 @@ DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
 
-BRIDGE: "Next, let's operationalize this with the new stack: context, specs, and tooling."
+BRIDGE: "We just named the skill — turning ambiguity into clarity. Now let me show you the toolkit: context, specs, and tooling."
 -->

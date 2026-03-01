@@ -135,35 +135,34 @@ BRIDGE: "So what are those skills? Let's name them."
 
 <v-click>
 
-**Shape ambiguous problems** into actionable intent
+**Shape a vague feature request** into a spec an agent can execute
 
 </v-click>
 <v-click>
 
-**Design the context architecture** that makes good outcomes inevitable
+**Design the context** — an AGENTS.md that prevents the same mistake three times
 
 </v-click>
 <v-click>
 
-**Judge what matters** — from visual hierarchy to system architecture — from what merely works
+**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale
 
 </v-click>
 <v-click>
 
-The work is the same as it always was — **turning ambiguity into clarity.**
+The work hasn't changed. The tools have.
 
 </v-click>
 
 <!--
 
-SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
-
 KEY POINTS:
-- Walk each capability with one concrete interpretation
-- Show cross-role applicability: these are not engineering-only traits
+- Each bullet grounds the abstract capability in the operating model the audience now understands
+- Section 2 named the convergence; this slide names what it looks like in practice post-demo
+- Cross-role applicability: specs, context design, and quality judgment are not engineering-only traits
 - Connect back to sections 3 and 4: context quality and judgment quality are coupled
 
-BRIDGE: "Osmani calls it judgment. Paul Graham calls it something simpler."
+BRIDGE: "Some people call this judgment. Paul Graham calls it something simpler."
 -->
 
 ---
@@ -206,10 +205,12 @@ SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550
 KEY POINTS:
 - Make the artifact shift explicit: from document-first to experience-first
 - Clarify that strategy still matters; the medium of validation changes
+- This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
 - Connect this to design, product, and engineering convergence
 
 DELIVERY:
 - Directly address product/UX people in the room
+- Tie back: "This is what judgment looks like in product work — knowing which prototype answers the question faster than any document could."
 
 BRIDGE: "But taste and speed also have a shadow side."
 -->
