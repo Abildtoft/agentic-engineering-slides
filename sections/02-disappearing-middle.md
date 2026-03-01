@@ -3,7 +3,7 @@ layout: section
 transition: section-shift
 ---
 
-# The Disappearing Middle
+# The Compressing Middle
 
 What's actually changing about how software gets made
 
@@ -19,7 +19,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 # The Middle of Software Work
 
-<SlideImage src="/disappearing-middle.png" alt="The disappearing middle of software work" />
+<SlideImage src="/disappearing-middle.png" alt="The compressing middle of software work" />
 
 <v-click>
 

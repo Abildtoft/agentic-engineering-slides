@@ -5,7 +5,7 @@ transition: section-shift
 
 # The New Stack: Core Concepts
 
-The operating model for turning ambiguity into clarity
+From principles to practice
 
 <!--
 KEY POINTS:
@@ -101,22 +101,12 @@ BRIDGE: "Let's look at each discipline."
 
 <v-click>
 
-The models could already reason about code. The unlock was giving them tools to read yours.
+The models could already reason about code. The unlock was giving them tools to read yours. **Your codebase is the prompt.**
 
 </v-click>
 <v-click>
 
-**Your codebase is the prompt.**
-
-</v-click>
-<v-click>
-
-`AGENTS.md` — Project conventions, patterns, constraints, workflow definitions. Read by the agent on every session start. Nest them in subdirectories for domain-specific rules.
-
-</v-click>
-<v-click>
-
-Project context files — Architecture docs, design system docs, style guides, domain knowledge. Everything the agent needs to make good decisions.
+`AGENTS.md` — project conventions, patterns, constraints. Project context files — architecture docs, design system docs, domain knowledge. Everything the agent needs to make good decisions, layered from root to subdirectory.
 
 </v-click>
 <v-click>

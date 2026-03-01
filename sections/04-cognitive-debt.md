@@ -11,8 +11,12 @@ The hidden cost of going fast without understanding
 
 KEY POINTS:
 - Post-demo pivot: from capability to responsibility
+- This is the "peak hype" moment the agenda slide foreshadowed — now make the turn
 - Slow the pace and move from tooling power to human understanding
 - Frame this as a systems risk, not a moral panic
+
+DELIVERY:
+- Let this slide sit for 2-3 seconds before advancing — the turn should be visible, not just verbal
 
 BRIDGE: "We've just spent the last section exploring an incredible toolkit — context engineering, skills, MCPs, hooks, harnesses, agents, teams. Each layer added power. But each layer also added something you didn't personally write, something you may not fully understand. That accumulation has a name."
 -->
@@ -160,7 +164,7 @@ Planning becomes procrastination in disguise. You re-plan the same feature three
 
 **The Coherence Trap**
 
-Productivity was never the real constraint. Coherence was — and still is.
+You're shipping faster than you can hold the system in your head. The codebase grows; your mental model doesn't.
 
 </v-click>
 

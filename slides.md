@@ -33,7 +33,7 @@ layout: statement
 # Simplified Agenda
 
 - Inflection Point
-- The Disappearing Middle
+- The Compressing Middle
 - The New Stack: Core Concepts
 - The New Stack: Tools → Harness Engineering
 - **DEMO TIME**

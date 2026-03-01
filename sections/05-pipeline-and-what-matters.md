@@ -110,7 +110,7 @@ BRIDGE: "This can feel alarming, but it also clarifies what has always mattered.
 layout: statement
 ---
 
-<h1>The collapse of the implementation middle isn't making engineering less important —<br />
+<h1>The compression of the implementation middle isn't making engineering less important —<br />
 it's revealing what was always important.</h1>
 
 <!--
