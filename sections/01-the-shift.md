@@ -104,23 +104,48 @@ layout: fact
 
 <BigNumber
   value="4%"
-  label="of new code in public GitHub repos was produced by a single tool — Claude Code"
-  sublabel="(as of February 2026)"
+  label="of public GitHub commits carry a clear Claude Code attribution"
+  sublabel="Only the ones we can count — the real number is far higher (SemiAnalysis, February 2026)"
 />
 
 <!--
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
 SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
 KEY POINTS:
-- 4% is meaningful because it is one tool in public repos, not total AI output
+- 4% counts only commits with explicit Claude Code attribution (co-authored-by trailer, etc.)
+- Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
+- This is the floor, not the ceiling
 - Position this as adoption evidence, not a victory lap
-- Move the room from novelty mindset to production mindset
 
 DELIVERY:
 - Let "4%" breathe before explaining
-- Stress "one tool" to avoid overclaiming
+- Stress "the ones we can count" — let the audience do the mental math
 
-BRIDGE: "Let that sink in before we go further."
+BRIDGE: "And it's accelerating."
+-->
+
+---
+layout: statement
+---
+
+At current trajectory, **20%+ of all daily commits** by year-end
+
+<p class="mt-4 text-sm opacity-60">SemiAnalysis, February 2026</p>
+
+<!--
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
+
+KEY POINTS:
+- The growth curve is exponential — 134,608 daily commits at time of tweet
+- This is one tool on public repos; total AI-authored code is far higher
+- Frame as trajectory, not prediction — "at current trajectory" is their language
+
+DELIVERY:
+- Short pause after "20%+"
+- This is the "where it's going" beat — the 4% slide was "where we are"
+
+BRIDGE: "And it's not just one tool."
 -->
 
 ---
@@ -149,6 +174,7 @@ BRIDGE: "Let that sink in before we go further."
 </v-click>
 
 <!--
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
 SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
 SOURCE: Google CEO Sundar Pichai, earnings call
 SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
