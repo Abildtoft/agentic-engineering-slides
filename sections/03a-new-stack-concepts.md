@@ -192,6 +192,32 @@ DELIVERY:
 - Emphasize "you own the verification" — this is where human judgment stays essential
 - Remind the room this applies to product and design workflows too
 
+BRIDGE: "In product work, this changes the medium of validation too."
+-->
+
+---
+layout: quote
+---
+
+<h1>"The prototype is the new PRD.<br />
+If your team needs a 20-page product strategy doc,<br />
+you're already behind someone with a weekend prototype."</h1>
+
+Andrew Chen
+
+<!--
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- Make the artifact shift explicit: from document-first to experience-first
+- Clarify that strategy still matters; the medium of validation changes
+- This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
+- This slide fits here because it's a direct consequence of spec-driven development applied to product work
+
+DELIVERY:
+- Directly address product/UX people in the room
+- Tie back: "This is what judgment looks like in product work — knowing which prototype answers the question faster than any document could."
+
 BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
 -->
 

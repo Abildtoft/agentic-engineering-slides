@@ -65,38 +65,25 @@ BRIDGE: "One final lens: where bottlenecks move next."
 -->
 
 ---
-layout: default
+layout: statement
 ---
 
-# The Bottleneck Cascade
-
-<v-click>
-
-When weaving sped up, **yarn became the constraint.** When spinning caught up, **fibre became the constraint.** When fibre improved, **cotton had to be automated.**
-
-</v-click>
-<v-click>
-
-Every time a bottleneck is removed, the constraint moves upstream — **not away.**
-
-</v-click>
-<v-click>
-
-**The bottleneck ultimately isn't technology — it's expert knowledge extraction.**
-
-</v-click>
+# Remember the cascade. The constraint didn't disappear — it moved upstream to expert knowledge extraction.
 
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
 
 KEY POINTS:
-- Use this as the opening lens for the final coda after "What Survives"
-- Core pattern: bottlenecks migrate upstream as each layer gets automated
-- Present-day implication: knowledge capture and accountability become the real constraints
+- Callback to the Bottleneck Cascade introduced in Section 2
+- Don't re-explain the cascade — the audience already has the mental model
+- Land the final implication: the ultimate bottleneck is getting expert knowledge OUT of humans and INTO systems
 - Connect back to section 4: comprehension is now a governance requirement
 
-BRIDGE: "Which brings us to what this looks like as a team value."
+DELIVERY:
+- This should feel like a return, not a new idea — "Remember the cascade from earlier?"
+
+BRIDGE: "Which brings us to what this looks like for you, concretely."
 -->
 
 ---
@@ -176,14 +163,6 @@ KEY POINTS:
 -->
 
 ---
-layout: cover
----
-
-<img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
-
-# Thank You
-
----
 layout: quote
 ---
 
@@ -205,13 +184,22 @@ Carl Sagan, Contact — cited by Dario Amodei
 SOURCE: Dario Amodei, "The Adolescence of Technology" (darioamodei.com/essay/the-adolescence-of-technology)
 
 KEY POINTS:
-- Bonus slide — the question that lingers after the talk ends
+- This is the real ending — the question that lingers after the talk
 - Amodei is the CEO of Anthropic — not an outsider's observation, but the person building the most capable AI systems reflecting on what they're building
 - Contact framing: the question is asked by someone who found something extraordinary and is now asked "are you ready for this?"
 - "Deeply unclear" — the outcome depends on what choices are made, including by the people in this room
 
 DELIVERY:
-- CRITICAL: Bridge from the Thank You back to the audience's agency before showing this slide
-- Verbal bridge: "That's the macro question. Your version of it — the one you carry out of this room — is: what kind of engineer, product person, designer do you choose to be? The CEO of the company building the most capable AI systems put it this way..."
+- Verbal bridge from the previous slide: "The CEO of the company building the most capable AI systems put it this way..."
+- Your version of it — the one you carry out of this room — is: what kind of engineer, product person, designer do you choose to be?
 - Let the Sagan reveal land as the final lingering question
+- Pause. Then advance to Thank You.
 -->
+
+---
+layout: cover
+---
+
+<img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
+
+# Thank You

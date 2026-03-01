@@ -17,26 +17,71 @@ BRIDGE: "You've seen the concepts — context engineering and spec-driven develo
 -->
 
 ---
-layout: center
-class: text-center
+layout: two-cols-header
 ---
 
-<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." size="xl" />
+# Markdown: The Shared Language
+
+Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, agent definitions — **all markdown.** This is from the repo behind these slides:
+
+::left::
+
+**You write this:**
+
+```md
+# AGENTS.md
+
+## Stack
+- Slidev, Vue 3, UnoCSS
+- Package manager: **Yarn 4**
+
+## Guidelines
+- One idea per slide
+- Use `v-click` for reveals
+```
+
+::right::
 
 <v-click>
 
-<p class="mt-4 text-base opacity-75">An API is a set of actions one system exposes so another system can trigger them remotely.</p>
+<div class="ml-4">
+
+**The agent reads this:**
+
+<div class="p-5 rounded-lg bg-white border border-gray-200 text-gray-800">
+  <div class="text-xl font-bold mb-3">AGENTS.md</div>
+  <div class="text-base font-semibold mt-4 mb-1">Stack</div>
+  <ul class="text-sm my-1 ml-4 list-disc">
+    <li>Slidev, Vue 3, UnoCSS</li>
+    <li>Package manager: <strong>Yarn 4</strong></li>
+  </ul>
+  <div class="text-base font-semibold mt-4 mb-1">Guidelines</div>
+  <ul class="text-sm my-1 ml-4 list-disc">
+    <li>One idea per slide</li>
+    <li>Use <code class="bg-gray-100 text-pink-600 px-1 rounded text-xs">v-click</code> for reveals</li>
+  </ul>
+</div>
+
+</div>
 
 </v-click>
 
 <!--
-KEY ANALOGY — expand this for the audience:
-- APIs = tools on the counter — each one does one thing (whisk, knife, thermometer). Each API endpoint is a single utensil the agent picks up to do a specific job.
-- Skills = recipes the chef follows — soft guidance, adaptable to the situation
-- MCP = the kitchen itself — standardised layout, appliances, plumbing that connects everything
-- Hooks = safety rails — the fire suppressor, the temperature probe, the timer that beeps
+KEY POINTS:
+- The left shows raw markdown — plain text anyone can write
+- The right shows what it looks like rendered — structured, scannable, clear
+- The agent parses the same structure: headings become sections, lists become constraints, bold becomes emphasis
+- This is WHY the agentic ecosystem converged on markdown — it sits at the intersection of human readability and machine parsability
+- Connect forward: every tool in section 03b (skills, agents, AGENTS.md) uses markdown as its medium
 
-"You're not building the kitchen from scratch. You're equipping it and writing the recipes."
+DELIVERY:
+- Keep this brief — 60-90 seconds maximum
+- Point at the left: "This is what you type." Point at the right: "This is what the agent sees — the same thing you see."
+- If the room raised many hands for AGENTS.md/Skills in the room check, move through quickly
+- If the room was unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
+- For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
+
+BRIDGE: "Now that you know the medium, let's look at the first tool built on it."
 -->
 
 ---
@@ -89,6 +134,8 @@ class: text-center
 </v-click>
 
 <!--
+FRAMING (use verbally): Think of it like a kitchen. APIs are the utensils — each does one thing. Skills are the recipes — soft guidance, adaptable to the situation. MCP is the kitchen itself — standardised layout and plumbing. "You're not building the kitchen from scratch. You're equipping it and writing the recipes."
+
 - Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
 - User-invocable: user explicitly triggers with /command — deterministic selection
 - Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
@@ -154,39 +201,22 @@ class: text-center
 
 <v-click>
 
-My personal set of **recipes and guardrails** — tailored to how I work.
+My personal set of **recipes and guardrails** — skills, agents, and hooks encoding how I want to work. I've built mine. **You'll build yours.**
 
 </v-click>
 <v-click>
 
-**45 skills**, **20 specialist agents**, **5 hooks** — encoding commit hygiene, PR review, structured implementation, and code quality standards.
-
-</v-click>
-<v-click>
-
-Inspired by open-source tools like **Superpowers**, **GET SHIT DONE**, and **Compound Engineering** — but shaped to my workflow.
-
-</v-click>
-
-<v-click>
-
-**Your workflow will look different — and should.** For designers, this might be design system governance, accessibility audits, or component specs. The numbers don't matter. The pattern does.
-
-</v-click>
-
-<v-click>
-
-Let's take the concepts first, then demo.
+The numbers don't matter. The pattern does: **explicit workflow design, encoded in files, versioned like code.** Let's look at the building blocks.
 
 </v-click>
 
 <!--
 KEY POINTS:
-- This is the concrete reference implementation for the remaining slides
+- Keep this brief — the point is that the pattern exists, not the scale of your implementation
 - Emphasize "adaptable pattern," not "copy my setup"
-- The value is explicit workflow design encoded in files
+- For designers: same pattern works for design system governance, accessibility audits, component specs
 
-BRIDGE: "With that framing, let's start with guardrails."
+BRIDGE: "Let's start with guardrails."
 -->
 
 ---
@@ -207,7 +237,7 @@ Without guardrails, every iteration needs human review. With them, the agent can
 </v-click>
 <v-click>
 
-Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — and enable speed.
+Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
 
 </v-click>
 <v-click>
@@ -218,86 +248,23 @@ Every repeated human intervention is a signal that the harness is incomplete.
 
 <!--
 SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Guardrails convert stochastic generation into controlled iteration
-- Clarify boundary between autonomy and supervision
+- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
+- Hooks are another: shell scripts at lifecycle points (PreToolUse blocks destructive commands, PostToolUse auto-formats, Stop enforces standards)
+- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
 - Every repeated human intervention signals harness incompleteness
 
 DELIVERY:
 - "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
 - Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
+- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
+- Expand on hooks verbally: "Shell scripts that fire at lifecycle points — blocking destructive commands, auto-formatting, enforcing standards."
 
-BRIDGE: "The most familiar guardrail is tests."
--->
-
----
-
-# Tests as Guardrails
-
-<v-click>
-
-**Test-driven development (TDD) is more relevant than ever.** Write the test first — it becomes the spec the agent implements against.
-
-</v-click>
-<v-click>
-
-**Tests close the iteration loop.** Agent writes code → tests run → failure signals what to fix → agent retries. Unit tests give seconds between attempt and feedback. Integration and e2e tests catch regressions across files.
-
-</v-click>
-<v-click>
-
-Tests are executable specifications. They don't just catch bugs — they tell the agent what "done" looks like.
-
-</v-click>
-<v-click>
-
-For design: visual regression tests, accessibility checks, and component snapshot tests serve the same role — they tell the agent what "correct" looks like.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Reframe tests as runtime contracts for agent behavior
-- Unit tests optimize iteration speed; broader tests protect system behavior
-- "Executable definition of done" is the key phrase
-- For designers: their acceptance criteria aren't unit tests, but the pattern is identical — define "done" as a machine-checkable constraint (visual regression, axe/WCAG checks, component snapshots)
-
-BRIDGE: "Tests close the loop locally. Hooks enforce policy across the workflow lifecycle."
--->
-
-
----
-
-# Hooks
-
-<v-click>
-
-**Shell scripts that fire at lifecycle points** — for example before a tool runs, after a tool runs, or when the agent stops.
-
-</v-click>
-<v-click>
-
-**Examples:** Block destructive commands (`PreToolUse`), auto-format edits (`PostToolUse`), enforce commit standards (`Stop`).
-
-</v-click>
-<v-click>
-
-Hook type tells you **when** it runs. What it does is up to you.
-
-</v-click>
-
-<!--
-SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
-SOURCE: Coordination is the hardest engineering problem (x.com/PirouneB/status/2022783395139318007)
-
-KEY POINTS:
-- Clarify lifecycle vs policy: hook type defines timing, policy defines behavior
-- Hooks are enforcement and observability points in the workflow
-- Use concrete examples so this doesn't stay abstract
-
-BRIDGE: "Once guardrails are in place, we can discuss specialization."
+BRIDGE: "With guardrails in place, we can talk about specialization."
 -->
 
 ---
@@ -360,44 +327,7 @@ KEY POINTS:
 - Keep the analogy to a tech lead and sprint team
 - Coordination primitives matter more than "chatting" between agents
 
-BRIDGE: "That's what agent teams look like in practice. Now — what's actually hard about this?"
--->
-
----
-
-# The Coordination Problem
-
-<v-click>
-
-**Going from one agent to many is not a scaling problem. It's a distributed systems problem.**
-
-</v-click>
-<v-click>
-
-Who gets which context? How do you share state without conflicts? What happens when one agent's output breaks another's assumptions?
-
-</v-click>
-<v-click>
-
-The patterns are familiar — task decomposition, work queues, failure handling. **But every component is nondeterministic.**
-
-</v-click>
-<v-click>
-
-The hard part is no longer getting the agent to write code. **It's designing how agents work together.**
-
-</v-click>
-
-<!--
-SOURCE: PirouneB, "Coordination is Quietly Becoming the Hardest Engineering Problem" (x.com/PirouneB/status/2022783395139318007)
-SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
-
-KEY POINTS:
-- Conclude section 3b with the real hard problem: coordination under nondeterminism
-- Name the three pressure points: context allocation, shared state, cascade control
-- This is the setup for naming the discipline on the next slide
-
-BRIDGE: This leads directly into the Harness Engineering statement — the discipline of designing these systems IS the new engineering.
+BRIDGE: "Individual agents, teams, coordination through structure. All of this — the whole system around the model — has a name."
 -->
 
 ---
