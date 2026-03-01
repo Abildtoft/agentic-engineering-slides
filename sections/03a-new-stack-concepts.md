@@ -154,7 +154,7 @@ BRIDGE: "Context engineering shapes what the agent knows. The second discipline 
 </v-click>
 <v-click>
 
-A spec is a scoped unit of work — acceptance criteria, constraints, expected behavior. One function, one bug, one feature. Small enough to fit inside the agent's context window with room to reason.
+A large project becomes a series of scoped specs — each with acceptance criteria, constraints, expected behavior. One function, one bug, one feature at a time. Small enough to fit inside the agent's context window with room to reason.
 
 </v-click>
 <v-click>
