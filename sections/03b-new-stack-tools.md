@@ -82,6 +82,11 @@ class: text-center
 <p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets markdown instructions. It can adapt, reorder, or reason about them.</p>
 
 </v-click>
+<v-click>
+
+<p class="text-base opacity-75">Same format applies beyond code — design review checklists, accessibility audits, copy editing guidelines. <strong>A skill is any workflow you can describe in markdown.</strong></p>
+
+</v-click>
 
 <!--
 - Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
@@ -233,7 +238,7 @@ BRIDGE: "The most familiar guardrail is tests."
 
 <v-click>
 
-**TDD is more relevant than ever.** Write the test first — it becomes the spec the agent implements against.
+**Test-driven development (TDD) is more relevant than ever.** Write the test first — it becomes the spec the agent implements against.
 
 </v-click>
 <v-click>
@@ -246,12 +251,18 @@ BRIDGE: "The most familiar guardrail is tests."
 Tests are executable specifications. They don't just catch bugs — they tell the agent what "done" looks like.
 
 </v-click>
+<v-click>
+
+For design: visual regression tests, accessibility checks, and component snapshot tests serve the same role — they tell the agent what "correct" looks like.
+
+</v-click>
 
 <!--
 KEY POINTS:
 - Reframe tests as runtime contracts for agent behavior
 - Unit tests optimize iteration speed; broader tests protect system behavior
 - "Executable definition of done" is the key phrase
+- For designers: their acceptance criteria aren't unit tests, but the pattern is identical — define "done" as a machine-checkable constraint (visual regression, axe/WCAG checks, component snapshots)
 
 BRIDGE: "Tests close the loop locally. Hooks enforce policy across the workflow lifecycle."
 -->

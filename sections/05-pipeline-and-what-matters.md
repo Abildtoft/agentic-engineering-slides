@@ -64,6 +64,11 @@ BRIDGE: "So what are those skills? Let's name them."
 </v-click>
 <v-click>
 
+**Articulate *why* this interaction pattern is wrong** — not just that it feels off, but the principle it violates and the spec that prevents it next time
+
+</v-click>
+<v-click>
+
 The work hasn't changed. The tools have.
 
 </v-click>
@@ -145,6 +150,11 @@ PMs don't just ship features. They kill them.
 A great PM doesn't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
 
 </v-click>
+<v-click>
+
+PMs kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.**
+
+</v-click>
 
 <!--
 
@@ -160,6 +170,7 @@ DELIVERY:
 - Lead with the accumulation line — let it land
 - "PMs kill features" is the punchline — reveal it
 - Land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
+- Subtraction is a design superpower — Dieter Rams's "less but better" is the same principle. When AI can generate any UI you ask for, the courage to simplify is the differentiator.
 
 BRIDGE: "Let's consolidate the full argument before the final coda."
 -->
