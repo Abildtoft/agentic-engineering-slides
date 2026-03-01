@@ -106,7 +106,7 @@ BRIDGE: "Let's look at each discipline."
 </v-click>
 <v-click>
 
-Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The unlock was giving agents the tools to progressively discover your codebase: conventions, architecture, domain knowledge.
+Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase — reading files, tracing conventions, building understanding as it goes.
 
 </v-click>
 <v-click>
@@ -125,8 +125,8 @@ SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.ht
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
-- Progressive disclosure: copy-paste → chat-in-IDE → agent reads your whole project
-- The unlock was not smarter models but broader, self-directed access to real codebases
+- Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
+- The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
 - Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
