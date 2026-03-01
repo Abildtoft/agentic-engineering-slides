@@ -75,8 +75,8 @@ You're no longer writing code line by line. You're designing a system where AI p
 <v-click>
 
 **Two new disciplines define this work:**
-1. Context engineering — shaping what the agent knows
-2. Spec-driven development — shaping what the agent does
+1. Context engineering
+2. Spec-driven development
 
 </v-click>
 
@@ -106,12 +106,12 @@ BRIDGE: "Let's look at each discipline."
 </v-click>
 <v-click>
 
-Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase — reading files, tracing conventions, building understanding as it goes.
+Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase.
 
 </v-click>
 <v-click>
 
-But every model has a finite memory — a context window. Context engineering is the discipline of optimizing what the agent discovers and when: the right information, in the right order, at the right time. `AGENTS.md`, project docs, layered from root to subdirectory.
+But every model has a finite memory — a context window. Not everything fits. Context engineering is the discipline of ensuring the *important* information makes it into that budget: the right information, in the right order, at the right time.
 
 </v-click>
 <v-click>
