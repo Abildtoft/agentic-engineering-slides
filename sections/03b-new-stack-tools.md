@@ -23,11 +23,9 @@ class: text-center
 
 <SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="Kitchen analogy showing APIs as tools, skills as recipes, and MCPs as the kitchen." size="xl" />
 
-<p class="mt-4 text-lg opacity-85">APIs are tools. Skills are recipes. MCP is the kitchen.</p>
-
 <v-click>
 
-<p class="mt-2 text-base opacity-75">An API is the menu — you place an order, the kitchen sends back your food. You don't need to know how the kitchen works.</p>
+<p class="mt-4 text-base opacity-75">Each API is a single utensil — one endpoint, one job. The agent picks the right tool for the task.</p>
 
 </v-click>
 
@@ -39,8 +37,7 @@ class: text-center
 
 <!--
 KEY ANALOGY — expand this for the audience:
-- An API is a restaurant menu: you (the client) place an order (request), the kitchen (server) sends back your food (response). You don't need to know how the kitchen works — just what's on the menu.
-- APIs = tools on the counter — each one does one thing (whisk, knife, thermometer)
+- APIs = tools on the counter — each one does one thing (whisk, knife, thermometer). Each API endpoint is a single utensil the agent picks up to do a specific job.
 - Skills = recipes the chef follows — soft guidance, adaptable to the situation
 - MCP = the kitchen itself — standardised layout, appliances, plumbing that connects everything
 - Hooks = safety rails — the fire suppressor, the temperature probe, the timer that beeps
@@ -112,20 +109,20 @@ class: text-center
 ---
 
 <MermaidDiagram :code="`graph LR
-  U[Create issue from spec] --> A[Agent]
-  A -->|selects tool| C[MCP Client]
-  C -->|JSON-RPC| S[Linear MCP Server]
+  U[Create issue from spec] -->|prompt| A[Agent]
+  A -->|picks a tool| C[MCP Client]
+  C -->|connects to| S[Linear MCP Server]
   subgraph Capabilities
     T1[Tool: create_issue]
     T2[Tool: update_issue]
     R1[Resource: team_members]
     P1[Prompt: bug_report]
   end
-  S --> T1
-  S --> T2
-  S --> R1
-  S --> P1
-  T1 -->|schema-validated| RES[Issue LIN-1234]
+  S -->|exposes| T1
+  S -->|exposes| T2
+  S -->|exposes| R1
+  S -->|exposes| P1
+  T1 -->|validated result| RES[Issue LIN-1234]
 `" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
@@ -137,17 +134,12 @@ class: text-center
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>JSON-RPC</strong> over a standard protocol. The agent selects a tool, the server validates inputs against a schema.</p>
-
-</v-click>
-<v-click>
-
 <p class="text-base opacity-75"><strong>Hard contracts</strong> — inputs and outputs are schema-validated. No interpretation, no ambiguity at the interface.</p>
 
 </v-click>
 
 <!--
-- User task → Agent selects a tool from the Linear MCP Server via JSON-RPC
+- User task → Agent selects a tool from the Linear MCP Server
 - A single MCP server exposes three capability types: Tools, Resources, Prompts
 - Tools: functions the LLM calls (create_issue, update_issue)
 - Resources: read-only data (team_members list)
