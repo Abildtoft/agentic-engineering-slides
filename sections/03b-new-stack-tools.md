@@ -45,8 +45,8 @@ class: text-center
 ---
 
 <MermaidDiagram :code="`graph LR
-  U1[User: /commit-message] -->|slash command| A[Agent]
-  U2[Check our changes for security issues] -->|prompt matches| A
+  U1[User: '/commit-message'] -->|slash command| A[Agent]
+  U2[User: 'Check our changes for security issues'] -->|prompt matches| A
   A --> SL[Skill Loader]
   subgraph User-Invocable
     SK1[git:commit-message]
@@ -103,7 +103,7 @@ class: text-center
 ---
 
 <MermaidDiagram :code="`graph LR
-  U[Create issue from spec] -->|prompt| A[Agent]
+  U[User: 'Create issue from spec'] -->|prompt| A[Agent]
   A -->|picks a tool| C[MCP Client]
   C -->|connects to| S[Linear MCP Server]
   subgraph Capabilities
