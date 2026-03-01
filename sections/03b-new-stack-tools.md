@@ -71,7 +71,7 @@ class: text-center
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets the markdown instructions. It can adapt, reorder, or reason about them. Non-deterministic by design.</p>
+<p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets markdown instructions. It can adapt, reorder, or reason about them.</p>
 
 </v-click>
 
@@ -83,6 +83,10 @@ class: text-center
 - Dotted arrows = available but not loaded for this invocation
 - Key contrast: "soft guidance" — the LLM can deviate, adapt, reason about the instructions
 - This is the conceptual counterpart to MCP on the next slide
+- Concrete examples: /commit-message (user-invocable), code-reviewer (model-invocable)
+- For product/UX: same format works for design review, accessibility checks, or copy editing
+
+BRIDGE: "Skills shape thinking. MCP shapes doing. Let's look at MCP."
 -->
 
 ---
@@ -138,7 +142,7 @@ class: text-center
 
 ---
 
-# We will exemplify with kramme-cc-workflow
+# One Approach: kramme-cc-workflow
 
 <v-click>
 
@@ -231,17 +235,7 @@ BRIDGE: "The most familiar guardrail is tests."
 </v-click>
 <v-click>
 
-**Tests close the iteration loop.** Agent writes code → tests run → failure signals what to fix → agent retries.
-
-</v-click>
-<v-click>
-
-**Unit tests** — tightest loop. Seconds between attempt and feedback. The agent self-corrects without waiting for you.
-
-</v-click>
-<v-click>
-
-**Integration and e2e tests** — wider net. Catches regressions the agent can't see from a single file.
+**Tests close the iteration loop.** Agent writes code → tests run → failure signals what to fix → agent retries. Unit tests give seconds between attempt and feedback. Integration and e2e tests catch regressions across files.
 
 </v-click>
 <v-click>
@@ -256,73 +250,9 @@ KEY POINTS:
 - Unit tests optimize iteration speed; broader tests protect system behavior
 - "Executable definition of done" is the key phrase
 
-BRIDGE: "Tests close the loop locally. Skills package repeatable workflows."
+BRIDGE: "Tests close the loop locally. Hooks enforce policy across the workflow lifecycle."
 -->
 
----
-
-# Skills in Practice
-
-<v-click>
-
-`/kramme:git:commit-message` — I type a slash command, the agent reads the skill's markdown and writes a commit message following my conventions.
-
-</v-click>
-<v-click>
-
-`/kramme:verify:run` — runs formatting, linting, type checks, and tests for the files I changed. One command, five checks.
-
-</v-click>
-<v-click>
-
-`kramme:code-reviewer` — I don't invoke this one. The agent matches my prompt to the skill description and loads it automatically when I ask for a review.
-
-</v-click>
-<v-click>
-
-**"You're not writing code. You're writing recipes."**
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Concepts already covered in the diagram slide — this slide is purely about concrete examples
-- Each example shows a different invocation model: user-invocable (slash command) vs model-invocable (auto-discovered)
-- Emphasize composability and transparency: skills are markdown you can read and edit
-- For product/UX: you could write a skill for design review, accessibility checks, or copy editing — same format
-
-BRIDGE: "Skills orchestrate internal workflows. MCP connects those workflows to external systems."
--->
-
----
-
-# MCP in Practice
-
-<v-click>
-
-**Linear MCP** — agent creates issues, updates status, reads team members. I say "create an issue from this spec" and the agent calls `create_issue` through the protocol.
-
-</v-click>
-<v-click>
-
-**Chrome DevTools / Playwright** — agent navigates pages, takes screenshots, fills forms. Browser automation without writing a single test script.
-
-</v-click>
-<v-click>
-
-**One protocol, many systems** — Linear, Context7, Nx, Figma, Markitdown, Magic Patterns, Granola. No bespoke glue code. Think of it as USB for AI.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Concepts and capability types already covered in the diagram slide — this slide is purely about concrete daily use
-- Lead with the two most vivid examples (Linear for planning, Chrome DevTools for browser)
-- Close with the breadth to show ecosystem maturity
-- For product/UX: MCP means agents can interact with your tools too — design systems, analytics dashboards, user feedback platforms
-
-BRIDGE: "MCP connects agents to tools. Now: how do you enforce boundaries?"
--->
 
 ---
 
@@ -330,24 +260,12 @@ BRIDGE: "MCP connects agents to tools. Now: how do you enforce boundaries?"
 
 <v-click>
 
-**Hook type tells you when it runs (lifecycle), not what policy it enforces.**
+**Shell scripts that fire at lifecycle points** — for example before a tool runs, after a tool runs, or when the agent stops.
 
 </v-click>
 <v-click>
 
-**All hook types:**
-
-- `UserPromptSubmit` — before a prompt is processed
-- `PreToolUse` — before a tool runs
-- `PostToolUse` — after a tool runs
-- `Stop` — when the agent hands back control
-- `SubagentStop` — when a subagent finishes
-- `Notification` — when a notification is shown
-
-</v-click>
-<v-click>
-
-**Examples:** Block destructive commands, auto-format edits, enforce commit standards, surface PR/issue links.
+**Examples:** Block destructive commands (`PreToolUse`), auto-format edits (`PostToolUse`), enforce commit standards (`Stop`).
 
 </v-click>
 <v-click>
@@ -379,22 +297,12 @@ An agent is an LLM with a system prompt, a set of tools, and permission to act a
 </v-click>
 <v-click>
 
-A **specialized agent** narrows that loop. It gets a focused persona, a constrained toolset, and a single job — security review, accessibility audit, architecture check.
+A **specialized agent** narrows that loop. Focused persona, constrained toolset, single job — security review, accessibility audit, architecture check. Each agent is a markdown file you can read, edit, and version.
 
 </v-click>
 <v-click>
 
-Each agent is a markdown file — persona, constraints, evaluation criteria — with optional scripts and tools scoped just to it. **A mini MCP per agent.**
-
-</v-click>
-<v-click>
-
-**Single-responsibility principle — but for agents.** Context windows are finite — the more concerns you load, the shallower the attention. One persona, one evaluation lens, one job.
-
-</v-click>
-<v-click>
-
-A focused agent doesn't just perform better — it's easier to test, debug, and trust.
+**Single-responsibility principle — but for agents.** Context windows are finite — the more concerns you load, the shallower the attention. A focused agent doesn't just perform better — it's easier to test, debug, and trust.
 
 </v-click>
 
@@ -488,7 +396,7 @@ layout: statement
 
 <v-click>
 
-Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — turning ambiguity into clarity, at scale.**
+Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
 
 </v-click>
 <v-click>
@@ -534,17 +442,4 @@ DELIVERY:
 - Prime the audience: what to watch for during the demo
 - Quick reset slide before context switch to live workflow
 - State what the demo will prove: speed with guardrails and human accountability
--->
-
----
-layout: statement
----
-
-# That was the power. Now: what can go wrong?
-
-<!--
-DELIVERY:
-- Post-demo tonal pivot — make the turn visible, not just verbal
-- Let this slide sit for 2-3 seconds before advancing
-- This is the "peak hype" moment the agenda slide foreshadowed
 -->

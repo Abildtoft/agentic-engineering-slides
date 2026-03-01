@@ -33,7 +33,7 @@ layout: statement
 # Simplified Agenda
 
 - Inflection Point
-- The Disappearing Middle
+- The Compressing Middle
 - The New Stack: Core Concepts
 - The New Stack: Tools → Harness Engineering
 - **DEMO TIME**
@@ -42,8 +42,8 @@ layout: statement
 
 *And then...*
 
-- Cognitive Debt
-- The Junior Pipeline
+- Cognitive Debt & The Junior Pipeline
+- What Matters
 - Let's Wrap Up
 
 ---

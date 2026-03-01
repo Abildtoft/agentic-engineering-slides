@@ -5,14 +5,18 @@ transition: section-shift
 
 # Cognitive Debt
 
-The hidden cost of going fast without understanding
+The hidden cost of going fast — and what it means for the next generation
 
 <!--
 
 KEY POINTS:
 - Post-demo pivot: from capability to responsibility
+- This is the "peak hype" moment the agenda slide foreshadowed — now make the turn
 - Slow the pace and move from tooling power to human understanding
 - Frame this as a systems risk, not a moral panic
+
+DELIVERY:
+- Let this slide sit for 2-3 seconds before advancing — the turn should be visible, not just verbal
 
 BRIDGE: "We've just spent the last section exploring an incredible toolkit — context engineering, skills, MCPs, hooks, harnesses, agents, teams. Each layer added power. But each layer also added something you didn't personally write, something you may not fully understand. That accumulation has a name."
 -->
@@ -69,14 +73,32 @@ BRIDGE: "The pattern sounds abstract, so let's ground it in a concrete case."
 
 ---
 layout: quote
+class: quote-long
 ---
 
-<QuotePair
-  first="We gave a student team AI coding tools and tracked them for 10 weeks. By week 8, one team hit a wall. No one could explain why certain design decisions had been made."
-  firstAttribution="Margaret-Anne Storey"
-  second="I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
-  secondAttribution="Simon Willison"
-/>
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"We gave a student team AI coding tools and tracked them for 10 weeks.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">Early results were impressive — they were shipping faster than any cohort we'd seen.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">By week 8, one team hit a wall. No one could explain why certain design decisions had been made."</div>
+  </v-click>
+</div>
+
+<v-click>
+  Margaret-Anne Storey
+</v-click>
+
+<v-click>
+
+## "I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
+
+Simon Willison
+
+</v-click>
 
 <!--
 
@@ -160,7 +182,7 @@ Planning becomes procrastination in disguise. You re-plan the same feature three
 
 **The Coherence Trap**
 
-Productivity was never the real constraint. Coherence was — and still is.
+You're shipping faster than you can hold the system in your head. The codebase grows; your mental model doesn't.
 
 </v-click>
 
@@ -286,5 +308,90 @@ KEY POINTS:
 DELIVERY:
 - THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
 
-BRIDGE: "The antidote works — if you have competent humans in the loop. But what happens to the pipeline that produces those humans? That's what we need to talk about next."
+BRIDGE: "The antidote works — if you have competent humans in the loop. But what happens to the pipeline that produces those humans?"
+-->
+
+---
+layout: statement
+---
+
+<h1>If we skip the 10,000 hours of practice<br />
+and jump straight to "overseer of AI output" —<br />
+are we actually training architects?</h1>
+
+<!--
+
+SOURCE: Developer Pipeline Getting Strangled (linkedin.com)
+SOURCE: Husom, "Outsourcing Thinking"
+
+KEY POINTS:
+- Frame this as a capability formation problem, not nostalgia for manual coding
+- Prompting output is not the same as building architectural intuition
+- The unresolved part for organizations: how juniors progress toward senior judgment
+
+DELIVERY:
+- Rhetorical question — don't answer it yet, let the audience sit with it
+
+BRIDGE: "This question has a concrete answer from Harvard Business Review."
+-->
+
+---
+layout: quote
+---
+
+<h1>"What I hear most often from executives is not that they fear AI will replace empathy.<br />
+It's that they fear it will replace the contexts<br />
+in which empathy is developed."</h1>
+
+Harvard Business Review
+
+<!--
+
+SOURCE: "AI is Changing How We Learn at Work" (hbr.org/2025/12/ai-is-changing-how-we-learn-at-work)
+
+KEY POINTS:
+- The risk is losing the contexts where judgment is formed
+- Translate "empathy" to role-specific tacit capability (product sense, architectural sense, design taste)
+- Connect this directly to mentorship, practice, and feedback loops
+
+BRIDGE: "So what does this imply for how we train juniors now?"
+-->
+
+
+
+---
+layout: default
+---
+
+# Raising the Bar for Juniors
+
+<v-click>
+
+**Before:** Juniors wrote code designed by others. Mid and senior engineers owned system design.
+
+</v-click>
+<v-click>
+
+**Now:** Writing code is no longer the primary constraint. Syntax and frameworks are becoming interchangeable.
+
+</v-click>
+<v-click>
+
+**The new focus:** Deciding what should exist — whether that's code, a component, or a product direction.
+
+</v-click>
+
+<!--
+
+SOURCE: "Junior Developers Should Go ALL-IN on System Design" (linkedin.com/posts/lukasz2_junior-developers-should-go-all-in-on-system-activity-7422568656930299905-sW94)
+
+KEY POINTS:
+- Clarify the before/now shift in entry-level expectations
+- Output capacity increases quickly; judgment still develops slowly
+- Main message: bar is moving from syntax execution to system thinking
+
+DELIVERY:
+- For managers in the room: how are you restructuring junior onboarding? Optimising for code output or for judgment development?
+
+BRIDGE: "This can feel alarming, but it also clarifies what has always mattered."
 -->

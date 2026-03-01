@@ -31,17 +31,7 @@ It wasn't one model release — it was the convergence of **models good enough**
 </v-click>
 <v-click>
 
-**December 2025** — Anthropic, Google, and OpenAI all shipped major updates in a single 30-day window
-
-</v-click>
-<v-click>
-
-**The vocabulary shifted** — from "AI Code Assistants" to "Agentic IDEs"
-
-</v-click>
-<v-click>
-
-No single metric proves it — the pattern across metrics does.
+**December 2025** — Anthropic, Google, and OpenAI all shipped major updates in a single 30-day window. The vocabulary shifted from "AI Code Assistants" to "Agentic IDEs."
 
 </v-click>
 <v-click>

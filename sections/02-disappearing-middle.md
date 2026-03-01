@@ -3,7 +3,7 @@ layout: section
 transition: section-shift
 ---
 
-# The Disappearing Middle
+# The Compressing Middle
 
 What's actually changing about how software gets made
 
@@ -19,7 +19,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 # The Middle of Software Work
 
-<SlideImage src="/disappearing-middle.png" alt="The disappearing middle of software work" />
+<SlideImage src="/disappearing-middle.png" alt="The compressing middle of software work" />
 
 <v-click>
 
@@ -104,8 +104,13 @@ BRIDGE: "So velocity increases, but judgment does not get cheaper. And that chan
 layout: statement
 ---
 
-<h1>The walls between design, product, and engineering were built from implementation complexity.<br />
-As that complexity compresses — so do the walls.</h1>
+The walls between design, product, and engineering were built from implementation complexity.
+
+<v-click>
+
+## As that complexity compresses — so do the walls.
+
+</v-click>
 
 <!--
 KEY POINTS:
