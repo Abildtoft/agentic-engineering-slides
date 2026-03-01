@@ -104,8 +104,13 @@ BRIDGE: "So velocity increases, but judgment does not get cheaper. And that chan
 layout: statement
 ---
 
-<h1>The walls between design, product, and engineering were built from implementation complexity.<br />
-As that complexity compresses — so do the walls.</h1>
+The walls between design, product, and engineering were built from implementation complexity.
+
+<v-click>
+
+## As that complexity compresses — so do the walls.
+
+</v-click>
 
 <!--
 KEY POINTS:
