@@ -1,8 +1,21 @@
 <script setup>
+import { computed, onMounted, ref } from 'vue'
+
 const props = defineProps({
   src: { type: String, required: true },
   alt: { type: String, required: true },
   size: { type: String, default: 'md' },
+})
+
+const theme = ref('melatech')
+
+onMounted(() => {
+  theme.value = document.documentElement.dataset.theme || 'melatech'
+})
+
+const resolvedSrc = computed(() => {
+  if (theme.value === 'melatech') return props.src
+  return `/${theme.value}${props.src}`
 })
 
 const sizeClasses = {
@@ -16,7 +29,7 @@ const sizeClasses = {
 
 <template>
   <img
-    :src="src"
+    :src="resolvedSrc"
     :alt="alt"
     :class="['mx-auto mt-2 mb-4', sizeClasses[size] || sizeClasses.md]"
   />

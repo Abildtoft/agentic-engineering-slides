@@ -1,0 +1,44 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">.elementor-kit-11{--e-global-color-primary:#4957F5;--e-global-color-secondary:#001AAB;--e-global-color-text:#000000;--e-global-color-accent:#4BBC92;--e-global-color-78fbc5b:#F7F7F9;--e-global-color-e5b6031:#001221;--e-global-color-4cacd92:#F5C43D;--e-global-color-ce79297:#4BBC92;--e-global-color-310ea96:#F071A6;--e-global-color-977fdad:#FFFFFF;--e-global-color-883e8c5:#DEE0F5;--e-global-color-5c95428:#9594F5;--e-global-typography-text-font-family:"Plus Jakarta Sans";--e-global-typography-text-font-size:1rem;--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Plus Jakarta Sans";--e-global-typography-accent-font-size:1rem;--e-global-typography-accent-font-weight:500;--e-global-typography-accent-line-height:1em;--e-global-typography-937e6bc-font-family:"Rubik";--e-global-typography-937e6bc-font-size:clamp(2.125rem, 1.0777rem + 4.1892vw, 4.0625rem);--e-global-typography-937e6bc-font-weight:900;--e-global-typography-937e6bc-text-transform:uppercase;--e-global-typography-937e6bc-line-height:0.95em;--e-global-typography-f2ede71-font-family:"Plus Jakarta Sans";--e-global-typography-f2ede71-font-size:clamp(2rem, 1.3919rem + 2.4324vw, 3.125rem);--e-global-typography-f2ede71-font-weight:800;--e-global-typography-f2ede71-line-height:1.2em;--e-global-typography-6ed4021-font-family:"Plus Jakarta Sans";--e-global-typography-6ed4021-font-size:clamp(1.8rem, 1.3654rem + 0.9065vw, 2rem);--e-global-typography-6ed4021-font-weight:800;--e-global-typography-6ed4021-line-height:1.3em;--e-global-typography-b2bdfa5-font-family:"Plus Jakarta Sans";--e-global-typography-b2bdfa5-font-size:clamp(1.25rem, 1.0473rem + 0.8108vw, 1.625rem);--e-global-typography-b2bdfa5-font-weight:800;--e-global-typography-b2bdfa5-line-height:1.3em;--e-global-typography-9e75508-font-family:"Plus Jakarta Sans";--e-global-typography-9e75508-font-size:1rem;--e-global-typography-9e75508-font-weight:700;--e-global-typography-9e75508-text-transform:uppercase;--e-global-typography-9e75508-line-height:1.1em;--e-global-typography-9e75508-letter-spacing:0.12rem;--e-global-typography-f79867b-font-family:"Plus Jakarta Sans";--e-global-typography-f79867b-font-size:1.125rem;--e-global-typography-f79867b-font-weight:500;--e-global-typography-f79867b-line-height:1.5em;--e-global-typography-6e8f7e3-font-family:"Plus Jakarta Sans";--e-global-typography-6e8f7e3-font-size:0.875rem;color:var( --e-global-color-text );font-family:"Plus Jakarta Sans", Sans-serif;font-weight:400;line-height:1.4em;}.elementor-kit-11 button,.elementor-kit-11 input[type="button"],.elementor-kit-11 input[type="submit"],.elementor-kit-11 .elementor-button{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-accent-font-family ), Sans-serif;font-size:var( --e-global-typography-accent-font-size );font-weight:var( --e-global-typography-accent-font-weight );line-height:var( --e-global-typography-accent-line-height );border-radius:100px 100px 100px 100px;padding:16px 30px 16px 30px;}.elementor-section.elementor-section-boxed &gt; .elementor-container{max-width:1200px;}.e-con{--container-max-width:1200px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1024px){.elementor-kit-11 button,.elementor-kit-11 input[type="button"],.elementor-kit-11 input[type="submit"],.elementor-kit-11 .elementor-button{font-size:var( --e-global-typography-accent-font-size );line-height:var( --e-global-typography-accent-line-height );}.elementor-section.elementor-section-boxed &gt; .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-11 button,.elementor-kit-11 input[type="button"],.elementor-kit-11 input[type="submit"],.elementor-kit-11 .elementor-button{font-size:var( --e-global-typography-accent-font-size );line-height:var( --e-global-typography-accent-line-height );}.elementor-section.elementor-section-boxed &gt; .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/PlusJakartaSans-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: italic;
+	font-weight: 400;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/PlusJakartaSans-Italic.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/PlusJakartaSans-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/PlusJakartaSans-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Plus Jakarta Sans';
+	font-style: normal;
+	font-weight: 800;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/PlusJakartaSans-ExtraBold.ttf') format('truetype');
+}
+/* End Custom Fonts CSS */
+/* Start Custom Fonts CSS */@font-face {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 900;
+	font-display: auto;
+	src: url('https://www.consensus.dk/wp-content/uploads/2023/06/Rubik-Black.ttf') format('truetype');
+}
+/* End Custom Fonts CSS */</pre></body></html>

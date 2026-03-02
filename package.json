@@ -4,8 +4,11 @@
   "packageManager": "yarn@4.12.0",
   "scripts": {
     "dev": "slidev --open",
+    "dev:consensus": "slidev slides-consensus.md --open",
     "build": "slidev build",
-    "export": "slidev export"
+    "build:consensus": "slidev build slides-consensus.md",
+    "export": "slidev export",
+    "export:consensus": "slidev export slides-consensus.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.0.0",
