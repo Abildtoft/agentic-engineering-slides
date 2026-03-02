@@ -273,58 +273,6 @@ DELIVERY:
 -->
 
 ---
-layout: two-cols-header
----
-
-# Intervention Framework: Three Checks
-
-::left::
-
-<v-click>
-
-**Explainability gate**
-No merge until the author can explain intent, tradeoffs, and failure modes in plain language.
-
-</v-click>
-<v-click>
-
-**Reasoning log**
-For non-trivial AI-assisted changes, capture a short log: why this approach, what was rejected, and what validated it.
-
-</v-click>
-
-::right::
-
-<v-click>
-
-**Ownership check**
-One named human signs off: "I understand this change end-to-end and will maintain it."
-
-</v-click>
-<v-click>
-
-If one check fails, slow down and re-scope.
-
-</v-click>
-
-<!--
-
-KEY POINTS:
-- Move from warning to controls: this is the practical intervention slide for section 4
-- The checks are lightweight and repeatable, not governance theater
-- Explainability gate protects comprehension at merge time
-- Reasoning logs preserve why-decisions for future teammates (and future you)
-- Ownership checks preserve accountability even when output is AI-assisted
-
-DELIVERY:
-- Frame it as "quality controls for understanding," not process overhead
-- Ask: "Could your current workflow pass these three checks this week?"
-
-BRIDGE: "With this structure in place, we can now define what the human in the loop does at each stage."
--->
-
----
-
 # The Antidote — The Human in the Loop
 
 <v-click>
@@ -347,6 +295,16 @@ BRIDGE: "With this structure in place, we can now define what the human in the l
 **A simple test:** Can you explain every commit message you submitted this week — not just what changed, but why? If not, the debt is already accumulating.
 
 </v-click>
+<v-click>
+
+**Three checks for non-trivial changes:** explainability gate, reasoning log, ownership check.
+
+</v-click>
+<v-click>
+
+If one check fails, slow down and re-scope.
+
+</v-click>
 
 <!--
 
@@ -357,6 +315,11 @@ KEY POINTS:
 - Close the section with a practical control model: intent, review, ownership
 - Stress accountability: at least one human must understand each shipped change
 - Link back to section 3: harness discipline is the preventive mechanism
+- Operational framework for teams:
+  - Explainability gate: no merge until the author can explain intent, tradeoffs, and failure modes
+  - Reasoning log: capture why this approach, what was rejected, and what validated it
+  - Ownership check: one named human confirms end-to-end understanding and maintenance ownership
+  - If one check fails: slow down and re-scope
 
 DELIVERY:
 - THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
