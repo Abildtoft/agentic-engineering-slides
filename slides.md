@@ -9,6 +9,8 @@ fonts:
   mono: Inconsolata
   provider: google
 favicon: /favicon.svg
+htmlAttrs:
+  data-theme: melatech
 defaults:
   transition: none
 duration: 162min
@@ -16,7 +18,7 @@ timer: countdown
 layout: cover
 ---
 
-<img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
+<BrandLogo />
 
 # Harness Engineering
 

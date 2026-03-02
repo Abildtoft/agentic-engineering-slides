@@ -1,46 +1,42 @@
-:root {
-  --melatech-primary: #186346;
-  --melatech-dark: #282625;
-  --melatech-bg: #FFFFFF;
-  --melatech-bg-alt: #11402E;
-  --melatech-link: #3898EC;
-  --melatech-gray: #F8F8F8;
+@import './themes/melatech.css';
+@import './themes/consensus.css';
 
-  --slidev-theme-primary: #186346;
-  --slidev-code-background: #F8F8F8;
-  --slidev-code-foreground: #282625;
+:root {
+  --slidev-theme-primary: var(--brand-primary);
+  --slidev-code-background: var(--brand-surface);
+  --slidev-code-foreground: var(--brand-text);
 }
 
 .slidev-layout {
-  color: #282625;
+  color: var(--brand-text);
   font-family: 'Inter', sans-serif;
 }
 
 .slidev-layout h1,
 .slidev-layout h2,
 .slidev-layout h3 {
-  color: #186346;
+  color: var(--brand-primary);
   font-weight: 600;
 }
 
 .slidev-layout h6 {
-  color: #186346;
+  color: var(--brand-primary);
   font-weight: 600;
 }
 
 .slidev-layout a {
-  color: #186346;
-  border-color: #186346;
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
 }
 
 .slidev-layout blockquote {
-  border-color: #186346;
+  border-color: var(--brand-primary);
 }
 
 .slidev-layout.cover,
 .slidev-layout.section {
-  background: #11402E;
-  color: #FFFFFF;
+  background: var(--brand-bg-accent);
+  color: var(--brand-on-accent);
 }
 
 .slidev-layout.cover h1,
@@ -49,11 +45,11 @@
 .slidev-layout.section h1,
 .slidev-layout.section h2,
 .slidev-layout.section p {
-  color: #FFFFFF;
+  color: var(--brand-on-accent);
 }
 
 .slidev-layout.statement h1 {
-  color: #186346;
+  color: var(--brand-primary);
   font-size: clamp(2rem, 2.8vw, 2.8rem);
   line-height: 1.22;
   font-weight: 700;
@@ -67,19 +63,19 @@
 }
 
 .slidev-layout.quote h1 {
-  color: #282625;
+  color: var(--brand-text);
   font-style: italic;
   font-size: clamp(2rem, 2.6vw, 2.5rem);
   line-height: 1.2;
   font-weight: 400;
-  border-left: 4px solid #186346;
+  border-left: 4px solid var(--brand-primary);
   padding-left: 1rem;
   text-wrap: balance;
   max-width: 30ch;
 }
 
 .slidev-layout.quote p {
-  color: #186346;
+  color: var(--brand-primary);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -88,7 +84,7 @@
 }
 
 .slidev-layout.quote h2 {
-  color: #282625;
+  color: var(--brand-text);
   font-style: italic;
   font-size: clamp(1.35rem, 1.7vw, 1.7rem);
   line-height: 1.3;
@@ -105,14 +101,14 @@
 }
 
 .slidev-layout.quote.quote-long .quote-progressive {
-  border-left: 4px solid #186346;
+  border-left: 4px solid var(--brand-primary);
   padding-left: 1rem;
   max-width: none;
   width: 100%;
 }
 
 .slidev-layout.quote.quote-long .quote-progressive-line {
-  color: #282625;
+  color: var(--brand-text);
   font-style: italic;
   font-size: clamp(1.55rem, 2.05vw, 1.95rem);
   line-height: 1.18;
@@ -129,14 +125,14 @@
 }
 
 .slidev-layout.fact h1 {
-  color: #186346;
+  color: var(--brand-primary);
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
 }
 
 .slidev-layout.center.text-center h1 {
-  color: #186346;
+  color: var(--brand-primary);
   font-size: clamp(2rem, 2.9vw, 2.9rem);
   line-height: 1.22;
   font-weight: 600;
@@ -146,7 +142,7 @@
 }
 
 .slidev-layout.center.text-center h2 {
-  color: #282625;
+  color: var(--brand-text);
   font-size: clamp(1.2rem, 1.55vw, 1.6rem);
   font-weight: 500;
   line-height: 1.3;

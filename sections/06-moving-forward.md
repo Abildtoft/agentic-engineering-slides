@@ -200,6 +200,6 @@ DELIVERY:
 layout: cover
 ---
 
-<img src="/melatech-logo.svg" class="absolute bottom-10 right-14 w-48 logo-breathe" alt="Melatech" />
+<BrandLogo />
 
 # Thank You
