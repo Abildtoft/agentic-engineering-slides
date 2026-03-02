@@ -273,7 +273,6 @@ DELIVERY:
 -->
 
 ---
-
 # The Antidote — The Human in the Loop
 
 <v-click>
@@ -296,6 +295,16 @@ DELIVERY:
 **A simple test:** Can you explain every commit message you submitted this week — not just what changed, but why? If not, the debt is already accumulating.
 
 </v-click>
+<v-click>
+
+**Three checks for non-trivial changes:** explainability gate, reasoning log, ownership check.
+
+</v-click>
+<v-click>
+
+If one check fails, slow down and re-scope.
+
+</v-click>
 
 <!--
 
@@ -306,6 +315,11 @@ KEY POINTS:
 - Close the section with a practical control model: intent, review, ownership
 - Stress accountability: at least one human must understand each shipped change
 - Link back to section 3: harness discipline is the preventive mechanism
+- Operational framework for teams:
+  - Explainability gate: no merge until the author can explain intent, tradeoffs, and failure modes
+  - Reasoning log: capture why this approach, what was rejected, and what validated it
+  - Ownership check: one named human confirms end-to-end understanding and maintenance ownership
+  - If one check fails: slow down and re-scope
 
 DELIVERY:
 - THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
