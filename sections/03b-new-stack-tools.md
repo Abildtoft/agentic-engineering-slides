@@ -196,6 +196,59 @@ class: text-center
 -->
 
 ---
+layout: center
+class: text-center
+---
+
+# MCP Example: Figma to Frontend
+
+<MermaidDiagram :code="`graph LR
+  U[User: 'Implement the approved pricing frame'] --> A[Agent]
+  A --> C[MCP Client]
+  C --> F[Figma MCP Server]
+  subgraph Figma Data
+    T[Tool: get_frame]
+    R[Resource: design_tokens]
+    P[Prompt: handoff_checklist]
+  end
+  F -->|exposes| T
+  F -->|exposes| R
+  F -->|exposes| P
+  T --> S[Scoped spec + acceptance criteria]
+  R --> S
+  P --> S
+  S --> PR[Implementation plan + PR]
+`" size="xl" />
+
+<p class="mt-4 text-lg opacity-85">Design intent becomes structured input, not screenshot guessing.</p>
+
+<v-click>
+
+<p class="text-base opacity-75"><strong>Schema-bound handoff</strong> — the agent reads frames, components, and tokens through contracts, not manual copy/paste.</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Bridge across teams</strong> — designers approve in Figma, engineers execute from the same source of truth.</p>
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Make this concrete: same MCP pattern, different domain (design instead of issue tracking)
+- Emphasize handoff quality: less ambiguity and fewer interpretation errors
+- Position this as cross-functional leverage, not just a developer trick
+- The output is not "perfect UI in one shot" — it is a better scoped spec and implementation plan
+
+DELIVERY:
+- "This is where MCP gets interesting: not just tickets and repos, but design systems and approved frames."
+- "Instead of guessing from screenshots, the agent pulls structured frame and token data."
+- "The immediate win is cleaner handoff and traceability from design decision to code change."
+
+BRIDGE: "Now zoom out from one MCP integration to the workflow you intentionally compose around these building blocks."
+-->
+
+---
 
 # One Approach: kramme-cc-workflow
 
