@@ -67,12 +67,12 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 </v-click>
 
 <!--
-SOURCE: Shubham Saboo, "The Modern AI PM in the Age of Agents" (x.com/Saboo_Shubham_/status/2008742211194913117)
+SOURCE: Shubham Saboo on Product Managers and Product Owners in the Age of Agents (x.com/Saboo_Shubham_/status/2008742211194913117)
 
 KEY POINTS:
 - Apply the same compression logic to product work
 - Translation-heavy work shrinks; intent quality becomes the leverage point
-- This is both opportunity and pressure for PMs and designers
+- This creates both opportunity and pressure for Product Managers, Product Owners, and designers
 
 DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
