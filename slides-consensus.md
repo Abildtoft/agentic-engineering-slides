@@ -22,7 +22,7 @@ layout: cover
 
 # Harness Engineering
 
-February 26th, 2026, Copenhagen
+How AI Is Reshaping What It Means to Build Software
 
 ---
 layout: statement
