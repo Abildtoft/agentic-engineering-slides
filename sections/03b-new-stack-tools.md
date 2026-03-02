@@ -265,6 +265,54 @@ BRIDGE: "Now zoom out from one MCP integration to the workflow you intentionally
 -->
 
 ---
+layout: two-cols-header
+---
+
+# Claude Cowork: Same Stack, Wider Audience
+
+::left::
+
+<v-click>
+
+**Under the hood (same primitives)**
+
+- Context shaping behavior
+- Tools and MCP integrations
+- Skills and workflow templates
+- Guardrails and verification loops
+
+</v-click>
+
+::right::
+
+<v-click>
+
+**In the experience (new interface)**
+
+- Task-first prompts, not terminal commands
+- Opinionated defaults for common workflows
+- Domain experts can operate directly
+- Engineers still design the harness
+
+</v-click>
+<v-click>
+
+**Not just "AI for engineers" anymore.**
+This is becoming cross-functional infrastructure.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Frame this as continuity, not novelty: same agentic primitives, different UX
+- "Regular people" means domain experts in operations, support, marketing, finance, legal — people who don't live in IDEs
+- Keep responsibility clear: broader access does not remove the need for engineered guardrails
+- Core takeaway: agent workflow design is becoming cross-functional
+
+BRIDGE: "So the question is no longer 'Will this stay in engineering?' It's 'How intentionally will you design your workflow?'"
+-->
+
+---
 
 # One Approach: kramme-cc-workflow
 
