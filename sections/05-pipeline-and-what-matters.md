@@ -150,17 +150,17 @@ layout: statement
 
 <v-click>
 
-PMs don't just ship features. They kill them.
+Product Managers and Product Owners don't just ship features. They also kill them.
 
 </v-click>
 <v-click>
 
-A great PM doesn't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
+Great Product Managers and Product Owners don't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
 
 </v-click>
 <v-click>
 
-PMs kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.**
+Product Managers and Product Owners kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.**
 
 </v-click>
 
@@ -176,7 +176,7 @@ KEY POINTS:
 
 DELIVERY:
 - Lead with the accumulation line — let it land
-- "PMs kill features" is the punchline — reveal it
+- "Product Managers and Product Owners kill features" is the punchline — reveal it
 - Land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
 - Subtraction is a design superpower — Dieter Rams's "less but better" is the same principle. When AI can generate any UI you ask for, the courage to simplify is the differentiator.
 

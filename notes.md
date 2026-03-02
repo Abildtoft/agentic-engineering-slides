@@ -153,15 +153,15 @@ Broadly speaking, LLM use is encouraged at Oxide, but that use must always be co
 
 https://rfd.shared.oxide.computer/rfd/0576
 
-# The Modern AI PM in the age of Agents
+# Product Managers and Product Owners in the Age of Agents
 
-The job of a PM used to be translation.
+The role of Product Managers and Product Owners used to be translation.
 
 You talked to customers, synthesized their problems, wrote specs, and handed them to engineers. You were the bridge between "what people need" and "what gets built." The value was in that translation layer.
 
 That layer is compressing.
 
-When agents can take a well-formed problem and produce working code, the PM's job shifts. You're no longer translating for engineers. You're forming intent clearly enough that agents can act on it directly.
+When agents can take a well-formed problem and produce working code, the role of Product Managers and Product Owners shifts. You're no longer translating for engineers; you're shaping intent clearly enough that agents can act on it directly.
 
 The spec is becoming the product.
 
