@@ -200,24 +200,29 @@ layout: center
 class: text-center
 ---
 
-# MCP Example: Figma to Frontend
+# MCP Example: Figma <-> Frontend
 
 <MermaidDiagram :code="`graph LR
   U[User: 'Implement the approved pricing frame'] --> A[Agent]
   A --> C[MCP Client]
   C --> F[Figma MCP Server]
   subgraph Figma Data
-    T[Tool: get_frame]
-    R[Resource: design_tokens]
+    T[Tool: get_design_context]
+    R[Tool: get_variable_defs]
     P[Prompt: handoff_checklist]
+    G[Tool: generate_figma_design]
   end
   F -->|exposes| T
   F -->|exposes| R
   F -->|exposes| P
+  F -->|exposes| G
   T --> S[Scoped spec + acceptance criteria]
   R --> S
   P --> S
   S --> PR[Implementation plan + PR]
+  PR --> UI[Running UI in browser]
+  UI --> G
+  G --> OUT[Back to Figma file]
 `" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">Design intent becomes structured input, not screenshot guessing.</p>
@@ -232,18 +237,29 @@ class: text-center
 <p class="text-base opacity-75"><strong>Bridge across teams</strong> — designers approve in Figma, engineers execute from the same source of truth.</p>
 
 </v-click>
+<v-click>
+
+<p class="text-base opacity-75"><strong>Now bidirectional</strong> — Claude Code can hand live UI back to Figma with <code>generate_figma_design</code> (remote server).</p>
+
+</v-click>
 
 <!--
+SOURCE: Figma Help Center, "Use Figma MCP in Claude Code, Codex CLI, and Cursor" (help.figma.com/hc/en-us/articles/32132100833559-Use-Figma-MCP-in-Claude-Code-Codex-CLI-and-Cursor)
+SOURCE: Figma Developers, "Figma Dev Mode MCP Server" (www.figma.com/developers/mcp)
+
 KEY POINTS:
 - Make this concrete: same MCP pattern, different domain (design instead of issue tracking)
 - Emphasize handoff quality: less ambiguity and fewer interpretation errors
 - Position this as cross-functional leverage, not just a developer trick
 - The output is not "perfect UI in one shot" — it is a better scoped spec and implementation plan
+- New workflow to call out: Claude Code -> Figma handoff via `generate_figma_design`
+- Constraint: this handoff path requires the remote Figma MCP server and currently supports Claude Code and Codex
 
 DELIVERY:
 - "This is where MCP gets interesting: not just tickets and repos, but design systems and approved frames."
 - "Instead of guessing from screenshots, the agent pulls structured frame and token data."
 - "The immediate win is cleaner handoff and traceability from design decision to code change."
+- "And now it goes both ways: not only Figma to code, but code UI back to Figma for review."
 
 BRIDGE: "Now zoom out from one MCP integration to the workflow you intentionally compose around these building blocks."
 -->
