@@ -137,13 +137,22 @@ DELIVERY:
 - Click: "20%+" lands the trajectory
 - Click: "one year old" is the gut punch — pause and let it sink in
 
-BRIDGE: "And it's not just one tool."
+BRIDGE: "And it's not just Claude Code. The tool set exploded, so the better signal is what companies report in production."
 -->
 
 ---
 
 # It's Not Just One Tool
 
+Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
+
+<p class="mt-4 text-lg opacity-80">Different interfaces, same workflow shift.</p>
+
+<v-click>
+
+<p class="mt-6 text-base opacity-75">So zoom out from tool names to company behavior:</p>
+
+</v-click>
 <v-click>
 
 **Spotify** — leadership reports top developers shifted heavily away from manual coding since December
@@ -174,12 +183,13 @@ SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthr
 
 KEY POINTS:
 - Broaden from one metric to cross-industry signal
+- Start with recognizable tool names so the audience sees this is ecosystem-wide, not vendor-specific
 - Keep Spotify as the vivid story; treat others as corroboration
 - Frame this as workflow change, not just speed improvement
 - End with the implication: divergence between teams will widen
 
 DELIVERY:
-- One beat per company
+- One beat for tool expansion, then one beat per company
 - Spend most time on Spotify, then compress the rest
 
 BRIDGE: "That is why this next prediction sounds less like hype and more like trajectory."
