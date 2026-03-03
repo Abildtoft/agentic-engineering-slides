@@ -136,6 +136,25 @@ BRIDGE: "So what does this look like when it compounds? Let me show you the patt
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# In high-stakes domains like security, privacy, and compliance, cognitive debt can be catastrophic.
+
+<!--
+
+KEY POINTS:
+- Raise severity: this is not only about productivity or elegance
+- Security consequence: misunderstood systems create exploitable gaps
+- Privacy consequence: unclear data flows cause accidental over-collection or exposure
+- Compliance consequence: teams cannot provide decision traceability under audit
+- Bottom line: comprehension failures can become incidents, fines, and trust damage
+
+BRIDGE: "Now let's look at the day-to-day patterns that create this risk."
+-->
+
+---
 
 # The Confidence Spiral
 
