@@ -85,7 +85,52 @@ BRIDGE: "Now that you know the medium, let's look at the first tool built on it.
 -->
 
 ---
-layout: center
+layout: default
+---
+
+# Skills in Plain Language
+
+<v-click>
+
+A skill is a **reusable playbook**: a folder with instructions for one kind of task.
+
+</v-click>
+<v-click>
+
+Write the workflow once, then run it whenever that task shows up.
+
+</v-click>
+<v-click>
+
+The agent keeps only a short description in memory, not the full playbook.
+
+</v-click>
+<v-click>
+
+When needed, it loads full instructions on demand. Less prompt repetition, cleaner context.
+
+</v-click>
+<v-click>
+
+Same playbook can run across terminal tools, web apps, and API workflows.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Use "playbook" language for non-developer audiences
+- Core mechanism: lightweight discovery first, full instructions loaded only when relevant
+- Benefit: keeps the context window focused and reduces repeated prompting
+- Portability: one encoded workflow can be reused across CLI, web UI, and API surfaces
+- Ecosystem signal: Anthropic's open-source Claude Skills repo shows this pattern at scale, including a "skill creator" meta-skill
+- Translate to business language: dynamic memory loading improves reliability by reducing context-window overload
+- If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
+
+BRIDGE: "Now let's look at how skills are triggered in practice."
+-->
+
+---
+layout: default
 class: text-center
 ---
 
@@ -114,22 +159,22 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-75"><strong>User-invocable</strong> — triggered by a slash command. You choose when to run it. (<code>/commit-message</code>, <code>/verify:run</code>)</p>
+<p class="text-base opacity-75"><strong>Manual trigger</strong> — run a slash command when you want a specific playbook. (<code>/commit-message</code>, <code>/verify:run</code>)</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Model-invocable</strong> — the agent matches your prompt to a skill description and loads it automatically. (<code>code-reviewer</code>, <code>silent-failure-hunter</code>)</p>
+<p class="text-base opacity-75"><strong>Automatic trigger</strong> — the agent matches your request to a skill description and loads it for you. (<code>code-reviewer</code>, <code>silent-failure-hunter</code>)</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Soft guidance</strong> — the LLM interprets markdown instructions. It can adapt, reorder, or reason about them.</p>
+<p class="text-base opacity-75"><strong>Guidance, not rigid code</strong> — the model interprets markdown instructions and can adapt them to the task.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75">Same format applies beyond code — design review checklists, accessibility audits, copy editing guidelines. <strong>A skill is any workflow you can describe in markdown.</strong></p>
+<p class="text-base opacity-75">Same format applies beyond code: design reviews, accessibility audits, copy editing. <strong>If you can describe the workflow in markdown, you can turn it into a skill.</strong></p>
 
 </v-click>
 
@@ -150,9 +195,56 @@ BRIDGE: "Skills shape thinking. MCP shapes doing. Let's look at MCP."
 -->
 
 ---
-layout: center
+layout: default
+---
+
+# MCP in Plain Language
+
+<v-click>
+
+MCP is a **standard plug format** (think like USB) for tools and data an agent can use.
+
+</v-click>
+<v-click>
+
+Instead of building a custom integration for every app, one protocol works across many apps.
+
+</v-click>
+<v-click>
+
+Each MCP server publishes what it offers: actions (Tools), context (Resources), and reusable templates (Prompts).
+
+</v-click>
+<v-click>
+
+Requests and responses follow schemas, so handoffs are predictable and machine-checkable.
+
+</v-click>
+<v-click>
+
+In plain terms: skills tell the agent how to think. MCP tells it what systems it can safely operate.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Keep "plug format" language for non-technical audiences
+- Value proposition: interoperability and lower integration overhead
+- Three capability types map to practical intuition: do, read, reuse
+- Hard contracts reduce ambiguity, retries, and brittle handoffs
+- Pairing model: skills = workflow behavior, MCP = external system interface
+
+BRIDGE: "Now let's look at one concrete MCP flow end to end."
+-->
+
+---
+layout: default
 class: text-center
 ---
+
+# From Concept to Workflow
+
+<p class="text-base opacity-75 mb-4">One concrete MCP flow, end to end.</p>
 
 <MermaidDiagram :code="`graph LR
   U[User: 'Create a Linear issue about the bug we just found'] -->|prompt| A[Agent]
@@ -196,7 +288,7 @@ class: text-center
 -->
 
 ---
-layout: center
+layout: default
 class: text-center
 ---
 
