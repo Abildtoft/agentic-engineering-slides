@@ -133,6 +133,31 @@ BRIDGE: "So if the walls dissolve — what are we left with?"
 -->
 
 ---
+layout: quote
+---
+
+# "Engineers spin up seven coding agents and ship a working version before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
+
+Jenny Wen, Design Lead at Anthropic — via Lenny Rachitsky
+
+<!--
+SOURCE: Jenny Wen (Design Lead, Anthropic; formerly Design Director, Notion), via Lenny Rachitsky (x.com/lennysan/status/2028484407108194507)
+
+KEY POINTS:
+- This is the compression made visceral — not a theoretical claim but a scene from a design leader at the company building the agents
+- The discover-diverge-converge model assumed implementation was the bottleneck; when implementation compresses, the design process must adapt too
+- Important: this is not anti-design — it signals that the operating model changes for everyone
+- Jenny Wen managed 12–15 reports as Design Director at Notion before returning to IC at Anthropic — the compression is personal for her
+
+DELIVERY:
+- Let the quote land. The seven-agents image is vivid — the room will feel it.
+- If there are designers in the room, make eye contact. This is for them.
+- Verbal addition: "This is not just engineering getting faster. This is the entire rhythm of collaboration shifting."
+
+BRIDGE: "So if the walls dissolve — what's left?"
+-->
+
+---
 
 # One Surviving Skill Set
 
@@ -166,6 +191,8 @@ KEY POINTS:
 DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
+- When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
+- Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
 
 BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
 -->

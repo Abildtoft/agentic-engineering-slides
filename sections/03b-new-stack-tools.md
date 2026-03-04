@@ -352,8 +352,30 @@ DELIVERY:
 - "Instead of guessing from screenshots, the agent pulls structured frame and token data."
 - "The immediate win is cleaner handoff and traceability from design decision to code change."
 - "And now it goes both ways: not only Figma to code, but code UI back to Figma for review."
+- DESIGN PERSPECTIVE (Jenny Wen, Design Lead at Anthropic, via Lenny Rachitsky): Figma remains essential because canvas exploration lets you rapidly explore 8–10 directions simultaneously. Coding tools are too linear — once you start building one direction, investment bias sets in.
+- Verbal option: "Jenny Wen argues Figma is still indispensable — it's the only tool that lets you diverge across 8 to 10 directions without the investment bias of building one. That's why the MCP bridge matters: Figma for exploration, code for execution."
 
 BRIDGE: "Now zoom out from one MCP integration to the workflow you intentionally compose around these building blocks."
+-->
+
+---
+layout: statement
+---
+
+# With Figma MCP, Claude reads your file directly. Components, design tokens, spacing — all of it. It's not guessing at the design. It's working from the source of truth.
+
+<!--
+KEY POINTS:
+- This is the speaker's own framing — land it with conviction, not as a quote
+- "Source of truth" is the key phrase — reframes the Figma MCP bridge as design governance, not just developer convenience
+- Connects to context engineering: design tokens and component specs are first-class context, same as AGENTS.md for engineers
+- The specificity matters: components, tokens, spacing — not vague "design intent" but structured, machine-readable data
+
+DELIVERY:
+- This follows the technical diagram — shift from "here's how it works" to "here's what it means"
+- If designers in the room: "Your Figma files are already structured data. MCP just makes them legible to agents."
+
+BRIDGE: "This pattern — structured handoff from domain tools into agent context — scales beyond Figma."
 -->
 
 ---
