@@ -104,6 +104,9 @@ KEY POINTS:
 - This is the compression of the argument into one selection principle
 - Cheap execution increases the value of taste and prioritization
 - Land the idea that judgment became more visible, not more optional
+- IMPORTANT NUANCE (Jenny Wen, Design Lead at Anthropic, via Lenny Rachitsky): AI will likely get better at taste and judgment. Designers may be holding onto "taste" as a moat too tightly. But someone still has to be accountable for the final decision.
+- Verbal option after the Osmani quote lands: "Jenny Wen at Anthropic pushes back on taste as a permanent moat. She argues AI will get better at taste. What AI can't do is be accountable. Accountability — the willingness to own the decision and live with the consequences — is the real moat."
+- This reframes from "taste is uniquely human" to "accountability is uniquely human" — a stronger, more durable claim
 
 BRIDGE: "But taste isn't just about choosing what to build. It's about coherence."
 -->
