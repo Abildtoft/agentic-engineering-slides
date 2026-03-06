@@ -151,7 +151,57 @@ KEY POINTS:
 - Compliance consequence: teams cannot provide decision traceability under audit
 - Bottom line: comprehension failures can become incidents, fines, and trust damage
 
-BRIDGE: "Now let's look at the day-to-day patterns that create this risk."
+BRIDGE: "Before the day-to-day patterns, look at what this means for review and verification."
+-->
+
+---
+layout: default
+---
+
+# From Reviewing Code to Reviewing Intent
+
+<v-click>
+
+Line-by-line PR review does not scale with agentic output.
+
+</v-click>
+<v-click>
+
+Move the human checkpoint upstream: **review specs, constraints, and acceptance criteria** before generation.
+
+</v-click>
+<v-click>
+
+Move trust downstream into deterministic checks: **tests, type checks, contracts, rollout guardrails**.
+
+</v-click>
+<v-click>
+
+Think **Swiss-cheese model**: stack imperfect controls so the holes don't align.
+
+</v-click>
+<v-click>
+
+The question shifts from "Did you write this correctly?" to **"Are we solving the right problem under the right constraints?"**
+
+</v-click>
+
+<!--
+SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
+
+KEY POINTS:
+- This reframes review from post-hoc diff reading to upstream intent validation
+- Keep nuance explicit: this is not "no accountability"; it is relocating accountability
+- Put this in the cognitive-debt section because the review model now directly sets up the layered-failure argument
+- Deterministic verification is the safety net when output volume exceeds human diff-reading capacity
+- Explicitly anchor the layer concept to the Swiss-cheese model (James Reason)
+
+DELIVERY:
+- Position as an operating-model shift, not a provocative slogan
+- Emphasize "review intent" and "deterministic checks" as complementary controls
+- Land the final line as a framing question the audience can reuse in their teams
+
+BRIDGE: "And once you start thinking in layered controls, the Swiss-cheese model becomes the right metaphor."
 -->
 
 ---
@@ -187,7 +237,7 @@ KEY POINTS:
   - Operators miss blast radius
 - The risk is not one failed check. It's several imperfect checks aligning.
 
-BRIDGE: "And the dangerous part is that those holes don't only appear in audits and incidents. They start in everyday working habits."
+BRIDGE: "And the dangerous part is that those holes don't only appear in audits and incidents. They also start in everyday working habits."
 -->
 
 ---
