@@ -155,6 +155,42 @@ BRIDGE: "Now let's look at the day-to-day patterns that create this risk."
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# Swiss-cheese model
+
+<v-click>
+
+Every safeguard has holes: tests, reviews, policies, humans.
+
+</v-click>
+<v-click>
+
+Cognitive debt makes the holes bigger. Incidents happen when they line up.
+
+</v-click>
+
+<!--
+
+SOURCE: James Reason, Swiss-cheese model of accident causation
+
+KEY POINTS:
+- Introduce the model briefly without detouring into safety theory
+- The point is layered defense: no single control is perfect
+- Cognitive debt weakens multiple layers at once because people stop understanding intent, assumptions, and failure modes
+- Concrete mapping:
+  - Tests miss assumptions
+  - Reviews miss intent
+  - Policies miss edge cases
+  - Operators miss blast radius
+- The risk is not one failed check. It's several imperfect checks aligning.
+
+BRIDGE: "And the dangerous part is that those holes don't only appear in audits and incidents. They start in everyday working habits."
+-->
+
+---
 
 # The Confidence Spiral
 

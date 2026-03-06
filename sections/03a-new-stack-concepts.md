@@ -196,6 +196,56 @@ BRIDGE: "In product work, this changes the medium of validation too."
 -->
 
 ---
+layout: default
+---
+
+# From Reviewing Code to Reviewing Intent
+
+<v-click>
+
+Line-by-line PR review does not scale with agentic output.
+
+</v-click>
+<v-click>
+
+Move the human checkpoint upstream: **review specs, constraints, and acceptance criteria** before generation.
+
+</v-click>
+<v-click>
+
+Move trust downstream into deterministic checks: **tests, type checks, contracts, rollout guardrails**.
+
+</v-click>
+<v-click>
+
+Think **Swiss-cheese model**: stack imperfect controls so the holes don't align.
+
+</v-click>
+<v-click>
+
+The question shifts from "Did you write this correctly?" to **"Are we solving the right problem under the right constraints?"**
+
+</v-click>
+
+<!--
+SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
+
+KEY POINTS:
+- This reframes review from post-hoc diff reading to upstream intent validation
+- Keep nuance explicit: this is not "no accountability"; it is relocating accountability
+- Aligns with the previous slide's "spec -> implement -> verify -> refine" loop
+- Deterministic verification is the safety net when output volume exceeds human diff-reading capacity
+- Explicitly anchor the layer concept to the Swiss-cheese model (James Reason)
+
+DELIVERY:
+- Position as an operating-model shift, not a provocative slogan
+- Emphasize "review intent" and "deterministic checks" as complementary controls
+- Land the final line as a framing question the audience can reuse in their teams
+
+BRIDGE: "This same shift is now visible in product work too."
+-->
+
+---
 layout: quote
 ---
 
@@ -220,4 +270,3 @@ DELIVERY:
 
 BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
 -->
-
