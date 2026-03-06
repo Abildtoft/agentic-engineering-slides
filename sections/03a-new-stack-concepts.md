@@ -128,11 +128,13 @@ Your design system docs, component specs, and token definitions are context too.
 <!--
 SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
+SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
 KEY POINTS:
 - Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
 - The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
 - Finite context window means you can't dump everything in — you must curate the discovery journey
+- Concrete architecture example from Boris: simple model-driven `glob` + `grep` beat more complex RAG approaches for codebase retrieval
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
 - Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
@@ -207,12 +209,14 @@ Andrew Chen
 
 <!--
 SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
+SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
 KEY POINTS:
 - Make the artifact shift explicit: from document-first to experience-first
 - Clarify that strategy still matters; the medium of validation changes
 - This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
 - This slide fits here because it's a direct consequence of spec-driven development applied to product work
+- Boris offers the operating proof point: on the Claude Code team, PRDs gave way to many fast prototypes before shipping
 
 DELIVERY:
 - Directly address product/UX people in the room
@@ -220,4 +224,3 @@ DELIVERY:
 
 BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
 -->
-

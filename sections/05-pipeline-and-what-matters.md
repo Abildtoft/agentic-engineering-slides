@@ -149,6 +149,45 @@ BRIDGE: "And when generation is cheap, the hardest discipline becomes knowing wh
 layout: statement
 ---
 
+# Don't protect code before it earns its place.
+
+<v-click>
+
+Until you commit to it, agent output is a cheap experiment.
+
+</v-click>
+<v-click>
+
+10,000 lines no longer imply 10,000 lines of human effort.
+
+</v-click>
+<v-click>
+
+Run three variants. Keep one. Delete two.
+
+</v-click>
+
+<!--
+
+KEY POINTS:
+- The disposable mindset applies before commitment, not after it
+- Human-written code historically felt expensive, so preservation heuristics made sense by default
+- Agent-generated code changes the economics: large volumes of code may represent exploration, not investment
+- Protect learning rate and delivery velocity during exploration; once code earns a place in the system, raise the quality bar
+- "Throw away tokens" is not recklessness; verification still gates what ships
+
+DELIVERY:
+- Let the title land first — it should feel like a correction to old instincts
+- "Run three variants. Keep one. Delete two." is the operating model
+- Make the distinction explicit: experiments are disposable, committed systems are still accountable
+
+BRIDGE: "And if cheap generation makes addition easier, then accumulation becomes an even bigger risk."
+-->
+
+---
+layout: statement
+---
+
 # Most products don't die from missing features. They die from accumulation.
 
 <v-click>
