@@ -17,50 +17,8 @@ BRIDGE: "We've named the shift — the middle is compressing, value moves to int
 -->
 
 ---
-layout: center
-class: text-center
----
 
-# Quick Room Check
-
-<v-click>
-
-Raise one hand if you've heard of it. Two if you've used it.
-
-</v-click>
-
-<div class="text-left inline-block">
-<v-clicks>
-
-- `AI-driven prototyping (MagicPatterns, Figma Make, Lovable, etc.)`
-- `Agentic IDEs (Cursor, Windsurf, Antigravity)`
-- `Coding agents (Claude Code, Codex, Gemini CLI)`
-- `AGENTS.md / CLAUDE.md`
-- `MCP, Skills, Hooks`
-- `Spec-driven development`
-- `AI-generated product specs and user research synthesis`
-- `Custom agents and agent swarms`
-
-</v-clicks>
-</div>
-
-<!--
-KEY POINTS:
-- Calibrate vocabulary and maturity in the room before the practical sections
-- Fast show-of-hands creates shared context for tooling and workflow slides
-- Use this to decide pacing for Section 3
-
-DELIVERY:
-- Mostly new to terms: define each term in one sentence and slow the demos slightly
-- Mixed familiarity: keep defaults and anchor with analogies
-- Highly familiar room: move faster and spend more time on composition patterns
-
-BRIDGE: "Now that we have a baseline, let's start with the two core disciplines."
--->
-
----
-
-# From Writing Code to Designing Systems
+# From Producing Artifacts to Designing Systems
 
 <v-click>
 
@@ -69,12 +27,12 @@ BRIDGE: "Now that we have a baseline, let's start with the two core disciplines.
 </v-click>
 <v-click>
 
-You're no longer writing code line by line. You're designing a system where AI produces code and you shape the inputs, constraints, and verification.
+You're no longer producing the artifact step by step. You're designing a system where AI generates code, prototypes, and analysis while you shape the inputs, constraints, and verification.
 
 </v-click>
 <v-click>
 
-**Two new disciplines define this work:**
+**Two disciplines make that work:**
 1. Context engineering
 2. Spec-driven development
 
@@ -156,17 +114,17 @@ BRIDGE: "Context engineering shapes what the agent knows. The second discipline 
 
 <v-click>
 
-**Context shapes what the agent knows. Specs shape what it does.**
+**Context shapes what the agent knows. Specs shape what good looks like.**
 
 </v-click>
 <v-click>
 
-A large project becomes a series of scoped specs — each with acceptance criteria, constraints, expected behavior. One function, one bug, one feature at a time. Small enough to fit inside the agent's context window with room to reason.
+A spec is the smallest clear, testable packet of intent: scope, constraints, acceptance criteria, expected behavior. Large projects become a series of these packets, each small enough to fit inside the agent's context window with room to reason.
 
 </v-click>
 <v-click>
 
-The cycle: **spec → implement → verify → refine.** You write the spec and own the verification. The agent writes the code.
+The cycle: **spec → implement → verify → refine.** You write the spec and own the verification. The agent generates the first implementation.
 
 </v-click>
 <v-click>
@@ -199,6 +157,7 @@ BRIDGE: "In product work, this changes the medium of validation too."
 
 ---
 layout: quote
+class: quote-long
 ---
 
 <h1>"The prototype is the new PRD.<br />

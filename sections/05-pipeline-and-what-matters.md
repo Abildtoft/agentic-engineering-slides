@@ -5,19 +5,19 @@ transition: section-shift
 
 # What Matters
 
-Clarity, taste, and the courage to subtract
+The job is coherence
 
 <!--
 
 KEY POINTS:
-- Shift from diagnosis (cognitive debt, pipeline risk) to what endures
+- Shift from diagnosis to what endures
 - Central question: what capabilities become more valuable when execution cost collapses?
-- Everything in this section names skills that were always important — AI just exposed them
+- Use this section as a short bridge into the close, not a second body section
 
 DELIVERY:
-- Energy: grounded, forward-looking — the turn from warning to clarity
+- Energy: grounded, forward-looking
 
-BRIDGE: "We've diagnosed the risks. Now let's name what actually matters."
+BRIDGE: "We've diagnosed the risks. Now let's name the constraint that remains."
 -->
 
 ---
@@ -28,87 +28,14 @@ class: statement-wide
 # The compression of the implementation middle isn't making engineering less important — it's revealing what was always important.
 
 <!--
-
 SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
-- Osmani: "The best engineers never just wrote code. They were clarity merchants."
-- This is the hinge of the section — everything before was about risk, everything after is about what matters
-- Key verbal distinction: "AI doesn't make you dumber — passive reliance does"
-- "Revealing" is the key word — these are not new skills, they were always underneath the implementation work; AI exposed them by removing the layer that obscured them
+- This is the hinge from warning to what endures
+- "Revealing" is the key word — these are not new skills, they were always underneath the implementation work
+- Keep the section cross-functional even though the source is engineering phrasing
 
-DELIVERY:
-- Let this statement sit — it should feel like a shift in energy, from alarm to clarity
-
-BRIDGE: "So what are those skills? Let's name them."
--->
-
----
-
-# Clarity Merchants
-
-<v-click>
-
-**Shape a vague feature request** into a spec an agent can execute
-
-</v-click>
-<v-click>
-
-**Design the context** — an AGENTS.md that prevents the same mistake three times
-
-</v-click>
-<v-click>
-
-**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale
-
-</v-click>
-<v-click>
-
-**Articulate *why* this interaction pattern is wrong** — not just that it feels off, but the principle it violates and the spec that prevents it next time
-
-</v-click>
-<v-click>
-
-The work hasn't changed. The tools have.
-
-</v-click>
-
-<!--
-
-KEY POINTS:
-- Each bullet grounds the abstract capability in the operating model the audience now understands
-- Section 2 named the convergence; this slide names what it looks like in practice post-demo
-- Cross-role applicability: specs, context design, and quality judgment are not engineering-only traits
-- Connect back to sections 3 and 4: context quality and judgment quality are coupled
-
-BRIDGE: "Some people call this judgment. Paul Graham calls it something simpler."
--->
-
----
-layout: quote
----
-
-<QuotePair
-  first="When anyone can make anything, the big differentiator is what you choose to make."
-  firstAttribution="Paul Graham"
-  second="The bottleneck was always judgment, taste, and systems thinking. AI just made that more obvious."
-  secondAttribution="Addy Osmani"
-/>
-
-<!--
-
-SOURCE: Paul Graham (x.com/paulg/status/2022604692178522562)
-SOURCE: Addy Osmani + Boris Cherny (x.com/addyosmani/status/2022822356050399673)
-
-KEY POINTS:
-- This is the compression of the argument into one selection principle
-- Cheap execution increases the value of taste and prioritization
-- Land the idea that judgment became more visible, not more optional
-- IMPORTANT NUANCE (Jenny Wen, Design Lead at Anthropic, via Lenny Rachitsky): AI will likely get better at taste and judgment. Designers may be holding onto "taste" as a moat too tightly. But someone still has to be accountable for the final decision.
-- Verbal option after the Osmani quote lands: "Jenny Wen at Anthropic pushes back on taste as a permanent moat. She argues AI will get better at taste. What AI can't do is be accountable. Accountability — the willingness to own the decision and live with the consequences — is the real moat."
-- This reframes from "taste is uniquely human" to "accountability is uniquely human" — a stronger, more durable claim
-
-BRIDGE: "But taste isn't just about choosing what to build. It's about coherence."
+BRIDGE: "So what do those skills look like in practice?"
 -->
 
 ---
@@ -133,55 +60,51 @@ Focus. Finishing. Judgment. Knowing what to build and why. **These don't scale w
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
 KEY POINTS:
-- This directly challenges the "1000x developer" narrative — the bottleneck was never typing
-- Integration doesn't scale with generation speed; it scales with focus and understanding
-- Connects back to cognitive debt: if you can't hold the system in your head, generating more code makes it worse
-- This is the mechanism behind subtraction — you need coherence to know what to leave out
+- This is the bridge from cognitive debt to the close
+- Integration does not scale with generation speed; it scales with focus and understanding
+- The ending now needs to answer what survives and how teams adapt
 
-DELIVERY:
-- Let the first line land — it should feel like a correction to the excitement of the demo
-- "These don't scale with AI speed" is the key insight
-
-BRIDGE: "And when generation is cheap, the hardest discipline becomes knowing what NOT to build."
+BRIDGE: "Let me name what that coherence looks like in practice."
 -->
 
 ---
-layout: statement
+layout: default
 ---
 
-# Don't protect code before it earns its place.
+# Clarity Merchants
 
 <v-click>
 
-Until you commit to it, agent output is a cheap experiment.
+**Shape a vague feature request** into a spec an agent can execute
 
 </v-click>
 <v-click>
 
-10,000 lines no longer imply 10,000 lines of human effort.
+**Design the context** — an AGENTS.md that prevents the same mistake three times
 
 </v-click>
 <v-click>
 
-Run three variants. Keep one. Delete two.
+**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale
+
+</v-click>
+<v-click>
+
+**Articulate why an interaction is wrong** — not just that it feels off, but the principle it violates and the spec that prevents it next time
+
+</v-click>
+<v-click>
+
+The work hasn't changed. The tools have.
 
 </v-click>
 
 <!--
-
 KEY POINTS:
-- The disposable mindset applies before commitment, not after it
-- Human-written code historically felt expensive, so preservation heuristics made sense by default
-- Agent-generated code changes the economics: large volumes of code may represent exploration, not investment
-- Protect learning rate and delivery velocity during exploration; once code earns a place in the system, raise the quality bar
-- "Throw away tokens" is not recklessness; verification still gates what ships
+- Ground the abstract capability in the operating model the audience now understands
+- Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
 
-DELIVERY:
-- Let the title land first — it should feel like a correction to old instincts
-- "Run three variants. Keep one. Delete two." is the operating model
-- Make the distinction explicit: experiments are disposable, committed systems are still accountable
-
-BRIDGE: "And if cheap generation makes addition easier, then accumulation becomes an even bigger risk."
+BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
 -->
 
 ---
@@ -207,20 +130,12 @@ Product Managers and Product Owners kill features. Designers simplify flows. Eng
 </v-click>
 
 <!--
-
 SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
 
 KEY POINTS:
-- Subtraction is strategic discipline under cheap build economics
-- Frame addition as default and subtraction as leadership behavior
-- Works across functions: product scope, UX complexity, technical surface area
-- When building is cheap, "yes" gets easier — the conviction to say no does not get cheaper, it gets more important
+- Addition gets cheaper; subtraction does not
+- This works across functions: product scope, UX complexity, technical surface area
+- The point is disciplined coherence, not maximal output
 
-DELIVERY:
-- Lead with the accumulation line — let it land
-- "Product Managers and Product Owners kill features" is the punchline — reveal it
-- Land verbally: "AI can build anything you ask for. It cannot tell you what to leave out."
-- Subtraction is a design superpower — Dieter Rams's "less but better" is the same principle. When AI can generate any UI you ask for, the courage to simplify is the differentiator.
-
-BRIDGE: "Let's consolidate the full argument before the final coda."
+BRIDGE: "So what survives when execution gets cheap?"
 -->

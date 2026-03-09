@@ -99,8 +99,8 @@ layout: two-cols-header
 **If you're earlier in your career**
 
 - Use AI to punch above your weight
-- Understand and explain every line
-- Build skills AI can't replace: communication, decomposition, domain knowledge
+- Understand and explain every line, prompt, and decision you ship
+- Seek contexts where you build judgment, not just supervise output
 
 </v-click>
 
@@ -112,7 +112,8 @@ layout: two-cols-header
 
 - Your value is multiplying the team, not writing code
 - Lean on automation for the grunt work
-- Invest in mentorship — and be frank about all-senior team risks
+- Create environments where juniors learn to reason, not just review AI output
+- Invest in mentorship — all-senior teams do not scale tacit knowledge
 
 </v-click>
 
@@ -126,7 +127,7 @@ KEY POINTS:
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
 - Shared conclusion: human value is increasingly multiplicative
 
-BRIDGE: "And with that in mind — let me put the bigger picture in perspective."
+BRIDGE: "And all of that points to the same conclusion."
 -->
 
 ---
@@ -184,16 +185,9 @@ Carl Sagan, Contact — cited by Dario Amodei
 SOURCE: Dario Amodei, "The Adolescence of Technology" (darioamodei.com/essay/the-adolescence-of-technology)
 
 KEY POINTS:
-- This is the real ending — the question that lingers after the talk
-- Amodei is the CEO of Anthropic — not an outsider's observation, but the person building the most capable AI systems reflecting on what they're building
-- Contact framing: the question is asked by someone who found something extraordinary and is now asked "are you ready for this?"
-- "Deeply unclear" — the outcome depends on what choices are made, including by the people in this room
-
-DELIVERY:
-- Verbal bridge from the previous slide: "The CEO of the company building the most capable AI systems put it this way..."
-- Your version of it — the one you carry out of this room — is: what kind of engineer, product person, designer do you choose to be?
-- Let the Sagan reveal land as the final lingering question
-- Pause. Then advance to Thank You.
+- Use this as the final lingering question, not a new argument
+- The point is maturity and stewardship, not civilizational theater
+- Let it widen the frame only after the deck has already closed its main thesis
 -->
 
 ---

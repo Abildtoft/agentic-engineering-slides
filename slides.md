@@ -36,17 +36,10 @@ layout: statement
 
 - Inflection Point
 - The Compressing Middle
-- The New Stack: Core Concepts
-- The New Stack: Tools → Harness Engineering
+- The New Stack
 - **DEMO TIME**
-
-*Right around here we will have hit peak hype.*
-
-*And then...*
-
-- Cognitive Debt & The Junior Pipeline
+- Cognitive Debt
 - What Matters
-- Let's Wrap Up
 
 ---
 src: ./sections/01-the-shift.md
