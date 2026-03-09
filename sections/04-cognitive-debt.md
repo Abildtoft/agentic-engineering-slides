@@ -5,13 +5,13 @@ transition: section-shift
 
 # Cognitive Debt
 
-The hidden cost of going fast — and what it means for the next generation
+The hidden cost of going fast — and how to stay in control
 
 <!--
 
 KEY POINTS:
 - Post-demo pivot: from capability to responsibility
-- This is the "peak hype" moment the agenda slide foreshadowed — now make the turn
+- Post-hype turn: the demo just showed what the tools can do — now show what they cost
 - Slow the pace and move from tooling power to human understanding
 - Frame this as a systems risk, not a moral panic
 
@@ -122,17 +122,16 @@ layout: statement
 # Velocity without understanding is not sustainable.
 
 <!--
-
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 KEY POINTS:
 - Hinge statement for the section
-- Summarize diagnosis before showing recurring behavior patterns
+- Summarize the diagnosis before showing how it changes review and team behavior
 
 DELIVERY:
 - Let this hang in the air
 
-BRIDGE: "So what does this look like when it compounds? Let me show you the patterns."
+BRIDGE: "So what does this change about review, verification, and trust?"
 -->
 
 ---
@@ -143,13 +142,10 @@ class: statement-wide
 # In high-stakes domains like security, privacy, and compliance, cognitive debt can be catastrophic.
 
 <!--
-
 KEY POINTS:
 - Raise severity: this is not only about productivity or elegance
-- Security consequence: misunderstood systems create exploitable gaps
-- Privacy consequence: unclear data flows cause accidental over-collection or exposure
-- Compliance consequence: teams cannot provide decision traceability under audit
-- Bottom line: comprehension failures can become incidents, fines, and trust damage
+- Comprehension failures can become incidents, fines, and trust damage
+- Use this as a severity marker, then move back into operating-model changes
 
 BRIDGE: "Before the day-to-day patterns, look at what this means for review and verification."
 -->
@@ -223,23 +219,18 @@ Cognitive debt makes the holes bigger. Incidents happen when they line up.
 </v-click>
 
 <!--
-
 SOURCE: James Reason, Swiss-cheese model of accident causation
 
 KEY POINTS:
-- Introduce the model briefly without detouring into safety theory
 - The point is layered defense: no single control is perfect
 - Cognitive debt weakens multiple layers at once because people stop understanding intent, assumptions, and failure modes
-- Concrete mapping:
-  - Tests miss assumptions
-  - Reviews miss intent
-  - Policies miss edge cases
-  - Operators miss blast radius
 - The risk is not one failed check. It's several imperfect checks aligning.
 
-BRIDGE: "And the dangerous part is that those holes don't only appear in audits and incidents. They also start in everyday working habits."
+BRIDGE: "And the dangerous part is that those holes do not only show up in audits and incidents. They also start in everyday working habits."
 -->
 
+---
+layout: default
 ---
 
 # The Confidence Spiral
@@ -265,9 +256,8 @@ DELIVERY:
 - Walk through the spiral slowly
 - Ask the room to notice whether they recognize this pattern — no hands needed, just internal recognition
 
-BRIDGE: "That spiral appears in recognizable day-to-day patterns."
+BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
 -->
-
 
 ---
 layout: two-cols-header
@@ -310,19 +300,17 @@ Starting feels amazing. The last 20% still takes time. Graveyard of almost-finis
 </v-click>
 
 <!--
-
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
 KEY POINTS:
-- Treat these four items as symptoms, not separate problems
+- Treat these as symptoms, not separate problems
 - The common denominator is weakened coherence under speed
-- Tie back to earlier thesis: typing was never the real bottleneck
+- Tie back to the earlier thesis: typing was never the real bottleneck
 
 DELIVERY:
 - Walk through briefly — the audience will recognize at least one
-- Don't linger on each pattern — the recognition should be fast and uncomfortable
 
-BRIDGE: "At this point, the question becomes what we are outsourcing by default."
+BRIDGE: "At that point, convenience stops being occasional help and starts becoming default dependency."
 -->
 
 ---
@@ -396,14 +384,42 @@ DELIVERY:
 **The output** — shipped, understood, owned. Document not just what changed, but **why.**
 
 </v-click>
+
+<!--
+
+SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
+SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
+
+KEY POINTS:
+- Close the section with a practical control model: intent, review, ownership
+- Stress accountability: at least one human must understand each shipped change
+- Link back to section 3: harness discipline is the preventive mechanism
+
+DELIVERY:
+- Land the three-part model cleanly before introducing operating checks
+
+BRIDGE: "And for non-trivial work, that operating model needs explicit checks."
+-->
+
+---
+layout: default
+---
+
+# Three checks for non-trivial changes
+
 <v-click>
 
-**A simple test:** Can you explain every commit message you submitted this week — not just what changed, but why? If not, the debt is already accumulating.
+**Explainability gate** — no merge until the author can explain intent, tradeoffs, and failure modes.
 
 </v-click>
 <v-click>
 
-**Three checks for non-trivial changes:** explainability gate, reasoning log, ownership check.
+**Reasoning log** — capture why this approach won, what was rejected, and what validated it.
+
+</v-click>
+<v-click>
+
+**Ownership check** — one named human confirms end-to-end understanding and maintenance ownership.
 
 </v-click>
 <v-click>
@@ -418,101 +434,9 @@ SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-progra
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 KEY POINTS:
-- Close the section with a practical control model: intent, review, ownership
-- Stress accountability: at least one human must understand each shipped change
-- Link back to section 3: harness discipline is the preventive mechanism
-- Operational framework for teams:
-  - Explainability gate: no merge until the author can explain intent, tradeoffs, and failure modes
-  - Reasoning log: capture why this approach, what was rejected, and what validated it
-  - Ownership check: one named human confirms end-to-end understanding and maintenance ownership
-  - If one check fails: slow down and re-scope
+- Translate the antidote into team-level operating rules
+- This is the point where governance becomes memorable and actionable
+- Use the commit-message example verbally: if you cannot explain a change you submitted, the debt is already accumulating
 
-DELIVERY:
-- THE COMMIT MESSAGE EXAMPLE (use when landing the third bullet): "We had this conversation in our own Slack channel recently. One colleague argued that commit messages must be hand-written — that the discipline of formulating them is a prerequisite for meaningful collaboration. Another colleague reframed it: it's about quality, not origin. A developer who submits a merge request is accountable for understanding the work and explaining it. Writing a commit message forces reflection — but the operative word is reflection, not typing. If you can't explain a commit message you submitted, you have a problem regardless of who wrote it. The expectation is comprehension and ultimate authorship, not initial authorship."
-
-BRIDGE: "The antidote works — if you have competent humans in the loop. But what happens to the pipeline that produces those humans?"
--->
-
----
-layout: statement
-class: statement-wide
----
-
-# If we skip the 10,000 hours of practice and jump straight to "overseer of AI output" — are we actually training architects?
-
-<!--
-
-SOURCE: Developer Pipeline Getting Strangled (linkedin.com)
-SOURCE: Husom, "Outsourcing Thinking"
-
-KEY POINTS:
-- Frame this as a capability formation problem, not nostalgia for manual coding
-- Prompting output is not the same as building architectural intuition
-- The unresolved part for organizations: how juniors progress toward senior judgment
-
-DELIVERY:
-- Rhetorical question — don't answer it yet, let the audience sit with it
-
-BRIDGE: "This question has a concrete answer from Harvard Business Review."
--->
-
----
-layout: quote
----
-
-<h1>"What I hear most often from executives is not that they fear AI will replace empathy.<br />
-It's that they fear it will replace the contexts<br />
-in which empathy is developed."</h1>
-
-Harvard Business Review
-
-<!--
-
-SOURCE: "AI is Changing How We Learn at Work" (hbr.org/2025/12/ai-is-changing-how-we-learn-at-work)
-
-KEY POINTS:
-- The risk is losing the contexts where judgment is formed
-- Translate "empathy" to role-specific tacit capability (product sense, architectural sense, design taste)
-- Connect this directly to mentorship, practice, and feedback loops
-
-BRIDGE: "So what does this imply for how we train juniors now?"
--->
-
-
-
----
-layout: default
----
-
-# Raising the Bar for Juniors
-
-<v-click>
-
-**Before:** Juniors wrote code designed by others. Mid and senior engineers owned system design.
-
-</v-click>
-<v-click>
-
-**Now:** Writing code is no longer the primary constraint. Syntax and frameworks are becoming interchangeable.
-
-</v-click>
-<v-click>
-
-**The new focus:** Deciding what should exist — whether that's code, a component, or a product direction.
-
-</v-click>
-
-<!--
-
-SOURCE: "Junior Developers Should Go ALL-IN on System Design" (linkedin.com/posts/lukasz2_junior-developers-should-go-all-in-on-system-activity-7422568656930299905-sW94)
-
-KEY POINTS:
-- Clarify the before/now shift in entry-level expectations
-- Output capacity increases quickly; judgment still develops slowly
-- Main message: bar is moving from syntax execution to system thinking
-
-DELIVERY:
-- For managers in the room: how are you restructuring junior onboarding? Optimising for code output or for judgment development?
-
-BRIDGE: "This can feel alarming, but it also clarifies what has always mattered."
+BRIDGE: "That is the operating model. The final question is what kind of people this model rewards."
 -->

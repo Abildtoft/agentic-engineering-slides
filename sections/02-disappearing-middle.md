@@ -43,7 +43,7 @@ SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/20075342810111554
 KEY POINTS:
 - Define "the middle" concretely: translation, implementation, integration, and coordination work
 - Clarify that the middle is compressing, not disappearing
-- Seed the junior pipeline thread early — this pays off in Section 4 when we ask about training architects
+- Seed the junior pipeline thread early — this pays off in Section 6's career advice
 - Reframe seniority: less about throughput in the middle, more about intent and judgment
 
 DELIVERY:
@@ -104,7 +104,7 @@ DELIVERY:
 - Let the Torvalds quote land first, then reveal the inversion
 - Briefly explain why this is not anti-code; it is pro-clarity
 
-BRIDGE: "So velocity increases, but judgment does not get cheaper. And that changes more than just engineering."
+BRIDGE: "And once implementation complexity stops dictating team boundaries, those role walls start to compress too."
 -->
 
 ---
@@ -121,7 +121,7 @@ The walls between design, product, and engineering were built from implementatio
 
 <!--
 KEY POINTS:
-- Synthesis slide: role walls were partly a response to high implementation friction
+- Synthesis slide: role walls were partly a response to implementation friction
 - As friction drops, collaboration surfaces increase and handoff surfaces shrink
 - Distinct disciplines remain, but their operating model converges around shared judgment
 
@@ -129,14 +129,14 @@ DELIVERY:
 - Let the statement land — this should feel like a reveal, not an argument
 - Pause before the next slide — let the room process the implication
 
-BRIDGE: "So if the walls dissolve — what are we left with?"
+BRIDGE: "Jenny Wen describes what that compression looks like from inside Anthropic."
 -->
 
 ---
 layout: quote
 ---
 
-# "Engineers spin up seven coding agents and ship a working version before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
+# "Engineers spin up seven coding agents and ship a working version — before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
 
 Jenny Wen, Design Lead at Anthropic — via Lenny Rachitsky
 
@@ -154,7 +154,7 @@ DELIVERY:
 - If there are designers in the room, make eye contact. This is for them.
 - Verbal addition: "This is not just engineering getting faster. This is the entire rhythm of collaboration shifting."
 
-BRIDGE: "So if the walls dissolve — what's left?"
+BRIDGE: "So if implementation stops being the bottleneck, what skill survives across all three disciplines?"
 -->
 
 ---

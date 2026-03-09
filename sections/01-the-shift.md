@@ -65,23 +65,18 @@ class: quote-long
 
 <div class="quote-progressive">
   <div class="quote-progressive-line">"You have to transport yourself to the current moment.</div>
-
   <v-click>
     <div class="quote-progressive-line">The new models are just completely, completely different.</div>
   </v-click>
-
   <v-click>
     <div class="quote-progressive-line">The model changes so often that I sometimes get stuck in this old way of thinking.</div>
-  </v-click>
-
-  <v-click>
     <div class="quote-progressive-line">I find that new people on the team do stuff in a more AGI forward way than I do."</div>
   </v-click>
 </div>
 
-<v-click>
+<div v-after class="mt-6 text-xl font-normal not-italic">
   Boris Cherny, Head of Claude Code
-</v-click>
+</div>
 
 <!--
 SOURCE: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
@@ -95,7 +90,52 @@ DELIVERY:
 - Let the progressive reveal do the work
 - Keep commentary short; preserve the quote's emotional weight
 
-BRIDGE: "Now let's anchor this in one hard number."
+BRIDGE: "It's not just one tool or one team. Let me show you how broad this already is."
+-->
+
+---
+
+# It's Not Just One Tool
+
+Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
+
+<p class="mt-4 text-lg opacity-80">Different interfaces, same workflow shift.</p>
+
+<v-click>
+
+<p class="mt-6 text-base opacity-75">So zoom out from tool names to company behavior:</p>
+
+</v-click>
+<v-click>
+
+**Spotify** — leadership reports top developers shifted heavily away from manual coding since December
+
+**Google** — AI writes over 30% of all new code
+
+**Microsoft** — 20–30% of code is AI-generated
+
+**Anthropic & OpenAI** — frontier teams report near-total AI-generated code
+
+</v-click>
+
+<!--
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
+SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
+SOURCE: Google CEO Sundar Pichai, earnings call
+SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
+SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
+
+KEY POINTS:
+- Broaden from one metric to cross-industry signal
+- Start with recognizable tool names so the audience sees this is ecosystem-wide, not vendor-specific
+- Keep Spotify as the vivid story; treat others as corroboration
+- Frame this as workflow change, not just speed improvement
+- End with the implication: divergence between teams will widen
+
+DELIVERY:
+- All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
+
+BRIDGE: "And if you still think this is vendor hype, one metric shows how fast one of these tools scaled."
 -->
 
 ---
@@ -124,75 +164,20 @@ SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
 SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
 
 KEY POINTS:
+- Use this as one vivid metric after the broader ecosystem signal, not as the thesis itself
 - 4% counts only commits with explicit Claude Code attribution (co-authored-by trailer, etc.)
 - Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
 - This is the floor, not the ceiling
 - The growth curve is exponential — 134,608 daily commits at time of tweet
 - At current trajectory, 20%+ by year-end — frame as trajectory, not prediction
 - Claude Code launched February 2025 — one tool, one year, 4% of all public commits
-- The "one year old" beat is the kicker: let the audience feel the acceleration
 
 DELIVERY:
 - Let "4%" breathe first
 - Click: "20%+" lands the trajectory
 - Click: "one year old" is the gut punch — pause and let it sink in
 
-BRIDGE: "And it's not just Claude Code. The tool set exploded, so the better signal is what companies report in production."
--->
-
----
-
-# It's Not Just One Tool
-
-Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
-
-<p class="mt-4 text-lg opacity-80">Different interfaces, same workflow shift.</p>
-
-<v-click>
-
-<p class="mt-6 text-base opacity-75">So zoom out from tool names to company behavior:</p>
-
-</v-click>
-<v-click>
-
-**Spotify** — leadership reports top developers shifted heavily away from manual coding since December
-
-</v-click>
-<v-click>
-
-**Google** — AI writes over 30% of all new code
-
-</v-click>
-<v-click>
-
-**Microsoft** — 20–30% of code is AI-generated
-
-</v-click>
-<v-click>
-
-**Anthropic & OpenAI** — frontier teams report near-total AI-generated code
-
-</v-click>
-
-<!--
-SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
-SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
-SOURCE: Google CEO Sundar Pichai, earnings call
-SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
-SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
-
-KEY POINTS:
-- Broaden from one metric to cross-industry signal
-- Start with recognizable tool names so the audience sees this is ecosystem-wide, not vendor-specific
-- Keep Spotify as the vivid story; treat others as corroboration
-- Frame this as workflow change, not just speed improvement
-- End with the implication: divergence between teams will widen
-
-DELIVERY:
-- One beat for tool expansion, then one beat per company
-- Spend most time on Spotify, then compress the rest
-
-BRIDGE: "That is why this next prediction sounds less like hype and more like trajectory."
+BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like trajectory."
 -->
 
 ---
