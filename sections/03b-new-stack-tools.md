@@ -81,14 +81,51 @@ DELIVERY:
 - If the room is unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
 - For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
 
-BRIDGE: "Now that you know the medium, let's look at the first tool built on it."
+BRIDGE: "You just saw an AGENTS.md on the left. Let's zoom in on what that file actually does."
+-->
+
+---
+
+# AGENTS.md — Your Agent's Onboarding Doc
+
+<v-click>
+
+`AGENTS.md` at the repo root — project conventions, patterns, constraints, workflow rules. **Read by the agent on every session start.**
+
+</v-click>
+<v-click>
+
+Nest it: put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones.
+
+</v-click>
+<v-click>
+
+Start with one file at root. Add directory-level files only when you see repeated mistakes.
+
+</v-click>
+
+<!--
+SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
+
+KEY POINTS:
+- AGENTS.md is the highest-leverage first step for most teams adopting agentic tools
+- Claude Code uses CLAUDE.md — same concept, vendor-specific naming
+- Inheritance model: root file = project-wide rules, subdirectory files = domain-specific constraints
+- Real example: this presentation was built with an AGENTS.md specifying Slidev conventions, Yarn 4, multi-file structure
+- Think of it as onboarding documentation where the reader is an AI — the same clarity you'd give a new team member
+
+DELIVERY:
+- If the room is technical, walk through the nesting model briefly
+- If non-technical, focus on the analogy: "It's the same onboarding doc you'd write for a new hire, except the new hire is an agent"
+
+BRIDGE: "Now let's look at the first tool built on this same medium."
 -->
 
 ---
 layout: default
 ---
 
-# Skills in Plain Language
+# Skills
 
 <v-click>
 
@@ -198,7 +235,7 @@ BRIDGE: "Skills shape thinking. MCP shapes doing. Let's look at MCP."
 layout: default
 ---
 
-# MCP in Plain Language
+# MCPs
 
 <v-click>
 
@@ -362,10 +399,15 @@ layout: statement
 class: statement-wide
 ---
 
-<h1>With Figma MCP, Claude reads your file directly.<br />
-Components, design tokens, spacing — all of it.<br /><br />
-It's not guessing at the design.<br />
-It's working from the source of truth.</h1>
+# With Figma MCP, Claude reads your file directly.
+
+Components, design tokens, spacing — all of it.
+
+<v-click>
+
+**It's not guessing at the design. It's working from the source of truth.**
+
+</v-click>
 
 <!--
 KEY POINTS:
@@ -373,57 +415,7 @@ KEY POINTS:
 - Design tokens and component specs become first-class context, not screenshots and interpretation
 - For designers: your Figma file is already structured data; MCP makes that data legible to the agent
 
-BRIDGE: "Once you have context and interfaces, the next question is reliability: how do you compose them into a workflow you can trust? Let's start with guardrails."
--->
-
----
-layout: default
----
-
-# Guardrails
-
-<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
-
-<v-click>
-
-**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
-
-</v-click>
-<v-click>
-
-Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
-
-</v-click>
-<v-click>
-
-Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
-
-</v-click>
-<v-click>
-
-Every repeated human intervention is a signal that the harness is incomplete.
-
-</v-click>
-
-<!--
-SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
-SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
-
-KEY POINTS:
-- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
-- Guardrails convert stochastic generation into controlled iteration
-- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
-- Hooks are another: shell scripts at lifecycle points (PreToolUse blocks destructive commands, PostToolUse auto-formats, Stop enforces standards)
-- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
-- Every repeated human intervention signals harness incompleteness
-
-DELIVERY:
-- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
-- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
-- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
-- Expand on hooks verbally: "Shell scripts that fire at lifecycle points — blocking destructive commands, auto-formatting, enforcing standards."
-
-BRIDGE: "Tests are the guardrail most developers already know. Hooks are the one most haven't discovered yet."
+BRIDGE: "Once you have context and interfaces, the next question is reliability. Let's look at how deterministic checks keep the loop honest — starting with hooks."
 -->
 
 ---
@@ -465,6 +457,55 @@ KEY POINTS:
 - For designers: think of hooks as automated design-review checkpoints — accessibility checks, component validation
 - The key insight: hooks run inside the loop, so the agent can self-correct without human intervention
 
+BRIDGE: "Hooks are one type of guardrail. Let's zoom out to the full picture."
+-->
+
+---
+layout: default
+---
+
+# Guardrails
+
+<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
+
+<v-click>
+
+**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
+
+</v-click>
+<v-click>
+
+Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+
+</v-click>
+<v-click>
+
+Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
+
+</v-click>
+<v-click>
+
+Every repeated human intervention is a signal that the harness is incomplete.
+
+</v-click>
+
+<!--
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+
+KEY POINTS:
+- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
+- Guardrails convert stochastic generation into controlled iteration
+- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
+- Hooks (just introduced) are another: shell scripts at lifecycle points
+- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
+- Every repeated human intervention signals harness incompleteness
+
+DELIVERY:
+- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
+- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
+- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
+
 BRIDGE: "With guardrails in place, you can safely narrow responsibilities and compose agents together."
 -->
 
@@ -502,11 +543,49 @@ KEY POINTS:
 - Treat each specialized agent as a testable, versioned component
 - Composition is orchestrating many narrow agents under one control loop
 - Coordination primitives matter more than "chatting" between agents
+- Trivedy's agent architecture: Model at center, surrounded by Context Injection (prompts, memory, skills) → Action (bash, tools, MCPs) → Observe & Verify (screenshots, tests, logs) → Persist (filesystem, git) → back to Model. Plus Control (compaction, orchestration, ralph loops). This is the full loop.
 
 SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
 SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 
 BRIDGE: "Markdown, skills, MCP, guardrails, composition. All of this — the whole system around the model — has a name."
+-->
+
+---
+layout: default
+class: text-center
+---
+
+# The Agent Loop
+
+<MermaidDiagram :code="`graph LR
+  CI[Context: prompts, memory, skills] -->|shapes| M[Model: reasons and decides]
+  M -->|calls| A[Action: bash, tools, MCPs]
+  A -->|writes| P[Persist: filesystem, git]
+  A -->|triggers| OV[Observe: tests, logs, screenshots]
+  P -.->|reads| M
+  OV -.->|results back| M
+  CO[Control: compaction, orchestration] -->|manages| M
+`" size="xl" />
+
+<p class="mt-2 text-base opacity-75">The model reasons and decides. <strong>Everything else is the harness.</strong></p>
+
+<!--
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
+
+KEY POINTS:
+- Visual architecture before naming the discipline on the next slide
+- Five harness components around the model: Context Injection, Control, Action, Persist, Observe & Verify
+- The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
+- Dashed arrows = feedback paths (reads from persist, results back from observation)
+- Solid arrows = primary flow (context shapes model, model calls actions, actions write to persist and trigger verification)
+
+DELIVERY:
+- Walk through the cycle once: "Context goes in. The model reasons and decides. It takes action — bash, tools, MCPs. Results get persisted and verified. Feedback loops back. And the cycle repeats."
+- Then land the bottom line: "The model is one box. Everything else? That's the harness."
+
+BRIDGE: "This whole system has a name."
 -->
 
 ---
@@ -515,11 +594,11 @@ layout: statement
 
 <h1>Harness Engineering</h1>
 
-<SlideImage src="/verification-loop.png" alt="Verification loop diagram" size="xs" />
+## Agent = Model + Harness
 
 <v-click>
 
-Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
+The harness is every piece of code, configuration, and execution logic that isn't the model itself. Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
 
 </v-click>
 <v-click>
@@ -541,12 +620,20 @@ Every time an agent fails, you don't just fix the output, you take it as a signa
 <!--
 SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 
 KEY POINTS:
 - Name the discipline that ties all prior concepts together
 - Treat each v-click as a recap ladder from parts to operating model
 - Emphasize failure-as-signal: improve the harness, not just the output
 - This is the conceptual peak before the live demo
+- Trivedy formal definition: "Agent = Model + Harness. A harness is every piece of code, configuration, and execution logic that isn't the model itself."
+- Terminal Bench evidence: LangChain improved from Top 30 to Top 5 on Terminal Bench 2.0 by only changing the harness — model stayed the same. The harness is where the leverage is.
+- Model-Harness Training Loop: useful primitives get discovered → added to the harness → used to train the next model → model improves at using the harness → cycle repeats. This co-evolution is why harness engineering remains valuable even as models improve.
+
+DELIVERY:
+- Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
+- Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 
 BRIDGE: "Now let's watch this operating model in motion."
 -->
@@ -607,7 +694,8 @@ This is becoming cross-functional infrastructure.
 
 <!--
 KEY POINTS:
-- Frame this as continuity, not novelty: same agentic primitives, different UX
+- Frame this as continuity, not novelty: same agentic primitives, different UX surface
 - Wider access does not remove the need for engineered guardrails
 - Core takeaway: workflow design is becoming cross-functional infrastructure
+- Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
 -->

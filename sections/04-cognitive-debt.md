@@ -18,7 +18,10 @@ KEY POINTS:
 DELIVERY:
 - Let this slide sit for 2-3 seconds before advancing — the turn should be visible, not just verbal
 
-BRIDGE: "We've just spent the last section exploring an incredible toolkit — context engineering, skills, MCPs, hooks, harnesses, agents, teams. Each layer added power. But each layer also added something you didn't personally write, something you may not fully understand. And remember — going from one agent to many isn't a scaling problem. It's a distributed systems problem. Who gets which context? What happens when one agent's output breaks another's assumptions? Every component is nondeterministic. That coordination complexity has a cost. And that cost has a name."
+DELIVERY:
+- Verbal bridge (use this): "We've just spent the last section exploring an incredible toolkit — context engineering, skills, MCPs, hooks, harnesses, agents, teams. Each layer added power. But each layer also added something you didn't personally write, something you may not fully understand."
+
+BRIDGE: "And remember — going from one agent to many isn't a scaling problem. It's a distributed systems problem. Who gets which context? What happens when one agent's output breaks another's assumptions? Every component is nondeterministic. That coordination complexity has a cost. And that cost has a name."
 -->
 
 ---
@@ -131,7 +134,43 @@ KEY POINTS:
 DELIVERY:
 - Let this hang in the air
 
-BRIDGE: "So what does this change about review, verification, and trust?"
+BRIDGE: "And this isn't just a feeling. The data backs it up."
+-->
+
+---
+layout: fact
+---
+
+# 1.7x more bugs
+
+AI-generated code vs. human-written — and **1.4x more critical issues**
+
+<v-click>
+
+30% of senior developers say auditing AI output **offsets their time savings**
+
+</v-click>
+
+<!--
+
+SOURCE: CodeRabbit, "A Semantic History: How 'Vibe Coding' Went from a Tweet to Prod" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
+SOURCE: CodeRabbit, State of AI vs. Human Code Generation study
+SOURCE: Fastly developer survey
+
+KEY POINTS:
+- Ground the abstract "velocity without understanding" claim in hard numbers
+- The 1.7x bug ratio comes from CodeRabbit's comparative study of AI vs human code
+- The 30% audit-offset stat is from Fastly's developer survey — seniors report that the time saved by AI generation is consumed by reviewing and fixing the output
+- Additional stat for verbal use: ~33% of seniors ship half their code as AI-generated vs. only 13% of juniors (Fastly)
+- Cultural marker for verbal use: Collins Dictionary named "vibe coding" Word of the Year 2025; Merriam-Webster chose "slop" instead
+
+DELIVERY:
+- Let the number land before the v-click
+- The audience will feel the tension: the tools are powerful, but the quality gap is measurable
+- Optional verbal: "Karpathy coined 'vibe coding' for weekend hacking. Collins made it Word of the Year. Merriam-Webster's word of the year? 'Slop.' That tells you something about where the conversation went."
+- Optional verbal (thdxr): "The worst part? One practitioner put it this way: 'I don't think we're even trading all this off to move faster. I think we're moving at a normal pace.' The debt accumulates without the speed payoff."
+
+BRIDGE: "And in high-stakes domains, that gap becomes dangerous."
 -->
 
 ---
@@ -220,11 +259,13 @@ Cognitive debt makes the holes bigger. Incidents happen when they line up.
 
 <!--
 SOURCE: James Reason, Swiss-cheese model of accident causation
+SOURCE: CodeRabbit, "A Semantic History of Vibe Coding" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
 
 KEY POINTS:
 - The point is layered defense: no single control is perfect
 - Cognitive debt weakens multiple layers at once because people stop understanding intent, assumptions, and failure modes
 - The risk is not one failed check. It's several imperfect checks aligning.
+- Real-world examples of holes lining up (2025): AWS suffered a 13-hour outage where an internal AI assistant was involved in problematic changes; Moonwell issued $1.8M in bad debt in a possibly AI-related incident; Kimi chatbot had reliability issues amid aggressive AI-assisted scaling
 
 BRIDGE: "And the dangerous part is that those holes do not only show up in audits and incidents. They also start in everyday working habits."
 -->
@@ -242,19 +283,29 @@ layout: default
 **The prompting loop can become dependency: convenience now, weaker judgment later.**
 
 </v-click>
+<v-click>
+
+"We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've **eroded our ability to delay gratification.**"
+
+</v-click>
 
 <!--
 
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
+SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
+SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
+
 KEY POINTS:
 - Make clear why the spiral is seductive: every step feels locally rational
 - The risk is gradual substitution of construction with passive review
 - Dependency forms by accumulation, not one dramatic event
+- thdxr observation: "We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've eroded our ability to delay gratification"
 
 DELIVERY:
 - Walk through the spiral slowly
 - Ask the room to notice whether they recognize this pattern — no hands needed, just internal recognition
+- Optional verbal: "One team lead described it as eroded delayed gratification — the agents keep pulling you toward the next feature instead of cleaning up what you have."
 
 BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
 -->
@@ -314,39 +365,6 @@ BRIDGE: "At that point, convenience stops being occasional help and starts becom
 -->
 
 ---
-layout: quote
----
-
-<h1>"If we treat them as a substitute for effort,<br />
-we're barely a step away from grift — and I really believe<br />
-we'll wake up one day, completely hollow."</h1>
-
-<v-click>
-
-## "We don't have to treat AI as a zero-effort shortcut to success."
-
-</v-click>
-
-<!--
-
-SOURCE: "It is not — and should not be — zero-effort" (sources/not-zero-effort.md)
-SOURCE: Matija Grcic (x.com/matijagrcic/status/2012517043711492558)
-
-KEY POINTS:
-- The emotional low point of the section
-- "Completely hollow" is a strong phrase — let it sit
-- The second reveal is the turn from fatalism to agency
-- Choice of practice determines outcome
-
-DELIVERY:
-- Let "completely hollow" land before the second reveal
-- Optional verbal color from Grcic: "I caught myself asking the AI for the umpteenth time how to do a certain if conditional. Why have I not internalized this? Because I've outsourced it to the AI."
-- For non-devs: substitute "code" with any domain skill — if you outsource all your judgment to a tool, what remains?
-
-BRIDGE: "So what does non-hollow look like? What is the antidote?"
--->
-
----
 layout: statement
 ---
 
@@ -355,8 +373,7 @@ layout: statement
 <!--
 
 KEY POINTS:
-- Let the room exhale after the emotional valley
-- The previous slide ended with "we don't have to" — this gives that idea its own visual beat
+- Pivot from the debt patterns to agency — the audience needs to exhale
 - Brief pause before the practical antidote checklist
 
 DELIVERY:

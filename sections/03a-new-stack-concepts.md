@@ -72,19 +72,8 @@ Copy-pasting snippets into ChatGPT was the first wave — but the context was al
 But every model has a finite memory — a context window. Not everything fits. Context engineering is the discipline of ensuring the *important* information makes it into that budget: the right information, in the right order, at the right time.
 
 </v-click>
-<v-click>
-
-> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
-
-</v-click>
-<v-click>
-
-Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
-
-</v-click>
 
 <!--
-SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
@@ -92,18 +81,49 @@ KEY POINTS:
 - Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
 - The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
 - Finite context window means you can't dump everything in — you must curate the discovery journey
+- Trivedy calls this "Context Rot": models become worse at reasoning as their context fills up. "Harnesses today are largely delivery mechanisms for good context engineering."
 - Concrete architecture example from Boris: simple model-driven `glob` + `grep` beat more complex RAG approaches for codebase retrieval
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams
 - Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
 - Layering: root file = project-wide rules, directory files = domain-specific constraints
 - Start with one file at root. Add directory-level files only when you see repeated mistakes
-- Documentation is now production infrastructure, not supporting material
 
 DELIVERY:
 - Land the opener and pause — the audience will nod because they've lived the copy-paste phase
-- Call out that product docs and design system docs are first-class context inputs — if there are designers in the room, anchor this: your Figma component documentation and design tokens are first-class context inputs for agents, same as AGENTS.md for engineers
 - If the room is technical, mention the inheritance model (root AGENTS.md + subdirectory overrides)
+
+BRIDGE: "And this isn't just an engineering concern."
+-->
+
+---
+
+# Context Is Cross-Functional
+
+> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
+
+<v-click>
+
+Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
+
+</v-click>
+<v-click>
+
+Documentation is now production infrastructure, not supporting material.
+
+</v-click>
+
+<!--
+SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
+
+KEY POINTS:
+- The Tacho quote reframes context engineering as universal, not code-specific
+- Product docs, design tokens, component specs — all first-class context for agents
+- For designers in the room: your Figma component documentation and design tokens are first-class context inputs, same as AGENTS.md for engineers
+
+DELIVERY:
+- If there are designers in the room, make eye contact on this slide
+- Keep this brief — it's a reframe, not a deep dive
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->
@@ -152,34 +172,5 @@ DELIVERY:
 - Emphasize "you own the verification" — this is where human judgment stays essential
 - Remind the room this applies to product and design workflows too
 
-BRIDGE: "In product work, this changes the medium of validation too."
--->
-
----
-layout: quote
-class: quote-long
----
-
-<h1>"The prototype is the new PRD.<br />
-If your team needs a 20-page product strategy doc,<br />
-you're already behind someone with a weekend prototype."</h1>
-
-Andrew Chen
-
-<!--
-SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
-SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
-
-KEY POINTS:
-- Make the artifact shift explicit: from document-first to experience-first
-- Clarify that strategy still matters; the medium of validation changes
-- This is the same judgment principle in a different medium: taste expressed through prototypes, not documents
-- This slide fits here because it's a direct consequence of spec-driven development applied to product work
-- Boris offers the operating proof point: on the Claude Code team, PRDs gave way to many fast prototypes before shipping
-
-DELIVERY:
-- Directly address product/UX people in the room
-- Tie back: "This is what judgment looks like in product work — knowing which prototype answers the question faster than any document could."
-
-BRIDGE: "You now know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
+BRIDGE: "In product work, this changes the medium of validation too — and you've already seen that with the Andrew Chen quote. Now let's make it concrete. You know the two disciplines. But without the right building blocks, they stay theoretical. Let me show you what makes them real."
 -->
