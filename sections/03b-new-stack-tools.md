@@ -378,7 +378,7 @@ KEY POINTS:
 - Design tokens and component specs become first-class context, not screenshots and interpretation
 - For designers: your Figma file is already structured data; MCP makes that data legible to the agent
 
-BRIDGE: "Once you have context and interfaces, the next question is reliability: how do you compose them into a workflow you can trust? Let's start with hooks."
+BRIDGE: "Once you have context and interfaces, the next question is reliability. Let's look at how deterministic checks keep the loop honest — starting with hooks."
 -->
 
 ---
@@ -575,7 +575,7 @@ DELIVERY:
 layout: two-cols-header
 ---
 
-# Claude Cowork: Same Stack, Wider Audience
+# Beyond the Terminal: Same Stack, Wider Audience
 
 ::left::
 
@@ -611,7 +611,8 @@ This is becoming cross-functional infrastructure.
 
 <!--
 KEY POINTS:
-- Frame this as continuity, not novelty: same agentic primitives, different UX
+- Frame this as continuity, not novelty: same agentic primitives, different UX surface
 - Wider access does not remove the need for engineered guardrails
 - Core takeaway: workflow design is becoming cross-functional infrastructure
+- Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
 -->

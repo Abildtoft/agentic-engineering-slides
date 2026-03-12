@@ -157,37 +157,13 @@ The future of software engineering isn't syntax — it's **turning ambiguity int
 SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
 
 KEY POINTS:
-- This is the final thesis restatement before the closing quote
+- Final thesis restatement — the last thing the audience hears before "Thank You"
 - Three-part cadence: change is real, change is historical, craft remains
-- Reinforce continuity so the ending feels grounded, not apocalyptic
+- The audience leaves with empowerment, not existential uncertainty
 
--->
+DELIVERY:
+- Let this land slowly. Each v-click should breathe.
 
----
-layout: quote
----
-
-## "Humanity is about to be handed almost unimaginable power, and it is deeply unclear whether our systems possess the maturity to wield it."
-
-Dario Amodei — The Adolescence of Technology
-
-<v-click>
-
-<h1>"How did you do it?<br />
-How did you evolve, how did you survive this technological adolescence<br />
-without destroying yourself?"</h1>
-
-Carl Sagan, Contact — cited by Dario Amodei
-
-</v-click>
-
-<!--
-SOURCE: Dario Amodei, "The Adolescence of Technology" (darioamodei.com/essay/the-adolescence-of-technology)
-
-KEY POINTS:
-- Use this as the final lingering question, not a new argument
-- The point is maturity and stewardship, not civilizational theater
-- Let it widen the frame only after the deck has already closed its main thesis
 -->
 
 ---

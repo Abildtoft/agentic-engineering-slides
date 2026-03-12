@@ -72,19 +72,8 @@ Copy-pasting snippets into ChatGPT was the first wave — but the context was al
 But every model has a finite memory — a context window. Not everything fits. Context engineering is the discipline of ensuring the *important* information makes it into that budget: the right information, in the right order, at the right time.
 
 </v-click>
-<v-click>
-
-> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
-
-</v-click>
-<v-click>
-
-Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
-
-</v-click>
 
 <!--
-SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
@@ -98,12 +87,42 @@ KEY POINTS:
 - Nesting: put AGENTS.md in any directory; agent inherits root conventions and adds local ones
 - Layering: root file = project-wide rules, directory files = domain-specific constraints
 - Start with one file at root. Add directory-level files only when you see repeated mistakes
-- Documentation is now production infrastructure, not supporting material
 
 DELIVERY:
 - Land the opener and pause — the audience will nod because they've lived the copy-paste phase
-- Call out that product docs and design system docs are first-class context inputs — if there are designers in the room, anchor this: your Figma component documentation and design tokens are first-class context inputs for agents, same as AGENTS.md for engineers
 - If the room is technical, mention the inheritance model (root AGENTS.md + subdirectory overrides)
+
+BRIDGE: "And this isn't just an engineering concern."
+-->
+
+---
+
+# Context Is Cross-Functional
+
+> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
+
+<v-click>
+
+Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
+
+</v-click>
+<v-click>
+
+Documentation is now production infrastructure, not supporting material.
+
+</v-click>
+
+<!--
+SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
+
+KEY POINTS:
+- The Tacho quote reframes context engineering as universal, not code-specific
+- Product docs, design tokens, component specs — all first-class context for agents
+- For designers in the room: your Figma component documentation and design tokens are first-class context inputs, same as AGENTS.md for engineers
+
+DELIVERY:
+- If there are designers in the room, make eye contact on this slide
+- Keep this brief — it's a reframe, not a deep dive
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->

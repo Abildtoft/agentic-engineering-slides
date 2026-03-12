@@ -137,5 +137,23 @@ KEY POINTS:
 - This works across functions: product scope, UX complexity, technical surface area
 - The point is disciplined coherence, not maximal output
 
+BRIDGE: "Addition gets cheaper every quarter. Subtraction never does."
+-->
+
+---
+layout: statement
+---
+
+# Addition gets cheaper every quarter. Subtraction never does.
+
+<!--
+KEY POINTS:
+- Let this land as the section's closing beat
+- Restate the core insight in its sharpest form
+- This gives the audience a single sentence to carry from this section into the close
+
+DELIVERY:
+- Hold for 2-3 seconds. This is the section's equivalent of "velocity without understanding is not sustainable" from Section 4.
+
 BRIDGE: "So what survives when execution gets cheap?"
 -->
