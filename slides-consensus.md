@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Harness Engineering
+title: Agentic Engineering
 titleTemplate: '%s'
 author: Consensus
 colorSchema: light
@@ -20,7 +20,7 @@ layout: cover
 
 <BrandLogo />
 
-# Harness Engineering
+# Agentic Engineering
 
 How AI Is Reshaping What It Means to Build Software
 
