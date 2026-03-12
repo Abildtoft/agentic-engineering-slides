@@ -136,21 +136,28 @@ BRIDGE: "Jenny Wen describes what that compression looks like from inside Anthro
 layout: quote
 ---
 
-# "Engineers spin up seven coding agents and ship a working version — before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
-
-Jenny Wen, Design Lead at Anthropic — via Lenny Rachitsky
+<QuotePair
+  first="Engineers spin up seven coding agents and ship a working version — before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
+  firstAttribution="Jenny Wen, Design Lead at Anthropic — via Lenny Rachitsky"
+  second="The prototype is the new PRD. If your team needs a 20-page product strategy doc, you're already behind someone with a weekend prototype."
+  secondAttribution="Andrew Chen"
+/>
 
 <!--
 SOURCE: Jenny Wen (Design Lead, Anthropic; formerly Design Director, Notion), via Lenny Rachitsky (x.com/lennysan/status/2028484407108194507)
+SOURCE: Andrew Chen, a16z general partner (x.com/andrewchen/status/2025022470550684037)
 
 KEY POINTS:
-- This is the compression made visceral — not a theoretical claim but a scene from a design leader at the company building the agents
+- Jenny Wen: the compression made visceral — not a theoretical claim but a scene from a design leader at the company building the agents
 - The discover-diverge-converge model assumed implementation was the bottleneck; when implementation compresses, the design process must adapt too
 - Important: this is not anti-design — it signals that the operating model changes for everyone
-- Jenny Wen managed 12–15 reports as Design Director at Notion before returning to IC at Anthropic — the compression is personal for her
+- Andrew Chen: the artifact shift — from document-first to experience-first validation
+- Together these two quotes show the same compression from different angles: design process and product process both change
+- Boris offers the operating proof point: on the Claude Code team, PRDs gave way to many fast prototypes before shipping
 
 DELIVERY:
-- Let the quote land. The seven-agents image is vivid — the room will feel it.
+- Let the Jenny Wen quote land first. The seven-agents image is vivid — the room will feel it.
+- Then reveal Andrew Chen — the audience sees the same compression hitting product work too.
 - If there are designers in the room, make eye contact. This is for them.
 - Verbal addition: "This is not just engineering getting faster. This is the entire rhythm of collaboration shifting."
 

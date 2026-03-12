@@ -365,39 +365,6 @@ BRIDGE: "At that point, convenience stops being occasional help and starts becom
 -->
 
 ---
-layout: quote
----
-
-<h1>"If we treat them as a substitute for effort,<br />
-we're barely a step away from grift — and I really believe<br />
-we'll wake up one day, completely hollow."</h1>
-
-<v-click>
-
-## "We don't have to treat AI as a zero-effort shortcut to success."
-
-</v-click>
-
-<!--
-
-SOURCE: "It is not — and should not be — zero-effort" (sources/not-zero-effort.md)
-SOURCE: Matija Grcic (x.com/matijagrcic/status/2012517043711492558)
-
-KEY POINTS:
-- The emotional low point of the section
-- "Completely hollow" is a strong phrase — let it sit
-- The second reveal is the turn from fatalism to agency
-- Choice of practice determines outcome
-
-DELIVERY:
-- Let "completely hollow" land before the second reveal
-- Optional verbal color from Grcic: "I caught myself asking the AI for the umpteenth time how to do a certain if conditional. Why have I not internalized this? Because I've outsourced it to the AI."
-- For non-devs: substitute "code" with any domain skill — if you outsource all your judgment to a tool, what remains?
-
-BRIDGE: "So what does non-hollow look like? What is the antidote?"
--->
-
----
 layout: statement
 ---
 
@@ -406,8 +373,7 @@ layout: statement
 <!--
 
 KEY POINTS:
-- Let the room exhale after the emotional valley
-- The previous slide ended with "we don't have to" — this gives that idea its own visual beat
+- Pivot from the debt patterns to agency — the audience needs to exhale
 - Brief pause before the practical antidote checklist
 
 DELIVERY:

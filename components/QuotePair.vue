@@ -8,12 +8,22 @@ defineProps({
 </script>
 
 <template>
-  <h1>&ldquo;{{ first }}&rdquo;</h1>
-
-  <p v-if="firstAttribution">{{ firstAttribution }}</p>
+  <div class="quote-pair">
+    <h2>&ldquo;{{ first }}&rdquo;</h2>
+    <p v-if="firstAttribution">{{ firstAttribution }}</p>
+  </div>
 
   <v-click>
-    <h2>&ldquo;{{ second }}&rdquo;</h2>
-    <p v-if="secondAttribution">{{ secondAttribution }}</p>
+    <div class="quote-pair">
+      <h2>&ldquo;{{ second }}&rdquo;</h2>
+      <p v-if="secondAttribution">{{ secondAttribution }}</p>
+    </div>
   </v-click>
 </template>
+
+<style scoped>
+.quote-pair h2 {
+  border-left: 4px solid var(--brand-primary);
+  padding-left: 1rem;
+}
+</style>

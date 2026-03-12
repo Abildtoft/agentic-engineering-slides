@@ -81,7 +81,44 @@ DELIVERY:
 - If the room is unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
 - For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
 
-BRIDGE: "Now that you know the medium, let's look at the first tool built on it."
+BRIDGE: "You just saw an AGENTS.md on the left. Let's zoom in on what that file actually does."
+-->
+
+---
+
+# AGENTS.md — Your Agent's Onboarding Doc
+
+<v-click>
+
+`AGENTS.md` at the repo root — project conventions, patterns, constraints, workflow rules. **Read by the agent on every session start.**
+
+</v-click>
+<v-click>
+
+Nest it: put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones.
+
+</v-click>
+<v-click>
+
+Start with one file at root. Add directory-level files only when you see repeated mistakes.
+
+</v-click>
+
+<!--
+SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
+
+KEY POINTS:
+- AGENTS.md is the highest-leverage first step for most teams adopting agentic tools
+- Claude Code uses CLAUDE.md — same concept, vendor-specific naming
+- Inheritance model: root file = project-wide rules, subdirectory files = domain-specific constraints
+- Real example: this presentation was built with an AGENTS.md specifying Slidev conventions, Yarn 4, multi-file structure
+- Think of it as onboarding documentation where the reader is an AI — the same clarity you'd give a new team member
+
+DELIVERY:
+- If the room is technical, walk through the nesting model briefly
+- If non-technical, focus on the analogy: "It's the same onboarding doc you'd write for a new hire, except the new hire is an agent"
+
+BRIDGE: "Now let's look at the first tool built on this same medium."
 -->
 
 ---
@@ -522,15 +559,15 @@ class: text-center
 
 # The Agent Loop
 
-<MermaidDiagram :code="`graph TD
-  CI[Context Injection\nprompts · memory · skills] -->|shapes| M[Model\nreasons → decides]
-  CO[Control\ncompaction · orchestration] -->|manages| M
-  M -->|calls| A[Action\nbash · tools · MCPs]
-  A -->|writes| P[Persist\nfilesystem · git · progress]
+<MermaidDiagram :code="`graph LR
+  CI[Context: prompts, memory, skills] -->|shapes| M[Model: reasons and decides]
+  M -->|calls| A[Action: bash, tools, MCPs]
+  A -->|writes| P[Persist: filesystem, git]
+  A -->|triggers| OV[Observe: tests, logs, screenshots]
   P -.->|reads| M
-  A -->|triggers| OV[Observe & Verify\ntests · screenshots · logs]
   OV -.->|results back| M
-`" size="lg" />
+  CO[Control: compaction, orchestration] -->|manages| M
+`" size="xl" />
 
 <p class="mt-2 text-base opacity-75">The model reasons and decides. <strong>Everything else is the harness.</strong></p>
 
@@ -621,7 +658,7 @@ DELIVERY:
 layout: two-cols-header
 ---
 
-# Beyond the Terminal: Same Stack, Wider Audience
+# Claude Cowork: Same Stack, Wider Audience
 
 ::left::
 
