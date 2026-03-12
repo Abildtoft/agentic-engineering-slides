@@ -516,16 +516,52 @@ BRIDGE: "Markdown, skills, MCP, guardrails, composition. All of this — the who
 -->
 
 ---
+layout: default
+class: text-center
+---
+
+# The Agent Loop
+
+<MermaidDiagram :code="`graph TD
+  CI[Context Injection\nprompts · memory · skills] -->|shapes| M[Model\nreasons → decides]
+  CO[Control\ncompaction · orchestration] -->|manages| M
+  M -->|calls| A[Action\nbash · tools · MCPs]
+  A -->|writes| P[Persist\nfilesystem · git · progress]
+  P -.->|reads| M
+  A -->|triggers| OV[Observe & Verify\ntests · screenshots · logs]
+  OV -.->|results back| M
+`" size="lg" />
+
+<p class="mt-2 text-base opacity-75">The model reasons and decides. <strong>Everything else is the harness.</strong></p>
+
+<!--
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
+
+KEY POINTS:
+- Visual architecture before naming the discipline on the next slide
+- Five harness components around the model: Context Injection, Control, Action, Persist, Observe & Verify
+- The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
+- Dashed arrows = feedback paths (reads from persist, results back from observation)
+- Solid arrows = primary flow (context shapes model, model calls actions, actions write to persist and trigger verification)
+
+DELIVERY:
+- Walk through the cycle once: "Context goes in. The model reasons and decides. It takes action — bash, tools, MCPs. Results get persisted and verified. Feedback loops back. And the cycle repeats."
+- Then land the bottom line: "The model is one box. Everything else? That's the harness."
+
+BRIDGE: "This whole system has a name."
+-->
+
+---
 layout: statement
 ---
 
 <h1>Harness Engineering</h1>
 
-<SlideImage src="/verification-loop.png" alt="Verification loop diagram" size="xs" />
+## Agent = Model + Harness
 
 <v-click>
 
-Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
+The harness is every piece of code, configuration, and execution logic that isn't the model itself. Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
 
 </v-click>
 <v-click>
