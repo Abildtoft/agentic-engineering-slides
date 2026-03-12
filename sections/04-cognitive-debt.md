@@ -131,7 +131,42 @@ KEY POINTS:
 DELIVERY:
 - Let this hang in the air
 
-BRIDGE: "So what does this change about review, verification, and trust?"
+BRIDGE: "And this isn't just a feeling. The data backs it up."
+-->
+
+---
+layout: fact
+---
+
+# 1.7x more bugs
+
+AI-generated code vs. human-written — and **1.4x more critical issues**
+
+<v-click>
+
+30% of senior developers say auditing AI output **offsets their time savings**
+
+</v-click>
+
+<!--
+
+SOURCE: CodeRabbit, "A Semantic History: How 'Vibe Coding' Went from a Tweet to Prod" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
+SOURCE: CodeRabbit, State of AI vs. Human Code Generation study
+SOURCE: Fastly developer survey
+
+KEY POINTS:
+- Ground the abstract "velocity without understanding" claim in hard numbers
+- The 1.7x bug ratio comes from CodeRabbit's comparative study of AI vs human code
+- The 30% audit-offset stat is from Fastly's developer survey — seniors report that the time saved by AI generation is consumed by reviewing and fixing the output
+- Additional stat for verbal use: ~33% of seniors ship half their code as AI-generated vs. only 13% of juniors (Fastly)
+- Cultural marker for verbal use: Collins Dictionary named "vibe coding" Word of the Year 2025; Merriam-Webster chose "slop" instead
+
+DELIVERY:
+- Let the number land before the v-click
+- The audience will feel the tension: the tools are powerful, but the quality gap is measurable
+- Optional verbal: "Karpathy coined 'vibe coding' for weekend hacking. Collins made it Word of the Year. Merriam-Webster's word of the year? 'Slop.' That tells you something about where the conversation went."
+
+BRIDGE: "And in high-stakes domains, that gap becomes dangerous."
 -->
 
 ---
@@ -220,11 +255,13 @@ Cognitive debt makes the holes bigger. Incidents happen when they line up.
 
 <!--
 SOURCE: James Reason, Swiss-cheese model of accident causation
+SOURCE: CodeRabbit, "A Semantic History of Vibe Coding" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
 
 KEY POINTS:
 - The point is layered defense: no single control is perfect
 - Cognitive debt weakens multiple layers at once because people stop understanding intent, assumptions, and failure modes
 - The risk is not one failed check. It's several imperfect checks aligning.
+- Real-world examples of holes lining up (2025): AWS suffered a 13-hour outage where an internal AI assistant was involved in problematic changes; Moonwell issued $1.8M in bad debt in a possibly AI-related incident; Kimi chatbot had reliability issues amid aggressive AI-assisted scaling
 
 BRIDGE: "And the dangerous part is that those holes do not only show up in audits and incidents. They also start in everyday working habits."
 -->

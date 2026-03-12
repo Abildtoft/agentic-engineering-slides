@@ -88,7 +88,7 @@ BRIDGE: "Now that you know the medium, let's look at the first tool built on it.
 layout: default
 ---
 
-# Skills in Plain Language
+# Skills
 
 <v-click>
 
@@ -198,7 +198,7 @@ BRIDGE: "Skills shape thinking. MCP shapes doing. Let's look at MCP."
 layout: default
 ---
 
-# MCP in Plain Language
+# MCPs
 
 <v-click>
 
@@ -362,10 +362,15 @@ layout: statement
 class: statement-wide
 ---
 
-<h1>With Figma MCP, Claude reads your file directly.<br />
-Components, design tokens, spacing — all of it.<br /><br />
-It's not guessing at the design.<br />
-It's working from the source of truth.</h1>
+# With Figma MCP, Claude reads your file directly.
+
+Components, design tokens, spacing — all of it.
+
+<v-click>
+
+**It's not guessing at the design. It's working from the source of truth.**
+
+</v-click>
 
 <!--
 KEY POINTS:
@@ -373,57 +378,7 @@ KEY POINTS:
 - Design tokens and component specs become first-class context, not screenshots and interpretation
 - For designers: your Figma file is already structured data; MCP makes that data legible to the agent
 
-BRIDGE: "Once you have context and interfaces, the next question is reliability: how do you compose them into a workflow you can trust? Let's start with guardrails."
--->
-
----
-layout: default
----
-
-# Guardrails
-
-<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
-
-<v-click>
-
-**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
-
-</v-click>
-<v-click>
-
-Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
-
-</v-click>
-<v-click>
-
-Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
-
-</v-click>
-<v-click>
-
-Every repeated human intervention is a signal that the harness is incomplete.
-
-</v-click>
-
-<!--
-SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
-SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
-
-KEY POINTS:
-- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
-- Guardrails convert stochastic generation into controlled iteration
-- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
-- Hooks are another: shell scripts at lifecycle points (PreToolUse blocks destructive commands, PostToolUse auto-formats, Stop enforces standards)
-- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
-- Every repeated human intervention signals harness incompleteness
-
-DELIVERY:
-- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
-- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
-- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
-- Expand on hooks verbally: "Shell scripts that fire at lifecycle points — blocking destructive commands, auto-formatting, enforcing standards."
-
-BRIDGE: "Tests are the guardrail most developers already know. Hooks are the one most haven't discovered yet."
+BRIDGE: "Once you have context and interfaces, the next question is reliability: how do you compose them into a workflow you can trust? Let's start with hooks."
 -->
 
 ---
@@ -464,6 +419,55 @@ KEY POINTS:
 - The lifecycle framing (pre/post/stop) maps to familiar patterns: middleware, Git hooks, CI gates
 - For designers: think of hooks as automated design-review checkpoints — accessibility checks, component validation
 - The key insight: hooks run inside the loop, so the agent can self-correct without human intervention
+
+BRIDGE: "Hooks are one type of guardrail. Let's zoom out to the full picture."
+-->
+
+---
+layout: default
+---
+
+# Guardrails
+
+<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
+
+<v-click>
+
+**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
+
+</v-click>
+<v-click>
+
+Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+
+</v-click>
+<v-click>
+
+Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
+
+</v-click>
+<v-click>
+
+Every repeated human intervention is a signal that the harness is incomplete.
+
+</v-click>
+
+<!--
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+
+KEY POINTS:
+- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
+- Guardrails convert stochastic generation into controlled iteration
+- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
+- Hooks (just introduced) are another: shell scripts at lifecycle points
+- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
+- Every repeated human intervention signals harness incompleteness
+
+DELIVERY:
+- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
+- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
+- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
 
 BRIDGE: "With guardrails in place, you can safely narrow responsibilities and compose agents together."
 -->
