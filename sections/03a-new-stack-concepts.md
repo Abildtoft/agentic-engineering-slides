@@ -81,6 +81,7 @@ KEY POINTS:
 - Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
 - The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
 - Finite context window means you can't dump everything in — you must curate the discovery journey
+- Trivedy calls this "Context Rot": models become worse at reasoning as their context fills up. "Harnesses today are largely delivery mechanisms for good context engineering."
 - Concrete architecture example from Boris: simple model-driven `glob` + `grep` beat more complex RAG approaches for codebase retrieval
 - Context engineering is applied onboarding design for agents
 - AGENTS.md/CLAUDE.md is the highest-leverage first step for most teams

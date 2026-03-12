@@ -506,9 +506,11 @@ KEY POINTS:
 - Treat each specialized agent as a testable, versioned component
 - Composition is orchestrating many narrow agents under one control loop
 - Coordination primitives matter more than "chatting" between agents
+- Trivedy's agent architecture: Model at center, surrounded by Context Injection (prompts, memory, skills) → Action (bash, tools, MCPs) → Observe & Verify (screenshots, tests, logs) → Persist (filesystem, git) → back to Model. Plus Control (compaction, orchestration, ralph loops). This is the full loop.
 
 SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
 SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 
 BRIDGE: "Markdown, skills, MCP, guardrails, composition. All of this — the whole system around the model — has a name."
 -->
@@ -545,12 +547,20 @@ Every time an agent fails, you don't just fix the output, you take it as a signa
 <!--
 SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
+SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 
 KEY POINTS:
 - Name the discipline that ties all prior concepts together
 - Treat each v-click as a recap ladder from parts to operating model
 - Emphasize failure-as-signal: improve the harness, not just the output
 - This is the conceptual peak before the live demo
+- Trivedy formal definition: "Agent = Model + Harness. A harness is every piece of code, configuration, and execution logic that isn't the model itself."
+- Terminal Bench evidence: LangChain improved from Top 30 to Top 5 on Terminal Bench 2.0 by only changing the harness — model stayed the same. The harness is where the leverage is.
+- Model-Harness Training Loop: useful primitives get discovered → added to the harness → used to train the next model → model improves at using the harness → cycle repeats. This co-evolution is why harness engineering remains valuable even as models improve.
+
+DELIVERY:
+- Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
+- Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 
 BRIDGE: "Now let's watch this operating model in motion."
 -->
