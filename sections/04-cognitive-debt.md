@@ -168,6 +168,7 @@ DELIVERY:
 - Let the number land before the v-click
 - The audience will feel the tension: the tools are powerful, but the quality gap is measurable
 - Optional verbal: "Karpathy coined 'vibe coding' for weekend hacking. Collins made it Word of the Year. Merriam-Webster's word of the year? 'Slop.' That tells you something about where the conversation went."
+- Optional verbal (thdxr): "The worst part? One practitioner put it this way: 'I don't think we're even trading all this off to move faster. I think we're moving at a normal pace.' The debt accumulates without the speed payoff."
 
 BRIDGE: "And in high-stakes domains, that gap becomes dangerous."
 -->
@@ -282,19 +283,29 @@ layout: default
 **The prompting loop can become dependency: convenience now, weaker judgment later.**
 
 </v-click>
+<v-click>
+
+"We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've **eroded our ability to delay gratification.**"
+
+</v-click>
 
 <!--
 
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 
+SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
+SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
+
 KEY POINTS:
 - Make clear why the spiral is seductive: every step feels locally rational
 - The risk is gradual substitution of construction with passive review
 - Dependency forms by accumulation, not one dramatic event
+- thdxr observation: "We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've eroded our ability to delay gratification"
 
 DELIVERY:
 - Walk through the spiral slowly
 - Ask the room to notice whether they recognize this pattern — no hands needed, just internal recognition
+- Optional verbal: "One team lead described it as eroded delayed gratification — the agents keep pulling you toward the next feature instead of cleaning up what you have."
 
 BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
 -->

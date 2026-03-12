@@ -131,11 +131,17 @@ Product Managers and Product Owners kill features. Designers simplify flows. Eng
 
 <!--
 SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
+SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
 
 KEY POINTS:
 - Addition gets cheaper; subtraction does not
 - This works across functions: product scope, UX complexity, technical surface area
 - The point is disciplined coherence, not maximal output
+- thdxr: "It's pretty easy to prompt a new feature into existence so naturally the bar for what ships drops." and "There's 100x more value in fixing what we have and improving our process of how we build things"
+- thdxr: "When iterating on a feature sometimes the original design is off... our willingness to refactor the original design drops. We should fight this — leave the code better than you found it."
+
+DELIVERY:
+- Optional verbal: "One practitioner nailed this: 'It's easy to prompt a new feature into existence, so the bar for what ships drops.' That's the accumulation trap. The bar should stay high."
 
 BRIDGE: "Addition gets cheaper every quarter. Subtraction never does."
 -->
