@@ -34,14 +34,14 @@ layout: two-cols-header
 
 - Problem formulation and judgment
 - Taste and the courage to subtract
-- Systems thinking and coordination
+- Systems thinking and end-to-end ownership
 - Mentorship and knowledge transfer
 
 </v-click>
 
 <v-click>
 
-**If your value proposition is primarily on the left, you have work to do. If it's primarily on the right, the tools just made you more powerful.**
+**If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful.**
 
 </v-click>
 
@@ -52,14 +52,16 @@ SOURCE: Graham (taste)
 SOURCE: "On Subtraction" (conviction)
 SOURCE: Pirouette B (coordination)
 SOURCE: Developer Pipeline (mentorship)
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 
 KEY POINTS:
 - Synthesis of the full argument — both columns should feel honest, not dismissive of the left, not utopian about the right
 - Left column isn't "worthless" — it's "less scarce"; these skills still matter, they're just no longer the bottleneck
 - Right column isn't new — skills the best engineers, product people, and designers always had; now the entire job, not a complement to implementation work
+- Sergio's contribution here is the hiring lens: the question becomes less "PM or engineer?" and more "who can own this end to end?"
 
 DELIVERY:
-- Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If it's primarily on the right, the tools just made you more powerful."
+- Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful."
 
 BRIDGE: "One final lens: where bottlenecks move next."
 -->
@@ -110,7 +112,7 @@ layout: two-cols-header
 
 **If you're more senior**
 
-- Your value is multiplying the team, not writing code
+- Define value and multiply the team, not just write code
 - Lean on automation for the grunt work
 - Create environments where juniors learn to reason, not just review AI output
 - Invest in mentorship — all-senior teams do not scale tacit knowledge
@@ -120,12 +122,14 @@ layout: two-cols-header
 <!--
 
 SOURCE: "The Next Two Years of Software Engineering" (sources/next-two-years-of-software-engineering.md)
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 
 KEY POINTS:
 - Split the room intentionally: early-career and senior responsibilities differ
 - Juniors: leverage AI, but enforce explainability as a hard rule
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
 - Shared conclusion: human value is increasingly multiplicative
+- Add the career pressure explicitly in delivery: if you only execute tickets, your leverage compresses; if you define value and ship it, it expands
 
 BRIDGE: "And all of that points to the same conclusion."
 -->

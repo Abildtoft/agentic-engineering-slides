@@ -75,7 +75,7 @@ layout: default
 
 <v-click>
 
-**Shape a vague feature request** into a spec an agent can execute
+**Frame the problem and define the MVP** before the agent writes a line of code
 
 </v-click>
 <v-click>
@@ -95,13 +95,16 @@ layout: default
 </v-click>
 <v-click>
 
-The work hasn't changed. The tools have.
+The work hasn't changed. The boundaries have.
 
 </v-click>
 
 <!--
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+
 KEY POINTS:
 - Ground the abstract capability in the operating model the audience now understands
+- This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
 - Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
 
 BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
