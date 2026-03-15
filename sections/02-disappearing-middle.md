@@ -190,18 +190,58 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 </v-click>
 
 <!--
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+
 KEY POINTS:
 - Make one pass per role and keep each description concrete
 - The throughline is identical across roles: reduce ambiguity, raise judgment quality
 - Important distinction: convergence of capabilities is not collapse of professions
+- Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
 
 DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
+- Optional verbal clarification: "I don't mean every company will standardize on that title. I mean this is the overlap zone the market is rewarding."
 - When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
 - Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
 
 BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
+-->
+
+---
+
+# The Product Engineer
+
+<v-click>
+
+Sits at the overlap of **design judgment, product thinking, and engineering execution.**
+
+</v-click>
+<v-click>
+
+Frames the problem, defines the MVP, shapes the system, ships the code, and measures the outcome.
+
+</v-click>
+<v-click>
+
+**Less handoff. Faster learning. More end-to-end ownership.**
+
+</v-click>
+
+<!--
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+
+KEY POINTS:
+- This slide names the convergence point explicitly after the previous slide establishes that the three disciplines are moving toward the same core work
+- Keep the framing concrete: this is about overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
+- The three lines should map clearly to the audience's mental model: design judgment, product thinking, engineering execution
+
+DELIVERY:
+- Open with: "Some teams are starting to give that overlap a name."
+- Emphasize the sequence: frame, define, shape, ship, measure
+- Land the final line as an operating-model shift, not a job-title fad
+
+BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier to understand."
 -->
 
 ---
