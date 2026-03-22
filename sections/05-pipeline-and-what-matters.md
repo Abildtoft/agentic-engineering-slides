@@ -58,10 +58,12 @@ Focus. Finishing. Judgment. Knowing what to build and why. **These don't scale w
 <!--
 
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
+SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 
 KEY POINTS:
 - This is the bridge from cognitive debt to the close
 - Integration does not scale with generation speed; it scales with focus and understanding
+- Doshi's logic chain reinforces this: AI tools commoditize → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
 - The ending now needs to answer what survives and how teams adapt
 
 BRIDGE: "Let me name what that coherence looks like in practice."
@@ -101,10 +103,12 @@ The work hasn't changed. The boundaries have.
 
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 
 KEY POINTS:
 - Ground the abstract capability in the operating model the audience now understands
 - This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
+- Doshi's 5-skill decomposition (empathy, simulation, strategic thinking, taste, creative execution) maps directly to these bullet points — use as verbal framework if audience asks "how do you build judgment?"
 - Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
 
 BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
