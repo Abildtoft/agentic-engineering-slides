@@ -39,12 +39,14 @@ This is where juniors learn. This is where craft gets built.
 
 <!--
 SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 
 KEY POINTS:
 - Define "the middle" concretely: translation, implementation, integration, and coordination work
 - Clarify that the middle is compressing, not disappearing
 - Seed the junior pipeline thread early — this pays off in Section 6's career advice
 - Reframe seniority: less about throughput in the middle, more about intent and judgment
+- Optional verbal: Malte Ubl (CTO, Vercel): "The cost of software production is trending towards zero" — sharp one-liner to land the compression claim
 
 DELIVERY:
 - Start with the historical baseline, then introduce compression
@@ -159,10 +161,13 @@ The walls between design, product, and engineering were built from implementatio
 </v-click>
 
 <!--
+SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
+
 KEY POINTS:
 - Synthesis slide: role walls were partly a response to implementation friction
 - As friction drops, collaboration surfaces increase and handoff surfaces shrink
 - Distinct disciplines remain, but their operating model converges around shared judgment
+- Ayres provides market evidence: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end — the walls are compressing because the market is pricing them out
 
 DELIVERY:
 - Let the statement land — this should feel like a reveal, not an argument
@@ -231,6 +236,7 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
+SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
 
 KEY POINTS:
 - Make one pass per role and keep each description concrete
@@ -238,10 +244,13 @@ KEY POINTS:
 - Important distinction: convergence of capabilities is not collapse of professions
 - Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
 - PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too
+- Ayres calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
+- Optional verbal for the Design reveal: "Preston Attebery nailed this: 'Once everyone can make an app, we will remember that the hard part about apps isn't making the app.'"
 
 DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
+- After "turning ambiguity into clarity" lands, optional verbal: "It's amazing how much productive AI makes you if you're able to ask the right questions. That's the clarity we're talking about."
 - Optional verbal clarification: "I don't mean every company will standardize on that title. I mean this is the overlap zone the market is rewarding."
 - When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
 - Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
@@ -310,10 +319,12 @@ The implementation middle is compressing. The constraint is moving to **clarity,
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 
 KEY POINTS:
 - This gives the audience a durable mental model to carry through the rest of the talk
 - The cascade pattern explains WHY clarity becomes the bottleneck — it's not aspirational, it's mechanical
+- Collina's three-tier framework is the cascade applied per market segment: the constraint lands differently in tech companies (platform engineering), enterprises (fractional expertise), and mid-market (business understanding)
 - We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
 
 DELIVERY:

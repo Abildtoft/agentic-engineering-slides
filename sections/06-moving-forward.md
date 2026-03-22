@@ -8,6 +8,26 @@ transition: section-shift
 What survives when the noise fades
 
 ---
+layout: statement
+---
+
+# Execution is increasingly abundant. Strategic, hybrid execution will remain rare.
+
+<!--
+SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
+
+KEY POINTS:
+- Reformulation of Ayres's core finding: the market is bifurcating between abundant execution capacity and scarce strategic judgment
+- This is the thesis the "What Survives" slide unpacks into two columns
+- Applies equally to engineering, product, and design
+
+DELIVERY:
+- Let this land before moving to the breakdown. One sentence, no elaboration.
+
+BRIDGE: "Let me make that concrete."
+-->
+
+---
 layout: two-cols-header
 ---
 
@@ -54,11 +74,14 @@ SOURCE: Pirouette B (coordination)
 SOURCE: Developer Pipeline (mentorship)
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Kellogg, "Why I'm Not Worried About Running Out of Work" (kellblog.com, March 2026)
+SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 
 KEY POINTS:
 - Synthesis of the full argument — both columns should feel honest, not dismissive of the left, not utopian about the right
 - Left column isn't "worthless" — it's "less scarce"; these skills still matter, they're just no longer the bottleneck
 - Right column isn't new — skills the best engineers, product people, and designers always had; now the entire job, not a complement to implementation work
+- Doshi reinforces the right column: his 5 product sense skills (empathy, simulation, strategic thinking, taste, creative execution) are exactly the capabilities that don't commoditize with AI tooling
+- Ayres on design: "People are finally starting to realize how few truly great designers there are, and how disproportionately valuable they are" — the same bifurcation (execution at risk, strategic judgment more valuable) plays out across all three disciplines
 - Sergio's contribution here is the hiring lens: the question becomes less "PM or engineer?" and more "who can own this end to end?"
 - Kellogg's point reinforces the right column: knowledge workers have transferable skills (writing, analysis, design, judgment) that make "sideways moves" into adjacent roles natural — unlike manufacturing displacement where retraining was a leap
 
@@ -182,11 +205,14 @@ layout: two-cols-header
 SOURCE: "The Next Two Years of Software Engineering" (sources/next-two-years-of-software-engineering.md)
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 
 KEY POINTS:
 - Split the room intentionally: early-career and senior responsibilities differ
 - Juniors: leverage AI, but enforce explainability as a hard rule
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
+- Collina adds context: where you work changes what the shift means — Tier 1 (tech companies) rewards platform engineering and code review; Tier 2 (enterprises) shifts consulting from body shopping to "fractional senior expertise"; Tier 3 (mid-market) opens a new "software plumber" role
+- Collina on seniors: "guardrails over gates" — platform engineering becomes the safety mechanism for faster AI-assisted delivery; mentorship through review, not implementation tickets
 - Shared conclusion: human value is increasingly multiplicative
 - Add the career pressure explicitly in delivery: if you only execute tickets, your leverage compresses; if you define value and ship it, it expands
 - Willison: "If you've always stuck to two programming languages because of overhead, go and learn a third right now — and don't learn it, just start writing code in it." He shipped three Go projects without being fluent. The overhead of learning new languages collapses with agentic tools.
