@@ -53,12 +53,14 @@ SOURCE: "On Subtraction" (conviction)
 SOURCE: Pirouette B (coordination)
 SOURCE: Developer Pipeline (mentorship)
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: Kellogg, "Why I'm Not Worried About Running Out of Work" (kellblog.com, March 2026)
 
 KEY POINTS:
 - Synthesis of the full argument — both columns should feel honest, not dismissive of the left, not utopian about the right
 - Left column isn't "worthless" — it's "less scarce"; these skills still matter, they're just no longer the bottleneck
 - Right column isn't new — skills the best engineers, product people, and designers always had; now the entire job, not a complement to implementation work
 - Sergio's contribution here is the hiring lens: the question becomes less "PM or engineer?" and more "who can own this end to end?"
+- Kellogg's point reinforces the right column: knowledge workers have transferable skills (writing, analysis, design, judgment) that make "sideways moves" into adjacent roles natural — unlike manufacturing displacement where retraining was a leap
 
 DELIVERY:
 - Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful."
