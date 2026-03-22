@@ -58,24 +58,27 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 # The Translation Layer Is Compressing
 
-<SlideImage src="/translation-layer-compression.png" alt="Translation layer compression diagram" />
+<SlideImage src="/pm-playbook-ai-exponential.jpg" alt="Before AI the PM workflow is a waterfall; with AI product, design, and engineering overlap" />
 
 <v-click>
 
-**"The spec is becoming the product."**
+**What used to be a handoff becomes an overlap problem.**
 
 </v-click>
 
 <!--
-SOURCE: Shubham Saboo on Product Managers and Product Owners in the Age of Agents (x.com/Saboo_Shubham_/status/2008742211194913117)
+SOURCE: George from prodmgmt.world (@nurijanian), "how Anthopic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
+SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
 
 KEY POINTS:
-- Apply the same compression logic to product work
-- Translation-heavy work shrinks; intent quality becomes the leverage point
-- This creates both opportunity and pressure for Product Managers, Product Owners, and designers
+- Apply the same compression logic to product work with a cleaner operating-model visual
+- What used to be a product-to-design-to-engineering waterfall increasingly becomes a shared overlap zone
+- Translation-heavy work shrinks; process design, decision rights, and coordination matter more
+- This creates both opportunity and pressure for Product Managers, Product Owners, designers, and engineers
 
 DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
+- Call out George's line verbally: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
 - Keep tone candid, not defensive
 
 BRIDGE: "If execution is getting commoditized, what stays scarce?"
