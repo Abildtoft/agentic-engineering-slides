@@ -92,6 +92,61 @@ BRIDGE: "Which brings us to what this looks like for you, concretely."
 layout: two-cols-header
 ---
 
+# What The Shift Rewards
+
+::left::
+
+<v-click>
+
+**Engineer behavior**
+
+- Autonomous decision-making
+- Product ownership
+- AI-native workflows
+
+</v-click>
+
+::right::
+
+<v-click>
+
+**Team design**
+
+- Small, self-directed teams
+- Less micromanagement
+- Constant experimentation
+
+</v-click>
+
+<v-click>
+
+**This is not a tooling upgrade. It's a different operating model.**
+
+</v-click>
+
+<!--
+
+SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+
+KEY POINTS:
+- Move from abstract "valuable skills" to the concrete operating model now emerging
+- Savkin's thread is useful because it spans both individual expectations and org design
+- The individual shift: engineers are expected to make decisions, own outcomes, and stay current on agentic workflows
+- The organizational shift: smaller teams, less micromanagement, faster experimentation loops
+- This should feel like a practical translation of the whole deck, not a new thesis
+
+DELIVERY:
+- Land the last line hard: this is not just better tooling inside the old org chart
+- Optional verbal addition: "Some orgs are already here. Others are years behind. That's why the industry feels so uneven right now."
+
+BRIDGE: "And those expectations land differently depending on where you are in your career."
+-->
+
+---
+layout: two-cols-header
+---
+
 # The Next Years
 
 ::left::
