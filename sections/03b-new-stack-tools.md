@@ -488,10 +488,18 @@ Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries**
 Every repeated human intervention is a signal that the harness is incomplete.
 
 </v-click>
+<v-click>
+
+> "Tests are free now. They're effectively free." — **Simon Willison**
+
+Start every agent session with how to run the tests. Five tokens — "red-green TDD" — and reliability jumps.
+
+</v-click>
 
 <!--
 SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
 SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
@@ -500,11 +508,13 @@ KEY POINTS:
 - Hooks (just introduced) are another: shell scripts at lifecycle points
 - For designers: visual regression tests, accessibility checks, component snapshots serve the same role
 - Every repeated human intervention signals harness incompleteness
+- Willison: TDD becomes obvious when agents bear the execution cost. "Tests are no longer even remotely optional." Every coding session starts with "here's how to run the tests." The prompt "red-green TDD" is only five tokens but dramatically improves agent reliability.
 
 DELIVERY:
 - "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
 - Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
 - Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
+- Willison verbal option: "Simon Willison says he starts every single coding session by telling the agent how to run the tests. Five tokens — 'red-green TDD' — and the reliability jumps. Tests are free when agents write and run them."
 
 BRIDGE: "With guardrails in place, you can safely narrow responsibilities and compose agents together."
 -->
