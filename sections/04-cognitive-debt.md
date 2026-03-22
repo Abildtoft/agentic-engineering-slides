@@ -311,6 +311,70 @@ BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasional
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# Each prompt is a pull on a slot machine.
+
+<v-click>
+
+Partial satisfaction opens the next question. Researchers call them **epistemic rabbit holes** — never quite enough to stop, always enough to continue.
+
+</v-click>
+
+<!--
+
+SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
+SOURCE: M. Karen Shen (UBC), research on compulsive chatbot use — "AI genie phenomenon" and "epistemic rabbit holes"
+SOURCE: B.F. Skinner, variable-ratio reinforcement schedules (1950s)
+
+KEY POINTS:
+- Name the mechanism behind the confidence spiral: variable-ratio reinforcement — the same schedule that makes slot machines addictive
+- Shen's framing: "each AI response partially satisfies but opens a new question"
+- Parrott's anecdote: started configuring an AI assistant on a Friday afternoon for "a few hours, tops" — 12 hours later she had written essays, rebuilt her website, and added app features, then launched out of bed at 1 a.m. to keep going
+- The insight is structural, not moral: the tools are designed to produce partial satisfaction
+
+DELIVERY:
+- Let the slot machine metaphor land — the room will recognize the pattern in themselves
+- Don't moralize; the point is that the mechanism is predictable and therefore manageable
+
+BRIDGE: "And what keeps people sitting at the machine in the first place?"
+-->
+
+---
+layout: fact
+---
+
+# 54% of employees feel they're falling behind peers in AI use
+
+Ernst & Young, 2025
+
+<v-click>
+
+85% are learning on their own time. The fear sends you to the laptop. The slot machine keeps you pulling.
+
+</v-click>
+
+<!--
+
+SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
+SOURCE: Ernst & Young 2025 employee survey
+
+KEY POINTS:
+- FOBO (Fear of Becoming Obsolete) is the ignition; the dopamine loop is the fuel
+- 83% report self-taught AI knowledge — organizations aren't providing the structure
+- The fear → tinkering → wins → expanded obligations cycle compounds cognitive debt from multiple directions
+- Organizations may not intervene because "workers voluntarily take on more and produce faster without being asked"
+
+DELIVERY:
+- Let the 54% number sit before the v-click
+- The final line should land as a one-two punch: fear + dopamine = compulsive use
+
+BRIDGE: "Fear and dopamine. That combination doesn't just create one problem — it creates several at once."
+-->
+
+---
 layout: two-cols-header
 ---
 
