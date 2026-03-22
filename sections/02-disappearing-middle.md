@@ -78,7 +78,46 @@ DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
 - Keep tone candid, not defensive
 
-BRIDGE: "If execution is getting commoditized, what stays scarce?"
+BRIDGE: "And for PMs, that compression shows up as a much shorter path from idea to first draft."
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"A PM with a good idea can now get to a first draft faster than ever.</div>
+  <v-click>
+    <div class="quote-progressive-line">They can visualize concepts, test directions, and move quickly."</div>
+  </v-click>
+</div>
+
+<div v-after class="mt-6 text-xl font-normal not-italic">
+  Duolingo Chief Product Officer, via Aakash Gupta
+</div>
+
+<v-click>
+
+## The distance between idea and artifact has shrunk.
+
+</v-click>
+
+<!--
+SOURCE: Aakash Gupta, quoting Duolingo's Chief Product Officer (x.com/aakashgupta/status/2034356648764948686, March 18, 2026)
+
+KEY POINTS:
+- This is the product-side lived experience of the same compression
+- PM leverage moves closer to first-draft creation, experimentation, and direction-setting
+- Faster artifact creation does not reduce the need for product judgment; it increases the premium on it
+- Strong verbal line: "The role becomes more independent and more creative because the distance from idea to artifact collapses"
+
+DELIVERY:
+- Let the first sentence land before revealing the second
+- Land the final line as the synthesis; that is the transferable idea
+- Optional verbal line: "If you can show instead of describe, the role changes."
+
+BRIDGE: "Once the idea-to-artifact gap collapses, precision of intent becomes the leverage point."
 -->
 
 ---
@@ -191,12 +230,14 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 
 KEY POINTS:
 - Make one pass per role and keep each description concrete
 - The throughline is identical across roles: reduce ambiguity, raise judgment quality
 - Important distinction: convergence of capabilities is not collapse of professions
 - Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
+- PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too
 
 DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
@@ -230,11 +271,13 @@ Frames the problem, defines the MVP, shapes the system, ships the code, and meas
 
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 
 KEY POINTS:
 - This slide names the convergence point explicitly after the previous slide establishes that the three disciplines are moving toward the same core work
 - Keep the framing concrete: this is about overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
 - The three lines should map clearly to the audience's mental model: design judgment, product thinking, engineering execution
+- PostHog provides the practical reason this overlap matters: deciding what to build is becoming more constrained than building it
 
 DELIVERY:
 - Open with: "Some teams are starting to give that overlap a name."
