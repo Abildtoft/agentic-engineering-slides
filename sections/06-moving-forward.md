@@ -103,6 +103,7 @@ layout: two-cols-header
 - Use AI to punch above your weight
 - Understand and explain every line, prompt, and decision you ship
 - Seek contexts where you build judgment, not just supervise output
+- Expand your range — pick up a new language by building in it, not studying it
 
 </v-click>
 
@@ -123,6 +124,7 @@ layout: two-cols-header
 
 SOURCE: "The Next Two Years of Software Engineering" (sources/next-two-years-of-software-engineering.md)
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
 - Split the room intentionally: early-career and senior responsibilities differ
@@ -130,6 +132,10 @@ KEY POINTS:
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
 - Shared conclusion: human value is increasingly multiplicative
 - Add the career pressure explicitly in delivery: if you only execute tickets, your leverage compresses; if you define value and ship it, it expands
+- Willison: "If you've always stuck to two programming languages because of overhead, go and learn a third right now — and don't learn it, just start writing code in it." He shipped three Go projects without being fluent. The overhead of learning new languages collapses with agentic tools.
+
+DELIVERY:
+- On the new bullet: "Willison put it bluntly: 'Don't learn a new language — just start writing code in it.' He shipped three Go projects without studying Go. The language overhead that used to keep you in your lane? It's gone."
 
 BRIDGE: "And all of that points to the same conclusion."
 -->

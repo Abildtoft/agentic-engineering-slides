@@ -370,16 +370,25 @@ layout: statement
 
 # This is a choice, not a fate.
 
+<v-click>
+
+> "Having poor quality code from an agent is a choice that you make." — **Simon Willison**
+
+</v-click>
+
 <!--
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
 - Pivot from the debt patterns to agency — the audience needs to exhale
+- Willison's quote sharpens the pivot: poor output is a harness failure, not a model limitation. Agents CAN produce quality code if you invest in the system around them.
 - Brief pause before the practical antidote checklist
 
 DELIVERY:
 - Short slide — hold for a few seconds, then advance
 - Tone shift: from warning to agency
 - Verbal bridge: "Simon Willison — one of the most experienced developers working with AI tools — said something honest: 'I no longer have a firm mental model of what my projects can do.' This isn't a junior problem. It's a structural one. Which means the antidote has to be structural too."
+- After the v-click quote: "The quality of what agents produce reflects the quality of the harness you built. Invest in the system, not just the prompt."
 -->
 
 ---
