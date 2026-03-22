@@ -461,6 +461,33 @@ BRIDGE: "Hooks are one type of guardrail. Let's zoom out to the full picture."
 -->
 
 ---
+layout: statement
+---
+
+# The best AI tooling adds deterministic gates around probabilistic agents.
+
+<v-click>
+
+Hooks, tests, schema validation, permission boundaries — **hard checkpoints that never hallucinate** wrapped around models that always might.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Name the pattern explicitly: deterministic gates + probabilistic agents
+- Hooks are one instance; tests, schema validation, permission scoping, linters are others
+- Connects forward to guardrails (bowling-lane metaphor) and backward to MCP contracts
+- Also connects to the Swiss-cheese model in Section 04
+
+DELIVERY:
+- Let the heading land for 2-3 seconds before clicking
+- Tone: conviction — naming something the audience already senses
+- Optional verbal: "Every reliable AI system I've seen follows this pattern. The model is creative and unpredictable. The system around it is rigid and unforgiving. That tension is the design."
+
+BRIDGE: "So how do you design a whole system around this principle? That's guardrails."
+-->
+
+---
 layout: default
 ---
 
