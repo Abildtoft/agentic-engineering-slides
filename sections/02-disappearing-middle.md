@@ -323,11 +323,8 @@ The implementation middle is compressing. The constraint is moving to **clarity,
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
-<<<<<<< HEAD
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
-=======
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
->>>>>>> 88f7f3c (docs(sources): add Decision Stack source and weave into presenter notes)
 
 KEY POINTS:
 - This gives the audience a durable mental model to carry through the rest of the talk
