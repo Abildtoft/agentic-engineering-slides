@@ -39,12 +39,14 @@ This is where juniors learn. This is where craft gets built.
 
 <!--
 SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 
 KEY POINTS:
 - Define "the middle" concretely: translation, implementation, integration, and coordination work
 - Clarify that the middle is compressing, not disappearing
 - Seed the junior pipeline thread early — this pays off in Section 6's career advice
 - Reframe seniority: less about throughput in the middle, more about intent and judgment
+- Optional verbal: Malte Ubl (CTO, Vercel): "The cost of software production is trending towards zero" — sharp one-liner to land the compression claim
 
 DELIVERY:
 - Start with the historical baseline, then introduce compression
@@ -58,27 +60,69 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 # The Translation Layer Is Compressing
 
-<SlideImage src="/translation-layer-compression.png" alt="Translation layer compression diagram" />
+<SlideImage src="/pm-playbook-ai-exponential.jpg" alt="Before AI the PM workflow is a waterfall; with AI product, design, and engineering overlap" />
 
 <v-click>
 
-**"The spec is becoming the product."**
+**What used to be a handoff becomes an overlap problem.**
 
 </v-click>
 
 <!--
-SOURCE: Shubham Saboo on Product Managers and Product Owners in the Age of Agents (x.com/Saboo_Shubham_/status/2008742211194913117)
+SOURCE: George from prodmgmt.world (@nurijanian), "how Anthopic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
+SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
 
 KEY POINTS:
-- Apply the same compression logic to product work
-- Translation-heavy work shrinks; intent quality becomes the leverage point
-- This creates both opportunity and pressure for Product Managers, Product Owners, and designers
+- Apply the same compression logic to product work with a cleaner operating-model visual
+- What used to be a product-to-design-to-engineering waterfall increasingly becomes a shared overlap zone
+- Translation-heavy work shrinks; process design, decision rights, and coordination matter more
+- This creates both opportunity and pressure for Product Managers, Product Owners, designers, and engineers
 
 DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
+- Call out George's line verbally: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
 - Keep tone candid, not defensive
 
-BRIDGE: "If execution is getting commoditized, what stays scarce?"
+BRIDGE: "And for PMs, that compression shows up as a much shorter path from idea to first draft."
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"A PM with a good idea can now get to a first draft faster than ever.</div>
+  <v-click>
+    <div class="quote-progressive-line">They can visualize concepts, test directions, and move quickly."</div>
+  </v-click>
+</div>
+
+<div v-after class="mt-6 text-xl font-normal not-italic">
+  Duolingo Chief Product Officer, via Aakash Gupta
+</div>
+
+<v-click>
+
+## The distance between idea and artifact has shrunk.
+
+</v-click>
+
+<!--
+SOURCE: Aakash Gupta, quoting Duolingo's Chief Product Officer (x.com/aakashgupta/status/2034356648764948686, March 18, 2026)
+
+KEY POINTS:
+- This is the product-side lived experience of the same compression
+- PM leverage moves closer to first-draft creation, experimentation, and direction-setting
+- Faster artifact creation does not reduce the need for product judgment; it increases the premium on it
+- Strong verbal line: "The role becomes more independent and more creative because the distance from idea to artifact collapses"
+
+DELIVERY:
+- Let the first sentence land before revealing the second
+- Land the final line as the synthesis; that is the transferable idea
+- Optional verbal line: "If you can show instead of describe, the role changes."
+
+BRIDGE: "Once the idea-to-artifact gap collapses, precision of intent becomes the leverage point."
 -->
 
 ---
@@ -120,10 +164,13 @@ The walls between design, product, and engineering were built from implementatio
 </v-click>
 
 <!--
+SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
+
 KEY POINTS:
 - Synthesis slide: role walls were partly a response to implementation friction
 - As friction drops, collaboration surfaces increase and handoff surfaces shrink
 - Distinct disciplines remain, but their operating model converges around shared judgment
+- Ayres provides market evidence: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end — the walls are compressing because the market is pricing them out
 
 DELIVERY:
 - Let the statement land — this should feel like a reveal, not an argument
@@ -191,19 +238,26 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
+SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
 
 KEY POINTS:
 - Make one pass per role and keep each description concrete
 - The throughline is identical across roles: reduce ambiguity, raise judgment quality
 - Important distinction: convergence of capabilities is not collapse of professions
 - Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
+- PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too
+- Ayres calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
+- Optional verbal for the Design reveal: "Preston Attebery nailed this: 'Once everyone can make an app, we will remember that the hard part about apps isn't making the app.'"
 
 DELIVERY:
 - Reveal each role one at a time, let the pattern emerge
 - Land the final line as the handoff into section 3's practical model
+- After "turning ambiguity into clarity" lands, optional verbal: "It's amazing how much productive AI makes you if you're able to ask the right questions. That's the clarity we're talking about."
 - Optional verbal clarification: "I don't mean every company will standardize on that title. I mean this is the overlap zone the market is rewarding."
 - When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
 - Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
+- Eriksson's radiology example is useful color here: as AI expands what's feasible, domain knowledge and strategy become more central, not less
 
 BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
 -->
@@ -230,11 +284,13 @@ Frames the problem, defines the MVP, shapes the system, ships the code, and meas
 
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 
 KEY POINTS:
 - This slide names the convergence point explicitly after the previous slide establishes that the three disciplines are moving toward the same core work
 - Keep the framing concrete: this is about overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
 - The three lines should map clearly to the audience's mental model: design judgment, product thinking, engineering execution
+- PostHog provides the practical reason this overlap matters: deciding what to build is becoming more constrained than building it
 
 DELIVERY:
 - Open with: "Some teams are starting to give that overlap a name."
@@ -267,15 +323,20 @@ The implementation middle is compressing. The constraint is moving to **clarity,
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - This gives the audience a durable mental model to carry through the rest of the talk
 - The cascade pattern explains WHY clarity becomes the bottleneck — it's not aspirational, it's mechanical
+- Collina's three-tier framework is the cascade applied per market segment: the constraint lands differently in tech companies (platform engineering), enterprises (fractional expertise), and mid-market (business understanding)
 - We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
+- The radiology case study is the modern proof of the same Jevons Paradox pattern: Geoffrey Hinton predicted AI would eliminate radiologists within five years. Instead, radiologist salaries rose 44% ($525K avg), Mayo Clinic doubled its staff, AI mammography detects 29% more cancers while reducing workload by 44%, and over 1,000 FDA-cleared AI radiology devices now exist. "AI didn't replace radiologists. It made imaging so much faster and cheaper that we started doing vastly more of it."
 
 DELIVERY:
 - The weaving/yarn/fibre sequence should feel like a story, not a list
 - Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
+- Optional verbal addition after the weaving story: "Same thing happened in radiology. Geoffrey Hinton predicted AI would replace radiologists in five years. Instead, salaries went up 44%, Mayo Clinic doubled its staff, and AI mammography is catching 29% more cancers. When costs collapse, demand explodes. The constraint moved upstream — to the humans interpreting the results."
 
 BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->

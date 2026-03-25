@@ -274,6 +274,88 @@ BRIDGE: "And the dangerous part is that those holes do not only show up in audit
 layout: default
 ---
 
+# Cognitive Surrender
+
+<v-click>
+
+Kahneman's System 1 (fast intuition) and System 2 (slow analysis). AI is becoming **System 3** — an external cognitive system that operates outside your brain.
+
+</v-click>
+<v-click>
+
+**Cognitive Surrender**: your brain stops questioning AI output and recodes it as your own conclusion. It doesn't feel outsourced — it feels self-generated.
+
+</v-click>
+<v-click>
+
+This is not laziness. It's a **cognitive architecture problem**.
+
+</v-click>
+
+<!--
+
+SOURCE: Steven D. Doshi & Gideon Neel, "Thinking — Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender" (Wharton School, University of Pennsylvania, 2026)
+SOURCE: Rohan Paul (x.com/rohanpaul_ai/status/2036134704999694835)
+
+KEY POINTS:
+- Distinguish from offloading: using a calculator, you know the tool did the work. With surrender, your brain recodes the AI's answer as YOUR judgment — you genuinely believe you thought it through
+- This names the specific hole in the Swiss-cheese model's "human review" layer
+- 3 preregistered studies, 1,372 participants, 9,593 trials — robust methodology
+- People deferred to AI on over 50% of questions
+- Time pressure didn't eliminate the effect. Incentives and feedback reduced it but didn't remove it.
+- People most resistant scored higher on fluid intelligence and need for cognition — this is structural, not about effort
+
+DELIVERY:
+- Let System 3 land before the v-click
+- The word "self-generated" is the key — pause on it
+- Verbal bridge: "This is the hole in the safety net we just described. Human review is supposed to catch AI mistakes. But what if the reviewer's brain has already accepted the answer?"
+
+BRIDGE: "And the data makes this hard to brush off."
+-->
+
+---
+layout: fact
+---
+
+# 79.8% followed AI — even when it was wrong
+
+Across 3 preregistered studies — 1,372 participants, 9,593 trials
+
+<v-click>
+
+Without AI: 45.8% accuracy. With incorrect AI: **31.5%** — worse than having no AI at all.
+
+</v-click>
+<v-click>
+
+AI boosted confidence by **11.7 percentage points**, even on wrong answers.
+
+</v-click>
+
+<!--
+
+SOURCE: Doshi & Neel, "Thinking — Fast, Slow, and Artificial" (Wharton, 2026)
+
+KEY POINTS:
+- When AI was correct, 92.7% followed it — that's expected
+- When AI was wrong, 79.8% still followed — that's the problem
+- Baseline accuracy without AI was 45.8%; with correct AI jumped to 71.0%; with incorrect AI dropped to 31.5% — access to wrong AI made people perform WORSE than no AI
+- Confidence increased 11.7 percentage points across the board, including wrong answers — people didn't just follow bad advice, they became more sure of it
+- Human review is supposed to be the safety net. This research shows the safety net has a hole: people don't just miss bad output, they become more confident in it.
+
+DELIVERY:
+- Let the headline number land
+- The 31.5% stat is the gut punch — being wrong WITH AI is worse than guessing without it
+- The confidence stat closes the trap: not only are you wrong more often, you're more sure about it
+- Optional verbal: "The 'just review the AI output' model is breaking down. Not because people are lazy — because cognition itself starts to defer to the machine."
+
+BRIDGE: "And the dangerous part is how this shows up in everyday working habits."
+-->
+
+---
+layout: default
+---
+
 # The Confidence Spiral
 
 <SlideImage src="/confidence-spiral.png" alt="The confidence spiral diagram" />
@@ -308,6 +390,70 @@ DELIVERY:
 - Optional verbal: "One team lead described it as eroded delayed gratification — the agents keep pulling you toward the next feature instead of cleaning up what you have."
 
 BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
+-->
+
+---
+layout: statement
+class: statement-wide
+---
+
+# Each prompt is a pull on a slot machine.
+
+<v-click>
+
+Partial satisfaction opens the next question. Researchers call them **epistemic rabbit holes** — never quite enough to stop, always enough to continue.
+
+</v-click>
+
+<!--
+
+SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
+SOURCE: M. Karen Shen (UBC), research on compulsive chatbot use — "AI genie phenomenon" and "epistemic rabbit holes"
+SOURCE: B.F. Skinner, variable-ratio reinforcement schedules (1950s)
+
+KEY POINTS:
+- Name the mechanism behind the confidence spiral: variable-ratio reinforcement — the same schedule that makes slot machines addictive
+- Shen's framing: "each AI response partially satisfies but opens a new question"
+- Parrott's anecdote: started configuring an AI assistant on a Friday afternoon for "a few hours, tops" — 12 hours later she had written essays, rebuilt her website, and added app features, then launched out of bed at 1 a.m. to keep going
+- The insight is structural, not moral: the tools are designed to produce partial satisfaction
+
+DELIVERY:
+- Let the slot machine metaphor land — the room will recognize the pattern in themselves
+- Don't moralize; the point is that the mechanism is predictable and therefore manageable
+
+BRIDGE: "And what keeps people sitting at the machine in the first place?"
+-->
+
+---
+layout: fact
+---
+
+# 54% of employees feel they're falling behind peers in AI use
+
+Ernst & Young, 2025
+
+<v-click>
+
+85% are learning on their own time. The fear sends you to the laptop. The slot machine keeps you pulling.
+
+</v-click>
+
+<!--
+
+SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
+SOURCE: Ernst & Young 2025 employee survey
+
+KEY POINTS:
+- FOBO (Fear of Becoming Obsolete) is the ignition; the dopamine loop is the fuel
+- 83% report self-taught AI knowledge — organizations aren't providing the structure
+- The fear → tinkering → wins → expanded obligations cycle compounds cognitive debt from multiple directions
+- Organizations may not intervene because "workers voluntarily take on more and produce faster without being asked"
+
+DELIVERY:
+- Let the 54% number sit before the v-click
+- The final line should land as a one-two punch: fear + dopamine = compulsive use
+
+BRIDGE: "Fear and dopamine. That combination doesn't just create one problem — it creates several at once."
 -->
 
 ---
@@ -370,16 +516,25 @@ layout: statement
 
 # This is a choice, not a fate.
 
+<v-click>
+
+> "Having poor quality code from an agent is a choice that you make." — **Simon Willison**
+
+</v-click>
+
 <!--
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
 - Pivot from the debt patterns to agency — the audience needs to exhale
+- Willison's quote sharpens the pivot: poor output is a harness failure, not a model limitation. Agents CAN produce quality code if you invest in the system around them.
 - Brief pause before the practical antidote checklist
 
 DELIVERY:
 - Short slide — hold for a few seconds, then advance
 - Tone shift: from warning to agency
 - Verbal bridge: "Simon Willison — one of the most experienced developers working with AI tools — said something honest: 'I no longer have a firm mental model of what my projects can do.' This isn't a junior problem. It's a structural one. Which means the antidote has to be structural too."
+- After the v-click quote: "The quality of what agents produce reflects the quality of the harness you built. Invest in the system, not just the prompt."
 -->
 
 ---
@@ -406,14 +561,17 @@ DELIVERY:
 
 SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - Close the section with a practical control model: intent, review, ownership
 - Stress accountability: at least one human must understand each shipped change
 - Link back to section 3: harness discipline is the preventive mechanism
+- Eriksson's Intercom/Fin case study is a positive counterexample of getting this right: they built Fin (resolving 1M+ weekly tickets), shifted to outcome-based pricing ($0.99/resolution), and reached $100M+ ARR in under a year. The key: they aligned incentives so the AI had to actually work — not just ship fast. Outcome-based pricing is a structural antidote to cognitive debt because it forces you to own the quality of AI output, not just its volume.
 
 DELIVERY:
 - Land the three-part model cleanly before introducing operating checks
+- Optional verbal after "the output — shipped, understood, owned": "Intercom did something smart here. When they built Fin — their AI support agent — they didn't just bolt it on. They shifted to outcome-based pricing: 99 cents per resolved ticket. That forces you to own quality, not volume. If the AI doesn't actually work, you don't get paid. That's the kind of structural incentive that prevents cognitive debt from compounding."
 
 BRIDGE: "And for non-trivial work, that operating model needs explicit checks."
 -->
