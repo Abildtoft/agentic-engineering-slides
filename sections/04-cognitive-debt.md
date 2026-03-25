@@ -274,6 +274,88 @@ BRIDGE: "And the dangerous part is that those holes do not only show up in audit
 layout: default
 ---
 
+# Cognitive Surrender
+
+<v-click>
+
+Kahneman's System 1 (fast intuition) and System 2 (slow analysis). AI is becoming **System 3** — an external cognitive system that operates outside your brain.
+
+</v-click>
+<v-click>
+
+**Cognitive Surrender**: your brain stops questioning AI output and recodes it as your own conclusion. It doesn't feel outsourced — it feels self-generated.
+
+</v-click>
+<v-click>
+
+This is not laziness. It's a **cognitive architecture problem**.
+
+</v-click>
+
+<!--
+
+SOURCE: Steven D. Doshi & Gideon Neel, "Thinking — Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender" (Wharton School, University of Pennsylvania, 2026)
+SOURCE: Rohan Paul (x.com/rohanpaul_ai/status/2036134704999694835)
+
+KEY POINTS:
+- Distinguish from offloading: using a calculator, you know the tool did the work. With surrender, your brain recodes the AI's answer as YOUR judgment — you genuinely believe you thought it through
+- This names the specific hole in the Swiss-cheese model's "human review" layer
+- 3 preregistered studies, 1,372 participants, 9,593 trials — robust methodology
+- People deferred to AI on over 50% of questions
+- Time pressure didn't eliminate the effect. Incentives and feedback reduced it but didn't remove it.
+- People most resistant scored higher on fluid intelligence and need for cognition — this is structural, not about effort
+
+DELIVERY:
+- Let System 3 land before the v-click
+- The word "self-generated" is the key — pause on it
+- Verbal bridge: "This is the hole in the safety net we just described. Human review is supposed to catch AI mistakes. But what if the reviewer's brain has already accepted the answer?"
+
+BRIDGE: "And the data makes this hard to brush off."
+-->
+
+---
+layout: fact
+---
+
+# 79.8% followed AI — even when it was wrong
+
+Across 3 preregistered studies — 1,372 participants, 9,593 trials
+
+<v-click>
+
+Without AI: 45.8% accuracy. With incorrect AI: **31.5%** — worse than having no AI at all.
+
+</v-click>
+<v-click>
+
+AI boosted confidence by **11.7 percentage points**, even on wrong answers.
+
+</v-click>
+
+<!--
+
+SOURCE: Doshi & Neel, "Thinking — Fast, Slow, and Artificial" (Wharton, 2026)
+
+KEY POINTS:
+- When AI was correct, 92.7% followed it — that's expected
+- When AI was wrong, 79.8% still followed — that's the problem
+- Baseline accuracy without AI was 45.8%; with correct AI jumped to 71.0%; with incorrect AI dropped to 31.5% — access to wrong AI made people perform WORSE than no AI
+- Confidence increased 11.7 percentage points across the board, including wrong answers — people didn't just follow bad advice, they became more sure of it
+- Human review is supposed to be the safety net. This research shows the safety net has a hole: people don't just miss bad output, they become more confident in it.
+
+DELIVERY:
+- Let the headline number land
+- The 31.5% stat is the gut punch — being wrong WITH AI is worse than guessing without it
+- The confidence stat closes the trap: not only are you wrong more often, you're more sure about it
+- Optional verbal: "The 'just review the AI output' model is breaking down. Not because people are lazy — because cognition itself starts to defer to the machine."
+
+BRIDGE: "And the dangerous part is how this shows up in everyday working habits."
+-->
+
+---
+layout: default
+---
+
 # The Confidence Spiral
 
 <SlideImage src="/confidence-spiral.png" alt="The confidence spiral diagram" />
