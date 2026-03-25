@@ -479,14 +479,17 @@ DELIVERY:
 
 SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - Close the section with a practical control model: intent, review, ownership
 - Stress accountability: at least one human must understand each shipped change
 - Link back to section 3: harness discipline is the preventive mechanism
+- Eriksson's Intercom/Fin case study is a positive counterexample of getting this right: they built Fin (resolving 1M+ weekly tickets), shifted to outcome-based pricing ($0.99/resolution), and reached $100M+ ARR in under a year. The key: they aligned incentives so the AI had to actually work — not just ship fast. Outcome-based pricing is a structural antidote to cognitive debt because it forces you to own the quality of AI output, not just its volume.
 
 DELIVERY:
 - Land the three-part model cleanly before introducing operating checks
+- Optional verbal after "the output — shipped, understood, owned": "Intercom did something smart here. When they built Fin — their AI support agent — they didn't just bolt it on. They shifted to outcome-based pricing: 99 cents per resolved ticket. That forces you to own quality, not volume. If the AI doesn't actually work, you don't get paid. That's the kind of structural incentive that prevents cognitive debt from compounding."
 
 BRIDGE: "And for non-trivial work, that operating model needs explicit checks."
 -->

@@ -124,6 +124,7 @@ SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/202
 SOURCE: Google CEO Sundar Pichai, earnings call
 SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
 SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - Broaden from one metric to cross-industry signal
@@ -131,9 +132,11 @@ KEY POINTS:
 - Keep Spotify as the vivid story; treat others as corroboration
 - Frame this as workflow change, not just speed improvement
 - End with the implication: divergence between teams will widen
+- Eriksson provides a useful scale anchor: 84% of Earth's population (8.1B) have never used AI; only 0.3% have paid for AI; 0.04% have tried AI coding tools. The adoption numbers above are the bleeding edge — the rest of the world hasn't even started yet.
 
 DELIVERY:
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
+- Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
 
 BRIDGE: "And if you still think this is vendor hype, one metric shows how fast one of these tools scaled."
 -->

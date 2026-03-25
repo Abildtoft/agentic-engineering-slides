@@ -257,6 +257,7 @@ DELIVERY:
 - Optional verbal clarification: "I don't mean every company will standardize on that title. I mean this is the overlap zone the market is rewarding."
 - When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
 - Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
+- Eriksson's radiology example is useful color here: as AI expands what's feasible, domain knowledge and strategy become more central, not less
 
 BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
 -->
@@ -322,17 +323,23 @@ The implementation middle is compressing. The constraint is moving to **clarity,
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
+<<<<<<< HEAD
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+=======
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+>>>>>>> 88f7f3c (docs(sources): add Decision Stack source and weave into presenter notes)
 
 KEY POINTS:
 - This gives the audience a durable mental model to carry through the rest of the talk
 - The cascade pattern explains WHY clarity becomes the bottleneck — it's not aspirational, it's mechanical
 - Collina's three-tier framework is the cascade applied per market segment: the constraint lands differently in tech companies (platform engineering), enterprises (fractional expertise), and mid-market (business understanding)
 - We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
+- The radiology case study is the modern proof of the same Jevons Paradox pattern: Geoffrey Hinton predicted AI would eliminate radiologists within five years. Instead, radiologist salaries rose 44% ($525K avg), Mayo Clinic doubled its staff, AI mammography detects 29% more cancers while reducing workload by 44%, and over 1,000 FDA-cleared AI radiology devices now exist. "AI didn't replace radiologists. It made imaging so much faster and cheaper that we started doing vastly more of it."
 
 DELIVERY:
 - The weaving/yarn/fibre sequence should feel like a story, not a list
 - Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
+- Optional verbal addition after the weaving story: "Same thing happened in radiology. Geoffrey Hinton predicted AI would replace radiologists in five years. Instead, salaries went up 44%, Mayo Clinic doubled its staff, and AI mammography is catching 29% more cancers. When costs collapse, demand explodes. The constraint moved upstream — to the humans interpreting the results."
 
 BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->

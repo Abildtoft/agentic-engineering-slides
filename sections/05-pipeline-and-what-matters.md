@@ -126,12 +126,18 @@ The work hasn't changed. The boundaries have.
 <!--
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - Ground the abstract capability in the operating model the audience now understands
 - This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
 - Doshi's 5-skill decomposition (empathy, simulation, strategic thinking, taste, creative execution) maps directly to these bullet points — use as verbal framework if audience asks "how do you build judgment?"
 - Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
+- Eriksson's "playing at the wrong stack level" concept maps directly here: most companies add AI at the feature layer (Opportunities); winners rethink at the Strategy layer. The clarity merchant work IS strategy-layer work.
+- Eriksson: "What wasn't feasible before but now is? Product has always been good at managing feasibility risk. But that calculus has changed." — use this to reframe the first bullet about framing the problem
+
+DELIVERY:
+- Optional verbal when landing "Frame the problem and define the MVP": "Eriksson makes a useful distinction: most companies apply AI at the feature layer — bolt on a chatbot, speed up a workflow. The winners rethink at the strategy layer. That's what this list is. This is strategy-layer work."
 
 BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
 -->
