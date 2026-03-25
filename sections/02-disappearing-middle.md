@@ -267,15 +267,18 @@ The implementation middle is compressing. The constraint is moving to **clarity,
 <!--
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - This gives the audience a durable mental model to carry through the rest of the talk
 - The cascade pattern explains WHY clarity becomes the bottleneck — it's not aspirational, it's mechanical
 - We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
+- The radiology case study is the modern proof of the same Jevons Paradox pattern: Geoffrey Hinton predicted AI would eliminate radiologists within five years. Instead, radiologist salaries rose 44% ($525K avg), Mayo Clinic doubled its staff, AI mammography detects 29% more cancers while reducing workload by 44%, and over 1,000 FDA-cleared AI radiology devices now exist. "AI didn't replace radiologists. It made imaging so much faster and cheaper that we started doing vastly more of it."
 
 DELIVERY:
 - The weaving/yarn/fibre sequence should feel like a story, not a list
 - Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
+- Optional verbal addition after the weaving story: "Same thing happened in radiology. Geoffrey Hinton predicted AI would replace radiologists in five years. Instead, salaries went up 44%, Mayo Clinic doubled its staff, and AI mammography is catching 29% more cancers. When costs collapse, demand explodes. The constraint moved upstream — to the humans interpreting the results."
 
 BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->

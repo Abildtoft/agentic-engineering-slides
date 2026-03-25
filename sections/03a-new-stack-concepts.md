@@ -40,15 +40,18 @@ You're no longer producing the artifact step by step. You're designing a system 
 
 <!--
 SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
 - Core shift: from producing code directly to designing the production system around agents
 - Emphasize ownership: human accountability does not disappear
 - Frame "context + specs + verification" as the new unit of craft
+- Eriksson: "Speed without direction is just burning jet fuel on a runway... the bottleneck was never execution — it was always clarity." This directly reinforces the shift from producing artifacts to designing systems.
 
 DELIVERY:
 - Acknowledge the room: "Not every organization is there yet. Security reviews, compliance constraints, team skepticism — these are real. What I'll show you are the patterns that work when you can adopt them. Think of this as the target state, not the assumption."
 - This grounds the audience before diving into tooling specifics — especially important if the room includes people from regulated industries
+- Optional verbal after revealing the two disciplines: "Martin Eriksson put it well: 'Speed without direction is just burning jet fuel on a runway.' Context engineering is the direction. Specs are the runway markings."
 
 BRIDGE: "Let's look at each discipline."
 -->
