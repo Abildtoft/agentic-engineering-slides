@@ -222,7 +222,7 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 </v-click>
 <v-click>
 
-**Product** — from translating requirements to forming problem statements and owning "why"
+**Product** — from translating requirements to creating clarity, setting priorities, and aligning execution
 
 </v-click>
 <v-click>
@@ -248,6 +248,7 @@ KEY POINTS:
 - Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
 - PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too
 - Ayres calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
+- Product line translation: "A great PM creates clarity, sets priorities, and aligns the team to execute."
 - Optional verbal for the Design reveal: "Preston Attebery nailed this: 'Once everyone can make an app, we will remember that the hard part about apps isn't making the app.'"
 
 DELIVERY:
