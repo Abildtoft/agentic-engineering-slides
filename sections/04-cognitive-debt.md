@@ -130,9 +130,35 @@ SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/
 KEY POINTS:
 - Hinge statement for the section
 - Summarize the diagnosis before showing how it changes review and team behavior
+- Pairs with the next slide as a twin statement — let them feel intentionally linked
 
 DELIVERY:
 - Let this hang in the air
+- No verbal bridge — go straight into the twin statement
+-->
+
+---
+layout: statement
+---
+
+# You can outsource your thinking.
+
+<v-click>
+
+## …but you cannot outsource your understanding.
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Twin statement paired with "Velocity without understanding is not sustainable"
+- Names the boundary cognitive surrender hides: thinking can be delegated to AI; understanding cannot
+- "Understanding" is the irreducibly human work — the integration your brain does that becomes judgment
+
+DELIVERY:
+- Let the first line land alone — pause and let the audience feel the truth of it
+- The reveal is the punch — long pause before clicking
+- Do not elaborate; this is a hinge, not an explanation
 
 BRIDGE: "And this isn't just a feeling. The data backs it up."
 -->
