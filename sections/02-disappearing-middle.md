@@ -64,6 +64,11 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 <v-click>
 
+Issue tracking was built for a **handoff model**.
+
+</v-click>
+<v-click>
+
 **What used to be a handoff becomes an overlap problem.**
 
 </v-click>
@@ -71,17 +76,53 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 <!--
 SOURCE: George from prodmgmt.world (@nurijanian), "how Anthopic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
 SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
+SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
 
 KEY POINTS:
 - Apply the same compression logic to product work with a cleaner operating-model visual
+- Linear's phrasing sharpens the point: issue tracking was built for handoffs between roles
 - What used to be a product-to-design-to-engineering waterfall increasingly becomes a shared overlap zone
 - Translation-heavy work shrinks; process design, decision rights, and coordination matter more
 - This creates both opportunity and pressure for Product Managers, Product Owners, designers, and engineers
+- Use Linear here as a category signal, not neutral proof
 
 DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
 - Call out George's line verbally: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
 - Keep tone candid, not defensive
+
+BRIDGE: "And Linear's own numbers suggest that this is already changing inside the issue system itself."
+-->
+
+---
+layout: fact
+---
+
+<BigNumber
+  value="5x"
+  label="growth in agent-completed work across Linear workspaces over the prior 3 months"
+  sublabel="Agents also authored nearly 25% of new issues (company-reported, March 24, 2026)"
+/>
+
+<v-click>
+
+<p class="mt-8 text-xl">Agents are not just completing work. They are starting to shape the work entering the system.</p>
+
+</v-click>
+
+<!--
+SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
+
+KEY POINTS:
+- Company-reported metrics from Linear's March 24, 2026 launch page
+- Use them as ecosystem signal: one leading issue tracker now sees agents inside the issue system itself
+- Optional verbal detail: coding agents are installed in 75%+ of Linear enterprise workspaces
+- Important nuance: this is not independent market research; it is a directional signal from a category leader
+- The strategic implication matters more than the raw numbers: issue systems are shifting from backlog management toward context plus execution infrastructure
+
+DELIVERY:
+- Let "5x" land first
+- Then emphasize the stronger organizational signal: agents are not only closing work, they are helping define and shape the work entering the system
 
 BRIDGE: "And for PMs, that compression shows up as a much shorter path from idea to first draft."
 -->
