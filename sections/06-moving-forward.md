@@ -169,6 +169,40 @@ BRIDGE: "And those expectations land differently depending on where you are in y
 -->
 
 ---
+layout: statement
+---
+
+# In a period of compounding change, playing defense is its own risk.
+
+<v-click>
+
+Protect what works. Wait for clarity. It feels safe.
+
+</v-click>
+<v-click>
+
+It isn't. The opportunity is to **learn faster than the environment changes.**
+
+</v-click>
+
+<!--
+
+SOURCE: Alfred Lin, X post, March 27, 2026 (see sources/alfred-lin-play-offense.md)
+
+KEY POINTS:
+- This is the leadership translation of the whole deck: the real failure mode is not only wrong decisions, but strategic drift
+- "Playing offense" here does not mean reckless shipping; it means faster learning, better use of new tools, and willingness to rethink the business
+- Useful bridge from org design into individual responsibility: the posture of the company shapes the expectations placed on the people inside it
+- Keep the slide tight and declarative; do not read the whole post aloud
+
+DELIVERY:
+- Land "It feels safe" with a pause, then cut hard into "It isn't"
+- On the last line, stress "learn" rather than "faster"
+
+BRIDGE: "And that posture lands differently depending on where you are in your career."
+-->
+
+---
 layout: two-cols-header
 ---
 
