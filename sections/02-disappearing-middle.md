@@ -305,6 +305,32 @@ BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
 -->
 
 ---
+layout: default
+class: text-center
+---
+
+# When Roles Blur
+
+<div class="text-sm opacity-70 -mt-2 mb-6">When everything looks the same</div>
+
+<RolesBlurDiagram size="lg" />
+
+<!--
+SOURCE: Adapted in-house from a reference graphic shared by the speaker.
+
+KEY POINTS:
+- Visual capstone for the "Three job titles, one job" argument that just landed.
+- Left panel: the old assumption — implementation complexity justified sequential handoffs.
+- Right panel: with implementation compressed, the disciplines overlap; what remains in the center is judgment.
+- The JUDGMENT label is the punchline — it's the thing that doesn't compress.
+
+DELIVERY:
+- Don't read the diagram aloud. Let the eye do the work.
+- Optional verbal: "The walls were never about the disciplines. They were about implementation cost. Take that cost out and the walls go with it."
+- Bridge to the next beat: "Which means the daily work — and the tools — change too."
+-->
+
+---
 
 # The Product Engineer
 
