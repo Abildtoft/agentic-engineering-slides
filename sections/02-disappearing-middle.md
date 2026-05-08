@@ -60,8 +60,6 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 # The Translation Layer Is Compressing
 
-<SlideImage src="/pm-playbook-ai-exponential.jpg" alt="Before AI the PM workflow is a waterfall; with AI product, design, and engineering overlap" />
-
 <v-click>
 
 Issue tracking was built for a **handoff model**.
