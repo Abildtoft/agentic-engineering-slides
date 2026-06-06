@@ -93,11 +93,13 @@ As the cost of producing software collapses, **demand expands.**
 
 <!--
 SOURCE: Dave Kellogg, "Why I'm Not Worried About Running Out of Work in the Age of AI" (kellblog.com, March 2026)
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
 - Jevons Paradox applied to knowledge work: efficiency expands demand, it doesn't shrink it
 - Software has already been the force multiplier behind business transformation; agentic coding changes the production constraint, not the appetite for software
 - The claim is not "everyone builds the same things faster" — it is "more software becomes economically worth building and managing"
+- Accounting is a useful historical parallel: adding machines, punch cards, mainframes, databases, ERP, cloud accounting, spreadsheets, and PCs did not eliminate accountants; cheaper accounting made more analysis, reporting, compliance, planning, and control economically worthwhile
 - Concrete example: after decades of BI tooling advancement, organizations still lack sufficient data-informed decision-making — the tools got better, the work expanded into questions that weren't even askable before
 - Management itself is proof of abundance: prioritization and focus exist BECAUSE the space of possible work is unlimited
 - This reframes the anxiety: the question is not "will there be work?" but "will we have the judgment to choose the RIGHT work?"
@@ -105,6 +107,8 @@ KEY POINTS:
 DELIVERY:
 - Let this land as the economic counterweight to displacement anxiety
 - Optional verbal: "An economist would call this Jevons Paradox. When coal engines got more efficient, we didn't use less coal — we used more. The same thing is happening with code. As software gets cheaper to produce, demand for software expands."
+- Optional accounting version: "Accounting has been automated for a century. The profession did not vanish; the surface area expanded because the ROI of measuring, reporting, and planning changed."
+- Keep the individual pain caveat honest: on average society gets richer, but the averages hide real displacement. People lose jobs, towns hollow out, and transitions hurt before the new roles are visible.
 
 BRIDGE: "So if the work expands, the question becomes: what kind of work? Let me name it."
 -->

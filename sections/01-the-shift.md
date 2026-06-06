@@ -21,6 +21,46 @@ BRIDGE: "Let me show you the pattern that changed."
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# We're in 1997 for AI
+
+<v-click>
+
+<p class="mt-8 text-3xl leading-relaxed opacity-80">
+As big as the internet or mobile.
+</p>
+
+</v-click>
+<v-click>
+
+<p class="mt-4 text-3xl leading-relaxed opacity-80">
+And only as big as the internet or mobile.
+</p>
+
+</v-click>
+
+<!--
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+
+KEY POINTS:
+- Calibrate the room before the stronger adoption claims
+- "1997" means the category is real, but the winners, use cases, business models, and operating models are still unsettled
+- Most things still do not work reliably; most of what will matter has not been built yet
+- There are frontier anecdotes like people buying clusters of Mac Minis to run local AI, while mainstream daily usage is still uneven
+- Use the teen adoption stat carefully if asked: Common Sense/Statista 2024 had daily U.S. teen use at 11% for chatbots and 20% for AI search; Pew's 2025 teen chatbot survey put daily use at 28%. The safe claim is "not universal daily habit yet," not a precise ceiling.
+- The companies that win may not exist yet; the important use cases may be invisible from here
+
+DELIVERY:
+- Make this feel like a correction to both hype and dismissal
+- Land "only" without minimizing the shift
+
+BRIDGE: "And inside that early, messy market, one part of the curve has already bent."
+-->
+
+---
 
 # The Inflection Point
 
