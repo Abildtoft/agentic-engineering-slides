@@ -188,11 +188,14 @@ It isn't. The opportunity is to **learn faster than the environment changes.**
 <!--
 
 SOURCE: Alfred Lin, X post, March 27, 2026 (see sources/alfred-lin-play-offense.md)
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
 - This is the leadership translation of the whole deck: the real failure mode is not only wrong decisions, but strategic drift
 - "Playing offense" here does not mean reckless shipping; it means faster learning, better use of new tools, and willingness to rethink the business
 - Useful bridge from org design into individual responsibility: the posture of the company shapes the expectations placed on the people inside it
+- For people worried about their jobs, denial is the highest-risk move. Immersion is not a guarantee, but it is the only useful posture: understand what AI can do, how it changes the work, and how to become valuable in the new environment.
+- Professional-services pyramid structures may change sharply; associates and entry-level paths deserve special attention because the old apprenticeship model assumed lots of routine middle work
 - Keep the slide tight and declarative; do not read the whole post aloud
 
 DELIVERY:
@@ -240,11 +243,13 @@ SOURCE: "The Next Two Years of Software Engineering" (sources/next-two-years-of-
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
 - Split the room intentionally: early-career and senior responsibilities differ
 - Juniors: leverage AI, but enforce explainability as a hard rule
 - Seniors: design systems, multiply others, and keep mentorship pathways alive
+- The strongest advice from Evans for worried workers: do not declare AI evil and wait it out. Submerge yourself in the tools, understand the new constraints, and make yourself a strong hire in the changed market. It may not be sufficient for everyone, but it is the only defensible path.
 - Collina adds context: where you work changes what the shift means — Tier 1 (tech companies) rewards platform engineering and code review; Tier 2 (enterprises) shifts consulting from body shopping to "fractional senior expertise"; Tier 3 (mid-market) opens a new "software plumber" role
 - Collina on seniors: "guardrails over gates" — platform engineering becomes the safety mechanism for faster AI-assisted delivery; mentorship through review, not implementation tickets
 - Shared conclusion: human value is increasingly multiplicative

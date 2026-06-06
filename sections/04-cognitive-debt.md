@@ -216,6 +216,35 @@ BRIDGE: "Before the day-to-day patterns, look at what this means for review and 
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# The goal is thoughtful deployment, not paralysis.
+
+<v-click>
+
+Build safeguards. Hold people accountable. Keep capturing the upside.
+
+</v-click>
+
+<!--
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+
+KEY POINTS:
+- Every technology wave creates new ways to harm people, by accident or on purpose
+- Databases, social media, and AI all changed the harm surface area; ignoring that would be irresponsible
+- But fear of possible harm cannot be the whole operating model
+- This is the governance posture for the section: risk awareness, safeguards, accountability, and continued deployment
+
+DELIVERY:
+- This is the release valve after the catastrophic-risk slide
+- Make the tone sober rather than alarmed
+
+BRIDGE: "The practical version of thoughtful deployment is changing what humans review."
+-->
+
+---
 layout: default
 ---
 

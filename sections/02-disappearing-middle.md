@@ -165,6 +165,41 @@ BRIDGE: "Once the idea-to-artifact gap collapses, precision of intent becomes th
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# The artifact was never the job.
+
+<v-click>
+
+The job is walking the terrain, understanding the politics, and deciding what should happen next.
+
+</v-click>
+<v-click>
+
+The deck, prototype, and code are just evidence that the thinking happened.
+
+</v-click>
+
+<!--
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+
+KEY POINTS:
+- This sharpens the task-vs-job distinction before the role-compression argument
+- Some jobs really are mostly a single task; when the task is automated, the job can disappear
+- Most professional roles are not paid for the visible artifact alone
+- Consulting example: the slide deck is not the core value; the core value is diagnosing the enterprise, reading the politics, talking to customers, and creating a direction people can act on
+- Apply this to software: the code is not the whole job. The job is discovering the real problem, choosing the constraints, shaping the system, and owning the outcome
+
+DELIVERY:
+- Keep this calm; it is not meant to reassure everyone equally
+- The distinction should feel useful rather than comforting
+
+BRIDGE: "And that is why 'good talk' suddenly matters so much."
+-->
+
+---
 layout: quote
 ---
 
