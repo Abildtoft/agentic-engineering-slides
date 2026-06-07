@@ -172,6 +172,32 @@ BRIDGE: "And those expectations land differently depending on where you are in y
 layout: statement
 ---
 
+# Every new generation of agents will make today's optimal workflow provisional.
+
+<v-click>
+
+That is why **less is more.**
+
+</v-click>
+
+<!--
+
+KEY POINTS:
+- Make this a principle, not a prediction: the tooling frontier will keep moving, so the process around it has to stay light enough to change
+- Resist overfitting your organization to the current model generation, current IDE, current agent behavior, or current orchestration pattern
+- Less is more means fewer fixed rituals, fewer permanent abstractions, and more explicit learning loops
+
+DELIVERY:
+- Say this slowly: "Every new generation will force us to rethink what is optimal."
+- Then land the takeaway: keep the harness strong, but keep the operating model lightweight.
+
+BRIDGE: "That is what playing offense really means."
+-->
+
+---
+layout: statement
+---
+
 # In a period of compounding change, playing defense is its own risk.
 
 <v-click>
