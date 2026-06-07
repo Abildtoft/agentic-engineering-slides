@@ -117,6 +117,38 @@ BRIDGE: "So if the work expands, the question becomes: what kind of work? Let me
 layout: default
 ---
 
+# Humans find new nodes. AI maps the edges.
+
+<ProblemExplorationDiagram />
+
+<v-click>
+
+The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
+
+</v-click>
+
+<!--
+SOURCE: Atmo (@atmoio), X post (x.com/atmoio/status/2061916783309692989)
+
+KEY POINTS:
+- Use this as the AI-positive narrative after the economic demand-expansion slide
+- Facts as nodes; correlations as edges
+- AI is powerful inside the known graph: it searches densely, finds correlations, and changes direction probabilistically
+- Humans and science widen the graph by looking outward and finding new nodes
+- The combined model is not "AI becomes self-directed breadth" — it is more human-chosen waypoints with dense AI exploration around each one
+- This sets up "Clarity Merchants": the human job is choosing which frontier points deserve the machine's depth
+
+DELIVERY:
+- Do not over-explain the visual; land the line "humans find new nodes, AI maps the edges"
+- Optional verbal: "The best discoveries come when someone wanders outside the current point of view. AI is excellent once you give it a place to search."
+
+BRIDGE: "That makes the human work more specific. We become clarity merchants."
+-->
+
+---
+layout: default
+---
+
 # Clarity Merchants
 
 <v-click>
