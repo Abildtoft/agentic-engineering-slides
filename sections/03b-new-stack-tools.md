@@ -20,7 +20,7 @@ BRIDGE: "You've seen the concepts — context engineering and spec-driven develo
 layout: two-cols-header
 ---
 
-# Markdown: The Shared Language
+# Markdown Is the Program Now
 
 Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, agent definitions — **all markdown.** This is from the repo behind these slides:
 
@@ -67,12 +67,15 @@ Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, a
 </v-click>
 
 <!--
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+
 KEY POINTS:
 - The left shows raw markdown — plain text anyone can write
 - The right shows what it looks like rendered — structured, scannable, clear
 - The agent parses the same structure: headings become sections, lists become constraints, bold becomes emphasis
 - This is WHY the agentic ecosystem converged on markdown — it sits at the intersection of human readability and machine parsability
 - Connect forward: every tool in section 03b (skills, agents, AGENTS.md) uses markdown as its medium
+- Tan's phrase is the sharper version: markdown is no longer just documentation; for agents, it becomes executable operating context
 
 DELIVERY:
 - Keep this brief — 60-90 seconds maximum
@@ -164,6 +167,51 @@ KEY POINTS:
 - If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
 
 BRIDGE: "Now let's look at how skills are triggered in practice."
+-->
+
+---
+layout: default
+---
+
+# Skill Packs
+
+<v-click>
+
+A skill is not just a prompt. It is a **reusable capability** you can version, test, and improve.
+
+</v-click>
+<v-click>
+
+**The bundle:**
+
+- markdown instructions
+- minimal deterministic code
+- tests for the code
+- evals for the behavior
+- resolver logic so the agent knows when to use it
+
+</v-click>
+<v-click>
+
+**Vibe coding evaporates. Skill packs compound.**
+
+</v-click>
+
+<!--
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+
+KEY POINTS:
+- Tan's distinction: prompting is ephemeral; skill packs are versioned, reusable, and testable
+- The important move is not writing more control code around the model, but capturing a working workflow as instructions plus just enough deterministic support
+- "Skillify it" loop: do the task once, then turn the working workflow into a reusable unit of capability
+- The resolver matters because it makes the skill discoverable by the agent, not just manually reusable by the human
+- This bridges from Skills as playbooks to the trigger/resolver diagram that follows
+
+DELIVERY:
+- Keep this practical, not mystical: "A skill becomes infrastructure only when it has tests and evals."
+- Optional verbal: "The source phrase is useful: markdown is the program now. Not because code disappears, but because more behavior lives in editable instructions."
+
+BRIDGE: "Once you have a skill pack, the next question is how the agent selects it."
 -->
 
 ---
