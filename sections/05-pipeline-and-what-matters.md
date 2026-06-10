@@ -181,6 +181,7 @@ The work hasn't changed. The boundaries have.
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
 
 KEY POINTS:
 - Ground the abstract capability in the operating model the audience now understands
@@ -189,9 +190,11 @@ KEY POINTS:
 - Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
 - Eriksson's "playing at the wrong stack level" concept maps directly here: most companies add AI at the feature layer (Opportunities); winners rethink at the Strategy layer. The clarity merchant work IS strategy-layer work.
 - Eriksson: "What wasn't feasible before but now is? Product has always been good at managing feasibility risk. But that calculus has changed." — use this to reframe the first bullet about framing the problem
+- Tan's closing thesis reinforces this slide: when intent can become tested reusable systems faster, the scarce resource becomes clarity, taste, and judgment
 
 DELIVERY:
 - Optional verbal when landing "Frame the problem and define the MVP": "Eriksson makes a useful distinction: most companies apply AI at the feature layer — bolt on a chatbot, speed up a workflow. The winners rethink at the strategy layer. That's what this list is. This is strategy-layer work."
+- Optional verbal closer: "Garry Tan puts the same idea more sharply: the engineer who writes the least code is often the one building the most."
 
 BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
 -->
