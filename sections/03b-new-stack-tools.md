@@ -720,6 +720,54 @@ DELIVERY:
 - Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
 - Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 
+BRIDGE: "At company scale, that harness becomes the learning loop."
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# The Learning Loop Is the IP
+
+<v-click>
+
+**Human capital** sets direction: goals, judgment, relationships, pattern recognition.
+
+</v-click>
+<v-click>
+
+**Token capital** compounds it: skills, traces, private evals, knowledge base, harness.
+
+</v-click>
+<v-click>
+
+The control test: can you swap the generalist model without losing the company veteran?
+
+</v-click>
+<v-click>
+
+The durable asset is not the model. It is the loop that keeps learning.
+
+</v-click>
+
+<!--
+SOURCE: Satya Nadella, "A frontier without an ecosystem is not stable" (x.com/satyanadella/status/2066182223213293753)
+
+KEY POINTS:
+- Use this as the enterprise translation of harness engineering
+- Nadella's distinction: human capital is the knowledge, judgment, relationships, ingenuity, and pattern recognition of people; token capital is the AI capability the firm builds and owns
+- Human capital does not become less valuable as token capital grows; it sets direction for what the AI system should learn
+- Private evals, reinforcement environments, knowledge bases, traces, and workflow captures are the concrete pieces of the learning loop
+- The sovereignty test is useful: if switching the model wipes out the expertise, the company did not own the system
+- This ties the whole tool-stack section together: AGENTS.md, skills, MCPs, hooks, tests, and agent composition are not isolated tricks; they are how the firm encodes reusable judgment
+- Nadella calls this a "hill climbing machine" because each better workflow produces better training signal
+
+DELIVERY:
+- Keep this strategic, not Microsoft-specific
+- This is the answer to "why invest in all this plumbing if models keep changing?"
+- Optional verbal: "The model is replaceable. The traces, evals, constraints, and institutional judgment are where the compounding happens."
+
 BRIDGE: "Now let's watch this operating model in motion."
 -->
 
