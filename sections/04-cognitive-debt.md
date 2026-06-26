@@ -139,26 +139,36 @@ DELIVERY:
 
 ---
 layout: statement
+class: statement-wide
 ---
 
-# You can outsource your thinking.
+# The trap is not AI.
 
 <v-click>
 
-## …but you cannot outsource your understanding.
+## It is the frictionless path.
+
+</v-click>
+
+<v-click>
+
+## You can outsource thinking, but not understanding.
 
 </v-click>
 
 <!--
+SOURCE: Søren Christensen, "The Frictionless Trap" (linkedin.com/pulse/frictionless-trap-s%C3%B8ren-christensen-n1cce/)
 KEY POINTS:
-- Twin statement paired with "Velocity without understanding is not sustainable"
-- Names the boundary cognitive surrender hides: thinking can be delegated to AI; understanding cannot
+- Reframes Christensen's key point in the cognitive-debt section's language
+- Pairs with "Velocity without understanding is not sustainable"
 - "Understanding" is the irreducibly human work — the integration your brain does that becomes judgment
+- Christensen's useful distinction: AI can remove friction by generating thoughts for approval, or create productive friction by challenging thoughts the human already has
+- The trap is the frictionless path, not the tool itself
 
 DELIVERY:
-- Let the first line land alone — pause and let the audience feel the truth of it
-- The reveal is the punch — long pause before clicking
-- Do not elaborate; this is a hinge, not an explanation
+- Let "The trap is not AI" sit long enough to defuse anti-AI framing
+- Reveal "frictionless path" as the actual risk
+- The final reveal is the operating boundary: AI can accelerate thought, but understanding still has to be earned
 
 BRIDGE: "And this isn't just a feeling. The data backs it up."
 -->
