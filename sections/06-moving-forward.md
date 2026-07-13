@@ -7,6 +7,17 @@ transition: section-shift
 
 What survives when the noise fades
 
+<!--
+KEY POINTS:
+- Final synthesis: from diagnosis and tooling to posture and career implications
+- This is the shortest section — it should feel like a landing, not a new argument
+
+DELIVERY:
+- Slow the pace; the room should feel the talk gathering to a close
+
+BRIDGE: "Across everything we've covered — what actually survives?"
+-->
+
 ---
 layout: statement
 ---

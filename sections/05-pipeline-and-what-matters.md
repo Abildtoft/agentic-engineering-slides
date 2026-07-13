@@ -212,19 +212,12 @@ Product Managers and Product Owners don't just ship features. They also kill the
 </v-click>
 <v-click>
 
-Great Product Managers and Product Owners don't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
+Great ones don't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
 
 </v-click>
 <v-click>
 
-Product Managers and Product Owners kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.**
-
-</v-click>
-<v-click>
-
-"Why would I use a date picker library when I could have Claude write me the exact one I want?" — **Simon Willison**
-
-When agents generate bespoke implementations, demand for generic libraries collapses. **Building is cheap. Curating what to keep is the hard part.**
+PMs kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.** Building is cheap — curating what to keep is the hard part.
 
 </v-click>
 
@@ -239,12 +232,12 @@ KEY POINTS:
 - The point is disciplined coherence, not maximal output
 - thdxr: "It's pretty easy to prompt a new feature into existence so naturally the bar for what ships drops." and "There's 100x more value in fixing what we have and improving our process of how we build things"
 - thdxr: "When iterating on a feature sometimes the original design is off... our willingness to refactor the original design drops. We should fight this — leave the code better than you found it."
-- Willison: library demand collapse is real — Tailwind's paid component library faced declining demand. When agents generate exactly what you need, the market for generic, configurable libraries shrinks.
+- Willison (optional verbal): "Why would I use a date picker library when I could have Claude write me the exact one I want?" — when agents generate bespoke implementations, demand for generic libraries collapses. Tailwind's paid component library faced declining demand.
 - Flip side (verbal): open source projects are also flooded with junk AI-generated contributions. Some maintainers have asked GitHub to disable pull requests entirely — historically the platform's core value proposition.
 
 DELIVERY:
 - Optional verbal: "One practitioner nailed this: 'It's easy to prompt a new feature into existence, so the bar for what ships drops.' That's the accumulation trap. The bar should stay high."
-- On the Willison quote: "This cuts both ways. Demand for libraries drops, but the open source ecosystem is also flooded with low-quality AI contributions. Some maintainers are asking GitHub to disable PRs entirely. The irony: agents are built on open source, and they're simultaneously undermining it."
+- If you use the Willison line: "This cuts both ways. Demand for libraries drops, but the open source ecosystem is also flooded with low-quality AI contributions. Some maintainers are asking GitHub to disable PRs entirely. The irony: agents are built on open source, and they're simultaneously undermining it."
 
 BRIDGE: "Addition gets cheaper every quarter. Subtraction never does."
 -->
