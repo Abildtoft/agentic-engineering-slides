@@ -5,7 +5,7 @@ transition: section-shift
 
 # The New Stack: Tools
 
-Skills, MCP, etc.— reusable building blocks for agentic workflows
+Skills, MCP, hooks — reusable building blocks for agentic workflows
 
 <!--
 KEY POINTS:
@@ -132,63 +132,17 @@ layout: default
 
 <v-click>
 
-A skill is a **reusable playbook**: a folder with instructions for one kind of task.
+A skill is a **reusable playbook**: a folder with instructions for one kind of task. Write the workflow once, run it whenever that task shows up.
 
 </v-click>
 <v-click>
 
-Write the workflow once, then run it whenever that task shows up.
+The agent keeps only a short description in memory and loads the full playbook on demand — less prompt repetition, cleaner context.
 
 </v-click>
 <v-click>
 
-The agent keeps only a short description in memory, not the full playbook.
-
-</v-click>
-<v-click>
-
-When needed, it loads full instructions on demand. Less prompt repetition, cleaner context.
-
-</v-click>
-<v-click>
-
-Same playbook can run across terminal tools, web apps, and API workflows.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Use "playbook" language for non-developer audiences
-- Core mechanism: lightweight discovery first, full instructions loaded only when relevant
-- Benefit: keeps the context window focused and reduces repeated prompting
-- Portability: one encoded workflow can be reused across CLI, web UI, and API surfaces
-- Ecosystem signal: Anthropic's open-source Claude Skills repo shows this pattern at scale, including a "skill creator" meta-skill
-- Translate to business language: dynamic memory loading improves reliability by reducing context-window overload
-- If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
-
-BRIDGE: "Now let's look at how skills are triggered in practice."
--->
-
----
-layout: default
----
-
-# Skill Packs
-
-<v-click>
-
-A skill is not just a prompt. It is a **reusable capability** you can version, test, and improve.
-
-</v-click>
-<v-click>
-
-**The bundle:**
-
-- markdown instructions
-- minimal deterministic code
-- tests for the code
-- evals for the behavior
-- resolver logic so the agent knows when to use it
+**The bundle:** markdown instructions, minimal deterministic code, tests for the code, evals for the behavior, and resolver logic so the agent knows when to use it.
 
 </v-click>
 <v-click>
@@ -201,11 +155,15 @@ A skill is not just a prompt. It is a **reusable capability** you can version, t
 SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
 
 KEY POINTS:
+- Use "playbook" language for non-developer audiences
+- Core mechanism: lightweight discovery first, full instructions loaded only when relevant
+- Benefit: keeps the context window focused and reduces repeated prompting
+- Portability: one encoded workflow can be reused across CLI, web UI, and API surfaces
+- Ecosystem signal: Anthropic's open-source Claude Skills repo shows this pattern at scale, including a "skill creator" meta-skill
 - Tan's distinction: prompting is ephemeral; skill packs are versioned, reusable, and testable
-- The important move is not writing more control code around the model, but capturing a working workflow as instructions plus just enough deterministic support
 - "Skillify it" loop: do the task once, then turn the working workflow into a reusable unit of capability
 - The resolver matters because it makes the skill discoverable by the agent, not just manually reusable by the human
-- This bridges from Skills as playbooks to the trigger/resolver diagram that follows
+- If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
 
 DELIVERY:
 - Keep this practical, not mystical: "A skill becomes infrastructure only when it has tests and evals."
@@ -264,8 +222,7 @@ class: text-center
 </v-click>
 
 <!--
-FRAMING (use verbally): Think of it like a kitchen. APIs are the utensils — each does one thing. Skills are the recipes — soft guidance, adaptable to the situation. MCP is the kitchen itself — standardised layout and plumbing. "You're not building the kitchen from scratch. You're equipping it and writing the recipes."
-
+KEY POINTS:
 - Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
 - User-invocable: user explicitly triggers with /command — deterministic selection
 - Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
@@ -276,7 +233,28 @@ FRAMING (use verbally): Think of it like a kitchen. APIs are the utensils — ea
 - Concrete examples: /commit-message (user-invocable), code-reviewer (model-invocable)
 - For product/UX: same format works for design review, accessibility checks, or copy editing
 
-BRIDGE: "Skills shape thinking. MCP shapes doing. Let's look at MCP."
+BRIDGE: "Skills shape thinking. Before the next building block, here's an analogy to hold all of this together."
+-->
+
+---
+layout: center
+class: text-center
+---
+
+<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="The kitchen analogy: APIs are the utensils, skills are the recipes, MCPs are the kitchen" size="lg" />
+
+<!--
+KEY POINTS:
+- Orientation beat for non-technical audiences before the MCP deep-dive
+- APIs are the utensils — each does one thing
+- Skills are the recipes — soft guidance, adaptable to the situation
+- MCP is the kitchen itself — standardised layout and plumbing, bundling APIs, auth, and tool definitions into one server
+
+DELIVERY:
+- Keep it light and quick — 30-45 seconds
+- Verbal: "You're not building the kitchen from scratch. You're equipping it and writing the recipes."
+
+BRIDGE: "Skills are the recipes. Now let's look at the kitchen — MCP."
 -->
 
 ---
@@ -438,30 +416,7 @@ DELIVERY:
 - "And now it goes both ways: not only Figma to code, but code UI back to Figma for review."
 - DESIGN PERSPECTIVE (Jenny Wen, Design Lead at Anthropic, via Lenny Rachitsky): Figma remains essential because canvas exploration lets you rapidly explore 8–10 directions simultaneously. Coding tools are too linear — once you start building one direction, investment bias sets in.
 - Verbal option: "Jenny Wen argues Figma is still indispensable — it's the only tool that lets you diverge across 8 to 10 directions without the investment bias of building one. That's why the MCP bridge matters: Figma for exploration, code for execution."
-
-BRIDGE: "The value isn't the diagram — it's what the diagram implies about who owns the source of truth."
--->
-
----
-layout: statement
-class: statement-wide
----
-
-# With Figma MCP, Claude reads your file directly.
-
-Components, design tokens, spacing — all of it.
-
-<v-click>
-
-**It's not guessing at the design. It's working from the source of truth.**
-
-</v-click>
-
-<!--
-KEY POINTS:
-- "Source of truth" is the key phrase — this reframes the bridge as design governance, not convenience
-- Design tokens and component specs become first-class context, not screenshots and interpretation
-- For designers: your Figma file is already structured data; MCP makes that data legible to the agent
+- "Source of truth" is the key phrase — this reframes the bridge as design governance, not convenience. For designers: your Figma file is already structured data; MCP makes that data legible to the agent.
 
 BRIDGE: "Once you have context and interfaces, the next question is reliability. Let's look at how deterministic checks keep the loop honest — starting with hooks."
 -->
@@ -558,9 +513,35 @@ Without guardrails, every iteration needs human review. With them, the agent can
 Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
 
 </v-click>
+
+<!--
+SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+
+KEY POINTS:
+- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
+- Guardrails convert stochastic generation into controlled iteration
+- Hooks (just introduced) are one guardrail; tests, validation scripts, permission scoping are others
+- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
+
+DELIVERY:
+- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
+- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
+
+BRIDGE: "The most familiar guardrail deserves its own moment: tests."
+-->
+
+---
+layout: default
+---
+
+# Tests Close the Loop
+
+<SlideImage src="/verification-loop.png" alt="The verification loop: plan, implement, test, review" size="sm" />
+
 <v-click>
 
-Every repeated human intervention is a signal that the harness is incomplete.
+Write the test first — **the test IS the spec.** The agent implements against it: attempt → failure → retry.
 
 </v-click>
 <v-click>
@@ -570,25 +551,23 @@ Every repeated human intervention is a signal that the harness is incomplete.
 Start every agent session with how to run the tests. Five tokens — "red-green TDD" — and reliability jumps.
 
 </v-click>
+<v-click>
+
+Every repeated human intervention is a signal that the harness is incomplete.
+
+</v-click>
 
 <!--
-SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
-SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
 
 KEY POINTS:
-- Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
-- Guardrails convert stochastic generation into controlled iteration
 - Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
-- Hooks (just introduced) are another: shell scripts at lifecycle points
-- For designers: visual regression tests, accessibility checks, component snapshots serve the same role
 - Every repeated human intervention signals harness incompleteness
 - Willison: TDD becomes obvious when agents bear the execution cost. "Tests are no longer even remotely optional." Every coding session starts with "here's how to run the tests." The prompt "red-green TDD" is only five tokens but dramatically improves agent reliability.
 
 DELIVERY:
-- "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
-- Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
-- Expand on tests verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
+- Expand verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
 - Willison verbal option: "Simon Willison says he starts every single coding session by telling the agent how to run the tests. Five tokens — 'red-green TDD' — and the reliability jumps. Tests are free when agents write and run them."
 
 BRIDGE: "With guardrails in place, you can safely narrow responsibilities and compose agents together."
@@ -765,23 +744,7 @@ DELIVERY:
 - Land the context advantage: "So long as you know something about the user that the agent does not, you still have information to inject into the system."
 - Optional enterprise translation: "The model is replaceable. The loop that captures feedback and turns it into reusable judgment is the compounding asset."
 
-BRIDGE: "Now let's watch this operating model in motion."
--->
-
----
-layout: center
-class: text-center
----
-
-# Demo Time
-
-Watch three things: where context enters, where a deterministic check catches a failure, and how the human changes the next move.
-
-<!--
-DELIVERY:
-- Prime the audience: what to watch for during the demo
-- Quick reset slide before context switch to live workflow
-- State what the demo will prove: speed with guardrails and human accountability
+BRIDGE: "One more signal about where this whole stack is heading — then we go live."
 -->
 
 ---
@@ -828,4 +791,22 @@ KEY POINTS:
 - Wider access does not remove the need for engineered guardrails
 - Core takeaway: workflow design is becoming cross-functional infrastructure
 - Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
+
+BRIDGE: "Now let's watch this operating model in motion."
+-->
+
+---
+layout: center
+class: text-center
+---
+
+# Demo Time
+
+Watch three things: where context enters, where a deterministic check catches a failure, and how the human changes the next move.
+
+<!--
+DELIVERY:
+- Prime the audience: what to watch for during the demo
+- Quick reset slide before context switch to live workflow
+- State what the demo will prove: speed with guardrails and human accountability
 -->
