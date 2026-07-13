@@ -17,8 +17,6 @@ KEY POINTS:
 
 DELIVERY:
 - Let this slide sit for 2-3 seconds before advancing — the turn should be visible, not just verbal
-
-DELIVERY:
 - Verbal bridge (use this): "We've just spent the last section exploring an incredible toolkit — context engineering, skills, MCPs, hooks, harnesses, agents, teams. Each layer added power. But each layer also added something you didn't personally write, something you may not fully understand."
 
 BRIDGE: "And remember — going from one agent to many isn't a scaling problem. It's a distributed systems problem. Who gets which context? What happens when one agent's output breaks another's assumptions? Every component is nondeterministic. That coordination complexity has a cost. And that cost has a name."
@@ -177,13 +175,15 @@ BRIDGE: "And this isn't just a feeling. The data backs it up."
 layout: fact
 ---
 
-# 1.7x more bugs
-
-AI-generated code vs. human-written — and **1.4x more critical issues**
+<BigNumber
+  value="1.7x"
+  label="more bugs in AI-generated code vs. human-written"
+  sublabel="And 1.4x more critical issues (CodeRabbit, State of AI vs. Human Code Generation)"
+/>
 
 <v-click>
 
-30% of senior developers say auditing AI output **offsets their time savings**
+<p class="mt-8 text-xl">30% of senior developers say auditing AI output <strong>offsets their time savings</strong> <span class="opacity-60">(Fastly)</span></p>
 
 </v-click>
 
@@ -305,11 +305,12 @@ BRIDGE: "And once you start thinking in layered controls, the Swiss-cheese model
 -->
 
 ---
-layout: statement
-class: statement-wide
+layout: default
 ---
 
-# Swiss-cheese model
+# The Swiss-Cheese Model
+
+<SlideImage src="/reviews-dead-trust-layers.png" alt="Layered swiss-cheese slices labeled compare multiple options, deterministic guardrails, acceptance criteria, permission systems, adversarial verification — building trust through layers" size="md" />
 
 <v-click>
 
@@ -318,12 +319,13 @@ Every safeguard has holes: tests, reviews, policies, humans.
 </v-click>
 <v-click>
 
-Cognitive debt makes the holes bigger. Incidents happen when they line up.
+Cognitive debt makes the holes bigger. **Incidents happen when they line up.**
 
 </v-click>
 
 <!--
 SOURCE: James Reason, Swiss-cheese model of accident causation
+SOURCE: Image from Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
 SOURCE: CodeRabbit, "A Semantic History of Vibe Coding" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
 
 KEY POINTS:
@@ -382,18 +384,20 @@ BRIDGE: "And the data makes this hard to brush off."
 layout: fact
 ---
 
-# 79.8% followed AI — even when it was wrong
-
-Across 3 preregistered studies — 1,372 participants, 9,593 trials
+<BigNumber
+  value="79.8%"
+  label="followed the AI — even when it was wrong"
+  sublabel="3 preregistered studies, 1,372 participants, 9,593 trials (Wharton, 2026)"
+/>
 
 <v-click>
 
-Without AI: 45.8% accuracy. With incorrect AI: **31.5%** — worse than having no AI at all.
+<p class="mt-8 text-xl">Without AI: 45.8% accuracy. With incorrect AI: <strong>31.5%</strong> — worse than having no AI at all.</p>
 
 </v-click>
 <v-click>
 
-AI boosted confidence by **11.7 percentage points**, even on wrong answers.
+<p class="mt-4 text-lg opacity-75">AI boosted confidence by <strong>11.7 percentage points</strong>, even on wrong answers.</p>
 
 </v-click>
 
@@ -439,8 +443,6 @@ layout: default
 <!--
 
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
-
-SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
 
 KEY POINTS:
@@ -448,11 +450,18 @@ KEY POINTS:
 - The risk is gradual substitution of construction with passive review
 - Dependency forms by accumulation, not one dramatic event
 - thdxr observation: "We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've eroded our ability to delay gratification"
+- Four named symptoms of the compounding debt (Francedot) — use verbally, the room will recognize at least one:
+  - The Planning Loop: planning becomes procrastination in disguise; you re-plan the same feature three times in a day
+  - The Coherence Trap: you ship faster than you can hold the system in your head; the codebase grows, your mental model doesn't
+  - Context Collapse: you lose track of which session "knows" what; the AI mirrors your own fragmentation
+  - The Completionist Trap: starting feels amazing, the last 20% still takes time — a graveyard of almost-finished projects
+- The common denominator across all four is weakened coherence under speed; typing was never the real bottleneck
 
 DELIVERY:
 - Walk through the spiral slowly
 - Ask the room to notice whether they recognize this pattern — no hands needed, just internal recognition
 - Optional verbal: "One team lead described it as eroded delayed gratification — the agents keep pulling you toward the next feature instead of cleaning up what you have."
+- Name one or two of the four symptoms verbally while the spiral is on screen — pick the ones that fit the room
 
 BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
 -->
@@ -481,98 +490,17 @@ KEY POINTS:
 - Shen's framing: "each AI response partially satisfies but opens a new question"
 - Parrott's anecdote: started configuring an AI assistant on a Friday afternoon for "a few hours, tops" — 12 hours later she had written essays, rebuilt her website, and added app features, then launched out of bed at 1 a.m. to keep going
 - The insight is structural, not moral: the tools are designed to produce partial satisfaction
+- What keeps people sitting at the machine — FOBO (Fear of Becoming Obsolete) is the ignition, the dopamine loop is the fuel (Ernst & Young 2025 survey):
+  - 54% of employees feel they're falling behind peers in AI use
+  - 85% are learning on their own time; 83% report self-taught AI knowledge — organizations aren't providing the structure
+  - Organizations may not intervene because "workers voluntarily take on more and produce faster without being asked"
 
 DELIVERY:
 - Let the slot machine metaphor land — the room will recognize the pattern in themselves
 - Don't moralize; the point is that the mechanism is predictable and therefore manageable
+- Optional verbal: "And what keeps people sitting at the machine? Ernst & Young found 54% of employees feel they're falling behind peers in AI use, and 85% are learning on their own time. The fear sends you to the laptop. The slot machine keeps you pulling."
 
-BRIDGE: "And what keeps people sitting at the machine in the first place?"
--->
-
----
-layout: fact
----
-
-# 54% of employees feel they're falling behind peers in AI use
-
-Ernst & Young, 2025
-
-<v-click>
-
-85% are learning on their own time. The fear sends you to the laptop. The slot machine keeps you pulling.
-
-</v-click>
-
-<!--
-
-SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
-SOURCE: Ernst & Young 2025 employee survey
-
-KEY POINTS:
-- FOBO (Fear of Becoming Obsolete) is the ignition; the dopamine loop is the fuel
-- 83% report self-taught AI knowledge — organizations aren't providing the structure
-- The fear → tinkering → wins → expanded obligations cycle compounds cognitive debt from multiple directions
-- Organizations may not intervene because "workers voluntarily take on more and produce faster without being asked"
-
-DELIVERY:
-- Let the 54% number sit before the v-click
-- The final line should land as a one-two punch: fear + dopamine = compulsive use
-
-BRIDGE: "Fear and dopamine. That combination doesn't just create one problem — it creates several at once."
--->
-
----
-layout: two-cols-header
----
-
-# When Debt Compounds
-
-::left::
-
-<v-click>
-
-**The Planning Loop**
-
-Planning becomes procrastination in disguise. You re-plan the same feature three times in a day.
-
-</v-click>
-<v-click>
-
-**The Coherence Trap**
-
-You're shipping faster than you can hold the system in your head. The codebase grows; your mental model doesn't.
-
-</v-click>
-
-::right::
-
-<v-click>
-
-**Context Collapse**
-
-You lose track of which session "knows" what. The AI mirrors your own fragmentation.
-
-</v-click>
-<v-click>
-
-**The Completionist Trap**
-
-Starting feels amazing. The last 20% still takes time. Graveyard of almost-finished projects.
-
-</v-click>
-
-<!--
-SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
-
-KEY POINTS:
-- Treat these as symptoms, not separate problems
-- The common denominator is weakened coherence under speed
-- Tie back to the earlier thesis: typing was never the real bottleneck
-
-DELIVERY:
-- Walk through briefly — the audience will recognize at least one
-
-BRIDGE: "At that point, convenience stops being occasional help and starts becoming default dependency."
+BRIDGE: "The mechanism is predictable — and predictable means manageable."
 -->
 
 ---

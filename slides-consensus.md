@@ -32,9 +32,9 @@ layout: statement
 
 ---
 
-# Simplified Agenda
+# Agenda
 
-- Inflection Point
+- The Shift Is Here
 - The Compressing Middle
 - The New Stack
 - **DEMO TIME**

@@ -23,7 +23,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 <v-click>
 
-"That middle absorbed most of the time, attention, and craft of software teams."
+"That middle absorbed most of the time, attention, and craft of software teams." — **Karri Saarinen, Linear CEO**
 
 </v-click>
 <v-click>
@@ -60,6 +60,8 @@ BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?
 
 # The Translation Layer Is Compressing
 
+<SlideImage src="/translation-layer-compression.png" alt="Before: PM hands off to spec, design, engineer, and code to reach product. Now: PM intent goes through an agent straight to product." size="md" />
+
 <v-click>
 
 Issue tracking was built for a **handoff model**.
@@ -72,7 +74,7 @@ Issue tracking was built for a **handoff model**.
 </v-click>
 
 <!--
-SOURCE: George from prodmgmt.world (@nurijanian), "how Anthopic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
+SOURCE: George from prodmgmt.world (@nurijanian), "how Anthropic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
 SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
 SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
 
@@ -346,57 +348,26 @@ class: text-center
 
 <div class="text-sm opacity-70 -mt-2 mb-6">When everything looks the same</div>
 
-<RolesBlurDiagram size="lg" />
+<RolesBlurDiagram size="lg" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
 
 <!--
 SOURCE: Adapted in-house from a reference graphic shared by the speaker.
+SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
+SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 
 KEY POINTS:
 - Visual capstone for the "Three job titles, one job" argument that just landed.
 - Left panel: the old assumption — implementation complexity justified sequential handoffs.
 - Right panel: with implementation compressed, the disciplines overlap; what remains in the center is judgment.
 - The JUDGMENT label is the punchline — it's the thing that doesn't compress.
+- The Product Engineer reveal names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
+- Less handoff, faster learning, more end-to-end ownership — an operating-model shift, not a job-title fad
+- PostHog provides the practical reason this overlap matters: deciding what to build is becoming more constrained than building it
 
 DELIVERY:
 - Don't read the diagram aloud. Let the eye do the work.
 - Optional verbal: "The walls were never about the disciplines. They were about implementation cost. Take that cost out and the walls go with it."
-- Bridge to the next beat: "Which means the daily work — and the tools — change too."
--->
-
----
-
-# The Product Engineer
-
-<v-click>
-
-Sits at the overlap of **design judgment, product thinking, and engineering execution.**
-
-</v-click>
-<v-click>
-
-Frames the problem, defines the MVP, shapes the system, ships the code, and measures the outcome.
-
-</v-click>
-<v-click>
-
-**Less handoff. Faster learning. More end-to-end ownership.**
-
-</v-click>
-
-<!--
-SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
-SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
-
-KEY POINTS:
-- This slide names the convergence point explicitly after the previous slide establishes that the three disciplines are moving toward the same core work
-- Keep the framing concrete: this is about overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
-- The three lines should map clearly to the audience's mental model: design judgment, product thinking, engineering execution
-- PostHog provides the practical reason this overlap matters: deciding what to build is becoming more constrained than building it
-
-DELIVERY:
-- Open with: "Some teams are starting to give that overlap a name."
-- Emphasize the sequence: frame, define, shape, ship, measure
-- Land the final line as an operating-model shift, not a job-title fad
+- On the reveal: "Some teams are starting to give that overlap a name." Emphasize the sequence: frame, ship, measure.
 
 BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier to understand."
 -->
