@@ -193,12 +193,12 @@ layout: fact
 
 <v-click>
 
-<p class="mt-8 text-xl">At current trajectory, <strong>20%+ of all daily commits</strong> by year-end</p>
+<SlideImage src="/semianalysis-claude-code-commits.png" alt="SemiAnalysis chart: Claude Code GitHub commits per day, growing exponentially from launch to 134,646" size="sm" />
 
 </v-click>
 <v-click>
 
-<p class="mt-4 text-lg opacity-75">Claude Code is <strong>one year old</strong></p>
+<p class="mt-2 text-lg">At current trajectory, <strong>20%+ of all daily commits</strong> by end of 2026 — from a tool that launched <strong>February 2025</strong></p>
 
 </v-click>
 
@@ -211,14 +211,14 @@ KEY POINTS:
 - 4% counts only commits with explicit Claude Code attribution (co-authored-by trailer, etc.)
 - Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
 - This is the floor, not the ceiling
-- The growth curve is exponential — 134,608 daily commits at time of tweet
-- At current trajectory, 20%+ by year-end — frame as trajectory, not prediction
+- The growth curve is exponential — ~135K daily commits at time of tweet
+- At current trajectory, 20%+ by end of 2026 — frame as trajectory, not prediction
 - Claude Code launched February 2025 — one tool, one year, 4% of all public commits
 
 DELIVERY:
 - Let "4%" breathe first
-- Click: "20%+" lands the trajectory
-- Click: "one year old" is the gut punch — pause and let it sink in
+- Click: the chart — the curve is exponential, not linear. Let the shape do the talking.
+- Click: "20%+ by end of 2026, from a tool launched February 2025" is the gut punch — pause and let it sink in
 
 BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like trajectory."
 -->
