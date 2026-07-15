@@ -699,6 +699,42 @@ DELIVERY:
 - Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
 - Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 
+BRIDGE: "Don't take my word for how far to push this. Here's the person who built Claude Code."
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">"Every team should be writing the CLAUDE.md's, REVIEW.md's, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">This sounds crazy, and at the same time is a natural extension of the stuff engineers have always done: automate, and encode domain knowledge as infrastructure."</div>
+  </v-click>
+</div>
+
+<v-click>
+  Boris Cherny, creator of Claude Code
+</v-click>
+
+<!--
+SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
+
+KEY POINTS:
+- This is the team-level mandate that caps the whole section: everything just covered — AGENTS.md, skills, hooks, guardrails, harness engineering — is what Cherny is telling every team to build
+- "Zero additional context from the prompter" is the bar: if the agent needs you to explain conventions in the prompt, that knowledge should have been encoded in the repo
+- Cherny's three reasons automation matters MORE now: (1) DevX automation speeds up every agent in your fleet, not just you; (2) a lint rule, CI step, or routine automates a class of issue forever — cheaper than re-solving it with tokens each time; (3) most importantly, it lets others contribute — engineers ship on day one, non-engineers contribute as effectively as engineers
+- His sharpest reframe: a PR rejected for using the wrong framework or ignoring architectural patterns is "a failure of automation" — the domain knowledge lived in someone's head instead of in the repo
+- The unlock: encodable domain knowledge is no longer limited to what fits in lint rules, types, and tests — it now includes code comments, skills, CLAUDE.md rules, and memories
+- His "loops" line connects back to the harness slide: "it's about automating entire types of busywork rather than solving them one off"
+
+DELIVERY:
+- Land the first line, pause, then click: "This sounds crazy" — let the audience feel that he names their skepticism himself
+- Verbal option: "Notice what he's saying: this isn't new work. Lint rules, tests, editor tooling — the best engineers always encoded their knowledge as infrastructure. The only thing that changed is how much knowledge is now encodable."
+- Verbal option (the reframe): "When a PR gets rejected because it doesn't follow your architecture patterns — Cherny calls that a failure of automation, not a failure of the contributor."
+
 BRIDGE: "But the engineering loop is only the innermost loop."
 -->
 
