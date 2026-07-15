@@ -118,11 +118,13 @@ If swapping the model wipes out your expertise, you did not own the learning sys
 
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/)
 SOURCE: Satya Nadella, "A frontier without an ecosystem is not stable" (x.com/satyanadella/status/2066182223213293753)
+SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
 
 KEY POINTS:
 - Callback to the Bottleneck Cascade introduced in Section 2
 - Don't re-explain the cascade — the audience already has the mental model
 - Land the final implication: the ultimate bottleneck is getting expert knowledge OUT of humans and INTO systems
+- Callback to the Cherny quote from Section 3: the CLAUDE.md's, skills, and docs ARE the knowledge-extraction mechanism — "encode domain knowledge as infrastructure" is this slide's thesis in practice
 - Connect back to section 4: comprehension is now a governance requirement
 - Nadella sharpens the ownership test: the company should be able to switch a generalist model without losing the company-specific expertise in its learning system
 - The durable asset is not the frontier model; it is the institutional loop that keeps converting human judgment into reusable capability
