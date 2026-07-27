@@ -780,6 +780,44 @@ DELIVERY:
 - Land the context advantage: "So long as you know something about the user that the agent does not, you still have information to inject into the system."
 - Optional enterprise translation: "The model is replaceable. The loop that captures feedback and turns it into reusable judgment is the compounding asset."
 
+BRIDGE: "Notice what all three loops actually produce. Not just code — evidence."
+-->
+
+---
+layout: statement
+---
+
+# The fastest way to build is to find the cheapest way to learn.
+
+<v-click>
+
+Accelerating the inner loop just gets you to the wrong answer sooner. **The loop that tells you whether the product direction was right is the slow, expensive one.**
+
+</v-click>
+<v-click>
+
+**What is the cheapest thing that would change our mind?** Often it isn't code at all — a prototype, a landing page, five conversations, one afternoon.
+
+</v-click>
+
+<!--
+SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
+SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
+SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- This is the payoff of the three-loop diagram: every loop is a learning loop, and they are priced very differently
+- Agentic speed makes the inner loop nearly free, which makes the outer loop the binding constraint — and the only one that produces real-world evidence
+- Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
+- Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
+- This is also the honest defense against the accumulation trap in Section 5: cheap learning is what earns the right to build
+- Connects back to "the trap is building yesterday's software faster" — throughput without learning is just faster wrongness
+
+DELIVERY:
+- Land the headline cold, before either click. It should sound like a contradiction for a second.
+- Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
+- Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
+
 BRIDGE: "One more signal about where this whole stack is heading — then we go live."
 -->
 
