@@ -101,7 +101,7 @@ layout: fact
 <BigNumber
   value="5x"
   label="growth in agent-completed work across Linear workspaces over the prior 3 months"
-  sublabel="Agents also authored nearly 25% of new issues (company-reported, March 24, 2026)"
+  sublabel="Agents also authored nearly 25% of new issues (company-reported, 24 March 2026)"
 />
 
 <v-click>

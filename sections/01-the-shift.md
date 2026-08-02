@@ -66,7 +66,7 @@ BRIDGE: "And inside that early, messy market, one part of the curve has already 
 
 <v-click>
 
-It wasn't one model release — it was the convergence of **models good enough**, **tooling mature enough**, and **adoption hitting production numbers**, all in a compressed window.
+Not one model release. Models got good enough, tooling matured, and adoption hit production scale — all in one compressed window.
 
 </v-click>
 <v-click>
@@ -148,13 +148,13 @@ Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 </v-click>
 <v-click>
 
-**Spotify** — leadership reports top developers shifted heavily away from manual coding since December
+**Spotify** — its best developers haven't written a line of code since December
 
 **Google** — AI writes over 30% of all new code
 
 **Microsoft** — 20–30% of code is AI-generated
 
-**Anthropic & OpenAI** — frontier teams report near-total AI-generated code
+**Anthropic and OpenAI** — frontier teams report ~100% AI-generated code
 
 </v-click>
 
