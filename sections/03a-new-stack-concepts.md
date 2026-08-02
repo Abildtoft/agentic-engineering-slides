@@ -18,7 +18,7 @@ BRIDGE: "We've named the shift — the middle is compressing, value moves to int
 
 ---
 
-# From Producing Artifacts to Designing Systems
+# From Producing Outputs to Designing the Loop
 
 <v-click>
 
@@ -27,7 +27,7 @@ BRIDGE: "We've named the shift — the middle is compressing, value moves to int
 </v-click>
 <v-click>
 
-You're no longer producing the artifact step by step. You're designing a system where AI generates code, prototypes, and analysis while you shape the inputs, constraints, and verification.
+You're no longer producing every artifact step by step. You're designing the loop around the agent: **choose the work, set the bar, improve the loop.**
 
 </v-click>
 <v-click>
@@ -43,7 +43,8 @@ SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-b
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
-- Core shift: from producing code directly to designing the production system around agents
+- Core shift: from producing code directly to designing the production and learning loop around agents
+- "Choose the work, set the bar, improve the loop" is the maintainer's job in its shortest form
 - Emphasize ownership: human accountability does not disappear
 - Frame "context + specs + verification" as the new unit of craft
 - Eriksson: "Speed without direction is just burning jet fuel on a runway... the bottleneck was never execution — it was always clarity." This directly reinforces the shift from producing artifacts to designing systems.
