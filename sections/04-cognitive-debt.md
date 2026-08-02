@@ -177,7 +177,7 @@ layout: fact
 
 <BigNumber
   value="1.7x"
-  label="more bugs in AI-generated code vs. human-written"
+  label="more bugs in AI-generated code than human-written"
   sublabel="And 1.4x more critical issues (CodeRabbit, State of AI vs. Human Code Generation)"
 />
 
@@ -214,7 +214,7 @@ layout: statement
 class: statement-wide
 ---
 
-# In high-stakes domains like security, privacy, and compliance, cognitive debt can be catastrophic.
+# Cognitive debt can be catastrophic — in security, privacy, and compliance.
 
 <!--
 KEY POINTS:
@@ -273,11 +273,6 @@ Move the human checkpoint upstream: **review specs, constraints, and acceptance 
 <v-click>
 
 Move trust downstream into deterministic checks: **tests, type checks, contracts, rollout guardrails**.
-
-</v-click>
-<v-click>
-
-Think **Swiss-cheese model**: stack imperfect controls so the holes don't align.
 
 </v-click>
 <v-click>
@@ -573,7 +568,7 @@ BRIDGE: "And for non-trivial work, that operating model needs explicit checks."
 layout: default
 ---
 
-# Three checks for non-trivial changes
+# Three Checks for Non-Trivial Changes
 
 <v-click>
 

@@ -102,12 +102,12 @@ BRIDGE: "Now, if we are not just building the old app faster, what does the new 
 </v-click>
 <v-click>
 
-Copy-pasting snippets into ChatGPT was the first wave — but the context was always wanting. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase.
+Copy-pasting snippets into ChatGPT was the first wave — but the context was never enough. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase.
 
 </v-click>
 <v-click>
 
-But every model has a finite memory — a context window. Not everything fits. Context engineering is the discipline of ensuring the *important* information makes it into that budget: the right information, in the right order, at the right time.
+But every model has a finite memory — a context window. Not everything fits. Context engineering gets the *important* information into that budget: right information, right order, right time.
 
 </v-click>
 

@@ -147,7 +147,7 @@ The agent keeps only a short description in memory and loads the full playbook o
 </v-click>
 <v-click>
 
-**Vibe coding evaporates. Skill packs compound.**
+**Prompting evaporates. Skill packs compound.**
 
 </v-click>
 
@@ -261,7 +261,7 @@ BRIDGE: "Skills are the recipes. Now let's look at the kitchen — MCP."
 layout: default
 ---
 
-# MCPs
+# MCP
 
 <v-click>
 
@@ -354,7 +354,7 @@ layout: default
 class: text-center
 ---
 
-# MCP Example: Figma <-> Frontend
+# MCP Example: Figma ↔ Frontend
 
 <MermaidDiagram :code="`graph LR
   U[User: 'Implement the approved pricing frame'] --> A[Agent]
@@ -434,7 +434,7 @@ Shell scripts that fire at **lifecycle points** in the agent loop — before a t
 </v-click>
 <v-click>
 
-**PreToolUse** — block destructive commands before they execute (e.g., prevent `rm -rf`, force confirmation on `git push --force`)
+**PreToolUse** — block destructive commands before they execute: prevent `rm -rf`, force confirmation on `git push --force`
 
 </v-click>
 <v-click>
@@ -510,7 +510,7 @@ Without guardrails, every iteration needs human review. With them, the agent can
 </v-click>
 <v-click>
 
-Context shapes knowledge. Specs shape direction. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
+Context shapes what the agent knows. Specs shape what good looks like. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
 
 </v-click>
 
@@ -586,12 +586,12 @@ An agent is an LLM with a system prompt, a set of tools, and permission to act a
 </v-click>
 <v-click>
 
-A **specialized agent** narrows that loop. Focused persona, constrained toolset, single job — security review, accessibility audit, architecture check. Each agent is a markdown file you can read, edit, and version.
+A **specialized agent** narrows that loop: one persona, a constrained toolset, a single job — security review, accessibility audit, architecture check. Each is a markdown file you can read, edit, and version.
 
 </v-click>
 <v-click>
 
-**Single-responsibility principle — but for agents.** Context windows are finite — the more concerns you load, the shallower the attention. A focused agent doesn't just perform better — it's easier to test, debug, and trust.
+**Single-responsibility principle — but for agents.** The more concerns you load, the shallower the attention. A focused agent performs better — and is easier to test, debug, and trust.
 
 </v-click>
 <v-click>

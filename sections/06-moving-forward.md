@@ -22,7 +22,7 @@ BRIDGE: "Across everything we've covered — what actually survives?"
 layout: statement
 ---
 
-# Execution is increasingly abundant. Strategic, hybrid execution will remain rare.
+# Execution is increasingly abundant. People who combine strategy with execution will remain rare.
 
 <!--
 SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
@@ -106,7 +106,7 @@ BRIDGE: "One final lens: where bottlenecks move next."
 layout: statement
 ---
 
-# Remember the cascade. The constraint didn't disappear — it moved upstream to expert knowledge extraction.
+# Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems.
 
 <v-click>
 
@@ -139,7 +139,7 @@ BRIDGE: "Which brings us to what this looks like for you, concretely."
 layout: two-cols-header
 ---
 
-# What The Shift Rewards
+# What the Shift Rewards
 
 ::left::
 
@@ -194,7 +194,7 @@ BRIDGE: "And those expectations land differently depending on where you are in y
 layout: statement
 ---
 
-# Every new generation of agents will make today's optimal workflow provisional.
+# Every new generation of agents will make today's optimal workflow temporary.
 
 <v-click>
 
@@ -257,7 +257,7 @@ BRIDGE: "And that posture lands differently depending on where you are in your c
 layout: two-cols-header
 ---
 
-# The Next Years
+# The Next Few Years
 
 ::left::
 
