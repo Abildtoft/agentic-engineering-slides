@@ -667,12 +667,12 @@ The harness is every piece of code, configuration, and execution logic that isn'
 </v-click>
 <v-click>
 
-Humans remain in the loop — but at a different layer. We prioritize work, translate feedback into acceptance criteria, and validate outcomes.
+Your job moves from working inside the loop to improving it: **choose the work, set the bar, and turn every miss into a stronger harness.**
 
 </v-click>
 <v-click>
 
-Every time an agent fails, you don't just fix the output, you take it as a signal to improve the harness so it doesn't fail that way again.
+When an agent fails, don't just fix the output. Improve the harness so the whole loop gets better.
 
 </v-click>
 <v-click>
@@ -689,6 +689,7 @@ SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/
 KEY POINTS:
 - Name the discipline that ties all prior concepts together
 - Treat each v-click as a recap ladder from parts to operating model
+- Make the maintainer's role explicit: choose what enters the loop, encode the quality criteria, and improve the system when it misses
 - Emphasize failure-as-signal: improve the harness, not just the output
 - This is the conceptual peak before the live demo
 - Trivedy formal definition: "Agent = Model + Harness. A harness is every piece of code, configuration, and execution logic that isn't the model itself."
@@ -755,7 +756,7 @@ class: text-center
 
 <v-click>
 
-As implementation accelerates, the human role moves outward — **from checking code to shaping products.**
+As implementation accelerates, the maintainer's job moves outward: **choose the work, set the bar, improve the loop.**
 
 </v-click>
 
@@ -770,6 +771,7 @@ KEY POINTS:
 - The developer loop reviews the current product and updates the vision, design, flow, or spec
 - The external loop gathers real-world evidence from friends, alpha users, production, or experiments
 - Information flows inward: external evidence shapes product vision; developer judgment shapes the spec; the spec drives the agent
+- The maintainer works on the loop, not only inside it: selecting what deserves work, defining quality, and strengthening the system from feedback
 - Ng calls the durable human advantage a "context advantage," not merely taste: humans know things about users and operating context that the AI does not
 - As agents take over more QA, engineers move into partial product-management responsibility
 - Nadella's ownership test still applies across all three loops: the durable asset is the institutional system that captures judgment in specs, evals, traces, and harnesses
@@ -791,7 +793,7 @@ layout: statement
 
 <v-click>
 
-Accelerating the inner loop just gets you to the wrong answer sooner. **The loop that tells you whether the product direction was right is the slow, expensive one.**
+Accelerating the inner loop just gets you to the wrong answer sooner. **The maintainer's leverage is in the loops that decide what to build and whether it worked.**
 
 </v-click>
 <v-click>
@@ -808,6 +810,7 @@ SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
 KEY POINTS:
 - This is the payoff of the three-loop diagram: every loop is a learning loop, and they are priced very differently
 - Agentic speed makes the inner loop nearly free, which makes the outer loop the binding constraint — and the only one that produces real-world evidence
+- The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product
 - Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
 - Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
 - This is also the honest defense against the accumulation trap in Section 5: cheap learning is what earns the right to build

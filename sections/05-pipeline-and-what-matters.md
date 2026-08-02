@@ -5,13 +5,14 @@ transition: section-shift
 
 # What Matters
 
-The job is coherence
+Choose the work. Set the bar. Improve the loop.
 
 <!--
 
 KEY POINTS:
 - Shift from diagnosis to what endures
 - Central question: what capabilities become more valuable when execution cost collapses?
+- Callback to the maintainer's role from the three-loop model: select the work, define quality, and improve the system
 - Use this section as a short bridge into the close, not a second body section
 
 DELIVERY:
