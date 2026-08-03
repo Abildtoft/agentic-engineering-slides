@@ -197,7 +197,44 @@ DELIVERY:
 - Optional verbal when landing "Frame the problem and define the MVP": "Eriksson makes a useful distinction: most companies apply AI at the feature layer — bolt on a chatbot, speed up a workflow. The winners rethink at the strategy layer. That's what this list is. This is strategy-layer work."
 - Optional verbal closer: "Garry Tan puts the same idea more sharply: the engineer who writes the least code is often the one building the most."
 
-BRIDGE: "And that only gets harder when building becomes cheap enough that accumulation becomes the default."
+BRIDGE: "There's a sharper way to ask what all that clarity work adds up to: how much of the problem do you own?"
+-->
+
+---
+layout: default
+---
+
+# How much of the problem do you own?
+
+<AgencyLadderDiagram size="md" />
+
+<v-click>
+
+<p class="text-center">
+
+Agents will run rungs 1–6 for you — and it's getting cheap fast. **Rung 7 never does.**
+
+</p>
+
+</v-click>
+
+<!--
+SOURCE: Addy Osmani, "The Agency Ladder" (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7489205791766274048-H0sG)
+
+KEY POINTS:
+- Osmani's ladder of agency, adapted: Flag → Execute → Diagnose → Propose → Recommend → Resolve → Discern
+- "High agency is the art of knowing when to delegate, when to inspect, when to stop, and when to own the result of a process"
+- Good engineers live at rung 5 (Recommend) from day one; you earn your way up to 6 (Resolve)
+- Rung 7, Discern, is rare because it looks like doing nothing — that's why it's hard to grant and harder to trust. It means you priced the fix against everything else on the table and put your name on the tradeoff
+- Agents now run rungs 1–6: flag, diagnose, propose, recommend, resolve. All of it is getting cheap, fast
+- What doesn't get cheap: deciding it wasn't worth doing, deciding the evidence is good enough to ship, being the person who can explain why when it turns out you were wrong
+
+DELIVERY:
+- Walk the ladder bottom-up quickly; don't read every quote aloud
+- Land the click: the tide rises over rungs 1–6, only Discern stays above water
+- Optional verbal closer: "Agency was never about how much you can do. It's about how much of the problem you still own after it leaves your hands."
+
+BRIDGE: "And rung 7 at product scale? That's the next slide."
 -->
 
 ---
@@ -228,6 +265,7 @@ SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
+- Callback to the Agency Ladder: killing features IS rung 7 — discernment applied at product scale
 - Addition gets cheaper; subtraction does not
 - This works across functions: product scope, UX complexity, technical surface area
 - The point is disciplined coherence, not maximal output
