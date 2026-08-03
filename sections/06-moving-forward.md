@@ -3,7 +3,7 @@ layout: section
 transition: section-shift
 ---
 
-# Let's Wrap Up
+# Moving Forward
 
 What survives when the noise fades
 
@@ -75,6 +75,11 @@ layout: two-cols-header
 **If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful.**
 
 </v-click>
+<v-click>
+
+## This is not a tooling upgrade. It's a different operating model.
+
+</v-click>
 
 <!--
 
@@ -86,6 +91,7 @@ SOURCE: Developer Pipeline (mentorship)
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: Kellogg, "Why I'm Not Worried About Running Out of Work" (kellblog.com, March 2026)
 SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
+SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
 
 KEY POINTS:
 - Synthesis of the full argument — both columns should feel honest, not dismissive of the left, not utopian about the right
@@ -95,9 +101,12 @@ KEY POINTS:
 - Ayres on design: "People are finally starting to realize how few truly great designers there are, and how disproportionately valuable they are" — the same bifurcation (execution at risk, strategic judgment more valuable) plays out across all three disciplines
 - Sergio's contribution here is the hiring lens: the question becomes less "PM or engineer?" and more "who can own this end to end?"
 - Kellogg's point reinforces the right column: knowledge workers have transferable skills (writing, analysis, design, judgment) that make "sideways moves" into adjacent roles natural — unlike manufacturing displacement where retraining was a leap
+- The operating-model line is Savkin's: the shift rewards autonomous decision-making, product ownership, and AI-native workflows at the individual level; small self-directed teams, less micromanagement, and constant experimentation at the org level
+- Optional verbal on the final click: "Some orgs are already here. Others are years behind. That's why the industry feels so uneven right now."
 
 DELIVERY:
 - Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful."
+- Land the final click hard: this is not just better tooling inside the old org chart
 
 BRIDGE: "One final lens: where bottlenecks move next."
 -->
@@ -132,24 +141,25 @@ KEY POINTS:
 DELIVERY:
 - This should feel like a return, not a new idea — "Remember the cascade from earlier?"
 
-BRIDGE: "Which brings us to what this looks like for you, concretely."
+BRIDGE: "And the stack that encodes that knowledge is already reaching beyond engineers."
 -->
 
 ---
 layout: two-cols-header
 ---
 
-# What the Shift Rewards
+# Claude Cowork: Same Stack, Wider Audience
 
 ::left::
 
 <v-click>
 
-**Engineer behavior**
+**Under the hood (same primitives)**
 
-- Autonomous decision-making
-- Product ownership
-- AI-native workflows
+- Context shaping behavior
+- Tools and MCP integrations
+- Skills and workflow templates
+- Guardrails and verification loops
 
 </v-click>
 
@@ -157,63 +167,30 @@ layout: two-cols-header
 
 <v-click>
 
-**Team design**
+**In the experience (new interface)**
 
-- Small, self-directed teams
-- Less micromanagement
-- Constant experimentation
+- Task-first prompts, not terminal commands
+- Opinionated defaults for common workflows
+- Domain experts can operate directly
+- Engineers still design the harness
 
 </v-click>
-
 <v-click>
 
-**This is not a tooling upgrade. It's a different operating model.**
+**Not just "AI for engineers" anymore.**
+This is becoming cross-functional infrastructure.
 
 </v-click>
 
 <!--
-
-SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
-SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
-
 KEY POINTS:
-- Move from abstract "valuable skills" to the concrete operating model now emerging
-- Savkin's thread is useful because it spans both individual expectations and org design
-- The individual shift: engineers are expected to make decisions, own outcomes, and stay current on agentic workflows
-- The organizational shift: smaller teams, less micromanagement, faster experimentation loops
-- This should feel like a practical translation of the whole deck, not a new thesis
+- Frame this as continuity, not novelty: same agentic primitives, different UX surface
+- Wider access does not remove the need for engineered guardrails
+- Core takeaway: workflow design is becoming cross-functional infrastructure
+- Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
+- Ties the wrap-up back to the knowledge-extraction slide: the same harness primitives are now the interface non-engineers use
 
-DELIVERY:
-- Land the last line hard: this is not just better tooling inside the old org chart
-- Optional verbal addition: "Some orgs are already here. Others are years behind. That's why the industry feels so uneven right now."
-
-BRIDGE: "And those expectations land differently depending on where you are in your career."
--->
-
----
-layout: statement
----
-
-# Every new generation of agents will make today's optimal workflow temporary.
-
-<v-click>
-
-That is why **less is more.**
-
-</v-click>
-
-<!--
-
-KEY POINTS:
-- Make this a principle, not a prediction: the tooling frontier will keep moving, so the process around it has to stay light enough to change
-- Resist overfitting your organization to the current model generation, current IDE, current agent behavior, or current orchestration pattern
-- Less is more means fewer fixed rituals, fewer permanent abstractions, and more explicit learning loops
-
-DELIVERY:
-- Say this slowly: "Every new generation will force us to rethink what is optimal."
-- Then land the takeaway: keep the harness strong, but keep the operating model lightweight.
-
-BRIDGE: "That is what playing offense really means."
+BRIDGE: "Cross-functional infrastructure, in an environment that keeps changing. Which makes posture the real decision."
 -->
 
 ---
@@ -224,12 +201,12 @@ layout: statement
 
 <v-click>
 
-Protect what works. Wait for clarity. It feels safe.
+Protect what works. Wait for clarity. It feels safe. **It isn't.**
 
 </v-click>
 <v-click>
 
-It isn't. The opportunity is to **learn faster than the environment changes.**
+Every new generation of agents makes today's optimal workflow temporary. Keep the harness strong, the process light — and **learn faster than the environment changes.**
 
 </v-click>
 
@@ -241,6 +218,8 @@ SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/206145
 KEY POINTS:
 - This is the leadership translation of the whole deck: the real failure mode is not only wrong decisions, but strategic drift
 - "Playing offense" here does not mean reckless shipping; it means faster learning, better use of new tools, and willingness to rethink the business
+- The second click is a principle, not a prediction: the tooling frontier will keep moving, so the process around it has to stay light enough to change
+- Resist overfitting your organization to the current model generation, current IDE, current agent behavior, or current orchestration pattern — fewer fixed rituals, fewer permanent abstractions, more explicit learning loops
 - Useful bridge from org design into individual responsibility: the posture of the company shapes the expectations placed on the people inside it
 - For people worried about their jobs, denial is the highest-risk move. Immersion is not a guarantee, but it is the only useful posture: understand what AI can do, how it changes the work, and how to become valuable in the new environment.
 - Professional-services pyramid structures may change sharply; associates and entry-level paths deserve special attention because the old apprenticeship model assumed lots of routine middle work
@@ -248,6 +227,7 @@ KEY POINTS:
 
 DELIVERY:
 - Land "It feels safe" with a pause, then cut hard into "It isn't"
+- On the second click, say it slowly: "Every new generation will force us to rethink what is optimal."
 - On the last line, stress "learn" rather than "faster"
 
 BRIDGE: "And that posture lands differently depending on where you are in your career."

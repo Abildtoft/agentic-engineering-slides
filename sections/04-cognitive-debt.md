@@ -216,22 +216,11 @@ class: statement-wide
 
 # Cognitive debt can be catastrophic — in security, privacy, and compliance.
 
-<!--
-KEY POINTS:
-- Raise severity: this is not only about productivity or elegance
-- Comprehension failures can become incidents, fines, and trust damage
-- Use this as a severity marker, then move back into operating-model changes
+<v-click>
 
-BRIDGE: "Before the day-to-day patterns, look at what this means for review and verification."
--->
+## The goal is thoughtful deployment, not paralysis.
 
----
-layout: statement
-class: statement-wide
----
-
-# The goal is thoughtful deployment, not paralysis.
-
+</v-click>
 <v-click>
 
 Build safeguards. Hold people accountable. Keep capturing the upside.
@@ -242,13 +231,13 @@ Build safeguards. Hold people accountable. Keep capturing the upside.
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
-- Every technology wave creates new ways to harm people, by accident or on purpose
-- Databases, social media, and AI all changed the harm surface area; ignoring that would be irresponsible
+- Raise severity first: this is not only about productivity or elegance — comprehension failures can become incidents, fines, and trust damage
+- Every technology wave creates new ways to harm people, by accident or on purpose; databases, social media, and AI all changed the harm surface area
 - But fear of possible harm cannot be the whole operating model
 - This is the governance posture for the section: risk awareness, safeguards, accountability, and continued deployment
 
 DELIVERY:
-- This is the release valve after the catastrophic-risk slide
+- Let the headline sit as the severity marker, then click — the reveal is the release valve
 - Make the tone sober rather than alarmed
 
 BRIDGE: "The practical version of thoughtful deployment is changing what humans review."
@@ -329,7 +318,7 @@ KEY POINTS:
 - The risk is not one failed check. It's several imperfect checks aligning.
 - Real-world examples of holes lining up (2025): AWS suffered a 13-hour outage where an internal AI assistant was involved in problematic changes; Moonwell issued $1.8M in bad debt in a possibly AI-related incident; Kimi chatbot had reliability issues amid aggressive AI-assisted scaling
 
-BRIDGE: "And the dangerous part is that those holes do not only show up in audits and incidents. They also start in everyday working habits."
+BRIDGE: "And the biggest hole is in the layer we trust most: human review."
 -->
 
 ---

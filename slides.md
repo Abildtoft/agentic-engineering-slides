@@ -40,6 +40,7 @@ layout: statement
 - **DEMO TIME**
 - Cognitive Debt
 - What Matters
+- Moving Forward
 
 ---
 src: ./sections/01-the-shift.md

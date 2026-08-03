@@ -17,6 +17,41 @@ BRIDGE: "We've named the shift — the middle is compressing, value moves to int
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# The failure mode is building yesterday's software faster.
+
+<v-click>
+
+If AI only helps you ship the same apps you would have built five years ago, you haven't changed strategy. You've changed throughput.
+
+</v-click>
+<v-click>
+
+The question is not "How much more can we build?" It's **what becomes worth building now** — and what should become a workflow, a skill, or nothing at all.
+
+</v-click>
+
+<!--
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+
+KEY POINTS:
+- This is the explicit version of the "time traveler" argument from Tan's post: modern tools, old mental model
+- The failure mode is not bad productivity; it is productivity pointed at an obsolete idea of what software should be
+- Tie this to Eriksson's strategy-layer argument: when feasibility changes, the product question changes too
+- Use this to prevent the audience from hearing the next section as "better implementation tooling" instead of a stack-level shift
+
+DELIVERY:
+- Keep this short and pointed. The audience should feel the implication: the strategic question moved before the tooling section starts.
+- Optional verbal: "The dangerous version of AI adoption is not failure. It is succeeding at the old game."
+
+BRIDGE: "So what does the new way of working require? It starts with stepping out of the production line."
+-->
+
+---
 
 # From Producing Outputs to Designing the Loop
 
@@ -55,41 +90,6 @@ DELIVERY:
 - Optional verbal after revealing the two disciplines: "Martin Eriksson put it well: 'Speed without direction is just burning jet fuel on a runway.' Context engineering is the direction. Specs are the runway markings."
 
 BRIDGE: "Let's look at each discipline."
--->
-
----
-layout: statement
-class: statement-wide
----
-
-# The trap is building yesterday's software faster.
-
-<v-click>
-
-If AI only helps you ship the same apps you would have built five years ago, you haven't changed strategy. You've changed throughput.
-
-</v-click>
-<v-click>
-
-The question is not "How much more can we build?" It's **what becomes worth building now** — and what should become a workflow, a skill, or nothing at all.
-
-</v-click>
-
-<!--
-SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
-SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
-
-KEY POINTS:
-- This is the explicit version of the "time traveler" argument from Tan's post: modern tools, old mental model
-- The failure mode is not bad productivity; it is productivity pointed at an obsolete idea of what software should be
-- Tie this to Eriksson's strategy-layer argument: when feasibility changes, the product question changes too
-- Use this to prevent the audience from hearing the next section as "better implementation tooling" instead of a stack-level shift
-
-DELIVERY:
-- Keep this short and pointed. The audience should feel the implication: the strategic question moved before the tooling section starts.
-- Optional verbal: "The dangerous version of AI adoption is not failure. It is succeeding at the old game."
-
-BRIDGE: "Now, if we are not just building the old app faster, what does the new way of working actually require? Two disciplines: context and specs."
 -->
 
 ---

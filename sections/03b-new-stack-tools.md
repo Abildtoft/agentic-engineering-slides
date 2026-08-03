@@ -65,9 +65,19 @@ Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, a
 </div>
 
 </v-click>
+<v-click>
+
+<div class="ml-4 mt-4 text-sm opacity-80">
+
+**Read on every session start.** Root file = project-wide rules; nested files add local constraints. Start with one at the root — add more only when you see repeated mistakes.
+
+</div>
+
+</v-click>
 
 <!--
 SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
 
 KEY POINTS:
 - The left shows raw markdown — plain text anyone can write
@@ -76,50 +86,17 @@ KEY POINTS:
 - This is WHY the agentic ecosystem converged on markdown — it sits at the intersection of human readability and machine parsability
 - Connect forward: every tool in section 03b (skills, agents, AGENTS.md) uses markdown as its medium
 - Tan's phrase is the sharper version: markdown is no longer just documentation; for agents, it becomes executable operating context
-
-DELIVERY:
-- Keep this brief — 60-90 seconds maximum
-- Point at the left: "This is what you type." Point at the right: "This is what the agent sees — the same thing you see."
-- If the room is already familiar with AGENTS.md and skills, move through quickly
-- If the room is unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
-- For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
-
-BRIDGE: "You just saw an AGENTS.md on the left. Let's zoom in on what that file actually does."
--->
-
----
-
-# AGENTS.md — Your Agent's Onboarding Doc
-
-<v-click>
-
-`AGENTS.md` at the repo root — project conventions, patterns, constraints, workflow rules. **Read by the agent on every session start.**
-
-</v-click>
-<v-click>
-
-Nest it: put an `AGENTS.md` in any directory. The agent inherits root conventions and adds local ones.
-
-</v-click>
-<v-click>
-
-Start with one file at root. Add directory-level files only when you see repeated mistakes.
-
-</v-click>
-
-<!--
-SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
-
-KEY POINTS:
-- AGENTS.md is the highest-leverage first step for most teams adopting agentic tools
+- AGENTS.md is the highest-leverage first step for most teams adopting agentic tools — think of it as onboarding documentation where the reader is an AI, the same clarity you'd give a new team member
 - Claude Code uses CLAUDE.md — same concept, vendor-specific naming
 - Inheritance model: root file = project-wide rules, subdirectory files = domain-specific constraints
 - Real example: this presentation was built with an AGENTS.md specifying Slidev conventions, Yarn 4, multi-file structure
-- Think of it as onboarding documentation where the reader is an AI — the same clarity you'd give a new team member
 
 DELIVERY:
-- If the room is technical, walk through the nesting model briefly
-- If non-technical, focus on the analogy: "It's the same onboarding doc you'd write for a new hire, except the new hire is an agent"
+- Keep this brief — 90 seconds maximum
+- Point at the left: "This is what you type." Point at the right: "This is what the agent sees — the same thing you see."
+- If the room is unfamiliar, pause on the example: "Headers, bullet points, bold text. That's it. That's markdown."
+- If the room is technical, walk through the nesting model briefly; if non-technical, use the analogy: "It's the same onboarding doc you'd write for a new hire, except the new hire is an agent"
+- For designers: "Think of it like structured notes — except those notes become instructions an agent follows."
 
 BRIDGE: "Now let's look at the first tool built on this same medium."
 -->
@@ -296,57 +273,10 @@ KEY POINTS:
 - Three capability types map to practical intuition: do, read, reuse
 - Hard contracts reduce ambiguity, retries, and brittle handoffs
 - Pairing model: skills = workflow behavior, MCP = external system interface
+- Concrete verbal example (Linear): "Create a Linear issue about the bug we just found" → the agent picks the create_issue tool from the Linear MCP server → schema-validated result: issue LIN-1234. One server, three capability types.
+- Contrast to hold: skills are soft guidance in markdown; MCP is a hard interface contract — inputs and outputs are schema-validated, no interpretation at the interface
 
 BRIDGE: "Now let's look at one concrete MCP example where design and implementation share the same source of truth."
--->
-
----
-layout: default
-class: text-center
----
-
-# From Concept to Workflow
-
-<p class="text-base opacity-75 mb-4">One concrete MCP flow, end to end.</p>
-
-<MermaidDiagram :code="`graph LR
-  U[User: 'Create a Linear issue about the bug we just found'] -->|prompt| A[Agent]
-  A -->|picks a tool| C[MCP Client]
-  C -->|connects to| S[Linear MCP Server]
-  subgraph Capabilities
-    T1[Tool: create_issue]
-    T2[Tool: update_issue]
-    R1[Resource: team_members]
-    P1[Prompt: bug_report]
-  end
-  S -->|exposes| T1
-  S -->|exposes| T2
-  S -->|exposes| R1
-  S -->|exposes| P1
-  T1 -->|validated result| RES[Issue LIN-1234]
-`" size="xl" />
-
-<p class="mt-4 text-lg opacity-85">MCP shapes what the agent can <strong>do</strong>.</p>
-
-<v-click>
-
-<p class="text-base opacity-75"><strong>One server, three capability types</strong> — Tools, Resources, Prompts.</p>
-
-</v-click>
-<v-click>
-
-<p class="text-base opacity-75"><strong>Hard contracts</strong> — inputs and outputs are schema-validated. No interpretation, no ambiguity at the interface.</p>
-
-</v-click>
-
-<!--
-KEY POINTS:
-- User task -> Agent selects a tool from the MCP server
-- One server exposes three capability types: Tools, Resources, Prompts
-- Skills are soft guidance in markdown; MCP is a hard interface contract
-- Linear is just the example; the pattern generalizes to any system
-
-BRIDGE: "Now swap issue tracking for design tooling and the same pattern becomes much more interesting."
 -->
 
 ---
@@ -464,37 +394,10 @@ BRIDGE: "Hooks are one type of guardrail. Let's zoom out to the full picture."
 -->
 
 ---
-layout: statement
----
-
-# The best AI tooling adds deterministic gates around probabilistic agents.
-
-<v-click>
-
-Hooks, tests, schema validation, permission boundaries — **hard checkpoints that never hallucinate** wrapped around models that always might.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Name the pattern explicitly: deterministic gates + probabilistic agents
-- Hooks are one instance; tests, schema validation, permission scoping, linters are others
-- Connects forward to guardrails (bowling-lane metaphor) and backward to MCP contracts
-- Also connects to the Swiss-cheese model in Section 04
-
-DELIVERY:
-- Let the heading land for 2-3 seconds before clicking
-- Tone: conviction — naming something the audience already senses
-- Optional verbal: "Every reliable AI system I've seen follows this pattern. The model is creative and unpredictable. The system around it is rigid and unforgiving. That tension is the design."
-
-BRIDGE: "So how do you design a whole system around this principle? That's guardrails."
--->
-
----
 layout: default
 ---
 
-# Guardrails
+# Guardrails — Deterministic Gates Around Probabilistic Agents
 
 <SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
 
@@ -505,12 +408,12 @@ layout: default
 </v-click>
 <v-click>
 
-Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+Hooks, tests, schema validation, permission boundaries — **hard checkpoints that never hallucinate** wrapped around models that always might.
 
 </v-click>
 <v-click>
 
-Context shapes what the agent knows. Specs shape what good looks like. **Guardrails shape boundaries** — tests, hooks, and validation scripts.
+Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
 
 </v-click>
 
@@ -520,11 +423,16 @@ SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-b
 
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
+- Name the pattern explicitly: deterministic gates + probabilistic agents
+- Hooks (just introduced) are one guardrail; tests, schema validation, permission scoping, linters are others
 - Guardrails convert stochastic generation into controlled iteration
-- Hooks (just introduced) are one guardrail; tests, validation scripts, permission scoping are others
+- Connects backward to MCP contracts and forward to the Swiss-cheese model in Section 04
+- Callback line for verbal use: "Context shapes what the agent knows. Specs shape what good looks like. Guardrails shape boundaries."
 - For designers: visual regression tests, accessibility checks, component snapshots serve the same role
 
 DELIVERY:
+- Let the headline land for 2-3 seconds before clicking — tone: conviction, naming something the audience already senses
+- Optional verbal: "Every reliable AI system I've seen follows this pattern. The model is creative and unpredictable. The system around it is rigid and unforgiving. That tension is the design."
 - "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
 - Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
 
@@ -621,7 +529,7 @@ layout: default
 class: text-center
 ---
 
-# The Agent Loop
+# Harness Engineering
 
 <MermaidDiagram :code="`graph LR
   CI[Context: prompts, memory, skills] -->|shapes| M[Model: reasons and decides]
@@ -631,53 +539,23 @@ class: text-center
   P -.->|reads| M
   OV -.->|results back| M
   CO[Control: compaction, orchestration] -->|manages| M
-`" size="xl" />
+`" size="lg" />
 
 <p class="mt-2 text-base opacity-75">The model reasons and decides. <strong>Everything else is the harness.</strong></p>
 
-<!--
-SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
-
-KEY POINTS:
-- Visual architecture before naming the discipline on the next slide
-- Five harness components around the model: Context Injection, Control, Action, Persist, Observe & Verify
-- The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
-- Dashed arrows = feedback paths (reads from persist, results back from observation)
-- Solid arrows = primary flow (context shapes model, model calls actions, actions write to persist and trigger verification)
-
-DELIVERY:
-- Walk through the cycle once: "Context goes in. The model reasons and decides. It takes action — bash, tools, MCPs. Results get persisted and verified. Feedback loops back. And the cycle repeats."
-- Then land the bottom line: "The model is one box. Everything else? That's the harness."
-
-BRIDGE: "This whole system has a name."
--->
-
----
-layout: statement
----
-
-<h1>Harness Engineering</h1>
-
-## Agent = Model + Harness
-
 <v-click>
 
-The harness is every piece of code, configuration, and execution logic that isn't the model itself. Context. Specs. Skills. MCP. Hooks. Tests. Specialized agents. Coordinated teams. **All one discipline — designing the system around the model.**
+<p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests, specialized agents — one discipline: designing the system around the model.</p>
 
 </v-click>
 <v-click>
 
-Your job moves from working inside the loop to improving it: **choose the work, set the bar, and turn every miss into a stronger harness.**
+<p class="text-base opacity-85">When an agent fails, don't just fix the output. <strong>Improve the harness so the whole loop gets better.</strong></p>
 
 </v-click>
 <v-click>
 
-When an agent fails, don't just fix the output. Improve the harness so the whole loop gets better.
-
-</v-click>
-<v-click>
-
-> "The model is the engine. The harness is the car." — **Mitchell Hashimoto**
+<p class="text-base opacity-85">"The model is the engine. The harness is the car." — <strong>Mitchell Hashimoto</strong></p>
 
 </v-click>
 
@@ -687,16 +565,19 @@ SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-a
 SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 
 KEY POINTS:
-- Name the discipline that ties all prior concepts together
-- Treat each v-click as a recap ladder from parts to operating model
-- Make the maintainer's role explicit: choose what enters the loop, encode the quality criteria, and improve the system when it misses
+- The previous slide's bridge promised a name — deliver it with the diagram: five harness components around the model (Context Injection, Control, Action, Persist, Observe & Verify)
+- The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
+- Dashed arrows = feedback paths; solid arrows = primary flow
+- Trivedy formal definition: "Agent = Model + Harness. A harness is every piece of code, configuration, and execution logic that isn't the model itself."
+- Make the maintainer's role explicit: choose what enters the loop, encode the quality criteria, and improve the system when it misses — choose the work, set the bar, turn every miss into a stronger harness
 - Emphasize failure-as-signal: improve the harness, not just the output
 - This is the conceptual peak before the live demo
-- Trivedy formal definition: "Agent = Model + Harness. A harness is every piece of code, configuration, and execution logic that isn't the model itself."
 - Terminal Bench evidence: LangChain improved from Top 30 to Top 5 on Terminal Bench 2.0 by only changing the harness — model stayed the same. The harness is where the leverage is.
 - Model-Harness Training Loop: useful primitives get discovered → added to the harness → used to train the next model → model improves at using the harness → cycle repeats. This co-evolution is why harness engineering remains valuable even as models improve.
 
 DELIVERY:
+- Walk through the cycle once: "Context goes in. The model reasons and decides. It takes action — bash, tools, MCPs. Results get persisted and verified. Feedback loops back. And the cycle repeats."
+- Then land the bottom line: "The model is one box. Everything else? That's the harness."
 - Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
 - Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 
@@ -736,140 +617,7 @@ DELIVERY:
 - Verbal option: "Notice what he's saying: this isn't new work. Lint rules, tests, editor tooling — the best engineers always encoded their knowledge as infrastructure. The only thing that changed is how much knowledge is now encodable."
 - Verbal option (the reframe): "When a PR gets rejected because it doesn't follow your architecture patterns — Cherny calls that a failure of automation, not a failure of the contributor."
 
-BRIDGE: "But the engineering loop is only the innermost loop."
--->
-
----
-layout: default
-class: text-center
----
-
-# Three Loops. Three Clocks.
-
-<MermaidDiagram :code="`graph TB
-  X[External feedback · hours to weeks<br/>Release → Observe users → Update direction ↺]
-  D[Developer feedback · tens of minutes to hours<br/>Product vision → Review product → Refine spec + steer ↺]
-  A[Agentic coding · minutes<br/>Spec + evals → Build → Test + inspect ↺]
-  X -.-> D
-  D -.-> A
-`" size="md" />
-
-<v-click>
-
-As implementation accelerates, the maintainer's job moves outward: **choose the work, set the bar, improve the loop.**
-
-</v-click>
-
-<!--
-SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
-SOURCE: Satya Nadella, "A frontier without an ecosystem is not stable" (x.com/satyanadella/status/2066182223213293753)
-
-KEY POINTS:
-- Widen the lens from the technical agent loop to the full product-development system
-- The three loops operate at different cadences: minutes, tens of minutes to hours, and hours to weeks
-- The agentic loop turns a spec and optional evals into tested software
-- The developer loop reviews the current product and updates the vision, design, flow, or spec
-- The external loop gathers real-world evidence from friends, alpha users, production, or experiments
-- Information flows inward: external evidence shapes product vision; developer judgment shapes the spec; the spec drives the agent
-- The maintainer works on the loop, not only inside it: selecting what deserves work, defining quality, and strengthening the system from feedback
-- Ng calls the durable human advantage a "context advantage," not merely taste: humans know things about users and operating context that the AI does not
-- As agents take over more QA, engineers move into partial product-management responsibility
-- Nadella's ownership test still applies across all three loops: the durable asset is the institutional system that captures judgment in specs, evals, traces, and harnesses
-
-DELIVERY:
-- Start at the bottom: "This is the loop we just examined — the agent can cycle every few minutes."
-- Move upward: "A developer reviews less often and steers at a higher level. Real users close the slowest, outer loop."
-- Land the context advantage: "So long as you know something about the user that the agent does not, you still have information to inject into the system."
-- Optional enterprise translation: "The model is replaceable. The loop that captures feedback and turns it into reusable judgment is the compounding asset."
-
-BRIDGE: "Notice what all three loops actually produce. Not just code — evidence."
--->
-
----
-layout: statement
----
-
-# The fastest way to build is to find the cheapest way to learn.
-
-<v-click>
-
-Accelerating the inner loop just gets you to the wrong answer sooner. **The maintainer's leverage is in the loops that decide what to build and whether it worked.**
-
-</v-click>
-<v-click>
-
-**What is the cheapest thing that would change our mind?** Often it isn't code at all — a prototype, a landing page, five conversations, one afternoon.
-
-</v-click>
-
-<!--
-SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
-SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
-SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
-
-KEY POINTS:
-- This is the payoff of the three-loop diagram: every loop is a learning loop, and they are priced very differently
-- Agentic speed makes the inner loop nearly free, which makes the outer loop the binding constraint — and the only one that produces real-world evidence
-- The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product
-- Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
-- Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
-- This is also the honest defense against the accumulation trap in Section 5: cheap learning is what earns the right to build
-- Connects back to "the trap is building yesterday's software faster" — throughput without learning is just faster wrongness
-
-DELIVERY:
-- Land the headline cold, before either click. It should sound like a contradiction for a second.
-- Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
-- Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
-
-BRIDGE: "One more signal about where this whole stack is heading — then we go live."
--->
-
----
-layout: two-cols-header
----
-
-# Claude Cowork: Same Stack, Wider Audience
-
-::left::
-
-<v-click>
-
-**Under the hood (same primitives)**
-
-- Context shaping behavior
-- Tools and MCP integrations
-- Skills and workflow templates
-- Guardrails and verification loops
-
-</v-click>
-
-::right::
-
-<v-click>
-
-**In the experience (new interface)**
-
-- Task-first prompts, not terminal commands
-- Opinionated defaults for common workflows
-- Domain experts can operate directly
-- Engineers still design the harness
-
-</v-click>
-<v-click>
-
-**Not just "AI for engineers" anymore.**
-This is becoming cross-functional infrastructure.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Frame this as continuity, not novelty: same agentic primitives, different UX surface
-- Wider access does not remove the need for engineered guardrails
-- Core takeaway: workflow design is becoming cross-functional infrastructure
-- Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
-
-BRIDGE: "Now let's watch this operating model in motion."
+BRIDGE: "That's the mandate. Now let's watch this operating model in motion."
 -->
 
 ---
