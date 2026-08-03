@@ -12,7 +12,7 @@ Choose the work. Set the bar. Improve the loop.
 KEY POINTS:
 - Shift from diagnosis to what endures
 - Central question: what capabilities become more valuable when execution cost collapses?
-- Callback to the maintainer's role from the three-loop model: select the work, define quality, and improve the system
+- The three-loop model lands in this section and delivers on the divider tagline: select the work, define quality, and improve the system
 - Use this section as a short bridge into the close, not a second body section
 
 DELIVERY:
@@ -36,7 +36,93 @@ KEY POINTS:
 - "Revealing" is the key word — these are not new skills, they were always underneath the implementation work
 - Keep the section cross-functional even though the source is engineering phrasing
 
-BRIDGE: "So what do those skills look like in practice?"
+BRIDGE: "So where does that judgment get applied? Zoom out from the agent loop, and there are three."
+-->
+
+---
+layout: default
+class: text-center
+---
+
+# Three Loops. Three Clocks.
+
+<MermaidDiagram :code="`graph TB
+  X[External feedback · hours to weeks<br/>Release → Observe users → Update direction ↺]
+  D[Developer feedback · tens of minutes to hours<br/>Product vision → Review product → Refine spec + steer ↺]
+  A[Agentic coding · minutes<br/>Spec + evals → Build → Test + inspect ↺]
+  X -.-> D
+  D -.-> A
+`" size="md" />
+
+<v-click>
+
+As implementation accelerates, the maintainer's job moves outward: **choose the work, set the bar, improve the loop.**
+
+</v-click>
+
+<!--
+SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
+SOURCE: Satya Nadella, "A frontier without an ecosystem is not stable" (x.com/satyanadella/status/2066182223213293753)
+
+KEY POINTS:
+- Widen the lens from the technical agent loop to the full product-development system
+- The three loops operate at different cadences: minutes, tens of minutes to hours, and hours to weeks
+- The agentic loop turns a spec and optional evals into tested software
+- The developer loop reviews the current product and updates the vision, design, flow, or spec
+- The external loop gathers real-world evidence from friends, alpha users, production, or experiments
+- Information flows inward: external evidence shapes product vision; developer judgment shapes the spec; the spec drives the agent
+- The maintainer works on the loop, not only inside it: selecting what deserves work, defining quality, and strengthening the system from feedback
+- Ng calls the durable human advantage a "context advantage," not merely taste: humans know things about users and operating context that the AI does not
+- As agents take over more QA, engineers move into partial product-management responsibility
+- Nadella's ownership test still applies across all three loops: the durable asset is the institutional system that captures judgment in specs, evals, traces, and harnesses
+- This delivers on the section divider's tagline: choose the work, set the bar, improve the loop
+
+DELIVERY:
+- Start at the bottom: "This is the loop from the harness section and the demo — the agent can cycle every few minutes."
+- Move upward: "A developer reviews less often and steers at a higher level. Real users close the slowest, outer loop."
+- Land the context advantage: "So long as you know something about the user that the agent does not, you still have information to inject into the system."
+- Optional enterprise translation: "The model is replaceable. The loop that captures feedback and turns it into reusable judgment is the compounding asset."
+
+BRIDGE: "Notice what all three loops actually produce. Not just code — evidence."
+-->
+
+---
+layout: statement
+---
+
+# The fastest way to build is to find the cheapest way to learn.
+
+<v-click>
+
+Accelerating the inner loop just gets you to the wrong answer sooner. **The maintainer's leverage is in the loops that decide what to build and whether it worked.**
+
+</v-click>
+<v-click>
+
+**What is the cheapest thing that would change our mind?** Often it isn't code at all — a prototype, a landing page, five conversations, one afternoon.
+
+</v-click>
+
+<!--
+SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
+SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
+SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
+
+KEY POINTS:
+- This is the payoff of the three-loop diagram: every loop is a learning loop, and they are priced very differently
+- Agentic speed makes the inner loop nearly free, which makes the outer loop the binding constraint — and the only one that produces real-world evidence
+- The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product
+- Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
+- Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
+- This is also the honest defense against the accumulation trap later in this section: cheap learning is what earns the right to build
+- Connects back to "the failure mode is building yesterday's software faster" — throughput without learning is just faster wrongness
+
+DELIVERY:
+- Land the headline cold, before either click. It should sound like a contradiction for a second.
+- Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
+- Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
+
+BRIDGE: "And cheap learning at speed still has one constraint left. It isn't typing."
 -->
 
 ---
@@ -67,7 +153,7 @@ KEY POINTS:
 - Doshi's logic chain reinforces this: AI tools commoditize → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
 - The ending now needs to answer what survives and how teams adapt
 
-BRIDGE: "Let me name what that coherence looks like in practice."
+BRIDGE: "And don't mistake that constraint for shrinking demand. The opposite is happening."
 -->
 
 ---
@@ -111,7 +197,7 @@ DELIVERY:
 - Optional accounting version: "Accounting has been automated for a century. The profession did not vanish; the surface area expanded because the ROI of measuring, reporting, and planning changed."
 - Keep the individual pain caveat honest: on average society gets richer, but the averages hide real displacement. People lose jobs, towns hollow out, and transitions hurt before the new roles are visible.
 
-BRIDGE: "So if the work expands, the question becomes: what kind of work? Let me name it."
+BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 -->
 
 ---

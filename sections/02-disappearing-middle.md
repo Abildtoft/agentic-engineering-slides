@@ -19,7 +19,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 # The Middle of Software Work
 
-<SlideImage src="/disappearing-middle.png" alt="The compressing middle of software work" />
+<SlideImage src="/disappearing-middle.png" alt="The compressing middle of software work" size="sm" />
 
 <v-click>
 
@@ -85,85 +85,14 @@ KEY POINTS:
 - Translation-heavy work shrinks; process design, decision rights, and coordination matter more
 - This creates both opportunity and pressure for Product Managers, Product Owners, designers, and engineers
 - Use Linear here as a category signal, not neutral proof
+- Optional verbal (Linear's own numbers, company-reported, 24 March 2026): agent-completed work grew 5x across Linear workspaces in three months, agents authored nearly 25% of new issues, and coding agents are installed in 75%+ of Linear enterprise workspaces. Agents are not just completing work — they are shaping the work entering the system.
 
 DELIVERY:
 - Address product/UX explicitly so they feel included in the thesis
 - Call out George's line verbally: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
 - Keep tone candid, not defensive
 
-BRIDGE: "And Linear's own numbers suggest that this is already changing inside the issue system itself."
--->
-
----
-layout: fact
----
-
-<BigNumber
-  value="5x"
-  label="growth in agent-completed work across Linear workspaces over the prior 3 months"
-  sublabel="Agents also authored nearly 25% of new issues (company-reported, 24 March 2026)"
-/>
-
-<v-click>
-
-<p class="mt-8 text-xl">Agents are not just completing work. They are starting to shape the work entering the system.</p>
-
-</v-click>
-
-<!--
-SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
-
-KEY POINTS:
-- Company-reported metrics from Linear's March 24, 2026 launch page
-- Use them as ecosystem signal: one leading issue tracker now sees agents inside the issue system itself
-- Optional verbal detail: coding agents are installed in 75%+ of Linear enterprise workspaces
-- Important nuance: this is not independent market research; it is a directional signal from a category leader
-- The strategic implication matters more than the raw numbers: issue systems are shifting from backlog management toward context plus execution infrastructure
-
-DELIVERY:
-- Let "5x" land first
-- Then emphasize the stronger organizational signal: agents are not only closing work, they are helping define and shape the work entering the system
-
 BRIDGE: "And for PMs, that compression shows up as a much shorter path from idea to first draft."
--->
-
----
-layout: quote
-class: quote-long
----
-
-<div class="quote-progressive">
-  <div class="quote-progressive-line">"A PM with a good idea can now get to a first draft faster than ever.</div>
-  <v-click>
-    <div class="quote-progressive-line">They can visualize concepts, test directions, and move quickly."</div>
-  </v-click>
-</div>
-
-<div v-after class="mt-6 text-xl font-normal not-italic">
-  Duolingo Chief Product Officer, via Aakash Gupta
-</div>
-
-<v-click>
-
-## The distance between idea and artifact has shrunk.
-
-</v-click>
-
-<!--
-SOURCE: Aakash Gupta, quoting Duolingo's Chief Product Officer (x.com/aakashgupta/status/2034356648764948686, March 18, 2026)
-
-KEY POINTS:
-- This is the product-side lived experience of the same compression
-- PM leverage moves closer to first-draft creation, experimentation, and direction-setting
-- Faster artifact creation does not reduce the need for product judgment; it increases the premium on it
-- Strong verbal line: "The role becomes more independent and more creative because the distance from idea to artifact collapses"
-
-DELIVERY:
-- Let the first sentence land before revealing the second
-- Land the final line as the synthesis; that is the transferable idea
-- Optional verbal line: "If you can show instead of describe, the role changes."
-
-BRIDGE: "Once the idea-to-artifact gap collapses, precision of intent becomes the leverage point."
 -->
 
 ---
@@ -175,28 +104,32 @@ class: statement-wide
 
 <v-click>
 
-The job is walking the terrain, understanding the politics, and deciding what should happen next.
+"A PM with a good idea can now get to a first draft faster than ever. They can visualize concepts, test directions, and move quickly." — **Duolingo Chief Product Officer.** The distance between idea and artifact has shrunk.
 
 </v-click>
 <v-click>
 
-The deck, prototype, and code are just evidence that the thinking happened.
+But the job is walking the terrain, understanding the politics, and deciding what should happen next. **The deck, prototype, and code are just evidence that the thinking happened.**
 
 </v-click>
 
 <!--
+SOURCE: Aakash Gupta, quoting Duolingo's Chief Product Officer (x.com/aakashgupta/status/2034356648764948686, March 18, 2026)
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
-- This sharpens the task-vs-job distinction before the role-compression argument
-- Some jobs really are mostly a single task; when the task is automated, the job can disappear
+- The Duolingo quote is the product-side lived experience of the compression: PM leverage moves closer to first-draft creation, experimentation, and direction-setting
+- Faster artifact creation does not reduce the need for product judgment; it increases the premium on it
+- The task-vs-job distinction sharpens the role-compression argument: some jobs really are mostly a single task; when the task is automated, the job can disappear
 - Most professional roles are not paid for the visible artifact alone
 - Consulting example: the slide deck is not the core value; the core value is diagnosing the enterprise, reading the politics, talking to customers, and creating a direction people can act on
 - Apply this to software: the code is not the whole job. The job is discovering the real problem, choosing the constraints, shaping the system, and owning the outcome
 
 DELIVERY:
-- Keep this calm; it is not meant to reassure everyone equally
-- The distinction should feel useful rather than comforting
+- Land the headline cold — after the compression slides it should sound like a mild contradiction for a second
+- The quote grounds it; the final reveal resolves it
+- Keep this calm; it is not meant to reassure everyone equally — the distinction should feel useful rather than comforting
+- Optional verbal line: "If you can show instead of describe, the role changes."
 
 BRIDGE: "And that is why 'good talk' suddenly matters so much."
 -->
@@ -291,19 +224,11 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 # One Surviving Skill Set
 
+<RolesBlurDiagram size="md" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
+
 <v-click>
 
-**Design** — from creating artifacts to articulating intent and judging quality
-
-</v-click>
-<v-click>
-
-**Product** — from translating requirements to creating clarity, setting priorities, and aligning execution
-
-</v-click>
-<v-click>
-
-**Engineering** — from writing code to designing systems and verifying correctness
+<p class="text-base opacity-80"><strong>Design</strong> — articulating intent, judging quality · <strong>Product</strong> — creating clarity, setting priorities · <strong>Engineering</strong> — designing systems, verifying correctness</p>
 
 </v-click>
 <v-click>
@@ -313,61 +238,31 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 </v-click>
 
 <!--
+SOURCE: Adapted in-house from a reference graphic shared by the speaker.
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
 
 KEY POINTS:
-- Make one pass per role and keep each description concrete
-- The throughline is identical across roles: reduce ambiguity, raise judgment quality
-- Important distinction: convergence of capabilities is not collapse of professions
-- Sergio's framing is useful here as a market signal: more teams now expect end-to-end ownership, and some will explicitly call that convergence point the Product Engineer
-- PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too
-- Ayres calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
-- Product line translation: "A great PM creates clarity, sets priorities, and aligns the team to execute."
-- Optional verbal for the Design reveal: "Preston Attebery nailed this: 'Once everyone can make an app, we will remember that the hard part about apps isn't making the app.'"
-
-DELIVERY:
-- Reveal each role one at a time, let the pattern emerge
-- Land the final line as the handoff into section 3's practical model
-- After "turning ambiguity into clarity" lands, optional verbal: "It's amazing how much productive AI makes you if you're able to ask the right questions. That's the clarity we're talking about."
-- Optional verbal clarification: "I don't mean every company will standardize on that title. I mean this is the overlap zone the market is rewarding."
-- When revealing Design: Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
-- Verbal expansion: "Articulating intent means two things now — shaping execution as it happens, and setting near-term direction. Not yearly roadmaps, not pixel-perfect comps. Three to six months of clarity."
-- Eriksson's radiology example is useful color here: as AI expands what's feasible, domain knowledge and strategy become more central, not less
-
-BRIDGE: "Ambiguity into clarity. But where does the constraint actually go?"
--->
-
----
-layout: default
-class: text-center
----
-
-# When Roles Blur
-
-<div class="text-sm opacity-70 -mt-2 mb-6">When everything looks the same</div>
-
-<RolesBlurDiagram size="lg" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
-
-<!--
-SOURCE: Adapted in-house from a reference graphic shared by the speaker.
-SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
-SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
-
-KEY POINTS:
-- Visual capstone for the "Three job titles, one job" argument that just landed.
 - Left panel: the old assumption — implementation complexity justified sequential handoffs.
 - Right panel: with implementation compressed, the disciplines overlap; what remains in the center is judgment.
-- The JUDGMENT label is the punchline — it's the thing that doesn't compress.
-- The Product Engineer reveal names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
-- Less handoff, faster learning, more end-to-end ownership — an operating-model shift, not a job-title fad
-- PostHog provides the practical reason this overlap matters: deciding what to build is becoming more constrained than building it
+- The JUDGMENT label is the visual punchline — it's the thing that doesn't compress.
+- The throughline is identical across roles: reduce ambiguity, raise judgment quality
+- Important distinction: convergence of capabilities is not collapse of professions
+- The Product Engineer caption names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
+- Sergio's framing is a market signal: more teams now expect end-to-end ownership
+- PostHog makes the overlap operational: context, feedback loops, and actionable communication become engineering-adjacent skills too; deciding what to build is becoming more constrained than building it
+- Ayres calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
+- Product line translation: "A great PM creates clarity, sets priorities, and aligns the team to execute."
+- Jenny Wen frames the new design work as two modes — (a) supporting execution: consulting on in-flight work, giving feedback, polishing in code; (b) setting short-range vision: 3–6 month direction, not multi-year roadmaps
 
 DELIVERY:
 - Don't read the diagram aloud. Let the eye do the work.
 - Optional verbal: "The walls were never about the disciplines. They were about implementation cost. Take that cost out and the walls go with it."
-- On the reveal: "Some teams are starting to give that overlap a name." Emphasize the sequence: frame, ship, measure.
+- On the roles reveal: "I don't mean every company will standardize on the Product Engineer title. I mean this is the overlap zone the market is rewarding."
+- After "turning ambiguity into clarity" lands, optional verbal: "It's amazing how productive AI makes you if you're able to ask the right questions. That's the clarity we're talking about."
+- Optional verbal for Design: "Preston Attebery nailed this: 'Once everyone can make an app, we will remember that the hard part about apps isn't making the app.'"
+- Eriksson's radiology example is useful color here: as AI expands what's feasible, domain knowledge and strategy become more central, not less
 
 BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier to understand."
 -->
