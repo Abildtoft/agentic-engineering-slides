@@ -305,5 +305,22 @@ DELIVERY:
 - Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
 - Optional verbal addition after the weaving story: "Same thing happened in radiology. Geoffrey Hinton predicted AI would replace radiologists in five years. Instead, salaries went up 44%, Mayo Clinic doubled its staff, and AI mammography is catching 29% more cancers. When costs collapse, demand explodes. The constraint moved upstream — to the humans interpreting the results."
 
+BRIDGE: "So the operating principle is simple."
+-->
+
+---
+layout: statement
+---
+
+# “Figure out your bottleneck, automate it, then find the next bottleneck.”
+
+<!--
+KEY POINTS:
+- Turn the bottleneck cascade from an explanatory model into a repeatable operating principle
+- Automation does not end the work; it reveals where judgment and system design are needed next
+
+DELIVERY:
+- Let the sentence stand on its own; do not elaborate before moving on
+
 BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->
