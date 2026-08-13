@@ -478,7 +478,44 @@ DELIVERY:
 - Expand verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
 - Willison verbal option: "Simon Willison says he starts every single coding session by telling the agent how to run the tests. Five tokens — 'red-green TDD' — and the reliability jumps. Tests are free when agents write and run them."
 
-BRIDGE: "With guardrails in place, you can safely narrow responsibilities and compose agents together."
+BRIDGE: "Tests are one gate. Zoom out, and you can ring the agent with a gate for everything you care about."
+-->
+
+---
+layout: default
+class: text-center
+clicks: 2
+---
+
+# Set the Constraints Around Your Agents
+
+<ConstraintRingDiagram size="md" />
+
+<v-click at="2">
+
+<p class="text-lg">Deterministic checks the model can't argue with. <strong>They decide what's good enough to ship.</strong></p>
+
+</v-click>
+
+<!--
+SOURCE: "Set the constraints around your agents" diagram (shared reference image), adapted
+SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/) — back-pressure framing
+
+KEY POINTS:
+- This is the payoff of the guardrails + tests beat: name the full set of constraints, then make the exit criterion explicit
+- Eight constraint dimensions: correctness (unit, property, mutation tests), security (SAST, dependency and secret scanning), performance (perf budgets, load tests), accessibility (axe, contrast, keyboard), maintainability (coverage, complexity), cost efficiency (token/compute budgets), back-pressure (throttle inflow, cap work in progress), comprehensibility (review, answerability)
+- The quality gates are deterministic: unit, property, acceptance and mutation tests, schema contracts, token and compute budgets, quality metrics — checks the model can't argue with
+- Back-pressure is the odd one out and worth a sentence: when agents produce more than the pipeline can absorb, throttle inflow or shed load so the system remains operable; it controls the queue rather than judging output quality (Ronacher's framing)
+- Comprehensibility as a gate connects forward to Section 04's explainability gate: no merge until someone can answer for the change
+- The human role shifts from reviewing output line by line to designing the gates and deciding where the bar sits
+
+DELIVERY:
+- Walk the ring clockwise from Correctness; don't read every sub-label aloud
+- First click (animation only, no text): "the agent works inside the ring — it produces more code than you can read, and attempts that fail a gate bounce straight back. You never see them."
+- Second click: the ring slides left and the pipeline opens — land the line "only output that clears every gate ships"
+- Optional verbal closer: "Set your constraints. They decide whether the code your agents generate is good enough to ship — not your reading speed."
+
+BRIDGE: "With the constraints in place, you can safely narrow responsibilities and compose agents together."
 -->
 
 ---
