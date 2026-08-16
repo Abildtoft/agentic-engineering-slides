@@ -57,6 +57,9 @@
   letter-spacing: -0.01em;
   text-wrap: balance;
   max-width: 25ch;
+  /* The layout centres its text, so the capped block has to be centred too —
+     without this it anchors left and the centred lines sit off-centre. */
+  margin-inline: auto;
 }
 
 .slidev-layout.statement.statement-wide h1 {
