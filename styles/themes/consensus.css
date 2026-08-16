@@ -1,9 +1,23 @@
 [data-theme="consensus"] {
-  --brand-primary: #4957F5;
-  --brand-text: #000000;
+  /* Consensus CVI v1.0 — Navy primary, Ink text, Azure for links and dividers */
+  --brand-primary: #002353;
+  --brand-text: #110B11;
+  /* White rather than Paper #F9F9F9: the deck's illustrations are PNGs with a
+     white matte, which shows as a visible box on any off-white slide. */
   --brand-bg: #FFFFFF;
-  --brand-bg-accent: #001AAB;
-  --brand-link: #4957F5;
+  --brand-bg-accent: #002353;
+  --brand-link: #5396C7;
   --brand-surface: #F7F7F9;
   --brand-on-accent: #FFFFFF;
+  --brand-font: 'Roboto';
+}
+
+/* CVI presentation templates: title slide runs Navy → Ink, dividers Azure → Navy.
+   The divider stops land navy by 55% so centred white text clears AA contrast. */
+[data-theme="consensus"] .slidev-layout.cover {
+  background: linear-gradient(135deg, #002353 0%, #110B11 100%);
+}
+
+[data-theme="consensus"] .slidev-layout.section {
+  background: linear-gradient(120deg, #5396C7 0%, #002353 55%);
 }

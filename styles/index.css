@@ -9,7 +9,8 @@
 
 .slidev-layout {
   color: var(--brand-text);
-  font-family: 'Inter', sans-serif;
+  background: var(--brand-bg);
+  font-family: var(--brand-font, 'Inter'), sans-serif;
 }
 
 .slidev-layout h1,
