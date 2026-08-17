@@ -147,7 +147,7 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 # One Surviving Skill Set
 
-<RolesBlurDiagram size="md" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
+<RolesBlurDiagram size="sm" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
 
 <v-click>
 
