@@ -103,54 +103,6 @@ BRIDGE: "Now let's look at the first tool built on this same medium."
 
 ---
 layout: default
----
-
-# Skills
-
-<v-click>
-
-A skill is a **reusable playbook**: a folder with instructions for one kind of task. Write the workflow once, run it whenever that task shows up.
-
-</v-click>
-<v-click>
-
-The agent keeps only a short description in memory and loads the full playbook on demand — less prompt repetition, cleaner context.
-
-</v-click>
-<v-click>
-
-**The bundle:** markdown instructions, minimal deterministic code, tests for the code, evals for the behavior, and resolver logic so the agent knows when to use it.
-
-</v-click>
-<v-click>
-
-**Prompting evaporates. Skill packs compound.**
-
-</v-click>
-
-<!--
-SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
-
-KEY POINTS:
-- Use "playbook" language for non-developer audiences
-- Core mechanism: lightweight discovery first, full instructions loaded only when relevant
-- Benefit: keeps the context window focused and reduces repeated prompting
-- Portability: one encoded workflow can be reused across CLI, web UI, and API surfaces
-- Ecosystem signal: Anthropic's open-source Claude Skills repo shows this pattern at scale, including a "skill creator" meta-skill
-- Tan's distinction: prompting is ephemeral; skill packs are versioned, reusable, and testable
-- "Skillify it" loop: do the task once, then turn the working workflow into a reusable unit of capability
-- The resolver matters because it makes the skill discoverable by the agent, not just manually reusable by the human
-- If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
-
-DELIVERY:
-- Keep this practical, not mystical: "A skill becomes infrastructure only when it has tests and evals."
-- Optional verbal: "The source phrase is useful: markdown is the program now. Not because code disappears, but because more behavior lives in editable instructions."
-
-BRIDGE: "Once you have a skill pack, the next question is how the agent selects it."
--->
-
----
-layout: default
 class: text-center
 ---
 
@@ -179,35 +131,36 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-75"><strong>Manual trigger</strong> — run a slash command when you want a specific playbook. (<code>/commit-message</code>, <code>/verify:run</code>)</p>
+<p class="text-base opacity-75">A skill is a <strong>reusable playbook</strong> — a folder of instructions for one kind of task. Write the workflow once, run it whenever that task shows up.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Automatic trigger</strong> — the agent matches your request to a skill description and loads it for you. (<code>code-reviewer</code>, <code>silent-failure-hunter</code>)</p>
+<p class="text-base opacity-75"><strong>Manual trigger</strong> — a slash command when you want a specific playbook (<code>/commit-message</code>). <strong>Automatic trigger</strong> — the agent matches your request to a skill description and loads it for you (<code>code-reviewer</code>).</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Guidance, not rigid code</strong> — the model interprets markdown instructions and can adapt them to the task.</p>
-
-</v-click>
-<v-click>
-
-<p class="text-base opacity-75">Same format applies beyond code: design reviews, accessibility audits, copy editing. <strong>If you can describe the workflow in markdown, you can turn it into a skill.</strong></p>
+<p class="text-base opacity-75">Same format beyond code: design reviews, accessibility audits, copy editing. <strong>Prompting evaporates. Skill packs compound.</strong></p>
 
 </v-click>
 
 <!--
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+
 KEY POINTS:
 - Two invocation models: user-invocable (slash command) vs model-invocable (auto-discovered from prompt)
 - User-invocable: user explicitly triggers with /command — deterministic selection
 - Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
 - Both paths end the same way: skill .md is read, LLM interprets instructions, generates output
 - Dotted arrows = available but not loaded for this invocation
-- Key contrast: "soft guidance" — the LLM can deviate, adapt, reason about the instructions
-- This is the conceptual counterpart to MCP on the next slide
-- Concrete examples: /commit-message (user-invocable), code-reviewer (model-invocable)
+- Key contrast to say out loud: "soft guidance" — the LLM interprets the markdown and can adapt or deviate. This is the conceptual counterpart to MCP's hard schema contract on the next slides
+- The loading mechanism is worth a sentence: the agent keeps only a short description in memory and loads the full playbook on demand, which keeps the context window focused and cuts repeated prompting
+- The full bundle, if the room is technical: markdown instructions, minimal deterministic code, tests for the code, evals for the behaviour, and resolver logic so the agent knows when to reach for it. The resolver is what makes a skill discoverable by the agent rather than merely reusable by the human
+- Keep it practical, not mystical: "a skill becomes infrastructure only when it has tests and evals"
+- Ecosystem signal: Anthropic's open-source Claude Skills repo shows this pattern at scale, including a "skill creator" meta-skill
+- "Skillify it" loop: do the task once, then turn the working workflow into a reusable unit of capability
+- If asked "is this just prompt engineering?": yes, but versioned, reusable, and discoverable
 - For product/UX: same format works for design review, accessibility checks, or copy editing
 
 BRIDGE: "Skills shape thinking. Before the next building block, here's an analogy to hold all of this together."
@@ -218,63 +171,39 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="The kitchen analogy: APIs are the utensils, skills are the recipes, MCPs are the kitchen" size="lg" />
+<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="The kitchen analogy: APIs are the utensils, skills are the recipes, MCPs are the kitchen" size="md" />
+
+<v-click>
+
+<p class="text-base opacity-75">MCP is a <strong>standard plug format</strong> — think USB — for the tools and data an agent can use. One protocol instead of a custom integration per app.</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75">Each server publishes what it offers: actions (<strong>Tools</strong>), context (<strong>Resources</strong>), reusable templates (<strong>Prompts</strong>) — all schema-validated, so handoffs are predictable.</p>
+
+</v-click>
+<v-click>
+
+<p class="text-base opacity-75">Skills tell the agent <strong>how to think</strong>. MCP tells it <strong>what systems it can safely operate</strong>.</p>
+
+</v-click>
 
 <!--
 KEY POINTS:
-- Orientation beat for non-technical audiences before the MCP deep-dive
+- Orientation beat for non-technical audiences, now carrying the MCP definition itself
 - APIs are the utensils — each does one thing
 - Skills are the recipes — soft guidance, adaptable to the situation
 - MCP is the kitchen itself — standardised layout and plumbing, bundling APIs, auth, and tool definitions into one server
+- Keep "plug format" language for non-technical audiences; the value proposition is interoperability and lower integration overhead
+- The three capability types map to practical intuition: do, read, reuse
+- Hard contracts reduce ambiguity, retries, and brittle handoffs
+- Contrast to hold, and the reason this pairs with the skills slide: skills are soft guidance in markdown; MCP is a hard interface contract — inputs and outputs are schema-validated, no interpretation at the interface
+- Concrete verbal example (Linear): "Create a Linear issue about the bug we just found" → the agent picks the create_issue tool from the Linear MCP server → schema-validated result: issue LIN-1234. One server, three capability types
 
 DELIVERY:
-- Keep it light and quick — 30-45 seconds
-- Verbal: "You're not building the kitchen from scratch. You're equipping it and writing the recipes."
-
-BRIDGE: "Skills are the recipes. Now let's look at the kitchen — MCP."
--->
-
----
-layout: default
----
-
-# MCP
-
-<v-click>
-
-MCP is a **standard plug format** (think like USB) for tools and data an agent can use.
-
-</v-click>
-<v-click>
-
-Instead of building a custom integration for every app, one protocol works across many apps.
-
-</v-click>
-<v-click>
-
-Each MCP server publishes what it offers: actions (Tools), context (Resources), and reusable templates (Prompts).
-
-</v-click>
-<v-click>
-
-Requests and responses follow schemas, so handoffs are predictable and machine-checkable.
-
-</v-click>
-<v-click>
-
-In plain terms: skills tell the agent how to think. MCP tells it what systems it can safely operate.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Keep "plug format" language for non-technical audiences
-- Value proposition: interoperability and lower integration overhead
-- Three capability types map to practical intuition: do, read, reuse
-- Hard contracts reduce ambiguity, retries, and brittle handoffs
-- Pairing model: skills = workflow behavior, MCP = external system interface
-- Concrete verbal example (Linear): "Create a Linear issue about the bug we just found" → the agent picks the create_issue tool from the Linear MCP server → schema-validated result: issue LIN-1234. One server, three capability types.
-- Contrast to hold: skills are soft guidance in markdown; MCP is a hard interface contract — inputs and outputs are schema-validated, no interpretation at the interface
+- Open light and quick on the image — 30 seconds: "You're not building the kitchen from scratch. You're equipping it and writing the recipes."
+- Then let the clicks do the definition; don't re-explain the picture
 
 BRIDGE: "Now let's look at one concrete MCP example where design and implementation share the same source of truth."
 -->
@@ -355,48 +284,6 @@ BRIDGE: "Once you have context and interfaces, the next question is reliability.
 layout: default
 ---
 
-# Hooks
-
-<v-click>
-
-Shell scripts that fire at **lifecycle points** in the agent loop — before a tool runs, after it runs, or when the agent stops.
-
-</v-click>
-<v-click>
-
-**PreToolUse** — block destructive commands before they execute: prevent `rm -rf`, force confirmation on `git push --force`
-
-</v-click>
-<v-click>
-
-**PostToolUse** — auto-format code, run linters, enforce standards after every file write
-
-</v-click>
-<v-click>
-
-**Stop** — final gate: reject output that fails validation, trigger a retry
-
-</v-click>
-<v-click>
-
-Same idea as CI/CD pipelines or Git hooks — but running **inside the agent loop**, not after it.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Hooks are the least familiar guardrail for most audiences — give them a concrete mental model
-- The lifecycle framing (pre/post/stop) maps to familiar patterns: middleware, Git hooks, CI gates
-- For designers: think of hooks as automated design-review checkpoints — accessibility checks, component validation
-- The key insight: hooks run inside the loop, so the agent can self-correct without human intervention
-
-BRIDGE: "Hooks are one type of guardrail. Let's zoom out to the full picture."
--->
-
----
-layout: default
----
-
 # Guardrails — Deterministic Gates Around Probabilistic Agents
 
 <SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
@@ -408,23 +295,28 @@ layout: default
 </v-click>
 <v-click>
 
-Hooks, tests, schema validation, permission boundaries — **hard checkpoints that never hallucinate** wrapped around models that always might.
+**Hooks** fire inside the loop — block `rm -rf` before it runs, auto-format after every write, gate the output before the agent stops. **Tests** close it: write the test first and *the test is the spec.*
 
 </v-click>
 <v-click>
 
-Without guardrails, every iteration needs human review. With them, the agent can try → fail → retry autonomously.
+Hard checkpoints that never hallucinate, wrapped around models that always might. Without them, every iteration needs human review. With them, the agent can try → fail → retry on its own.
 
 </v-click>
 
 <!--
 SOURCE: Claire Vo (x.com/clairevo/status/2026331055012319450)
 SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Name the pattern explicitly: deterministic gates + probabilistic agents
-- Hooks (just introduced) are one guardrail; tests, schema validation, permission scoping, linters are others
+- Hooks are shell scripts firing at lifecycle points in the agent loop, and the lifecycle framing is worth naming if the room is technical: PreToolUse blocks destructive commands before they execute, PostToolUse auto-formats and lints after every file write, Stop rejects output that fails validation and triggers a retry. Same idea as CI/CD or Git hooks — but running inside the loop, not after it, so the agent self-corrects without a human
+- Tests are the most familiar guardrail and the one to dwell on: TDD means the test IS the spec the agent implements against, closing the loop attempt → failure → retry. They are executable definitions of done
+- Willison (worth quoting verbatim): "Tests are free now. They're effectively free." He starts every coding session by telling the agent how to run the tests; the prompt "red-green TDD" is five tokens and dramatically improves reliability. "Tests are no longer even remotely optional"
+- Every repeated human intervention is a signal that the harness is incomplete
+- Schema validation, permission scoping, and linters are the other members of the set
 - Guardrails convert stochastic generation into controlled iteration
 - Connects backward to MCP contracts and forward to the Swiss-cheese model in Section 04
 - Callback line for verbal use: "Context shapes what the agent knows. Specs shape what good looks like. Guardrails shape boundaries."
@@ -436,49 +328,7 @@ DELIVERY:
 - "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
 - Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
 
-BRIDGE: "The most familiar guardrail deserves its own moment: tests."
--->
-
----
-layout: default
----
-
-# Tests Close the Loop
-
-<SlideImage src="/verification-loop.png" alt="The verification loop: plan, implement, test, review" size="sm" />
-
-<v-click>
-
-Write the test first — **the test IS the spec.** The agent implements against it: attempt → failure → retry.
-
-</v-click>
-<v-click>
-
-> "Tests are free now. They're effectively free." — **Simon Willison**
-
-Start every agent session with how to run the tests. Five tokens — "red-green TDD" — and reliability jumps.
-
-</v-click>
-<v-click>
-
-Every repeated human intervention is a signal that the harness is incomplete.
-
-</v-click>
-
-<!--
-SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
-SOURCE: Monarch's Philosophy on AI in Dev (somehowmanage.com/2026/01/22/a-step-behind-the-bleeding-edge-monarchs-philosophy-on-ai-in-dev/)
-
-KEY POINTS:
-- Tests are the most familiar guardrail: TDD means the test IS the spec the agent implements against. Tests close the iteration loop — attempt → failure → retry. They're executable specifications.
-- Every repeated human intervention signals harness incompleteness
-- Willison: TDD becomes obvious when agents bear the execution cost. "Tests are no longer even remotely optional." Every coding session starts with "here's how to run the tests." The prompt "red-green TDD" is only five tokens but dramatically improves agent reliability.
-
-DELIVERY:
-- Expand verbally: "Write the test first — it becomes the spec. Agent writes code, tests run, failure signals what to fix, agent retries. Tests are executable definitions of done."
-- Willison verbal option: "Simon Willison says he starts every single coding session by telling the agent how to run the tests. Five tokens — 'red-green TDD' — and the reliability jumps. Tests are free when agents write and run them."
-
-BRIDGE: "Tests are one gate. Zoom out, and you can ring the agent with a gate for everything you care about."
+BRIDGE: "Hooks and tests are two gates. Zoom out, and you can ring the agent with a gate for everything you care about."
 -->
 
 ---
@@ -520,49 +370,6 @@ BRIDGE: "With the constraints in place, you can safely narrow responsibilities a
 
 ---
 layout: default
----
-
-# Agent Composition
-
-<v-click>
-
-An agent is an LLM with a system prompt, a set of tools, and permission to act autonomously in a loop — **read, think, act, observe, repeat.**
-
-</v-click>
-<v-click>
-
-A **specialized agent** narrows that loop: one persona, a constrained toolset, a single job — security review, accessibility audit, architecture check. Each is a markdown file you can read, edit, and version.
-
-</v-click>
-<v-click>
-
-**Single-responsibility principle — but for agents.** The more concerns you load, the shallower the attention. A focused agent performs better — and is easier to test, debug, and trust.
-
-</v-click>
-<v-click>
-
-A **lead agent** can then coordinate several specialists in parallel. The pattern is simple: narrow roles, explicit handoffs, deterministic checks.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Define an agent operationally, not mystically
-- Specialization narrows scope, tools, and evaluation criteria
-- Treat each specialized agent as a testable, versioned component
-- Composition is orchestrating many narrow agents under one control loop
-- Coordination primitives matter more than "chatting" between agents
-- Trivedy's agent architecture: Model at center, surrounded by Context Injection (prompts, memory, skills) → Action (bash, tools, MCPs) → Observe & Verify (screenshots, tests, logs) → Persist (filesystem, git) → back to Model. Plus Control (compaction, orchestration, ralph loops). This is the full loop.
-
-SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
-SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
-SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
-
-BRIDGE: "Markdown, skills, MCP, guardrails, composition. All of this — the whole system around the model — has a name."
--->
-
----
-layout: default
 class: text-center
 ---
 
@@ -582,7 +389,7 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests, specialized agents — one discipline: designing the system around the model.</p>
+<p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests — and <strong>specialized agents</strong>: one persona, a narrow toolset, a single job, each a markdown file you can version.</p>
 
 </v-click>
 <v-click>
@@ -600,8 +407,13 @@ class: text-center
 SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
 SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
+SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
+SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
 
 KEY POINTS:
+- Define an agent operationally when you land the first click, rather than mystically: an LLM with a system prompt, a set of tools, and permission to act autonomously in a loop — read, think, act, observe, repeat
+- Specialisation is the single-responsibility principle applied to agents: the more concerns you load, the shallower the attention, so a focused agent performs better and is easier to test, debug and trust
+- A lead agent can then coordinate several specialists in parallel — narrow roles, explicit handoffs, deterministic checks. Say this out loud: it is the setup for Section 04's opening, where going from one agent to many becomes a distributed-systems problem
 - The previous slide's bridge promised a name — deliver it with the diagram: five harness components around the model (Context Injection, Control, Action, Persist, Observe & Verify)
 - The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
 - Dashed arrows = feedback paths; solid arrows = primary flow
@@ -617,6 +429,7 @@ DELIVERY:
 - Then land the bottom line: "The model is one box. Everything else? That's the harness."
 - Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
 - Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
+- Close on Hashimoto verbally rather than on screen — the slide has no room for it and the line lands fine spoken: "The model is the engine. The harness is the car."
 
 BRIDGE: "Don't take my word for how far to push this. Here's the person who built Claude Code."
 -->
