@@ -9,6 +9,13 @@
   --brand-link: #5396C7;
   --brand-surface: #F7F7F9;
   --brand-on-accent: #FFFFFF;
+  /* Ambient light for <ShaderBackground>. Azure, the same CVI colour the
+     section-divider gradient opens on. Run stronger than the component defaults
+     — Navy and Azure are close enough in value that the shader reads faint at
+     the strength Melatech's green needs. */
+  --brand-glow: #5396C7;
+  --brand-shader-dark: 0.45;
+  --brand-shader-light: 0.22;
   /* Categorical slots for diagrams, assigned in fixed order. Slots 1-2 are
      shared with Melatech; only slot 3 is theme-specific. They separate by hue
      against the page background, not by luminance against each other (closest

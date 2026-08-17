@@ -19,6 +19,7 @@ timer: countdown
 layout: cover
 ---
 
+<ShaderBackground />
 <BrandLogo />
 
 # Agentic Engineering

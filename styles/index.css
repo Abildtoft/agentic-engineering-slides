@@ -38,6 +38,9 @@
 .slidev-layout.section {
   background: var(--brand-bg-accent);
   color: var(--brand-on-accent);
+  /* Own stacking context, so <ShaderBackground>'s negative z-index lands
+     between this background and the slide content instead of behind both. */
+  isolation: isolate;
 }
 
 .slidev-layout.cover h1,
@@ -47,6 +50,12 @@
 .slidev-layout.section h2,
 .slidev-layout.section p {
   color: var(--brand-on-accent);
+}
+
+/* Same stacking context the cover and section slides need, so the statement
+   layout's <ShaderBackground> lands behind the text. */
+.slidev-layout.statement {
+  isolation: isolate;
 }
 
 .slidev-layout.statement h1 {

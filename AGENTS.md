@@ -44,6 +44,7 @@ sources/               # Research notes, one file per source
 public/                # Melatech static assets (images, logos, favicon)
 public/consensus/      # Consensus-branded images and favicon
 components/            # Custom Vue components (auto-imported, theme-aware)
+layouts/               # Layouts shadowing @slidev/theme-default by filename
 styles/                # Shared CSS using --brand-* CSS variables
 styles/themes/         # Per-theme color definitions (melatech.css, consensus.css)
 ```
@@ -66,7 +67,7 @@ The deck ships with two themes that share **identical slide content**:
 
 - Entry files (`slides.md`, `slides-consensus.md`) contain only headmatter, cover slide, and `src:` imports
 - Each section lives in `sections/NN-slug.md` (e.g., `01-the-shift.md`)
-- Section files start with a `layout: section` divider slide
+- Section files start with a `layout: section` divider slide (the shader comes from `layouts/section.vue`, not the markdown)
 - When working on a P1 issue, edit only the corresponding section file
 - Section → P1 issue mapping:
   - `01-the-shift.md` → P1-001
@@ -90,3 +91,60 @@ The deck ships with two themes that share **identical slide content**:
 - Diagrams that need to tell several things apart use the categorical slots `--brand-cat-1/2/3`, assigned in fixed order. Slots 1-2 are shared across both themes; only slot 3 is theme-specific. They are validated for colour-blind separation and 3:1 mark contrast — if you change one, re-validate the whole set rather than picking by eye
 - The slots separate by hue against the page background, not by luminance against each other (the closest pair is 1.02:1), so a diagram that abuts or overlaps them must also carry position or a label — colour alone won't survive greyscale or severe CVD
 - Categorical colors are for marks (fills, strokes), not text. Labels take `--brand-text`; the palette is tuned to the 3:1 marks threshold, not the 4.5:1 text one
+
+### Animated Backgrounds
+
+`<ShaderBackground />` puts a slow Paper Shaders mesh gradient behind a slide, tinted from
+`--brand-*` CSS variables. It comes in two surfaces:
+
+| `surface` | Used on | Blend | Palette | Melatech | Consensus |
+|-----------|---------|-------|---------|----------|-----------|
+| `dark` (default) | `cover`, `section` | `screen` | glow, primary, text | 0.30 | 0.45 |
+| `light` | `statement` | `multiply` | glow, primary, bg | 0.12 | 0.22 |
+
+The two `dark` layouts do not share a backdrop. On Melatech both are flat `--brand-bg-accent`,
+but on Consensus both are gradients (`styles/themes/consensus.css`): `cover` runs Navy → Ink,
+`section` runs Azure → Navy. Only `section` matters for contrast — it opens on Azure, where
+white text is 3.20:1 before any shader runs (see the contrast note below), while `cover` only
+gets darker than its Navy start, so flat `--brand-bg-accent` still bounds it.
+
+The seven section dividers override both, running `godRays` at `:opacity="0.22"` from
+`layouts/section.vue`; the cover and the statement slides stay on `meshGradient` at the theme
+strength.
+
+Strength is per theme: both themes declare it with `--brand-shader-dark` /
+`--brand-shader-light`, and `components/ShaderBackground.vue` carries the same values as
+`var()` fallbacks so a theme that forgets them still renders. Consensus runs stronger
+because Navy and Azure are close in value, so the same opacity reads fainter than Melatech's
+green. A single slide can override with `<ShaderBackground :opacity="0.5" />`.
+
+Each palette ends in a colour the blend mode ignores (screen ignores near-black, multiply
+ignores near-white), so the shader drifts through clear regions instead of tinting the whole
+slide — and contrast can only move one direction.
+
+Three shaders are wired up, selected with the `shader` prop. Each maps the surface palette
+onto its own uniforms and carries its own framing, so they are interchangeable per slide:
+
+| `shader` | Look | Notes |
+|----------|------|-------|
+| `meshGradient` (default) | Soft drifting colour pools | The only one calm enough for the theme's normal strength |
+| `godRays` | Light beams raking from off-frame | Used on the section dividers at `:opacity="0.22"` |
+| `neuroNoise` | Cellular filament network | Unused so far; looks best on `dark` at around `:opacity="0.16"` and is far too busy on `light`. Nothing enforces either — both validators are independent |
+
+Statement slides can pick one via frontmatter (`shader: godRays`), though none currently do;
+other layouts pass the prop. `paperTexture` was tried and rejected — it renders flat colour
+without a source image.
+
+- Both cover slides carry it inline in markdown (`cover.vue` takes a `background` prop, so shadowing it would mean duplicating theme internals for two call sites); section dividers and statement slides get it from `layouts/section.vue` and `layouts/statement.vue`, which shadow the theme layouts so their markdown stays clean. The divider's `:opacity="0.22"` lives only in `layouts/section.vue` — it is the input to the contrast floor below, so keep it in one place
+- Only use it on layouts that set `isolation: isolate` in `styles/index.css` (`cover`, `section`, `statement`) — that stacking context is what keeps the shader above the slide background and below the text
+- The blend mode goes on the `.shader-bg` wrapper, not on the layers inside it. The wrapper's `z-index` makes it a stacking context, and a stacking context is an isolated group, so a blend mode on a child composites against the wrapper's own empty backdrop and does nothing
+- It reads brand colors from CSS variables, so a new theme needs its own `--brand-glow`. A missing token logs a `console.error` and leaves the CSS fallback up
+- It mounts only while its slide is active, so at most one live WebGL context per render context — two when presenter mode's second window is open. The presenter's next-frame pane and the overview grid render live copies of the current slide in the same document, so the component skips any render context other than `slide` and `presenter`
+- It skips WebGL entirely in print mode and falls back to a static CSS gradient, so `yarn export` stays reliable
+- Don't put `light` on slides with images — the illustration PNGs have white mattes that show as boxes on any tinted background (the same reason `--brand-bg` is `#FFFFFF`)
+- Raising strength cuts text contrast. Measured worst case (shader colours flooded to one solid value at its shipped settings, so no frame can be worse), white text on Consensus over flat `--brand-bg-accent`: **4.98:1** for `meshGradient` on `dark` 0.45, **5.86:1** for `godRays` on `dark` 0.22; and `--brand-primary` on white for **9.78:1** on `light` 0.22. AA needs 4.5:1
+- Those figures do **not** cover the Consensus `section` gradient, which is the tightest case in the deck. Both bounds were checked separately and both pass: `godRays`' additive bloom ceiling at `:opacity="0.22"` derives to about **4.53:1** in the text band (theoretical worst frame), and sampling the lightest background pixel behind the title on a real rendered frame gives **6.38:1** on Consensus and **7.46:1** on Melatech. The derived floor is the number to respect, and it is title-length sensitive — text is centred, so a longer divider title reaches further into the light Azure corner. Re-measure against this gradient, not flat `--brand-bg-accent`, before raising the section strength or lengthening a divider title
+- For `godRays` the bound also depends on `bloom` — it blends additively, so output can exceed the palette's own brightness. Raising `bloom` or `intensity` invalidates the measurements above
+- On the `light` surface, `speed` is load-bearing for WCAG 2.3.1: the white→`#C7CFD9` swing meets the flash threshold's magnitude test, and only the very low frequency keeps it compliant. Don't raise it much
+- `prefers-reduced-motion` is read at mount and maps to speed 0 (a single static frame, no RAF loop). Toggling it mid-deck takes effect on the next slide change
+- Other props: `speed`, `scale`, and `params` for per-shader uniform overrides — e.g. `:params="{ u_distortion: 0.9, u_swirl: 0.5 }"`. `params` is applied last, so it can override framing too
