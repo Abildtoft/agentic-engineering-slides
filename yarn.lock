@@ -858,6 +858,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@paper-design/shaders@npm:^0.0.80":
+  version: 0.0.80
+  resolution: "@paper-design/shaders@npm:0.0.80"
+  checksum: 10c0/ab6cd7220144a0d12c2ee21c780cab8b19372def110746a62eb58f5cfeae4e93bd6c7e3a48a6ff1b93d5dfc7982cb271dfc12a14fda2aa14e21908f771d485d9
+  languageName: node
+  linkType: hard
+
 "@pdf-lib/standard-fonts@npm:^1.0.0":
   version: 1.0.0
   resolution: "@pdf-lib/standard-fonts@npm:1.0.0"
@@ -2830,6 +2837,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "copenhagen-v2@workspace:."
   dependencies:
+    "@paper-design/shaders": "npm:^0.0.80"
     "@slidev/cli": "npm:^52.0.0"
     "@slidev/theme-default": "npm:latest"
     beautiful-mermaid: "npm:^1.1.3"

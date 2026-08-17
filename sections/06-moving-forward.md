@@ -330,6 +330,7 @@ DELIVERY:
 layout: cover
 ---
 
+<ShaderBackground />
 <BrandLogo />
 
 # Thank You

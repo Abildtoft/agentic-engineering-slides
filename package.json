@@ -11,6 +11,7 @@
     "export:consensus": "slidev export slides-consensus.md"
   },
   "dependencies": {
+    "@paper-design/shaders": "^0.0.80",
     "@slidev/cli": "^52.0.0",
     "@slidev/theme-default": "latest",
     "beautiful-mermaid": "^1.1.3",
