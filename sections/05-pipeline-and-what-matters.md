@@ -129,37 +129,6 @@ BRIDGE: "And cheap learning at speed still has one constraint left. It isn't typ
 layout: statement
 ---
 
-# We're not bottlenecked by typing speed. We're bottlenecked by coherence.
-
-<v-click>
-
-AI can generate five features in a day. **Integrating them into a system that makes sense is still your job.**
-
-</v-click>
-<v-click>
-
-Focus. Finishing. Judgment. Knowing what to build and why. **These don't scale with AI speed. They scale with you.**
-
-</v-click>
-
-<!--
-
-SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
-SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
-
-KEY POINTS:
-- This is the bridge from cognitive debt to the close
-- Integration does not scale with generation speed; it scales with focus and understanding
-- Doshi's logic chain reinforces this: AI tools commoditize → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
-- The ending now needs to answer what survives and how teams adapt
-
-BRIDGE: "And don't mistake that constraint for shrinking demand. The opposite is happening."
--->
-
----
-layout: statement
----
-
 # The agentic era multiplies demand for software.
 
 <v-click>
@@ -204,63 +173,21 @@ BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 layout: default
 ---
 
-# Humans find new nodes. AI maps the edges.
-
-<ProblemExplorationDiagram />
-
-<v-click>
-
-The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
-
-</v-click>
-
-<!--
-SOURCE: Atmo (@atmoio), X post (x.com/atmoio/status/2061916783309692989)
-
-KEY POINTS:
-- Use this as the AI-positive narrative after the economic demand-expansion slide
-- Facts as nodes; correlations as edges
-- AI is powerful inside the known graph: it searches densely, finds correlations, and changes direction probabilistically
-- Humans and science widen the graph by looking outward and finding new nodes
-- The combined model is not "AI becomes self-directed breadth" — it is more human-chosen waypoints with dense AI exploration around each one
-- This sets up "Clarity Merchants": the human job is choosing which frontier points deserve the machine's depth
-
-DELIVERY:
-- Do not over-explain the visual; land the line "humans find new nodes, AI maps the edges"
-- Optional verbal: "The best discoveries come when someone wanders outside the current point of view. AI is excellent once you give it a place to search."
-
-BRIDGE: "That makes the human work more specific. We become clarity merchants."
--->
-
----
-layout: default
----
-
 # Clarity Merchants
 
 <v-click>
 
-**Frame the problem and define the MVP** before the agent writes a line of code
+**Frame the problem and define the MVP** before the agent writes a line of code. **Design the context** — an AGENTS.md that prevents the same mistake three times.
 
 </v-click>
 <v-click>
 
-**Design the context** — an AGENTS.md that prevents the same mistake three times
+**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale. **Articulate why an interaction is wrong** — not just that it feels off, but the principle it violates.
 
 </v-click>
 <v-click>
 
-**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale
-
-</v-click>
-<v-click>
-
-**Articulate why an interaction is wrong** — not just that it feels off, but the principle it violates and the spec that prevents it next time
-
-</v-click>
-<v-click>
-
-The work hasn't changed. The boundaries have.
+The work hasn't changed. The boundaries have. Focus, finishing, and judgment **don't scale with AI speed — they scale with you.**
 
 </v-click>
 
@@ -269,8 +196,13 @@ SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/stat
 SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
+SOURCE: Atmo (@atmoio), X post (x.com/atmoio/status/2061916783309692989)
 
 KEY POINTS:
+- The headline version of the last click, worth saying before the reveal: "we're not bottlenecked by typing speed, we're bottlenecked by coherence." AI can generate five features in a day; integrating them into a system that makes sense is still your job. Integration does not scale with generation speed — it scales with focus and understanding
+- Doshi's chain reinforces it: AI tools commoditise → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
+- If you want the exploration framing, say it here rather than on a slide (Atmo): facts are nodes, correlations are edges. AI is powerful inside the known graph — it searches densely and finds correlations — while humans widen the graph by looking outward and finding new nodes. The advantage isn't AI replacing human exploration, it's more human-selected frontier points, each explored more deeply. The clarity merchant's job is choosing which frontier points deserve the machine's depth
 - Ground the abstract capability in the operating model the audience now understands
 - This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
 - Doshi's 5-skill decomposition (empathy, simulation, strategic thinking, taste, creative execution) maps directly to these bullet points — use as verbal framework if audience asks "how do you build judgment?"
@@ -341,7 +273,9 @@ Great ones don't fall in love with the roadmap. They fall in love with the probl
 </v-click>
 <v-click>
 
-PMs kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.** Building is cheap — curating what to keep is the hard part.
+PMs kill features. Designers simplify flows. Engineers remove abstractions. **Subtraction is a cross-discipline skill.**
+
+<p class="mt-6 text-2xl font-semibold">Addition gets cheaper every quarter. Subtraction never does.</p>
 
 </v-click>
 
@@ -360,27 +294,12 @@ KEY POINTS:
 - Willison (optional verbal): "Why would I use a date picker library when I could have Claude write me the exact one I want?" — when agents generate bespoke implementations, demand for generic libraries collapses. Tailwind's paid component library faced declining demand.
 - Flip side (verbal): open source projects are also flooded with junk AI-generated contributions. Some maintainers have asked GitHub to disable pull requests entirely — historically the platform's core value proposition.
 
+- The closing line on the final click is the section's takeaway: building is cheap, curating what to keep is the hard part. It is this section's equivalent of "velocity without understanding is not sustainable" from Section 4
+
 DELIVERY:
 - Optional verbal: "One practitioner nailed this: 'It's easy to prompt a new feature into existence, so the bar for what ships drops.' That's the accumulation trap. The bar should stay high."
 - If you use the Willison line: "This cuts both ways. Demand for libraries drops, but the open source ecosystem is also flooded with low-quality AI contributions. Some maintainers are asking GitHub to disable PRs entirely. The irony: agents are built on open source, and they're simultaneously undermining it."
-
-BRIDGE: "Addition gets cheaper every quarter. Subtraction never does."
--->
-
----
-layout: statement
----
-
-# Addition gets cheaper every quarter. Subtraction never does.
-
-<!--
-KEY POINTS:
-- Let this land as the section's closing beat
-- Restate the core insight in its sharpest form
-- This gives the audience a single sentence to carry from this section into the close
-
-DELIVERY:
-- Hold for 2-3 seconds. This is the section's equivalent of "velocity without understanding is not sustainable" from Section 4.
+- Hold on the last line for 2-3 seconds before advancing — it is the single sentence the audience should carry into the close
 
 BRIDGE: "So what survives when execution gets cheap?"
 -->
