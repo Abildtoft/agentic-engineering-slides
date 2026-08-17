@@ -6,5 +6,16 @@
   --brand-link: #3898EC;
   --brand-surface: #F8F8F8;
   --brand-on-accent: #FFFFFF;
+  /* Categorical slots for diagrams, assigned in fixed order. Slot 3 is a green
+     close to the brand's own (#186346); slots 1-2 are shared with Consensus.
+     They separate by hue against the page background, not by luminance against
+     each other (slot 2 vs slot 3 is 1.02:1), so any diagram using them needs
+     position or a label too. Validated all-pairs on white: CVD ΔE 9.0 (protan),
+     normal-vision ΔE 16.7, all marks >= 3:1. Re-validate the whole set if you
+     change one — note the CVD model and ΔE formula behind those two figures
+     weren't recorded, so reproducing them needs the original tool. */
+  --brand-cat-1: #C77A2B;
+  --brand-cat-2: #2F6FB5;
+  --brand-cat-3: #1E7A55;
   --brand-font: 'Inter';
 }

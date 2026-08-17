@@ -9,37 +9,24 @@ const props = defineProps({
   },
 })
 
-const palettes = {
-  melatech: {
-    product: '#C97A6A',
-    design: '#6B73D8',
-    engineering: '#5B8C70',
-  },
-  consensus: {
-    product: '#D17A6E',
-    design: '#8B5CF6',
-    engineering: '#0EA5B5',
-  },
-}
-
 const accent = ref('#186346')
 const text = ref('#282625')
 const surface = ref('#F8F8F8')
-const productColor = ref(palettes.melatech.product)
-const designColor = ref(palettes.melatech.design)
-const engineeringColor = ref(palettes.melatech.engineering)
+/** The three categorical slots, in fixed order: Product, Design, Engineering. */
+const productColor = ref('#C77A2B')
+const designColor = ref('#2F6FB5')
+const engineeringColor = ref('#1E7A55')
 
 onMounted(() => {
   const styles = getComputedStyle(document.documentElement)
-  accent.value = styles.getPropertyValue('--brand-primary').trim() || accent.value
-  text.value = styles.getPropertyValue('--brand-text').trim() || text.value
-  surface.value = styles.getPropertyValue('--brand-surface').trim() || surface.value
+  const read = (name, fallback) => styles.getPropertyValue(name).trim() || fallback
 
-  const theme = document.documentElement.dataset.theme || 'melatech'
-  const palette = palettes[theme] || palettes.melatech
-  productColor.value = palette.product
-  designColor.value = palette.design
-  engineeringColor.value = palette.engineering
+  accent.value = read('--brand-primary', accent.value)
+  text.value = read('--brand-text', text.value)
+  surface.value = read('--brand-surface', surface.value)
+  productColor.value = read('--brand-cat-1', productColor.value)
+  designColor.value = read('--brand-cat-2', designColor.value)
+  engineeringColor.value = read('--brand-cat-3', engineeringColor.value)
 })
 
 const sizeClasses = {
@@ -251,12 +238,16 @@ const sizeClasses = {
           stroke-width="1.5"
         />
 
+        <!-- Labels wear the text token, not the series colour: the palette is
+             tuned for marks at >= 3:1, which is short of the 4.5:1 that text
+             needs. Each label sits on its own circle, so position carries the
+             identity and the fills stay the colour channel. -->
         <text
           class="rb-role"
           x="590"
           y="92"
           text-anchor="middle"
-          :fill="productColor"
+          :fill="text"
         >
           Product
         </text>
@@ -265,7 +256,7 @@ const sizeClasses = {
           x="505"
           y="258"
           text-anchor="middle"
-          :fill="designColor"
+          :fill="text"
         >
           Design
         </text>
@@ -274,7 +265,7 @@ const sizeClasses = {
           x="675"
           y="258"
           text-anchor="middle"
-          :fill="engineeringColor"
+          :fill="text"
         >
           Engineering
         </text>

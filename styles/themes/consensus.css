@@ -9,6 +9,17 @@
   --brand-link: #5396C7;
   --brand-surface: #F7F7F9;
   --brand-on-accent: #FFFFFF;
+  /* Categorical slots for diagrams, assigned in fixed order. Slots 1-2 are
+     shared with Melatech; only slot 3 is theme-specific. They separate by hue
+     against the page background, not by luminance against each other (closest
+     pair, slot 1 vs slot 3, is 1.16:1), so any diagram using them needs position
+     or a label too. Validated all-pairs on white: CVD ΔE 8.0 (protan),
+     normal-vision ΔE 17.2, all marks >= 3:1. Re-validate the whole set if you
+     change one — note the CVD model and ΔE formula behind those two figures
+     weren't recorded, so reproducing them needs the original tool. */
+  --brand-cat-1: #C77A2B;
+  --brand-cat-2: #2F6FB5;
+  --brand-cat-3: #0E9270;
   --brand-font: 'Roboto';
 }
 

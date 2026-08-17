@@ -87,3 +87,6 @@ The deck ships with two themes that share **identical slide content**:
 - Use `<SlideImage>` for branded images — it resolves the correct theme path automatically
 - When adding a new image, place the Melatech version in `public/` and a Consensus-branded version in `public/consensus/`
 - Use `var(--brand-*)` CSS variables for colors — never hardcode hex values
+- Diagrams that need to tell several things apart use the categorical slots `--brand-cat-1/2/3`, assigned in fixed order. Slots 1-2 are shared across both themes; only slot 3 is theme-specific. They are validated for colour-blind separation and 3:1 mark contrast — if you change one, re-validate the whole set rather than picking by eye
+- The slots separate by hue against the page background, not by luminance against each other (the closest pair is 1.02:1), so a diagram that abuts or overlaps them must also carry position or a label — colour alone won't survive greyscale or severe CVD
+- Categorical colors are for marks (fills, strokes), not text. Labels take `--brand-text`; the palette is tuned to the 3:1 marks threshold, not the 4.5:1 text one
