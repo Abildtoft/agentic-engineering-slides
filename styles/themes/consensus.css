@@ -31,11 +31,19 @@
 }
 
 /* CVI presentation templates: title slide runs Navy → Ink, dividers Azure → Navy.
-   The divider stops land navy by 55% so centred white text clears AA contrast. */
+   The divider stops land navy by 32% so centred white text clears AA contrast.
+   That stop is the contrast knob for every divider, not a look preference: the
+   title is centred, so a wider one reaches further into the light Azure corner,
+   and bare Azure is only 3.20:1 against white. It was 55% until the deck grew a
+   1015px title (`The New Stack: Core Concepts`), which measured 4.02:1 — below
+   AA — with the next-widest at 4.53:1. At 32% the worst divider is 5.13:1 and
+   the rest clear 6.5:1, so ordinary copy edits can't push one under. Both CVI
+   colours are untouched; only the ramp position moved. Re-measure the widest
+   divider title, not a typical one, before raising it. */
 [data-theme="consensus"] .slidev-layout.cover {
   background: linear-gradient(135deg, #002353 0%, #110B11 100%);
 }
 
 [data-theme="consensus"] .slidev-layout.section {
-  background: linear-gradient(120deg, #5396C7 0%, #002353 55%);
+  background: linear-gradient(120deg, #5396C7 0%, #002353 32%);
 }
