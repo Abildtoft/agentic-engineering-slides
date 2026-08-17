@@ -385,8 +385,6 @@ class: text-center
   CO[Control: compaction, orchestration] -->|manages| M
 `" size="lg" />
 
-<p class="mt-2 text-base opacity-75">The model reasons and decides. <strong>Everything else is the harness.</strong></p>
-
 <v-click>
 
 <p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests — and <strong>specialized agents</strong>: one persona, a narrow toolset, a single job, each a markdown file you can version.</p>
@@ -395,11 +393,6 @@ class: text-center
 <v-click>
 
 <p class="text-base opacity-85">When an agent fails, don't just fix the output. <strong>Improve the harness so the whole loop gets better.</strong></p>
-
-</v-click>
-<v-click>
-
-<p class="text-base opacity-85">"The model is the engine. The harness is the car." — <strong>Mitchell Hashimoto</strong></p>
 
 </v-click>
 
