@@ -5,8 +5,9 @@ titleTemplate: '%s'
 author: Consensus
 colorSchema: light
 fonts:
-  sans: Inter
+  sans: Roboto
   mono: Inconsolata
+  weights: '300,400,500,600,700'
   provider: google
 favicon: /consensus/favicon.svg
 htmlAttrs:
