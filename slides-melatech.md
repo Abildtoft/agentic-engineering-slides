@@ -2,16 +2,15 @@
 theme: default
 title: Agentic Engineering
 titleTemplate: '%s'
-author: Consensus
+author: Melatech
 colorSchema: light
 fonts:
-  sans: Roboto
+  sans: Inter
   mono: Inconsolata
-  weights: '300,400,500,600,700'
   provider: google
-favicon: /consensus/favicon.svg
+favicon: /favicon.svg
 htmlAttrs:
-  data-theme: consensus
+  data-theme: melatech
 defaults:
   transition: none
 duration: 162min

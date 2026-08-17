@@ -8,9 +8,9 @@ Slidev presentation about how AI is reshaping software engineering. Source mater
 
 - Slidev (v52+), Vue 3, UnoCSS/Tailwind
 - Package manager: Yarn 4 (do NOT use npm)
-- Dev: `yarn dev` / `yarn dev:consensus` (port 3030)
-- Build: `yarn build` / `yarn build:consensus`
-- Export: `yarn export` / `yarn export:consensus`
+- Dev: `yarn dev` (Consensus, the default) / `yarn dev:melatech` (port 3030)
+- Build: `yarn build` / `yarn build:melatech`
+- Export: `yarn export` / `yarn export:melatech`
 
 ## Slidev Syntax
 
@@ -37,8 +37,8 @@ Slidev presentation about how AI is reshaping software engineering. Source mater
 ## Structure
 
 ```
-slides.md              # Melatech entry point (headmatter + cover + src imports)
-slides-consensus.md    # Consensus entry point (same src imports, different theme)
+slides.md              # Consensus entry point — the default (headmatter + cover + src imports)
+slides-melatech.md     # Melatech entry point (same src imports, different theme)
 sections/              # Shared slide content (one file per section)
 sources/               # Research notes, one file per source
 public/                # Melatech static assets (images, logos, favicon)
@@ -55,8 +55,11 @@ The deck ships with two themes that share **identical slide content**:
 
 | Theme | Entry file | `data-theme` | Brand colors |
 |-------|-----------|--------------|--------------|
-| Melatech | `slides.md` | `melatech` | Green (#186346) |
-| Consensus | `slides-consensus.md` | `consensus` | Indigo (#4957F5) |
+| Consensus (default) | `slides.md` | `consensus` | Navy (#002353), Azure (#5396C7) |
+| Melatech | `slides-melatech.md` | `melatech` | Green (#186346) |
+
+Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `yarn build`, and
+`yarn export` all resolve to it. Melatech runs from the `:melatech` script variants.
 
 - Both entry files import the same `sections/` files — **all content updates are automatically reflected in both themes**
 - Colors are driven by `--brand-*` CSS variables scoped under `[data-theme="..."]` in `styles/themes/`
@@ -65,7 +68,7 @@ The deck ships with two themes that share **identical slide content**:
 
 ### Multi-File Convention
 
-- Entry files (`slides.md`, `slides-consensus.md`) contain only headmatter, cover slide, and `src:` imports
+- Entry files (`slides.md`, `slides-melatech.md`) contain only headmatter, cover slide, and `src:` imports
 - Each section lives in `sections/NN-slug.md` (e.g., `01-the-shift.md`)
 - Section files start with a `layout: section` divider slide (the shader comes from `layouts/section.vue`, not the markdown)
 - When working on a P1 issue, edit only the corresponding section file
