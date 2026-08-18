@@ -22,21 +22,20 @@ BRIDGE: "Let me show you the pattern that changed."
 
 ---
 layout: statement
-class: statement-wide
 ---
 
 # We're in 1997 for AI
 
 <v-click>
 
-<p class="mt-8 text-3xl leading-relaxed opacity-80">
+<p class="mt-8 text-2xl leading-relaxed opacity-80">
 As big as the internet or mobile.
 </p>
 
 </v-click>
 <v-click>
 
-<p class="mt-4 text-3xl leading-relaxed opacity-80">
+<p class="mt-4 text-2xl leading-relaxed opacity-80">
 And only as big as the internet or mobile.
 </p>
 
@@ -62,6 +61,8 @@ DELIVERY:
 BRIDGE: "And inside that early, messy market, one part of the curve has already bent — and it isn't one vendor's curve."
 -->
 
+---
+class: v-center
 ---
 
 # It's Not Just One Tool

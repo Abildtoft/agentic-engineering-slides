@@ -23,8 +23,10 @@ BRIDGE: "And remember — going from one agent to many isn't a scaling problem. 
 -->
 
 ---
+class: v-center
+---
 
-# Cognitive Debt
+# Two Kinds of Debt
 
 <v-click>
 
@@ -75,7 +77,9 @@ class: quote-long
 </div>
 
 <v-click>
-  Margaret-Anne Storey
+
+Margaret-Anne Storey
+
 </v-click>
 
 <v-click>
@@ -144,7 +148,7 @@ BRIDGE: "And if understanding is what's at risk, the practical response is to ch
 
 ---
 layout: default
-class: dim-prior
+class: dim-prior v-center
 ---
 
 # From Reviewing Code to Reviewing Intent
@@ -235,12 +239,7 @@ layout: fact
 </v-click>
 <v-click>
 
-<p class="mt-4 text-lg opacity-75">AI boosted confidence by <strong>11.7 percentage points</strong>, even on wrong answers.</p>
-
-</v-click>
-<v-click>
-
-<p class="mt-4 text-lg"><strong>Cognitive surrender</strong> — the brain recodes the answer as its own. It doesn't feel outsourced. It feels self-generated.</p>
+<p class="mt-6 text-lg"><strong>Cognitive surrender</strong> — the brain recodes the answer as its own. It doesn't feel outsourced. It feels self-generated.</p>
 
 </v-click>
 
@@ -263,7 +262,7 @@ KEY POINTS:
 DELIVERY:
 - Let the headline number land
 - The 31.5% stat is the gut punch — being wrong WITH AI is worse than guessing without it
-- The confidence stat closes the trap: not only are you wrong more often, you're more sure about it
+- The confidence stat is verbal now (trimmed from the slide so the gut punch owns the space): "and AI boosted confidence by 11.7 points — even on wrong answers. Not only wrong more often; more sure about it"
 - Optional verbal: "The 'just review the AI output' model is breaking down. Not because people are lazy — because cognition itself starts to defer to the machine."
 
 BRIDGE: "And the dangerous part is how this shows up in everyday working habits."
@@ -357,7 +356,7 @@ DELIVERY:
 -->
 
 ---
-class: dim-prior
+class: dim-prior v-center
 ---
 
 # The Antidote — The Human in the Loop

@@ -203,7 +203,7 @@ BRIDGE: "That makes the human work more specific. We become clarity merchants."
 
 ---
 layout: default
-class: dim-prior
+class: dim-prior v-center
 ---
 
 # Clarity Merchants
@@ -288,6 +288,7 @@ BRIDGE: "And rung 7 at product scale? That's the next slide."
 
 ---
 layout: statement
+class: statement-wide
 ---
 
 # Most products don't die from missing features. They die from accumulation.
