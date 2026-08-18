@@ -85,6 +85,8 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
 
 - Keep slides minimal — one idea per slide
 - Use presenter notes for talking points, not slide content
+- Text-only content slides take `class: v-center` so a three-line slide sits composed in the middle of the frame; slides carrying a diagram or image keep the top-anchored default
+- `statement` headlines are punch-sized (3.4rem cap); a full-sentence headline needs `class: statement-wide`, which keeps the smaller 2.8rem size and a wider measure — without it the sentence wraps past four lines
 - Prefer quotes and bold statements over walls of text
 - When referencing a source, note the author/publication in presenter notes
 - Use `v-click` for progressive reveal, not too many per slide
@@ -135,7 +137,7 @@ and reduced motion do. Break this and an exported PDF gets blank elements.
 | Slide-to-slide | `fade` from headmatter `defaults`. Crossfade rather than a lateral slide because eight slides carry a live WebGL canvas. Verified to keep one live shader context through a transition |
 | Section dividers | `section-shift` (fade + 20px Y), overriding the deck default so a chapter change reads differently from a step within one |
 | `v-click` reveals | Opacity + an 8px rise; instant when navigating backward (`.slidev-nav-go-backward`) |
-| Dense build slides | Opt in with `class: dim-prior` — dims already-revealed lines to 0.5 so the eye finds the live one. Deliberately not global; most slides want the speaker able to point back at full strength. Currently on four slides |
+| Dense build slides | Opt in with `class: dim-prior` — dims already-revealed lines to 0.5 so the eye finds the live one. Gated on `:has(.slidev-vclick-hidden)`: once the last reveal lands, the whole slide rests at full strength — a finished slide dimmed to 0.5 reads as disabled, in Q&A and in the exported PDF, which captures exactly that final state. Deliberately not global; most slides want the speaker able to point back at full strength. Currently on four slides |
 | `cover`, `statement`, `fact` | Staggered entrance on the heading. `fact` gets opacity only — that layout runs to within ~12px of the bottom edge, so no Y travel |
 | `quote` | The 4px rule draws itself (`scaleY`), as a `::before` — a `border-left` can only animate its width, in layout, against the text. `padding-left: calc(1rem + 4px)` carries the border's old offset so text position is unchanged |
 | `MermaidDiagram` | Builds node by node on entry, ~90ms apart, in mermaid source order. Reads `.node[data-id]` / `.edge[data-from][data-to]` off the rendered SVG, which is **not** a documented `beautiful-mermaid` contract — a version bump that renames those loses the stagger and keeps the diagram. Edges wait for the later of their two endpoints, or feedback arrows draw out of nodes that don't exist yet. Disable per slide with `reveal="none"` |
