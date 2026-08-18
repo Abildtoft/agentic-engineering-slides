@@ -57,8 +57,10 @@ defineProps({
 }
 
 /* Match the global rule: backward navigation is instant, and the global
-   selector only covers the target element itself, not its pseudo-elements. */
-:global(.slidev-nav-go-backward) .quote-pair.slidev-vclick-target h2::before {
+   selector only covers the target element itself, not its pseudo-elements.
+   The whole selector sits inside :global() — the scoped compiler keeps only
+   the :global() portion of a mixed selector and silently drops the rest. */
+:global(.slidev-nav-go-backward .quote-pair.slidev-vclick-target h2::before) {
   transition-duration: 0ms;
 }
 </style>

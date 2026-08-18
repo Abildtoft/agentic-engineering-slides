@@ -135,7 +135,7 @@ layout: quote
 <QuotePair
   first="Engineers spin up seven coding agents and ship a working version — before a designer finishes exploring options. The classic discover-diverge-converge loop is breaking down."
   firstAttribution="Jenny Wen, Design Lead at Anthropic — via Lenny Rachitsky"
-  second="The prototype is the new PRD. If your team needs a 20-page product strategy doc, you're already behind someone with a weekend prototype."
+  second="The prototype is the new PRD. If your team needs a 20-page product strategy doc, you’re already behind someone with a weekend prototype."
   secondAttribution="Andrew Chen"
 />
 
@@ -164,7 +164,7 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 # One Surviving Skill Set
 
-<RolesBlurDiagram size="sm" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
+<RolesBlurDiagram size="md" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
 
 <!-- Clicks 1 and 2 build the diagram (handoffs → convergence → judgment), so the
      text picks up at 3. -->
@@ -227,7 +227,7 @@ Every time a bottleneck is removed, the constraint moves upstream — **not away
 
 The middle is compressing. The constraint is moving to **clarity, judgment, and system design.**
 
-<p class="mt-6 text-2xl font-semibold">“Figure out your bottleneck, automate it, then find the next bottleneck.”</p>
+<p class="mt-6 text-2xl font-semibold">“Figure out your bottleneck, automate it, then find the next bottleneck.” <span class="text-base font-normal opacity-70 whitespace-nowrap">— Armin Ronacher</span></p>
 
 </v-click>
 

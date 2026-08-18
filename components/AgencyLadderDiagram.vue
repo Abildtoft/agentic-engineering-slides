@@ -1,19 +1,10 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const props = defineProps({
   size: { type: String, default: 'md' },
   caption: { type: String, default: '' },
-})
-
-const accent = ref('#186346')
-const text = ref('#282625')
-
-onMounted(() => {
-  const styles = getComputedStyle(document.documentElement)
-  accent.value = styles.getPropertyValue('--brand-primary').trim() || accent.value
-  text.value = styles.getPropertyValue('--brand-text').trim() || text.value
 })
 
 const { $clicks } = useSlideContext()
@@ -39,9 +30,11 @@ const rungs = [
   top: BASE_Y - RISE * r.n,
 }))
 
+/* `md` is deliberately a step wider than the other diagrams' md: the seven rung
+   quotes are half this diagram's content, and at max-w-2xl they render ~8px. */
 const sizeClasses = {
-  sm: 'w-full max-w-xl',
-  md: 'w-full max-w-2xl',
+  sm: 'w-full max-w-2xl',
+  md: 'w-full max-w-3xl',
   lg: 'w-full max-w-4xl',
   xl: 'w-full max-w-5xl',
 }
@@ -65,7 +58,7 @@ const sizeClasses = {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 5 L 0 10 z" :fill="text" fill-opacity="0.5" />
+          <path d="M 0 0 L 10 5 L 0 10 z" style="fill: var(--brand-text)" fill-opacity="0.5" />
         </marker>
       </defs>
 
@@ -75,7 +68,7 @@ const sizeClasses = {
           y1="293"
           x2="600"
           y2="108"
-          :stroke="text"
+          style="stroke: var(--brand-text)"
           stroke-width="1.5"
           opacity="0.5"
           marker-end="url(#al-arrow)"
@@ -84,7 +77,6 @@ const sizeClasses = {
           class="al-axis"
           transform="translate(335, 182) rotate(-20)"
           text-anchor="middle"
-          :fill="text"
           opacity="0.55"
           letter-spacing="2"
         >
@@ -104,9 +96,11 @@ const sizeClasses = {
           width="106"
           :height="BASE_Y - r.top"
           rx="4"
-          :fill="r.n === 7 ? accent : text"
+          :style="{
+            fill: r.n === 7 ? 'var(--brand-primary)' : 'var(--brand-text)',
+            stroke: r.n === 7 ? 'var(--brand-primary)' : 'var(--brand-text)',
+          }"
           :fill-opacity="r.n === 7 ? (flooded ? 0.3 : 0.18) : 0.07"
-          :stroke="r.n === 7 ? accent : text"
           :stroke-opacity="r.n === 7 ? 1 : 0.55"
           :stroke-width="r.n === 7 ? 1.5 : 1.25"
           class="al-step"
@@ -116,7 +110,7 @@ const sizeClasses = {
           :x="r.cx"
           :y="r.top + 27"
           text-anchor="middle"
-          :fill="r.n === 7 ? accent : text"
+          :style="{ fill: r.n === 7 ? 'var(--brand-primary)' : 'var(--brand-text)' }"
         >
           {{ r.n }}
         </text>
@@ -125,7 +119,7 @@ const sizeClasses = {
           :x="r.cx"
           y="402"
           text-anchor="middle"
-          :fill="r.n === 7 ? accent : text"
+          :style="{ fill: r.n === 7 ? 'var(--brand-primary)' : 'var(--brand-text)' }"
         >
           {{ r.name }}
         </text>
@@ -134,9 +128,8 @@ const sizeClasses = {
           :key="i"
           class="al-quote"
           :x="r.cx"
-          :y="r.quote.length === 1 ? 424 : 418 + i * 13"
+          :y="r.quote.length === 1 ? 425 : 418 + i * 15"
           text-anchor="middle"
-          :fill="text"
           opacity="0.65"
         >
           {{ line }}
@@ -148,19 +141,19 @@ const sizeClasses = {
         y1="380"
         x2="822"
         y2="380"
-        :stroke="text"
+        style="stroke: var(--brand-text)"
         stroke-width="1"
         opacity="0.35"
       />
 
       <g class="al-tide" :class="{ 'al-tide-visible': flooded }">
-        <rect x="38" y="132" width="665" height="248" :fill="accent" fill-opacity="0.12" />
+        <rect x="38" y="132" width="665" height="248" style="fill: var(--brand-primary)" fill-opacity="0.12" />
         <line
           x1="38"
           y1="132"
           x2="703"
           y2="132"
-          :stroke="accent"
+          style="stroke: var(--brand-primary)"
           stroke-width="2"
           stroke-dasharray="10 6"
           opacity="0.85"
@@ -170,7 +163,6 @@ const sizeClasses = {
           x="263"
           y="172"
           text-anchor="middle"
-          :fill="accent"
           letter-spacing="2"
         >
           AGENTS RUN THESE
@@ -180,7 +172,6 @@ const sizeClasses = {
           x="263"
           y="192"
           text-anchor="middle"
-          :fill="accent"
           opacity="0.75"
         >
           cheap — and getting cheaper
@@ -192,7 +183,6 @@ const sizeClasses = {
         x="822"
         y="446"
         text-anchor="end"
-        :fill="text"
         opacity="0.5"
       >
         after Addy Osmani
@@ -214,11 +204,11 @@ const sizeClasses = {
 }
 
 .agency-ladder :deep(svg) .al-rung {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-arrow-group {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s var(--motion-ease);
 }
 
 /* Fully hidden once the tide is up: at a residual opacity the rotated axis
@@ -232,13 +222,13 @@ const sizeClasses = {
 }
 
 .agency-ladder :deep(svg) .al-step {
-  transition: fill-opacity 0.4s ease;
+  transition: fill-opacity 0.4s var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-tide {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s var(--motion-ease), transform 0.5s var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-tide-visible {
@@ -246,9 +236,12 @@ const sizeClasses = {
   transform: translateY(0);
 }
 
+/* The 860-unit viewBox renders at 768px (`md`), a 0.89 scale — sizes are set
+   for what survives that scale on a projector. */
 .agency-ladder :deep(svg) .al-axis {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
+  fill: var(--brand-text);
 }
 
 .agency-ladder :deep(svg) .al-number {
@@ -257,28 +250,32 @@ const sizeClasses = {
 }
 
 .agency-ladder :deep(svg) .al-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .agency-ladder :deep(svg) .al-quote {
-  font-size: 10.5px;
+  font-size: 12px;
   font-style: italic;
+  fill: var(--brand-text);
 }
 
 .agency-ladder :deep(svg) .al-tide-label {
   font-size: 15px;
   font-weight: 700;
+  fill: var(--brand-primary);
 }
 
 .agency-ladder :deep(svg) .al-tide-sub {
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-style: italic;
+  fill: var(--brand-primary);
 }
 
 .agency-ladder :deep(svg) .al-credit {
-  font-size: 10px;
+  font-size: 11px;
   font-style: italic;
+  fill: var(--brand-text);
 }
 
 .agency-ladder__caption {
@@ -288,5 +285,15 @@ const sizeClasses = {
   font-size: 0.95rem;
   color: var(--brand-text);
   opacity: 0.8;
+}
+
+/* Backward navigation is instant, matching the deck's global reveal rule — the
+   global rule only covers .slidev-vclick-target, not $clicks-driven classes. */
+:global(.slidev-nav-go-backward .al-rung),
+:global(.slidev-nav-go-backward .al-arrow-group),
+:global(.slidev-nav-go-backward .al-step),
+:global(.slidev-nav-go-backward .al-tide) {
+  transition-duration: 0ms;
+  transition-delay: 0ms;
 }
 </style>

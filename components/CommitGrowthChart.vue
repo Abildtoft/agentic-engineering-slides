@@ -12,7 +12,8 @@ const props = defineProps({
 const W = 880
 const H = 292
 const PAD_L = 28
-const PAD_R = 168
+/* Sized for the end labels at their 22px/18px sizes — tighter clips "134,646 / day". */
+const PAD_R = 185
 const PAD_T = 44
 const PAD_B = 44
 const K = 4.6
@@ -109,8 +110,7 @@ const sizeClasses = {
 
 .cg-area {
   fill: url(#cg-grad);
-  animation: cg-fade var(--motion-slow) ease both;
-  animation-delay: 300ms;
+  transition: opacity var(--motion-slow) var(--motion-ease) 300ms;
 }
 
 .cg-drop {
@@ -130,11 +130,11 @@ const sizeClasses = {
   stroke: var(--brand-primary);
   stroke-width: 3;
   stroke-linecap: round;
-  /* Fully drawn is the base state; the draw lives in the keyframe's `from`, so
-     print and reduced motion degrade to the finished chart. */
+  /* Fully drawn is the base state — print export and reduced motion land on the
+     finished chart. */
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  animation: cg-draw var(--motion-draw) var(--motion-ease) both;
+  transition: stroke-dashoffset var(--motion-draw) var(--motion-ease);
 }
 
 .cg-end circle {
@@ -142,38 +142,46 @@ const sizeClasses = {
 }
 
 .cg-end {
-  animation: cg-fade var(--motion-base) ease both;
   /* Arrives as the line finishes drawing. */
-  animation-delay: var(--motion-draw);
+  transition: opacity var(--motion-base) var(--motion-ease) var(--motion-draw);
 }
 
+/* The chart's only call site sits inside a <v-click>, which hides with opacity —
+   a slide-entry animation would run and finish behind the invisible wrapper, so
+   the click revealed a chart that was already drawn. The draw rides the v-click
+   state instead: hidden holds the undrawn state with transitions off (stepping
+   backward is instant, matching the deck rule), and losing the class plays the
+   draw exactly when the audience is looking. Export steps click states with
+   transitions killed, landing on the drawn base state above. */
+:global(.slidev-vclick-hidden .cg-area),
+:global(.slidev-vclick-hidden .cg-end) {
+  opacity: 0;
+  transition: none;
+}
+
+:global(.slidev-vclick-hidden .cg-line) {
+  stroke-dashoffset: 1;
+  transition: none;
+}
+
+/* The 880-unit viewBox renders at 576px (`md`), a 0.65 scale — these sizes are
+   set for what survives that scale on a projector, not for the viewBox. */
 .cg-end-value {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 700;
   fill: var(--brand-primary);
 }
 
 .cg-end-date {
-  font-size: 13px;
+  font-size: 18px;
   fill: var(--brand-text);
   opacity: 0.65;
 }
 
 .cg-start {
-  font-size: 13px;
+  font-size: 18px;
   fill: var(--brand-text);
   opacity: 0.65;
 }
 
-@keyframes cg-draw {
-  from {
-    stroke-dashoffset: 1;
-  }
-}
-
-@keyframes cg-fade {
-  from {
-    opacity: 0;
-  }
-}
 </style>

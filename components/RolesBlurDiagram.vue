@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const props = defineProps({
@@ -8,26 +8,6 @@ const props = defineProps({
     type: String,
     default: 'Three job titles. One job: turning ambiguity into clarity.',
   },
-})
-
-const accent = ref('#186346')
-const text = ref('#282625')
-const surface = ref('#F8F8F8')
-/** The three categorical slots, in fixed order: Product, Design, Engineering. */
-const productColor = ref('#C77A2B')
-const designColor = ref('#2F6FB5')
-const engineeringColor = ref('#1E7A55')
-
-onMounted(() => {
-  const styles = getComputedStyle(document.documentElement)
-  const read = (name, fallback) => styles.getPropertyValue(name).trim() || fallback
-
-  accent.value = read('--brand-primary', accent.value)
-  text.value = read('--brand-text', text.value)
-  surface.value = read('--brand-surface', surface.value)
-  productColor.value = read('--brand-cat-1', productColor.value)
-  designColor.value = read('--brand-cat-2', designColor.value)
-  engineeringColor.value = read('--brand-cat-3', engineeringColor.value)
 })
 
 /**
@@ -67,7 +47,7 @@ const sizeClasses = {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 5 L 0 10 z" :fill="text" />
+          <path d="M 0 0 L 10 5 L 0 10 z" style="fill: var(--brand-text)" />
         </marker>
         <marker
           id="rb-arrow-dashed"
@@ -78,7 +58,7 @@ const sizeClasses = {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 5 L 0 10 z" :fill="text" fill-opacity="0.55" />
+          <path d="M 0 0 L 10 5 L 0 10 z" style="fill: var(--brand-text)" fill-opacity="0.55" />
         </marker>
       </defs>
 
@@ -88,7 +68,6 @@ const sizeClasses = {
           x="170"
           y="34"
           text-anchor="middle"
-          :fill="accent"
           letter-spacing="2"
         >
           BEFORE
@@ -98,21 +77,19 @@ const sizeClasses = {
           x="170"
           y="56"
           text-anchor="middle"
-          :fill="text"
           opacity="0.65"
         >
           sequential handoffs
         </text>
 
         <rect
+          class="rb-cat-product"
           x="100"
           y="86"
           width="140"
           height="40"
           rx="6"
-          :fill="productColor"
           fill-opacity="0.14"
-          :stroke="productColor"
           stroke-width="1.5"
         />
         <text
@@ -120,7 +97,6 @@ const sizeClasses = {
           x="170"
           y="111"
           text-anchor="middle"
-          :fill="text"
         >
           Product
         </text>
@@ -130,20 +106,19 @@ const sizeClasses = {
           y1="130"
           x2="170"
           y2="144"
-          :stroke="text"
+          style="stroke: var(--brand-text)"
           stroke-width="1.5"
           marker-end="url(#rb-arrow)"
         />
 
         <rect
+          class="rb-cat-design"
           x="100"
           y="148"
           width="140"
           height="40"
           rx="6"
-          :fill="designColor"
           fill-opacity="0.14"
-          :stroke="designColor"
           stroke-width="1.5"
         />
         <text
@@ -151,7 +126,6 @@ const sizeClasses = {
           x="170"
           y="173"
           text-anchor="middle"
-          :fill="text"
         >
           Design
         </text>
@@ -161,20 +135,19 @@ const sizeClasses = {
           y1="192"
           x2="170"
           y2="206"
-          :stroke="text"
+          style="stroke: var(--brand-text)"
           stroke-width="1.5"
           marker-end="url(#rb-arrow)"
         />
 
         <rect
+          class="rb-cat-engineering"
           x="100"
           y="210"
           width="140"
           height="40"
           rx="6"
-          :fill="engineeringColor"
           fill-opacity="0.14"
-          :stroke="engineeringColor"
           stroke-width="1.5"
         />
         <text
@@ -182,7 +155,6 @@ const sizeClasses = {
           x="170"
           y="235"
           text-anchor="middle"
-          :fill="text"
         >
           Engineering
         </text>
@@ -195,7 +167,7 @@ const sizeClasses = {
         y1="168"
         x2="420"
         y2="168"
-        :stroke="text"
+        style="stroke: var(--brand-text)"
         stroke-width="1.5"
         stroke-dasharray="5 5"
         opacity="0.55"
@@ -208,7 +180,6 @@ const sizeClasses = {
           x="590"
           y="34"
           text-anchor="middle"
-          :fill="accent"
           letter-spacing="2"
         >
           WITH AI
@@ -218,7 +189,6 @@ const sizeClasses = {
           x="590"
           y="56"
           text-anchor="middle"
-          :fill="text"
           opacity="0.65"
         >
           overlapping, blurred boundaries
@@ -231,12 +201,11 @@ const sizeClasses = {
              attribute — nothing here for a CSS transform to clobber. -->
         <g class="rb-lobe" style="--dx: 0px; --dy: -42px">
           <circle
+            class="rb-cat-product"
             cx="590"
             cy="155"
             r="80"
-            :fill="productColor"
             fill-opacity="0.20"
-            :stroke="productColor"
             stroke-width="1.5"
           />
           <!-- Labels wear the text token, not the series colour: the palette is
@@ -248,7 +217,6 @@ const sizeClasses = {
             x="590"
             y="92"
             text-anchor="middle"
-            :fill="text"
           >
             Product
           </text>
@@ -256,12 +224,11 @@ const sizeClasses = {
 
         <g class="rb-lobe" style="--dx: -44px; --dy: 30px">
           <circle
+            class="rb-cat-design"
             cx="555"
             cy="215"
             r="80"
-            :fill="designColor"
             fill-opacity="0.20"
-            :stroke="designColor"
             stroke-width="1.5"
           />
           <text
@@ -269,7 +236,6 @@ const sizeClasses = {
             x="505"
             y="258"
             text-anchor="middle"
-            :fill="text"
           >
             Design
           </text>
@@ -277,12 +243,11 @@ const sizeClasses = {
 
         <g class="rb-lobe" style="--dx: 44px; --dy: 30px">
           <circle
+            class="rb-cat-engineering"
             cx="625"
             cy="215"
             r="80"
-            :fill="engineeringColor"
             fill-opacity="0.20"
-            :stroke="engineeringColor"
             stroke-width="1.5"
           />
           <text
@@ -290,7 +255,6 @@ const sizeClasses = {
             x="675"
             y="258"
             text-anchor="middle"
-            :fill="text"
           >
             Engineering
           </text>
@@ -301,13 +265,12 @@ const sizeClasses = {
            middle is the point of the slide. -->
       <g class="rb-stage rb-judgment-group" :class="{ 'is-visible': judged }">
         <rect
-          x="542"
-          y="181"
-          width="96"
-          height="28"
-          rx="14"
-          :fill="surface"
-          :stroke="accent"
+          x="528"
+          y="180"
+          width="124"
+          height="30"
+          rx="15"
+          style="fill: var(--brand-surface); stroke: var(--brand-primary)"
           stroke-width="1"
         />
         <text
@@ -315,7 +278,6 @@ const sizeClasses = {
           x="590"
           y="200"
           text-anchor="middle"
-          :fill="accent"
           letter-spacing="1.5"
         >
           JUDGMENT
@@ -351,32 +313,55 @@ const sizeClasses = {
 .roles-blur :deep(svg) .rb-eyebrow {
   font-size: 14px;
   font-weight: 700;
+  fill: var(--brand-primary);
 }
 
 .roles-blur :deep(svg) .rb-sub {
-  font-size: 13px;
+  font-size: 14px;
+  fill: var(--brand-text);
 }
 
 .roles-blur :deep(svg) .rb-label {
-  font-size: 14px;
+  font-size: 15px;
+  fill: var(--brand-text);
+}
+
+/* The three categorical slots, in fixed order: Product, Design, Engineering. */
+.roles-blur :deep(svg) .rb-cat-product {
+  fill: var(--brand-cat-1);
+  stroke: var(--brand-cat-1);
+}
+
+.roles-blur :deep(svg) .rb-cat-design {
+  fill: var(--brand-cat-2);
+  stroke: var(--brand-cat-2);
+}
+
+.roles-blur :deep(svg) .rb-cat-engineering {
+  fill: var(--brand-cat-3);
+  stroke: var(--brand-cat-3);
 }
 
 .roles-blur :deep(svg) .rb-role {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
+  fill: var(--brand-text);
   paint-order: stroke fill;
   stroke: var(--brand-surface, #F8F8F8);
   stroke-width: 6px;
   stroke-linejoin: round;
 }
 
+/* The diagram's punchline — kept the largest text in the SVG so it can't end up
+   the smallest text on the slide after the viewBox scales down. */
 .roles-blur :deep(svg) .rb-judgment {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
+  fill: var(--brand-primary);
 }
 
 .roles-blur :deep(svg) .rb-before {
-  transition: opacity 400ms ease;
+  transition: opacity 400ms var(--motion-ease);
 }
 
 /* Not hidden — the comparison is the argument, so the old model stays legible
@@ -387,7 +372,7 @@ const sizeClasses = {
 
 .roles-blur :deep(svg) .rb-stage {
   opacity: 0;
-  transition: opacity 400ms ease;
+  transition: opacity 400ms var(--motion-ease);
 }
 
 .roles-blur :deep(svg) .rb-stage.is-visible {
@@ -396,7 +381,7 @@ const sizeClasses = {
 
 .roles-blur :deep(svg) .rb-lobe {
   transform: translate(var(--dx), var(--dy));
-  transition: transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 620ms var(--motion-ease);
 }
 
 .roles-blur :deep(svg) .rb-stage.is-visible .rb-lobe {
@@ -416,11 +401,21 @@ const sizeClasses = {
   font-size: 0.95rem;
   color: var(--brand-text);
   opacity: 0;
-  transition: opacity 400ms ease;
+  transition: opacity 400ms var(--motion-ease);
   transition-delay: 120ms;
 }
 
 .roles-blur__caption.is-visible {
   opacity: 0.8;
+}
+
+/* Backward navigation is instant, matching the deck's global reveal rule — the
+   global rule only covers .slidev-vclick-target, not $clicks-driven classes. */
+:global(.slidev-nav-go-backward .rb-before),
+:global(.slidev-nav-go-backward .rb-stage),
+:global(.slidev-nav-go-backward .rb-lobe),
+:global(.slidev-nav-go-backward .roles-blur__caption) {
+  transition-duration: 0ms;
+  transition-delay: 0ms;
 }
 </style>

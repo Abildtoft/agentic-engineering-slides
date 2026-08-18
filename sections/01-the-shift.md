@@ -76,7 +76,7 @@ Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 <div class="grid grid-cols-2 gap-x-14 gap-y-7 mt-10">
   <div>
     <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Spotify</p>
-    <p class="text-base opacity-85 mt-1 mb-0">Best developers haven't written a line of code since December</p>
+    <p class="text-base opacity-85 mt-1 mb-0">Best developers haven’t written a line of code since December</p>
   </div>
   <div>
     <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Google</p>
