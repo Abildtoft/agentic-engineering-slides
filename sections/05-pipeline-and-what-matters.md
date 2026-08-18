@@ -122,6 +122,48 @@ DELIVERY:
 - Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
 - Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
 
+BRIDGE: "One artifact captures cheap learning better than anything else: the prototype."
+-->
+
+---
+layout: statement
+---
+
+# The prototype is the new brief.
+
+<v-click>
+
+A concept you can click beats a concept you can read. **People react to artifacts, not descriptions.**
+
+</v-click>
+<v-click>
+
+The first draft no longer needs a developer. A written idea becomes a working demo **in an afternoon, not a sprint.**
+
+</v-click>
+<v-click>
+
+Most prototypes should die. **That's the point** — they are the cheapest way to find out you're wrong.
+
+</v-click>
+
+<!--
+SOURCE: Andrew Chen, "the prototype is the new PRD" (x.com/andrewchen/status/2025022470550684037)
+SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
+
+KEY POINTS:
+- Chen's original phrasing is "the prototype is the new PRD" — reworded to "brief" so it lands for non-product audiences; credit him verbally
+- This is the previous slide made concrete: of all the cheap-evidence artifacts, the prototype is the one everyone in the room can produce
+- The first draft is no longer gated on engineering: tools like Lovable, v0, Bolt, and Claude Artifacts turn a written concept into something clickable — name the tools verbally rather than on the slide, they date fast
+- The division of labor that follows: domain people build the throwaway draft, developers harden only what earns survival — that is how prototyping protects development hours instead of consuming them
+- The kill rate is the feature, not the waste: a dead prototype is validated learning at the lowest possible price; a dead production feature is not
+- Honesty note: a prototype is not a product. The moment it touches real data or real users, the guardrails story from Section 3 applies — this is exactly why cheap drafts don't make developers optional
+- Connects back to "the failure mode is building yesterday's software faster": the prototype is how you avoid scoping the wrong thing at production quality
+
+DELIVERY:
+- For client-facing audiences: "Instead of describing a concept in a deck, hand the client something they can click. The reaction you get to an artifact is a different class of evidence than the reaction you get to a slide."
+- Land the third click with a pause — "most prototypes should die" sounds like failure until the second half reframes it
+
 BRIDGE: "And don't mistake cheaper learning for shrinking demand. The opposite is happening."
 -->
 
