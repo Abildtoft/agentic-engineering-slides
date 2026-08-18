@@ -36,7 +36,14 @@ As big as the internet or mobile.
 <v-click>
 
 <p class="mt-4 text-2xl leading-relaxed opacity-80">
-And only as big as the internet or mobile.
+And <span class="font-bold" style="color: var(--brand-primary)">only</span> as big as the internet or mobile.
+</p>
+
+</v-click>
+<v-click>
+
+<p class="mt-6 text-lg leading-relaxed opacity-70">
+Both took a decade. The winners weren't obvious yet.
 </p>
 
 </v-click>
@@ -55,6 +62,7 @@ KEY POINTS:
 DELIVERY:
 - Make this feel like a correction to both hype and dismissal
 - Land "only" without minimizing the shift
+- Three clicks. Let "only" sit in silence before clicking the third line — that line is the evidence for it, so don't read it aloud; expand on it instead (the decade, the winners who weren't in the room)
 - Optional verbal (Boris Cherny, Head of Claude Code, via Lenny Rachitsky — x.com/lennysan/status/2025289168012595312): "You have to transport yourself to the current moment. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
 - Use that quote to reframe resistance as a stale mental model, not a lack of intelligence: expertise becomes inertia when capabilities move this fast, and newcomers can outperform simply by starting from current constraints instead of historical ones
 
