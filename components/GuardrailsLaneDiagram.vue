@@ -216,8 +216,8 @@ const pins = [
 
 /* The lane's only call site sits inside a <v-click>, which hides with opacity —
    a slide-entry animation would run and finish behind the invisible wrapper, so
-   the click would reveal a lane that had already bowled. Same fix as
-   CommitGrowthChart: the build rides the v-click state instead. Hidden holds the
+   the click would reveal a lane that had already bowled. The build rides the
+   v-click state instead. Hidden holds the
    pre-build state with transitions off (stepping backward is instant, matching
    the deck rule), and losing the class plays the whole ~1.6s build exactly when
    the audience is looking. Export steps click states with transitions killed,

@@ -77,7 +77,7 @@ function run() {
   }, DELAY)
 }
 
-/** Bound to slide visibility rather than mount: all 55 slides are in the DOM
+/** Bound to slide visibility rather than mount: all 57 slides are in the DOM
     from page load, so counting on mount would run — and finish — off-screen. */
 watch(
   isActive,
