@@ -17,14 +17,27 @@ defaults:
 duration: 60min
 timer: countdown
 layout: cover
+# See slides.md — kept identical so both themes open the same way.
+clicks: 1
 ---
 
 <ShaderBackground />
 <BrandLogo />
 
-# Agentic Engineering
+<CoverTitleSwap
+  from="Vibe Coding"
+  to="Agentic Engineering"
+  subtitle="From Writing Code to Orchestrating Intelligent Systems"
+/>
 
-How AI Is Reshaping What It Means to Build Software
+<!--
+Open on the name the room already has for this. Let it sit for a beat before
+striking it — the cross-out is the argument, and it only lands if they've had
+time to agree with the word first.
+
+One click runs the whole thing — cross-out, swap, subtitle — over about two
+seconds. Trigger it and stop talking; let the swap land on its own.
+-->
 
 ---
 layout: statement
