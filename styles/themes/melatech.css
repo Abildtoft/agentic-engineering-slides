@@ -9,6 +9,10 @@
   /* Ambient light for <ShaderBackground>. A lighter tint of the brand green —
      --brand-link is a generic link blue and would pull the slide toward teal. */
   --brand-glow: #2FA875;
+  /* The cover's cross-out — see the note in consensus.css. Shared value: it is a
+     signal colour, not a brand one, and both themes run it over a dark cover.
+     3.88:1 on this theme's accent green, 3.51:1 against the white glyphs. */
+  --brand-strike: #FF5C5C;
   /* The component's own defaults, restated so both themes declare their strength
      in the same place — see the contrast note in AGENTS.md before changing. */
   --brand-shader-dark: 0.3;

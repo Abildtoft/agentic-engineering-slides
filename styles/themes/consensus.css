@@ -14,6 +14,14 @@
      — Navy and Azure are close enough in value that the shader reads faint at
      the strength Melatech's green needs. */
   --brand-glow: #5396C7;
+  /* The cover's cross-out. Red is the only colour that reads as "struck", and no
+     CVI colour carries it, so it lives here rather than hardcoded at the call
+     site. Measured on the flat cover accent: 5.11:1, and 3.51:1 against the
+     white glyphs it crosses — both past the 3:1 marks threshold. The cover's
+     shader lightens the backdrop under a worst-case frame and narrows the
+     first figure; the strike is also carried by the word being replaced, so
+     colour is not doing the work alone. */
+  --brand-strike: #FF5C5C;
   --brand-shader-dark: 0.45;
   --brand-shader-light: 0.22;
   /* Categorical slots for diagrams, assigned in fixed order. Slots 1-2 are
