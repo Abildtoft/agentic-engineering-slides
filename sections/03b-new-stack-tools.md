@@ -113,18 +113,14 @@ class: text-center
   A --> SL[Skill Loader]
   subgraph User-Invocable
     SK1[git:commit-message]
-    SK2[verify:run]
   end
   subgraph Model-Invocable
     SK3[code-reviewer]
-    SK4[silent-failure-hunter]
   end
   SL -->|explicit load| SK1
-  SL -.->|available| SK2
   SL -.->|auto-discovered| SK3
-  SL -.->|available| SK4
-  SK1 -->|instructions| LLM[LLM Interprets]
-  SK3 -->|instructions| LLM
+  SK1 --> LLM[LLM Interprets]
+  SK3 --> LLM
   LLM -->|soft guidance| R[Output]
 `" size="xl" />
 
@@ -132,17 +128,17 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-75">A skill is a <strong>reusable playbook</strong> — a folder of instructions for one kind of task. Write the workflow once, run it whenever that task shows up.</p>
+<p class="text-base opacity-75">A <strong>reusable playbook</strong> — write the workflow once, run it whenever that task shows up.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Manual trigger</strong> — a slash command when you want a specific playbook (<code>/commit-message</code>). <strong>Automatic trigger</strong> — the agent matches your request to a skill description and loads it for you (<code>code-reviewer</code>).</p>
+<p class="text-base opacity-75"><strong>Manual trigger</strong> — <code>/commit-message</code> · <strong>Automatic trigger</strong> — the agent matches your request to a skill description (<code>code-reviewer</code>).</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75">Same format beyond code: design reviews, accessibility audits, copy editing. <strong>Prompting evaporates. Skill packs compound.</strong></p>
+<p class="text-base opacity-75"><strong>Prompting evaporates. Skill packs compound.</strong></p>
 
 </v-click>
 
@@ -154,7 +150,8 @@ KEY POINTS:
 - User-invocable: user explicitly triggers with /command — deterministic selection
 - Model-invocable: agent reads skill descriptions, matches to current prompt, loads autonomously
 - Both paths end the same way: skill .md is read, LLM interprets instructions, generates output
-- Dotted arrows = available but not loaded for this invocation
+- Dotted arrow = the auto-discovered path — the agent chose the skill, the user didn't. The diagram shows one skill per category; say verbally that a real setup holds a pack of them (verify:run, silent-failure-hunter, ...) and only the matched one loads
+- Trimmed from the slide, say verbally: a skill is a folder of instructions for one kind of task, and the same format works beyond code — design reviews, accessibility audits, copy editing
 - Key contrast to say out loud: "soft guidance" — the LLM interprets the markdown and can adapt or deviate. This is the conceptual counterpart to MCP's hard schema contract on the next slides
 - The loading mechanism is worth a sentence: the agent keeps only a short description in memory and loads the full playbook on demand, which keeps the context window focused and cuts repeated prompting
 - The full bundle, if the room is technical: markdown instructions, minimal deterministic code, tests for the code, evals for the behaviour, and resolver logic so the agent knows when to reach for it. The resolver is what makes a skill discoverable by the agent rather than merely reusable by the human
@@ -176,17 +173,17 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-75">MCP is a <strong>standard plug format</strong> — think USB — for the tools and data an agent can use. One protocol instead of a custom integration per app.</p>
+<p class="text-base opacity-75">MCP is a <strong>standard plug format</strong> — think USB — one protocol instead of a custom integration per app.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75">Each server publishes what it offers: actions (<strong>Tools</strong>), context (<strong>Resources</strong>), reusable templates (<strong>Prompts</strong>) — all schema-validated, so handoffs are predictable.</p>
+<p class="text-base opacity-75"><strong>Tools</strong> (do) · <strong>Resources</strong> (read) · <strong>Prompts</strong> (reuse) — all schema-validated, so handoffs are predictable.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75">Skills tell the agent <strong>how to think</strong>. MCP tells it <strong>what systems it can safely operate</strong>.</p>
+<p class="text-base opacity-75">Skills tell the agent <strong>how to think</strong>. MCP tells it <strong>what it can safely operate</strong>.</p>
 
 </v-click>
 
@@ -198,6 +195,7 @@ KEY POINTS:
 - MCP is the kitchen itself — standardised layout and plumbing, bundling APIs, auth, and tool definitions into one server
 - Keep "plug format" language for non-technical audiences; the value proposition is interoperability and lower integration overhead
 - The three capability types map to practical intuition: do, read, reuse
+- Trimmed from the slide, say verbally: each server publishes what it offers — actions are Tools, context is Resources, reusable templates are Prompts. "For the tools and data an agent can use" is the plug format's object
 - Hard contracts reduce ambiguity, retries, and brittle handoffs
 - Contrast to hold, and the reason this pairs with the skills slide: skills are soft guidance in markdown; MCP is a hard interface contract — inputs and outputs are schema-validated, no interpretation at the interface
 - Concrete verbal example (Linear): "Create a Linear issue about the bug we just found" → the agent picks the create_issue tool from the Linear MCP server → schema-validated result: issue LIN-1234. One server, three capability types
@@ -218,42 +216,37 @@ class: text-center
 
 <MermaidDiagram :code="`graph LR
   U[User: 'Implement the approved pricing frame'] --> A[Agent]
-  A --> C[MCP Client]
-  C --> F[Figma MCP Server]
+  A --> F[Figma MCP Server]
   subgraph Figma Data
-    T[Tool: get_design_context]
-    R[Tool: get_variable_defs]
-    P[Prompt: handoff_checklist]
-    G[Tool: generate_figma_design]
+    T[get_design_context]
+    R[get_variable_defs]
+    G[generate_figma_design]
   end
-  F -->|exposes| T
-  F -->|exposes| R
-  F -->|exposes| P
-  F -->|exposes| G
+  F --> T
+  F --> R
   T --> S[Scoped spec + acceptance criteria]
   R --> S
-  P --> S
   S --> PR[Implementation plan + PR]
   PR --> UI[Running UI in browser]
   UI --> G
-  G --> OUT[Back to Figma file]
+  G --> B[Back to Figma file]
 `" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">Design intent becomes structured input, not screenshot guessing.</p>
 
 <v-click>
 
-<p class="text-base opacity-75"><strong>Schema-bound handoff</strong> — the agent reads frames, components, and tokens through contracts, not manual copy/paste.</p>
+<p class="text-base opacity-75"><strong>Schema-bound handoff</strong> — frames, components, and tokens through contracts, not copy/paste.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Bridge across teams</strong> — designers approve in Figma, engineers execute from the same source of truth.</p>
+<p class="text-base opacity-75"><strong>One source of truth</strong> — designers approve in Figma, engineers execute from it.</p>
 
 </v-click>
 <v-click>
 
-<p class="text-base opacity-75"><strong>Now bidirectional</strong> — Claude Code can hand live UI back to Figma with <code>generate_figma_design</code> (remote server).</p>
+<p class="text-base opacity-75"><strong>Now bidirectional</strong> — live UI back to Figma via <code>generate_figma_design</code>.</p>
 
 </v-click>
 
@@ -268,6 +261,7 @@ KEY POINTS:
 - The output is not "perfect UI in one shot" — it is a better scoped spec and implementation plan
 - New workflow to call out: Claude Code -> Figma handoff via `generate_figma_design`
 - Constraint: this handoff path requires the remote Figma MCP server and currently supports Claude Code and Codex
+- Diagram simplified for legibility: the MCP-client hop and the handoff_checklist Prompt are elided. If asked how prompts fit, the kitchen slide's three capability types cover it
 
 DELIVERY:
 - "This is where MCP gets interesting: not just tickets and repos, but design systems and approved frames."
@@ -285,23 +279,23 @@ BRIDGE: "Once you have context and interfaces, the next question is reliability.
 layout: default
 ---
 
-# Guardrails — Deterministic Gates Around Probabilistic Agents
+# Guardrails
 
 <SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
 
 <v-click>
 
-**LLMs are stochastic.** Same prompt, different result every time. You don't get reliability by perfecting prompts — you get it by **designing the system around them.**
+**LLMs are stochastic** — same prompt, different result every time. Reliability comes from **the system around the model**, not perfected prompts.
 
 </v-click>
 <v-click>
 
-**Hooks** fire inside the loop — block `rm -rf` before it runs, auto-format after every write, gate the output before the agent stops. **Tests** close it: write the test first and *the test is the spec.*
+**Hooks** fire inside the loop — block `rm -rf`, auto-format every write, gate the output. **Tests** close it: *the test is the spec.*
 
 </v-click>
 <v-click>
 
-Hard checkpoints that never hallucinate, wrapped around models that always might. Without them, every iteration needs human review. With them, the agent can try → fail → retry on its own.
+**Deterministic gates around probabilistic agents.** With them, the agent can try → fail → retry on its own.
 
 </v-click>
 
@@ -313,6 +307,7 @@ SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/M
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Name the pattern explicitly: deterministic gates + probabilistic agents
+- Trimmed from the slide, say verbally: hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
 - Hooks are shell scripts firing at lifecycle points in the agent loop, and the lifecycle framing is worth naming if the room is technical: PreToolUse blocks destructive commands before they execute, PostToolUse auto-formats and lints after every file write, Stop rejects output that fails validation and triggers a retry. Same idea as CI/CD or Git hooks — but running inside the loop, not after it, so the agent self-corrects without a human
 - Tests are the most familiar guardrail and the one to dwell on: TDD means the test IS the spec the agent implements against, closing the loop attempt → failure → retry. They are executable definitions of done
 - Willison (worth quoting verbatim): "Tests are free now. They're effectively free." He starts every coding session by telling the agent how to run the tests; the prompt "red-green TDD" is five tokens and dramatically improves reliability. "Tests are no longer even remotely optional"
@@ -388,7 +383,7 @@ class: text-center
 
 <v-click>
 
-<p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests — and <strong>specialized agents</strong>: one persona, a narrow toolset, a single job, each a markdown file you can version.</p>
+<p class="text-base opacity-85"><strong>Agent = Model + Harness.</strong> Context, specs, skills, MCP, hooks, tests — and <strong>specialized agents</strong>: one persona, a narrow toolset, a single job.</p>
 
 </v-click>
 <v-click>
@@ -407,6 +402,7 @@ SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.co
 KEY POINTS:
 - Define an agent operationally when you land the first click, rather than mystically: an LLM with a system prompt, a set of tools, and permission to act autonomously in a loop — read, think, act, observe, repeat
 - Specialisation is the single-responsibility principle applied to agents: the more concerns you load, the shallower the attention, so a focused agent performs better and is easier to test, debug and trust
+- Trimmed from the slide, say verbally: each specialized agent is a markdown file you can version
 - A lead agent can then coordinate several specialists in parallel — narrow roles, explicit handoffs, deterministic checks. Say this out loud: it is the setup for Section 04's opening, where going from one agent to many becomes a distributed-systems problem
 - The previous slide's bridge promised a name — deliver it with the diagram: five harness components around the model (Context Injection, Control, Action, Persist, Observe & Verify)
 - The cycle: context flows in → model reasons → actions fire → results persist and feed back → model reasons again
@@ -442,7 +438,9 @@ class: quote-long
 </div>
 
 <v-click>
-  Boris Cherny, creator of Claude Code
+
+Boris Cherny, creator of Claude Code
+
 </v-click>
 
 <!--

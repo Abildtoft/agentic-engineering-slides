@@ -52,6 +52,8 @@ BRIDGE: "So what does the new way of working require? It starts with stepping ou
 -->
 
 ---
+class: v-center
+---
 
 # From Producing Outputs to Designing the Loop
 
@@ -92,6 +94,8 @@ DELIVERY:
 BRIDGE: "Let's look at each discipline."
 -->
 
+---
+class: v-center
 ---
 
 # Context Engineering
@@ -142,6 +146,8 @@ DELIVERY:
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->
 
+---
+class: v-center
 ---
 
 # Spec-Driven Development

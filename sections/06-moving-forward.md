@@ -19,14 +19,15 @@ BRIDGE: "Across everything we've covered — what actually survives?"
 -->
 
 ---
-layout: two-cols-header
+class: v-center
 ---
 
 # What Survives
 
 Execution is increasingly abundant. People who combine strategy with execution will remain rare.
 
-::left::
+<div class="grid grid-cols-2 gap-14 mt-2">
+<div>
 
 <v-click>
 
@@ -39,7 +40,8 @@ Execution is increasingly abundant. People who combine strategy with execution w
 
 </v-click>
 
-::right::
+</div>
+<div>
 
 <v-click>
 
@@ -52,9 +54,16 @@ Execution is increasingly abundant. People who combine strategy with execution w
 
 </v-click>
 
+</div>
+</div>
+
 <v-click>
 
+<div class="text-center mt-6">
+
 ## This is not a tooling upgrade. It's a different operating model.
+
+</div>
 
 </v-click>
 
@@ -90,6 +99,7 @@ BRIDGE: "One final lens: where bottlenecks move next."
 
 ---
 layout: statement
+class: statement-wide
 ---
 
 # Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems.

@@ -72,12 +72,12 @@ class: statement-wide
 
 <v-click>
 
-"A PM with a good idea can now get to a first draft faster than ever. They can visualize concepts, test directions, and move quickly." — **Duolingo Chief Product Officer.** The distance between idea and artifact has shrunk.
+"A PM with a good idea can now get to a first draft faster than ever." — **Duolingo Chief Product Officer**
 
 </v-click>
 <v-click>
 
-But the job is walking the terrain, understanding the politics, and deciding what should happen next. **The deck, prototype, and code are just evidence that the thinking happened.**
+The job is deciding what should happen next. **The deck, prototype, and code are just evidence that the thinking happened.**
 
 </v-click>
 <v-click>
@@ -102,6 +102,7 @@ KEY POINTS:
 - Apply this to software: the code is not the whole job. The job is discovering the real problem, choosing the constraints, shaping the system, and owning the outcome
 
 DELIVERY:
+- Trimmed from the slide, say verbally: the full Duolingo line continues "They can visualize concepts, test directions, and move quickly" — the distance between idea and artifact has shrunk. And the job line's long form: walking the terrain, understanding the politics, deciding what should happen next
 - Land the headline cold — after the compression slides it should sound like a mild contradiction for a second
 - The quote grounds it; the final reveal resolves it
 - Keep this calm; it is not meant to reassure everyone equally — the distinction should feel useful rather than comforting
@@ -195,7 +196,7 @@ BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier 
 -->
 
 ---
-class: dim-prior
+class: dim-prior v-center
 ---
 
 # The Bottleneck Cascade
