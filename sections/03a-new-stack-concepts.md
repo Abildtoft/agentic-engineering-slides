@@ -113,7 +113,9 @@ But every context window is finite. Context engineering gets the *important* inf
 </v-click>
 <v-click>
 
-> “The Venn Diagram of Developer Experience and Agent Experience is a circle.” — **Laura Tacho**
+> “The Venn Diagram of Developer Experience and Agent Experience is a circle.”
+>
+> Laura Tacho
 
 Design docs, component specs, tokens — context too. **Documentation is now production infrastructure.**
 
@@ -170,7 +172,9 @@ The cycle: **spec → implement → verify → refine.** You write the spec and 
 </v-click>
 <v-click>
 
-> “LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time.” — **Addy Osmani**
+> “LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time.”
+>
+> Addy Osmani
 
 </v-click>
 
