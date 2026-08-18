@@ -169,12 +169,11 @@ const pins = [
   stroke: var(--brand-text);
   stroke-width: 1.5;
   opacity: 0.65;
-  /* Fully drawn is the base state — the draw lives in the keyframe's `from`,
-     so print and reduced motion land complete. */
+  /* Fully drawn is the base state — the undrawn state lives in the
+     v-click-hidden rule below, so print and reduced motion land complete. */
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  animation: gl-draw var(--motion-draw) var(--motion-ease) both;
-  animation-delay: 200ms;
+  transition: stroke-dashoffset var(--motion-draw) var(--motion-ease) 200ms;
 }
 
 .gl-arrowhead {
@@ -183,7 +182,7 @@ const pins = [
 }
 
 .gl-frame {
-  animation: gl-in var(--motion-slow) var(--motion-ease) both;
+  transition: opacity var(--motion-slow) var(--motion-ease);
 }
 
 /* The impact marks land as the draw reaches each bounce. The delays are
@@ -191,41 +190,53 @@ const pins = [
    along the path, bounce two ~68% — 200ms draw delay + that share of
    --motion-draw (1200ms). Recompute if the path or --motion-draw changes. */
 .gl-impact--first {
-  animation: gl-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: 565ms;
+  transition: opacity var(--motion-base) var(--motion-ease) 565ms;
 }
 
 .gl-impact--second {
-  animation: gl-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: 1020ms;
+  transition: opacity var(--motion-base) var(--motion-ease) 1020ms;
 }
 
 /* Pins arrive one by one as the ball path finishes its draw (200ms draw delay
    + the draw itself). */
 .gl-pin-g {
-  animation: gl-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(200ms + var(--motion-draw) + var(--i) * 50ms);
+  transition: opacity var(--motion-base) var(--motion-ease)
+    calc(200ms + var(--motion-draw) + var(--i) * 50ms);
 }
 
 .gl-shipped {
-  animation: gl-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(200ms + var(--motion-draw));
+  transition: opacity var(--motion-base) var(--motion-ease)
+    calc(200ms + var(--motion-draw));
 }
 
 .gl-path-cap {
-  animation: gl-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(200ms + var(--motion-draw));
+  transition: opacity var(--motion-base) var(--motion-ease)
+    calc(200ms + var(--motion-draw));
 }
 
-@keyframes gl-in {
-  from {
-    opacity: 0;
-  }
+/* The lane's only call site sits inside a <v-click>, which hides with opacity —
+   a slide-entry animation would run and finish behind the invisible wrapper, so
+   the click would reveal a lane that had already bowled. Same fix as
+   CommitGrowthChart: the build rides the v-click state instead. Hidden holds the
+   pre-build state with transitions off (stepping backward is instant, matching
+   the deck rule), and losing the class plays the whole ~1.6s build exactly when
+   the audience is looking. Export steps click states with transitions killed,
+   landing on the finished base state above.
+
+   Whole selector inside :global() — Vue's scoped compiler keeps only the
+   :global() portion of a mixed selector and silently drops the rest. */
+:global(.slidev-vclick-hidden .gl-frame),
+:global(.slidev-vclick-hidden .gl-impact--first),
+:global(.slidev-vclick-hidden .gl-impact--second),
+:global(.slidev-vclick-hidden .gl-pin-g),
+:global(.slidev-vclick-hidden .gl-shipped),
+:global(.slidev-vclick-hidden .gl-path-cap) {
+  opacity: 0;
+  transition: none;
 }
 
-@keyframes gl-draw {
-  from {
-    stroke-dashoffset: 1;
-  }
+:global(.slidev-vclick-hidden .gl-path) {
+  stroke-dashoffset: 1;
+  transition: none;
 }
 </style>

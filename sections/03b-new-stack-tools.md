@@ -272,8 +272,6 @@ layout: default
 
 # Guardrails
 
-<GuardrailsLaneDiagram size="lg" />
-
 <v-click>
 
 **LLMs are stochastic** — same prompt, different result. Reliability comes from the system around the model, not perfected prompts.
@@ -281,7 +279,7 @@ layout: default
 </v-click>
 <v-click>
 
-**Hooks** fire inside the loop — block `rm -rf`, auto-format, gate the output. **Tests** close it: *the test is the spec.*
+<GuardrailsLaneDiagram size="lg" />
 
 </v-click>
 <v-click>
@@ -298,7 +296,8 @@ SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/M
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Name the pattern explicitly: deterministic gates + probabilistic agents
-- Trimmed from the slide, say verbally: hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
+- Hooks and tests are now entirely verbal — the line naming them came off the slide, so the lane diagram carries them visually (the two rails ARE tests and reviews) and you name them out loud. Point at the rails as you do it
+- Trimmed from the slide, say verbally: hooks fire inside the loop — block `rm -rf`, auto-format, gate the output; tests close it, and *the test is the spec*. Hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
 - Hooks are shell scripts firing at lifecycle points in the agent loop, and the lifecycle framing is worth naming if the room is technical: PreToolUse blocks destructive commands before they execute, PostToolUse auto-formats and lints after every file write, Stop rejects output that fails validation and triggers a retry. Same idea as CI/CD or Git hooks — but running inside the loop, not after it, so the agent self-corrects without a human
 - Tests are the most familiar guardrail and the one to dwell on: TDD means the test IS the spec the agent implements against, closing the loop attempt → failure → retry. They are executable definitions of done
 - Willison (worth quoting verbatim): "Tests are free now. They're effectively free." He starts every coding session by telling the agent how to run the tests; the prompt "red-green TDD" is five tokens and dramatically improves reliability. "Tests are no longer even remotely optional"
