@@ -56,7 +56,7 @@ class: text-center
 
 <v-click>
 
-As implementation accelerates, the maintainer's job moves outward: **choose the work, set the bar, improve the loop.**
+<p class="text-lg">The maintainer's job moves outward: <strong>choose the work, set the bar, improve the loop.</strong></p>
 
 </v-click>
 
@@ -94,12 +94,12 @@ layout: statement
 
 <v-click>
 
-Accelerating the inner loop just gets you to the wrong answer sooner. **The maintainer's leverage is in the loops that decide what to build and whether it worked.**
+Accelerating the inner loop just gets you to the wrong answer sooner.
 
 </v-click>
 <v-click>
 
-**What is the cheapest thing that would change our mind?** Often it isn't code at all — a prototype, a landing page, five conversations, one afternoon.
+**What is the cheapest thing that would change our mind?** Often it isn't code — a prototype, a landing page, five conversations.
 
 </v-click>
 
@@ -111,7 +111,7 @@ SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
 KEY POINTS:
 - This is the payoff of the three-loop diagram: every loop is a learning loop, and they are priced very differently
 - Agentic speed makes the inner loop nearly free, which makes the outer loop the binding constraint — and the only one that produces real-world evidence
-- The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product
+- The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product — the maintainer's leverage is in the loops that decide what to build and whether it worked (trimmed from the slide, say it over the first click)
 - Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
 - Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
 - This is also the honest defense against the accumulation trap later in this section: cheap learning is what earns the right to build
@@ -210,17 +210,17 @@ class: dim-prior v-center
 
 <v-click>
 
-**Frame the problem and define the MVP** before the agent writes a line of code. **Design the context** — an AGENTS.md that prevents the same mistake three times.
+**Frame the problem** before the agent writes a line. **Design the context** so the same mistake can't happen three times.
 
 </v-click>
 <v-click>
 
-**Spot the flaw** an agent's clean code is hiding — the wrong abstraction, the missing edge case, the architecture that won't scale. **Articulate why an interaction is wrong** — not just that it feels off, but the principle it violates.
+**Spot the flaw** clean code is hiding. **Articulate why** an interaction is wrong — the principle, not the vibe.
 
 </v-click>
 <v-click>
 
-The work hasn't changed. The boundaries have. Focus, finishing, and judgment **don't scale with AI speed — they scale with you.**
+The work hasn't changed. The boundaries have. Focus, finishing, and judgment **scale with you, not with AI speed.**
 
 </v-click>
 
@@ -235,6 +235,7 @@ KEY POINTS:
 - The headline version of the last click, worth saying before the reveal: "we're not bottlenecked by typing speed, we're bottlenecked by coherence." AI can generate five features in a day; integrating them into a system that makes sense is still your job. Integration does not scale with generation speed — it scales with focus and understanding
 - Doshi's chain reinforces it: AI tools commoditise → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
 - Ground the abstract capability in the operating model the audience now understands
+- Trimmed examples to say over the clicks: framing includes defining the MVP; "design the context" means an AGENTS.md; the hidden flaws are the wrong abstraction, the missing edge case, the architecture that won't scale
 - This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
 - Doshi's 5-skill decomposition (empathy, simulation, strategic thinking, taste, creative execution) maps directly to these bullet points — use as verbal framework if audience asks "how do you build judgment?"
 - Keep it explicitly cross-role: specs, context design, and quality judgment are not engineering-only traits
@@ -259,11 +260,11 @@ layout: default
 
 <v-click>
 
-<p class="text-center">
+<div class="text-center">
 
 Agents will run rungs 1–6 for you — and it's getting cheap fast. **Rung 7 never does.**
 
-</p>
+</div>
 
 </v-click>
 
@@ -295,12 +296,7 @@ class: statement-wide
 
 <v-click>
 
-Product Managers and Product Owners don't just ship features. They also kill them.
-
-</v-click>
-<v-click>
-
-Great ones don't fall in love with the roadmap. They fall in love with the problem — and have the guts to say: **This isn't solving it. This adds complexity. This doesn't matter.**
+Great PMs fall in love with the problem, not the roadmap — and have the guts to say: **This isn't solving it. This doesn't matter.**
 
 </v-click>
 <v-click>
@@ -318,6 +314,7 @@ SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/M
 
 KEY POINTS:
 - Callback to the Agency Ladder: killing features IS rung 7 — discernment applied at product scale
+- Trimmed beats to say verbally: "PMs and POs don't just ship features — they also kill them" (the old first click), and the full courage line includes "this adds complexity"
 - Addition gets cheaper; subtraction does not
 - This works across functions: product scope, UX complexity, technical surface area
 - The point is disciplined coherence, not maximal output

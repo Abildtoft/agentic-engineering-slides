@@ -25,12 +25,12 @@ class: statement-wide
 
 <v-click>
 
-If AI only helps you ship the same apps you would have built five years ago, you haven't changed strategy. You've changed throughput.
+If AI only helps you ship the apps you'd have built five years ago, you've changed throughput — not strategy.
 
 </v-click>
 <v-click>
 
-The question is not "How much more can we build?" It's **what becomes worth building now** — and what should become a workflow, a skill, or nothing at all.
+The question isn't “how much more can we build?” It's **what becomes worth building now.**
 
 </v-click>
 
@@ -41,6 +41,7 @@ SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everythi
 KEY POINTS:
 - This is the explicit version of the "time traveler" argument from Tan's post: modern tools, old mental model
 - The failure mode is not bad productivity; it is productivity pointed at an obsolete idea of what software should be
+- The full second beat, trimmed from the slide: the question is also what should become a workflow, a skill, or nothing at all — say it over the reveal
 - Tie this to Eriksson's strategy-layer argument: when feasibility changes, the product question changes too
 - Use this to prevent the audience from hearing the next section as "better implementation tooling" instead of a stack-level shift
 
@@ -59,12 +60,12 @@ class: v-center
 
 <v-click>
 
-**The agentic level isn't "faster autocomplete"**
+**The agentic level isn't “faster autocomplete.”**
 
 </v-click>
 <v-click>
 
-You're no longer producing every artifact step by step. You're designing the loop around the agent: **choose the work, set the bar, improve the loop.**
+You're no longer producing every artifact. You're designing the loop around the agent: **choose the work, set the bar, improve the loop.**
 
 </v-click>
 <v-click>
@@ -107,14 +108,14 @@ class: v-center
 </v-click>
 <v-click>
 
-But every model has a finite memory — a context window. Not everything fits. Context engineering gets the *important* information into that budget: right information, right order, right time.
+But every context window is finite. Context engineering gets the *important* information into that budget: right information, right order, right time.
 
 </v-click>
 <v-click>
 
-> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
+> “The Venn Diagram of Developer Experience and Agent Experience is a circle.” — **Laura Tacho**
 
-Design system docs, component specs, token definitions — context too. **Documentation is now production infrastructure, not supporting material.**
+Design docs, component specs, tokens — context too. **Documentation is now production infrastructure.**
 
 </v-click>
 
@@ -159,17 +160,17 @@ class: v-center
 </v-click>
 <v-click>
 
-A spec is the smallest clear, testable packet of intent: scope, constraints, acceptance criteria, expected behavior. Large projects become a series of these packets, each small enough to fit inside the agent's context window with room to reason.
+A spec is the smallest clear, testable packet of intent: scope, constraints, acceptance criteria. Large projects become a series of these packets.
 
 </v-click>
 <v-click>
 
-The cycle: **spec → implement → verify → refine.** You write the spec and own the verification. The agent generates the first implementation.
+The cycle: **spec → implement → verify → refine.** You write the spec and own the verification.
 
 </v-click>
 <v-click>
 
-> "LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time." — **Addy Osmani**
+> “LLMs do best when given focused prompts: implement one function, fix one bug, add one feature at a time.” — **Addy Osmani**
 
 </v-click>
 

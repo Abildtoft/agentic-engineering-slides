@@ -65,14 +65,14 @@ class: quote-long
 ---
 
 <div class="quote-progressive">
-  <div class="quote-progressive-line">"We gave a student team AI coding tools and tracked them for 10 weeks.</div>
+  <div class="quote-progressive-line">“We gave a student team AI coding tools and tracked them for 10 weeks.</div>
 
   <v-click>
     <div class="quote-progressive-line">Early results were impressive — they were shipping faster than any cohort we'd seen.</div>
   </v-click>
 
   <v-click>
-    <div class="quote-progressive-line">By week 8, one team hit a wall. No one could explain why certain design decisions had been made."</div>
+    <div class="quote-progressive-line">By week 8, one team hit a wall. No one could explain why certain design decisions had been made.”</div>
   </v-click>
 </div>
 
@@ -84,7 +84,7 @@ Margaret-Anne Storey
 
 <v-click>
 
-## "I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about."
+## “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.”
 
 Simon Willison
 
@@ -157,17 +157,17 @@ Line-by-line PR review does not scale with agentic output.
 
 <v-click>
 
-Move the human checkpoint upstream: **review specs, constraints, and acceptance criteria** before generation.
+The human checkpoint moves upstream: **specs, constraints, acceptance criteria.**
 
 </v-click>
 <v-click>
 
-Move trust downstream into deterministic checks: **tests, type checks, contracts, rollout guardrails**.
+Trust moves downstream: **tests, type checks, contracts, rollout guardrails.**
 
 </v-click>
 <v-click>
 
-The question shifts from "Did you write this correctly?" to **"Are we solving the right problem under the right constraints?"**
+The question shifts from “Did you write this correctly?” to **“Are we solving the right problem?”**
 
 </v-click>
 
@@ -176,6 +176,7 @@ SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
 
 KEY POINTS:
 - This reframes review from post-hoc diff reading to upstream intent validation
+- Trimmed qualifiers, say verbally: the upstream review happens *before generation*, and the full closing question is "are we solving the right problem *under the right constraints*"
 - Keep nuance explicit: this is not "no accountability"; it is relocating accountability
 - Put this in the cognitive-debt section because the review model now directly sets up the layered-failure argument
 - Deterministic verification is the safety net when output volume exceeds human diff-reading capacity
@@ -195,7 +196,7 @@ layout: default
 
 # The Swiss-Cheese Model
 
-<SlideImage src="/reviews-dead-trust-layers.png" alt="Layered swiss-cheese slices labeled compare multiple options, deterministic guardrails, acceptance criteria, permission systems, adversarial verification — building trust through layers" size="md" />
+<SwissCheeseDiagram size="lg" />
 
 <v-click>
 
@@ -210,7 +211,8 @@ Cognitive debt makes the holes bigger. **Incidents happen when they line up.**
 
 <!--
 SOURCE: James Reason, Swiss-cheese model of accident causation
-SOURCE: Image from Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
+SOURCE: Layer labels from Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead) — diagram redrawn in deck style
+NOTE: The "incident" through-arrow draws on the second click, with the "they line up" line — don't advance past it early
 SOURCE: CodeRabbit, "A Semantic History of Vibe Coding" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
 
 KEY POINTS:
@@ -274,7 +276,7 @@ layout: default
 
 # The Confidence Spiral
 
-<SlideImage src="/confidence-spiral.png" alt="The confidence spiral diagram" />
+<ConfidenceSpiralDiagram size="md" />
 
 <v-click>
 
@@ -283,7 +285,7 @@ layout: default
 </v-click>
 <v-click>
 
-"We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've **eroded our ability to delay gratification.**"
+“We went from barely using coding agents to using them for every minor change in the past 6 months and I think they've **eroded our ability to delay gratification.**”
 
 </v-click>
 
@@ -328,7 +330,7 @@ layout: statement
 
 <v-click>
 
-> "Having poor quality code from an agent is a choice that you make." — **Simon Willison**
+> “Having poor quality code from an agent is a choice that you make.” — **Simon Willison**
 
 </v-click>
 <v-click>
@@ -363,17 +365,17 @@ class: dim-prior v-center
 
 <v-click>
 
-**The spec** — the intent, authored by a human. Ask "why," not just "what."
+**The spec** — intent, authored by a human. Ask “why,” not just “what.”
 
 </v-click>
 <v-click>
 
-**The explainability gate** — no merge until the author can explain intent, tradeoffs, and failure modes. At least one human must fully understand each change before it ships.
+**The explainability gate** — no merge until the author can explain intent, tradeoffs, and failure modes.
 
 </v-click>
 <v-click>
 
-**The ownership check** — one named human confirms end-to-end understanding and maintenance ownership. If that fails, slow down and re-scope.
+**The ownership check** — one named human owns the change end to end. If that fails, slow down and re-scope.
 
 </v-click>
 
@@ -387,7 +389,7 @@ KEY POINTS:
 - Close the section with a practical control model: intent, review, ownership. These are the team-level operating rules, and this is the point where governance becomes memorable and actionable
 - The third check that didn't fit on screen is the reasoning log: capture why this approach won, what was rejected, and what validated it. Document not just what changed, but why
 - Use the commit-message example verbally: if you cannot explain a change you submitted, the debt is already accumulating
-- Stress accountability: at least one human must understand each shipped change
+- Stress accountability: at least one human must fully understand each change before it ships (the long form of the explainability gate, trimmed from the slide)
 - Link back to section 3: harness discipline is the preventive mechanism
 - Eriksson's Intercom/Fin case study is a positive counterexample of getting this right: they built Fin (resolving 1M+ weekly tickets), shifted to outcome-based pricing ($0.99/resolution), and reached $100M+ ARR in under a year. The key: they aligned incentives so the AI had to actually work — not just ship fast. Outcome-based pricing is a structural antidote to cognitive debt because it forces you to own the quality of AI output, not just its volume.
 

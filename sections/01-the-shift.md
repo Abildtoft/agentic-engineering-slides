@@ -69,22 +69,28 @@ class: v-center
 
 Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 
-<p class="mt-4 text-lg opacity-80">Different interfaces, same workflow shift.</p>
+<p class="mt-2 text-lg opacity-80">Different interfaces, same workflow shift.</p>
 
 <v-click>
 
-<p class="mt-6 text-base opacity-75">So zoom out from tool names to company behavior:</p>
-
-</v-click>
-<v-click>
-
-**Spotify** — its best developers haven't written a line of code since December
-
-**Google** — AI writes over 30% of all new code
-
-**Microsoft** — 20–30% of code is AI-generated
-
-**Anthropic and OpenAI** — frontier teams report ~100% AI-generated code
+<div class="grid grid-cols-2 gap-x-14 gap-y-7 mt-10">
+  <div>
+    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Spotify</p>
+    <p class="text-base opacity-85 mt-1 mb-0">Best developers haven't written a line of code since December</p>
+  </div>
+  <div>
+    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Google</p>
+    <p class="text-base opacity-85 mt-1 mb-0">AI writes over 30% of all new code</p>
+  </div>
+  <div>
+    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Microsoft</p>
+    <p class="text-base opacity-85 mt-1 mb-0">20–30% of code is AI-generated</p>
+  </div>
+  <div>
+    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Anthropic & OpenAI</p>
+    <p class="text-base opacity-85 mt-1 mb-0">Frontier teams report ~100% AI-generated code</p>
+  </div>
+</div>
 
 </v-click>
 
@@ -110,6 +116,7 @@ KEY POINTS:
 - Eriksson provides a useful scale anchor: 84% of Earth's population (8.1B) have never used AI; only 0.3% have paid for AI; 0.04% have tried AI coding tools. The adoption numbers above are the bleeding edge — the rest of the world hasn't even started yet.
 
 DELIVERY:
+- Verbal bridge into the company grid (trimmed from the slide): "So zoom out from tool names to company behavior."
 - Open on the tool names with the convergence line: "This wasn't one model release. In a single 30-day window last December, all three frontier labs shipped — and the whole category renamed itself from assistants to agents."
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
 - Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
@@ -129,7 +136,7 @@ layout: fact
 
 <v-click>
 
-<SlideImage src="/semianalysis-claude-code-commits.png" alt="SemiAnalysis chart: Claude Code GitHub commits per day, growing exponentially from launch to 134,646" size="sm" />
+<CommitGrowthChart size="md" />
 
 </v-click>
 <v-click>
@@ -148,6 +155,7 @@ KEY POINTS:
 - Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
 - This is the floor, not the ceiling
 - The growth curve is exponential — ~135K daily commits at time of tweet
+- The on-slide chart is a stylised re-plot of the SemiAnalysis curve in deck colours: the anchors (launch Feb 2025, 134,646/day Feb 2026) are sourced; the shape between them is illustrative. The original screenshot stays at public/semianalysis-claude-code-commits.png
 - At current trajectory, 20%+ by end of 2026 — frame as trajectory, not prediction
 - Claude Code launched February 2025 — one tool, one year, 4% of all public commits
 
@@ -156,7 +164,7 @@ DELIVERY:
 - Click: the chart — the curve is exponential, not linear. Let the shape do the talking.
 - Click: "20%+ by end of 2026, from a tool launched February 2025" is the gut punch — pause and let it sink in
 - Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. This is the line that earns the Jack Clark quote next.
-- Deliberately not a slide: this `fact` layout is the densest in the deck (big number + chart + two lines) and has ~12px of vertical clearance left. Anything added here clips off the bottom.
+- Deliberately not a slide: this `fact` layout is the densest in the deck (big number + chart + two lines). The SVG chart bought back some clearance over the old screenshot, but there is still no room for another line of content.
 
 BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like trajectory."
 -->
@@ -165,7 +173,7 @@ BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like
 layout: quote
 ---
 
-# "By summer 2026, people working with frontier AI will feel like they live in a parallel world"
+# “By summer 2026, people working with frontier AI will feel like they live in a parallel world”
 
 Jack Clark, co-founder of Anthropic
 
