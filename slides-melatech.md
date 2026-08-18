@@ -13,7 +13,7 @@ htmlAttrs:
   data-theme: melatech
 defaults:
   transition: none
-duration: 162min
+duration: 60min
 timer: countdown
 layout: cover
 ---
