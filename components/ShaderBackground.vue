@@ -82,6 +82,77 @@ const SHADERS = {
 // without a source image the shader renders flat colorBack at any settings, so
 // there is nothing to composite. It's an image treatment, not a background.
 
+/**
+ * Per-slide variation, so seven dividers don't run the identical backdrop.
+ *
+ * Only framing and time are jittered, never colour or strength. The contrast
+ * figures in AGENTS.md are derived by flooding the shader's colours to one solid
+ * value at its shipped opacity — the worst frame it could ever produce. Rotating,
+ * offsetting, scaling or time-shifting the field changes *where* colours land,
+ * not *which* colours are reachable, so every one of those figures still bounds
+ * the varied output. Jittering opacity, the palette, or godRays' `bloom` /
+ * `intensity` would move the bound itself and invalidate the measurements.
+ *
+ * Ranges are per shader because they don't have equivalent freedom:
+ * - meshGradient is drifting colour pools with no canonical orientation, and it
+ *   runs on the surfaces with the most contrast headroom (`light` measures
+ *   9.78:1), so it gets the full range.
+ * - godRays is framed deliberately — its source is pushed off the top-left corner
+ *   so the beams rake across rather than burst from behind the title (see
+ *   `sizing` above). Rotation is kept narrow to preserve that, and because the
+ *   divider gradient is the tightest contrast case in the deck. The time offset
+ *   does most of the visual work there anyway.
+ */
+/** Every entry is a symmetric spread around the shader's own value: rotation in
+    degrees (180 is the full circle once signed), offset and scale as fractions. */
+const VARIANCE = {
+  meshGradient: {
+    rotation: 180,
+    offset: 0.18,
+    scale: 0.12,
+    // Both are 0-1 organic-distortion powers; jitter is applied around whatever
+    // the shader's own defaults are, and clamped there.
+    params: { u_distortion: 0.15, u_swirl: 0.12 },
+  },
+  godRays: {
+    rotation: 18,
+    offset: 0.06,
+    scale: 0.08,
+  },
+  neuroNoise: {
+    rotation: 180,
+    offset: 0.2,
+    scale: 0.15,
+  },
+}
+
+/** How far the starting `u_time` can be pushed. Time is `speed x seconds`, so a
+    divider left up for a couple of minutes already passes 60 — the shaders
+    plainly tolerate this magnitude, which a much larger range would risk in
+    float precision for no extra variety. */
+const FRAME_RANGE = 240
+
+/**
+ * Deterministic, not random — the distinction matters more than it looks.
+ * `Math.random()` here would mean the exported PDF disagrees with the screen,
+ * presenter mode's two windows disagree with each other, and the deck the speaker
+ * rehearses isn't the one they present. Hashing the slide number instead gives
+ * every slide its own settled look that survives all three.
+ *
+ * `salt` draws independent values from one seed, so rotation and offset don't
+ * move together.
+ */
+function hashUnit(seed, salt) {
+  let h = (seed * 2654435761 + salt * 40503) >>> 0
+  h ^= h >>> 15
+  h = (h * 2246822519) >>> 0
+  h ^= h >>> 13
+  return h / 4294967296
+}
+
+const signedHash = (seed, salt) => hashUnit(seed, salt) * 2 - 1
+const clamp01 = v => Math.min(1, Math.max(0, v))
+
 /** getShaderNoiseTexture() returns a fresh, still-decoding Image on every call,
     and ShaderMount's constructor throws on one that isn't complete. Created once
     here so the decode starts at import — long before the first godRays slide. */
@@ -110,6 +181,11 @@ const props = defineProps({
   scale: { type: Number, default: null },
   /** Per-shader uniform overrides, merged over the SHADERS defaults. */
   params: { type: Object, default: () => ({}) },
+  /** Overrides the slide number as the variation seed — a way to reshuffle one
+      slide's look without moving it in the deck. */
+  seed: { type: Number, default: null },
+  /** Set false to render the shader at its unjittered framing. */
+  vary: { type: Boolean, default: true },
 })
 
 const colorVars = computed(() => SURFACES[props.surface] || SURFACES.dark)
@@ -119,7 +195,32 @@ const host = ref(null)
 const shaderReady = ref(false)
 const isActive = useIsSlideActive()
 const { isPrintMode } = useNav()
-const { $renderContext } = useSlideContext()
+const { $renderContext, $page } = useSlideContext()
+
+/** Resolved jitter for this slide. Zeroed when `vary` is false so the unvaried
+    path is the shader's own framing exactly, not a jitter that rounds to it.
+    `paramDeltas` are offsets rather than values — they're applied against the
+    shader's real defaults in create(), where those are in scope. */
+const variance = computed(() => {
+  if (!props.vary) {
+    return { rotation: 0, offsetX: 0, offsetY: 0, scaleFactor: 1, frame: 0, paramDeltas: {} }
+  }
+  const range = VARIANCE[props.shader] || VARIANCE.meshGradient
+  const seed = props.seed ?? $page?.value ?? 0
+  return {
+    rotation: signedHash(seed, 1) * range.rotation,
+    offsetX: signedHash(seed, 2) * range.offset,
+    offsetY: signedHash(seed, 3) * range.offset,
+    scaleFactor: 1 + signedHash(seed, 4) * range.scale,
+    frame: hashUnit(seed, 5) * FRAME_RANGE,
+    paramDeltas: Object.fromEntries(
+      Object.entries(range.params ?? {}).map(([name, spread], i) => [
+        name,
+        signedHash(seed, 6 + i) * spread,
+      ]),
+    ),
+  }
+})
 
 let mount = null
 
@@ -176,24 +277,33 @@ function create() {
   }
 
   const sizing = shader.value.sizing ?? {}
+  const jitter = variance.value
+
+  /** Per-slide jitter on the shader's own 0-1 shape params, clamped to that
+      range — a negative distortion is not a valid uniform. */
+  const base = shader.value.uniforms(colors)
+  for (const [name, delta] of Object.entries(jitter.paramDeltas)) {
+    if (typeof base[name] === 'number') base[name] = clamp01(base[name] + delta)
+  }
 
   try {
     mount = new ShaderMount(
       host.value,
       shader.value.fragment,
       {
-        ...shader.value.uniforms(colors),
+        ...base,
         ...(shader.value.needsNoise ? { u_noiseTexture: noiseTexture } : {}),
         u_fit: ShaderFitOptions.cover,
-        u_scale: props.scale ?? sizing.scale ?? 1.4,
-        u_rotation: 0,
+        u_scale: (props.scale ?? sizing.scale ?? 1.4) * jitter.scaleFactor,
+        u_rotation: jitter.rotation,
         u_originX: 0.5,
         u_originY: 0.5,
-        u_offsetX: sizing.offsetX ?? 0,
-        u_offsetY: sizing.offsetY ?? 0,
+        u_offsetX: (sizing.offsetX ?? 0) + jitter.offsetX,
+        u_offsetY: (sizing.offsetY ?? 0) + jitter.offsetY,
         u_worldWidth: 0,
         u_worldHeight: 0,
-        // Last so a slide can override any of the above, framing included.
+        // Last so a slide can override any of the above, framing and jitter
+        // included.
         ...props.params,
       },
       // Positional, per ShaderMount(parent, fragment, uniforms,
@@ -205,7 +315,10 @@ function create() {
       // faster (median frame time flat from 2.2 to 8.3 megapixels).
       { antialias: false },
       targetSpeed(),
-      0,
+      // The library's own seed hook: "Pass a frame to offset the starting u_time
+      // value and give deterministic results". Two slides on the same shader
+      // start in different regions of its noise field.
+      jitter.frame,
     )
   } catch (error) {
     // The context is created before the program is compiled, so a link failure
@@ -234,8 +347,9 @@ function destroy() {
 watch(isActive, active => (active ? create() : destroy()))
 
 /** A different shader means a different fragment program, so it needs a fresh
-    mount rather than a uniform update. */
-watch([() => props.shader, () => props.surface], () => {
+    mount rather than a uniform update. The variation is read once at mount, so a
+    seed change needs the same treatment. */
+watch([() => props.shader, () => props.surface, () => props.seed, () => props.vary], () => {
   if (!isActive.value) return
   destroy()
   create()
