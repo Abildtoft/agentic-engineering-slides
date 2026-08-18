@@ -95,6 +95,57 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
 - The slots separate by hue against the page background, not by luminance against each other (the closest pair is 1.02:1), so a diagram that abuts or overlaps them must also carry position or a label — colour alone won't survive greyscale or severe CVD
 - Categorical colors are for marks (fills, strokes), not text. Labels take `--brand-text`; the palette is tuned to the 3:1 marks threshold, not the 4.5:1 text one
 
+### Motion
+
+Durations, the easing curve, and the reveal offset are tokens in `styles/index.css`
+(`--motion-base`, `--motion-slow`, `--motion-draw`, `--motion-ease`, `--motion-rise`). Use them
+rather than fresh numbers, so a click reveal, an image entrance and a diagram build settle on the
+same curve at the same rate. Animated backgrounds are a separate system — see below.
+
+**Two mechanisms, chosen by trigger, not by taste.**
+
+| Trigger | Mechanism | Why |
+|---|---|---|
+| A click (`v-click`, `$clicks`) | `transition` | Reversible — stepping back undoes it, which is what the speaker needs during Q&A |
+| Slide entry | `animation` | Slidev keeps all 55 slides in the DOM and `display: none`s the inactive ones. Animations don't run on a box that doesn't exist and restart when one appears, so "slide became visible" is a free trigger with no JS. Replays on every revisit |
+
+A bare `animation` on slide content would otherwise run for the whole deck at page load, finishing
+long before the audience reaches slide 40 — this is why every entrance in the deck is CSS-only and
+still correct.
+
+**The one invariant: an element's hidden state lives in the keyframe's `from`, never in a base
+rule.** Everything degrades to fully visible when animation is off — which is exactly what print
+and reduced motion do. Break this and an exported PDF gets blank elements.
+
+- Export (`.print-slide-container`) kills all animation and transition, pseudo-elements included —
+  `*` alone doesn't match `::before`, and the quote rule is one. `$clicks`-driven builds need no
+  guard: export steps the click states properly
+- `prefers-reduced-motion` collapses durations **and delays**. Zeroing duration alone leaves a
+  staggered build waiting out its delay before appearing
+- Anything JS-timed (the `BigNumber` count-up, `MermaidDiagram`'s tagging) also checks
+  `useNav().isPrintMode` directly, the same way `ShaderBackground` does — a screenshot lands
+  whenever it lands
+- Slide-entry animation on a component must be bound to `useIsSlideActive()`, not `onMounted` —
+  mount happens at page load for every slide in the deck
+
+**What's animated where:**
+
+| Surface | Motion |
+|---|---|
+| Slide-to-slide | `fade` from headmatter `defaults`. Crossfade rather than a lateral slide because eight slides carry a live WebGL canvas. Verified to keep one live shader context through a transition |
+| Section dividers | `section-shift` (fade + 20px Y), overriding the deck default so a chapter change reads differently from a step within one |
+| `v-click` reveals | Opacity + an 8px rise; instant when navigating backward (`.slidev-nav-go-backward`) |
+| Dense build slides | Opt in with `class: dim-prior` — dims already-revealed lines to 0.5 so the eye finds the live one. Deliberately not global; most slides want the speaker able to point back at full strength. Currently on four slides |
+| `cover`, `statement`, `fact` | Staggered entrance on the heading. `fact` gets opacity only — that layout runs to within ~12px of the bottom edge, so no Y travel |
+| `quote` | The 4px rule draws itself (`scaleY`), as a `::before` — a `border-left` can only animate its width, in layout, against the text. `padding-left: calc(1rem + 4px)` carries the border's old offset so text position is unchanged |
+| `MermaidDiagram` | Builds node by node on entry, ~90ms apart, in mermaid source order. Reads `.node[data-id]` / `.edge[data-from][data-to]` off the rendered SVG, which is **not** a documented `beautiful-mermaid` contract — a version bump that renames those loses the stagger and keeps the diagram. Edges wait for the later of their two endpoints, or feedback arrows draw out of nodes that don't exist yet. Disable per slide with `reveal="none"` |
+| `ProblemExplorationDiagram` | One panel per click (3 clicks); panel 1 is present on arrival and draws its spiral via `pathLength="1"` + `stroke-dashoffset`, with the 86 dots trailing the line |
+| `RolesBlurDiagram` | Three beats: sequential handoffs, then the three lobes converging, then JUDGMENT. The caption is held to the last beat because it names the overlap — showing it earlier gives away the punchline the diagram spends two clicks earning |
+| `BigNumber` | 800ms count-up, easeOutCubic, timed from the first rAF frame (a frame timestamp can predate the `performance.now()` just before it, which rendered one frame of `-0.1%`). A hidden sizer holds the final width so the centred number doesn't drift as digits are added |
+
+If a diagram build consumes clicks, the slide's markdown `v-click`s must be pinned past them with
+`at="N"` — Slidev auto-numbers otherwise and the text collides with the build.
+
 ### Animated Backgrounds
 
 `<ShaderBackground />` puts a slow Paper Shaders mesh gradient behind a slide, tinted from

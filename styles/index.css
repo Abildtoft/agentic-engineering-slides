@@ -5,6 +5,19 @@
   --slidev-theme-primary: var(--brand-primary);
   --slidev-code-background: var(--brand-surface);
   --slidev-code-foreground: var(--brand-text);
+
+  /* One motion vocabulary for the whole deck, so a reveal, an image entrance and
+     a diagram build all settle on the same curve at the same rate. `base` is the
+     click reveal, `slow` the once-per-slide entrance, `draw` the longest build.
+     The ease is a decelerate curve: fast out of the gate, no overshoot — an
+     elastic bounce reads as a toy on a slide that carries an argument. */
+  --motion-base: 280ms;
+  --motion-slow: 520ms;
+  --motion-draw: 1200ms;
+  --motion-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* Reveals rise by this much. Small on purpose: enough to read as arrival,
+     small enough that a slide near its vertical limit can't clip or scroll. */
+  --motion-rise: 8px;
 }
 
 .slidev-layout {
@@ -81,8 +94,6 @@
   font-size: clamp(2rem, 2.6vw, 2.5rem);
   line-height: 1.2;
   font-weight: 400;
-  border-left: 4px solid var(--brand-primary);
-  padding-left: 1rem;
   text-wrap: balance;
   max-width: 30ch;
 }
@@ -114,8 +125,6 @@
 }
 
 .slidev-layout.quote.quote-long .quote-progressive {
-  border-left: 4px solid var(--brand-primary);
-  padding-left: 1rem;
   max-width: none;
   width: 100%;
 }
@@ -175,21 +184,132 @@
   opacity: 1;
 }
 
+/* ===========================================================================
+   Motion
+
+   Two mechanisms, and which one to reach for is decided by the trigger:
+
+   - `transition` for anything driven by a click — v-click reveals and the
+     $clicks-driven diagram builds. Reversible, so stepping backwards undoes it.
+   - `animation` for slide entrances. Slidev renders all 55 slides into the DOM
+     at once and v-shows the current one, so every slide but one is
+     `display: none`. Animations don't run on a box that doesn't exist and start
+     from scratch when one appears, which makes "slide became visible" a free
+     trigger — no JS, and it replays on every revisit. A bare `animation` would
+     otherwise fire for the entire deck at page load, long before the audience
+     sees slide 40.
+
+   One invariant holds the export and accessibility paths together: an element's
+   hidden state lives in the keyframe's `from`, never in a base rule. Kill the
+   animation — in print, under reduced motion, in a browser that chokes — and
+   every element degrades to fully visible rather than invisible.
+   =========================================================================== */
+
 .slidev-vclick-target {
-  transition: opacity 200ms ease;
+  transition:
+    opacity var(--motion-base) ease,
+    transform var(--motion-base) var(--motion-ease);
 }
 
-.logo-breathe {
-  animation: breathe 4s ease-in-out infinite;
+.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(var(--motion-rise));
 }
-@keyframes breathe {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.03) rotate(0.5deg); }
+
+/* Stepping back is navigation, not narration: during Q&A the reveal has already
+   been seen, so replaying it costs the speaker time and reads as lag. */
+.slidev-nav-go-backward .slidev-vclick-target {
+  transition-duration: 0ms;
+}
+
+/* Opt-in per slide with `class: dim-prior`, for the four-step builds where the
+   whole slide is a stack of equal-weight lines and the eye needs telling which
+   one is live. Deliberately not global — most slides want the speaker to be
+   able to point back at an earlier line at full strength. */
+.slidev-layout.dim-prior .slidev-vclick-prior {
+  opacity: 0.5;
+}
+
+/* The quote rule draws itself on slide entry, which is why it's a pseudo-element
+   rather than the border-left it replaces: a border can only animate its width,
+   in layout, against the text. `padding-left` carries the border's old 4px so
+   the text lands exactly where it did. */
+.slidev-layout.quote h1,
+.slidev-layout.quote.quote-long .quote-progressive {
+  position: relative;
+  padding-left: calc(1rem + 4px);
+}
+
+.slidev-layout.quote h1::before,
+.slidev-layout.quote.quote-long .quote-progressive::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--brand-primary);
+  transform-origin: top;
+  animation: rule-draw var(--motion-slow) var(--motion-ease) both;
+}
+
+@keyframes rule-draw {
+  from { transform: scaleY(0); }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* Opacity only, no rise: the `fact` layout runs to within ~12px of the bottom
+   edge (see AGENTS.md), and a translate on a block that tall risks a transient
+   scrollbar on the slide. */
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+/* The deck's two bookends. Both covers carry their own <ShaderBackground>, which
+   fades in over 500ms on its own clock — the title arriving with it, and the
+   subtitle just behind, is what makes the opening read as composed rather than
+   as a page load. */
+.slidev-layout.cover h1 {
+  animation: rise-in var(--motion-slow) var(--motion-ease) both;
+}
+
+.slidev-layout.cover h1 + p {
+  animation: rise-in var(--motion-slow) var(--motion-ease) 160ms both;
+}
+
+.brand-logo {
+  animation: rise-in var(--motion-slow) var(--motion-ease) 320ms both;
+}
+
+/* Statement slides are single-sentence punchlines, so the sentence itself gets
+   the entrance and any v-click support underneath it follows on the click. */
+.slidev-layout.statement h1 {
+  animation: rise-in var(--motion-slow) var(--motion-ease) both;
+}
+
+.slidev-layout.fact h1,
+.slidev-layout.fact h2 {
+  animation: fade-in var(--motion-slow) ease both;
+}
+
+.slidev-layout.fact h2 {
+  animation-delay: 220ms;
 }
 
 .section-shift-enter-active,
 .section-shift-leave-active {
-  transition: all 0.6s ease;
+  /* Named properties rather than `all`: on Consensus these slides carry a
+     gradient background, and `all` animates that too — a visible flash mid
+     transition. */
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s var(--motion-ease);
 }
 .section-shift-enter-from {
   opacity: 0;
@@ -198,4 +318,34 @@
 .section-shift-leave-to {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+/* `yarn export` renders every slide at once in this container and screenshots
+   them, so an entrance animation is a race the PDF can lose. Cut all of it:
+   with the hidden-state-in-keyframes invariant above, animation-less means
+   fully drawn. $clicks-driven builds are unaffected — export steps the click
+   states properly, and those are transitions on real state, not animations. */
+.print-slide-container *,
+.print-slide-container *::before,
+.print-slide-container *::after {
+  /* The pseudo-element selectors are load-bearing: `*` matches elements only, and
+     the quote rule is a ::before. Without them it stayed live in export and a
+     screenshot could land on a half-drawn rule. */
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Zeroing duration alone isn't enough — a staggered build sets animation-delay,
+   so the last element would still wait out its delay before appearing. Both
+   have to go. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
 }

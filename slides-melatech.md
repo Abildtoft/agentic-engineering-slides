@@ -12,7 +12,8 @@ favicon: /favicon.svg
 htmlAttrs:
   data-theme: melatech
 defaults:
-  transition: none
+  # See slides.md — kept identical so both themes present the same way.
+  transition: fade
 duration: 60min
 timer: countdown
 layout: cover

@@ -1,5 +1,6 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import { useSlideContext } from '@slidev/client'
 
 const props = defineProps({
   size: { type: String, default: 'lg' },
@@ -28,6 +29,17 @@ onMounted(() => {
   designColor.value = read('--brand-cat-2', designColor.value)
   engineeringColor.value = read('--brand-cat-3', engineeringColor.value)
 })
+
+/**
+ * Three beats, because the diagram is an argument rather than an illustration:
+ * the old sequential model, then the three disciplines converging, then what's
+ * left in the middle. Rendering all of it at once gives away the JUDGMENT label
+ * before the setup — the room reads the punchline while the speaker is still
+ * describing handoffs.
+ */
+const { $clicks } = useSlideContext()
+const converged = computed(() => ($clicks?.value ?? 0) >= 1)
+const judged = computed(() => ($clicks?.value ?? 0) >= 2)
 
 const sizeClasses = {
   sm: 'w-full max-w-xl',
@@ -70,7 +82,7 @@ const sizeClasses = {
         </marker>
       </defs>
 
-      <g>
+      <g class="rb-before" :class="{ 'rb-dim': converged }">
         <text
           class="rb-eyebrow"
           x="170"
@@ -177,6 +189,8 @@ const sizeClasses = {
       </g>
 
       <line
+        class="rb-stage"
+        :class="{ 'is-visible': converged }"
         x1="280"
         y1="168"
         x2="420"
@@ -188,7 +202,7 @@ const sizeClasses = {
         marker-end="url(#rb-arrow-dashed)"
       />
 
-      <g>
+      <g class="rb-stage" :class="{ 'is-visible': converged }">
         <text
           class="rb-eyebrow"
           x="590"
@@ -210,66 +224,82 @@ const sizeClasses = {
           overlapping, blurred boundaries
         </text>
 
-        <circle
-          cx="590"
-          cy="155"
-          r="80"
-          :fill="productColor"
-          fill-opacity="0.20"
-          :stroke="productColor"
-          stroke-width="1.5"
-        />
-        <circle
-          cx="555"
-          cy="215"
-          r="80"
-          :fill="designColor"
-          fill-opacity="0.20"
-          :stroke="designColor"
-          stroke-width="1.5"
-        />
-        <circle
-          cx="625"
-          cy="215"
-          r="80"
-          :fill="engineeringColor"
-          fill-opacity="0.20"
-          :stroke="engineeringColor"
-          stroke-width="1.5"
-        />
+        <!-- Each discipline travels in with its own label, from the direction it
+             sits in, so the overlap is something the room watches form rather
+             than something that was always there. The offsets are CSS custom
+             properties because the circles carry cx/cy, not a transform
+             attribute — nothing here for a CSS transform to clobber. -->
+        <g class="rb-lobe" style="--dx: 0px; --dy: -42px">
+          <circle
+            cx="590"
+            cy="155"
+            r="80"
+            :fill="productColor"
+            fill-opacity="0.20"
+            :stroke="productColor"
+            stroke-width="1.5"
+          />
+          <!-- Labels wear the text token, not the series colour: the palette is
+               tuned for marks at >= 3:1, which is short of the 4.5:1 that text
+               needs. Each label sits on its own circle, so position carries the
+               identity and the fills stay the colour channel. -->
+          <text
+            class="rb-role"
+            x="590"
+            y="92"
+            text-anchor="middle"
+            :fill="text"
+          >
+            Product
+          </text>
+        </g>
 
-        <!-- Labels wear the text token, not the series colour: the palette is
-             tuned for marks at >= 3:1, which is short of the 4.5:1 that text
-             needs. Each label sits on its own circle, so position carries the
-             identity and the fills stay the colour channel. -->
-        <text
-          class="rb-role"
-          x="590"
-          y="92"
-          text-anchor="middle"
-          :fill="text"
-        >
-          Product
-        </text>
-        <text
-          class="rb-role"
-          x="505"
-          y="258"
-          text-anchor="middle"
-          :fill="text"
-        >
-          Design
-        </text>
-        <text
-          class="rb-role"
-          x="675"
-          y="258"
-          text-anchor="middle"
-          :fill="text"
-        >
-          Engineering
-        </text>
+        <g class="rb-lobe" style="--dx: -44px; --dy: 30px">
+          <circle
+            cx="555"
+            cy="215"
+            r="80"
+            :fill="designColor"
+            fill-opacity="0.20"
+            :stroke="designColor"
+            stroke-width="1.5"
+          />
+          <text
+            class="rb-role"
+            x="505"
+            y="258"
+            text-anchor="middle"
+            :fill="text"
+          >
+            Design
+          </text>
+        </g>
 
+        <g class="rb-lobe" style="--dx: 44px; --dy: 30px">
+          <circle
+            cx="625"
+            cy="215"
+            r="80"
+            :fill="engineeringColor"
+            fill-opacity="0.20"
+            :stroke="engineeringColor"
+            stroke-width="1.5"
+          />
+          <text
+            class="rb-role"
+            x="675"
+            y="258"
+            text-anchor="middle"
+            :fill="text"
+          >
+            Engineering
+          </text>
+        </g>
+      </g>
+
+      <!-- Last beat, and deliberately its own: what the convergence leaves in the
+           middle is the point of the slide. -->
+      <g class="rb-stage rb-judgment-group" :class="{ 'is-visible': judged }">
         <rect
           x="542"
           y="181"
@@ -293,7 +323,14 @@ const sizeClasses = {
       </g>
     </svg>
 
-    <figcaption v-if="caption" class="roles-blur__caption">
+    <!-- Held to the last beat with the JUDGMENT label: the caption names the
+         overlap, so showing it on arrival gives away a punchline the diagram
+         spends two clicks earning. -->
+    <figcaption
+      v-if="caption"
+      class="roles-blur__caption"
+      :class="{ 'is-visible': judged }"
+    >
       {{ caption }}
     </figcaption>
   </figure>
@@ -338,12 +375,52 @@ const sizeClasses = {
   font-weight: 700;
 }
 
+.roles-blur :deep(svg) .rb-before {
+  transition: opacity 400ms ease;
+}
+
+/* Not hidden — the comparison is the argument, so the old model stays legible
+   while the new one takes the foreground. */
+.roles-blur :deep(svg) .rb-dim {
+  opacity: 0.4;
+}
+
+.roles-blur :deep(svg) .rb-stage {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.roles-blur :deep(svg) .rb-stage.is-visible {
+  opacity: 1;
+}
+
+.roles-blur :deep(svg) .rb-lobe {
+  transform: translate(var(--dx), var(--dy));
+  transition: transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.roles-blur :deep(svg) .rb-stage.is-visible .rb-lobe {
+  transform: none;
+}
+
+/* Held back until the circles have almost finished travelling, so the label lands
+   in a middle that already exists rather than appearing to create it. */
+.roles-blur :deep(svg) .rb-judgment-group.is-visible {
+  transition-delay: 120ms;
+}
+
 .roles-blur__caption {
   text-align: center;
   margin-top: 1.25rem;
   font-style: italic;
   font-size: 0.95rem;
   color: var(--brand-text);
+  opacity: 0;
+  transition: opacity 400ms ease;
+  transition-delay: 120ms;
+}
+
+.roles-blur__caption.is-visible {
   opacity: 0.8;
 }
 </style>

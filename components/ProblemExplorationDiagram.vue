@@ -1,4 +1,7 @@
 <script setup>
+import { computed } from 'vue'
+import { useSlideContext } from '@slidev/client'
+
 const panelWidth = 280
 const panelHeight = 210
 
@@ -22,6 +25,13 @@ const panels = [
     caption: 'More frontier explored',
   },
 ]
+
+/** One panel per click, so the slide argues in the order it reads: this is what
+    the machine does, this is what we do, this is the two together. The first
+    panel is present on arrival — index 0 is visible at click 0 — because landing
+    on an empty comparison reads as a broken slide, not as anticipation. */
+const { $clicks } = useSlideContext()
+const clicks = computed(() => $clicks?.value ?? 0)
 
 const humanFrontier = [
   [22, 28],
@@ -99,63 +109,81 @@ const aiSpiralPath = aiNodes
       with local AI exploration around each point.
     </desc>
 
-    <g v-for="panel in panels" :key="panel.key" :transform="`translate(${panel.x} 0)`">
-      <text class="diagram-title" :x="panelWidth / 2" y="30" text-anchor="middle">
-        {{ panel.title }}
-      </text>
-      <rect class="diagram-frame" x="0" y="52" :width="panelWidth" :height="panelHeight" rx="8" />
+    <!-- The outer group owns position, the inner one owns the reveal: a CSS
+         transform on an element overrides its transform attribute, so animating
+         the positioned group would collapse all three panels onto each other. -->
+    <g v-for="(panel, panelIndex) in panels" :key="panel.key" :transform="`translate(${panel.x} 0)`">
+      <g class="diagram-panel" :class="{ 'is-visible': panelIndex <= clicks }">
+        <text class="diagram-title" :x="panelWidth / 2" y="30" text-anchor="middle">
+          {{ panel.title }}
+        </text>
+        <rect class="diagram-frame" x="0" y="52" :width="panelWidth" :height="panelHeight" rx="8" />
 
-      <g :transform="`translate(0 52)`">
-        <g v-if="panel.key === 'ai'">
-          <path class="diagram-edge diagram-edge-strong" :d="aiSpiralPath" />
-          <circle
-            v-for="([cx, cy], index) in aiNodes"
-            :key="index"
-            class="diagram-node diagram-node-ai"
-            :cx="cx"
-            :cy="cy"
-            r="2.1"
-          />
-        </g>
-
-        <g v-if="panel.key === 'humans'">
-          <circle
-            v-for="([cx, cy], index) in humanFrontier"
-            :key="index"
-            class="diagram-node diagram-node-human"
-            :cx="cx"
-            :cy="cy"
-            r="4.1"
-          />
-        </g>
-
-        <g v-if="panel.key === 'hybrid'">
-          <g v-for="([cx, cy], pointIndex) in hybridFrontier" :key="pointIndex">
-            <line
-              v-for="([dx, dy], satelliteIndex) in satellites.slice(0, 8)"
-              :key="satelliteIndex"
-              class="diagram-edge"
-              :x1="cx"
-              :y1="cy"
-              :x2="cx + dx"
-              :y2="cy + dy"
+        <g :transform="`translate(0 52)`">
+          <g v-if="panel.key === 'ai'">
+            <!-- pathLength normalises the spiral to 1 unit so the draw doesn't
+                 need its measured length. -->
+            <path
+              class="diagram-edge diagram-edge-strong diagram-spiral"
+              :d="aiSpiralPath"
+              path-length="1"
             />
-            <circle class="diagram-node diagram-node-human" :cx="cx" :cy="cy" r="3.5" />
             <circle
-              v-for="([dx, dy], satelliteIndex) in satellites"
-              :key="satelliteIndex"
-              class="diagram-node diagram-node-ai"
-              :cx="cx + dx"
-              :cy="cy + dy"
-              r="1.55"
+              v-for="([cx, cy], index) in aiNodes"
+              :key="index"
+              class="diagram-node diagram-node-ai diagram-trail"
+              :style="{ '--i': index }"
+              :cx="cx"
+              :cy="cy"
+              r="2.1"
             />
           </g>
-        </g>
-      </g>
 
-      <text class="diagram-caption" :x="panelWidth / 2" y="296" text-anchor="middle">
-        {{ panel.caption }}
-      </text>
+          <g v-if="panel.key === 'humans'">
+            <circle
+              v-for="([cx, cy], index) in humanFrontier"
+              :key="index"
+              class="diagram-node diagram-node-human diagram-stagger"
+              :style="{ '--i': index }"
+              :cx="cx"
+              :cy="cy"
+              r="4.1"
+            />
+          </g>
+
+          <g v-if="panel.key === 'hybrid'">
+            <g
+              v-for="([cx, cy], pointIndex) in hybridFrontier"
+              :key="pointIndex"
+              class="diagram-stagger"
+              :style="{ '--i': pointIndex }"
+            >
+              <line
+                v-for="([dx, dy], satelliteIndex) in satellites.slice(0, 8)"
+                :key="satelliteIndex"
+                class="diagram-edge"
+                :x1="cx"
+                :y1="cy"
+                :x2="cx + dx"
+                :y2="cy + dy"
+              />
+              <circle class="diagram-node diagram-node-human" :cx="cx" :cy="cy" r="3.5" />
+              <circle
+                v-for="([dx, dy], satelliteIndex) in satellites"
+                :key="satelliteIndex"
+                class="diagram-node diagram-node-ai"
+                :cx="cx + dx"
+                :cy="cy + dy"
+                r="1.55"
+              />
+            </g>
+          </g>
+        </g>
+
+        <text class="diagram-caption" :x="panelWidth / 2" y="296" text-anchor="middle">
+          {{ panel.caption }}
+        </text>
+      </g>
     </g>
   </svg>
 </template>
@@ -212,5 +240,59 @@ const aiSpiralPath = aiNodes
   fill: none;
   stroke-width: 1.2;
   opacity: 0.34;
+}
+
+/* Click-driven, so it reverses cleanly when the speaker steps back. The first
+   panel is already `is-visible` on arrival, which means no transition runs for
+   it — it's simply there. */
+.diagram-panel {
+  opacity: 0;
+  transition: opacity 380ms ease;
+}
+
+.diagram-panel.is-visible {
+  opacity: 1;
+}
+
+/* Inside a revealed panel the marks cascade instead of arriving as a block: the
+   frontier points read as being found one at a time, which is the claim the
+   panel is making. Delay is per-index and short — twelve points land in ~200ms
+   after the panel itself. */
+.diagram-stagger {
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.diagram-panel.is-visible .diagram-stagger {
+  opacity: 1;
+  transition-delay: calc(180ms + var(--i, 0) * 16ms);
+}
+
+/* The LLM panel is present on arrival, so its flourish runs on slide entry and
+   uses `animation` — see the Motion section in styles/index.css for why the two
+   mechanisms split that way. The dots trail the drawing line: 86 nodes at 14ms
+   apart finishes within a few frames of the spiral itself. */
+.diagram-spiral {
+  animation: spiral-draw var(--motion-draw) ease both;
+}
+
+@keyframes spiral-draw {
+  from {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+.diagram-trail {
+  animation: trail-in 200ms ease both;
+  animation-delay: calc(var(--i, 0) * 14ms);
+}
+
+@keyframes trail-in {
+  from { opacity: 0; }
 }
 </style>

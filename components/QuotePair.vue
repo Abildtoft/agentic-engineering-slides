@@ -22,8 +22,24 @@ defineProps({
 </template>
 
 <style scoped>
+/* Same drawn rule as the quote layout's h1 — see the Motion section in
+   styles/index.css, which owns the rule-draw keyframe. The second quote is
+   click-revealed, so its rule has already drawn behind the hidden block and
+   arrives complete; only the first one draws in front of the room. */
 .quote-pair h2 {
-  border-left: 4px solid var(--brand-primary);
-  padding-left: 1rem;
+  position: relative;
+  padding-left: calc(1rem + 4px);
+}
+
+.quote-pair h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--brand-primary);
+  transform-origin: top;
+  animation: rule-draw var(--motion-slow) var(--motion-ease) both;
 }
 </style>
