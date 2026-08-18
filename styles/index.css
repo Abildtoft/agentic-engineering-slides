@@ -73,7 +73,11 @@
 
 .slidev-layout.statement h1 {
   color: var(--brand-primary);
-  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  /* Larger than the wide variant below: a short punchline is the layout's whole
+     job, and at 2.8rem it sat barely above its own support text. Long headlines
+     take `statement-wide` instead, which keeps the smaller size — at this scale
+     a full-sentence headline wraps past four lines. */
+  font-size: clamp(2.4rem, 3.4vw, 3.4rem);
   line-height: 1.22;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -85,7 +89,20 @@
 }
 
 .slidev-layout.statement.statement-wide h1 {
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
   max-width: 36ch;
+}
+
+/* Quote blocks are width-capped, and the theme layout anchors them left —
+   leaving the right half of the slide empty. Grid rather than `margin: auto` on
+   each element, so the attribution lines share the quote's left edge instead of
+   centring independently; the column sizes to the widest item and the whole
+   block centres as one. */
+.slidev-layout.quote > div {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  justify-items: start;
 }
 
 .slidev-layout.quote h1 {
@@ -180,8 +197,33 @@
   padding-left: 1.5rem;
 }
 
+/* The default 1.8 li line-height makes a wrapped bullet's second line sit as far
+   from its first as from the next bullet — one item reads as two. Tighten the
+   wrap and put the separation between items instead. */
+.slidev-layout.two-cols-header li {
+  line-height: 1.45;
+  margin-bottom: 0.45rem;
+}
+
 .slidev-layout h1 + p {
   opacity: 1;
+}
+
+/* An inline code token is one word — `code-reviewer` breaking to "code-" /
+   "reviewer" across lines reads as two tokens. Scoped to inline code only;
+   fenced blocks keep pre's own wrapping rules. */
+.slidev-layout :not(pre) > code {
+  white-space: nowrap;
+}
+
+/* Text-only content slides opt in with `class: v-center`, so a three-line slide
+   sits composed in the middle of the frame instead of hugging the header zone
+   with the bottom half empty. Not the default: slides carrying a diagram or
+   image already fill the frame and want the heading anchored at the top. */
+.slidev-layout.v-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* ===========================================================================
@@ -225,8 +267,13 @@
 /* Opt-in per slide with `class: dim-prior`, for the four-step builds where the
    whole slide is a stack of equal-weight lines and the eye needs telling which
    one is live. Deliberately not global — most slides want the speaker to be
-   able to point back at an earlier line at full strength. */
-.slidev-layout.dim-prior .slidev-vclick-prior {
+   able to point back at an earlier line at full strength.
+
+   The `:has` gate un-dims everything once the build completes: with no hidden
+   targets left there is no "live" line to point at, and a slide resting at 0.5
+   opacity reads as disabled — during Q&A and in the exported PDF, which
+   captures exactly this final state. */
+.slidev-layout.dim-prior:has(.slidev-vclick-hidden) .slidev-vclick-prior {
   opacity: 0.5;
 }
 

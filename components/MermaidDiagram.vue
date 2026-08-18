@@ -118,6 +118,14 @@ const sizeClasses = {
   border-radius: 8px;
 }
 
+/* beautiful-mermaid draws edge labels as stroked boxes — the same treatment as
+   nodes, so a diagram looks like it has twice as many components as it does.
+   Keep the fill (it occludes the edge line under the text) but drop the stroke,
+   leaving labels reading as annotations rather than nodes. */
+.mermaid-diagram :deep(svg .edge-label rect) {
+  stroke: none;
+}
+
 /* The staged class is only ever added once every part carries a --mm-step, so an
    untagged diagram can't end up with its contents stuck at opacity 0. Steps are
    90ms apart: the widest graph here is 8 nodes, so the build lands in about a
