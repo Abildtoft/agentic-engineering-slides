@@ -110,7 +110,7 @@ same curve at the same rate. Animated backgrounds are a separate system — see 
 | Trigger | Mechanism | Why |
 |---|---|---|
 | A click (`v-click`, `$clicks`) | `transition` | Reversible — stepping back undoes it, which is what the speaker needs during Q&A |
-| Slide entry | `animation` | Slidev keeps all 56 slides in the DOM and `display: none`s the inactive ones. Animations don't run on a box that doesn't exist and restart when one appears, so "slide became visible" is a free trigger with no JS. Replays on every revisit |
+| Slide entry | `animation` | Slidev keeps all 57 slides in the DOM and `display: none`s the inactive ones. Animations don't run on a box that doesn't exist and restart when one appears, so "slide became visible" is a free trigger with no JS. Replays on every revisit |
 
 A bare `animation` on slide content would otherwise run for the whole deck at page load, finishing
 long before the audience reaches slide 40 — this is why every entrance in the deck is CSS-only and
