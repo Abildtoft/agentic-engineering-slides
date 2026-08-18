@@ -284,7 +284,7 @@ layout: default
 </v-click>
 <v-click>
 
-**Deterministic gates around probabilistic agents.** The agent can try, fail, and retry on its own.
+**Deterministic gates around probabilistic agents** — and a gate can guard anything you care about.
 
 </v-click>
 
@@ -296,6 +296,7 @@ SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/M
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Name the pattern explicitly: deterministic gates + probabilistic agents
+- The retry line moved verbal (the closing line only fits one line on screen): "the agent can try, fail, and retry on its own" — say it over the bounce in the diagram, which draws exactly that
 - Hooks and tests are now entirely verbal — the line naming them came off the slide, so the lane diagram carries them visually (the two rails ARE tests and reviews) and you name them out loud. Point at the rails as you do it
 - Trimmed from the slide, say verbally: hooks fire inside the loop — block `rm -rf`, auto-format, gate the output; tests close it, and *the test is the spec*. Hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
 - Hooks are shell scripts firing at lifecycle points in the agent loop, and the lifecycle framing is worth naming if the room is technical: PreToolUse blocks destructive commands before they execute, PostToolUse auto-formats and lints after every file write, Stop rejects output that fails validation and triggers a retry. Same idea as CI/CD or Git hooks — but running inside the loop, not after it, so the agent self-corrects without a human
@@ -314,7 +315,7 @@ DELIVERY:
 - "That orchestration layer needs the same rigor as any distributed system — except the components are nondeterministic." — Pirouette B
 - Laura Tacho: "The Venn Diagram of Developer Experience and Agent Experience is a circle"
 
-BRIDGE: "Hooks and tests are two gates. Zoom out, and you can ring the agent with a gate for everything you care about."
+BRIDGE: "The last line is the hinge into the next slide — say it pointing at the rails: tests and reviews are two gates. Here's the full ring."
 -->
 
 ---
@@ -352,7 +353,7 @@ clicks: 3
 
 <v-click at="3">
 
-<p class="text-lg mt-3">The boundary is <strong>evidence</strong> — deterministic checks the model can’t argue with. <strong>They decide what’s good enough to ship.</strong></p>
+<p class="text-lg mt-3">The boundary is <strong>evidence</strong> — diffs, tests, logs the model can’t argue with. <strong>The gates decide what’s good enough to ship.</strong></p>
 
 </v-click>
 
@@ -375,6 +376,7 @@ KEY POINTS:
 - The human role shifts from reviewing output line by line to designing the gates and deciding where the bar sits
 
 DELIVERY:
+- Open on the callback before anything builds: the two rails from the last slide — tests and reviews — are two of these eight gates. The ring is the "anything you care about" from the previous line, made literal
 - Walk the ring clockwise from Correctness; don't read every sub-label aloud
 - First click, as the attempts start bouncing: "the agent works inside the ring — it produces more code than you can read, and attempts that fail a gate bounce straight back. You never see them. Addy Osmani calls this the inner loop, and it isn't yours anymore."
 - Second click: the ring slides left and the pipeline opens — "what clears every gate crosses out of the agent's loop and into yours — and that one you still own." Land the line "only output that clears every gate ships"

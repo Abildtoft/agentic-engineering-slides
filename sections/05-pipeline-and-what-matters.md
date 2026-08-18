@@ -115,7 +115,7 @@ KEY POINTS:
 - Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
 - Careful framing on the second click: this is not anti-building. Building IS often the cheapest experiment now — that is exactly why Chen's "prototype is the new PRD" works. The test is cost of evidence, not choice of artifact.
 - This is also the honest defense against the accumulation trap later in this section: cheap learning is what earns the right to build
-- Connects back to "the failure mode is building yesterday's software faster" — throughput without learning is just faster wrongness
+- Sets up "the failure mode is building yesterday's software faster", two slides ahead — throughput without learning is just faster wrongness
 
 DELIVERY:
 - Land the headline cold, before either click. It should sound like a contradiction for a second.
@@ -170,16 +170,55 @@ BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# The failure mode is building yesterday's software faster.
+
+<v-click>
+
+If AI only helps you ship the apps you'd have built five years ago, you've changed throughput — not strategy.
+
+</v-click>
+<v-click>
+
+The question isn't “how much more can we build?” It's **what becomes worth building now.**
+
+</v-click>
+
+<!--
+SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+
+KEY POINTS:
+- This answers the demand slide's closing question directly: the work expands, but the expansion is worthless if it's pointed at yesterday's ideas
+- This is the explicit version of the "time traveler" argument from Tan's post: modern tools, old mental model
+- The failure mode is not bad productivity; it is productivity pointed at an obsolete idea of what software should be
+- The full second beat, trimmed from the slide: the question is also what should become a workflow, a skill, or nothing at all — say it over the reveal
+- Tie this to Eriksson's strategy-layer argument: when feasibility changes, the product question changes too
+- Completes the "cheapest way to learn" slide's argument: throughput without learning is just faster wrongness
+
+DELIVERY:
+- Keep this short and pointed. The audience should feel the strategic question shift under the demand expansion they just accepted.
+- Optional verbal: "The dangerous version of AI adoption is not failure. It is succeeding at the old game."
+
+BRIDGE: "Choosing what's worth building is frontier work — and there's a clean division of labor for it."
+-->
+
+---
 layout: default
 ---
 
 # Humans find new nodes. AI maps the edges.
 
+<p class="text-lg opacity-80">Facts are nodes; the connections between them are edges. AI searches the known graph densely — new nodes come from humans wandering beyond it.</p>
+
 <ProblemExplorationDiagram />
 
 <v-click at="3">
 
-The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
+Not AI replacing human exploration — **more human-chosen frontier points, each explored more deeply.** The human job is choosing which points deserve the machine's depth.
 
 </v-click>
 
@@ -192,9 +231,10 @@ KEY POINTS:
 - AI is powerful inside the known graph: it searches densely, finds correlations, and changes direction probabilistically
 - Humans and science widen the graph by looking outward and finding new nodes
 - The combined model is not "AI becomes self-directed breadth" — it is more human-chosen waypoints with dense AI exploration around each one
-- This sets up "Clarity Merchants": the human job is choosing which frontier points deserve the machine's depth
+- The closing line now says the Clarity Merchants setup on-slide: the human job is choosing which frontier points deserve the machine's depth — it also answers the previous slide's "what becomes worth building now"
 
 DELIVERY:
+- The intro line defines the metaphor so the panels don't have to — read it once, then let the diagram build without narration
 - Do not over-explain the visual; land the line "humans find new nodes, AI maps the edges"
 - Optional verbal: "The best discoveries come when someone wanders outside the current point of view. AI is excellent once you give it a place to search."
 
