@@ -212,11 +212,13 @@ layout: default
 
 # Humans find new nodes. AI maps the edges.
 
+<p class="text-lg opacity-80">Facts are nodes; the connections between them are edges. AI searches the known graph densely — new nodes come from humans wandering beyond it.</p>
+
 <ProblemExplorationDiagram />
 
 <v-click at="3">
 
-The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
+Not AI replacing human exploration — **more human-chosen frontier points, each explored more deeply.** The human job is choosing which points deserve the machine's depth.
 
 </v-click>
 
@@ -229,9 +231,10 @@ KEY POINTS:
 - AI is powerful inside the known graph: it searches densely, finds correlations, and changes direction probabilistically
 - Humans and science widen the graph by looking outward and finding new nodes
 - The combined model is not "AI becomes self-directed breadth" — it is more human-chosen waypoints with dense AI exploration around each one
-- This sets up "Clarity Merchants": the human job is choosing which frontier points deserve the machine's depth
+- The closing line now says the Clarity Merchants setup on-slide: the human job is choosing which frontier points deserve the machine's depth — it also answers the previous slide's "what becomes worth building now"
 
 DELIVERY:
+- The intro line defines the metaphor so the panels don't have to — read it once, then let the diagram build without narration
 - Do not over-explain the visual; land the line "humans find new nodes, AI maps the edges"
 - Optional verbal: "The best discoveries come when someone wanders outside the current point of view. AI is excellent once you give it a place to search."
 
