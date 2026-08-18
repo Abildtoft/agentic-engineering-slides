@@ -43,17 +43,60 @@
   border-color: var(--brand-primary);
 }
 
+/* The theme dresses a markdown blockquote as a code block — the same grey
+   `--slidev-code-background` fill, a rounded 1px border and `text-sm`. Every
+   quote in the deck is a payoff line, and that inverts its hierarchy: the quote
+   ends up the smallest, palest thing on its slide, quieter than the body copy
+   it is meant to land on top of, and on `statement` the opaque fill punches a
+   grey rectangle through the shader backdrop. Strip the box down to the drawn
+   rule and italic setting the `quote` layout already uses (the rule itself is
+   in the Motion section), so a quote reads as a quote wherever it appears. */
 .slidev-layout blockquote {
-  border-color: var(--brand-primary);
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--brand-text);
+  /* Relative, so the same quote sizes against whichever layout hosts it. */
+  font-size: 1.05em;
+  font-style: italic;
+  line-height: 1.4;
   /* Shrink to the quote instead of running edge to edge: a one-line quote in a
-     full-width strip reads as a banner, and on centred layouts the border-left
-     ends up floating at the slide edge, far from its own text. */
+     full-width strip reads as a banner, and on centred layouts the rule ends up
+     floating at the slide edge, far from its own text. Tighter than the 70ch
+     body measure: a pull quote wants a distinctly narrower column. `pretty`
+     rather than `balance` — the box is centred on `statement` and `center`
+     while its text stays left-aligned, and balance shortens every line to the
+     same width, leaving the right third of the box empty and the visible text
+     sitting well left of the slide's centre. `pretty` fills each line and only
+     protects the last one from an orphan. */
   width: fit-content;
-  max-width: 60ch;
+  max-width: 46ch;
+  text-wrap: pretty;
+  /* The theme's `my-0` on the block leaves a quote sitting as tight to the
+     paragraphs around it as they sit to each other, so it reads as one more
+     paragraph rather than as a change of voice. */
+  margin-block: 1.75rem;
+}
+
+/* Second paragraph in the blockquote is the attribution. Same treatment the
+   `quote` layout gives its own — small, upright, primary, uppercase — so the
+   name reads as a caption and stops competing with the sentence. Its own line
+   rather than trailing the quote inline: at 46ch an inline `— Name` lands
+   wherever the wrap happens to leave it, and on the statement slides it broke
+   with the em dash orphaned at the end of the line above. */
+.slidev-layout blockquote p + p {
+  color: var(--brand-primary);
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
 }
 
 /* On centred layouts the shrunk box needs centring itself; the text stays
-   left-aligned inside so it hangs off the border rule like every other quote. */
+   left-aligned inside so it hangs off the rule like every other quote. */
 .slidev-layout.statement blockquote,
 .slidev-layout.center blockquote {
   margin-inline: auto;
@@ -333,12 +376,14 @@
    in layout, against the text. `padding-left` carries the border's old 4px so
    the text lands exactly where it did. */
 .slidev-layout.quote h1,
-.slidev-layout.quote.quote-long .quote-progressive {
+.slidev-layout.quote.quote-long .quote-progressive,
+.slidev-layout blockquote {
   position: relative;
   padding-left: calc(1rem + 4px);
 }
 
-.slidev-layout.quote h1::before {
+.slidev-layout.quote h1::before,
+.slidev-layout blockquote::before {
   content: '';
   position: absolute;
   left: 0;
@@ -348,6 +393,26 @@
   background: var(--brand-primary);
   transform-origin: top;
   animation: rule-draw var(--motion-slow) var(--motion-ease) both;
+}
+
+/* Every markdown blockquote in the deck sits inside a <v-click>, and a v-click
+   hides with opacity — so the entry animation above would run behind the hidden
+   quote and the rule would arrive already drawn. Click-driven means transition
+   (the deck's motion rule), which also makes it reversible; export steps click
+   states with transitions killed, so it still lands fully drawn there. */
+.slidev-layout blockquote.slidev-vclick-target::before {
+  animation: none;
+  transition: transform var(--motion-slow) var(--motion-ease);
+}
+
+.slidev-layout blockquote.slidev-vclick-hidden::before {
+  transform: scaleY(0);
+}
+
+/* The global backward-nav rule only covers the target element itself, not its
+   pseudo-elements. */
+.slidev-nav-go-backward blockquote.slidev-vclick-target::before {
+  transition-duration: 0ms;
 }
 
 /* Progressive quotes carry the rule per line, not on the container: hidden
