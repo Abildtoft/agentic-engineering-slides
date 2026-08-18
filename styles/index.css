@@ -416,14 +416,16 @@
 }
 
 /* The deck's two bookends. Both covers carry their own <ShaderBackground>, which
-   fades in over 500ms on its own clock — the title arriving with it, and the
-   subtitle just behind, is what makes the opening read as composed rather than
-   as a page load. */
+   fades in over 500ms on its own clock — the title arriving with it is what
+   makes the opening read as composed rather than as a page load. */
 .slidev-layout.cover h1 {
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 
-.slidev-layout.cover h1 + p {
+/* A cover subtitle follows its title in. Excluded: <CoverTitleSwap>, the opening
+   title, which lands its own subtitle at the end of its build — an entry
+   animation there would show the payoff before the setup. */
+.slidev-layout.cover h1:not(.cover-title-swap) + p {
   animation: rise-in var(--motion-slow) var(--motion-ease) 160ms both;
 }
 

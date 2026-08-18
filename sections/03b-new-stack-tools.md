@@ -272,8 +272,6 @@ layout: default
 
 # Guardrails
 
-<GuardrailsLaneDiagram size="lg" />
-
 <v-click>
 
 **LLMs are stochastic** — same prompt, different result. Reliability comes from the system around the model, not perfected prompts.
@@ -281,7 +279,7 @@ layout: default
 </v-click>
 <v-click>
 
-**Hooks** fire inside the loop — block `rm -rf`, auto-format, gate the output. **Tests** close it: *the test is the spec.*
+<GuardrailsLaneDiagram size="lg" />
 
 </v-click>
 <v-click>
@@ -298,7 +296,8 @@ SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/M
 KEY POINTS:
 - Anchor with design truth: outputs are nondeterministic — system design, not prompt craft
 - Name the pattern explicitly: deterministic gates + probabilistic agents
-- Trimmed from the slide, say verbally: hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
+- Hooks and tests are now entirely verbal — the line naming them came off the slide, so the lane diagram carries them visually (the two rails ARE tests and reviews) and you name them out loud. Point at the rails as you do it
+- Trimmed from the slide, say verbally: hooks fire inside the loop — block `rm -rf`, auto-format, gate the output; tests close it, and *the test is the spec*. Hooks block destructive commands *before they run* and gate output *before the agent stops*; write the test first; and the closing contrast — hard checkpoints that never hallucinate wrapped around models that always might, without them every iteration needs human review
 - Hooks are shell scripts firing at lifecycle points in the agent loop, and the lifecycle framing is worth naming if the room is technical: PreToolUse blocks destructive commands before they execute, PostToolUse auto-formats and lints after every file write, Stop rejects output that fails validation and triggers a retry. Same idea as CI/CD or Git hooks — but running inside the loop, not after it, so the agent self-corrects without a human
 - Tests are the most familiar guardrail and the one to dwell on: TDD means the test IS the spec the agent implements against, closing the loop attempt → failure → retry. They are executable definitions of done
 - Willison (worth quoting verbatim): "Tests are free now. They're effectively free." He starts every coding session by telling the agent how to run the tests; the prompt "red-green TDD" is five tokens and dramatically improves reliability. "Tests are no longer even remotely optional"
@@ -321,25 +320,54 @@ BRIDGE: "Hooks and tests are two gates. Zoom out, and you can ring the agent wit
 ---
 layout: default
 class: text-center
-clicks: 2
+# Three now, not two: the ring reads $clicks without consuming any (1 bounces,
+# 2 ships), so the count has to be declared. Click 3 carries the payoff line.
+clicks: 3
 ---
 
 # Set the Constraints Around Your Agents
 
-<ConstraintRingDiagram size="md" />
+<ConstraintRingDiagram size="sm" />
 
-<v-click at="2">
+<!-- Each loop is named on the click that already enacts it: click 1 bounces the
+     agent's attempts off the gates, click 2 opens the pipeline for the output
+     that cleared them.
 
-<p class="text-lg">Deterministic checks the model can’t argue with. <strong>They decide what’s good enough to ship.</strong></p>
+     Osmani's own term for the second one is "outer loop", and it is deliberately
+     NOT used here. Section 05's three-loop slide reserves "outer" for Ng's
+     External feedback ring — real users, the slowest clock — and calls the
+     engineer's ring "Developer feedback". Osmani splits the world in two and Ng
+     in three, so Osmani's outer loop spans Ng's outer TWO; keeping the word here
+     would put "Outer loop — you" on a slide twelve before the speaker says the
+     outer loop is where real users close it. "Inner loop" stays: it means the
+     agent's own cycle in both sections, and section 05's "accelerating the inner
+     loop" line leans on exactly that. -->
+<!-- One line per loop, not a label + description pair: the ring runs to within
+     ~75px of the slide's bottom edge at this size, and a two-line block pushed
+     the payoff line below the fold. -->
+<div class="grid grid-cols-2 gap-x-12 mt-1">
+  <p class="text-sm my-0" v-click="1"><strong style="color: var(--brand-primary)">Inner loop</strong> — the agent: investigate, implement, test, report.</p>
+  <p class="text-sm my-0" v-click="2"><strong style="color: var(--brand-primary)">Your loop</strong> — decide, verify, approve, own.</p>
+</div>
+
+<v-click at="3">
+
+<p class="text-lg mt-3">The boundary is <strong>evidence</strong> — deterministic checks the model can’t argue with. <strong>They decide what’s good enough to ship.</strong></p>
 
 </v-click>
 
 <!--
 SOURCE: "Set the constraints around your agents" diagram (shared reference image), adapted
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/) — back-pressure framing
+SOURCE: Addy Osmani, "Own the Outer Loop" (addyosmani.com/blog/own-the-outer-loop/, 7/15/26) — inner/outer loop split; see sources/osmani-own-the-outer-loop.md
 
 KEY POINTS:
 - This is the payoff of the guardrails + tests beat: name the full set of constraints, then make the exit criterion explicit
+- Osmani's inner/outer loop split (see SOURCE) is the frame for the whole slide: agents run the inner execution loop — investigate, implement, test, report back; engineers own what he calls the outer loop — decide, verify, approve, own. His four sub-loops on the human side if the room wants detail: constraints (what instructions to set), sampling (how much output to review), audit (what evidence to keep), ownership (what production boundary you take)
+- VOCABULARY — say "your loop", never "the outer loop". Section 05's three-loop slide gives "outer" to Ng's External feedback ring (real users, hours to weeks) and calls this ring Developer feedback. Osmani splits in two, Ng in three, so Osmani's outer loop covers Ng's outer two; saying "outer" here collides with the §05 point that the outer loop is the only one producing real-world evidence. Attribute the idea to Osmani freely — just don't hand the room the word. "Inner loop" is safe and deliberate: it means the agent's cycle in both sections
+- The ring already drew this before it was named, which is why the labels are pinned to the clicks rather than sitting on the slide from the start: the agent bouncing off the gates IS the inner loop, and the pipeline opening IS the handoff to you
+- The key move is that the boundary is evidence, not trust — diffs, tests, logs, and a short why. Quality is the set of checks that produce that evidence. Osmani's supporting figures, if challenged: 96% do not fully trust AI code, only 48% always verify before commit, 38% say reviewing AI code takes longer than reviewing human code
+- Osmani's "quality is back pressure — grant only as much autonomy as you can still stop and check" is the same idea as Ronacher's back-pressure gate above; name one or the other, not both
 - Eight constraint dimensions: correctness (unit, property, mutation tests), security (SAST, dependency and secret scanning), performance (perf budgets, load tests), accessibility (axe, contrast, keyboard), maintainability (coverage, complexity), cost efficiency (token/compute budgets), back-pressure (throttle inflow, cap work in progress), comprehensibility (review, answerability)
 - The quality gates are deterministic: unit, property, acceptance and mutation tests, schema contracts, token and compute budgets, quality metrics — checks the model can't argue with
 - Back-pressure is the odd one out and worth a sentence: when agents produce more than the pipeline can absorb, throttle inflow or shed load so the system remains operable; it controls the queue rather than judging output quality (Ronacher's framing)
@@ -348,8 +376,9 @@ KEY POINTS:
 
 DELIVERY:
 - Walk the ring clockwise from Correctness; don't read every sub-label aloud
-- First click (animation only, no text): "the agent works inside the ring — it produces more code than you can read, and attempts that fail a gate bounce straight back. You never see them."
-- Second click: the ring slides left and the pipeline opens — land the line "only output that clears every gate ships"
+- First click, as the attempts start bouncing: "the agent works inside the ring — it produces more code than you can read, and attempts that fail a gate bounce straight back. You never see them. Addy Osmani calls this the inner loop, and it isn't yours anymore."
+- Second click: the ring slides left and the pipeline opens — "what clears every gate crosses out of the agent's loop and into yours — and that one you still own." Land the line "only output that clears every gate ships"
+- Third click is the punchline; don't rush the gap before it. The whole slide argues that you moved from reading output to designing the boundary
 - Optional verbal closer: "Set your constraints. They decide whether the code your agents generate is good enough to ship — not your reading speed."
 
 BRIDGE: "With the constraints in place, you can safely narrow responsibilities and compose agents together."

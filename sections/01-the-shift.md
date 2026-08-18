@@ -36,7 +36,14 @@ As big as the internet or mobile.
 <v-click>
 
 <p class="mt-4 text-2xl leading-relaxed opacity-80">
-And only as big as the internet or mobile.
+And <span class="font-bold" style="color: var(--brand-primary)">only</span> as big as the internet or mobile.
+</p>
+
+</v-click>
+<v-click>
+
+<p class="mt-6 text-lg leading-relaxed opacity-70">
+Both took a decade. The winners weren't obvious yet.
 </p>
 
 </v-click>
@@ -55,6 +62,7 @@ KEY POINTS:
 DELIVERY:
 - Make this feel like a correction to both hype and dismissal
 - Land "only" without minimizing the shift
+- Three clicks. Let "only" sit in silence before clicking the third line — that line is the evidence for it, so don't read it aloud; expand on it instead (the decade, the winners who weren't in the room)
 - Optional verbal (Boris Cherny, Head of Claude Code, via Lenny Rachitsky — x.com/lennysan/status/2025289168012595312): "You have to transport yourself to the current moment. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
 - Use that quote to reframe resistance as a stale mental model, not a lack of intelligence: expertise becomes inertia when capabilities move this fast, and newcomers can outperform simply by starting from current constraints instead of historical ones
 
@@ -75,22 +83,27 @@ Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 
 <div class="grid grid-cols-2 gap-x-14 gap-y-7 mt-10">
   <div>
-    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Spotify</p>
+    <p class="text-lg font-semibold my-0 flex items-center gap-2" style="color: var(--brand-primary)"><CompanyLogo name="spotify" />Spotify</p>
     <p class="text-base opacity-85 mt-1 mb-0">Best developers haven’t written a line of code since December</p>
   </div>
   <div>
-    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Google</p>
+    <p class="text-lg font-semibold my-0 flex items-center gap-2" style="color: var(--brand-primary)"><CompanyLogo name="google" />Google</p>
     <p class="text-base opacity-85 mt-1 mb-0">AI writes over 30% of all new code</p>
   </div>
   <div>
-    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Microsoft</p>
+    <p class="text-lg font-semibold my-0 flex items-center gap-2" style="color: var(--brand-primary)"><CompanyLogo name="microsoft" />Microsoft</p>
     <p class="text-base opacity-85 mt-1 mb-0">20–30% of code is AI-generated</p>
   </div>
   <div>
-    <p class="text-lg font-semibold my-0" style="color: var(--brand-primary)">Anthropic & OpenAI</p>
+    <p class="text-lg font-semibold my-0 flex items-center gap-2" style="color: var(--brand-primary)"><span class="inline-flex items-center gap-2"><CompanyLogo name="anthropic" />Anthropic</span>&amp;<span class="inline-flex items-center gap-2"><CompanyLogo name="openai" />OpenAI</span></p>
     <p class="text-base opacity-85 mt-1 mb-0">Frontier teams report ~100% AI-generated code</p>
   </div>
 </div>
+
+</v-click>
+<v-click>
+
+<p class="text-sm opacity-55 mt-8 mb-0">* Every figure here is at least six months old.</p>
 
 </v-click>
 
@@ -119,6 +132,7 @@ DELIVERY:
 - Verbal bridge into the company grid (trimmed from the slide): "So zoom out from tool names to company behavior."
 - Open on the tool names with the convergence line: "This wasn't one model release. In a single 30-day window last December, all three frontier labs shipped — and the whole category renamed itself from assistants to agents."
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
+- The asterisk lands on its own click, after the room has had a beat to be impressed by the grid — it re-reads numbers they've already accepted rather than qualifying them up front. It is a setup, not a disclaimer: say the implication out loud — these are the last numbers these companies published, so every one of them is a floor, not a ceiling. Dated: Spotify Feb 2026 (the newest of the four), Anthropic/OpenAI Jan 2026, Google Q4 earnings call; Nadella's 20–30% is the oldest and predates the rest by roughly a year, which is why the slide says "at least six months" rather than naming a window. Re-check the wording if you present this after roughly Q1 2027
 - Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
 
 BRIDGE: "And if you still think this is vendor hype, one metric shows how fast one of these tools scaled."
