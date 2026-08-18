@@ -208,6 +208,47 @@ DELIVERY:
 - Optional accounting version: "Accounting has been automated for a century. The profession did not vanish; the surface area expanded because the ROI of measuring, reporting, and planning changed."
 - Keep the individual pain caveat honest: on average society gets richer, but the averages hide real displacement. People lose jobs, towns hollow out, and transitions hurt before the new roles are visible.
 
+BRIDGE: "That expansion doesn't start with new products. It starts with the software nobody could ever justify building."
+-->
+
+---
+class: v-center
+---
+
+# The Long Tail of Internal Software
+
+Every team runs on invisible workflows: the report assembled by hand, the data moved by copy-paste, the checklist in someone's head.
+
+<v-click>
+
+Too small for a development project, too specific to buy off the shelf. **Below the build threshold — so it stayed manual.**
+
+</v-click>
+<v-click>
+
+When production cost collapses, the threshold drops. **The backlog nobody ever wrote down becomes buildable.**
+
+</v-click>
+
+<!--
+SOURCE: Dave Kellogg, "Why I'm Not Worried About Running Out of Work in the Age of AI" (kellblog.com, March 2026)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+
+KEY POINTS:
+- This is the previous slide's economics made concrete: the expanded demand lands first in the long tail, not in flagship products
+- Every organization carries an implicit build threshold — "not worth a developer's time" — and an unwritten backlog of everything below it
+- Agentic production drops that threshold by an order of magnitude; the unwritten backlog is the first demand that becomes real
+- Collina names the role this creates: the "software plumber" — someone wiring bespoke small tools and glue for organizations that could never justify custom software before
+- Willison's date-picker point is the same force one level down: when generation is cheap, bespoke beats generic — and internal tools are the most bespoke software there is
+- Internal tools are also the safest place to start: known users, low blast radius, and the guardrails story from Section 3 applies at small scale
+- Cross-role implication: the person who feels the manual workflow can now spec it directly — this sets up the knowledge-into-systems slide in Section 6
+
+DELIVERY:
+- Make it interactive if the room allows: "What do you assemble by hand every week? That list is the backlog nobody wrote down."
+- Tailor the examples to the audience — reporting stitched across systems, asset handoff between tools, one-off client utilities, glue around the in-house product
+- Don't oversell: the threshold drops, it doesn't vanish. Someone still owns, runs, and retires these tools — that's the accumulation warning coming later in this section
+
 BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 -->
 
