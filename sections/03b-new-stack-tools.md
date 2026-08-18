@@ -109,12 +109,15 @@ class: text-center
 
 # Skills: Reusable Playbooks
 
+<!-- The <br/> wraps are load-bearing for legibility: the SVG scales down to the
+     slide width, so intrinsic width sets the effective text size. Unwrapped,
+     this chain renders its 13px node text at ~8.7px. -->
 <MermaidDiagram :code="`graph LR
   U1['/commit-message'] -->|slash command| A[Agent]
-  U2['Check for security issues'] -->|prompt matches| A
-  A -->|explicit load| SK1[commit-message skill]
-  A -.->|auto-discovered| SK2[code-reviewer skill]
-  SK1 --> LLM[LLM interprets]
+  U2['Check for<br/>security issues'] -->|prompt matches| A
+  A -->|explicit load| SK1[commit-message<br/>skill]
+  A -.->|auto-discovered| SK2[code-reviewer<br/>skill]
+  SK1 --> LLM[LLM<br/>interprets]
   SK2 --> LLM
   LLM -->|soft guidance| R[Output]
 `" size="lg" />
@@ -206,15 +209,18 @@ class: text-center
 
 # MCP Example: Figma ↔ Frontend
 
+<!-- The <br/> wraps are load-bearing for legibility: this is the widest chain
+     in the deck, and unwrapped it renders its 13px node text at ~7.6px. Tool
+     names stay on one line — a wrapped identifier reads as two identifiers. -->
 <MermaidDiagram :code="`graph LR
-  A[Agent] --> F[Figma MCP Server]
+  A[Agent] --> F[Figma MCP<br/>Server]
   F --> T[get_design_context]
   F --> R[get_variable_defs]
-  T --> S[Scoped spec + acceptance criteria]
+  T --> S[Scoped spec +<br/>acceptance criteria]
   R --> S
-  S --> UI[Running UI in browser]
+  S --> UI[Running UI<br/>in browser]
   UI --> G[generate_figma_design]
-  G --> B[Back to Figma file]
+  G --> B[Back to<br/>Figma file]
 `" size="xl" />
 
 <p class="mt-4 text-lg opacity-85">Design intent becomes structured input, not screenshot guessing.</p>
@@ -324,7 +330,7 @@ clicks: 2
 
 <v-click at="2">
 
-<p class="text-lg">Deterministic checks the model can't argue with. <strong>They decide what's good enough to ship.</strong></p>
+<p class="text-lg">Deterministic checks the model can’t argue with. <strong>They decide what’s good enough to ship.</strong></p>
 
 </v-click>
 
@@ -373,7 +379,7 @@ class: text-center
 </v-click>
 <v-click>
 
-<p class="text-base opacity-85">When an agent fails, don't just fix the output. <strong>Improve the harness so the whole loop gets better.</strong></p>
+<p class="text-base opacity-85">When an agent fails, don’t just fix the output. <strong>Improve the harness so the whole loop gets better.</strong></p>
 
 </v-click>
 
@@ -415,7 +421,7 @@ class: quote-long
 ---
 
 <div class="quote-progressive">
-  <div class="quote-progressive-line">“Every team should be writing the CLAUDE.md's, REVIEW.md's, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
+  <div class="quote-progressive-line">“Every team should be writing the CLAUDE.md’s, REVIEW.md’s, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
 
   <v-click>
     <div class="quote-progressive-line">This sounds crazy, and at the same time is a natural extension of the stuff engineers have always done: automate, and encode domain knowledge as infrastructure.”</div>
@@ -454,7 +460,8 @@ class: text-center
 
 # Demo Time
 
-Watch three things: where context enters, where a deterministic check catches a failure, and how the human changes the next move.
+<!-- Capped measure: at full slide width this line runs ~120 characters. -->
+<p class="mx-auto" style="max-width: 70ch">Watch three things: where context enters, where a deterministic check catches a failure, and how the human changes the next move.</p>
 
 <!--
 DELIVERY:

@@ -153,6 +153,10 @@
   font-weight: 500;
   margin-top: 1.25rem;
   max-width: 38ch;
+  /* A secondary quote carries no drawn rule, but it shares the grid column with
+     the h1's text — same left inset, so the two quote blocks sit on one edge
+     instead of the h2 starting where the h1's rule does. */
+  padding-left: calc(1rem + 4px);
 }
 
 .slidev-layout.quote.quote-long h1 {
@@ -257,6 +261,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Cap the measure on text-carrying slides: uncapped, a body line runs 95+
+   characters across the frame and the eye loses the return sweep. `ch` rather
+   than px so smaller support text caps proportionally tighter. Statement copy
+   is centred, so its capped block needs re-centring; v-center slides are
+   left-aligned and just stop earlier. */
+.slidev-layout.v-center p {
+  max-width: 70ch;
+}
+
+.slidev-layout.statement p {
+  max-width: 70ch;
+  margin-inline: auto;
 }
 
 /* ===========================================================================

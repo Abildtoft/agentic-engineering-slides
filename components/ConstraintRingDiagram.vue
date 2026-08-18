@@ -1,23 +1,10 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useSlideContext } from '@slidev/client'
 
 const props = defineProps({
   size: { type: String, default: 'md' },
   caption: { type: String, default: '' },
-})
-
-const accent = ref('#186346')
-const text = ref('#282625')
-const onAccent = ref('#FFFFFF')
-const bg = ref('#FFFFFF')
-
-onMounted(() => {
-  const styles = getComputedStyle(document.documentElement)
-  accent.value = styles.getPropertyValue('--brand-primary').trim() || accent.value
-  text.value = styles.getPropertyValue('--brand-text').trim() || text.value
-  onAccent.value = styles.getPropertyValue('--brand-on-accent').trim() || onAccent.value
-  bg.value = styles.getPropertyValue('--brand-bg').trim() || bg.value
 })
 
 const { $clicks } = useSlideContext()
@@ -30,10 +17,10 @@ const CY = 232
 const R = 150
 
 const LABELS = {
-  top: g => ({ lx: g.x, anchor: 'middle', nameY: g.y - 30, subY: g.y - 16 }),
-  bottom: g => ({ lx: g.x, anchor: 'middle', nameY: g.y + 28, subY: g.y + 42 }),
-  right: g => ({ lx: g.x + 18, anchor: 'start', nameY: g.y - 2, subY: g.y + 12 }),
-  left: g => ({ lx: g.x - 18, anchor: 'end', nameY: g.y - 2, subY: g.y + 12 }),
+  top: g => ({ lx: g.x, anchor: 'middle', nameY: g.y - 34, subY: g.y - 17 }),
+  bottom: g => ({ lx: g.x, anchor: 'middle', nameY: g.y + 28, subY: g.y + 45 }),
+  right: g => ({ lx: g.x + 18, anchor: 'start', nameY: g.y - 4, subY: g.y + 13 }),
+  left: g => ({ lx: g.x - 18, anchor: 'end', nameY: g.y - 4, subY: g.y + 13 }),
 }
 
 const gates = [
@@ -63,7 +50,7 @@ const sizeClasses = {
 <template>
   <figure :class="['mx-auto mt-0 mb-1 constraint-ring', sizeClasses[size] || sizeClasses.md]">
     <svg
-      viewBox="0 40 920 392"
+      viewBox="0 30 920 402"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="An agent inside a ring of eight constraints: correctness, security, performance, accessibility, maintainability, cost efficiency, back-pressure, and comprehensibility. A rejected attempt bounces back into the loop; only output that clears every quality gate passes the exit gate and ships."
@@ -78,7 +65,7 @@ const sizeClasses = {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 5 L 0 10 z" :fill="text" fill-opacity="0.55" />
+          <path d="M 0 0 L 10 5 L 0 10 z" style="fill: var(--brand-text)" fill-opacity="0.55" />
         </marker>
         <marker
           id="cr-arrow-accent"
@@ -89,14 +76,14 @@ const sizeClasses = {
           markerHeight="6"
           orient="auto-start-reverse"
         >
-          <path d="M 0 0 L 10 5 L 0 10 z" :fill="accent" />
+          <path d="M 0 0 L 10 5 L 0 10 z" style="fill: var(--brand-primary)" />
         </marker>
         <radialGradient id="cr-arena">
-          <stop offset="72%" :stop-color="accent" stop-opacity="0" />
-          <stop offset="100%" :stop-color="accent" stop-opacity="0.05" />
+          <stop offset="72%" style="stop-color: var(--brand-primary)" stop-opacity="0" />
+          <stop offset="100%" style="stop-color: var(--brand-primary)" stop-opacity="0.05" />
         </radialGradient>
         <filter id="cr-shadow" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="2" stdDeviation="3" :flood-color="text" flood-opacity="0.18" />
+          <feDropShadow dx="0" dy="2" stdDeviation="3" style="flood-color: var(--brand-text)" flood-opacity="0.18" />
         </filter>
       </defs>
 
@@ -107,7 +94,7 @@ const sizeClasses = {
         :cy="CY"
         :r="R"
         fill="none"
-        :stroke="accent"
+        style="stroke: var(--brand-primary)"
         stroke-width="1.75"
         stroke-dasharray="2 9"
         stroke-linecap="round"
@@ -115,12 +102,12 @@ const sizeClasses = {
       />
 
       <g v-for="g in gates" :key="g.name">
-        <circle :cx="g.x" :cy="g.y" r="10.5" :fill="bg" :stroke="accent" stroke-opacity="0.35" stroke-width="1.5" />
-        <circle :cx="g.x" :cy="g.y" r="5.5" :fill="accent" />
-        <text class="cr-name" :x="g.lx" :y="g.nameY" :text-anchor="g.anchor" :fill="text">
+        <circle class="cr-gate-dot" :cx="g.x" :cy="g.y" r="10.5" stroke-opacity="0.35" stroke-width="1.5" />
+        <circle class="cr-gate-core" :cx="g.x" :cy="g.y" r="5.5" />
+        <text class="cr-name" :x="g.lx" :y="g.nameY" :text-anchor="g.anchor">
           {{ g.name }}
         </text>
-        <text class="cr-sub" :x="g.lx" :y="g.subY" :text-anchor="g.anchor" :fill="text" opacity="0.65">
+        <text class="cr-sub" :x="g.lx" :y="g.subY" :text-anchor="g.anchor" opacity="0.65">
           {{ g.sub }}
         </text>
       </g>
@@ -130,7 +117,7 @@ const sizeClasses = {
         :cy="CY"
         r="52"
         fill="none"
-        :stroke="accent"
+        style="stroke: var(--brand-primary)"
         stroke-opacity="0.3"
         stroke-width="1.25"
       />
@@ -138,23 +125,22 @@ const sizeClasses = {
         :cx="CX"
         :cy="CY"
         r="46"
-        :fill="accent"
+        style="fill: var(--brand-primary); stroke: var(--brand-primary)"
         fill-opacity="0.09"
-        :stroke="accent"
         stroke-width="1.75"
       />
-      <text class="cr-agent" :x="CX" :y="CY + 1" text-anchor="middle" :fill="accent" letter-spacing="2">
+      <text class="cr-agent" :x="CX" :y="CY + 1" text-anchor="middle" letter-spacing="2">
         AGENT
       </text>
       <path
         :d="`M ${CX - 12} ${CY + 16} q 4 -8 8 0 t 8 0 t 8 0`"
         fill="none"
-        :stroke="accent"
+        style="stroke: var(--brand-primary)"
         stroke-width="1.75"
         stroke-linecap="round"
         opacity="0.75"
       />
-      <text class="cr-sub cr-italic" :x="CX" :y="CY + 68" text-anchor="middle" :fill="text" opacity="0.65">
+      <text class="cr-sub cr-italic" :x="CX" :y="CY + 68" text-anchor="middle" opacity="0.65">
         more code than you can read
       </text>
 
@@ -162,13 +148,13 @@ const sizeClasses = {
         <path
           d="M 300 192 C 258 152 208 156 202 194 C 197 224 236 238 272 228"
           fill="none"
-          :stroke="text"
+          style="stroke: var(--brand-text)"
           stroke-width="2.25"
           stroke-dasharray="7 5"
           opacity="0.7"
           marker-end="url(#cr-arrow)"
         />
-        <g :stroke="accent" stroke-width="3" stroke-linecap="round">
+        <g style="stroke: var(--brand-primary)" stroke-width="3" stroke-linecap="round">
           <line x1="219" y1="154" x2="237" y2="172" />
           <line x1="237" y1="154" x2="219" y2="172" />
         </g>
@@ -181,24 +167,24 @@ const sizeClasses = {
           y1="232"
           x2="548"
           y2="232"
-          :stroke="text"
+          style="stroke: var(--brand-text)"
           stroke-width="1.5"
           opacity="0.55"
           marker-end="url(#cr-arrow)"
         />
-        <text class="cr-sub cr-italic" x="460" y="216" text-anchor="middle" :fill="text" opacity="0.7">
+        <text class="cr-sub cr-italic" x="460" y="204" text-anchor="middle" opacity="0.7">
           only output that clears every gate
         </text>
-        <rect x="552" y="208" width="36" height="48" rx="10" :fill="accent" filter="url(#cr-shadow)" />
+        <rect x="552" y="208" width="36" height="48" rx="10" style="fill: var(--brand-primary)" filter="url(#cr-shadow)" />
         <path
           d="M 561 232 l 7 8 l 14 -17"
           fill="none"
-          :stroke="onAccent"
+          style="stroke: var(--brand-on-accent)"
           stroke-width="3.5"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
-        <text class="cr-sub" x="570" y="274" text-anchor="middle" :fill="text" opacity="0.7">
+        <text class="cr-sub" x="570" y="274" text-anchor="middle" opacity="0.7">
           exit gate
         </text>
         <line
@@ -206,26 +192,25 @@ const sizeClasses = {
           y1="232"
           x2="640"
           y2="232"
-          :stroke="accent"
+          style="stroke: var(--brand-primary)"
           stroke-width="2"
           marker-end="url(#cr-arrow-accent)"
         />
-        <rect x="648" y="196" width="246" height="72" rx="14" :fill="bg" filter="url(#cr-shadow)" />
+        <rect x="640" y="196" width="262" height="72" rx="14" style="fill: var(--brand-bg)" filter="url(#cr-shadow)" />
         <rect
-          x="648"
+          x="640"
           y="196"
-          width="246"
+          width="262"
           height="72"
           rx="14"
-          :fill="accent"
+          style="fill: var(--brand-primary); stroke: var(--brand-primary)"
           fill-opacity="0.07"
-          :stroke="accent"
           stroke-width="2"
         />
-        <text class="cr-ship" x="771" y="228" text-anchor="middle" :fill="accent" letter-spacing="2">
+        <text class="cr-ship" x="771" y="228" text-anchor="middle" letter-spacing="2">
           SHIP
         </text>
-        <text class="cr-sub" x="771" y="250" text-anchor="middle" :fill="text" opacity="0.7">
+        <text class="cr-sub" x="771" y="250" text-anchor="middle" opacity="0.7">
           production software, good enough to ship
         </text>
       </g>
@@ -247,7 +232,7 @@ const sizeClasses = {
 
 .constraint-ring :deep(svg) .cr-slide {
   transform: translateX(140px);
-  transition: transform 0.6s ease;
+  transition: transform 0.6s var(--motion-ease);
 }
 
 .constraint-ring :deep(svg) .cr-slide-left {
@@ -257,7 +242,7 @@ const sizeClasses = {
 .constraint-ring :deep(svg) .cr-stage {
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s var(--motion-ease), transform 0.5s var(--motion-ease);
 }
 
 .constraint-ring :deep(svg) .cr-stage-visible {
@@ -269,13 +254,26 @@ const sizeClasses = {
   opacity: 0.3;
 }
 
+.constraint-ring :deep(svg) .cr-gate-dot {
+  fill: var(--brand-bg);
+  stroke: var(--brand-primary);
+}
+
+.constraint-ring :deep(svg) .cr-gate-core {
+  fill: var(--brand-primary);
+}
+
+/* The 920-unit viewBox renders at 768px (`md`), a 0.83 scale — sizes are set
+   for what survives that scale on a projector. */
 .constraint-ring :deep(svg) .cr-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
+  fill: var(--brand-text);
 }
 
 .constraint-ring :deep(svg) .cr-sub {
-  font-size: 10.5px;
+  font-size: 13px;
+  fill: var(--brand-text);
 }
 
 .constraint-ring :deep(svg) .cr-italic {
@@ -285,11 +283,13 @@ const sizeClasses = {
 .constraint-ring :deep(svg) .cr-agent {
   font-size: 15px;
   font-weight: 700;
+  fill: var(--brand-primary);
 }
 
 .constraint-ring :deep(svg) .cr-ship {
   font-size: 21px;
   font-weight: 700;
+  fill: var(--brand-primary);
 }
 
 .constraint-ring__caption {
@@ -299,5 +299,13 @@ const sizeClasses = {
   font-size: 0.95rem;
   color: var(--brand-text);
   opacity: 0.8;
+}
+
+/* Backward navigation is instant, matching the deck's global reveal rule — the
+   global rule only covers .slidev-vclick-target, not $clicks-driven classes. */
+:global(.slidev-nav-go-backward .cr-slide),
+:global(.slidev-nav-go-backward .cr-stage) {
+  transition-duration: 0ms;
+  transition-delay: 0ms;
 }
 </style>

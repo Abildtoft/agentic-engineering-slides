@@ -56,7 +56,7 @@ class: text-center
 
 <v-click>
 
-<p class="text-lg">The maintainer's job moves outward: <strong>choose the work, set the bar, improve the loop.</strong></p>
+<p class="text-lg">The maintainer’s job moves outward: <strong>choose the work, set the bar, improve the loop.</strong></p>
 
 </v-click>
 

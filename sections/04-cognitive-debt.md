@@ -68,7 +68,7 @@ class: quote-long
   <div class="quote-progressive-line">“We gave a student team AI coding tools and tracked them for 10 weeks.</div>
 
   <v-click>
-    <div class="quote-progressive-line">Early results were impressive — they were shipping faster than any cohort we'd seen.</div>
+    <div class="quote-progressive-line">Early results were impressive — they were shipping faster than any cohort we’d seen.</div>
   </v-click>
 
   <v-click>
@@ -241,7 +241,7 @@ layout: fact
 </v-click>
 <v-click>
 
-<p class="mt-6 text-lg"><strong>Cognitive surrender</strong> — the brain recodes the answer as its own. It doesn't feel outsourced. It feels self-generated.</p>
+<p class="mt-6 text-lg"><strong>Cognitive surrender</strong> — the brain recodes the answer as its own. It doesn’t feel outsourced. It feels self&#8209;generated.</p>
 
 </v-click>
 

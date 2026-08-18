@@ -115,6 +115,8 @@ const sizeClasses = {
 .ka-icon ellipse {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
+  /* Deliberately between --motion-slow and --motion-draw: these are small icon
+     strokes, and the full 1200ms draw reads as sluggish at this scale. */
   animation: ka-draw 800ms var(--motion-ease) both;
   animation-delay: calc(var(--i) * 110ms + 150ms);
 }

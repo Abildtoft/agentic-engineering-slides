@@ -199,13 +199,13 @@ const aiSpiralPath = aiNodes
 .diagram-title {
   fill: var(--brand-text);
   font-size: 23px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .diagram-caption {
   fill: var(--brand-text);
   font-size: 15px;
-  font-weight: 560;
+  font-weight: 500;
   opacity: 0.72;
 }
 
@@ -220,6 +220,10 @@ const aiSpiralPath = aiNodes
   vector-effect: non-scaling-stroke;
 }
 
+/* Deliberately primary/text rather than the --brand-cat-* slots: in the hybrid
+   panel both series co-occupy each cluster, so radius (3.5 vs 1.55) carries the
+   distinction and colour only reinforces it — the cat palette's hue separation
+   isn't needed, and primary/text survives greyscale by luminance. */
 .diagram-node-ai {
   fill: var(--brand-primary);
 }
@@ -247,7 +251,7 @@ const aiSpiralPath = aiNodes
    it — it's simply there. */
 .diagram-panel {
   opacity: 0;
-  transition: opacity 380ms ease;
+  transition: opacity 380ms var(--motion-ease);
 }
 
 .diagram-panel.is-visible {
@@ -260,12 +264,20 @@ const aiSpiralPath = aiNodes
    after the panel itself. */
 .diagram-stagger {
   opacity: 0;
-  transition: opacity 260ms ease;
+  transition: opacity 260ms var(--motion-ease);
 }
 
 .diagram-panel.is-visible .diagram-stagger {
   opacity: 1;
   transition-delay: calc(180ms + var(--i, 0) * 16ms);
+}
+
+/* Backward navigation is instant, matching the deck's global reveal rule — the
+   global rule only covers .slidev-vclick-target, not $clicks-driven classes. */
+:global(.slidev-nav-go-backward .diagram-panel),
+:global(.slidev-nav-go-backward .diagram-stagger) {
+  transition-duration: 0ms;
+  transition-delay: 0ms;
 }
 
 /* The LLM panel is present on arrival, so its flourish runs on slide entry and

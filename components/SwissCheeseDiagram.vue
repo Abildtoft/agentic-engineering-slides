@@ -197,7 +197,7 @@ const ALIGNED_Y = 200
    them: ~210ms per slice across the 1200ms draw. State-class driven, so
    export's stepped clicks land on the right frame. */
 .sc-hole--aligned {
-  transition: stroke-opacity var(--motion-base) ease;
+  transition: stroke-opacity var(--motion-base) var(--motion-ease);
   transition-delay: calc(210ms + var(--i) * 210ms);
 }
 
@@ -205,7 +205,9 @@ svg.is-lined-up .sc-hole--aligned {
   stroke-opacity: 0.95;
 }
 
-:global(.slidev-nav-go-backward) .sc-hole--aligned {
+/* The whole selector sits inside :global(): the scoped compiler keeps only the
+   :global() portion of a mixed selector and silently drops what follows it. */
+:global(.slidev-nav-go-backward .sc-hole--aligned) {
   transition-duration: 0ms;
   transition-delay: 0ms;
 }
@@ -241,7 +243,7 @@ svg.is-lined-up .sc-hole--aligned {
 /* Arrowhead and label arrive together, once the line has finished its draw. */
 .sc-through-cap {
   opacity: 0;
-  transition: opacity var(--motion-base) ease;
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 .sc-through.is-lined-up .sc-through-line {
@@ -254,11 +256,11 @@ svg.is-lined-up .sc-hole--aligned {
 }
 
 /* Backward navigation is instant, matching the deck's global reveal rule. */
-:global(.slidev-nav-go-backward) .sc-through-line {
+:global(.slidev-nav-go-backward .sc-through-line) {
   transition-duration: 0ms;
 }
 
-:global(.slidev-nav-go-backward) .sc-through-cap {
+:global(.slidev-nav-go-backward .sc-through-cap) {
   transition-duration: 0ms;
   transition-delay: 0ms;
 }

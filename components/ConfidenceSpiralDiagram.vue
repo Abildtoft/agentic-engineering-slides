@@ -16,14 +16,15 @@ const sizeClasses = {
 // with shrinking amplitude — the spiral tightens as understanding drains.
 const steps = [
   { label: 'AI writes code', x: 340, y: 40 },
-  { label: "You don't fully understand it", x: 570, y: 88 },
+  { label: 'You don’t fully understand it', x: 570, y: 88 },
   { label: 'Something breaks', x: 360, y: 136 },
   { label: 'You prompt again', x: 550, y: 184 },
   { label: 'You understand less', x: 395, y: 232 },
   { label: 'You defer more', x: 515, y: 280 },
 ]
 
-const pillWidth = (label) => label.length * 7 + 26
+/* ~8px per character fits the 15px label size below. */
+const pillWidth = (label) => label.length * 8 + 28
 
 // Catmull-Rom through the pill centres (plus a continuation point past the
 // last one), converted to cubic beziers: one flowing curve, drawn behind the
@@ -128,7 +129,7 @@ const spiralPath = computed(() => {
 }
 
 .cs-axis text {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   fill: var(--brand-primary);
   opacity: 0.6;
@@ -158,8 +159,10 @@ const spiralPath = computed(() => {
   stroke-width: 1.25;
 }
 
+/* The 880-unit viewBox renders at 672px (`md`), a 0.76 scale — sized for what
+   survives that scale on a projector. */
 .cs-label {
-  font-size: 13px;
+  font-size: 15px;
   fill: var(--brand-text);
 }
 
@@ -183,7 +186,7 @@ const spiralPath = computed(() => {
 }
 
 .cs-tail-label {
-  font-size: 12px;
+  font-size: 13px;
   font-style: italic;
   fill: var(--brand-text);
   opacity: 0.65;

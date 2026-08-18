@@ -159,7 +159,7 @@ line.sm-step {
    keyframe's `from`, so print and reduced motion land fully drawn. */
 .sm-step {
   animation: sm-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(var(--i) * 70ms);
+  animation-delay: calc(var(--i) * 90ms);
 }
 
 @keyframes sm-in {

@@ -38,6 +38,14 @@ const svg = computed(() => {
     return renderMermaidSVG(props.code.trim(), {
       bg: resolvedBg.value || '#11402E',
       fg: resolvedFg.value || '#F8F8F8',
+      /* Tighter than the library defaults (40/40/24): the SVG scales down to
+         the slide's content width, so every unit of intrinsic width shaves the
+         effective text size. beautiful-mermaid exposes no font-size knob —
+         spacing (and <br/>-wrapped labels in the mermaid source) is the only
+         lever on how large the 13px node text renders. */
+      padding: 20,
+      layerSpacing: 28,
+      nodeSpacing: 18,
     })
   } catch (e) {
     console.error('MermaidDiagram render error:', e)
@@ -134,7 +142,7 @@ const sizeClasses = {
 .mermaid-diagram :deep(svg.mm-staged) > .edge,
 .mermaid-diagram :deep(svg.mm-staged) > .edge-label,
 .mermaid-diagram :deep(svg.mm-staged) > .subgraph {
-  animation: mm-node-in 380ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: mm-node-in 380ms var(--motion-ease) both;
   animation-delay: calc(var(--mm-step, 0) * 90ms);
 }
 

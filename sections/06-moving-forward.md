@@ -134,6 +134,7 @@ BRIDGE: "Cross-functional infrastructure, in an environment that keeps changing.
 
 ---
 layout: statement
+class: statement-wide
 ---
 
 # In a period of compounding change, playing defense is its own risk.
