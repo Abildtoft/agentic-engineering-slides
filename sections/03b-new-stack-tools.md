@@ -387,6 +387,49 @@ BRIDGE: "With the constraints in place, you can safely narrow responsibilities a
 ---
 layout: default
 class: text-center
+# The pipeline reads $clicks without consuming any (1 implements, 2 runs the
+# review loop, 3 ships), so the count has to be declared. Click 3 also lands
+# the payoff line.
+clicks: 3
+---
+
+# From Issue to Pull Request: One Command
+
+<p class="text-sm mt-2 mb-1 opacity-70"><code>/kramme:linear:issue-to-pr ENG-142 --ship</code></p>
+
+<IssueToPrDiagram size="lg" />
+
+<v-click at="3">
+
+<p class="text-lg mt-4">The constraint ring, composed into a pipeline. <strong>Your loop shrinks to two moments: write the issue, review the PR.</strong></p>
+
+</v-click>
+
+<!--
+SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal workflow, live demo material)
+
+KEY POINTS:
+- This is the previous slide made concrete: one slash command in Claude Code that takes a Linear issue ID and ends at a Pull Request, with the ring's gates wired into the loop
+- The command is an orchestrator, not a monolith — it composes narrower skills (issue implementation, code review, convention review, refactor discovery, verification, PR creation, CI fixing) and owns only their sequencing, convergence criteria, and handoffs
+- Stage by stage: a read-only preflight (clean worktree, the issue's exact branch name from Linear, no existing PR on that branch) → delegated implementation on the issue branch → the quality loop → fresh full verification → PR
+- The quality loop is the heart: code-review, convention, and refactor gates run against the diff; findings get fixed; the gates re-run — to *bounded* convergence. A remediation budget stops it looping forever on rejected advice, and it never widens the issue's scope to make findings disappear
+- Verification is a fresh, project-configured run after review settles — not a re-read of earlier results. A gap is reported as a gap, never claimed as a pass
+- `--ship` authorizes the irreversible tail: history cleanup, PR creation, then CI and review feedback iterated until green. Without it, the workflow stops review-ready and hands you the exact next commands
+- It pauses only for hard blockers or decisions the issue and codebase can't determine safely — missing requirements are asked about, not invented
+- The payoff restates the last slide's boundary: what crosses to you is evidence — a green PR with gates cleared and verification passed — not a stream of keystrokes to supervise
+
+DELIVERY:
+- Walk left to right, one click per stage; the audience has just seen the agent circle, the dotted gate ring, and the checkbox gate on the previous slide — name the reuse: "same ring, now in a pipeline"
+- On click 2, dwell on the loop: "this is where most of the wall-clock goes, and none of my attention"
+- Land the payoff line verbatim — it is the whole argument of the section in one sentence
+- If asked what happens when it fails: it stops at the blocker with the evidence preserved — a failed gate is a stop, not a warning
+
+BRIDGE: "Every box on that pipeline is an agent with a harness around it. Let's open one up."
+-->
+
+---
+layout: default
+class: text-center
 ---
 
 # Harness Engineering
