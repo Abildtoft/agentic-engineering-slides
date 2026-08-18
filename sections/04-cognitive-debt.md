@@ -139,7 +139,7 @@ DELIVERY:
 - Reveal "frictionless path" as the actual risk
 - The final reveal is the operating boundary: AI can accelerate thought, but understanding still has to be earned
 
-BRIDGE: "And this isn't just a feeling. The data backs it up."
+BRIDGE: "And if understanding is what's at risk, the practical response is to change what humans actually review."
 -->
 
 ---

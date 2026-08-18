@@ -69,7 +69,7 @@ Human-readable AND machine-readable. Versionable like code. AGENTS.md, skills, a
 
 <div class="ml-4 mt-4 text-sm opacity-80">
 
-**Read on every session start.** Root file = project-wide rules; nested files add local constraints. Start with one at the root — add more only when you see repeated mistakes.
+**Read on every session start.** Root file = project-wide rules; nested files add local constraints.
 
 </div>
 
@@ -89,6 +89,7 @@ KEY POINTS:
 - AGENTS.md is the highest-leverage first step for most teams adopting agentic tools — think of it as onboarding documentation where the reader is an AI, the same clarity you'd give a new team member
 - Claude Code uses CLAUDE.md — same concept, vendor-specific naming
 - Inheritance model: root file = project-wide rules, subdirectory files = domain-specific constraints
+- The adoption advice belongs in your mouth, not on the slide (there is no room for it): start with one file at the root and add directory-level files only when you see the agent repeat the same mistake
 - Real example: this presentation was built with an AGENTS.md specifying Slidev conventions, Yarn 4, multi-file structure
 
 DELIVERY:
@@ -277,7 +278,7 @@ DELIVERY:
 - Verbal option: "Jenny Wen argues Figma is still indispensable — it's the only tool that lets you diverge across 8 to 10 directions without the investment bias of building one. That's why the MCP bridge matters: Figma for exploration, code for execution."
 - "Source of truth" is the key phrase — this reframes the bridge as design governance, not convenience. For designers: your Figma file is already structured data; MCP makes that data legible to the agent.
 
-BRIDGE: "Once you have context and interfaces, the next question is reliability. Let's look at how deterministic checks keep the loop honest — starting with hooks."
+BRIDGE: "Once you have context and interfaces, the next question is reliability. Let's look at the deterministic checks that keep the loop honest."
 -->
 
 ---

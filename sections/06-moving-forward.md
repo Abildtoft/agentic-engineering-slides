@@ -54,8 +54,6 @@ Execution is increasingly abundant. People who combine strategy with execution w
 
 <v-click>
 
-**If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful.**
-
 ## This is not a tooling upgrade. It's a different operating model.
 
 </v-click>
