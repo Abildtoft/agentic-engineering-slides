@@ -19,30 +19,12 @@ BRIDGE: "Across everything we've covered — what actually survives?"
 -->
 
 ---
-layout: statement
----
-
-# Execution is increasingly abundant. People who combine strategy with execution will remain rare.
-
-<!--
-SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
-
-KEY POINTS:
-- Reformulation of Ayres's core finding: the market is bifurcating between abundant execution capacity and scarce strategic judgment
-- This is the thesis the "What Survives" slide unpacks into two columns
-- Applies equally to engineering, product, and design
-
-DELIVERY:
-- Let this land before moving to the breakdown. One sentence, no elaboration.
-
-BRIDGE: "Let me make that concrete."
--->
-
----
 layout: two-cols-header
 ---
 
 # What Survives
+
+Execution is increasingly abundant. People who combine strategy with execution will remain rare.
 
 ::left::
 
@@ -70,11 +52,6 @@ layout: two-cols-header
 
 </v-click>
 
-<v-click>
-
-**If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful.**
-
-</v-click>
 <v-click>
 
 ## This is not a tooling upgrade. It's a different operating model.
@@ -137,58 +114,10 @@ KEY POINTS:
 - Connect back to section 4: comprehension is now a governance requirement
 - Nadella sharpens the ownership test: the company should be able to switch a generalist model without losing the company-specific expertise in its learning system
 - The durable asset is not the frontier model; it is the institutional loop that keeps converting human judgment into reusable capability
+- Close the point by noting the stack is already reaching past engineers: Claude Cowork, Cursor for Teams and Copilot Workspace all wrap the same primitives — context, MCP, skills, guardrails — in a task-first interface, so domain experts operate directly while engineers still design the harness. Frame it as continuity rather than novelty, and note that the pattern matters more than any one product. Wider access does not remove the need for engineered guardrails; it makes workflow design cross-functional infrastructure
 
 DELIVERY:
 - This should feel like a return, not a new idea — "Remember the cascade from earlier?"
-
-BRIDGE: "And the stack that encodes that knowledge is already reaching beyond engineers."
--->
-
----
-layout: two-cols-header
----
-
-# Claude Cowork: Same Stack, Wider Audience
-
-::left::
-
-<v-click>
-
-**Under the hood (same primitives)**
-
-- Context shaping behavior
-- Tools and MCP integrations
-- Skills and workflow templates
-- Guardrails and verification loops
-
-</v-click>
-
-::right::
-
-<v-click>
-
-**In the experience (new interface)**
-
-- Task-first prompts, not terminal commands
-- Opinionated defaults for common workflows
-- Domain experts can operate directly
-- Engineers still design the harness
-
-</v-click>
-<v-click>
-
-**Not just "AI for engineers" anymore.**
-This is becoming cross-functional infrastructure.
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Frame this as continuity, not novelty: same agentic primitives, different UX surface
-- Wider access does not remove the need for engineered guardrails
-- Core takeaway: workflow design is becoming cross-functional infrastructure
-- Multiple products are moving this direction (Claude Cowork, Cursor for Teams, Copilot Workspace) — the pattern matters more than any one product
-- Ties the wrap-up back to the knowledge-extraction slide: the same harness primitives are now the interface non-engineers use
 
 BRIDGE: "Cross-functional infrastructure, in an environment that keeps changing. Which makes posture the real decision."
 -->

@@ -56,81 +56,10 @@ KEY POINTS:
 DELIVERY:
 - Make this feel like a correction to both hype and dismissal
 - Land "only" without minimizing the shift
+- Optional verbal (Boris Cherny, Head of Claude Code, via Lenny Rachitsky — x.com/lennysan/status/2025289168012595312): "You have to transport yourself to the current moment. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
+- Use that quote to reframe resistance as a stale mental model, not a lack of intelligence: expertise becomes inertia when capabilities move this fast, and newcomers can outperform simply by starting from current constraints instead of historical ones
 
-BRIDGE: "And inside that early, messy market, one part of the curve has already bent."
--->
-
----
-
-# The Inflection Point
-
-<v-click>
-
-Not one model release. Models got good enough, tooling matured, and adoption hit production scale — all in one compressed window.
-
-</v-click>
-<v-click>
-
-**December 2025** — Anthropic, Google, and OpenAI all shipped major updates in a single 30-day window. The vocabulary shifted from "AI Code Assistants" to "Agentic IDEs."
-
-</v-click>
-<v-click>
-
-**The skeptics were right for three years. Then the curve bent.**
-
-</v-click>
-
-<!--
-SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
-SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
-SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
-
-KEY POINTS:
-- This is the thesis slide for section 1
-- Emphasize convergence: model quality + tooling maturity + production adoption
-- The December window matters because multiple frontier labs moved at once
-- Vocabulary shift from "assistant" to "agent" signals a workflow shift, not just branding
-
-DELIVERY:
-- Reveal each bullet deliberately; don't rush to the conclusion
-- Pause after "the curve bent"
-
-BRIDGE: "If the people building these systems say old assumptions are stale, we should listen."
--->
-
----
-layout: quote
-class: quote-long
----
-
-<div class="quote-progressive">
-  <div class="quote-progressive-line">"You have to transport yourself to the current moment.</div>
-  <v-click>
-    <div class="quote-progressive-line">The new models are just completely, completely different.</div>
-  </v-click>
-  <v-click>
-    <div class="quote-progressive-line">The model changes so often that I sometimes get stuck in this old way of thinking.</div>
-    <div class="quote-progressive-line">I find that new people on the team do stuff in a more AGI forward way than I do."</div>
-  </v-click>
-</div>
-
-<div v-after class="mt-6 text-xl font-normal not-italic">
-  Boris Cherny, Head of Claude Code
-</div>
-
-<!--
-SOURCE: Boris Cherny, Head of Claude Code, via Lenny Rachitsky (x.com/lennysan/status/2025289168012595312)
-
-KEY POINTS:
-- This quote reframes resistance as stale mental models, not intelligence
-- Expertise can become inertia when capabilities shift quickly
-- Newcomers can outperform by starting with current constraints, not historical ones
-
-DELIVERY:
-- Let the progressive reveal do the work
-- Keep commentary short; preserve the quote's emotional weight
-
-BRIDGE: "It's not just one tool or one team. Let me show you how broad this already is."
+BRIDGE: "And inside that early, messy market, one part of the curve has already bent — and it isn't one vendor's curve."
 -->
 
 ---
@@ -165,16 +94,22 @@ SOURCE: Google CEO Sundar Pichai, earnings call
 SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
 SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
+SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
+SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 
 KEY POINTS:
 - Broaden from one metric to cross-industry signal
 - Start with recognizable tool names so the audience sees this is ecosystem-wide, not vendor-specific
+- The convergence framing belongs on the tool list: this wasn't one model release. Models got good enough, tooling matured, and adoption hit production scale in one compressed window — Anthropic, Google, and OpenAI all shipped major updates inside a single 30-day window in December 2025, and the vocabulary shifted from "AI Code Assistants" to "Agentic IDEs"
+- That vocabulary shift signals a workflow change, not just branding
 - Keep Spotify as the vivid story; treat others as corroboration
 - Frame this as workflow change, not just speed improvement
 - End with the implication: divergence between teams will widen
 - Eriksson provides a useful scale anchor: 84% of Earth's population (8.1B) have never used AI; only 0.3% have paid for AI; 0.04% have tried AI coding tools. The adoption numbers above are the bleeding edge — the rest of the world hasn't even started yet.
 
 DELIVERY:
+- Open on the tool names with the convergence line: "This wasn't one model release. In a single 30-day window last December, all three frontier labs shipped — and the whole category renamed itself from assistants to agents."
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
 - Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
 
@@ -219,6 +154,8 @@ DELIVERY:
 - Let "4%" breathe first
 - Click: the chart — the curve is exponential, not linear. Let the shape do the talking.
 - Click: "20%+ by end of 2026, from a tool launched February 2025" is the gut punch — pause and let it sink in
+- Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. This is the line that earns the Jack Clark quote next.
+- Deliberately not a slide: this `fact` layout is the densest in the deck (big number + chart + two lines) and has ~12px of vertical clearance left. Anything added here clips off the bottom.
 
 BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like trajectory."
 -->

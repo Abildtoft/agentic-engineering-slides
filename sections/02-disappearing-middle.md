@@ -40,6 +40,9 @@ This is where juniors learn. This is where craft gets built.
 <!--
 SOURCE: Karri Saarinen, Linear CEO (x.com/karrisaarinen/status/2007534281011155419)
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+SOURCE: George from prodmgmt.world (@nurijanian), "how Anthropic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
+SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
+SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
 
 KEY POINTS:
 - Define "the middle" concretely: translation, implementation, integration, and coordination work
@@ -47,52 +50,17 @@ KEY POINTS:
 - Seed the junior pipeline thread early — this pays off in Section 6's career advice
 - Reframe seniority: less about throughput in the middle, more about intent and judgment
 - Optional verbal: Malte Ubl (CTO, Vercel): "The cost of software production is trending towards zero" — sharp one-liner to land the compression claim
+- Say the product/design half out loud so the room doesn't hear this as engineering-only: the same compression hits the translation layer between roles. Issue tracking was built for a handoff model, and what used to be a handoff becomes an overlap problem — a PM-to-design-to-engineering waterfall turning into a shared zone. Translation-heavy work shrinks; process design, decision rights, and coordination matter more
+- George's line is the sharpest version: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
+- Optional verbal (Linear's own numbers, company-reported, 24 March 2026): agent-completed work grew 5x across Linear workspaces in three months, agents authored nearly 25% of new issues, and coding agents are installed in 75%+ of Linear enterprise workspaces. Agents are not just completing work — they are shaping the work entering the system. Use Linear as a category signal, not neutral proof
 
 DELIVERY:
 - Start with the historical baseline, then introduce compression
 - Let "This is where juniors learn" land — plant the seed, don't elaborate yet
 - Let "This is changing" land before moving on
+- Address product/UX explicitly here; keep the tone candid, not defensive
 
-BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%?"
--->
-
----
-
-# The Translation Layer Is Compressing
-
-<SlideImage src="/translation-layer-compression.png" alt="Before: PM hands off to spec, design, engineer, and code to reach product. Now: PM intent goes through an agent straight to product." size="md" />
-
-<v-click>
-
-Issue tracking was built for a **handoff model**.
-
-</v-click>
-<v-click>
-
-**What used to be a handoff becomes an overlap problem.**
-
-</v-click>
-
-<!--
-SOURCE: George from prodmgmt.world (@nurijanian), "how Anthropic is changing the PM role" (March 20, 2026, x.com/nurijanian/status/2035117765749875015)
-SOURCE: Cat Wu (@_catwu), "The PM playbook was built on an assumption..." (March 20, 2026, x.com/_catwu/status/2035104384007422347)
-SOURCE: Karri Saarinen, "Linear Next" (linear.app/next, March 24, 2026)
-
-KEY POINTS:
-- Apply the same compression logic to product work with a cleaner operating-model visual
-- Linear's phrasing sharpens the point: issue tracking was built for handoffs between roles
-- What used to be a product-to-design-to-engineering waterfall increasingly becomes a shared overlap zone
-- Translation-heavy work shrinks; process design, decision rights, and coordination matter more
-- This creates both opportunity and pressure for Product Managers, Product Owners, designers, and engineers
-- Use Linear here as a category signal, not neutral proof
-- Optional verbal (Linear's own numbers, company-reported, 24 March 2026): agent-completed work grew 5x across Linear workspaces in three months, agents authored nearly 25% of new issues, and coding agents are installed in 75%+ of Linear enterprise workspaces. Agents are not just completing work — they are shaping the work entering the system.
-
-DELIVERY:
-- Address product/UX explicitly so they feel included in the thesis
-- Call out George's line verbally: "we always wanted it to be a Venn diagram, but the reality was almost always a waterfall"
-- Keep tone candid, not defensive
-
-BRIDGE: "And for PMs, that compression shows up as a much shorter path from idea to first draft."
+BRIDGE: "If the middle was 80% of the effort, what happens when it drops to 20%? For anyone whose job was producing the artifact, that question gets uncomfortable fast."
 -->
 
 ---
@@ -112,10 +80,18 @@ class: statement-wide
 But the job is walking the terrain, understanding the politics, and deciding what should happen next. **The deck, prototype, and code are just evidence that the thinking happened.**
 
 </v-click>
+<v-click>
+
+<p class="mt-8 text-2xl leading-snug">“Talk is cheap. Show me the code.” <span class="text-base opacity-60">Linus Torvalds, 2000</span></p>
+
+<p class="mt-3 text-2xl leading-snug">“For the first time ever, good talk is exponentially more valuable than good code.” <span class="text-base opacity-60">Nadh, 2025</span></p>
+
+</v-click>
 
 <!--
 SOURCE: Aakash Gupta, quoting Duolingo's Chief Product Officer (x.com/aakashgupta/status/2034356648764948686, March 18, 2026)
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+SOURCE: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
 
 KEY POINTS:
 - The Duolingo quote is the product-side lived experience of the compression: PM leverage moves closer to first-draft creation, experimentation, and direction-setting
@@ -130,62 +106,9 @@ DELIVERY:
 - The quote grounds it; the final reveal resolves it
 - Keep this calm; it is not meant to reassure everyone equally — the distinction should feel useful rather than comforting
 - Optional verbal line: "If you can show instead of describe, the role changes."
+- The final click is the cultural inversion, and it needs the pause to work: read the Torvalds line first — the room will recognise it and half of them will agree with it — then let the 25-year gap do the work before reading Nadh. Frame it as pro-clarity, not anti-code: "talk" here means precise problem definition, not vague ideation, and it applies to every discipline in the room
 
-BRIDGE: "And that is why 'good talk' suddenly matters so much."
--->
-
----
-layout: quote
----
-
-<QuotePair
-  first="Talk is cheap. Show me the code."
-  firstAttribution="Linus Torvalds, 2000"
-  second="For the first time ever, good talk is exponentially more valuable than good code."
-  secondAttribution="Nadh, 2025"
-/>
-
-<!--
-SOURCE: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
-
-KEY POINTS:
-- Use this as a cultural inversion slide
-- "Talk" here means precise problem definition, not vague ideation
-- Connect the inversion to all disciplines, not just engineering
-
-DELIVERY:
-- Let the Torvalds quote land first, then reveal the inversion
-- Briefly explain why this is not anti-code; it is pro-clarity
-
-BRIDGE: "And once implementation complexity stops dictating team boundaries, those role walls start to compress too."
--->
-
----
-layout: statement
----
-
-The walls between design, product, and engineering were built from implementation complexity.
-
-<v-click>
-
-## As that complexity compresses — so do the walls.
-
-</v-click>
-
-<!--
-SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
-
-KEY POINTS:
-- Synthesis slide: role walls were partly a response to implementation friction
-- As friction drops, collaboration surfaces increase and handoff surfaces shrink
-- Distinct disciplines remain, but their operating model converges around shared judgment
-- Ayres provides market evidence: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end — the walls are compressing because the market is pricing them out
-
-DELIVERY:
-- Let the statement land — this should feel like a reveal, not an argument
-- Pause before the next slide — let the room process the implication
-
-BRIDGE: "Jenny Wen describes what that compression looks like from inside Anthropic."
+BRIDGE: "Jenny Wen describes what that shift looks like from inside the company building the agents."
 -->
 
 ---
@@ -224,7 +147,7 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 # One Surviving Skill Set
 
-<RolesBlurDiagram size="md" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
+<RolesBlurDiagram size="sm" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
 
 <v-click>
 
@@ -247,6 +170,8 @@ KEY POINTS:
 - Left panel: the old assumption — implementation complexity justified sequential handoffs.
 - Right panel: with implementation compressed, the disciplines overlap; what remains in the center is judgment.
 - The JUDGMENT label is the visual punchline — it's the thing that doesn't compress.
+- State the walls argument over the diagram rather than on a slide before it: the walls between design, product, and engineering were built from implementation complexity, so as that complexity compresses, so do the walls. Distinct disciplines remain; their operating model converges around shared judgment
+- Ayres supplies the market evidence that this is already priced in: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end
 - The throughline is identical across roles: reduce ambiguity, raise judgment quality
 - Important distinction: convergence of capabilities is not collapse of professions
 - The Product Engineer caption names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
@@ -283,7 +208,9 @@ Every time a bottleneck is removed, the constraint moves upstream — **not away
 </v-click>
 <v-click>
 
-The implementation middle is compressing. The constraint is moving to **clarity, judgment, and system design.** That's the new stack.
+The implementation middle is compressing. The constraint is moving to **clarity, judgment, and system design.**
+
+<p class="mt-6 text-2xl font-semibold">“Figure out your bottleneck, automate it, then find the next bottleneck.”</p>
 
 </v-click>
 
@@ -300,27 +227,13 @@ KEY POINTS:
 - We'll return to this frame in the wrap-up: "the bottleneck ultimately isn't technology — it's expert knowledge extraction"
 - The radiology case study is the modern proof of the same Jevons Paradox pattern: Geoffrey Hinton predicted AI would eliminate radiologists within five years. Instead, radiologist salaries rose 44% ($525K avg), Mayo Clinic doubled its staff, AI mammography detects 29% more cancers while reducing workload by 44%, and over 1,000 FDA-cleared AI radiology devices now exist. "AI didn't replace radiologists. It made imaging so much faster and cheaper that we started doing vastly more of it."
 
+- The operating principle on the final click is the section's takeaway line: it turns the cascade from an explanatory model into something repeatable. Automation does not end the work; it reveals where judgment and system design are needed next
+
 DELIVERY:
 - The weaving/yarn/fibre sequence should feel like a story, not a list
 - Pause after "not away" — this is the insight that makes the rest of the talk feel inevitable
 - Optional verbal addition after the weaving story: "Same thing happened in radiology. Geoffrey Hinton predicted AI would replace radiologists in five years. Instead, salaries went up 44%, Mayo Clinic doubled its staff, and AI mammography is catching 29% more cancers. When costs collapse, demand explodes. The constraint moved upstream — to the humans interpreting the results."
-
-BRIDGE: "So the operating principle is simple."
--->
-
----
-layout: statement
----
-
-# “Figure out your bottleneck, automate it, then find the next bottleneck.”
-
-<!--
-KEY POINTS:
-- Turn the bottleneck cascade from an explanatory model into a repeatable operating principle
-- Automation does not end the work; it reveals where judgment and system design are needed next
-
-DELIVERY:
-- Let the sentence stand on its own; do not elaborate before moving on
+- On the last click, let the principle sit on its own before advancing — don't elaborate. Then hand off verbally: "That's the new stack."
 
 BRIDGE: "Now let me show you the toolkit for the new bottleneck: context, specs, and tooling."
 -->

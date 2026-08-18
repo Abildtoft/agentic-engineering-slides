@@ -103,21 +103,24 @@ BRIDGE: "Let's look at each discipline."
 </v-click>
 <v-click>
 
-Copy-pasting snippets into ChatGPT was the first wave — but the context was never enough. The key unlock of Claude Code and similar tools: the agent itself discovers your codebase.
+But every model has a finite memory — a context window. Not everything fits. Context engineering gets the *important* information into that budget: right information, right order, right time.
 
 </v-click>
 <v-click>
 
-But every model has a finite memory — a context window. Not everything fits. Context engineering gets the *important* information into that budget: right information, right order, right time.
+> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
+
+Design system docs, component specs, token definitions — context too. **Documentation is now production infrastructure, not supporting material.**
 
 </v-click>
 
 <!--
 SOURCE: Addy Osmani (x.com/addyosmani/status/2007899127925854536)
 SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
+SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
 
 KEY POINTS:
-- Progressive disclosure: copy-paste → chat-in-IDE → agent discovers your whole project on its own
+- Tell the progressive-disclosure story over the first click rather than giving it a line: copy-paste into ChatGPT was the first wave and the context was never enough, then chat-in-IDE, and now the agent navigates and reads the project on its own. The room has lived the copy-paste phase and will nod
 - The key unlock of Claude Code: the agent itself navigates, reads, and builds context — no manual feeding required
 - Finite context window means you can't dump everything in — you must curate the discovery journey
 - Trivedy calls this "Context Rot": models become worse at reasoning as their context fills up. "Harnesses today are largely delivery mechanisms for good context engineering."
@@ -128,41 +131,13 @@ KEY POINTS:
 - Layering: root file = project-wide rules, directory files = domain-specific constraints
 - Start with one file at root. Add directory-level files only when you see repeated mistakes
 
+- The Tacho quote on the last click reframes context engineering as universal, not code-specific: product docs, design tokens and component specs are all first-class context. An accessibility audit agent is only as good as the guidelines you give it
+- For designers: your Figma component documentation and design tokens are context inputs exactly as AGENTS.md is for engineers
+
 DELIVERY:
 - Land the opener and pause — the audience will nod because they've lived the copy-paste phase
 - If the room is technical, mention the inheritance model (root AGENTS.md + subdirectory overrides)
-
-BRIDGE: "And this isn't just an engineering concern."
--->
-
----
-
-# Context Is Cross-Functional
-
-> "The Venn Diagram of Developer Experience and Agent Experience is a circle." — **Laura Tacho**
-
-<v-click>
-
-Your design system docs, component specs, and token definitions are context too. An accessibility audit agent is only as good as the guidelines you give it.
-
-</v-click>
-<v-click>
-
-Documentation is now production infrastructure, not supporting material.
-
-</v-click>
-
-<!--
-SOURCE: Laura Tacho, via Martin Fowler (martinfowler.com/fragments/2026-02-13.html)
-
-KEY POINTS:
-- The Tacho quote reframes context engineering as universal, not code-specific
-- Product docs, design tokens, component specs — all first-class context for agents
-- For designers in the room: your Figma component documentation and design tokens are first-class context inputs, same as AGENTS.md for engineers
-
-DELIVERY:
-- If there are designers in the room, make eye contact on this slide
-- Keep this brief — it's a reframe, not a deep dive
+- Keep the last click brief — it's a reframe, not a deep dive. If there are designers in the room, make eye contact on it
 
 BRIDGE: "Context engineering shapes what the agent knows. The second discipline shapes what the agent does."
 -->

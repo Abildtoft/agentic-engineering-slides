@@ -23,24 +23,6 @@ BRIDGE: "And remember — going from one agent to many isn't a scaling problem. 
 -->
 
 ---
-layout: quote
----
-
-# "A program is more than its source code. Rather a program is a theory that lives in the minds of the developers."
-
-Peter Naur
-
-<!--
-
-SOURCE: Peter Naur, "Programming as Theory Building" (1985), cited by Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
-
-KEY POINTS:
-- Establish the foundational premise: code artifacts are not equivalent to shared understanding
-- This quote gives the section a durable pre-AI anchor
-- Everything after this is an implication of this idea
--->
-
----
 
 # Cognitive Debt
 
@@ -63,8 +45,10 @@ Even if agents produce clean code, the humans may have simply **lost the plot**.
 <!--
 
 SOURCE: Margaret-Anne Storey, cited by Simon Willison (simonwillison.net/2026/Feb/15/cognitive-debt/)
+SOURCE: Peter Naur, "Programming as Theory Building" (1985), cited by Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 
 KEY POINTS:
+- Open on Naur rather than giving him a slide — he is the durable pre-AI anchor, and everything in this section is an implication of the idea: "A program is more than its source code. Rather a program is a theory that lives in the minds of the developers." Code artifacts are not the same thing as shared understanding
 - Define the distinction crisply: technical debt in code, cognitive debt in people
 - Main risk: teams can ship clean output while losing comprehension
 - This is the core diagnostic slide for the section
@@ -118,25 +102,6 @@ BRIDGE: "It's not just a student-team problem. It's a structural pattern."
 
 ---
 layout: statement
----
-
-# Velocity without understanding is not sustainable.
-
-<!--
-SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
-
-KEY POINTS:
-- Hinge statement for the section
-- Summarize the diagnosis before showing how it changes review and team behavior
-- Pairs with the next slide as a twin statement — let them feel intentionally linked
-
-DELIVERY:
-- Let this hang in the air
-- No verbal bridge — go straight into the twin statement
--->
-
----
-layout: statement
 class: statement-wide
 ---
 
@@ -156,9 +121,15 @@ class: statement-wide
 
 <!--
 SOURCE: Søren Christensen, "The Frictionless Trap" (linkedin.com/pulse/frictionless-trap-s%C3%B8ren-christensen-n1cce/)
+SOURCE: CodeRabbit, State of AI vs. Human Code Generation study
+SOURCE: Fastly developer survey
+
 KEY POINTS:
 - Reframes Christensen's key point in the cognitive-debt section's language
-- Pairs with "Velocity without understanding is not sustainable"
+- Lead in with the one-line version of the diagnosis: "velocity without understanding is not sustainable"
+- The hard numbers behind it, if the room wants evidence rather than assertion: CodeRabbit's comparative study found 1.7x more bugs in AI-generated code than human-written and 1.4x more critical issues; Fastly found 30% of senior developers say auditing AI output offsets their time savings, and ~33% of seniors ship half their code as AI-generated versus only 13% of juniors
+- Cultural marker if useful: Collins Dictionary named "vibe coding" Word of the Year 2025; Merriam-Webster chose "slop"
+- Optional verbal (thdxr): "I don't think we're even trading all this off to move faster. I think we're moving at a normal pace." The debt accumulates without the speed payoff
 - "Understanding" is the irreducibly human work — the integration your brain does that becomes judgment
 - Christensen's useful distinction: AI can remove friction by generating thoughts for approval, or create productive friction by challenging thoughts the human already has
 - The trap is the frictionless path, not the tool itself
@@ -168,79 +139,7 @@ DELIVERY:
 - Reveal "frictionless path" as the actual risk
 - The final reveal is the operating boundary: AI can accelerate thought, but understanding still has to be earned
 
-BRIDGE: "And this isn't just a feeling. The data backs it up."
--->
-
----
-layout: fact
----
-
-<BigNumber
-  value="1.7x"
-  label="more bugs in AI-generated code than human-written"
-  sublabel="And 1.4x more critical issues (CodeRabbit, State of AI vs. Human Code Generation)"
-/>
-
-<v-click>
-
-<p class="mt-8 text-xl">30% of senior developers say auditing AI output <strong>offsets their time savings</strong> <span class="opacity-60">(Fastly)</span></p>
-
-</v-click>
-
-<!--
-
-SOURCE: CodeRabbit, "A Semantic History: How 'Vibe Coding' Went from a Tweet to Prod" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
-SOURCE: CodeRabbit, State of AI vs. Human Code Generation study
-SOURCE: Fastly developer survey
-
-KEY POINTS:
-- Ground the abstract "velocity without understanding" claim in hard numbers
-- The 1.7x bug ratio comes from CodeRabbit's comparative study of AI vs human code
-- The 30% audit-offset stat is from Fastly's developer survey — seniors report that the time saved by AI generation is consumed by reviewing and fixing the output
-- Additional stat for verbal use: ~33% of seniors ship half their code as AI-generated vs. only 13% of juniors (Fastly)
-- Cultural marker for verbal use: Collins Dictionary named "vibe coding" Word of the Year 2025; Merriam-Webster chose "slop" instead
-
-DELIVERY:
-- Let the number land before the v-click
-- The audience will feel the tension: the tools are powerful, but the quality gap is measurable
-- Optional verbal: "Karpathy coined 'vibe coding' for weekend hacking. Collins made it Word of the Year. Merriam-Webster's word of the year? 'Slop.' That tells you something about where the conversation went."
-- Optional verbal (thdxr): "The worst part? One practitioner put it this way: 'I don't think we're even trading all this off to move faster. I think we're moving at a normal pace.' The debt accumulates without the speed payoff."
-
-BRIDGE: "And in high-stakes domains, that gap becomes dangerous."
--->
-
----
-layout: statement
-class: statement-wide
----
-
-# Cognitive debt can be catastrophic — in security, privacy, and compliance.
-
-<v-click>
-
-## The goal is thoughtful deployment, not paralysis.
-
-</v-click>
-<v-click>
-
-Build safeguards. Hold people accountable. Keep capturing the upside.
-
-</v-click>
-
-<!--
-SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
-
-KEY POINTS:
-- Raise severity first: this is not only about productivity or elegance — comprehension failures can become incidents, fines, and trust damage
-- Every technology wave creates new ways to harm people, by accident or on purpose; databases, social media, and AI all changed the harm surface area
-- But fear of possible harm cannot be the whole operating model
-- This is the governance posture for the section: risk awareness, safeguards, accountability, and continued deployment
-
-DELIVERY:
-- Let the headline sit as the severity marker, then click — the reveal is the release valve
-- Make the tone sober rather than alarmed
-
-BRIDGE: "The practical version of thoughtful deployment is changing what humans review."
+BRIDGE: "And if understanding is what's at risk, the practical response is to change what humans actually review."
 -->
 
 ---
@@ -249,11 +148,8 @@ layout: default
 
 # From Reviewing Code to Reviewing Intent
 
-<v-click>
-
 Line-by-line PR review does not scale with agentic output.
 
-</v-click>
 <v-click>
 
 Move the human checkpoint upstream: **review specs, constraints, and acceptance criteria** before generation.
@@ -322,49 +218,6 @@ BRIDGE: "And the biggest hole is in the layer we trust most: human review."
 -->
 
 ---
-layout: default
----
-
-# Cognitive Surrender
-
-<v-click>
-
-Kahneman's System 1 (fast intuition) and System 2 (slow analysis). AI is becoming **System 3** — an external cognitive system that operates outside your brain.
-
-</v-click>
-<v-click>
-
-**Cognitive Surrender**: your brain stops questioning AI output and recodes it as your own conclusion. It doesn't feel outsourced — it feels self-generated.
-
-</v-click>
-<v-click>
-
-This is not laziness. It's a **cognitive architecture problem**.
-
-</v-click>
-
-<!--
-
-SOURCE: Steven D. Doshi & Gideon Neel, "Thinking — Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender" (Wharton School, University of Pennsylvania, 2026)
-SOURCE: Rohan Paul (x.com/rohanpaul_ai/status/2036134704999694835)
-
-KEY POINTS:
-- Distinguish from offloading: using a calculator, you know the tool did the work. With surrender, your brain recodes the AI's answer as YOUR judgment — you genuinely believe you thought it through
-- This names the specific hole in the Swiss-cheese model's "human review" layer
-- 3 preregistered studies, 1,372 participants, 9,593 trials — robust methodology
-- People deferred to AI on over 50% of questions
-- Time pressure didn't eliminate the effect. Incentives and feedback reduced it but didn't remove it.
-- People most resistant scored higher on fluid intelligence and need for cognition — this is structural, not about effort
-
-DELIVERY:
-- Let System 3 land before the v-click
-- The word "self-generated" is the key — pause on it
-- Verbal bridge: "This is the hole in the safety net we just described. Human review is supposed to catch AI mistakes. But what if the reviewer's brain has already accepted the answer?"
-
-BRIDGE: "And the data makes this hard to brush off."
--->
-
----
 layout: fact
 ---
 
@@ -384,12 +237,22 @@ layout: fact
 <p class="mt-4 text-lg opacity-75">AI boosted confidence by <strong>11.7 percentage points</strong>, even on wrong answers.</p>
 
 </v-click>
+<v-click>
+
+<p class="mt-4 text-lg"><strong>Cognitive surrender</strong> — the brain recodes the answer as its own. It doesn't feel outsourced. It feels self-generated.</p>
+
+</v-click>
 
 <!--
 
-SOURCE: Doshi & Neel, "Thinking — Fast, Slow, and Artificial" (Wharton, 2026)
+SOURCE: Doshi & Neel, "Thinking — Fast, Slow, and Artificial: How AI is Reshaping Human Reasoning and the Rise of Cognitive Surrender" (Wharton School, University of Pennsylvania, 2026)
+SOURCE: Rohan Paul (x.com/rohanpaul_ai/status/2036134704999694835)
 
 KEY POINTS:
+- Set up the last click with Kahneman before revealing it: System 1 is fast intuition, System 2 is slow analysis, and AI is becoming System 3 — an external cognitive system operating outside your brain
+- Distinguish surrender from offloading: with a calculator you know the tool did the work; with surrender your brain recodes the AI's answer as YOUR judgment and you genuinely believe you reasoned it through. This is not laziness, it is a cognitive architecture problem
+- This names the specific hole in the Swiss-cheese model's "human review" layer — the reviewer's brain has already accepted the answer
+- People deferred to AI on over 50% of questions. Time pressure didn't eliminate the effect; incentives and feedback reduced it without removing it. Those most resistant scored higher on fluid intelligence and need for cognition — structural, not about effort
 - When AI was correct, 92.7% followed it — that's expected
 - When AI was wrong, 79.8% still followed — that's the problem
 - Baseline accuracy without AI was 45.8%; with correct AI jumped to 71.0%; with incorrect AI dropped to 31.5% — access to wrong AI made people perform WORSE than no AI
@@ -428,8 +291,15 @@ layout: default
 
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
 SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
+SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
+SOURCE: M. Karen Shen (UBC), research on compulsive chatbot use — "AI genie phenomenon" and "epistemic rabbit holes"
+SOURCE: B.F. Skinner, variable-ratio reinforcement schedules (1950s)
 
 KEY POINTS:
+- Name the mechanism while the spiral is on screen: each prompt is a pull on a slot machine. Variable-ratio reinforcement, the same schedule that makes gambling compulsive — each response partially satisfies but opens a new question. Researchers call these "epistemic rabbit holes": never quite enough to stop, always enough to continue
+- Say it without moralising — the point is that the mechanism is predictable, and predictable means manageable
+- Parrott's anecdote if you want the human version: she sat down on a Friday afternoon to configure an AI assistant for "a few hours, tops" — 12 hours later she had written essays, rebuilt her website and added app features, then got out of bed at 1 a.m. to keep going
+- What keeps people at the machine — FOBO (Fear of Becoming Obsolete) is the ignition, the dopamine loop is the fuel (Ernst & Young 2025): 54% of employees feel they're falling behind peers in AI use, 85% are learning on their own time. Organisations may not intervene because "workers voluntarily take on more and produce faster without being asked"
 - Make clear why the spiral is seductive: every step feels locally rational
 - The risk is gradual substitution of construction with passive review
 - Dependency forms by accumulation, not one dramatic event
@@ -452,43 +322,6 @@ BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasional
 
 ---
 layout: statement
-class: statement-wide
----
-
-# Each prompt is a pull on a slot machine.
-
-<v-click>
-
-Partial satisfaction opens the next question. Researchers call them **epistemic rabbit holes** — never quite enough to stop, always enough to continue.
-
-</v-click>
-
-<!--
-
-SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
-SOURCE: M. Karen Shen (UBC), research on compulsive chatbot use — "AI genie phenomenon" and "epistemic rabbit holes"
-SOURCE: B.F. Skinner, variable-ratio reinforcement schedules (1950s)
-
-KEY POINTS:
-- Name the mechanism behind the confidence spiral: variable-ratio reinforcement — the same schedule that makes slot machines addictive
-- Shen's framing: "each AI response partially satisfies but opens a new question"
-- Parrott's anecdote: started configuring an AI assistant on a Friday afternoon for "a few hours, tops" — 12 hours later she had written essays, rebuilt her website, and added app features, then launched out of bed at 1 a.m. to keep going
-- The insight is structural, not moral: the tools are designed to produce partial satisfaction
-- What keeps people sitting at the machine — FOBO (Fear of Becoming Obsolete) is the ignition, the dopamine loop is the fuel (Ernst & Young 2025 survey):
-  - 54% of employees feel they're falling behind peers in AI use
-  - 85% are learning on their own time; 83% report self-taught AI knowledge — organizations aren't providing the structure
-  - Organizations may not intervene because "workers voluntarily take on more and produce faster without being asked"
-
-DELIVERY:
-- Let the slot machine metaphor land — the room will recognize the pattern in themselves
-- Don't moralize; the point is that the mechanism is predictable and therefore manageable
-- Optional verbal: "And what keeps people sitting at the machine? Ernst & Young found 54% of employees feel they're falling behind peers in AI use, and 85% are learning on their own time. The fear sends you to the laptop. The slot machine keeps you pulling."
-
-BRIDGE: "The mechanism is predictable — and predictable means manageable."
--->
-
----
-layout: statement
 ---
 
 # This is a choice, not a fate.
@@ -498,13 +331,21 @@ layout: statement
 > "Having poor quality code from an agent is a choice that you make." — **Simon Willison**
 
 </v-click>
+<v-click>
+
+The goal is **thoughtful deployment, not paralysis.** Build safeguards. Hold people accountable. Keep capturing the upside.
+
+</v-click>
 
 <!--
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 
 KEY POINTS:
 - Pivot from the debt patterns to agency — the audience needs to exhale
 - Willison's quote sharpens the pivot: poor output is a harness failure, not a model limitation. Agents CAN produce quality code if you invest in the system around them.
+- Raise the stakes before the release valve: cognitive debt can be catastrophic in security, privacy and compliance. Comprehension failures become incidents, fines and trust damage, not just inelegant code. Every technology wave creates new ways to harm people — databases, social media, AI all changed the harm surface area — but fear of possible harm cannot be the whole operating model
+- The second click is the governance posture for the section: risk awareness, safeguards, accountability, and continued deployment. Keep the tone sober rather than alarmed
 - Brief pause before the practical antidote checklist
 
 DELIVERY:
@@ -525,12 +366,12 @@ DELIVERY:
 </v-click>
 <v-click>
 
-**The harness in motion** — the agent executing, the human reviewing. At least one human must fully understand each change before it ships.
+**The explainability gate** — no merge until the author can explain intent, tradeoffs, and failure modes. At least one human must fully understand each change before it ships.
 
 </v-click>
 <v-click>
 
-**The output** — shipped, understood, owned. Document not just what changed, but **why.**
+**The ownership check** — one named human confirms end-to-end understanding and maintenance ownership. If that fails, slow down and re-scope.
 
 </v-click>
 
@@ -541,7 +382,9 @@ SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 
 KEY POINTS:
-- Close the section with a practical control model: intent, review, ownership
+- Close the section with a practical control model: intent, review, ownership. These are the team-level operating rules, and this is the point where governance becomes memorable and actionable
+- The third check that didn't fit on screen is the reasoning log: capture why this approach won, what was rejected, and what validated it. Document not just what changed, but why
+- Use the commit-message example verbally: if you cannot explain a change you submitted, the debt is already accumulating
 - Stress accountability: at least one human must understand each shipped change
 - Link back to section 3: harness discipline is the preventive mechanism
 - Eriksson's Intercom/Fin case study is a positive counterexample of getting this right: they built Fin (resolving 1M+ weekly tickets), shifted to outcome-based pricing ($0.99/resolution), and reached $100M+ ARR in under a year. The key: they aligned incentives so the AI had to actually work — not just ship fast. Outcome-based pricing is a structural antidote to cognitive debt because it forces you to own the quality of AI output, not just its volume.
@@ -549,46 +392,6 @@ KEY POINTS:
 DELIVERY:
 - Land the three-part model cleanly before introducing operating checks
 - Optional verbal after "the output — shipped, understood, owned": "Intercom did something smart here. When they built Fin — their AI support agent — they didn't just bolt it on. They shifted to outcome-based pricing: 99 cents per resolved ticket. That forces you to own quality, not volume. If the AI doesn't actually work, you don't get paid. That's the kind of structural incentive that prevents cognitive debt from compounding."
-
-BRIDGE: "And for non-trivial work, that operating model needs explicit checks."
--->
-
----
-layout: default
----
-
-# Three Checks for Non-Trivial Changes
-
-<v-click>
-
-**Explainability gate** — no merge until the author can explain intent, tradeoffs, and failure modes.
-
-</v-click>
-<v-click>
-
-**Reasoning log** — capture why this approach won, what was rejected, and what validated it.
-
-</v-click>
-<v-click>
-
-**Ownership check** — one named human confirms end-to-end understanding and maintenance ownership.
-
-</v-click>
-<v-click>
-
-If one check fails, slow down and re-scope.
-
-</v-click>
-
-<!--
-
-SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
-SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
-
-KEY POINTS:
-- Translate the antidote into team-level operating rules
-- This is the point where governance becomes memorable and actionable
-- Use the commit-message example verbally: if you cannot explain a change you submitted, the debt is already accumulating
 
 BRIDGE: "That is the operating model. The final question is what kind of people this model rewards."
 -->
