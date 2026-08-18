@@ -196,7 +196,7 @@ layout: default
 
 # The Swiss-Cheese Model
 
-<SlideImage src="/reviews-dead-trust-layers.png" alt="Layered swiss-cheese slices labeled compare multiple options, deterministic guardrails, acceptance criteria, permission systems, adversarial verification — building trust through layers" size="md" />
+<SwissCheeseDiagram size="lg" />
 
 <v-click>
 
@@ -211,7 +211,8 @@ Cognitive debt makes the holes bigger. **Incidents happen when they line up.**
 
 <!--
 SOURCE: James Reason, Swiss-cheese model of accident causation
-SOURCE: Image from Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
+SOURCE: Layer labels from Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead) — diagram redrawn in deck style
+NOTE: The "incident" through-arrow draws on the second click, with the "they line up" line — don't advance past it early
 SOURCE: CodeRabbit, "A Semantic History of Vibe Coding" (coderabbit.ai/blog/a-semantic-history-how-the-term-vibe-coding-went-from-a-tweet-to-prod)
 
 KEY POINTS:
@@ -275,7 +276,7 @@ layout: default
 
 # The Confidence Spiral
 
-<SlideImage src="/confidence-spiral.png" alt="The confidence spiral diagram" />
+<ConfidenceSpiralDiagram size="md" />
 
 <v-click>
 

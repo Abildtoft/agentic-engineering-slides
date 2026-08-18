@@ -159,7 +159,9 @@ layout: center
 class: text-center
 ---
 
-<SlideImage src="/kitchen-analogy-apis-skills-mcp.png" alt="The kitchen analogy: APIs are the utensils, skills are the recipes, MCPs are the kitchen" size="md" />
+# The Kitchen Analogy
+
+<KitchenAnalogyDiagram size="lg" />
 
 <v-click>
 
@@ -264,7 +266,7 @@ layout: default
 
 # Guardrails
 
-<SlideImage src="/guardrails-bowling.jpg" alt="Bowling lane guardrails" size="sm" />
+<GuardrailsLaneDiagram size="lg" />
 
 <v-click>
 

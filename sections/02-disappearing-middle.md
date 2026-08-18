@@ -19,7 +19,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 # The Middle of Software Work
 
-<SlideImage src="/disappearing-middle.png" alt="The compressing middle of software work" size="sm" />
+<SoftwareMiddleDiagram size="lg" />
 
 <v-click>
 
