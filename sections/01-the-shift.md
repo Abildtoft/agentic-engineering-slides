@@ -135,52 +135,73 @@ DELIVERY:
 - The asterisk lands on its own click, after the room has had a beat to be impressed by the grid — it re-reads numbers they've already accepted rather than qualifying them up front. It is a setup, not a disclaimer: say the implication out loud — these are the last numbers these companies published, so every one of them is a floor, not a ceiling. Dated: Spotify Feb 2026 (the newest of the four), Anthropic/OpenAI Jan 2026, Google Q4 earnings call; Nadella's 20–30% is the oldest and predates the rest by roughly a year, which is why the slide says "at least six months" rather than naming a window. Re-check the wording if you present this after roughly Q1 2027
 - Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
 
-BRIDGE: "And if you still think this is vendor hype, one metric shows how fast one of these tools scaled."
+BRIDGE: "And if you still think this is vendor hype — you don't have to take their word for it. Here's my own ledger."
 -->
 
 ---
-layout: fact
+clicks: 6
 ---
 
-<BigNumber
-  value="4%"
-  label="of public GitHub commits carry a clear Claude Code attribution"
-  sublabel="Only the ones we can count — the real number is far higher (SemiAnalysis, February 2026)"
-/>
+# Same Person, Same Job
 
-<v-click>
+<MergeLedgerCompare class="mt-12" />
 
-<CommitGrowthChart size="md" />
+<!--
+SOURCE: Personal Merge Ledger export — every PR/MR authored by me and merged on GitHub and GitLab, calendar windows August 2024 – July 2025 against August 2025 – July 2026 (the ledger starts 14 August 2024, so the first window is missing its first thirteen days — immaterial at this scale)
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — the industry-scale version of the same curve: 4% of public GitHub commits carry a clear Claude Code attribution, 20%+ projected by year-end; useful as verbal setup
 
-</v-click>
-<v-click>
+KEY POINTS:
+- Same evidence beat the industry stat used to hold, but first-party: my own git log, not vendor data — nobody can call it hype
+- The numbers: PRs 343 → 6,102 (×17.8, shown ×18); commits 967 → 15,710 (×16.2, shown ×16); tests 5 → 57,179 (×11,436 — shown literally, because it is the punchline)
+- Aggregate numbers only — no repo or client names anywhere on these two slides
+- Lines changed stays off the slide deliberately — it invites the lockfile/generated-code debate; merged PRs are reviewed, accepted work
+- Two clicks per metric (the slide declares `clicks: 6`): the odd click lands the old year's sliver, the even click sweeps the new year's bar out with a count-up and lands the multiplier — so the old number can be held on screen for as long as the narration needs
 
-<p class="mt-2 text-lg">At current trajectory, <strong>20%+ of all daily commits</strong> by end of 2026 — from a tool that launched <strong>February 2025</strong></p>
+DELIVERY:
+- Verbal setup off the previous slide, if useful: SemiAnalysis counts 4% of public GitHub commits with clear Claude Code attribution — and that's only the ones you can count. "But you don't have to take their word for it. This is my own ledger."
+- The slide arrives with just the two years, side by side and empty. Name them: "Same person, same job. The only thing that changed between these two years is the stack."
+- Click: last year's pull requests — 343. Give it its due: "That was a normal, productive year. I was proud of it."
+- Click: this year sweeps out. Say nothing until the bar lands — the sliver against the bar is the sentence.
+- Click: last year's commits — brisk. Click: this year's. "Same story."
+- Click: last year's tests. This is the one to sit on. "Five. In a year." Hold it — the hairline is doing the work.
+- Click: the count runs to 57,179. "That multiplier is not a typo — the agents test more than I ever did."
+
+BRIDGE: "And the interesting part isn't the totals. It's when it happened."
+-->
+
+---
+clicks: 2
+---
+
+# The Curve Bent in January
+
+<MergeLedgerChart class="mt-10" />
+
+<v-click at="2">
+
+<p class="mt-8 text-lg">Since March, <strong>every single month</strong> has out-merged the entire year before.</p>
 
 </v-click>
 
 <!--
-SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26)
-SOURCE: GitHub/Anthropic data (youtube.com/watch?v=We7BZVKbCVw)
+SOURCE: Personal Merge Ledger export (see previous slide)
 
 KEY POINTS:
-- Use this as one vivid metric after the broader ecosystem signal, not as the thesis itself
-- 4% counts only commits with explicit Claude Code attribution (co-authored-by trailer, etc.)
-- Many users strip attribution, use other tools, or work in private repos — actual AI-authored share is much higher
-- This is the floor, not the ceiling
-- The growth curve is exponential — ~135K daily commits at time of tweet
-- The on-slide chart is a stylised re-plot of the SemiAnalysis curve in deck colours: the anchors (launch Feb 2025, 134,646/day Feb 2026) are sourced; the shape between them is illustrative. The original screenshot stays at public/semianalysis-claude-code-commits.png
-- At current trajectory, 20%+ by end of 2026 — frame as trajectory, not prediction
-- Claude Code launched February 2025 — one tool, one year, 4% of all public commits
+- Real data, not a stylised curve: merged PRs/MRs per month, full months September 2024 through July 2026; the partial Augusts at each end are dropped
+- The flat line is not laziness — 25–65 merges a month was a normal, productive year; the "~30 / month" label makes that the peak label's counterpart
+- The inflection: Dec 2025: 58 → Jan 2026: 176 → Feb: 264 → Mar: 790 → May/Jun: ~1,350
+- The prior year (Aug '24 – Jul '25) totalled 343; March 2026 alone was 790
+- August 2026 sits at 534 after thirteen days — the half-month has already out-merged the entire prior year
+- The shape is the same exponential the industry charts show; this is what it looks like from inside one engineer's git log
+- The chart reads the slide's clicks without consuming any: the climb rides click 1, so the text reveal is pinned past it with `at="2"` and the slide declares `clicks: 2`
 
 DELIVERY:
-- Let "4%" breathe first
-- Click: the chart — the curve is exponential, not linear. Let the shape do the talking.
-- Click: "20%+ by end of 2026, from a tool launched February 2025" is the gut punch — pause and let it sink in
+- The slide arrives with only the flat year, drawing itself out slowly and stopping dead at December 2025. Let the draw finish before speaking to it: "That was me being productive." Sit in that beat — the line going nowhere is the setup.
+- Click: the curve bends and accelerates through spring. Say nothing while it climbs; the peak label landing is the cue.
+- Click: the March line is the gut punch — pause and let it sink in
 - Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. This is the line that earns the Jack Clark quote next.
-- Deliberately not a slide: this `fact` layout is the densest in the deck (big number + chart + two lines). The SVG chart bought back some clearance over the old screenshot, but there is still no room for another line of content.
 
-BRIDGE: "That is why Jack Clark's prediction sounds less like hype and more like trajectory."
+BRIDGE: "Jack Clark put a date on this feeling — and my curve peaks right on it."
 -->
 
 ---
