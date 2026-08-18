@@ -122,6 +122,48 @@ DELIVERY:
 - Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
 - Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
 
+BRIDGE: "One artifact captures cheap learning better than anything else: the prototype."
+-->
+
+---
+layout: statement
+---
+
+# The prototype is the new brief.
+
+<v-click>
+
+A concept you can click beats a concept you can read. **People react to artifacts, not descriptions.**
+
+</v-click>
+<v-click>
+
+The first draft no longer needs a developer. A written idea becomes a working demo **in an afternoon, not a sprint.**
+
+</v-click>
+<v-click>
+
+Most prototypes should die. **That's the point** — they are the cheapest way to find out you're wrong.
+
+</v-click>
+
+<!--
+SOURCE: Andrew Chen, "the prototype is the new PRD" (x.com/andrewchen/status/2025022470550684037)
+SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
+
+KEY POINTS:
+- Chen's original phrasing is "the prototype is the new PRD" — reworded to "brief" so it lands for non-product audiences; credit him verbally
+- This is the previous slide made concrete: of all the cheap-evidence artifacts, the prototype is the one everyone in the room can produce
+- The first draft is no longer gated on engineering: tools like Lovable, v0, Bolt, and Claude Artifacts turn a written concept into something clickable — name the tools verbally rather than on the slide, they date fast
+- The division of labor that follows: domain people build the throwaway draft, developers harden only what earns survival — that is how prototyping protects development hours instead of consuming them
+- The kill rate is the feature, not the waste: a dead prototype is validated learning at the lowest possible price; a dead production feature is not
+- Honesty note: a prototype is not a product. The moment it touches real data or real users, the guardrails story from Section 3 applies — this is exactly why cheap drafts don't make developers optional
+- Connects back to "the failure mode is building yesterday's software faster": the prototype is how you avoid scoping the wrong thing at production quality
+
+DELIVERY:
+- For client-facing audiences: "Instead of describing a concept in a deck, hand the client something they can click. The reaction you get to an artifact is a different class of evidence than the reaction you get to a slide."
+- Land the third click with a pause — "most prototypes should die" sounds like failure until the second half reframes it
+
 BRIDGE: "And don't mistake cheaper learning for shrinking demand. The opposite is happening."
 -->
 
@@ -165,6 +207,47 @@ DELIVERY:
 - Optional verbal: "An economist would call this Jevons Paradox. When coal engines got more efficient, we didn't use less coal — we used more. The same thing is happening with code. As software gets cheaper to produce, demand for software expands."
 - Optional accounting version: "Accounting has been automated for a century. The profession did not vanish; the surface area expanded because the ROI of measuring, reporting, and planning changed."
 - Keep the individual pain caveat honest: on average society gets richer, but the averages hide real displacement. People lose jobs, towns hollow out, and transitions hurt before the new roles are visible.
+
+BRIDGE: "That expansion doesn't start with new products. It starts with the software nobody could ever justify building."
+-->
+
+---
+class: v-center
+---
+
+# The Long Tail of Internal Software
+
+Every team runs on invisible workflows: the report assembled by hand, the data moved by copy-paste, the checklist in someone's head.
+
+<v-click>
+
+Too small for a development project, too specific to buy off the shelf. **Below the build threshold — so it stayed manual.**
+
+</v-click>
+<v-click>
+
+When production cost collapses, the threshold drops. **The backlog nobody ever wrote down becomes buildable.**
+
+</v-click>
+
+<!--
+SOURCE: Dave Kellogg, "Why I'm Not Worried About Running Out of Work in the Age of AI" (kellblog.com, March 2026)
+SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
+SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+
+KEY POINTS:
+- This is the previous slide's economics made concrete: the expanded demand lands first in the long tail, not in flagship products
+- Every organization carries an implicit build threshold — "not worth a developer's time" — and an unwritten backlog of everything below it
+- Agentic production drops that threshold by an order of magnitude; the unwritten backlog is the first demand that becomes real
+- Collina names the role this creates: the "software plumber" — someone wiring bespoke small tools and glue for organizations that could never justify custom software before
+- Willison's date-picker point is the same force one level down: when generation is cheap, bespoke beats generic — and internal tools are the most bespoke software there is
+- Internal tools are also the safest place to start: known users, low blast radius, and the guardrails story from Section 3 applies at small scale
+- Cross-role implication: the person who feels the manual workflow can now spec it directly — this sets up the knowledge-into-systems slide in Section 6
+
+DELIVERY:
+- Make it interactive if the room allows: "What do you assemble by hand every week? That list is the backlog nobody wrote down."
+- Tailor the examples to the audience — reporting stitched across systems, asset handoff between tools, one-off client utilities, glue around the in-house product
+- Don't oversell: the threshold drops, it doesn't vanish. Someone still owns, runs, and retires these tools — that's the accumulation warning coming later in this section
 
 BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 -->

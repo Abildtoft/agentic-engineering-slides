@@ -170,6 +170,52 @@ DELIVERY:
 - On the second click, say it slowly: "Every new generation will force us to rethink what is optimal."
 - On the last line, stress "learn" rather than "faster"
 
+BRIDGE: "Offense sounds abstract. On Monday morning, it looks like this."
+-->
+
+---
+class: v-center
+---
+
+# Where to Start
+
+You don't need an AI strategy to begin. You need one finished pilot.
+
+<v-click>
+
+**Pick one workflow.** Recurring, annoying, low-risk — and run it end to end, pairing the person who knows the work with the person who can build.
+
+</v-click>
+<v-click>
+
+**Keep a human in the loop, and write down what works.** Prompts, playbooks, guardrails — captured judgment is the asset that compounds.
+
+</v-click>
+<v-click>
+
+Strategy is what you write down **after the third pilot works.**
+
+</v-click>
+
+<!--
+SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
+SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+
+KEY POINTS:
+- This slide is for the org that says "everyone experiments a little, but we have no strategy" — it inverts the instinct to write the strategy first
+- The failure mode of strategy-first: a document about tools that will be obsolete before the ink dries (callback to the previous slide — keep the process light)
+- The pairing is the smallest complete learning loop from the three-loops slide: domain knowledge chooses the work, technical skill wires it up, both review the result
+- "Write down what works" is the same mechanism as Section 3's AGENTS.md and skills, and the same thesis as the knowledge-into-systems slide earlier in this section — playbooks are how individual experiments become organizational capability
+- Human in the loop is the Section 4 antidote applied at pilot scale: review stays mandatory while trust is being earned
+- The closing line is the actual claim: strategy in a fast-moving environment is codified experience, not a planning artifact. Savkin's org-level pattern — small self-directed teams, constant experimentation — is what the third pilot grows into
+- Evans backs the posture: immersion beats waiting for clarity, for organizations as much as for individuals
+
+DELIVERY:
+- This is the leadership slide — aim it at whoever owns the "we should have a strategy" feeling
+- If the room allows, ask: "What would your first pilot be?" and let one or two answers land before moving on
+- Hold the last click; it releases the pressure the strategy question has been building
+
 BRIDGE: "And that posture lands differently depending on where you are in your career."
 -->
 
