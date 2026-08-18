@@ -221,8 +221,10 @@ const sizeClasses = {
   transition: opacity 0.4s ease;
 }
 
+/* Fully hidden once the tide is up: at a residual opacity the rotated axis
+   label bleeds through the tide's own label as stray ghost letters. */
 .agency-ladder :deep(svg) .al-arrow-faded {
-  opacity: 0.12;
+  opacity: 0;
 }
 
 .agency-ladder :deep(svg) .al-dim {

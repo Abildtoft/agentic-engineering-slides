@@ -107,33 +107,23 @@ layout: default
 class: text-center
 ---
 
+# Skills: Reusable Playbooks
+
 <MermaidDiagram :code="`graph LR
-  U1[User: '/commit-message'] -->|slash command| A[Agent]
-  U2[User: 'Check our changes for security issues'] -->|prompt matches| A
-  A --> SL[Skill Loader]
-  subgraph User-Invocable
-    SK1[git:commit-message]
-  end
-  subgraph Model-Invocable
-    SK3[code-reviewer]
-  end
-  SL -->|explicit load| SK1
-  SL -.->|auto-discovered| SK3
-  SK1 --> LLM[LLM Interprets]
-  SK3 --> LLM
+  U1['/commit-message'] -->|slash command| A[Agent]
+  U2['Check for security issues'] -->|prompt matches| A
+  A -->|explicit load| SK1[commit-message skill]
+  A -.->|auto-discovered| SK2[code-reviewer skill]
+  SK1 --> LLM[LLM interprets]
+  SK2 --> LLM
   LLM -->|soft guidance| R[Output]
-`" size="xl" />
+`" size="lg" />
 
-<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong>.</p>
+<p class="mt-4 text-lg opacity-85">Skills shape how the agent <strong>thinks</strong> — write the workflow once, run it whenever that task shows up.</p>
 
 <v-click>
 
-<p class="text-base opacity-75">A <strong>reusable playbook</strong> — write the workflow once, run it whenever that task shows up.</p>
-
-</v-click>
-<v-click>
-
-<p class="text-base opacity-75"><strong>Manual trigger</strong> — <code>/commit-message</code> · <strong>Automatic trigger</strong> — the agent matches your request to a skill description (<code>code-reviewer</code>).</p>
+<p class="text-base opacity-75"><strong>Manual trigger</strong> — <code>/commit-message</code> · <strong>Automatic trigger</strong> — the agent matches your request to a skill description.</p>
 
 </v-click>
 <v-click>
@@ -215,20 +205,13 @@ class: text-center
 # MCP Example: Figma ↔ Frontend
 
 <MermaidDiagram :code="`graph LR
-  U[User: 'Implement the approved pricing frame'] --> A[Agent]
-  A --> F[Figma MCP Server]
-  subgraph Figma Data
-    T[get_design_context]
-    R[get_variable_defs]
-    G[generate_figma_design]
-  end
-  F --> T
-  F --> R
+  A[Agent] --> F[Figma MCP Server]
+  F --> T[get_design_context]
+  F --> R[get_variable_defs]
   T --> S[Scoped spec + acceptance criteria]
   R --> S
-  S --> PR[Implementation plan + PR]
-  PR --> UI[Running UI in browser]
-  UI --> G
+  S --> UI[Running UI in browser]
+  UI --> G[generate_figma_design]
   G --> B[Back to Figma file]
 `" size="xl" />
 
@@ -261,7 +244,7 @@ KEY POINTS:
 - The output is not "perfect UI in one shot" — it is a better scoped spec and implementation plan
 - New workflow to call out: Claude Code -> Figma handoff via `generate_figma_design`
 - Constraint: this handoff path requires the remote Figma MCP server and currently supports Claude Code and Codex
-- Diagram simplified for legibility: the MCP-client hop and the handoff_checklist Prompt are elided. If asked how prompts fit, the kitchen slide's three capability types cover it
+- Diagram simplified for legibility: the user-prompt node, the implementation-plan/PR step, the MCP-client hop and the handoff_checklist Prompt are elided — narrate the user's ask ("implement the approved pricing frame") and the plan+PR step over the arrows. If asked how prompts fit, the kitchen slide's three capability types cover it
 
 DELIVERY:
 - "This is where MCP gets interesting: not just tickets and repos, but design systems and approved frames."
@@ -285,17 +268,17 @@ layout: default
 
 <v-click>
 
-**LLMs are stochastic** — same prompt, different result every time. Reliability comes from **the system around the model**, not perfected prompts.
+**LLMs are stochastic** — same prompt, different result. Reliability comes from the system around the model, not perfected prompts.
 
 </v-click>
 <v-click>
 
-**Hooks** fire inside the loop — block `rm -rf`, auto-format every write, gate the output. **Tests** close it: *the test is the spec.*
+**Hooks** fire inside the loop — block `rm -rf`, auto-format, gate the output. **Tests** close it: *the test is the spec.*
 
 </v-click>
 <v-click>
 
-**Deterministic gates around probabilistic agents.** With them, the agent can try → fail → retry on its own.
+**Deterministic gates around probabilistic agents.** The agent can try, fail, and retry on its own.
 
 </v-click>
 
@@ -430,10 +413,10 @@ class: quote-long
 ---
 
 <div class="quote-progressive">
-  <div class="quote-progressive-line">"Every team should be writing the CLAUDE.md's, REVIEW.md's, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
+  <div class="quote-progressive-line">“Every team should be writing the CLAUDE.md's, REVIEW.md's, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
 
   <v-click>
-    <div class="quote-progressive-line">This sounds crazy, and at the same time is a natural extension of the stuff engineers have always done: automate, and encode domain knowledge as infrastructure."</div>
+    <div class="quote-progressive-line">This sounds crazy, and at the same time is a natural extension of the stuff engineers have always done: automate, and encode domain knowledge as infrastructure.”</div>
   </v-click>
 </div>
 

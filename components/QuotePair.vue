@@ -23,9 +23,7 @@ defineProps({
 
 <style scoped>
 /* Same drawn rule as the quote layout's h1 — see the Motion section in
-   styles/index.css, which owns the rule-draw keyframe. The second quote is
-   click-revealed, so its rule has already drawn behind the hidden block and
-   arrives complete; only the first one draws in front of the room. */
+   styles/index.css, which owns the rule-draw keyframe. */
 .quote-pair h2 {
   position: relative;
   padding-left: calc(1rem + 4px);
@@ -41,5 +39,26 @@ defineProps({
   background: var(--brand-primary);
   transform-origin: top;
   animation: rule-draw var(--motion-slow) var(--motion-ease) both;
+}
+
+/* The second quote is click-revealed, and a v-click hides with opacity, not
+   display — so the entry animation above would run behind the hidden block and
+   the rule would arrive already drawn. Click-driven means transition (the
+   deck's motion rule), which also makes it reversible: the hidden state rides
+   the .slidev-vclick-hidden class, so stepping back re-collapses it and print
+   (which steps click states and kills transitions) still lands fully drawn. */
+.quote-pair.slidev-vclick-target h2::before {
+  animation: none;
+  transition: transform var(--motion-slow) var(--motion-ease);
+}
+
+.quote-pair.slidev-vclick-hidden h2::before {
+  transform: scaleY(0);
+}
+
+/* Match the global rule: backward navigation is instant, and the global
+   selector only covers the target element itself, not its pseudo-elements. */
+:global(.slidev-nav-go-backward) .quote-pair.slidev-vclick-target h2::before {
+  transition-duration: 0ms;
 }
 </style>

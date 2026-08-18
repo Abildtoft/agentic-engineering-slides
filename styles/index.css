@@ -45,6 +45,19 @@
 
 .slidev-layout blockquote {
   border-color: var(--brand-primary);
+  /* Shrink to the quote instead of running edge to edge: a one-line quote in a
+     full-width strip reads as a banner, and on centred layouts the border-left
+     ends up floating at the slide edge, far from its own text. */
+  width: fit-content;
+  max-width: 60ch;
+}
+
+/* On centred layouts the shrunk box needs centring itself; the text stays
+   left-aligned inside so it hangs off the border rule like every other quote. */
+.slidev-layout.statement blockquote,
+.slidev-layout.center blockquote {
+  margin-inline: auto;
+  text-align: left;
 }
 
 .slidev-layout.cover,
@@ -105,6 +118,14 @@
   justify-items: start;
 }
 
+/* The theme anchors the quote block high, leaving a large empty band below the
+   attribution. Centre the block vertically so the slide reads as composed. */
+.slidev-layout.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .slidev-layout.quote h1 {
   color: var(--brand-text);
   font-style: italic;
@@ -143,7 +164,7 @@
 
 .slidev-layout.quote.quote-long .quote-progressive {
   max-width: none;
-  width: 100%;
+  width: fit-content;
 }
 
 .slidev-layout.quote.quote-long .quote-progressive-line {
@@ -153,6 +174,10 @@
   line-height: 1.18;
   font-weight: 400;
   text-wrap: balance;
+  /* Each line balances its wrap independently; without a shared cap the first
+     line spans the full slide while later ones wrap at half that, and the
+     block has no coherent shape. */
+  max-width: 48ch;
 }
 
 .slidev-layout.quote.quote-long .quote-progressive-line + .quote-progressive-line {
@@ -209,6 +234,14 @@
   opacity: 1;
 }
 
+/* The theme tucks a heading's subtitle almost against it, which inverts the
+   slide's rhythm: the gap between a heading and its content ends up smaller
+   than the gap between two paragraphs. Covers and dividers keep the tight
+   pairing — there the subtitle belongs to the title. */
+.slidev-layout:not(.cover):not(.section) h1 + p {
+  margin-top: 1rem;
+}
+
 /* An inline code token is one word — `code-reviewer` breaking to "code-" /
    "reviewer" across lines reads as two tokens. Scoped to inline code only;
    fenced blocks keep pre's own wrapping rules. */
@@ -233,7 +266,7 @@
 
    - `transition` for anything driven by a click — v-click reveals and the
      $clicks-driven diagram builds. Reversible, so stepping backwards undoes it.
-   - `animation` for slide entrances. Slidev renders all 55 slides into the DOM
+   - `animation` for slide entrances. Slidev renders all 56 slides into the DOM
      at once and v-shows the current one, so every slide but one is
      `display: none`. Animations don't run on a box that doesn't exist and start
      from scratch when one appears, which makes "slide became visible" a free
@@ -287,8 +320,7 @@
   padding-left: calc(1rem + 4px);
 }
 
-.slidev-layout.quote h1::before,
-.slidev-layout.quote.quote-long .quote-progressive::before {
+.slidev-layout.quote h1::before {
   content: '';
   position: absolute;
   left: 0;
@@ -298,6 +330,53 @@
   background: var(--brand-primary);
   transform-origin: top;
   animation: rule-draw var(--motion-slow) var(--motion-ease) both;
+}
+
+/* Progressive quotes carry the rule per line, not on the container: hidden
+   lines keep their layout height (a v-click hides with opacity), so a
+   container-level rule would draw to the block's final height on entry while
+   only the first line is visible. Each line owns its segment, positioned back
+   at the container's left edge; later segments extend up over the line gap so
+   the finished bar reads as one continuous rule. */
+.slidev-layout.quote.quote-long .quote-progressive-line {
+  position: relative;
+}
+
+.slidev-layout.quote.quote-long .quote-progressive-line::before {
+  content: '';
+  position: absolute;
+  left: calc(-1rem - 4px);
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--brand-primary);
+  transform-origin: top;
+  animation: rule-draw var(--motion-slow) var(--motion-ease) both;
+}
+
+.slidev-layout.quote.quote-long .quote-progressive-line + .quote-progressive-line::before {
+  top: -0.35rem;
+}
+
+/* Click-revealed lines: the entry animation would run behind the hidden line
+   and arrive complete, so their segments ride the v-click state as a
+   transition instead — drawing on the click, reversing on step-back, and
+   landing fully drawn in export, which steps click states with transitions
+   killed. Growing from the extended top, each segment continues exactly where
+   the previous one ended. */
+.slidev-layout.quote.quote-long .quote-progressive-line.slidev-vclick-target::before {
+  animation: none;
+  transition: transform var(--motion-slow) var(--motion-ease);
+}
+
+.slidev-layout.quote.quote-long .quote-progressive-line.slidev-vclick-hidden::before {
+  transform: scaleY(0);
+}
+
+/* The global backward-nav rule only covers the target element itself, not its
+   pseudo-elements. */
+.slidev-nav-go-backward .quote-progressive-line.slidev-vclick-target::before {
+  transition-duration: 0ms;
 }
 
 @keyframes rule-draw {
@@ -337,6 +416,15 @@
 /* Statement slides are single-sentence punchlines, so the sentence itself gets
    the entrance and any v-click support underneath it follows on the click. */
 .slidev-layout.statement h1 {
+  animation: rise-in var(--motion-slow) var(--motion-ease) both;
+}
+
+/* Content-slide headings get the same entrance, so the whole deck arrives on
+   one curve instead of only the display layouts animating. Excluded: cover,
+   statement and fact own their entrances above; section moves as a whole via
+   the section-shift transition; the quote layout's h1 carries the drawn rule
+   ::before, and a rise under a rule mid-draw reads as two competing motions. */
+.slidev-layout:not(.cover):not(.section):not(.statement):not(.fact):not(.quote) h1 {
   animation: rise-in var(--motion-slow) var(--motion-ease) both;
 }
 

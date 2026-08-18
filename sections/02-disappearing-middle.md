@@ -23,7 +23,7 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 
 <v-click>
 
-"That middle absorbed most of the time, attention, and craft of software teams." — **Karri Saarinen, Linear CEO**
+“That middle absorbed most of the time, attention, and craft of software teams.” — **Karri Saarinen, Linear CEO**
 
 </v-click>
 <v-click>
@@ -72,19 +72,12 @@ class: statement-wide
 
 <v-click>
 
-"A PM with a good idea can now get to a first draft faster than ever." — **Duolingo Chief Product Officer**
+“A PM with a good idea can now get to a first draft faster than ever.” — **Duolingo Chief Product Officer**
 
 </v-click>
 <v-click>
 
-The job is deciding what should happen next. **The deck, prototype, and code are just evidence that the thinking happened.**
-
-</v-click>
-<v-click>
-
-<p class="mt-8 text-2xl leading-snug">“Talk is cheap. Show me the code.” <span class="text-base opacity-60">Linus Torvalds, 2000</span></p>
-
-<p class="mt-3 text-2xl leading-snug">“For the first time ever, good talk is exponentially more valuable than good code.” <span class="text-base opacity-60">Nadh, 2025</span></p>
+The job is deciding what should happen next. **The artifact is just evidence that the thinking happened.**
 
 </v-click>
 
@@ -102,12 +95,35 @@ KEY POINTS:
 - Apply this to software: the code is not the whole job. The job is discovering the real problem, choosing the constraints, shaping the system, and owning the outcome
 
 DELIVERY:
-- Trimmed from the slide, say verbally: the full Duolingo line continues "They can visualize concepts, test directions, and move quickly" — the distance between idea and artifact has shrunk. And the job line's long form: walking the terrain, understanding the politics, deciding what should happen next
+- Trimmed from the slide, say verbally: the full Duolingo line continues "They can visualize concepts, test directions, and move quickly" — the distance between idea and artifact has shrunk. And the job line's long form: walking the terrain, understanding the politics, deciding what should happen next. The full artifact list — "the deck, prototype, and code" — is also verbal now
 - Land the headline cold — after the compression slides it should sound like a mild contradiction for a second
 - The quote grounds it; the final reveal resolves it
 - Keep this calm; it is not meant to reassure everyone equally — the distinction should feel useful rather than comforting
 - Optional verbal line: "If you can show instead of describe, the role changes."
-- The final click is the cultural inversion, and it needs the pause to work: read the Torvalds line first — the room will recognise it and half of them will agree with it — then let the 25-year gap do the work before reading Nadh. Frame it as pro-clarity, not anti-code: "talk" here means precise problem definition, not vague ideation, and it applies to every discipline in the room
+
+BRIDGE: "Twenty-five years apart, two one-liners show how far the culture just moved."
+-->
+
+---
+layout: quote
+---
+
+<QuotePair
+  first="Talk is cheap. Show me the code."
+  firstAttribution="Linus Torvalds, 2000"
+  second="For the first time ever, good talk is exponentially more valuable than good code."
+  secondAttribution="Nadh, 2025"
+/>
+
+<!--
+SOURCE: Nadh, "Code is Cheap. Show me the talk" (nadh.in/blog/code-is-cheap/)
+
+KEY POINTS:
+- The cultural inversion that caps the artifact argument: the room will recognise the Torvalds line and half of them will agree with it
+- Frame it as pro-clarity, not anti-code: "talk" here means precise problem definition, not vague ideation, and it applies to every discipline in the room
+
+DELIVERY:
+- Read the Torvalds line first, pause, and let the 25-year gap do the work before clicking to reveal Nadh
 
 BRIDGE: "Jenny Wen describes what that shift looks like from inside the company building the agents."
 -->
@@ -154,11 +170,6 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
      text picks up at 3. -->
 <v-click at="3">
 
-<p class="text-base opacity-80"><strong>Design</strong> — articulating intent, judging quality · <strong>Product</strong> — creating clarity, setting priorities · <strong>Engineering</strong> — designing systems, verifying correctness</p>
-
-</v-click>
-<v-click at="4">
-
 ## Three job titles. One job: turning ambiguity into clarity.
 
 </v-click>
@@ -175,6 +186,7 @@ KEY POINTS:
 - The JUDGMENT label is the visual punchline — it's the thing that doesn't compress.
 - State the walls argument over the diagram rather than on a slide before it: the walls between design, product, and engineering were built from implementation complexity, so as that complexity compresses, so do the walls. Distinct disciplines remain; their operating model converges around shared judgment
 - Ayres supplies the market evidence that this is already priced in: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end
+- The per-role translation (trimmed from the slide, say it over the converged diagram): Design — articulating intent, judging quality; Product — creating clarity, setting priorities; Engineering — designing systems, verifying correctness
 - The throughline is identical across roles: reduce ambiguity, raise judgment quality
 - Important distinction: convergence of capabilities is not collapse of professions
 - The Product Engineer caption names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
@@ -203,7 +215,7 @@ class: dim-prior v-center
 
 <v-click>
 
-When weaving sped up, **yarn became the constraint.** When spinning caught up, **fibre became the constraint.** When fibre improved, **cotton had to be automated.**
+When weaving sped up, **yarn** became the constraint. When spinning caught up, **fibre**. When fibre improved, **cotton**.
 
 </v-click>
 <v-click>
@@ -213,7 +225,7 @@ Every time a bottleneck is removed, the constraint moves upstream — **not away
 </v-click>
 <v-click>
 
-The implementation middle is compressing. The constraint is moving to **clarity, judgment, and system design.**
+The middle is compressing. The constraint is moving to **clarity, judgment, and system design.**
 
 <p class="mt-6 text-2xl font-semibold">“Figure out your bottleneck, automate it, then find the next bottleneck.”</p>
 
