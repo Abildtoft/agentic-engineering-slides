@@ -122,7 +122,7 @@ DELIVERY:
 - Optional verbal: "Every team I see optimizing AI adoption is optimizing the minutes loop. The minutes loop was never the problem."
 - Optional verbal: "Agents made building cheap. They did not make being wrong cheap. That bill still arrives."
 
-BRIDGE: "And cheap learning at speed still has one constraint left. It isn't typing."
+BRIDGE: "And don't mistake cheaper learning for shrinking demand. The opposite is happening."
 -->
 
 ---
@@ -173,6 +173,38 @@ BRIDGE: "So if the work expands, the question becomes: what kind of work?"
 layout: default
 ---
 
+# Humans find new nodes. AI maps the edges.
+
+<ProblemExplorationDiagram />
+
+<v-click>
+
+The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
+
+</v-click>
+
+<!--
+SOURCE: Atmo (@atmoio), X post (x.com/atmoio/status/2061916783309692989)
+
+KEY POINTS:
+- Use this as the AI-positive narrative after the economic demand-expansion slide
+- Facts as nodes; correlations as edges
+- AI is powerful inside the known graph: it searches densely, finds correlations, and changes direction probabilistically
+- Humans and science widen the graph by looking outward and finding new nodes
+- The combined model is not "AI becomes self-directed breadth" — it is more human-chosen waypoints with dense AI exploration around each one
+- This sets up "Clarity Merchants": the human job is choosing which frontier points deserve the machine's depth
+
+DELIVERY:
+- Do not over-explain the visual; land the line "humans find new nodes, AI maps the edges"
+- Optional verbal: "The best discoveries come when someone wanders outside the current point of view. AI is excellent once you give it a place to search."
+
+BRIDGE: "That makes the human work more specific. We become clarity merchants."
+-->
+
+---
+layout: default
+---
+
 # Clarity Merchants
 
 <v-click>
@@ -197,12 +229,10 @@ SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Ma
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
 SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439345092)
-SOURCE: Atmo (@atmoio), X post (x.com/atmoio/status/2061916783309692989)
 
 KEY POINTS:
 - The headline version of the last click, worth saying before the reveal: "we're not bottlenecked by typing speed, we're bottlenecked by coherence." AI can generate five features in a day; integrating them into a system that makes sense is still your job. Integration does not scale with generation speed — it scales with focus and understanding
 - Doshi's chain reinforces it: AI tools commoditise → tools never provide lasting advantage → human judgment on top of AI output is the differentiator
-- If you want the exploration framing, say it here rather than on a slide (Atmo): facts are nodes, correlations are edges. AI is powerful inside the known graph — it searches densely and finds correlations — while humans widen the graph by looking outward and finding new nodes. The advantage isn't AI replacing human exploration, it's more human-selected frontier points, each explored more deeply. The clarity merchant's job is choosing which frontier points deserve the machine's depth
 - Ground the abstract capability in the operating model the audience now understands
 - This is where the new source adds value: the work compresses toward framing the problem, defining scope, and carrying intent across the full loop
 - Doshi's 5-skill decomposition (empathy, simulation, strategic thinking, taste, creative execution) maps directly to these bullet points — use as verbal framework if audience asks "how do you build judgment?"
