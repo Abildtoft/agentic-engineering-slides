@@ -177,7 +177,7 @@ layout: default
 
 <ProblemExplorationDiagram />
 
-<v-click>
+<v-click at="3">
 
 The advantage is not AI replacing human exploration. It's **more human-selected frontier points**, each explored more deeply.
 
@@ -203,6 +203,7 @@ BRIDGE: "That makes the human work more specific. We become clarity merchants."
 
 ---
 layout: default
+class: dim-prior
 ---
 
 # Clarity Merchants

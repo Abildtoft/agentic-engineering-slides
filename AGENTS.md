@@ -95,6 +95,57 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
 - The slots separate by hue against the page background, not by luminance against each other (the closest pair is 1.02:1), so a diagram that abuts or overlaps them must also carry position or a label — colour alone won't survive greyscale or severe CVD
 - Categorical colors are for marks (fills, strokes), not text. Labels take `--brand-text`; the palette is tuned to the 3:1 marks threshold, not the 4.5:1 text one
 
+### Motion
+
+Durations, the easing curve, and the reveal offset are tokens in `styles/index.css`
+(`--motion-base`, `--motion-slow`, `--motion-draw`, `--motion-ease`, `--motion-rise`). Use them
+rather than fresh numbers, so a click reveal, an image entrance and a diagram build settle on the
+same curve at the same rate. Animated backgrounds are a separate system — see below.
+
+**Two mechanisms, chosen by trigger, not by taste.**
+
+| Trigger | Mechanism | Why |
+|---|---|---|
+| A click (`v-click`, `$clicks`) | `transition` | Reversible — stepping back undoes it, which is what the speaker needs during Q&A |
+| Slide entry | `animation` | Slidev keeps all 55 slides in the DOM and `display: none`s the inactive ones. Animations don't run on a box that doesn't exist and restart when one appears, so "slide became visible" is a free trigger with no JS. Replays on every revisit |
+
+A bare `animation` on slide content would otherwise run for the whole deck at page load, finishing
+long before the audience reaches slide 40 — this is why every entrance in the deck is CSS-only and
+still correct.
+
+**The one invariant: an element's hidden state lives in the keyframe's `from`, never in a base
+rule.** Everything degrades to fully visible when animation is off — which is exactly what print
+and reduced motion do. Break this and an exported PDF gets blank elements.
+
+- Export (`.print-slide-container`) kills all animation and transition, pseudo-elements included —
+  `*` alone doesn't match `::before`, and the quote rule is one. `$clicks`-driven builds need no
+  guard: export steps the click states properly
+- `prefers-reduced-motion` collapses durations **and delays**. Zeroing duration alone leaves a
+  staggered build waiting out its delay before appearing
+- Anything JS-timed (the `BigNumber` count-up, `MermaidDiagram`'s tagging) also checks
+  `useNav().isPrintMode` directly, the same way `ShaderBackground` does — a screenshot lands
+  whenever it lands
+- Slide-entry animation on a component must be bound to `useIsSlideActive()`, not `onMounted` —
+  mount happens at page load for every slide in the deck
+
+**What's animated where:**
+
+| Surface | Motion |
+|---|---|
+| Slide-to-slide | `fade` from headmatter `defaults`. Crossfade rather than a lateral slide because eight slides carry a live WebGL canvas. Verified to keep one live shader context through a transition |
+| Section dividers | `section-shift` (fade + 20px Y), overriding the deck default so a chapter change reads differently from a step within one |
+| `v-click` reveals | Opacity + an 8px rise; instant when navigating backward (`.slidev-nav-go-backward`) |
+| Dense build slides | Opt in with `class: dim-prior` — dims already-revealed lines to 0.5 so the eye finds the live one. Deliberately not global; most slides want the speaker able to point back at full strength. Currently on four slides |
+| `cover`, `statement`, `fact` | Staggered entrance on the heading. `fact` gets opacity only — that layout runs to within ~12px of the bottom edge, so no Y travel |
+| `quote` | The 4px rule draws itself (`scaleY`), as a `::before` — a `border-left` can only animate its width, in layout, against the text. `padding-left: calc(1rem + 4px)` carries the border's old offset so text position is unchanged |
+| `MermaidDiagram` | Builds node by node on entry, ~90ms apart, in mermaid source order. Reads `.node[data-id]` / `.edge[data-from][data-to]` off the rendered SVG, which is **not** a documented `beautiful-mermaid` contract — a version bump that renames those loses the stagger and keeps the diagram. Edges wait for the later of their two endpoints, or feedback arrows draw out of nodes that don't exist yet. Disable per slide with `reveal="none"` |
+| `ProblemExplorationDiagram` | One panel per click (3 clicks); panel 1 is present on arrival and draws its spiral via `pathLength="1"` + `stroke-dashoffset`, with the 86 dots trailing the line |
+| `RolesBlurDiagram` | Three beats: sequential handoffs, then the three lobes converging, then JUDGMENT. The caption is held to the last beat because it names the overlap — showing it earlier gives away the punchline the diagram spends two clicks earning |
+| `BigNumber` | 800ms count-up, easeOutCubic, timed from the first rAF frame (a frame timestamp can predate the `performance.now()` just before it, which rendered one frame of `-0.1%`). A hidden sizer holds the final width so the centred number doesn't drift as digits are added |
+
+If a diagram build consumes clicks, the slide's markdown `v-click`s must be pinned past them with
+`at="N"` — Slidev auto-numbers otherwise and the text collides with the build.
+
 ### Animated Backgrounds
 
 `<ShaderBackground />` puts a slow Paper Shaders mesh gradient behind a slide, tinted from
@@ -136,6 +187,60 @@ onto its own uniforms and carries its own framing, so they are interchangeable p
 | `godRays` | Light beams raking from off-frame | Used on the section dividers at `:opacity="0.22"`, `:speed="0.6"` |
 | `neuroNoise` | Cellular filament network | Unused so far; looks best on `dark` at around `:opacity="0.16"` and is far too busy on `light`. Nothing enforces either — both validators are independent |
 
+#### Per-slide variation
+
+Every slide jitters its own backdrop so seven dividers and fourteen statement slides don't run
+the identical frame. It is on by default; `:vary="false"` opts out and `:seed="N"` reshuffles one
+slide without moving it in the deck.
+
+**It is deterministic, not random, and that is the point.** The seed is a hash of the slide
+number, so a slide's look is fixed forever. `Math.random()` would mean the exported PDF disagrees
+with the screen, presenter mode's two windows disagree with each other, and the deck the speaker
+rehearsed isn't the one they present. Verified: the same slide re-loaded twice produces a
+byte-identical backdrop (measured under `prefers-reduced-motion`, where `speed` is 0 and `u_time`
+is pinned to the seed, making the render a single fixed frame).
+
+**Only framing and time are jittered — never colour or strength.** This is what keeps every
+contrast figure below valid. Those figures are derived by flooding the shader's colours to one
+solid value at its shipped opacity, i.e. the worst frame it could ever produce; rotating,
+offsetting, scaling or time-shifting the field changes *where* colours land, not *which* colours
+are reachable, so the same bound holds. Jittering opacity, the palette, or `godRays`' `bloom` /
+`intensity` would move the bound itself and invalidate the measurements.
+
+| Axis | meshGradient | godRays | Contrast-safe? |
+|---|---|---|---|
+| `frame` (start time) | 0-240 | 0-240 | Yes — same argument as `speed` below |
+| `u_rotation` | ±180° (full circle) | ±18° | Yes |
+| `u_offsetX/Y` | ±0.18 | ±0.06 | Yes |
+| `u_scale` | ±12% | ±8% | Yes |
+| `u_distortion`, `u_swirl` | ±0.15, ±0.12 | — | Yes — 0-1 shape powers, clamped |
+| opacity, palette, `bloom`, `intensity` | **never** | **never** | No — these move the bound |
+
+The ranges differ per shader because the two don't have equivalent freedom. `meshGradient` is
+drifting colour pools with no canonical orientation, and it runs on the surfaces with the most
+headroom, so it gets the full range. `godRays` is framed deliberately — its source is pushed off
+the top-left corner so the beams rake across rather than burst from behind the title — so rotation
+stays narrow to preserve that, and because the divider gradient is the tightest contrast case in
+the deck. The time offset does most of the visual work there anyway.
+
+`speed` is deliberately not jittered: on the `light` surface it is load-bearing for WCAG 2.3.1
+(see below), so it is not a free knob.
+
+Measured with variation on, glyph-extent method, worst of 8 frames (scripts in
+`.context/measure-*-contrast.js`; they reproduce the divider glyph widths in the table below
+exactly, which is how the method was checked against the original figures):
+
+| Surface | Slides sampled | Range measured | Floor |
+|---|---|---|---|
+| Consensus dividers, white on `godRays` 0.22 | all 7 | 5.78:1 - 10.93:1 | **5.78:1** (the 1015px title) |
+| Consensus covers, white on `meshGradient` 0.45 | both | 7.80:1 - 8.38:1 | **7.80:1** |
+| Consensus statements, `--brand-primary` on `meshGradient` light 0.22 | 11 of 14 | 10.77:1 - 12.13:1 | **10.77:1** |
+
+The binding case is unaffected by variation: the widest divider title measures 5.41:1 with
+`:vary="false"` and 5.78:1 with it on — same method, same frame count. Individual dividers move by
+up to ±0.5 in either direction; none approaches the 4.5:1 floor. Re-run the scripts after changing
+any range, and don't read a single slide's figure as the result — the floor is what matters.
+
 Statement slides can pick one via frontmatter (`shader: godRays`), though none currently do;
 other layouts pass the prop. `paperTexture` was tried and rejected — it renders flat colour
 without a source image.
@@ -163,9 +268,11 @@ without a source image.
   | `What Matters` | 444px | 6.31:1 | **10.04:1** |
 
   The 55% column is why the stop moved: one title below AA and the next at 4.53:1, i.e. no margin against an ordinary copy edit. The 32% column is what ships. Measure the widest title when adding or lengthening one — a typical title clears AA by so much that it tells you nothing
+
+  Both columns predate per-slide variation and were measured before it; the current shipped figures are in the variation table above, and the widest title is unmoved (5.13:1 then, 5.78:1 now on a fresh 8-frame sample). The relationship the table exists to record — width is the variable, not strength — is unchanged
 - Melatech dividers are flat `--brand-bg-accent`, so none of this applies there; the equivalent sample measures **7.46:1**
 - For `godRays` the bound also depends on `bloom` — it blends additively, so output can exceed the palette's own brightness. Raising `bloom` or `intensity` invalidates the measurements above
 - On the `light` surface, `speed` is load-bearing for WCAG 2.3.1: the white→`#C7CFD9` swing meets the flash threshold's magnitude test, and only the very low frequency keeps it compliant. Don't raise it much
 - `speed` does not affect contrast on either surface — it changes how fast the shader traverses its noise field, not which colours that field contains, so the reachable states and their bounds are identical at any non-zero speed. Verified on the `dark` section gradient: with the stop still at 55%, the worst frame over the longest title measured 3.98:1 at both `0.25` and `0.6`. Only the flash-threshold concern above scales with speed
-- `prefers-reduced-motion` is read at mount and maps to speed 0 (a single static frame, no RAF loop). Toggling it mid-deck takes effect on the next slide change
-- Other props: `speed`, `scale`, and `params` for per-shader uniform overrides — e.g. `:params="{ u_distortion: 0.9, u_swirl: 0.5 }"`. `params` is applied last, so it can override framing too
+- `prefers-reduced-motion` is read at mount and maps to speed 0 (a single static frame, no RAF loop). Toggling it mid-deck takes effect on the next slide change. The frame that freezes is still the slide's own seeded one, so reduced-motion users get the per-slide variety too, just static
+- Other props: `speed`, `scale`, and `params` for per-shader uniform overrides — e.g. `:params="{ u_distortion: 0.9, u_swirl: 0.5 }"`. `params` is applied last, so it can override framing *and* the per-slide jitter. Plus `seed` and `vary` — see the variation section above

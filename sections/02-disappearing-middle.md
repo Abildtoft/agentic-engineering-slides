@@ -149,12 +149,14 @@ BRIDGE: "So if implementation stops being the bottleneck, what skill survives ac
 
 <RolesBlurDiagram size="sm" caption="Some teams name the overlap: the Product Engineer — frames the problem, ships the code, measures the outcome." />
 
-<v-click>
+<!-- Clicks 1 and 2 build the diagram (handoffs → convergence → judgment), so the
+     text picks up at 3. -->
+<v-click at="3">
 
 <p class="text-base opacity-80"><strong>Design</strong> — articulating intent, judging quality · <strong>Product</strong> — creating clarity, setting priorities · <strong>Engineering</strong> — designing systems, verifying correctness</p>
 
 </v-click>
-<v-click>
+<v-click at="4">
 
 ## Three job titles. One job: turning ambiguity into clarity.
 
@@ -192,6 +194,8 @@ DELIVERY:
 BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier to understand."
 -->
 
+---
+class: dim-prior
 ---
 
 # The Bottleneck Cascade

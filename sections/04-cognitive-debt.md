@@ -144,6 +144,7 @@ BRIDGE: "And if understanding is what's at risk, the practical response is to ch
 
 ---
 layout: default
+class: dim-prior
 ---
 
 # From Reviewing Code to Reviewing Intent
@@ -355,6 +356,8 @@ DELIVERY:
 - After the v-click quote: "The quality of what agents produce reflects the quality of the harness you built. Invest in the system, not just the prompt."
 -->
 
+---
+class: dim-prior
 ---
 
 # The Antidote — The Human in the Loop

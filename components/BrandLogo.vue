@@ -16,5 +16,8 @@ const logo = computed(() => logos[theme.value] || logos.melatech)
 </script>
 
 <template>
-  <img :src="logo.src" :alt="logo.alt" class="absolute bottom-10 right-14 w-48 logo-breathe" />
+  <!-- brand-logo is a one-shot entrance (styles/index.css), replacing a 4s
+       infinite scale+rotate: a logo that never stops moving pulls the eye off
+       the title for as long as the cover is up. -->
+  <img :src="logo.src" :alt="logo.alt" class="absolute bottom-10 right-14 w-48 brand-logo" />
 </template>

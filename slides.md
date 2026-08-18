@@ -13,7 +13,11 @@ favicon: /consensus/favicon.svg
 htmlAttrs:
   data-theme: consensus
 defaults:
-  transition: none
+  # Crossfade rather than a lateral slide: eight slides carry a live WebGL
+  # <ShaderBackground>, and a translating slide drags that canvas across frame.
+  # Section dividers override this with `section-shift` so a chapter change
+  # reads differently from a step within one.
+  transition: fade
 duration: 60min
 timer: countdown
 layout: cover
