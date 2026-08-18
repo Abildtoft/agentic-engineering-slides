@@ -330,7 +330,9 @@ layout: statement
 
 <v-click>
 
-> “Having poor quality code from an agent is a choice that you make.” — **Simon Willison**
+> “Having poor quality code from an agent is a choice that you make.”
+>
+> Simon Willison
 
 </v-click>
 <v-click>

@@ -284,7 +284,9 @@ layout: statement
 
 <v-click>
 
-> “The entire history of software engineering is one of rising levels of abstraction” — **Grady Booch**
+> “The entire history of software engineering is one of rising levels of abstraction”
+>
+> Grady Booch
 
 </v-click>
 <v-click>
