@@ -185,16 +185,21 @@ const pins = [
   transition: opacity var(--motion-slow) var(--motion-ease);
 }
 
-/* The impact marks land as the draw reaches each bounce. The delays are
-   literal because they track fractions of the path draw: bounce one sits ~30%
-   along the path, bounce two ~68% — 200ms draw delay + that share of
-   --motion-draw (1200ms). Recompute if the path or --motion-draw changes. */
+/* The impact marks land as the draw's tip reaches each bounce. The draw runs on
+   --motion-ease, which decelerates, so a mark's delay is the *time* fraction at
+   which the eased draw has covered its *path* fraction — E⁻¹(p) for
+   cubic-bezier(0.22, 0.61, 0.36, 1), computed numerically:
+     bounce one:  p = 0.304 of the path → E⁻¹ = 0.113 of the draw
+     bounce two:  p = 0.683 of the path → E⁻¹ = 0.307 of the draw
+   Recompute both fractions if the path geometry or the ease changes. */
 .gl-impact--first {
-  transition: opacity var(--motion-base) var(--motion-ease) 565ms;
+  transition: opacity var(--motion-base) var(--motion-ease)
+    calc(200ms + 0.113 * var(--motion-draw));
 }
 
 .gl-impact--second {
-  transition: opacity var(--motion-base) var(--motion-ease) 1020ms;
+  transition: opacity var(--motion-base) var(--motion-ease)
+    calc(200ms + 0.307 * var(--motion-draw));
 }
 
 /* Pins arrive one by one as the ball path finishes its draw (200ms draw delay

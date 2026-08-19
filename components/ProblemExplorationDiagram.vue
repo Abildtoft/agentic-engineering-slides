@@ -167,7 +167,7 @@ const aiSpiralPath = aiNodes
                 :x2="cx + dx"
                 :y2="cy + dy"
               />
-              <circle class="diagram-node diagram-node-human" :cx="cx" :cy="cy" r="3.5" />
+              <circle class="diagram-node diagram-node-human" :cx="cx" :cy="cy" r="4" />
               <circle
                 v-for="([dx, dy], satelliteIndex) in satellites"
                 :key="satelliteIndex"
@@ -220,10 +220,12 @@ const aiSpiralPath = aiNodes
   vector-effect: non-scaling-stroke;
 }
 
-/* Deliberately primary/text rather than the --brand-cat-* slots: in the hybrid
-   panel both series co-occupy each cluster, so radius (3.5 vs 1.55) carries the
-   distinction and colour only reinforces it — the cat palette's hue separation
-   isn't needed, and primary/text survives greyscale by luminance. */
+/* Deliberately primary/text rather than the --brand-cat-* slots: size and
+   labels carry the AI/human distinction — radius (4 vs 1.55 in the hybrid
+   panel, 4.1 vs 2.1 across panels) plus each panel's title — and colour is
+   supplementary only. On Consensus, --brand-primary and --brand-text are both
+   near-black, so no hue or luminance gap survives there; the cat palette's
+   separation isn't needed because colour is never the sole channel here. */
 .diagram-node-ai {
   fill: var(--brand-primary);
 }
@@ -251,7 +253,7 @@ const aiSpiralPath = aiNodes
    it — it's simply there. */
 .diagram-panel {
   opacity: 0;
-  transition: opacity 380ms var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 .diagram-panel.is-visible {
@@ -264,7 +266,7 @@ const aiSpiralPath = aiNodes
    after the panel itself. */
 .diagram-stagger {
   opacity: 0;
-  transition: opacity 260ms var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 .diagram-panel.is-visible .diagram-stagger {
@@ -285,7 +287,7 @@ const aiSpiralPath = aiNodes
    mechanisms split that way. The dots trail the drawing line: 86 nodes at 14ms
    apart finishes within a few frames of the spiral itself. */
 .diagram-spiral {
-  animation: spiral-draw var(--motion-draw) ease both;
+  animation: spiral-draw var(--motion-draw) var(--motion-ease) both;
 }
 
 @keyframes spiral-draw {

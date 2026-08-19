@@ -49,7 +49,7 @@ const svg = computed(() => {
     })
   } catch (e) {
     console.error('MermaidDiagram render error:', e)
-    return `<pre style="color:red">${e.message}</pre>`
+    return `<pre>${e.message}</pre>`
   }
 })
 
@@ -142,7 +142,7 @@ const sizeClasses = {
 .mermaid-diagram :deep(svg.mm-staged) > .edge,
 .mermaid-diagram :deep(svg.mm-staged) > .edge-label,
 .mermaid-diagram :deep(svg.mm-staged) > .subgraph {
-  animation: mm-node-in 380ms var(--motion-ease) both;
+  animation: mm-node-in var(--motion-base) var(--motion-ease) both;
   animation-delay: calc(var(--mm-step, 0) * 90ms);
 }
 

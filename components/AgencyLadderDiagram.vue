@@ -43,7 +43,7 @@ const sizeClasses = {
 <template>
   <figure :class="['mx-auto mt-2 mb-2 agency-ladder', sizeClasses[size] || sizeClasses.md]">
     <svg
-      viewBox="0 0 860 448"
+      viewBox="0 0 860 452"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="The Agency Ladder: seven steps from Flag to Discern. A tide labeled 'agents run these' covers steps one through six, leaving only Discern above water."
@@ -90,6 +90,10 @@ const sizeClasses = {
         class="al-rung"
         :class="{ 'al-dim': flooded && r.n < 7 }"
       >
+        <!-- Inner group carries the slide-entry rise; the outer one carries the
+             click-driven dim. Separate elements, so the entry animation never
+             fights the transition for opacity. -->
+        <g class="al-enter" :style="`--i: ${r.n - 1}`">
         <rect
           :x="r.x"
           :y="r.top"
@@ -134,6 +138,7 @@ const sizeClasses = {
         >
           {{ line }}
         </text>
+        </g>
       </g>
 
       <line
@@ -178,6 +183,8 @@ const sizeClasses = {
         </text>
       </g>
 
+      <!-- Baseline sits 6 units above the viewBox floor so the italic
+           descenders ("y" in Addy) don't clip at the SVG edge. -->
       <text
         class="al-credit"
         x="822"
@@ -204,11 +211,26 @@ const sizeClasses = {
 }
 
 .agency-ladder :deep(svg) .al-rung {
-  transition: opacity 0.4s var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-arrow-group {
-  transition: opacity 0.4s var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
+}
+
+/* Slide entry: the rungs rise 1 → 7 on the deck's 90ms beat — the diagram's own
+   climb, enacted. Hidden state lives in the keyframe's `from`, so print and
+   reduced motion land complete. */
+.agency-ladder :deep(svg) .al-enter {
+  animation: al-in var(--motion-base) var(--motion-ease) both;
+  animation-delay: calc(var(--i) * 90ms);
+}
+
+@keyframes al-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-rise));
+  }
 }
 
 /* Fully hidden once the tide is up: at a residual opacity the rotated axis
@@ -222,13 +244,15 @@ const sizeClasses = {
 }
 
 .agency-ladder :deep(svg) .al-step {
-  transition: fill-opacity 0.4s var(--motion-ease);
+  transition: fill-opacity var(--motion-base) var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-tide {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.5s var(--motion-ease), transform 0.5s var(--motion-ease);
+  transition:
+    opacity var(--motion-slow) var(--motion-ease),
+    transform var(--motion-slow) var(--motion-ease);
 }
 
 .agency-ladder :deep(svg) .al-tide-visible {

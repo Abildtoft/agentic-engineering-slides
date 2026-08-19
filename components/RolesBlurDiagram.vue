@@ -265,18 +265,18 @@ const sizeClasses = {
            middle is the point of the slide. -->
       <g class="rb-stage rb-judgment-group" :class="{ 'is-visible': judged }">
         <rect
-          x="528"
-          y="180"
-          width="124"
-          height="30"
-          rx="15"
+          x="520"
+          y="179"
+          width="140"
+          height="32"
+          rx="16"
           style="fill: var(--brand-surface); stroke: var(--brand-primary)"
           stroke-width="1"
         />
         <text
           class="rb-judgment"
           x="590"
-          y="200"
+          y="201"
           text-anchor="middle"
           letter-spacing="1.5"
         >
@@ -352,16 +352,17 @@ const sizeClasses = {
   stroke-linejoin: round;
 }
 
-/* The diagram's punchline — kept the largest text in the SVG so it can't end up
-   the smallest text on the slide after the viewBox scales down. */
+/* The diagram's punchline — kept the largest text in the SVG (above the 16px
+   role labels) so it can't end up the smallest text on the slide after the
+   viewBox scales down. */
 .roles-blur :deep(svg) .rb-judgment {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   fill: var(--brand-primary);
 }
 
 .roles-blur :deep(svg) .rb-before {
-  transition: opacity 400ms var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 /* Not hidden — the comparison is the argument, so the old model stays legible
@@ -372,7 +373,7 @@ const sizeClasses = {
 
 .roles-blur :deep(svg) .rb-stage {
   opacity: 0;
-  transition: opacity 400ms var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
 }
 
 .roles-blur :deep(svg) .rb-stage.is-visible {
@@ -381,17 +382,11 @@ const sizeClasses = {
 
 .roles-blur :deep(svg) .rb-lobe {
   transform: translate(var(--dx), var(--dy));
-  transition: transform 620ms var(--motion-ease);
+  transition: transform var(--motion-slow) var(--motion-ease);
 }
 
 .roles-blur :deep(svg) .rb-stage.is-visible .rb-lobe {
   transform: none;
-}
-
-/* Held back until the circles have almost finished travelling, so the label lands
-   in a middle that already exists rather than appearing to create it. */
-.roles-blur :deep(svg) .rb-judgment-group.is-visible {
-  transition-delay: 120ms;
 }
 
 .roles-blur__caption {
@@ -401,7 +396,7 @@ const sizeClasses = {
   font-size: 0.95rem;
   color: var(--brand-text);
   opacity: 0;
-  transition: opacity 400ms var(--motion-ease);
+  transition: opacity var(--motion-base) var(--motion-ease);
   transition-delay: 120ms;
 }
 

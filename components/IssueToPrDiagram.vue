@@ -76,7 +76,10 @@ const sizeClasses = {
         </filter>
       </defs>
 
-      <!-- The Linear issue: present on arrival, everything downstream is clicked in. -->
+      <!-- The Linear issue: present on arrival, everything downstream is clicked
+           in — so the issue card is the only element that can carry a slide
+           entrance without fighting the click-driven stages. -->
+      <g class="ip-enter">
       <rect x="10" y="118" width="150" height="84" rx="14" style="fill: var(--brand-bg)" filter="url(#ip-shadow)" />
       <rect
         x="10"
@@ -90,6 +93,7 @@ const sizeClasses = {
       />
       <text class="ip-card-title" x="85" y="154" text-anchor="middle" letter-spacing="1">ENG-142</text>
       <text class="ip-sub" x="85" y="176" text-anchor="middle" opacity="0.7">Linear issue</text>
+      </g>
 
       <g class="ip-stage" :class="{ 'ip-stage-visible': implemented }">
         <line
@@ -221,7 +225,24 @@ const sizeClasses = {
 .issue-to-pr :deep(svg) .ip-stage {
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.5s var(--motion-ease), transform 0.5s var(--motion-ease);
+  transition:
+    opacity var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-ease);
+}
+
+/* Slide entry: the issue card rises in, so the pipeline's starting point
+   arrives on the deck's curve; the downstream stages are click-gated above.
+   Hidden state lives in the keyframe's `from` — print and reduced motion land
+   complete. */
+.issue-to-pr :deep(svg) .ip-enter {
+  animation: ip-in var(--motion-slow) var(--motion-ease) both;
+}
+
+@keyframes ip-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-rise));
+  }
 }
 
 .issue-to-pr :deep(svg) .ip-stage-visible {
