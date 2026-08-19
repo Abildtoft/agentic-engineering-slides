@@ -121,6 +121,27 @@
   color: var(--brand-on-accent);
 }
 
+/* The closing cover's contact line auto-linkifies its email, and the theme's
+   link azure is a 3.2:1 read against the Navy cover. Links on accent surfaces
+   take the on-accent ink; the muted weight keeps them a caption, not a CTA. */
+.slidev-layout.cover a,
+.slidev-layout.section a {
+  color: var(--brand-on-accent);
+  border-color: var(--brand-on-accent);
+  opacity: 0.85;
+}
+
+/* The closing cover's one click: the floor opening. Sized between the title and
+   the contact line so it reads as a second beat rather than a second title, and
+   held well clear of the contact line — that line stays up through the whole Q&A,
+   so the two must not read as one block. Motion comes from the global v-click
+   reveal; nothing here fights it. */
+.slidev-layout.cover .closing-questions {
+  margin-top: 3.5rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
 /* Same stacking context the cover and section slides need, so the statement
    layout's <ShaderBackground> lands behind the text. */
 .slidev-layout.statement {
@@ -327,7 +348,7 @@
 
    - `transition` for anything driven by a click — v-click reveals and the
      $clicks-driven diagram builds. Reversible, so stepping backwards undoes it.
-   - `animation` for slide entrances. Slidev renders all 56 slides into the DOM
+   - `animation` for slide entrances. Slidev renders every slide into the DOM
      at once and v-shows the current one, so every slide but one is
      `display: none`. Animations don't run on a box that doesn't exist and start
      from scratch when one appears, which makes "slide became visible" a free

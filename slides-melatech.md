@@ -52,7 +52,7 @@ layout: statement
 - The Shift Is Here
 - The Compressing Middle
 - The New Stack
-- **DEMO TIME**
+- **TEMPERATURE CHECK**
 - Cognitive Debt
 - What Matters
 - Moving Forward

@@ -62,7 +62,7 @@ class: v-center
 1. The Shift Is Here
 2. The Compressing Middle
 3. The New Stack
-4. **Demo Time**
+4. **Temperature Check**
 5. Cognitive Debt
 6. What Matters
 7. Moving Forward
