@@ -14,13 +14,21 @@ const sizeClasses = {
 
 // The loop's six states, descending. The x positions swing around a centre
 // with shrinking amplitude — the spiral tightens as understanding drains.
+//
+// `reach` is when the curve's tip arrives at this pill, as a fraction of the
+// draw's duration. The draw runs on --motion-ease, which decelerates, so it is
+// E⁻¹(p) for cubic-bezier(0.22, 0.61, 0.36, 1) at the pill's arc-length
+// fraction along the Catmull-Rom path (segment lengths sampled numerically:
+// 239, 222, 203, 170, 138, 61 units → cumulative p of 0, 0.231, 0.447, 0.643,
+// 0.808, 0.942). Recompute if a pill moves, the tension changes, or the ease
+// changes.
 const steps = [
-  { label: 'AI writes code', x: 340, y: 40 },
-  { label: 'You don’t fully understand it', x: 570, y: 88 },
-  { label: 'Something breaks', x: 360, y: 136 },
-  { label: 'You prompt again', x: 550, y: 184 },
-  { label: 'You understand less', x: 395, y: 232 },
-  { label: 'You defer more', x: 515, y: 280 },
+  { label: 'AI writes code', x: 340, y: 40, reach: 0 },
+  { label: 'You don’t fully understand it', x: 570, y: 88, reach: 0.085 },
+  { label: 'Something breaks', x: 360, y: 136, reach: 0.174 },
+  { label: 'You prompt again', x: 550, y: 184, reach: 0.28 },
+  { label: 'You understand less', x: 395, y: 232, reach: 0.417 },
+  { label: 'You defer more', x: 515, y: 280, reach: 0.634 },
 ]
 
 /* ~8px per character fits the 15px label size below. */
@@ -73,10 +81,13 @@ const spiralPath = computed(() => {
         </marker>
       </defs>
 
+      <!-- The arrow points toward *less*: axis-arrow convention reads the
+           arrowhead as the direction of increase, so the label names the thing
+           that grows on the way down. -->
       <g class="cs-axis">
         <line x1="130" y1="52" x2="130" y2="302" marker-end="url(#cs-axis-arrow)" />
         <text transform="translate(112, 177) rotate(-90)" text-anchor="middle" letter-spacing="2">
-          UNDERSTANDING
+          LESS UNDERSTANDING
         </text>
       </g>
 
@@ -86,7 +97,7 @@ const spiralPath = computed(() => {
         v-for="(s, i) in steps"
         :key="s.label"
         class="cs-step"
-        :style="`--i: ${i}; --d: ${i}`"
+        :style="`--reach: ${s.reach}; --d: ${i}`"
       >
         <rect
           :x="s.x - pillWidth(s.label) / 2"
@@ -128,8 +139,10 @@ const spiralPath = computed(() => {
   fill-opacity: 0.55;
 }
 
+/* 15px to match the pill labels: at the call site's 0.76 scale anything
+   smaller lands under ~10px effective. */
 .cs-axis text {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   fill: var(--brand-primary);
   opacity: 0.6;
@@ -166,10 +179,12 @@ const spiralPath = computed(() => {
   fill: var(--brand-text);
 }
 
-/* Pills land in step with the draw passing through them. */
+/* Pills land in step with the draw's tip passing through them: each carries
+   `--reach`, the eased draw's time fraction at its position on the curve (the
+   E⁻¹ table above the steps array). 150ms is the draw's own start delay. */
 .cs-step {
   animation: cs-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(150ms + var(--i) * 170ms);
+  animation-delay: calc(150ms + var(--reach) * var(--motion-draw));
 }
 
 .cs-axis {
@@ -186,7 +201,7 @@ const spiralPath = computed(() => {
 }
 
 .cs-tail-label {
-  font-size: 13px;
+  font-size: 15px;
   font-style: italic;
   fill: var(--brand-text);
   opacity: 0.65;

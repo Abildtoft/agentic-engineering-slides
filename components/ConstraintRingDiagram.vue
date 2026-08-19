@@ -12,7 +12,14 @@ const { $clicks } = useSlideContext()
 const bounced = computed(() => ($clicks?.value ?? 0) >= 1)
 const shipped = computed(() => ($clicks?.value ?? 0) >= 2)
 
-const CX = 320
+/* CX leaves 14px more left margin than a centred ring would, and the viewBox
+   extends another 14 units left of zero: the widest left-side annotation
+   ("token / compute budget", right-anchored at the 180° gate) measures ~172px
+   at the 15px sub size and needs both to stay inside the frame once the ring
+   slides to its final position — verified against a rendered screenshot, not
+   the per-character estimate, which under-measured it. The initial translateX
+   in the style block compensates, so the arrival framing is unchanged. */
+const CX = 334
 const CY = 232
 const R = 150
 
@@ -50,7 +57,7 @@ const sizeClasses = {
 <template>
   <figure :class="['mx-auto mt-0 mb-1 constraint-ring', sizeClasses[size] || sizeClasses.md]">
     <svg
-      viewBox="0 30 920 402"
+      viewBox="-14 30 934 402"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="An agent inside a ring of eight constraints: correctness, security, performance, accessibility, maintainability, cost efficiency, back-pressure, and comprehensibility. A rejected attempt bounces back into the loop; only output that clears every quality gate passes the exit gate and ships."
@@ -101,7 +108,7 @@ const sizeClasses = {
         opacity="0.6"
       />
 
-      <g v-for="g in gates" :key="g.name">
+      <g v-for="(g, gi) in gates" :key="g.name" class="cr-gate" :style="`--i: ${gi}`">
         <circle class="cr-gate-dot" :cx="g.x" :cy="g.y" r="10.5" stroke-opacity="0.35" stroke-width="1.5" />
         <circle class="cr-gate-core" :cx="g.x" :cy="g.y" r="5.5" />
         <text class="cr-name" :x="g.lx" :y="g.nameY" :text-anchor="g.anchor">
@@ -146,7 +153,7 @@ const sizeClasses = {
 
       <g class="cr-stage" :class="{ 'cr-stage-visible': bounced, 'cr-dim': shipped }">
         <path
-          d="M 300 192 C 258 152 208 156 202 194 C 197 224 236 238 272 228"
+          d="M 314 192 C 272 152 222 156 216 194 C 211 224 250 238 286 228"
           fill="none"
           style="stroke: var(--brand-text)"
           stroke-width="2.25"
@@ -155,15 +162,15 @@ const sizeClasses = {
           marker-end="url(#cr-arrow)"
         />
         <g style="stroke: var(--brand-primary)" stroke-width="3" stroke-linecap="round">
-          <line x1="219" y1="154" x2="237" y2="172" />
-          <line x1="237" y1="154" x2="219" y2="172" />
+          <line x1="233" y1="154" x2="251" y2="172" />
+          <line x1="251" y1="154" x2="233" y2="172" />
         </g>
       </g>
       </g>
 
       <g class="cr-stage" :class="{ 'cr-stage-visible': shipped }">
         <line
-          x1="378"
+          x1="392"
           y1="232"
           x2="548"
           y2="232"
@@ -172,7 +179,7 @@ const sizeClasses = {
           opacity="0.55"
           marker-end="url(#cr-arrow)"
         />
-        <text class="cr-sub cr-italic" x="460" y="204" text-anchor="middle" opacity="0.7">
+        <text class="cr-sub cr-italic" x="470" y="204" text-anchor="middle" opacity="0.7">
           only output that clears every gate
         </text>
         <rect x="552" y="208" width="36" height="48" rx="10" style="fill: var(--brand-primary)" filter="url(#cr-shadow)" />
@@ -207,11 +214,16 @@ const sizeClasses = {
           fill-opacity="0.07"
           stroke-width="2"
         />
-        <text class="cr-ship" x="771" y="228" text-anchor="middle" letter-spacing="2">
+        <!-- Two lines: at the 15px cr-sub size the single-line subtitle runs
+             ~288px against the box's 262. -->
+        <text class="cr-ship" x="771" y="222" text-anchor="middle" letter-spacing="2">
           SHIP
         </text>
-        <text class="cr-sub" x="771" y="250" text-anchor="middle" opacity="0.7">
-          production software, good enough to ship
+        <text class="cr-sub" x="771" y="242" text-anchor="middle" opacity="0.7">
+          production software
+        </text>
+        <text class="cr-sub" x="771" y="260" text-anchor="middle" opacity="0.7">
+          good enough to ship
         </text>
       </g>
     </svg>
@@ -231,8 +243,8 @@ const sizeClasses = {
 }
 
 .constraint-ring :deep(svg) .cr-slide {
-  transform: translateX(140px);
-  transition: transform 0.6s var(--motion-ease);
+  transform: translateX(126px);
+  transition: transform var(--motion-slow) var(--motion-ease);
 }
 
 .constraint-ring :deep(svg) .cr-slide-left {
@@ -242,7 +254,25 @@ const sizeClasses = {
 .constraint-ring :deep(svg) .cr-stage {
   opacity: 0;
   transform: translateY(8px);
-  transition: opacity 0.5s var(--motion-ease), transform 0.5s var(--motion-ease);
+  transition:
+    opacity var(--motion-base) var(--motion-ease),
+    transform var(--motion-base) var(--motion-ease);
+}
+
+/* Slide entry: the eight gates land around the ring on the deck's 90ms beat —
+   the constraint ring closing in — before any click beat runs. Gates carry no
+   click transition, so the animation has nothing to fight. Hidden state lives
+   in the keyframe's `from`, so print and reduced motion land complete. */
+.constraint-ring :deep(svg) .cr-gate {
+  animation: cr-in var(--motion-base) var(--motion-ease) both;
+  animation-delay: calc(var(--i) * 90ms);
+}
+
+@keyframes cr-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-rise));
+  }
 }
 
 .constraint-ring :deep(svg) .cr-stage-visible {
@@ -263,16 +293,17 @@ const sizeClasses = {
   fill: var(--brand-primary);
 }
 
-/* The 920-unit viewBox renders at 768px (`md`), a 0.83 scale — sizes are set
-   for what survives that scale on a projector. */
+/* The 934-unit viewBox renders at 672px (`sm`, the deck's call site), a 0.72
+   scale — sizes are set for what survives that scale on a projector: 16px
+   names land at ~11.5px effective, 15px subs at ~10.8px. */
 .constraint-ring :deep(svg) .cr-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   fill: var(--brand-text);
 }
 
 .constraint-ring :deep(svg) .cr-sub {
-  font-size: 13px;
+  font-size: 15px;
   fill: var(--brand-text);
 }
 

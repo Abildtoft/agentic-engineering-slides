@@ -13,11 +13,11 @@ KEY POINTS:
 - Frame this as a shift in outcomes, not a shift in hype language
 - Set up the next slide as evidence, not opinion
 
+BRIDGE: "Let me show you the pattern that changed."
+
 DELIVERY:
 - Calm, low-drama tone; this slide earns trust
 - Land the line: "something changed"
-
-BRIDGE: "Let me show you the pattern that changed."
 -->
 
 ---
@@ -49,15 +49,17 @@ Both took a decade. The winners weren't obvious yet.
 </v-click>
 
 <!--
-SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
-
 KEY POINTS:
 - Calibrate the room before the stronger adoption claims
-- "1997" means the category is real, but the winners, use cases, business models, and operating models are still unsettled
-- Most things still do not work reliably; most of what will matter has not been built yet
-- There are frontier anecdotes like people buying clusters of Mac Minis to run local AI, while mainstream daily usage is still uneven
+- "1997": category is real; winners, use cases, business and operating models unsettled
+- Most things still don't work reliably; most of what will matter isn't built yet
+- Winning companies may not exist yet; important use cases invisible from here
+
+BRIDGE: "And inside that early, messy market, one part of the curve has already bent — and it isn't one vendor's curve."
+
+ADDITIONAL POINTS:
+- Frontier anecdotes (people buying clusters of Mac Minis to run local AI) coexist with uneven mainstream daily usage
 - Use the teen adoption stat carefully if asked: Common Sense/Statista 2024 had daily U.S. teen use at 11% for chatbots and 20% for AI search; Pew's 2025 teen chatbot survey put daily use at 28%. The safe claim is "not universal daily habit yet," not a precise ceiling.
-- The companies that win may not exist yet; the important use cases may be invisible from here
 
 DELIVERY:
 - Make this feel like a correction to both hype and dismissal
@@ -66,7 +68,7 @@ DELIVERY:
 - Optional verbal (Boris Cherny, Head of Claude Code, via Lenny Rachitsky — x.com/lennysan/status/2025289168012595312): "You have to transport yourself to the current moment. The new models are just completely, completely different. The model changes so often that I sometimes get stuck in this old way of thinking. I find that new people on the team do stuff in a more AGI forward way than I do."
 - Use that quote to reframe resistance as a stale mental model, not a lack of intelligence: expertise becomes inertia when capabilities move this fast, and newcomers can outperform simply by starting from current constraints instead of historical ones
 
-BRIDGE: "And inside that early, messy market, one part of the curve has already bent — and it isn't one vendor's curve."
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
 -->
 
 ---
@@ -108,24 +110,19 @@ Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 </v-click>
 
 <!--
-SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
-SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
-SOURCE: Google CEO Sundar Pichai, earnings call
-SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
-SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
-SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
-SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
-SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
-SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
-
 KEY POINTS:
-- Broaden from one metric to cross-industry signal
-- Start with recognizable tool names so the audience sees this is ecosystem-wide, not vendor-specific
-- The convergence framing belongs on the tool list: this wasn't one model release. Models got good enough, tooling matured, and adoption hit production scale in one compressed window — Anthropic, Google, and OpenAI all shipped major updates inside a single 30-day window in December 2025, and the vocabulary shifted from "AI Code Assistants" to "Agentic IDEs"
-- That vocabulary shift signals a workflow change, not just branding
-- Keep Spotify as the vivid story; treat others as corroboration
-- Frame this as workflow change, not just speed improvement
+- Broaden from one metric to cross-industry, ecosystem-wide signal — not vendor-specific
+- Convergence: Anthropic, Google, OpenAI all shipped inside one 30-day window, December 2025
+- Vocabulary shifted "AI Code Assistants" → "Agentic IDEs" — workflow change, not branding
+- Spotify is the vivid story; the others corroborate
 - End with the implication: divergence between teams will widen
+
+BRIDGE: "And if you still think this is vendor hype — you don't have to take their word for it. Here's my own ledger."
+
+ADDITIONAL POINTS:
+- Start with recognizable tool names so the audience sees the breadth
+- The convergence framing belongs on the tool list: this wasn't one model release — models got good enough, tooling matured, and adoption hit production scale in one compressed window
+- Frame this as workflow change, not just speed improvement
 - Eriksson provides a useful scale anchor: 84% of Earth's population (8.1B) have never used AI; only 0.3% have paid for AI; 0.04% have tried AI coding tools. The adoption numbers above are the bleeding edge — the rest of the world hasn't even started yet.
 
 DELIVERY:
@@ -135,25 +132,37 @@ DELIVERY:
 - The asterisk lands on its own click, after the room has had a beat to be impressed by the grid — it re-reads numbers they've already accepted rather than qualifying them up front. It is a setup, not a disclaimer: say the implication out loud — these are the last numbers these companies published, so every one of them is a floor, not a ceiling. Dated: Spotify Feb 2026 (the newest of the four), Anthropic/OpenAI Jan 2026, Google Q4 earnings call; Nadella's 20–30% is the oldest and predates the rest by roughly a year, which is why the slide says "at least six months" rather than naming a window. Re-check the wording if you present this after roughly Q1 2027
 - Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
 
-BRIDGE: "And if you still think this is vendor hype — you don't have to take their word for it. Here's my own ledger."
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
+SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
+SOURCE: Google CEO Sundar Pichai, earnings call
+SOURCE: Microsoft CEO Satya Nadella (entrepreneur.com/business-news/ai-is-taking-over-coding-at-microsoft-google-and-meta/490896)
+SOURCE: Boris Cherny / Roon (fortune.com/2026/01/29/100-percent-of-code-at-anthropic-and-openai-is-now-ai-written-boris-cherny-roon/)
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+SOURCE: Shelly Palmer, "An AI December to Remember" (shellypalmer.com/2025/12/an-ai-december-to-remember/)
+SOURCE: SemiAnalysis, "Claude Code is the Inflection Point" (newsletter.semianalysis.com/p/claude-code-is-the-inflection-point)
+SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.com/kholterhoff/2025/12/22/10-things-developers-want-from-their-agentic-ides-in-2025/)
 -->
 
 ---
 clicks: 6
 ---
 
-# Same Person, Same Job
+# Same Job, Same Me, Different Years
 
 <MergeLedgerCompare class="mt-12" />
 
 <!--
-SOURCE: Personal Merge Ledger export — every PR/MR authored by me and merged on GitHub and GitLab, calendar windows August 2024 – July 2025 against August 2025 – July 2026 (the ledger starts 14 August 2024, so the first window is missing its first thirteen days — immaterial at this scale)
-SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — the industry-scale version of the same curve: 4% of public GitHub commits carry a clear Claude Code attribution, 20%+ projected by year-end; useful as verbal setup
-
 KEY POINTS:
-- Same evidence beat the industry stat used to hold, but first-party: my own git log, not vendor data — nobody can call it hype
-- The numbers: PRs 343 → 6,102 (×17.8, shown ×18); commits 967 → 15,710 (×16.2, shown ×16); tests 5 → 57,179 (×11,436 — shown literally, because it is the punchline)
-- Aggregate numbers only — no repo or client names anywhere on these two slides
+- First-party evidence: my own git log, not vendor data — nobody can call it hype
+- PRs 343 → 6,102 (×18); commits 967 → 15,710 (×16)
+- Tests 5 → 57,179 — shown literally, because it is the punchline
+- Aggregate numbers only — no repo or client names on these two slides
+
+BRIDGE: "And the interesting part isn't the totals. It's when it happened."
+
+ADDITIONAL POINTS:
+- Same evidence beat the industry stat used to hold, but first-party
+- Exact multipliers: PRs ×17.8 (shown ×18), commits ×16.2 (shown ×16), tests ×11,436
 - Lines changed stays off the slide deliberately — it invites the lockfile/generated-code debate; merged PRs are reviewed, accepted work
 - Two clicks per metric (the slide declares `clicks: 6`): the odd click lands the old year's sliver, the even click sweeps the new year's bar out with a count-up and lands the multiplier — so the old number can be held on screen for as long as the narration needs
 
@@ -166,7 +175,8 @@ DELIVERY:
 - Click: last year's tests. This is the one to sit on. "Five. In a year." Hold it — the hairline is doing the work.
 - Click: the count runs to 57,179. "That multiplier is not a typo — the agents test more than I ever did."
 
-BRIDGE: "And the interesting part isn't the totals. It's when it happened."
+SOURCE: Personal Merge Ledger export — every PR/MR authored by me and merged on GitHub and GitLab, calendar windows August 2024 – July 2025 against August 2025 – July 2026 (the ledger starts 14 August 2024, so the first window is missing its first thirteen days — immaterial at this scale)
+SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — the industry-scale version of the same curve: 4% of public GitHub commits carry a clear Claude Code attribution, 20%+ projected by year-end; useful as verbal setup
 -->
 
 ---
@@ -184,15 +194,21 @@ clicks: 2
 </v-click>
 
 <!--
-SOURCE: Personal Merge Ledger export (see previous slide)
-
 KEY POINTS:
-- Real data, not a stylised curve: merged PRs/MRs per month, full months September 2024 through July 2026; the partial Augusts at each end are dropped
-- The flat line is not laziness — 25–65 merges a month was a normal, productive year; the "~30 / month" label makes that the peak label's counterpart
-- The inflection: Dec 2025: 58 → Jan 2026: 176 → Feb: 264 → Mar: 790 → May/Jun: ~1,350
-- The prior year (Aug '24 – Jul '25) totalled 343; March 2026 alone was 790
-- August 2026 sits at 534 after thirteen days — the half-month has already out-merged the entire prior year
+- Real data: my merged PRs/MRs per month, not a stylised curve
+- The flat line was a normal, productive year — not laziness
+- Inflection: Dec 2025: 58 → Jan 2026: 176 → Feb: 264 → Mar: 790 → May/Jun: ~1,350
+- Prior year (Aug '24 – Jul '25) totalled 343; March 2026 alone was 790
+- August 2026: 534 after thirteen days — half-month already out-merged the prior year
+
+BRIDGE: "Jack Clark put a date on this feeling — and my curve peaks right on it."
+
+ADDITIONAL POINTS:
+- Full months September 2024 through July 2026; the partial Augusts at each end are dropped
+- 25–65 merges a month was the normal year; the "~30 / month" label is the climb numbers' counterpart
 - The shape is the same exponential the industry charts show; this is what it looks like from inside one engineer's git log
+- Two faint gridlines (500 / 1,000) ground the scale; the dashed rule landing at Jan '26 with the climb ties the title's "January" to the axis
+- The story months carry their counts on the curve — 176 (the bend), 264 (the doubling), 790 (out-merged the prior year), 1,354 (peak), 1,172 (now); Apr and May stay unlabeled, they only echo their neighbours
 - The chart reads the slide's clicks without consuming any: the climb rides click 1, so the text reveal is pinned past it with `at="2"` and the slide declares `clicks: 2`
 
 DELIVERY:
@@ -201,7 +217,7 @@ DELIVERY:
 - Click: the March line is the gut punch — pause and let it sink in
 - Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. This is the line that earns the Jack Clark quote next.
 
-BRIDGE: "Jack Clark put a date on this feeling — and my curve peaks right on it."
+SOURCE: Personal Merge Ledger export (see previous slide)
 -->
 
 ---
@@ -213,15 +229,15 @@ layout: quote
 Jack Clark, co-founder of Anthropic
 
 <!--
-SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
-
 KEY POINTS:
 - This is the section-1 synthesis in one sentence
 - The "parallel world" idea frames urgency without panic
 - Land the audience question: adoption is now a strategic choice
 
+BRIDGE: "That question — which side of the divide — is what the rest of this session is about. Let's start with what's actually changing."
+
 DELIVERY:
 - Ask the question and leave silence
 
-BRIDGE: "That question — which side of the divide — is what the rest of this session is about. Let's start with what's actually changing."
+SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
 -->

@@ -19,25 +19,32 @@ const sizeClasses = {
 const { $clicks } = useSlideContext()
 const linedUp = computed(() => ($clicks?.value ?? 0) >= 2)
 
+/* `reach` is when the through-line's tip arrives at this slice, as a fraction
+   of the draw's duration. The draw runs on --motion-ease, which decelerates,
+   so it is E⁻¹(p) for cubic-bezier(0.22, 0.61, 0.36, 1) at the slice's path
+   fraction p = (x − 36) / 774, computed numerically:
+     x=168 → p=0.170 → 0.062   x=302 → p=0.344 → 0.129   x=436 → p=0.517 → 0.208
+     x=570 → p=0.690 → 0.312   x=704 → p=0.863 → 0.486
+   Recompute if a slice moves, the line's span changes, or the ease changes. */
 const slices = [
   {
-    x: 168, label: ['Compare', 'multiple options'],
+    x: 168, reach: 0.062, label: ['Compare', 'multiple options'],
     holes: [{ dx: 10, y: 132, r: 9 }, { dx: -8, y: 240, r: 7 }],
   },
   {
-    x: 302, label: ['Deterministic', 'guardrails'],
+    x: 302, reach: 0.129, label: ['Deterministic', 'guardrails'],
     holes: [{ dx: -6, y: 118, r: 7 }, { dx: 12, y: 158, r: 6 }, { dx: -4, y: 262, r: 10 }],
   },
   {
-    x: 436, label: ['Acceptance', 'criteria'],
+    x: 436, reach: 0.208, label: ['Acceptance', 'criteria'],
     holes: [{ dx: 8, y: 128, r: 8 }, { dx: -10, y: 246, r: 8 }],
   },
   {
-    x: 570, label: ['Permission', 'systems'],
+    x: 570, reach: 0.312, label: ['Permission', 'systems'],
     holes: [{ dx: -8, y: 140, r: 10 }, { dx: 10, y: 254, r: 6 }],
   },
   {
-    x: 704, label: ['Adversarial', 'verification'],
+    x: 704, reach: 0.486, label: ['Adversarial', 'verification'],
     holes: [{ dx: 6, y: 122, r: 7 }, { dx: -6, y: 166, r: 6 }, { dx: 8, y: 250, r: 9 }],
   },
 ]
@@ -73,7 +80,7 @@ const ALIGNED_Y = 200
         v-for="(s, i) in slices"
         :key="s.x"
         class="sc-slice"
-        :style="`--i: ${i}`"
+        :style="`--i: ${i}; --reach: ${s.reach}`"
       >
         <g :transform="`skewX(-6)`" :transform-origin="`${s.x} ${SLICE_TOP + SLICE_H / 2}`">
           <rect
@@ -194,11 +201,12 @@ const ALIGNED_Y = 200
 }
 
 /* The shared holes brighten one by one as the through-line's draw reaches
-   them: ~210ms per slice across the 1200ms draw. State-class driven, so
+   them: each slice carries `--reach`, the eased draw's time fraction at its
+   path position (the E⁻¹ table above the slices array). State-class driven, so
    export's stepped clicks land on the right frame. */
 .sc-hole--aligned {
   transition: stroke-opacity var(--motion-base) var(--motion-ease);
-  transition-delay: calc(210ms + var(--i) * 210ms);
+  transition-delay: calc(var(--reach) * var(--motion-draw));
 }
 
 svg.is-lined-up .sc-hole--aligned {

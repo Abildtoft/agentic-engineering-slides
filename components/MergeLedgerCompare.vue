@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useNav, useSlideContext } from '@slidev/client'
 
 // Real data from the personal Merge Ledger export, calendar windows August
@@ -32,8 +32,20 @@ const clickCount = computed(() => $clicks?.value ?? 0)
 
 /* The current-year number counts up while its bar sweeps, on the BigNumber
    timing recipe (rAF-timestamped, easeOutCubic). Null means "show the final
-   value" — the resting, print and reduced-motion state. */
-const DURATION = 1200 // matches the bar sweep
+   value" — the resting, print and reduced-motion state.
+
+   The sweep runs at var(--motion-draw), so the count-up reads that token at
+   mount rather than restating its value — a token change can't desync the
+   number from its bar. The fallback is the token's shipped value, for the
+   case where the token is missing or unparsable. */
+const duration = ref(1200)
+onMounted(() => {
+  const raw = getComputedStyle(document.documentElement)
+    .getPropertyValue('--motion-draw')
+    .trim()
+  const ms = raw.endsWith('ms') ? parseFloat(raw) : parseFloat(raw) * 1000
+  if (Number.isFinite(ms) && ms > 0) duration.value = ms
+})
 
 const shown = ref(ROWS.map(() => null))
 const timers = ROWS.map(() => ({ frame: null }))
@@ -54,7 +66,7 @@ function run(i) {
   let start = null
   const tick = now => {
     start ??= now
-    const t = Math.min((now - start) / DURATION, 1)
+    const t = Math.min((now - start) / duration.value, 1)
     shown.value[i] = ROWS[i].now * (1 - (1 - t) ** 3)
     if (t < 1) timers[i].frame = requestAnimationFrame(tick)
     else shown.value[i] = null
@@ -79,6 +91,10 @@ onBeforeUnmount(() => ROWS.forEach((_, i) => stop(i)))
     <div class="mc-legend">
       <span class="mc-key"><i class="mc-swatch mc-swatch--prior" />Aug '24 – Jul '25</span>
       <span class="mc-key"><i class="mc-swatch mc-swatch--now" />Aug '25 – Jul '26</span>
+      <!-- Every "now" bar renders the same width because each row is normalized
+           to its own current-year value; this note is the cue that the rows are
+           not on a shared scale. -->
+      <span class="mc-scale-note">(each metric to its own scale)</span>
     </div>
 
     <div
@@ -108,6 +124,7 @@ onBeforeUnmount(() => ROWS.forEach((_, i) => stop(i)))
    land in. Slide-entry animation, hidden state in the keyframe `from`. */
 .mc-legend {
   display: flex;
+  align-items: center;
   gap: 2rem;
   margin-bottom: 1.6rem;
   font-size: 0.95rem;
@@ -129,20 +146,29 @@ onBeforeUnmount(() => ROWS.forEach((_, i) => stop(i)))
   gap: 0.5rem;
 }
 
+/* Swatch heights mirror the bars they key (0.55rem prior, 1rem now), so the
+   legend carries the same weight hierarchy the rows do. */
 .mc-swatch {
   display: inline-block;
   width: 1.1rem;
-  height: 0.55rem;
   border-radius: 2px;
 }
 
 .mc-swatch--prior {
+  height: 0.55rem;
   background: var(--brand-text);
   opacity: 0.3;
 }
 
 .mc-swatch--now {
+  height: 1rem;
   background: var(--brand-primary);
+}
+
+.mc-scale-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.7;
 }
 
 .mc-row {
