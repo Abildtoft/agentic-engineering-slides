@@ -501,7 +501,7 @@ KEY POINTS:
 - `--ship` authorizes the irreversible tail; without it, stops review-ready
 - What crosses to you is evidence: a green PR, gates cleared, verification passed
 
-BRIDGE: "That's my harness. Don't take my word for how far to push this — here's the person who built Claude Code."
+BRIDGE: "That's my harness. Halfway mark — your call what comes next: demo, questions, or a break."
 
 ADDITIONAL POINTS:
 - The ring's gates are wired into the loop; the composed skills are issue implementation, code review, convention review, refactor discovery, verification, PR creation, CI fixing — the command owns only their sequencing, convergence criteria, and handoffs
@@ -519,50 +519,6 @@ DELIVERY:
 - If asked what happens when it fails: it stops at the blocker with the evidence preserved — a failed gate is a stop, not a warning
 
 SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal workflow, live demo material)
--->
-
----
-layout: quote
-class: quote-long
----
-
-<div class="quote-progressive">
-  <div class="quote-progressive-line">“Every team should be writing the CLAUDE.md’s, REVIEW.md’s, skills, and docs that enable agents to productively work in their codebase with zero additional context from the prompter.</div>
-
-  <v-click>
-    <div class="quote-progressive-line">This sounds crazy, and at the same time is a natural extension of the stuff engineers have always done: automate, and encode domain knowledge as infrastructure.”</div>
-  </v-click>
-</div>
-
-<v-click>
-
-Boris Cherny, creator of Claude Code
-
-</v-click>
-
-<!--
-KEY POINTS:
-- Team-level mandate capping the section: build what lets agents work in your codebase
-- The bar: "zero additional context from the prompter" — conventions live in the repo
-- Sharpest reframe: a rejected PR is "a failure of automation"
-- The unlock: encodable knowledge now includes comments, skills, CLAUDE.md rules, memories
-
-BRIDGE: "That's the mandate. Halfway mark — your call what comes next: demo, questions, or a break."
-
-ADDITIONAL POINTS:
-- Everything just covered — AGENTS.md, skills, hooks, guardrails, harness engineering — is what Cherny is telling every team to build
-- If the agent needs you to explain conventions in the prompt, that knowledge should have been encoded in the repo
-- Cherny's three reasons automation matters MORE now: (1) DevX automation speeds up every agent in your fleet, not just you; (2) a lint rule, CI step, or routine automates a class of issue forever — cheaper than re-solving it with tokens each time; (3) most importantly, it lets others contribute — engineers ship on day one, non-engineers contribute as effectively as engineers
-- The reframe in full: a PR rejected for using the wrong framework or ignoring architectural patterns means the domain knowledge lived in someone's head instead of in the repo
-- Encodable domain knowledge is no longer limited to what fits in lint rules, types, and tests
-- His "loops" line connects back to the harness slide: "it's about automating entire types of busywork rather than solving them one off"
-
-DELIVERY:
-- Land the first line, pause, then click: "This sounds crazy" — let the audience feel that he names their skepticism himself
-- Verbal option: "Notice what he's saying: this isn't new work. Lint rules, tests, editor tooling — the best engineers always encoded their knowledge as infrastructure. The only thing that changed is how much knowledge is now encodable."
-- Verbal option (the reframe): "When a PR gets rejected because it doesn't follow your architecture patterns — Cherny calls that a failure of automation, not a failure of the contributor."
-
-SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
 -->
 
 ---
