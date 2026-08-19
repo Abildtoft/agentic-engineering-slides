@@ -118,7 +118,7 @@ KEY POINTS:
 - Callback to Section 2's Bottleneck Cascade — don't re-explain it
 - Ultimate bottleneck: getting expert knowledge OUT of humans, INTO systems
 - Nadella's ownership test: switch the model without losing the expertise
-- Cherny callback: CLAUDE.md's, skills, and docs ARE the knowledge-extraction mechanism
+- Cherny's point: CLAUDE.md's, skills, and docs ARE the knowledge-extraction mechanism
 - Durable asset = the institutional loop, not the frontier model
 
 BRIDGE: "Cross-functional infrastructure, in an environment that keeps changing. Which makes posture the real decision."
