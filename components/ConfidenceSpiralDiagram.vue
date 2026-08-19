@@ -121,6 +121,15 @@ const spiralPath = computed(() => {
 </template>
 
 <style scoped>
+/* The spiral draws at 1.6× --motion-draw: six pills land off this one curve,
+   and at the token rate the cascade outruns the sentence the speaker says over
+   it. Scaled from the token rather than set as a fresh number, so it still
+   tracks the deck if the token moves; the pills' --reach fractions are of this
+   duration, so the tip and the pills stay in step. */
+.confidence-spiral {
+  --cs-draw: calc(var(--motion-draw) * 1.6);
+}
+
 .confidence-spiral svg {
   width: 100%;
   height: auto;
@@ -157,7 +166,7 @@ const spiralPath = computed(() => {
      so print and reduced motion land complete. */
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
-  animation: cs-draw var(--motion-draw) var(--motion-ease) both;
+  animation: cs-draw var(--cs-draw) var(--motion-ease) both;
   animation-delay: 150ms;
 }
 
@@ -183,8 +192,8 @@ const spiralPath = computed(() => {
    `--reach`, the eased draw's time fraction at its position on the curve (the
    E⁻¹ table above the steps array). 150ms is the draw's own start delay. */
 .cs-step {
-  animation: cs-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(150ms + var(--reach) * var(--motion-draw));
+  animation: cs-in var(--motion-slow) var(--motion-ease) both;
+  animation-delay: calc(150ms + var(--reach) * var(--cs-draw));
 }
 
 .cs-axis {
@@ -192,8 +201,8 @@ const spiralPath = computed(() => {
 }
 
 .cs-tail {
-  animation: cs-in var(--motion-base) var(--motion-ease) both;
-  animation-delay: calc(150ms + var(--motion-draw));
+  animation: cs-in var(--motion-slow) var(--motion-ease) both;
+  animation-delay: calc(150ms + var(--cs-draw));
 }
 
 .cs-tail-head {
