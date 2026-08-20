@@ -148,7 +148,7 @@ async function renderAvatar(audioUrl, resolution) {
   for (let attempt = 0; attempt < 240; attempt++) {
     await new Promise(resolve => setTimeout(resolve, 5000))
     const status = await heygen(`/v3/videos/${videoId}`)
-    if (status.status === 'completed') return status.video_url ?? status.url
+    if (status.status === 'completed') return { url: status.video_url ?? status.url, videoId }
     if (status.status === 'failed') throw new Error(`render failed: ${JSON.stringify(status.error ?? status)}`)
   }
   throw new Error(`render timed out for ${videoId}`)
@@ -183,6 +183,24 @@ async function fetchAvatar() {
   return { image, name: look.name ?? null, width: look.image_width, height: look.image_height }
 }
 
+/**
+ * Whether the asset a manifest entry names is actually on disk.
+ *
+ * The manifest is tracked and the clips it points at are gitignored, so a fresh
+ * clone starts life with a complete cache referencing nothing. A hash match
+ * alone would report every slide reused, spend nothing, and republish a
+ * manifest of 404s — auto-mode silently broken rather than loudly unbuilt, and
+ * the failure only shows when someone presses Start.
+ */
+async function hasAsset(entry) {
+  const asset = entry?.video ?? entry?.audio
+  if (!asset) return false
+  return stat(join(OUT_DIR, asset.split('/').pop())).then(
+    () => true,
+    () => false,
+  )
+}
+
 const data = await loadDeck()
 const { entries, problems } = await buildIndex(data)
 
@@ -208,13 +226,19 @@ const manifest = {
 }
 let spent = 0
 let reused = 0
+let recovered = 0
+const absent = []
 
 for (const entry of entries) {
   if (only && entry.file !== only) {
     // Carry the untouched slides through, or a filtered run would publish a
     // manifest containing only the section it rebuilt.
     const kept = previous.slides?.[entry.no]
-    if (kept) manifest.slides[entry.no] = kept
+    if (kept) {
+      manifest.slides[entry.no] = kept
+      // Rebuilding these would defeat --only, so say so instead of fixing it.
+      if (!dryRun && !(await hasAsset(kept))) absent.push(entry.no)
+    }
     continue
   }
 
@@ -227,9 +251,23 @@ for (const entry of entries) {
 
   const cached = previous.slides?.[entry.no]
   if (!force && cached?.hash === hash && !dryRun) {
-    manifest.slides[entry.no] = cached
-    reused++
-    continue
+    if (await hasAsset(cached)) {
+      manifest.slides[entry.no] = cached
+      reused++
+      continue
+    }
+    // The prose is unchanged and the render still exists in the account — only
+    // the local file is missing. Fetch it back rather than paying to render the
+    // same words into a different take. Audio entries have no equivalent: a TTS
+    // result isn't listed anywhere, so those fall through and re-synthesise.
+    if (cached.videoId) {
+      const detail = await heygen(`/v3/videos/${cached.videoId}`)
+      await download(detail.video_url ?? detail.url, join(OUT_DIR, cached.video.split('/').pop()))
+      manifest.slides[entry.no] = cached
+      recovered++
+      console.log(`  ${String(entry.no).padStart(2)} recovered ${cached.video.split('/').pop()} (no render)`)
+      continue
+    }
   }
 
   const label = `${String(entry.no).padStart(2)} ${entry.title || entry.layout}`
@@ -260,8 +298,13 @@ for (const entry of entries) {
   }
 
   const file = `${stem}.mp4`
-  await download(await renderAvatar(audioUrl, resolution), join(OUT_DIR, file))
-  manifest.slides[entry.no] = { hash, video: `/narration/${file}`, duration, cues }
+  const { url, videoId } = await renderAvatar(audioUrl, resolution)
+  await download(url, join(OUT_DIR, file))
+  // videoId is recorded so a lost local clip is a download rather than a
+  // re-render: the account keeps the rendered video, and paying to render the
+  // same prose again would also produce a *different take* — same words, new
+  // head movement — silently replacing one you had already approved.
+  manifest.slides[entry.no] = { hash, videoId, video: `/narration/${file}`, duration, cues }
   console.log(`  ${label}  ${duration.toFixed(1)}s  ${cues.length} cues  -> ${file}`)
 }
 
@@ -297,6 +340,14 @@ const pruned = dryRun ? null : await pruneOrphans()
 
 console.log(
   `\n${dryRun ? 'Dry run. ' : ''}${entries.length} narrated slides, ` +
-    `${reused} reused, ${(spent / 60).toFixed(1)} min of new speech.` +
+    `${reused} reused, ${recovered ? `${recovered} re-downloaded, ` : ''}` +
+    `${(spent / 60).toFixed(1)} min of new speech.` +
     (pruned?.count ? ` Pruned ${pruned.count} orphaned asset(s), ${pruned.mb.toFixed(1)} MB.` : ''),
 )
+
+if (absent.length) {
+  console.warn(
+    `! ${absent.length} slide(s) outside --only=${only} name an asset that is not on disk ` +
+      `(slide ${absent.join(', ')}). Auto-mode will 404 on them until you re-run without --only.`,
+  )
+}

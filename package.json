@@ -12,7 +12,8 @@
     "narration:scaffold": "node scripts/narration-scaffold.mjs",
     "narration:build": "node --env-file-if-exists=.env scripts/narration-build.mjs",
     "narration:audio": "node --env-file-if-exists=.env scripts/narration-build.mjs --audio-only",
-    "narration:voices": "node --env-file-if-exists=.env scripts/narration-voices.mjs"
+    "narration:voices": "node --env-file-if-exists=.env scripts/narration-voices.mjs",
+    "narration:recover": "node --env-file-if-exists=.env scripts/narration-recover.mjs"
   },
   "dependencies": {
     "@paper-design/shaders": "^0.0.80",

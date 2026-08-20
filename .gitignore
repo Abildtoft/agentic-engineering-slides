@@ -8,10 +8,8 @@ dist
 .yarn/install-state.gz
 .gstack/
 
-# Rendered avatar clips — regenerable from narration/ via `yarn narration:build`,
-# and far too large to version. manifest.json is kept: it records the cue times
-# and doubles as the build cache, so tracking it means a rebuild only re-renders
-# the slides whose prose actually changed.
-public/narration/*.mp4
+# Rendered avatar clips are tracked through Git LFS — see .gitattributes.
+#
+# Audio-mode speech stays out: it is the cheap rehearsal artefact, re-synthesised
+# on every prose edit, and worth nothing once the video exists.
 public/narration/*.mp3
-public/narration/avatar-still.jpg
