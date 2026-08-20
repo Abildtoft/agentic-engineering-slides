@@ -10,25 +10,29 @@
       "duration": 16.35265306122449,
       "cues": [
         9.149
-      ]
+      ],
+      "videoId": "0ed8a19f04fc445daaa6488282e44c6c"
     },
     "2": {
       "hash": "2104d07cf97d",
       "video": "/narration/slide-02-2104d07cf97d.mp4",
       "duration": 8.333061224489796,
-      "cues": []
+      "cues": [],
+      "videoId": "c044f9fbbc8b4cd293b379f3c3d76b74"
     },
     "3": {
       "hash": "69ccf9dd427f",
       "video": "/narration/slide-03-69ccf9dd427f.mp4",
       "duration": 20.271020408163267,
-      "cues": []
+      "cues": [],
+      "videoId": "2d0b4dc431b34de08993986a201cc598"
     },
     "4": {
       "hash": "acf9f3dffd33",
       "video": "/narration/slide-04-acf9f3dffd33.mp4",
       "duration": 18.311836734693877,
-      "cues": []
+      "cues": [],
+      "videoId": "5ede97cd62dd4c2b84759f9b73983686"
     },
     "5": {
       "hash": "5afcb46fcb96",
@@ -38,7 +42,8 @@
         9.829,
         12.429,
         21.889
-      ]
+      ],
+      "videoId": "7c25f96ce6d940678b05c1e4ec595774"
     },
     "6": {
       "hash": "e90909a361d9",
@@ -47,7 +52,8 @@
       "cues": [
         21.67,
         44.389
-      ]
+      ],
+      "videoId": "ebcfb83fa7bf4b748015ea5ecd5506e6"
     },
     "7": {
       "hash": "d253c2c1377e",
@@ -60,7 +66,8 @@
         26.889,
         29.109,
         36.849
-      ]
+      ],
+      "videoId": "832dc8e463ae46a184583b234b6aa845"
     },
     "8": {
       "hash": "a0c174476222",
@@ -69,19 +76,22 @@
       "cues": [
         19.809,
         32.59
-      ]
+      ],
+      "videoId": "4ded74237ffb4ac288bfb3889f2925d1"
     },
     "9": {
       "hash": "732095ca20c1",
       "video": "/narration/slide-09-732095ca20c1.mp4",
       "duration": 22.75265306122449,
-      "cues": []
+      "cues": [],
+      "videoId": "d9e6ff902ef846b58b095eb7eb3d55c9"
     },
     "10": {
       "hash": "0015871f9efb",
       "video": "/narration/slide-10-0015871f9efb.mp4",
       "duration": 20.845714285714287,
-      "cues": []
+      "cues": [],
+      "videoId": "5eddd95a4ebc45d3b4779dd27192cc6a"
     }
   }
 }

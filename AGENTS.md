@@ -94,6 +94,7 @@ narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
 scripts/narration-lib.mjs # deck ↔ narration pairing, cue splitting, validation
 scripts/narration-scaffold.mjs  # regenerates narration/ from the deck (offline)
 scripts/narration-build.mjs     # HeyGen: prose → clips + cue manifest
+scripts/narration-recover.mjs   # re-downloads clips the manifest names but disk lost
 public/narration/manifest.json  # cue times; also the build cache (tracked)
 public/narration/*.mp4          # rendered clips (gitignored, regenerable)
 components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
@@ -236,6 +237,38 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   the prose can be revised as many times as it needs to be here, and
   `yarn narration:build` run once at the end. `mode` is part of the cache hash,
   so switching rebuilds rather than serving the other mode's asset
+- **A cache hit requires the asset on disk, not just a matching hash.** The
+  manifest is tracked and the clips are gitignored, so a fresh clone or a pruned
+  `public/narration/` starts with a full cache pointing at nothing — trusting the
+  hash alone reports every slide reused, spends nothing, and republishes a
+  manifest of 404s. That is auto-mode silently broken rather than loudly
+  unbuilt, and it surfaces only when someone presses Start. `--only` can't
+  repair the sections it is excluding, so it warns about them instead
+- **A lost clip is a download, not a re-render.** The account keeps every
+  rendered video, so the manifest records its `videoId` and the build fetches it
+  back when the prose is unchanged and only the local file is gone. This is not
+  just about cost: a render is **not reproducible** — the same prose comes back
+  as a different take, with different head movement, silently replacing a clip
+  that was already reviewed. `yarn narration:recover` does the same repair
+  standalone, and for entries predating `videoId` it matches on duration:
+  distinct per slide, but the account also holds re-renders of the *same* slide
+  at identical durations, so the newest wins (it is the one the current hash was
+  written alongside) and the ambiguity is printed rather than hidden. Verified
+  on the ten intro clips — 62 MB restored, balance unmoved at $17.15
+- Audio-mode assets have no equivalent recovery. A TTS result is not a video and
+  is not listed anywhere; `.mp3` entries have to be re-synthesised, which is
+  cheap, so the scripts report them rather than trying
+- `/v3/videos` pages on **`token=`**, like `/v3/voices`. `next_token=` and
+  `page_token=` are both accepted and both ignored — they re-serve page one, so
+  a loop built on either collects the same 20 videos forever. Terminate on an
+  **empty page**, not on `has_more`: a 21-video listing pages 20 → 1 → 0 and
+  `has_more` only turns false on that final empty page
+- `GET /v3/videos/{id}` adds nothing to the list entry — no dimensions, no
+  resolution — so identical-duration re-renders can only be told apart by
+  `created_at`, or by bytes: measured on one slide's four renders, 156 KB/s is
+  the v2 original, ~750 KB/s the 1080p upscales, and ~520 KB/s the corrected v3
+  720p. The listing's `video_url` is signed and expires, so re-read it per
+  download rather than reusing one fetched earlier in the run
 - Audio and video can coexist per slide: the player picks `entry.video` first,
   then `entry.audio`, so a few slides can carry a rendered face while the rest
   stay audio. One `<video>` element plays both — an audio source is held at
