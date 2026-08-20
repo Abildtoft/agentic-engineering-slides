@@ -1,0 +1,87 @@
+{
+  "voice": "07ca39b243184dbcb82e7e0f0e524b21",
+  "avatar": "71a20616ea5844738a9d359a15caca9e",
+  "avatarName": "Matt",
+  "still": "/narration/avatar-still.webp",
+  "slides": {
+    "1": {
+      "hash": "dbae99e356af",
+      "video": "/narration/slide-01-dbae99e356af.mp4",
+      "duration": 16.35265306122449,
+      "cues": [
+        9.149
+      ]
+    },
+    "2": {
+      "hash": "2104d07cf97d",
+      "video": "/narration/slide-02-2104d07cf97d.mp4",
+      "duration": 8.333061224489796,
+      "cues": []
+    },
+    "3": {
+      "hash": "69ccf9dd427f",
+      "video": "/narration/slide-03-69ccf9dd427f.mp4",
+      "duration": 20.271020408163267,
+      "cues": []
+    },
+    "4": {
+      "hash": "acf9f3dffd33",
+      "video": "/narration/slide-04-acf9f3dffd33.mp4",
+      "duration": 18.311836734693877,
+      "cues": []
+    },
+    "5": {
+      "hash": "5afcb46fcb96",
+      "video": "/narration/slide-05-5afcb46fcb96.mp4",
+      "duration": 37.04163265306122,
+      "cues": [
+        9.829,
+        12.429,
+        21.889
+      ]
+    },
+    "6": {
+      "hash": "e90909a361d9",
+      "video": "/narration/slide-06-e90909a361d9.mp4",
+      "duration": 56.05877551020408,
+      "cues": [
+        21.67,
+        44.389
+      ]
+    },
+    "7": {
+      "hash": "d253c2c1377e",
+      "video": "/narration/slide-07-d253c2c1377e.mp4",
+      "duration": 47.15102040816326,
+      "cues": [
+        12.309,
+        20.069,
+        22.709,
+        26.889,
+        29.109,
+        36.849
+      ]
+    },
+    "8": {
+      "hash": "a0c174476222",
+      "video": "/narration/slide-08-a0c174476222.mp4",
+      "duration": 36.38857142857143,
+      "cues": [
+        19.809,
+        32.59
+      ]
+    },
+    "9": {
+      "hash": "732095ca20c1",
+      "video": "/narration/slide-09-732095ca20c1.mp4",
+      "duration": 22.75265306122449,
+      "cues": []
+    },
+    "10": {
+      "hash": "0015871f9efb",
+      "video": "/narration/slide-10-0015871f9efb.mp4",
+      "duration": 20.845714285714287,
+      "cues": []
+    }
+  }
+}
