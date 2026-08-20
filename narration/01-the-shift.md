@@ -1,0 +1,79 @@
+<!-- 4. section — The Shift Is Here -->
+
+You have heard this before. For three years running, someone has stood roughly
+where I am standing and told you that everything was about to change. And for
+three years, the people who rolled their eyes were right. So let me say that
+plainly first: the skepticism was earned. Something has changed since then, and
+I would rather show you the pattern than assert it.
+
+---
+
+<!-- 5. statement — We're in 1997 for AI — ~3 clicks -->
+
+Here is my honest calibration for where we actually are. 1997. The category is
+real, and almost nothing about it is settled yet.
+[click] This is as big as the internet or mobile.
+[click] And it is only as big as the internet or mobile. Both of those things
+are true at the same time, and most arguments about AI are just people holding
+one of them and refusing the other.
+[click] Think about what 1997 actually looked like. Most things did not work
+reliably. Most of what would end up mattering had not been built. And the
+companies that went on to win the next decade were, for the most part, not yet
+in the room. That is where we are standing.
+
+---
+
+<!-- 6. default — It's Not Just One Tool — ~2 clicks -->
+
+Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex. This was not one
+model release. In a single 30-day window last December, all three frontier labs
+shipped, and the whole category quietly renamed itself from assistants to
+agents. Different interfaces, but the same shift underneath in how the work
+actually happens.
+[click] So zoom out from the tool names to what the companies themselves are
+saying. Spotify's co-CEO says their best developers have not written a line of
+code since December. Google says AI now writes over 30% of all new code.
+Microsoft puts it at 20 to 30%. And the frontier teams at Anthropic and OpenAI
+report that essentially all of their code is now AI-generated.
+[click] One thing about those numbers before we move on. Every single one of
+them is at least six months old. These are the last figures these companies
+chose to publish, which makes every one of them a floor, not a ceiling.
+
+---
+
+<!-- 7. default — Same Job, Same Me, Different Years — ~6 clicks -->
+
+If that still sounds like vendor hype, you do not have to take their word for
+it. This is my own git log. Same person, same job, two consecutive years. The
+only thing that changed between them is the stack.
+[click] Last year: 343 merged pull requests. I want to give that its due. That
+was a normal, productive year, and I was proud of it.
+[click] This year, the same measure, same person.
+[click] Commits tell the same story. 967 in the old year.
+[click] And 16 times that in the new one.
+[click] And then the tests. Last year I wrote five. Five tests, in an entire
+year. That is the honest number, and I am not proud of it.
+[click] This year, 57,179. That multiplier is not a typo. The agents test far
+more than I ever did, and that turns out to be the part that matters most.
+
+---
+
+<!-- 8. default — The Curve Bent in January — ~2 clicks -->
+
+Now the same data month by month, because the totals are not the interesting
+part. When it happened is. Watch the flat year draw itself out. That was me
+being productive: somewhere between 25 and 65 merges a month, every month, for
+a year. Nothing wrong with that line. It is just a line that goes nowhere.
+[click] And then January. 176. Then 264 in February. Then 790 in March, which
+means one single month out-merged the entire year that came before it.
+[click] The skeptics were right for three years. Then the curve bent.
+
+---
+
+<!-- 9. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
+
+Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
+summer 2026, he wrote, people working with frontier AI will feel like they live
+in a parallel world. It is summer 2026. So here is the question I would ask you
+to hold onto for the rest of this hour, and I genuinely do not know the answer
+for your team. Which side of that divide are you on?
