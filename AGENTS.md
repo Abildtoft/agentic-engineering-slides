@@ -81,6 +81,181 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
   - `05-pipeline-and-what-matters.md` → P1-007
   - `06-moving-forward.md` → P1-008
 
+### Narrated Auto-Mode
+
+An opt-in second way to run the deck: a pre-rendered HeyGen avatar narrates each
+slide and the narration drives the clicks. Opened normally the deck is entirely
+unaffected — `<AvatarNarrator>` fetches nothing and renders nothing without
+`?auto=1`, which is the point. The live-presentation path stays the one with no
+network dependency.
+
+```
+narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
+scripts/narration-lib.mjs # deck ↔ narration pairing, cue splitting, validation
+scripts/narration-scaffold.mjs  # regenerates narration/ from the deck (offline)
+scripts/narration-build.mjs     # HeyGen: prose → clips + cue manifest
+public/narration/manifest.json  # cue times; also the build cache (tracked)
+public/narration/*.mp4          # rendered clips (gitignored, regenerable)
+components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
+```
+
+- **One clip per slide, not per click step.** The deck is 59 slides but ~171
+  click steps; per-step clips mean 171 avatar entrances and a hard cut every
+  time a bullet appears. A slide is the natural unit of speech, and the reveals
+  ride inside it on cue times
+- Cues are marked inline in the prose as `[click]`. The marker is stripped
+  before synthesis and its position recorded, so the avatar never says the word
+- **The two HeyGen calls are ordered, not interchangeable.** `POST
+  /v3/voices/speech` first, because `word_timestamps` is the only thing in
+  either API that can say *when* a phrase is spoken — that is what resolves a
+  `[click]` into a time. Then `POST /v2/video/generate` with `voice: { type:
+  'audio' }` pointing at that same audio. Generating the video from text
+  instead re-synthesises the speech and silently invalidates every cue
+- Cue resolution counts words into the timestamps rather than matching them.
+  Measured against a live response: `word_timestamps` preserves the **written**
+  tokenisation, one entry per whitespace-separated input token — `"2026"`,
+  `"343"`, `"57,179"` and `"30%"` each come back as a single entry, not expanded
+  into the words they are read as. So numerals are safe in narration prose and
+  the counts line up. Where they don't, the build warns and spaces cues evenly
+- **`word_timestamps` is bracketed by `<start>` and `<end>` sentinel entries**
+  that carry timings but are never spoken — 8 entries for 6 words on a verified
+  live response. They must be filtered before counting, or every cue lands one
+  word early. A constant one-word offset reads as a plausible reveal rather than
+  a bug, so it will not announce itself; `resolveCues` strips anything matching
+  `<…>` and the unit case in the smoke test pins the expected time
+- Render at **16:9** (`1280x720`), not square. A square `dimension` letterboxes
+  rather than crops — it bakes white bars into the pixels, which no CSS can
+  remove. The corner tile is square and crops to the face with
+  `object-fit: cover`
+- `/v3/voices` and `/v3/avatars` are **paginated** (`has_more` / `next_token`,
+  20 per page — ~60 pages of Starfish voices). Reading page one and concluding a
+  voice is unsupported is worse than not checking
+- **Everything is on v3.** The v1/v2 equivalents still answer, but each returns a
+  `warning` naming a **2026-10-31 sunset**: `/v2/avatars`,
+  `/v2/avatar/{id}/details`, `/v2/video/generate`, `/v1/video_status.get`,
+  `/v2/user/remaining_quota`. Check `payload.warning` after adding any endpoint —
+  that field is the only place the deprecation appears
+
+  | Use | Endpoint |
+  |---|---|
+  | Synthesise + word timings | `POST /v3/voices/speech` |
+  | Render from that audio | `POST /v3/videos` (`type: avatar`, `audio_url`) |
+  | Poll a render | `GET /v3/videos/{id}` |
+  | Resolve the avatar | `GET /v3/avatars/looks/{look_id}` |
+  | Account balance | `GET /v3/users/me` |
+
+- In v3 an **avatar is a group and the id you generate with is a *look* inside
+  it**, so `/v3/avatars` (~1.4k groups) will never contain a usable `avatar_id`
+  and searching it reports valid avatars as missing. Resolve a look with
+  `GET /v3/avatars/looks/{look_id}` — note the path: the
+  `/v3/avatars/{group_id}/looks/{look_id}` the docs describe returns a bare 404,
+  and it would need a group id we don't have anyway
+- `POST /v3/videos` takes `aspect_ratio: 'auto'`, which is the structural fix for
+  the letterbox — the render matches the avatar's native framing instead of a
+  hardcoded `dimension`. The look record carries `image_width`/`image_height` and
+  `preferred_orientation` if you need to know what that will be
+- `GET /v3/users/me` reports `wallet.remaining_balance` in **actual currency**,
+  which is a far more useful number than a credit count; the preflight fails on a
+  zero balance because rendering otherwise dies with a 402 that reads like a
+  malformed request
+- Narration is keyed by `(source file, index within file)`, never by deck-wide
+  slide number — a slide inserted early would otherwise re-point every later
+  line onto the wrong slide, and nothing would notice until the podium.
+  `buildIndex()` hard-errors on a block/slide count mismatch instead of guessing
+- Click counts in the scaffold's header comments are **approximate**. A v-click
+  total is only authoritative at runtime, so the player reconciles against the
+  real `clicksTotal` on screen: it never fires `next()` past the last reveal
+  (over-marking can't skip a slide), and warns when a slide ends with reveals
+  the narration never cued
+- Cues run off the clip's `currentTime` in a rAF loop, not `setTimeout` — a
+  timer keeps running through a stall, a pause or a seek and walks the reveals
+  out of step with the voice
+- **The slide-to-slide handoff is three separate mechanisms**, each fixing a
+  measured problem rather than a suspected one:
+  - **A beat between slides.** Rendered clips carry ~0.2s of lead-in and
+    **zero** trailing silence — they end on the final syllable — so untreated
+    the deck runs one slide's last syllable into the next slide's first word
+    ~300ms later. `SLIDE_GAP_MS` (700) / `SECTION_GAP_MS` (1500) hold the voice.
+    The gap is taken **after** the slide has already changed, so the new slide
+    lands and settles in silence before anyone speaks over it — which is what a
+    speaker does, and what a chapter change needs
+  - **Double-buffered media elements.** With one element, assigning `src` fires
+    `emptied` at once: the frame blanks and the next clip only *starts* fetching
+    then — 96ms on localhost, a whole network round trip anywhere else, once per
+    slide. Two elements let `preloadNext()` have the next clip at
+    `readyState: 4` before it is needed
+  - **A blurred dissolve through the avatar's own still** (`DISSOLVE_MS` 340,
+    `DISSOLVE_BLUR_PX` 6). Consecutive clips are independent renders, so the
+    pose at the end of one doesn't match the start of the next. **Opacity alone
+    is not enough**: a linear crossfade between two faces caught at different
+    moments of speech shows both mouths at once and the eye resolves it as a
+    glitch. The blur is what makes it a dissolve — it removes the *legibility*
+    of the overlap rather than the overlap itself, so the images merge instead
+    of competing. A fractional `scale(1.04)` rides with it so the blurred frame
+    reads as receding rather than as a flat wash
+  - The still counter-blurs, `DISSOLVE_BLUR_PX / 2` while a clip is live and
+    sharp when it is the picture. Without it a blurred video dissolves into a
+    sharp still and the eye catches the seam. Measured, the two cross at the
+    midpoint — both at 2.0px, 461ms in — which is what stops either image
+    dominating
+  - Resolving *through* `preview_image_url` matters: it is the same person, same
+    framing, same lighting, at rest, so neither half of the dissolve is ever
+    blending two unrelated pictures. Between slides the avatar simply stops
+    talking and rests. The still already sits behind both media elements, so the
+    source swap happens while nothing is visible
+  - A brand-coloured panel wiping over the tile was tried and rejected: it hid
+    the cut but announced a transition the deck never asked for — a navy block
+    sweeping a face is a broadcast lower-third, and nothing else here behaves
+    like one
+  - Measured on a 700ms gap: video out by ~341ms, back live at ~671ms, first
+    word at 703ms. A section divider's extra time goes into the rest at the
+    midpoint, not into slower dissolves
+  - Manual navigation skips the settle entirely (`gap <= 0`) — a keypress should
+    be answered now, not after a 260ms dissolve. Preloading is deferred past the
+    fade, since assigning `src` blanks the element still on screen
+- Auto-mode never runs in the presenter window (`isPresenter`) or in print
+  (`isPrintMode`). Presenter mode renders the deck twice against one shared nav
+  state, so without the guard both copies narrate and every reveal fires twice
+- The first play needs a user gesture — browsers block autoplay with sound — so
+  the tile carries a Start button. Everything after it is chained
+- After adding, removing or reordering slides, run `yarn narration:scaffold`;
+  it rewrites the header comments from the current deck and preserves prose
+- Credentials live in `.env` (gitignored; `.env.example` documents them) and are
+  loaded with node's `--env-file-if-exists`, so there is no dotenv dependency
+- `yarn narration:voices` is the preflight, and the voice check is the one that
+  matters: `word_timestamps` only comes back for **Starfish-engine** voices, and
+  any other voice synthesises fine while returning null there — the build then
+  spaces every cue evenly and the drift only shows up on stage. `--list` prints
+  the compatible voices
+- Run `yarn narration:build --dry-run` before spending credits: it stops after
+  the TTS step and prints resolved cue times and total spoken duration
+- **`yarn narration:audio` is the mode to work in.** It builds everything except
+  the rendered clip — real voice, real word-timed cues, real auto-advance — and
+  shows a still of the avatar (`/v2/avatar/{id}/details` → `preview_image_url`)
+  instead. Video generation is the overwhelming majority of the credit cost, so
+  the prose can be revised as many times as it needs to be here, and
+  `yarn narration:build` run once at the end. `mode` is part of the cache hash,
+  so switching rebuilds rather than serving the other mode's asset
+- Audio and video can coexist per slide: the player picks `entry.video` first,
+  then `entry.audio`, so a few slides can carry a rendered face while the rest
+  stay audio. One `<video>` element plays both — an audio source is held at
+  `opacity: 0` rather than `display: none`, since an element removed from the
+  render tree may be throttled and it still has to play
+- The narrator tile's `position: fixed` resolves against Slidev's transformed
+  `.slidev-slide-content`, not the viewport, so it scales with the slide and
+  keeps its framing at any window size. It still doesn't ride the slide
+  transition — `GlobalBottom` is a sibling of the slide components
+- Un-narrated slides hold for `SILENT_DWELL_MS` (3.5s) and move on, so a partly
+  written deck races through the gaps rather than stalling
+- The tile's corner is per slide: `narrator: top-right | bottom-left | top-left |
+  hidden` in frontmatter, defaulting to `bottom-right`. The key is ignored when
+  the deck is presented normally. **Full-frame diagram slides generally want
+  `hidden`** — verified on both data slides in section 1, where every corner
+  covers a number the slide exists to show (`MergeLedgerCompare`'s multipliers
+  sit hard right on each row; `MergeLedgerChart`'s curve climbs into the
+  top-right). Hidden shrinks the tile to 1px at `opacity: 0` rather than
+  removing it, so the media element keeps playing, and the Pause control stays
+
 ## Guidelines
 
 - Keep slides minimal — one idea per slide

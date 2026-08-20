@@ -145,6 +145,10 @@ SOURCE: RedMonk, "10 Things Developers Want from Their Agentic IDEs" (redmonk.co
 
 ---
 clicks: 6
+# Auto-mode only: the bars run the full width and the multipliers sit hard
+# right on each metric row, so there is no corner the tile can take without
+# covering a number. Ignored when the deck is presented normally.
+narrator: hidden
 ---
 
 # Same Job, Same Me, Different Years
@@ -181,6 +185,10 @@ SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — the indust
 
 ---
 clicks: 2
+# Auto-mode only: this chart fills the frame and its curve climbs into the
+# top-right, so every corner covers something the slide exists to show. The
+# narration keeps playing and still drives the clicks; only the tile goes.
+narrator: hidden
 ---
 
 # The Curve Bent in January

@@ -6,6 +6,10 @@
       "env": {
         "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
       }
+    },
+    "heygen": {
+      "type": "http",
+      "url": "https://mcp.heygen.com/mcp/v1/"
     }
   }
 }
