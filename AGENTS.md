@@ -96,7 +96,7 @@ scripts/narration-scaffold.mjs  # regenerates narration/ from the deck (offline)
 scripts/narration-build.mjs     # HeyGen: prose → clips + cue manifest
 scripts/narration-recover.mjs   # re-downloads clips the manifest names but disk lost
 public/narration/manifest.json  # cue times; also the build cache (tracked)
-public/narration/*.mp4          # rendered clips (gitignored, regenerable)
+public/narration/*.mp4          # rendered clips (tracked — see the size note)
 components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 ```
 
@@ -258,6 +258,21 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 - Audio-mode assets have no equivalent recovery. A TTS result is not a video and
   is not listed anywhere; `.mp3` entries have to be re-synthesised, which is
   cheap, so the scripts report them rather than trying
+- **The clips are tracked, through Git LFS** (`.gitattributes`). Versioning them
+  is what lets a clone play the narrated deck with no API key and nothing to
+  rebuild — which recovery alone can't promise, since it needs a key, a balance
+  and HeyGen still holding the render. LFS rather than plain blobs because
+  filenames are content-hashed: every prose revision adds an object, and
+  `pruneOrphans` deleting the stale file doesn't shrink history. Ten of 59
+  slides is already 62 MB; at v3's ~520 KB/s a complete deck is near a gigabyte
+- **`git-lfs` has to be installed to clone this repo usefully** — without it the
+  clips arrive as pointer text and auto-mode plays nothing. `brew install
+  git-lfs && git lfs install`. Worth knowing that GitHub's free tier is 1 GB of
+  LFS storage and 1 GB of bandwidth per month, and **every fresh checkout draws
+  on that bandwidth** — a Conductor workspace per branch adds up faster than a
+  single working copy would
+- Audio-mode `.mp3`s stay gitignored: cheap to re-synthesise, and superseded the
+  moment the slide's clip renders
 - `/v3/videos` pages on **`token=`**, like `/v3/voices`. `next_token=` and
   `page_token=` are both accepted and both ignored — they re-serve page one, so
   a loop built on either collects the same 20 videos forever. Terminate on an

@@ -1,0 +1,11 @@
+# Rendered avatar clips go through Git LFS. They are versioned rather than
+# rebuilt because re-rendering the same prose returns a *different take* — a
+# lost clip can be replaced but never reproduced — and a clone should be able
+# to play the narrated deck with no API key and nothing to build.
+#
+# LFS rather than plain blobs because the filenames are content-hashed: every
+# prose revision adds an object git would otherwise keep in history forever,
+# and a fully narrated deck is on the order of a gigabyte of video.
+#
+# Anyone cloning needs git-lfs installed, or these arrive as pointer text.
+public/narration/*.mp4 filter=lfs diff=lfs merge=lfs -text
