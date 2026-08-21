@@ -155,6 +155,16 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   the letterbox — the render matches the avatar's native framing instead of a
   hardcoded `dimension`. The look record carries `image_width`/`image_height` and
   `preferred_orientation` if you need to know what that will be
+- **`POST /v3/videos` defaults to the Avatar IV engine, billed at $4/min.**
+  Avatar III is $1/min and is what the v2 endpoint rendered. Measured: four
+  clips, 3.3 min, $13.47 with `engine` omitted. The build sends
+  `engine: avatar_iii` (`HEYGEN_ENGINE` overrides) and keys video entries on
+  it. Check `supported_api_engines` on the look record before changing it.
+  The web plan's monthly credits are a separate pool — the API only draws on
+  the wallet
+- **`--dry-run` reads cached cue times** for any slide whose speech is built in
+  either mode, and synthesises only the rest. It used to bypass the cache and
+  once re-synthesised 49 slides for $1.08 to print numbers the manifest held
 - `GET /v3/users/me` reports `wallet.remaining_balance` in **actual currency**,
   which is a far more useful number than a credit count; the preflight fails on a
   zero balance because rendering otherwise dies with a 402 that reads like a
@@ -230,6 +240,15 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   the compatible voices
 - Run `yarn narration:build --dry-run` before spending credits: it stops after
   the TTS step and prints resolved cue times and total spoken duration
+- **A parameter entering the hash string invalidates every cached clip**, even
+  though the files on disk are still right. That happened when `resolution`
+  was added: slides 4–10 mismatched and a bare build would have re-rendered
+  them (~$2) into different, larger takes. `--restamp=4-10` re-keys the named
+  entries to the current hash without rendering, provided the asset is on disk
+  and matches the build mode. It is an assertion, not a check — the script
+  cannot tell a changed parameter from changed prose — so it takes an explicit
+  slide list and never applies itself. Verified: after restamping, a bare
+  `yarn narration:build` reports `10 reused, 0.0 min of new speech`
 - **`yarn narration:audio` is the mode to work in.** It builds everything except
   the rendered clip — real voice, real word-timed cues, real auto-advance — and
   shows a still of the avatar (`/v2/avatar/{id}/details` → `preview_image_url`)
@@ -272,7 +291,18 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   on that bandwidth** — a Conductor workspace per branch adds up faster than a
   single working copy would
 - Audio-mode `.mp3`s stay gitignored: cheap to re-synthesise, and superseded the
-  moment the slide's clip renders
+  moment the slide's clip renders. Measured over the whole deck: 36.4 min of
+  TTS cost $1.88, **$0.05/min against $0.48/min for a render** — about a tenth,
+  not the ~1% the early smoke test suggested, so a full audio pass is a
+  two-dollar decision rather than a free one
+- **An audio build never downgrades a current video clip.** The mode is in the
+  hash, so a video entry always mismatches an audio build; left alone that
+  re-synthesised the slide, replaced its manifest entry with the `.mp3`, and
+  orphaned the `.mp4` for `pruneOrphans` to delete — an approved take gone
+  because someone rehearsed. The build now keeps a video entry whose hash still
+  matches the *video*-mode hash of the current prose; once the prose moves, it
+  re-synthesises like any other slide. A video build still replaces audio
+  entries, which is the direction that should win
 - `/v3/videos` pages on **`token=`**, like `/v3/voices`. `next_token=` and
   `page_token=` are both accepted and both ignored — they re-serve page one, so
   a loop built on either collects the same 20 videos forever. Terminate on an
@@ -303,6 +333,56 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   sit hard right on each row; `MergeLedgerChart`'s curve climbs into the
   top-right). Hidden shrinks the tile to 1px at `opacity: 0` rather than
   removing it, so the media element keeps playing, and the Pause control stays
+
+### Mascot Narration (Mascotbot)
+
+A second face for auto-mode, rendered locally for free: a Mascotbot 2D
+character (Rive) lip-synced to the **same speech clips** the HeyGen pipeline
+produced. `yarn narration:mascot` never synthesises and never calls HeyGen.
+
+```
+scripts/narration-mascot.mjs    # orchestrator: ffmpeg + headless Chrome + Mascotbot
+scripts/mascot-render/          # the page Chrome renders: virtual clock + Rive + SDK
+public/narration/mascot.json    # sibling manifest the player layers over manifest.json
+public/narration/*-mascot-*.mp4 # the clips (LFS, like the HeyGen ones)
+public/narration/mascot-still.png
+```
+
+- **Layered, not replaced.** `mascot.json` maps slide → clip, keyed by the
+  speech asset (`source`) it was rendered from. The player applies it on load
+  when the source still matches the slide's current `video`/`audio`, so a
+  re-synthesised slide falls back to its HeyGen asset instead of playing a
+  mascot out of sync with the new cues. `?mascot=0` plays the HeyGen deck.
+  Cues, gaps, auto-advance, dissolve: all unchanged — the clip is just
+  `entry.video`
+- **Deterministic render on a virtual clock.** `index.html` patches
+  `performance.now`/`Date.now`/`requestAnimationFrame` before anything loads;
+  node steps time in 1/fps increments, seeks the viseme timeline to each
+  frame, and captures the canvas. Measured ~90 fps capture at 512px, i.e.
+  ~3× real time, and the same timeline always produces the same frames —
+  unlike a HeyGen render, a mascot clip *is* reproducible
+- **Inference once, metered once.** `processAudio` output is cached per
+  speech asset in `node_modules/.cache/narration-mascot/`; replay is not
+  metered (the timeline carries `speechMs`). Changing `--fps/--size/--bg/
+  --mascot` re-renders from the cached timeline without touching the model
+- **Key and registry.** `@mascotbot/*` is on a private registry that takes
+  the same key the SDK runs on; `.yarnrc.yml` reads it from `MASCOT_API_KEY`
+  (so `MASCOT_API_KEY=… yarn install`). A `mascot_dev_…` key is the right one
+  — the render runs on localhost, the only origin a dev key accepts, and the
+  deck ships video, not the SDK. Note the licence: the commercial right to
+  ship Mascotbot's characters comes with a paid plan, so check the plan
+  before publishing a deck carrying one
+- The stock characters' metadata names the `InLesson` state machine; the
+  SDK accepts it as an alias of `mascotStateMachine`. Pass **only** that one
+  name to `new Rive()` — Rive 2.37+ throws on an unknown name and leaves the
+  canvas blank with no error past `LoadError`
+- WebGL clears to transparent and `yuv420p` flattens alpha to black, so
+  frames are composited onto `--bg` in a 2D canvas before capture
+- The HeyGen build's `pruneOrphans` skips `*-mascot-*.mp4`, `mascot.json` and
+  `mascot-still.png`; the mascot script prunes only its own stale clips.
+  Neither touches the other's files
+- Needs `ffmpeg` on PATH and Google Chrome (driven through `playwright-core`
+  with `channel: 'chrome'`, so nothing is downloaded)
 
 ## Guidelines
 
