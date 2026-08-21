@@ -5,7 +5,7 @@
   "still": "/narration/avatar-still.webp",
   "slides": {
     "1": {
-      "hash": "dbae99e356af",
+      "hash": "2db614aebb37",
       "video": "/narration/slide-01-dbae99e356af.mp4",
       "duration": 16.35265306122449,
       "cues": [
@@ -14,28 +14,28 @@
       "videoId": "0ed8a19f04fc445daaa6488282e44c6c"
     },
     "2": {
-      "hash": "2104d07cf97d",
+      "hash": "e5364db00773",
       "video": "/narration/slide-02-2104d07cf97d.mp4",
       "duration": 8.333061224489796,
       "cues": [],
       "videoId": "c044f9fbbc8b4cd293b379f3c3d76b74"
     },
     "3": {
-      "hash": "69ccf9dd427f",
+      "hash": "cd35c779212f",
       "video": "/narration/slide-03-69ccf9dd427f.mp4",
       "duration": 20.271020408163267,
       "cues": [],
       "videoId": "2d0b4dc431b34de08993986a201cc598"
     },
     "4": {
-      "hash": "acf9f3dffd33",
+      "hash": "c13e2f24d28b",
       "video": "/narration/slide-04-acf9f3dffd33.mp4",
       "duration": 18.311836734693877,
       "cues": [],
       "videoId": "5ede97cd62dd4c2b84759f9b73983686"
     },
     "5": {
-      "hash": "5afcb46fcb96",
+      "hash": "d98054e1f679",
       "video": "/narration/slide-05-5afcb46fcb96.mp4",
       "duration": 37.04163265306122,
       "cues": [
@@ -46,52 +46,491 @@
       "videoId": "7c25f96ce6d940678b05c1e4ec595774"
     },
     "6": {
-      "hash": "e90909a361d9",
-      "video": "/narration/slide-06-e90909a361d9.mp4",
-      "duration": 56.05877551020408,
+      "hash": "922a30759939",
+      "videoId": "1cb9dcd2c54b465e9438f42ef8edf363",
+      "video": "/narration/slide-06-7cef0cef40e0.mp4",
+      "duration": 69.32897959183674,
       "cues": [
-        21.67,
-        44.389
-      ],
-      "videoId": "ebcfb83fa7bf4b748015ea5ecd5506e6"
+        34.009,
+        57.669
+      ]
     },
     "7": {
-      "hash": "d253c2c1377e",
-      "video": "/narration/slide-07-d253c2c1377e.mp4",
-      "duration": 47.15102040816326,
+      "hash": "e8df2cecac3f",
+      "videoId": "214def85085e47e7affe16eb9c391f10",
+      "video": "/narration/slide-07-cedf06b10232.mp4",
+      "duration": 71.68,
       "cues": [
-        12.309,
-        20.069,
-        22.709,
-        26.889,
-        29.109,
-        36.849
-      ],
-      "videoId": "832dc8e463ae46a184583b234b6aa845"
+        15.409,
+        29.01,
+        31.609,
+        42.11,
+        44.59,
+        58.229
+      ]
     },
     "8": {
-      "hash": "a0c174476222",
-      "video": "/narration/slide-08-a0c174476222.mp4",
-      "duration": 36.38857142857143,
+      "hash": "b505915acb18",
+      "videoId": "6f5ae401170c480386a44ef08c502c0d",
+      "video": "/narration/slide-08-40da28884354.mp4",
+      "duration": 37.06775510204081,
       "cues": [
-        19.809,
-        32.59
-      ],
-      "videoId": "4ded74237ffb4ac288bfb3889f2925d1"
+        18.949,
+        33.389
+      ]
     },
     "9": {
-      "hash": "732095ca20c1",
-      "video": "/narration/slide-09-732095ca20c1.mp4",
-      "duration": 22.75265306122449,
-      "cues": [],
-      "videoId": "d9e6ff902ef846b58b095eb7eb3d55c9"
+      "hash": "9fa687e5dae6",
+      "videoId": "bc4f9015402749728c46cdb73126c153",
+      "video": "/narration/slide-09-93504dc839a2.mp4",
+      "duration": 22.360816326530614,
+      "cues": []
     },
     "10": {
-      "hash": "0015871f9efb",
+      "hash": "7d81b1324424",
       "video": "/narration/slide-10-0015871f9efb.mp4",
       "duration": 20.845714285714287,
       "cues": [],
       "videoId": "5eddd95a4ebc45d3b4779dd27192cc6a"
+    },
+    "11": {
+      "hash": "f7ab72634fcb",
+      "audio": "/narration/slide-11-f7ab72634fcb.mp3",
+      "duration": 58.35755102040817,
+      "cues": [
+        16.469,
+        27.93,
+        37.309
+      ]
+    },
+    "12": {
+      "hash": "88955d067e42",
+      "audio": "/narration/slide-12-88955d067e42.mp3",
+      "duration": 40.15020408163265,
+      "cues": [
+        7.269,
+        22.17
+      ]
+    },
+    "13": {
+      "hash": "d410afc90f2c",
+      "audio": "/narration/slide-13-d410afc90f2c.mp3",
+      "duration": 31.164081632653062,
+      "cues": [
+        15.329
+      ]
+    },
+    "14": {
+      "hash": "bd0487bb6b3a",
+      "audio": "/narration/slide-14-bd0487bb6b3a.mp3",
+      "duration": 38.79183673469388,
+      "cues": [
+        14.729,
+        29.649
+      ]
+    },
+    "15": {
+      "hash": "7bf7d574c2fe",
+      "audio": "/narration/slide-15-7bf7d574c2fe.mp3",
+      "duration": 50.02448979591837,
+      "cues": [
+        17.549,
+        26.029,
+        45.75
+      ]
+    },
+    "16": {
+      "hash": "217182cc6813",
+      "audio": "/narration/slide-16-217182cc6813.mp3",
+      "duration": 57.391020408163264,
+      "cues": [
+        3.109,
+        18.59,
+        43.549
+      ]
+    },
+    "17": {
+      "hash": "c3bd31aa36b5",
+      "audio": "/narration/slide-17-c3bd31aa36b5.mp3",
+      "duration": 20.45387755102041,
+      "cues": []
+    },
+    "18": {
+      "hash": "d7a0b95638e7",
+      "audio": "/narration/slide-18-d7a0b95638e7.mp3",
+      "duration": 51.2,
+      "cues": [
+        5.049,
+        12.989,
+        37.43
+      ]
+    },
+    "19": {
+      "hash": "cfec9220807f",
+      "audio": "/narration/slide-19-cfec9220807f.mp3",
+      "duration": 57.44326530612245,
+      "cues": [
+        1.209,
+        17.19,
+        38.909
+      ]
+    },
+    "20": {
+      "hash": "b14650d2adbe",
+      "audio": "/narration/slide-20-b14650d2adbe.mp3",
+      "duration": 61.779591836734696,
+      "cues": [
+        1.629,
+        8.13,
+        29.789,
+        43.549
+      ]
+    },
+    "21": {
+      "hash": "15224b9af94c",
+      "audio": "/narration/slide-21-15224b9af94c.mp3",
+      "duration": 17.47591836734694,
+      "cues": []
+    },
+    "22": {
+      "hash": "e54cdfdfc2d4",
+      "audio": "/narration/slide-22-e54cdfdfc2d4.mp3",
+      "duration": 45.68816326530612,
+      "cues": [
+        18.43,
+        31.649
+      ]
+    },
+    "23": {
+      "hash": "86547a9f8ad4",
+      "audio": "/narration/slide-23-86547a9f8ad4.mp3",
+      "duration": 47.673469387755105,
+      "cues": [
+        19.449,
+        44.09
+      ]
+    },
+    "24": {
+      "hash": "82c596e9cece",
+      "audio": "/narration/slide-24-82c596e9cece.mp3",
+      "duration": 56.946938775510205,
+      "cues": [
+        14.21,
+        24.869,
+        47.689
+      ]
+    },
+    "25": {
+      "hash": "34c0668f0c66",
+      "audio": "/narration/slide-25-34c0668f0c66.mp3",
+      "duration": 62.04081632653061,
+      "cues": [
+        19.59,
+        30.489,
+        43.369
+      ]
+    },
+    "26": {
+      "hash": "02675480ed80",
+      "audio": "/narration/slide-26-02675480ed80.mp3",
+      "duration": 60.7869387755102,
+      "cues": [
+        25.349,
+        47.169
+      ]
+    },
+    "27": {
+      "hash": "31c768014268",
+      "audio": "/narration/slide-27-31c768014268.mp3",
+      "duration": 53.838367346938774,
+      "cues": [
+        5.989,
+        14.329,
+        42.75
+      ]
+    },
+    "28": {
+      "hash": "92a6d0abec2f",
+      "audio": "/narration/slide-28-92a6d0abec2f.mp3",
+      "duration": 56.79020408163265,
+      "cues": [
+        14.849,
+        30.67,
+        42.169
+      ]
+    },
+    "29": {
+      "hash": "5d355a22186f",
+      "audio": "/narration/slide-29-5d355a22186f.mp3",
+      "duration": 56.137142857142855,
+      "cues": [
+        13.75,
+        18.689,
+        43.11
+      ]
+    },
+    "30": {
+      "hash": "3150380384da",
+      "audio": "/narration/slide-30-3150380384da.mp3",
+      "duration": 14.94204081632653,
+      "cues": []
+    },
+    "31": {
+      "hash": "03c6b6d1f007",
+      "audio": "/narration/slide-31-03c6b6d1f007.mp3",
+      "duration": 27.141224489795917,
+      "cues": []
+    },
+    "32": {
+      "hash": "538d93c70168",
+      "audio": "/narration/slide-32-538d93c70168.mp3",
+      "duration": 42.370612244897956,
+      "cues": [
+        11.929,
+        17.489,
+        35.409
+      ]
+    },
+    "33": {
+      "hash": "4d7860dd99fd",
+      "audio": "/narration/slide-33-4d7860dd99fd.mp3",
+      "duration": 48.09142857142857,
+      "cues": [
+        7.869,
+        12.509,
+        26.269,
+        27.769
+      ]
+    },
+    "34": {
+      "hash": "6d20d7113f04",
+      "audio": "/narration/slide-34-6d20d7113f04.mp3",
+      "duration": 39.26204081632653,
+      "cues": [
+        8.609,
+        29.549
+      ]
+    },
+    "35": {
+      "hash": "ec5bc50abc22",
+      "audio": "/narration/slide-35-ec5bc50abc22.mp3",
+      "duration": 45.008979591836734,
+      "cues": [
+        13.069,
+        22.449,
+        34.389
+      ]
+    },
+    "36": {
+      "hash": "3b5c05889aaf",
+      "audio": "/narration/slide-36-3b5c05889aaf.mp3",
+      "duration": 39.20979591836735,
+      "cues": [
+        10.63,
+        20.25
+      ]
+    },
+    "37": {
+      "hash": "56f990c6f6ea",
+      "audio": "/narration/slide-37-56f990c6f6ea.mp3",
+      "duration": 59.74204081632653,
+      "cues": [
+        12.13,
+        30.489
+      ]
+    },
+    "38": {
+      "hash": "7154b381d300",
+      "audio": "/narration/slide-38-7154b381d300.mp3",
+      "duration": 52.76734693877551,
+      "cues": [
+        30.789,
+        36.93
+      ]
+    },
+    "39": {
+      "hash": "46a0a6842f5c",
+      "audio": "/narration/slide-39-46a0a6842f5c.mp3",
+      "duration": 35.76163265306123,
+      "cues": [
+        14.189,
+        27.809
+      ]
+    },
+    "40": {
+      "hash": "0798c321d301",
+      "audio": "/narration/slide-40-0798c321d301.mp3",
+      "duration": 43.12816326530612,
+      "cues": [
+        3.49,
+        14.67,
+        24.889
+      ]
+    },
+    "41": {
+      "hash": "cf77c4b9a18a",
+      "audio": "/narration/slide-41-cf77c4b9a18a.mp3",
+      "duration": 16.822857142857142,
+      "cues": []
+    },
+    "42": {
+      "hash": "6bad2bbe1124",
+      "audio": "/narration/slide-42-6bad2bbe1124.mp3",
+      "duration": 27.036734693877552,
+      "cues": []
+    },
+    "43": {
+      "hash": "81c23928139e",
+      "audio": "/narration/slide-43-81c23928139e.mp3",
+      "duration": 61.25714285714286,
+      "cues": [
+        43.649
+      ]
+    },
+    "44": {
+      "hash": "51c79e12c8ac",
+      "audio": "/narration/slide-44-51c79e12c8ac.mp3",
+      "duration": 45.714285714285715,
+      "cues": [
+        7.049,
+        28.51
+      ]
+    },
+    "45": {
+      "hash": "5cd9a1319db7",
+      "audio": "/narration/slide-45-5cd9a1319db7.mp3",
+      "duration": 62.77224489795918,
+      "cues": [
+        10.569,
+        23.869,
+        41.369
+      ]
+    },
+    "46": {
+      "hash": "58a53ac540af",
+      "audio": "/narration/slide-46-58a53ac540af.mp3",
+      "duration": 65.56734693877551,
+      "cues": [
+        22.829,
+        30.809,
+        49.409
+      ]
+    },
+    "47": {
+      "hash": "9f2b50b04935",
+      "audio": "/narration/slide-47-9f2b50b04935.mp3",
+      "duration": 32.60081632653061,
+      "cues": [
+        9.369,
+        23.489
+      ]
+    },
+    "48": {
+      "hash": "d6f9bc827e11",
+      "audio": "/narration/slide-48-d6f9bc827e11.mp3",
+      "duration": 45.1134693877551,
+      "cues": [
+        18.789,
+        27.329,
+        30.049
+      ]
+    },
+    "49": {
+      "hash": "5f9170450dc9",
+      "audio": "/narration/slide-49-5f9170450dc9.mp3",
+      "duration": 58.35755102040817,
+      "cues": [
+        8.609,
+        20.489,
+        43.649
+      ]
+    },
+    "50": {
+      "hash": "1572be7776e4",
+      "audio": "/narration/slide-50-1572be7776e4.mp3",
+      "duration": 56.52897959183674,
+      "cues": [
+        23.85
+      ]
+    },
+    "51": {
+      "hash": "1a56e246ac7e",
+      "audio": "/narration/slide-51-1a56e246ac7e.mp3",
+      "duration": 43.91183673469388,
+      "cues": [
+        17.369,
+        29.969
+      ]
+    },
+    "52": {
+      "hash": "ef35f1dfdecf",
+      "audio": "/narration/slide-52-ef35f1dfdecf.mp3",
+      "duration": 9.195102040816327,
+      "cues": []
+    },
+    "53": {
+      "hash": "19f7c3b84d09",
+      "audio": "/narration/slide-53-19f7c3b84d09.mp3",
+      "duration": 58.409795918367344,
+      "cues": [
+        9.909,
+        22.75,
+        46.909
+      ]
+    },
+    "54": {
+      "hash": "7559033bf684",
+      "audio": "/narration/slide-54-7559033bf684.mp3",
+      "duration": 47.307755102040815,
+      "cues": [
+        31.529
+      ]
+    },
+    "55": {
+      "hash": "7e3e839c6128",
+      "audio": "/narration/slide-55-7e3e839c6128.mp3",
+      "duration": 34.32489795918367,
+      "cues": [
+        6.589,
+        15.729
+      ]
+    },
+    "56": {
+      "hash": "e8e0d12ed9f2",
+      "audio": "/narration/slide-56-e8e0d12ed9f2.mp3",
+      "duration": 50.546938775510206,
+      "cues": [
+        7.888999999999999,
+        26.029,
+        41.11
+      ]
+    },
+    "57": {
+      "hash": "b0e8c75a7480",
+      "audio": "/narration/slide-57-b0e8c75a7480.mp3",
+      "duration": 64.6008163265306,
+      "cues": [
+        6.469,
+        35.009
+      ]
+    },
+    "58": {
+      "hash": "cd6c1954483e",
+      "audio": "/narration/slide-58-cd6c1954483e.mp3",
+      "duration": 21.34204081632653,
+      "cues": [
+        6.069,
+        14.789,
+        19.949
+      ]
+    },
+    "59": {
+      "hash": "0650dd779974",
+      "audio": "/narration/slide-59-0650dd779974.mp3",
+      "duration": 8.385306122448979,
+      "cues": [
+        4.909
+      ]
     }
   }
 }

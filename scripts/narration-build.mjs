@@ -30,7 +30,7 @@
  *
  * Usage:
  *   HEYGEN_API_KEY=... HEYGEN_VOICE_ID=... HEYGEN_AVATAR_ID=... \
- *     yarn narration:build [--audio-only] [--dry-run] [--only=NN-slug] [--force]
+ *     yarn narration:build [--audio-only] [--dry-run] [--only=NN-slug] [--force] [--restamp=4-10]
  *
  * --dry-run stops after the TTS step: it prints the resolved cue times and the
  * total spoken duration without spending any video credits. Run it first.
@@ -40,6 +40,14 @@
  * word-timed cues, same auto-advance — so it is the honest way to rehearse the
  * timing before committing to the render. Video is ~99% of the cost: a 2.7s
  * smoke clip measured 4 credits end to end, nearly all of it step 2.
+ *
+ * --restamp=4-10 re-keys those slides' manifest entries to the current hash
+ * without rendering, provided their asset is on disk and matches the build
+ * mode. For when a *parameter* entered the hash string after a clip was
+ * rendered (as `resolution` did for slides 4–10) and the clip on disk is still
+ * the right one. It is an assertion, not a check — the script cannot tell a
+ * changed parameter from changed prose — so it takes an explicit slide list
+ * and never applies itself.
  */
 import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
@@ -57,6 +65,20 @@ const option = name => args.find(a => a.startsWith(`--${name}=`))?.split('=')[1]
 const dryRun = flag('dry-run')
 const force = flag('force')
 const only = option('only')
+const restamp = parseSlideList(option('restamp'))
+
+/** "4-10,12" -> Set {4,...,10,12} */
+function parseSlideList(spec) {
+  const slides = new Set()
+  for (const part of spec?.split(',').filter(Boolean) ?? []) {
+    const [from, to = from] = part.split('-').map(Number)
+    if (!Number.isInteger(from) || !Number.isInteger(to) || from < 1 || to < from) {
+      fail(`--restamp: "${part}" is not a slide number or range`)
+    }
+    for (let n = from; n <= to; n++) slides.add(n)
+  }
+  return slides
+}
 
 /**
  * `audio` builds the whole experience — real voice, real word-timed cues, real
@@ -67,6 +89,16 @@ const only = option('only')
 const mode = flag('audio-only') ? 'audio' : 'video'
 
 const { HEYGEN_API_KEY, HEYGEN_VOICE_ID, HEYGEN_AVATAR_ID } = process.env
+/**
+ * Which avatar model renders the clip. `/v3/videos` defaults to `avatar_iv`
+ * when the field is omitted, and Avatar IV is billed at $4/min against Avatar
+ * III's $1/min (HeyGen API pricing). Measured: four Avatar IV clips, 3.3 min,
+ * $13.47. The v2 endpoint this replaced rendered Avatar III, which is why the
+ * early clips were cheap. Avatar III resolves to Digital Twin for this look
+ * (`supported_api_engines` on the look record confirms it), which is the same
+ * class of render the approved clips came from.
+ */
+const HEYGEN_ENGINE = process.env.HEYGEN_ENGINE ?? 'avatar_iii'
 if (!HEYGEN_API_KEY) fail('HEYGEN_API_KEY is not set')
 if (!HEYGEN_VOICE_ID) fail('HEYGEN_VOICE_ID is not set — list options with GET /v3/voices?engine=starfish')
 if (!HEYGEN_AVATAR_ID && !dryRun) fail('HEYGEN_AVATAR_ID is not set')
@@ -133,6 +165,7 @@ async function renderAvatar(audioUrl, resolution) {
       // render). The corner tile crops this to the face with object-fit: cover.
       aspect_ratio: 'auto',
       resolution,
+      engine: HEYGEN_ENGINE,
     },
   })
 
@@ -227,9 +260,40 @@ const manifest = {
 let spent = 0
 let reused = 0
 let recovered = 0
+let restamped = 0
 const absent = []
 
+/**
+ * A failed render mid-run must not lose the renders before it. The manifest is
+ * written once at the end, so an exception (a 402 when the balance runs out is
+ * the likely one) used to exit with the new clips on disk but no entries for
+ * them — their videoIds gone, and the next build paying to render them again.
+ * On failure the untouched slides are carried over from the previous manifest
+ * and the partial result is saved before the error propagates.
+ */
+async function saveProgress(error, done) {
+  for (const entry of entries) {
+    if (manifest.slides[entry.no] || !previous.slides?.[entry.no]) continue
+    manifest.slides[entry.no] = previous.slides[entry.no]
+  }
+  await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`)
+  console.error(`\nnarration-build: stopped after slide ${done} — ${error.message}`)
+  console.error(`manifest saved with the ${spent ? 'new' : 'previous'} entries; re-run to continue`)
+  process.exit(1)
+}
+
+let lastDone = 0
 for (const entry of entries) {
+  try {
+    await buildSlide(entry)
+  } catch (error) {
+    if (dryRun) throw error
+    await saveProgress(error, lastDone)
+  }
+  lastDone = entry.no
+}
+
+async function buildSlide(entry) {
   if (only && entry.file !== only) {
     // Carry the untouched slides through, or a filtered run would publish a
     // manifest containing only the section it rebuilt.
@@ -239,22 +303,52 @@ for (const entry of entries) {
       // Rebuilding these would defeat --only, so say so instead of fixing it.
       if (!dryRun && !(await hasAsset(kept))) absent.push(entry.no)
     }
-    continue
+    return
   }
 
-  const hash = createHash('sha256')
-    // `mode` is in the hash so switching between audio and video rebuilds a
-    // slide instead of serving the other mode's cached asset.
-    .update(`${mode} ${resolution} ${entry.text} ${HEYGEN_VOICE_ID} ${HEYGEN_AVATAR_ID} ${CUE_LEAD_SECONDS}`)
-    .digest('hex')
-    .slice(0, 12)
+  // `mode` is in the hash so switching between audio and video rebuilds a
+  // slide instead of serving the other mode's cached asset.
+  // The engine only shapes the picture, so it keys video entries alone — an
+  // engine change must not re-synthesise 49 slides of unchanged speech.
+  const hashFor = m =>
+    createHash('sha256')
+      .update(`${m} ${resolution} ${m === 'video' ? `${HEYGEN_ENGINE} ` : ''}${entry.text} ${HEYGEN_VOICE_ID} ${HEYGEN_AVATAR_ID} ${CUE_LEAD_SECONDS}`)
+      .digest('hex')
+      .slice(0, 12)
+  const hash = hashFor(mode)
 
   const cached = previous.slides?.[entry.no]
+
+  // An audio pass never downgrades a rendered clip whose prose is current: the
+  // clip is the better asset, and replacing its entry would orphan the mp4 so
+  // pruneOrphans deleted an approved take. Once the prose moves, the video
+  // hash stops matching and the slide re-synthesises like any other.
+  if (mode === 'audio' && !force && cached?.video && cached.hash === hashFor('video') && !dryRun) {
+    if (await hasAsset(cached)) {
+      manifest.slides[entry.no] = cached
+      reused++
+      return
+    }
+  }
+
+  if (restamp.has(entry.no) && !dryRun) {
+    // Re-key the entry for whatever it already is — a video entry to the video
+    // hash, an audio entry to the audio hash — regardless of the build mode.
+    if (!cached || !(await hasAsset(cached))) {
+      fail(`--restamp: slide ${entry.no} has no asset on disk to restamp`)
+    }
+    const kept = hashFor(cached.video ? 'video' : 'audio')
+    manifest.slides[entry.no] = { ...cached, hash: kept }
+    restamped++
+    console.log(`  ${String(entry.no).padStart(2)} restamped ${cached.hash} -> ${kept} (no render)`)
+    return
+  }
+
   if (!force && cached?.hash === hash && !dryRun) {
     if (await hasAsset(cached)) {
       manifest.slides[entry.no] = cached
       reused++
-      continue
+      return
     }
     // The prose is unchanged and the render still exists in the account — only
     // the local file is missing. Fetch it back rather than paying to render the
@@ -266,11 +360,21 @@ for (const entry of entries) {
       manifest.slides[entry.no] = cached
       recovered++
       console.log(`  ${String(entry.no).padStart(2)} recovered ${cached.video.split('/').pop()} (no render)`)
-      continue
+      return
     }
   }
 
   const label = `${String(entry.no).padStart(2)} ${entry.title || entry.layout}`
+
+  // A dry run exists to show cue times without spending; for a slide whose
+  // speech is already built in either mode, the times are in the manifest.
+  // Re-synthesising them cost $1.08 across 49 cached slides once — TTS is
+  // cheap per minute, not free per run.
+  if (dryRun && cached && cached.hash === hashFor(cached.video ? 'video' : 'audio')) {
+    console.log(`  ${label}  ${cached.duration.toFixed(1)}s  cues [${cached.cues.map(c => c.toFixed(1)).join(', ')}]  (cached)`)
+    return
+  }
+
   const { audioUrl, duration, words } = await synthesise(entry.text)
   const { cues, estimated } = resolveCues(entry.segments, words, duration)
   spent += duration
@@ -281,7 +385,7 @@ for (const entry of entries) {
 
   if (dryRun) {
     console.log(`  ${label}  ${duration.toFixed(1)}s  cues [${cues.map(c => c.toFixed(1)).join(', ')}]`)
-    continue
+    return
   }
 
   const stem = `slide-${String(entry.no).padStart(2, '0')}-${hash}`
@@ -294,7 +398,7 @@ for (const entry of entries) {
     await download(audioUrl, join(OUT_DIR, file))
     manifest.slides[entry.no] = { hash, audio: `/narration/${file}`, duration, cues }
     console.log(`  ${label}  ${duration.toFixed(1)}s  ${cues.length} cues  -> ${file}`)
-    continue
+    return
   }
 
   const file = `${stem}.mp4`
@@ -326,7 +430,10 @@ async function pruneOrphans() {
     for (const asset of [slide.video, slide.audio]) if (asset) keep.add(asset.split('/').pop())
   }
 
-  const orphans = (await readdir(OUT_DIR)).filter(file => !keep.has(file))
+  // The mascot renderer's output (scripts/narration-mascot.mjs) lives in the
+  // same directory and is pruned by that script, not this one.
+  const isMascot = file => /-mascot-[0-9a-f]{12}\.mp4$/.test(file) || file === 'mascot.json' || file === 'mascot-still.png'
+  const orphans = (await readdir(OUT_DIR)).filter(file => !keep.has(file) && !isMascot(file))
   let freed = 0
   for (const file of orphans) {
     const path = join(OUT_DIR, file)
@@ -341,6 +448,7 @@ const pruned = dryRun ? null : await pruneOrphans()
 console.log(
   `\n${dryRun ? 'Dry run. ' : ''}${entries.length} narrated slides, ` +
     `${reused} reused, ${recovered ? `${recovered} re-downloaded, ` : ''}` +
+    `${restamped ? `${restamped} restamped, ` : ''}` +
     `${(spent / 60).toFixed(1)} min of new speech.` +
     (pruned?.count ? ` Pruned ${pruned.count} orphaned asset(s), ${pruned.mb.toFixed(1)} MB.` : ''),
 )
