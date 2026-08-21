@@ -16,6 +16,13 @@ import { useNav } from '@slidev/client'
  */
 
 const MANIFEST_URL = '/narration/manifest.json'
+/**
+ * Optional second manifest from scripts/narration-mascot.mjs: a rendered
+ * Mascotbot character speaking the same clips. Where it names a clip for a
+ * slide's *current* speech asset it replaces entry.video; the HeyGen manifest
+ * is left as it is, so the two can coexist and `?mascot=0` plays the original.
+ */
+const MASCOT_URL = '/narration/mascot.json'
 
 /** How long an un-narrated slide is held before auto-mode moves on. Section
     dividers are the main case and want to read as a beat, not a stall. */
@@ -311,13 +318,33 @@ watch(currentSlideNo, () => {
   playCurrent({ gap })
 })
 
+/** A mascot clip is keyed by the speech asset it was rendered from, so one
+    made before a slide was re-synthesised is skipped rather than played out of
+    sync with the new cues — that slide falls back to its HeyGen asset. */
+function applyMascot(loaded, mascot) {
+  let applied = 0
+  for (const [no, clip] of Object.entries(mascot.slides ?? {})) {
+    const entry = loaded.slides?.[no]
+    const speech = (entry?.video ?? entry?.audio)?.split('/').pop()
+    if (!entry || clip.source !== speech) continue
+    loaded.slides[no] = { ...entry, video: clip.video }
+    applied++
+  }
+  if (applied && mascot.still) loaded.still = mascot.still
+}
+
 onMounted(async () => {
   if (!enabled.value) return
   frame = requestAnimationFrame(tick)
   try {
     const response = await fetch(MANIFEST_URL)
     if (!response.ok) throw new Error(`${response.status}`)
-    manifest.value = await response.json()
+    const loaded = await response.json()
+    if (new URLSearchParams(location.search).get('mascot') !== '0') {
+      const mascot = await fetch(MASCOT_URL).then(r => (r.ok ? r.json() : null)).catch(() => null)
+      if (mascot) applyMascot(loaded, mascot)
+    }
+    manifest.value = loaded
     preloadNext()
   } catch (error) {
     console.error(`AvatarNarrator: no manifest at ${MANIFEST_URL} — run \`yarn narration:build\``, error)
@@ -371,7 +398,9 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: stretch;
   gap: 0.5rem;
-  width: 180px;
+  /* In slide coordinates (the 980px frame). 180 was sized for a head-and-
+     shoulders render; the mascot is framed tighter and reads at 140. */
+  width: 140px;
 }
 
 .narrator[data-placement='bottom-right'] { right: 1.5rem; bottom: 1.5rem; }
