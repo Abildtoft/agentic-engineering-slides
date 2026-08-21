@@ -13,7 +13,8 @@
     "narration:build": "node --env-file-if-exists=.env scripts/narration-build.mjs",
     "narration:audio": "node --env-file-if-exists=.env scripts/narration-build.mjs --audio-only",
     "narration:voices": "node --env-file-if-exists=.env scripts/narration-voices.mjs",
-    "narration:recover": "node --env-file-if-exists=.env scripts/narration-recover.mjs"
+    "narration:recover": "node --env-file-if-exists=.env scripts/narration-recover.mjs",
+    "narration:mascot": "node --env-file-if-exists=.env scripts/narration-mascot.mjs"
   },
   "dependencies": {
     "@paper-design/shaders": "^0.0.80",
@@ -21,5 +22,10 @@
     "@slidev/theme-default": "latest",
     "beautiful-mermaid": "^1.1.3",
     "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@mascotbot/core": "^0.3.1",
+    "@rive-app/webgl2": "^2.40.1",
+    "playwright-core": "^1.61"
   }
 }

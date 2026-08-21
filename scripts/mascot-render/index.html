@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>narration mascot render</title>
+    <!--
+      The virtual clock, installed before any module loads. Rive advances its
+      state machine by the delta between requestAnimationFrame timestamps, and
+      the lip-sync playback reads performance.now(); patching both lets node
+      step time in exact 1/fps increments and capture a frame per step, so the
+      render is deterministic and runs as fast as the encoder, not at 1x.
+    -->
+    <script>
+      (() => {
+        let now = 0
+        let queue = []
+        let nextId = 1
+        const realNow = performance.now.bind(performance)
+        const realDateNow = Date.now
+        const realSetInterval = window.setInterval.bind(window)
+        const realClearInterval = window.clearInterval.bind(window)
+        const virtualNow = () => now
+        const virtualDateNow = () => 1_700_000_000_000 + now
+        let ticker = null
+        window.__clock = {
+          now: () => now,
+          /**
+           * Run like a normal page. The lip-sync SDK schedules its licence
+           * handshake and inference on requestAnimationFrame, so with the clock
+           * parked those never complete; and its worker was seen rejecting
+           * audio (`w14_-33`) once the virtual clock had run minutes ahead of
+           * wall time, while the same audio passed on a cold page. So while the
+           * SDK works it gets the real clocks and a 60Hz tick; frames are
+           * stepped on the virtual clock only after it is switched off again.
+           */
+          auto(on) {
+            if (on && !ticker) {
+              performance.now = realNow
+              Date.now = realDateNow
+              ticker = realSetInterval(() => window.__clock.advance(1000 / 60), 1000 / 60)
+            }
+            if (!on && ticker) {
+              realClearInterval(ticker)
+              ticker = null
+              performance.now = virtualNow
+              Date.now = virtualDateNow
+            }
+          },
+          /** Advance by `ms` and run every rAF callback queued for the new time. */
+          advance(ms) {
+            now += ms
+            const due = queue
+            queue = []
+            for (const { cb } of due) cb(now)
+            return now
+          },
+          realNow,
+        }
+        performance.now = virtualNow
+        Date.now = virtualDateNow
+        window.requestAnimationFrame = cb => {
+          const id = nextId++
+          queue.push({ id, cb })
+          return id
+        }
+        window.cancelAnimationFrame = id => {
+          queue = queue.filter(entry => entry.id !== id)
+        }
+      })()
+    </script>
+    <style>
+      html, body { margin: 0; background: #000; }
+      canvas { display: block; }
+    </style>
+  </head>
+  <body>
+    <canvas id="rive"></canvas>
+    <canvas id="out"></canvas>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
