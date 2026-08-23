@@ -3222,55 +3222,68 @@
       ]
     },
     "42": {
-      "hash": "6bad2bbe1124",
-      "audio": "/narration/slide-42-6bad2bbe1124.mp3",
-      "duration": 27.036734693877552,
-      "cues": [],
-      "transcript": "Here is the hinge. The compression of the implementation middle is not making\nengineering less important. It is revealing what was always important. The\nword that matters is revealing. These are not new skills. They were always\nunderneath the implementation work, and the implementation work was so loud\nthat they were hard to see. That goes for product and design as much as for\nengineering. So where does that judgment actually get applied? Zoom out from\nthe agent loop, and there are three places.",
+      "hash": "6287d34c02c1",
+      "audio": "/narration/slide-42-6287d34c02c1.mp3",
+      "duration": 34.011428571428574,
+      "cues": [
+        7.349,
+        13.569
+      ],
+      "transcript": "Robert Martin captured the experience perfectly. In his words: it is amazing\nhow much work it is to wrestle these agents to my will. Do not get me wrong, it is crazy productive. But it is also a lot of\nhard, focused work. All my software engineering and problem-solving skills are brought\ninto play, even though I barely look at the code. That is the hinge. The\ncompression of the implementation middle is not making engineering less\nimportant. It is revealing what was always important. So where does that\njudgment get applied? Zoom out from the agent loop, and there are three places.",
       "captions": [
         {
-          "start": 0,
-          "end": 3.862,
-          "text": "Here is the hinge. The compression of the implementation middle is not"
+          "start": 0.199,
+          "end": 2.299,
+          "text": "Robert Martin captured the experience perfectly."
         },
         {
-          "start": 3.862,
-          "end": 7.403,
+          "start": 2.839,
+          "end": 5.539,
+          "text": "In his words: it is amazing how much work it is to"
+        },
+        {
+          "start": 5.579,
+          "end": 7.059,
+          "text": "wrestle these agents to my will."
+        },
+        {
+          "start": 7.599,
+          "end": 10.179,
+          "text": "Do not get me wrong, it is crazy productive."
+        },
+        {
+          "start": 10.5,
+          "end": 13.019,
+          "text": "But it is also a lot of hard, focused work."
+        },
+        {
+          "start": 13.819,
+          "end": 17.34,
+          "text": "All my software engineering and problem-solving skills are brought into play,"
+        },
+        {
+          "start": 17.94,
+          "end": 19.519,
+          "text": "even though I barely look at the code."
+        },
+        {
+          "start": 19.979,
+          "end": 23.939,
+          "text": "That is the hinge. The compression of the implementation middle is not"
+        },
+        {
+          "start": 24,
+          "end": 28.379,
           "text": "making engineering less important. It is revealing what was always important."
         },
         {
-          "start": 7.403,
-          "end": 9.334,
-          "text": "The word that matters is revealing."
+          "start": 28.939,
+          "end": 30.619,
+          "text": "So where does that judgment get applied?"
         },
         {
-          "start": 9.334,
-          "end": 10.943,
-          "text": "These are not new skills."
-        },
-        {
-          "start": 10.943,
-          "end": 14.162,
-          "text": "They were always underneath the implementation work, and the implementation"
-        },
-        {
-          "start": 14.162,
-          "end": 17.381,
-          "text": "work was so loud that they were hard to see."
-        },
-        {
-          "start": 17.381,
-          "end": 20.921,
-          "text": "That goes for product and design as much as for engineering."
-        },
-        {
-          "start": 20.921,
-          "end": 23.496,
-          "text": "So where does that judgment actually get applied?"
-        },
-        {
-          "start": 23.496,
-          "end": 27.037,
+          "start": 31.039,
+          "end": 34.011,
           "text": "Zoom out from the agent loop, and there are three places."
         }
       ]
