@@ -52,7 +52,7 @@
 import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
 import { join } from 'node:path'
-import { CUE_LEAD_SECONDS, ROOT, buildIndex, loadDeck, resolveCues } from './narration-lib.mjs'
+import { CUE_LEAD_SECONDS, ROOT, buildCaptions, buildIndex, loadDeck, resolveCues } from './narration-lib.mjs'
 
 const API = 'https://api.heygen.com'
 const OUT_DIR = join(ROOT, 'public', 'narration')
@@ -257,6 +257,12 @@ const manifest = {
   still: avatar?.image ?? null,
   slides: {},
 }
+
+const withNarrationMetadata = (built, entry, words = null) => ({
+  ...built,
+  transcript: entry.text,
+  captions: buildCaptions(entry.text, words, built.duration),
+})
 let spent = 0
 let reused = 0
 let recovered = 0
@@ -274,7 +280,7 @@ const absent = []
 async function saveProgress(error, done) {
   for (const entry of entries) {
     if (manifest.slides[entry.no] || !previous.slides?.[entry.no]) continue
-    manifest.slides[entry.no] = previous.slides[entry.no]
+    manifest.slides[entry.no] = withNarrationMetadata(previous.slides[entry.no], entry)
   }
   await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`)
   console.error(`\nnarration-build: stopped after slide ${done} — ${error.message}`)
@@ -299,7 +305,7 @@ async function buildSlide(entry) {
     // manifest containing only the section it rebuilt.
     const kept = previous.slides?.[entry.no]
     if (kept) {
-      manifest.slides[entry.no] = kept
+      manifest.slides[entry.no] = withNarrationMetadata(kept, entry)
       // Rebuilding these would defeat --only, so say so instead of fixing it.
       if (!dryRun && !(await hasAsset(kept))) absent.push(entry.no)
     }
@@ -325,7 +331,7 @@ async function buildSlide(entry) {
   // hash stops matching and the slide re-synthesises like any other.
   if (mode === 'audio' && !force && cached?.video && cached.hash === hashFor('video') && !dryRun) {
     if (await hasAsset(cached)) {
-      manifest.slides[entry.no] = cached
+      manifest.slides[entry.no] = withNarrationMetadata(cached, entry)
       reused++
       return
     }
@@ -338,7 +344,7 @@ async function buildSlide(entry) {
       fail(`--restamp: slide ${entry.no} has no asset on disk to restamp`)
     }
     const kept = hashFor(cached.video ? 'video' : 'audio')
-    manifest.slides[entry.no] = { ...cached, hash: kept }
+    manifest.slides[entry.no] = withNarrationMetadata({ ...cached, hash: kept }, entry)
     restamped++
     console.log(`  ${String(entry.no).padStart(2)} restamped ${cached.hash} -> ${kept} (no render)`)
     return
@@ -346,7 +352,7 @@ async function buildSlide(entry) {
 
   if (!force && cached?.hash === hash && !dryRun) {
     if (await hasAsset(cached)) {
-      manifest.slides[entry.no] = cached
+      manifest.slides[entry.no] = withNarrationMetadata(cached, entry)
       reused++
       return
     }
@@ -357,7 +363,7 @@ async function buildSlide(entry) {
     if (cached.videoId) {
       const detail = await heygen(`/v3/videos/${cached.videoId}`)
       await download(detail.video_url ?? detail.url, join(OUT_DIR, cached.video.split('/').pop()))
-      manifest.slides[entry.no] = cached
+      manifest.slides[entry.no] = withNarrationMetadata(cached, entry)
       recovered++
       console.log(`  ${String(entry.no).padStart(2)} recovered ${cached.video.split('/').pop()} (no render)`)
       return
@@ -396,7 +402,11 @@ async function buildSlide(entry) {
     // week later because a URL expired is the wrong kind of surprise.
     const file = `${stem}.mp3`
     await download(audioUrl, join(OUT_DIR, file))
-    manifest.slides[entry.no] = { hash, audio: `/narration/${file}`, duration, cues }
+    manifest.slides[entry.no] = withNarrationMetadata(
+      { hash, audio: `/narration/${file}`, duration, cues },
+      entry,
+      words,
+    )
     console.log(`  ${label}  ${duration.toFixed(1)}s  ${cues.length} cues  -> ${file}`)
     return
   }
@@ -408,7 +418,11 @@ async function buildSlide(entry) {
   // re-render: the account keeps the rendered video, and paying to render the
   // same prose again would also produce a *different take* — same words, new
   // head movement — silently replacing one you had already approved.
-  manifest.slides[entry.no] = { hash, videoId, video: `/narration/${file}`, duration, cues }
+  manifest.slides[entry.no] = withNarrationMetadata(
+    { hash, videoId, video: `/narration/${file}`, duration, cues },
+    entry,
+    words,
+  )
   console.log(`  ${label}  ${duration.toFixed(1)}s  ${cues.length} cues  -> ${file}`)
 }
 

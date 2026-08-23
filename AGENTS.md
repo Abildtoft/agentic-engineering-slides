@@ -228,7 +228,29 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   (`isPrintMode`). Presenter mode renders the deck twice against one shared nav
   state, so without the guard both copies narrate and every reveal fires twice
 - The first play needs a user gesture — browsers block autoplay with sound — so
-  the tile carries a Start button. Everything after it is chained
+  auto-mode opens on a proper start card. It identifies the narration as
+  synthetic, shows duration and chapters, and stays disabled until the first
+  clip can play. Everything after that gesture is chained
+- **Playback is an explicit state machine**, not a `started`/`paused` pair:
+  loading, ready, playing, paused, buffering, transitioning, intermission,
+  ended and error each own their controls. This is what makes pause safe during
+  a gap, a silent slide or manual navigation. Media failure walks the source
+  chain (Mascotbot → HeyGen video/audio) before showing Retry, Next slide and
+  Open without narration
+- The bottom dock is the control plane: previous/next slide, ten-second rewind,
+  playback speed, remaining time, captions, per-slide transcript, chapters and
+  a voice-only view. Space or K toggles playback, C toggles captions and M
+  toggles the picture. Hiding the tab pauses rather than letting the deck run
+  out of sight
+- Captions and transcripts live on each `manifest.json` slide entry. Fresh
+  synthesis writes captions from HeyGen word timings; `yarn
+  narration:captions` adds deterministic word-distributed captions to older
+  cached clips without making an API call or changing their hash
+- A deliberate recorded-talk pause is `narrationPause: true` in slide
+  frontmatter. Auto-mode stops before that slide's otherwise live-only prose
+  and offers Continue or a five-minute break timer. The final clip resolves to
+  an end card with Replay and chapter links rather than freezing on its last
+  mouth frame
 - After adding, removing or reordering slides, run `yarn narration:scaffold`;
   it rewrites the header comments from the current deck and preserves prose
 - Credentials live in `.env` (gitignored; `.env.example` documents them) and are
@@ -349,10 +371,11 @@ public/narration/mascot-still.png
 ```
 
 - **Layered, not replaced.** `mascot.json` maps slide → clip, keyed by the
-  speech asset (`source`) it was rendered from. The player applies it on load
-  when the source still matches the slide's current `video`/`audio`, so a
-  re-synthesised slide falls back to its HeyGen asset instead of playing a
-  mascot out of sync with the new cues. `?mascot=0` plays the HeyGen deck.
+  speech asset (`source`) it was rendered from. The player considers it first
+  when the source still matches the slide's current `video`/`audio`, and keeps
+  that original speech asset as a runtime fallback. A re-synthesised slide
+  therefore cannot play a mascot out of sync with the new cues.
+  `?mascot=0` reverses the preference and tries the HeyGen asset first.
   Cues, gaps, auto-advance, dissolve: all unchanged — the clip is just
   `entry.video`
 - **Deterministic render on a virtual clock.** `index.html` patches
@@ -361,6 +384,12 @@ public/narration/mascot-still.png
   frame, and captures the canvas. Measured ~90 fps capture at 512px, i.e.
   ~3× real time, and the same timeline always produces the same frames —
   unlike a HeyGen render, a mascot clip *is* reproducible
+- Delivery defaults are **512px at 24fps**, CRF 24 with 96 kbps mono audio. The
+  tile tops out around 300 physical pixels on a 1080p display; the former
+  720px/30fps set was 275.7 MiB for detail no viewer could see. The shipped set
+  is 106.1 MiB. `yarn narration:mascot --optimize-existing` performs that
+  migration entirely offline and restamps filenames with the renderer's real
+  cache hash
 - **Inference once, metered once.** `processAudio` output is cached per
   speech asset in `node_modules/.cache/narration-mascot/`; replay is not
   metered (the timeline carries `speechMs`). Changing `--fps/--size/--bg/

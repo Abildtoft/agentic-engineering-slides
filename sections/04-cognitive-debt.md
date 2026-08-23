@@ -200,6 +200,7 @@ SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
 
 ---
 layout: default
+narrator: hidden
 ---
 
 # The Swiss-Cheese Model

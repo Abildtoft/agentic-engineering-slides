@@ -42,6 +42,7 @@ SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosman
 ---
 layout: default
 class: text-center
+narrator: hidden
 ---
 
 # Three Loops. Three Clocks.
@@ -184,6 +185,8 @@ SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status
 -->
 
 ---
+narrator: hidden
+---
 
 # The Long Tail of Internal Software
 
@@ -280,6 +283,7 @@ SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everythi
 
 ---
 layout: default
+narrator: hidden
 ---
 
 # Humans find new nodes. AI maps the edges.
@@ -373,6 +377,7 @@ SOURCE: Francedot, "Vibe Coding Paralysis" (x.com/francedot/status/2017858253439
 
 ---
 layout: default
+narrator: hidden
 ---
 
 # How much of the problem do you own?

@@ -110,6 +110,7 @@ SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter
 ---
 layout: default
 class: text-center
+narrator: hidden
 ---
 
 # Skills: Reusable Playbooks
@@ -167,6 +168,7 @@ SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/20614544
 ---
 layout: center
 class: text-center
+narrator: hidden
 ---
 
 # The Kitchen Analogy
@@ -215,6 +217,7 @@ DELIVERY:
 ---
 layout: default
 class: text-center
+narrator: hidden
 ---
 
 # MCP Example: Figma ↔ Frontend
@@ -281,6 +284,7 @@ SOURCE: Figma Developers, "Figma Dev Mode MCP Server" (www.figma.com/developers/
 ---
 layout: default
 class: text-center
+narrator: hidden
 ---
 
 # Harness Engineering
@@ -345,6 +349,7 @@ SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.co
 
 ---
 layout: default
+narrator: hidden
 ---
 
 # Guardrails
@@ -405,6 +410,7 @@ class: text-center
 # Three now, not two: the ring reads $clicks without consuming any (1 bounces,
 # 2 ships), so the count has to be declared. Click 3 carries the payoff line.
 clicks: 3
+narrator: hidden
 ---
 
 # Set the Constraints Around Your Agents
@@ -479,6 +485,7 @@ class: text-center
 # review loop, 3 ships), so the count has to be declared. Click 3 also lands
 # the payoff line.
 clicks: 3
+narrator: hidden
 ---
 
 # From Issue to Pull Request: One Command
@@ -524,6 +531,7 @@ SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal w
 ---
 layout: center
 class: text-center
+narrationPause: true
 ---
 
 # Temperature Check — Demo, Questions, Break?

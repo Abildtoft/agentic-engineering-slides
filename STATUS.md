@@ -1,6 +1,6 @@
 # Narrated auto-mode — status and next steps
 
-_Last updated 2026-08-21 (evening). Mechanism lives in `AGENTS.md`; this file is state and
+_Last updated 2026-08-23. Mechanism lives in `AGENTS.md`; this file is state and
 what to do next._
 
 ## Where this stands
@@ -15,6 +15,14 @@ still has zero network dependency, which was the design constraint throughout.
 10 carry a rendered avatar clip; 49 carry synthesised audio over the avatar's
 still, which is the rehearsal state — `?auto=1` runs the whole deck end to end
 with real voice, real word-timed cues and real auto-advance.
+
+The viewer is now a full playback surface rather than a face with one button:
+readiness and buffering states, fallback media, chapters, captions, transcript,
+speed, rewind, remaining time, a real halfway intermission, and a replay/end
+state. It explicitly labels the voice and character as synthetic. Captions were
+added to all 59 cached entries without synthesis. The default mascot set was
+transcoded from 720px/30fps to 512px/24fps, reducing it from 275.7 MiB to 106.1
+MiB while keeping the reviewed motion and speech.
 
 | | |
 |---|---|
@@ -176,12 +184,14 @@ These have each already cost something once. Full detail in `AGENTS.md`.
 
 ```
 yarn narration:scaffold          # regenerate narration/ from the deck (offline)
+yarn narration:captions          # add captions to cached clips (offline)
 yarn narration:voices            # preflight: voice, avatar, balance
 yarn narration:build --dry-run   # cue times + duration; cached slides cost nothing
 yarn narration:audio             # cheap mode — voice + cues + a still
 yarn narration:build             # the real render
 yarn narration:build --restamp=4-10   # re-key cached entries, no render
 yarn narration:recover           # re-download clips from the account, free
+yarn narration:mascot --optimize-existing  # resize current mascot clips offline
 ```
 
 Credentials: `HEYGEN_API_KEY` comes from the Conductor-exported environment;

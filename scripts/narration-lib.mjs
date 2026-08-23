@@ -158,6 +158,56 @@ export function resolveCues(segments, wordTimestamps, duration) {
 }
 
 /**
+ * Turns narration prose into short, readable caption chunks.
+ *
+ * A live build supplies HeyGen's word timings, so each chunk follows the real
+ * voice. Existing cached manifests predate captions; for those, the same
+ * chunks are distributed by word count across the known clip duration. That
+ * fallback is intentionally deterministic, which lets `narration:captions`
+ * add useful captions without re-synthesising speech or spending credits.
+ */
+export function buildCaptions(text, wordTimestamps, duration) {
+  const tokens = text.replace(CUE_MARKER, '').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean)
+  if (!tokens.length || !Number.isFinite(duration) || duration <= 0) return []
+
+  const chunks = []
+  let current = []
+  for (const token of tokens) {
+    current.push(token)
+    const characters = current.join(' ').length
+    const endsPhrase = /[.!?;:]$/.test(token)
+    if ((current.length >= 5 && endsPhrase) || current.length >= 12 || characters >= 72) {
+      chunks.push(current)
+      current = []
+    }
+  }
+  if (current.length) chunks.push(current)
+
+  const spoken = (wordTimestamps ?? []).filter(word => !/^<[^>]*>$/.test(word.word))
+  const hasExactTimings = spoken.length >= tokens.length
+  let offset = 0
+
+  return chunks.map((chunk, index) => {
+    const startWord = offset
+    const endWord = offset + chunk.length - 1
+    offset += chunk.length
+
+    const proportionalStart = (duration * startWord) / tokens.length
+    const proportionalEnd = (duration * offset) / tokens.length
+    const start = hasExactTimings ? spoken[startWord]?.start ?? proportionalStart : proportionalStart
+    const measuredEnd = hasExactTimings ? spoken[endWord]?.end : null
+    const nextStart = hasExactTimings ? spoken[offset]?.start : null
+    const end = Math.min(duration, Math.max(start + 0.35, measuredEnd ?? nextStart ?? proportionalEnd))
+
+    return {
+      start: Number(Math.max(0, start).toFixed(3)),
+      end: Number((index === chunks.length - 1 ? duration : end).toFixed(3)),
+      text: chunk.join(' '),
+    }
+  })
+}
+
+/**
  * Reads every narration file and pairs it back onto the deck, refusing to
  * proceed on a count mismatch. This is the one place the (file, index) key is
  * validated — a section that gained a slide since the narration was written
