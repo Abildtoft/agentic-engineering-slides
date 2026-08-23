@@ -192,6 +192,7 @@ page.on('pageerror', error => console.error(`  [page] ${error.message}`))
 async function saveManifest(manifest) {
   const merged = { ...manifest, slides: { ...previous.slides, ...manifest.slides } }
   await writeFile(MASCOT_MANIFEST, `${JSON.stringify(merged, null, 2)}\n`)
+  return merged
 }
 
 /** Start a page-side job and wait for it to settle; see main.js for why the
@@ -320,10 +321,13 @@ try {
     console.log(`\r  ${label}  ${(durationMs / 1000).toFixed(1)}s in ${took.toFixed(0)}s (${(durationMs / 1000 / took).toFixed(1)}x)  -> ${file}`)
   }
 
-  await saveManifest(manifest)
+  const completeManifest = await saveManifest(manifest)
 
   // Only this script's own output is pruned; the HeyGen clips are not ours to touch.
-  const keep = new Set(Object.values(manifest.slides).map(s => s.video.split('/').pop()))
+  // A filtered run may only have source media for a subset of slides in this
+  // workspace. Prune against the complete saved manifest, including carried
+  // entries, rather than deleting their tracked clips as if they were stale.
+  const keep = new Set(Object.values(completeManifest.slides).map(s => s.video.split('/').pop()))
   let pruned = 0
   for (const name of await readdir(OUT_DIR)) {
     if (/-mascot-[0-9a-f]{12}\.mp4$/.test(name) && !keep.has(name)) {
