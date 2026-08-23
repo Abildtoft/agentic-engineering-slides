@@ -22,21 +22,38 @@ DELIVERY:
 -->
 
 ---
-layout: statement
-class: statement-wide
+layout: quote
+class: quote-long
 ---
 
-# The compression of the implementation middle isn't making engineering less important — it's revealing what was always important.
+<div class="quote-progressive">
+  <div class="quote-progressive-line">“It is amazing how much work it is to wrestle these agents to my will.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">Don’t get me wrong, it’s crazy productive. But it’s also a lot of hard, focussed work.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">All my software engineering and problem solving skills are brought into play — even though I barely look at the code.”</div>
+  </v-click>
+</div>
+
+Robert C. Martin
 
 <!--
 KEY POINTS:
-- This is the hinge from warning to what endures
-- "Revealing" is the key word — these are not new skills, they were always underneath the implementation work
-- Keep the section cross-functional even though the source is engineering phrasing
+- This is the hinge from warning to what endures, grounded in lived experience rather than an abstract claim
+- Productivity and effort rise together: the work moves away from syntax and into steering, constraints, judgment, and problem-solving
+- The engineering skills did not disappear when the code-writing did; agentic work reveals which skills were carrying the value all along
+- Keep the section cross-functional even though Martin uses engineering language — product and design judgment move outward in the same way
 
-BRIDGE: "So where does that judgment get applied? Zoom out from the agent loop, and there are three."
+BRIDGE: "That is the hinge: the compression of the implementation middle isn't making engineering less important. It is revealing what was always important. So where does that judgment get applied? Zoom out from the agent loop, and there are three."
 
-SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
+DELIVERY:
+- Let “wrestle” land before the first click — the room will recognize the feeling
+- Stress “hard, focussed work,” then give the final clause its own beat: barely touching code does not mean barely engineering
+
+SOURCE: Robert C. Martin (x.com/unclebobmartin/status/2090077791278489800)
 -->
 
 ---

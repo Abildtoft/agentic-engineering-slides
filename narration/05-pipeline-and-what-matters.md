@@ -7,15 +7,17 @@ second body section, so I will move through it with some energy.
 
 ---
 
-<!-- 42. statement — The compression of the implementation middle isn't making engineering less important — it's revealing what was always important. -->
+<!-- 42. quote — It is amazing how much work it is to wrestle these agents to my will. — ~2 clicks -->
 
-Here is the hinge. The compression of the implementation middle is not making
-engineering less important. It is revealing what was always important. The
-word that matters is revealing. These are not new skills. They were always
-underneath the implementation work, and the implementation work was so loud
-that they were hard to see. That goes for product and design as much as for
-engineering. So where does that judgment actually get applied? Zoom out from
-the agent loop, and there are three places.
+Robert Martin captured the experience perfectly. In his words: it is amazing
+how much work it is to wrestle these agents to my will.
+[click] Do not get me wrong, it is crazy productive. But it is also a lot of
+hard, focused work.
+[click] All my software engineering and problem-solving skills are brought
+into play, even though I barely look at the code. That is the hinge. The
+compression of the implementation middle is not making engineering less
+important. It is revealing what was always important. So where does that
+judgment get applied? Zoom out from the agent loop, and there are three places.
 
 ---
 
