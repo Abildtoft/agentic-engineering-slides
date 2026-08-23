@@ -1,116 +1,58 @@
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useNav } from '@slidev/client'
 
 /**
- * Auto-mode: plays a pre-rendered avatar clip per slide and drives the deck
- * from it — click reveals fire on cue times measured inside the narration, and
- * the slide advances when the clip ends.
+ * Self-presenting mode for `?auto=1`.
  *
- * Strictly opt-in via `?auto=1`. With the parameter absent this component
- * fetches nothing and renders nothing, so the live-presentation path — the one
- * that matters on stage — is untouched by everything below.
- *
- * The manifest is built offline by scripts/narration-build.mjs. See AGENTS.md
- * for the format and the reason clips are per slide rather than per click.
+ * The media clock owns click timing, while `phase` owns the viewer experience.
+ * Keeping those concerns separate is important: a network stall must stop cues,
+ * and pausing during a slide handoff must not leave a timer able to restart the
+ * deck behind the viewer's back.
  */
-
 const MANIFEST_URL = '/narration/manifest.json'
-/**
- * Optional second manifest from scripts/narration-mascot.mjs: a rendered
- * Mascotbot character speaking the same clips. Where it names a clip for a
- * slide's *current* speech asset it replaces entry.video; the HeyGen manifest
- * is left as it is, so the two can coexist and `?mascot=0` plays the original.
- */
 const MASCOT_URL = '/narration/mascot.json'
-
-/** How long an un-narrated slide is held before auto-mode moves on. Section
-    dividers are the main case and want to read as a beat, not a stall. */
 const SILENT_DWELL_MS = 3500
-
-/**
- * The pause between one clip ending and the next one speaking.
- *
- * Measured, not guessed: every rendered clip carries ~0.2s of lead-in silence
- * and **zero** at the tail — it ends on the final syllable. Left alone, the
- * deck runs one slide's last syllable into the next slide's first word about
- * 300ms later, which no speaker does and which reads as the deck rushing you.
- *
- * The gap is taken *after* the slide has already changed, so the new slide
- * lands, the deck's own fade settles, and the audience gets a moment with it
- * before the voice starts. Section dividers get longer, because a chapter
- * change should feel like one.
- */
 const SLIDE_GAP_MS = 700
 const SECTION_GAP_MS = 1500
-
-/**
- * The dissolve: how long the tile takes to resolve to the avatar's own still
- * between clips, and to come back off it.
- *
- * There was a blur here, added to stop two clips ghosting into each other
- * during the blend. It was solving a problem this design had already removed:
- * the outgoing clip reaches zero *before* the incoming one starts, so the two
- * videos never coexist — measured, opacity hits 0 at 341ms and only begins
- * rising at 371ms. The midpoint is the still, alone. There is nothing to ghost,
- * so there was nothing for the blur to fix, and animating a blur radius is both
- * the most expensive thing on the timeline and the least smooth — the raster is
- * regenerated per frame and steps visibly at small sizes.
- *
- * What is left is opacity and a whisper of scale, which the compositor handles
- * without touching the raster. Two short movements with a genuine rest between
- * them, rather than 700ms of continuous morphing.
- */
 const DISSOLVE_MS = 220
-
-/**
- * Symmetric, deliberately not `--motion-ease`.
- *
- * The deck's token is a hard decelerate — it covers ~73% of its distance in the
- * first third, which is right for something arriving and settling. Applied to a
- * fade it means the image drops most of the way immediately and then hangs near
- * zero for the rest of the duration, twice per handoff. That hang is what reads
- * as sluggish. A dissolve wants to be even at both ends.
- */
 const DISSOLVE_EASE = 'cubic-bezier(0.4, 0, 0.6, 1)'
 
-const { currentSlideNo, currentSlideRoute, clicks, clicksTotal, hasNext, next, nextSlide, isPresenter, isPrintMode } =
-  useNav()
+const {
+  clicks,
+  clicksStart,
+  clicksTotal,
+  currentSlideNo,
+  currentSlideRoute,
+  go,
+  isPresenter,
+  isPrintMode,
+  next,
+  nextSlide,
+  prevSlide,
+  slides,
+  total,
+} = useNav()
 
-/**
- * Where the tile sits, per slide. Bottom-right suits the text slides, but a
- * full-width diagram has no free corner — on `MergeLedgerChart` the default
- * covers the climb, which is the entire point of that slide. Set
- * `narrator: top-right` in a slide's frontmatter to move it; the deck's titles
- * are left-aligned, so the top-right is usually the emptiest corner.
- *
- * `narrator: hidden` is for the slides that have no free corner at all —
- * `MergeLedgerChart` fills the frame and its curve climbs into the top-right,
- * so every position covers something the slide is there to show. The voice and
- * the cues carry on; only the picture goes away, which is the right trade when
- * the picture is a nicety and the chart is the argument.
- */
-const PLACEMENTS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'hidden']
-const placement = computed(() => {
-  const wanted = currentSlideRoute.value?.meta?.slide?.frontmatter?.narrator
-  return PLACEMENTS.includes(wanted) ? wanted : 'bottom-right'
+const enabled = computed(() => {
+  const query = new URLSearchParams(location.search)
+  return !isPrintMode.value && !isPresenter.value && query.get('auto') === '1'
 })
 
+const phase = ref('loading')
+const errorMessage = ref('')
 const manifest = ref(null)
-const started = ref(false)
-const paused = ref(false)
+const mascotManifest = ref(null)
+const hasStarted = ref(false)
+const speaking = ref(false)
+const playhead = ref(0)
+const playbackRate = ref(1)
+const captionsEnabled = ref(true)
+const narratorView = ref('mascot')
+const controlsOpen = ref(false)
+const transcriptOpen = ref(false)
+const breakSeconds = ref(0)
 
-/**
- * Two media elements, not one.
- *
- * With a single element, setting `.src` fires `emptied` immediately — the frame
- * blanks, and the next clip only *begins* loading at that moment. Measured on
- * localhost that was a 96ms hole; over a network it is however long the fetch
- * takes, once per slide, with the deck silent. Double-buffering lets the next
- * clip be fully loaded before it is needed, and gives us two live frames to
- * crossfade between — which is also what hides the pose jump between two
- * independently rendered clips.
- */
 const videoA = ref(null)
 const videoB = ref(null)
 const activeIndex = ref(0)
@@ -118,331 +60,833 @@ const elements = () => [videoA.value, videoB.value]
 const activeEl = () => elements()[activeIndex.value]
 const idleEl = () => elements()[1 - activeIndex.value]
 
-/**
- * Auto-mode never runs in the presenter window. Presenter mode renders the deck
- * twice in two windows against one shared nav state: without this, both copies
- * play their own audio a few hundred milliseconds apart, and both drive the
- * clicks, so every reveal fires twice. The audience window is the one that
- * narrates.
- */
-const enabled = computed(
-  () => !isPrintMode.value && !isPresenter.value && new URLSearchParams(location.search).has('auto'),
+let frame = null
+let dwellTimer = null
+let breakTimer = null
+let handoffTimers = []
+let cueIndex = 0
+let autoAdvanced = false
+let pausedSlide = null
+let currentMediaEl = null
+const currentCandidates = ref([])
+const currentSourceIndex = ref(0)
+
+const PLACEMENTS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'hidden']
+const frontmatter = computed(() => currentSlideRoute.value?.meta?.slide?.frontmatter ?? {})
+const placement = computed(() => {
+  const wanted = frontmatter.value.narrator
+  return PLACEMENTS.includes(wanted) ? wanted : 'bottom-right'
+})
+const tileEmphasis = computed(() =>
+  currentSlideNo.value === 1 || frontmatter.value.layout === 'section' ? 'featured' : 'compact',
 )
 
 const entryFor = no => manifest.value?.slides?.[no] ?? null
-const sourceOf = entry => entry?.video ?? entry?.audio ?? null
-
 const entry = computed(() => entryFor(currentSlideNo.value))
+const basename = url => url?.split('/').pop()
 
-/** Per slide, not per deck: a partly-rendered deck can mix the two, so video can
-    be bought for the slides that need a face and audio kept for the rest. The
-    same <video> element plays both — it is an HTMLMediaElement either way, and
-    the timing logic never has to know which it is. */
-const hasVideo = computed(() => Boolean(entry.value?.video))
-const still = computed(() => manifest.value?.still ?? null)
+function mascotFor(no) {
+  const original = entryFor(no)
+  const mascot = mascotManifest.value?.slides?.[no]
+  const speech = basename(original?.video ?? original?.audio)
+  return mascot && mascot.source === speech ? mascot : null
+}
 
-/** False while the deck is between clips, which lets the still behind the media
-    elements show through. The swap happens under it. */
-const speaking = ref(true)
+function candidatesFor(no) {
+  const original = entryFor(no)
+  if (!original) return []
 
-let cueIndex = 0
-let frame = null
-let dwell = null
-let gapTimer = null
-let handoffTimers = []
-/** Set only when the slide changed because a clip finished. Manual navigation
-    should respond immediately; an automatic advance is the one that wants the
-    beat. */
-let autoAdvanced = false
+  const mascot = mascotFor(no)
+  let originalSource = null
+  if (original.video) originalSource = { url: original.video, visual: true, kind: 'original' }
+  else if (original.audio) originalSource = { url: original.audio, visual: false, kind: 'audio' }
+  const mascotSource = mascot?.video
+    ? { url: mascot.video, visual: true, kind: 'mascot' }
+    : null
 
-/** Cues are checked against the clip's own clock rather than fired from
-    setTimeout: a timer keeps running through a stall, a pause or a seek, and
-    would walk the reveals out of step with the voice. currentTime cannot. */
+  const ordered = new URLSearchParams(location.search).get('mascot') === '0'
+    ? [originalSource, mascotSource]
+    : [mascotSource, originalSource]
+
+  const seen = new Set()
+  return ordered.filter(candidate => {
+    if (!candidate?.url || seen.has(candidate.url)) return false
+    seen.add(candidate.url)
+    return true
+  })
+}
+
+const currentSource = computed(() => currentCandidates.value[currentSourceIndex.value] ?? null)
+const avatarVisible = computed(() => narratorView.value !== 'voice' && placement.value !== 'hidden')
+const still = computed(() => {
+  if (currentSource.value?.kind === 'original') return manifest.value?.still ?? null
+  return mascotManifest.value?.still ?? manifest.value?.still ?? null
+})
+
+const chapters = computed(() => {
+  const found = [{ no: 1, title: 'Introduction' }]
+  for (const route of slides.value) {
+    const slide = route.meta?.slide
+    if (slide?.frontmatter?.layout !== 'section') continue
+    found.push({ no: route.no, title: slide.title || `Section ${found.length}` })
+  }
+  return found
+})
+
+const currentChapter = computed(() => {
+  let active = chapters.value[0]
+  for (const chapter of chapters.value) {
+    if (chapter.no > currentSlideNo.value) break
+    active = chapter
+  }
+  return active
+})
+
+const totalDuration = computed(() =>
+  Object.values(manifest.value?.slides ?? {}).reduce((sum, slide) => sum + (slide.duration ?? 0), 0),
+)
+const elapsedBeforeCurrent = computed(() => {
+  let elapsed = 0
+  for (let no = 1; no < currentSlideNo.value; no++) elapsed += entryFor(no)?.duration ?? 0
+  return elapsed
+})
+const overallElapsed = computed(() => Math.min(totalDuration.value, elapsedBeforeCurrent.value + playhead.value))
+const remainingDuration = computed(() => Math.max(0, totalDuration.value - overallElapsed.value))
+const canGoBack = computed(() => currentSlideNo.value > 1)
+const canGoForward = computed(() => currentSlideNo.value < total.value)
+
+const currentCaption = computed(() => {
+  if (!captionsEnabled.value) return ''
+  const captions = entry.value?.captions ?? []
+  return captions.find(caption => playhead.value >= caption.start && playhead.value < caption.end)?.text ?? ''
+})
+
+const statusLabel = computed(() => ({
+  buffering: 'Buffering…',
+  paused: 'Paused',
+  transitioning: 'Next slide…',
+  intermission: 'Intermission',
+  error: 'Playback problem',
+}[phase.value] ?? `${currentChapter.value?.title ?? 'Talk'} · Slide ${currentSlideNo.value} of ${total.value}`))
+
+function formatClock(seconds) {
+  if (!Number.isFinite(seconds)) return '0:00'
+  const rounded = Math.max(0, Math.round(seconds))
+  return `${Math.floor(rounded / 60)}:${String(rounded % 60).padStart(2, '0')}`
+}
+
+function clearPlaybackTimers() {
+  clearTimeout(dwellTimer)
+  dwellTimer = null
+  for (const timer of handoffTimers) clearTimeout(timer)
+  handoffTimers = []
+}
+
+function clearBreakTimer() {
+  clearInterval(breakTimer)
+  breakTimer = null
+}
+
+function resetMediaElement(element, candidate) {
+  if (!element || !candidate) return
+  element.playbackRate = playbackRate.value
+  if (element.dataset.src !== candidate.url) {
+    element.dataset.src = candidate.url
+    element.src = candidate.url
+    element.load()
+  }
+}
+
+function primeCurrent() {
+  clearPlaybackTimers()
+  currentCandidates.value = candidatesFor(currentSlideNo.value)
+  currentSourceIndex.value = 0
+  playhead.value = 0
+  speaking.value = false
+
+  if (!currentCandidates.value.length) {
+    phase.value = 'ready'
+    return
+  }
+
+  phase.value = 'loading'
+  currentMediaEl = idleEl()
+  resetMediaElement(currentMediaEl, currentCandidates.value[0])
+  if (currentMediaEl?.readyState >= 3) phase.value = 'ready'
+}
+
+function preloadNext() {
+  const candidate = candidatesFor(currentSlideNo.value + 1)[0]
+  const buffer = idleEl()
+  if (!candidate || !buffer) return
+  resetMediaElement(buffer, candidate)
+}
+
+function syncClicksToTime(time) {
+  const targetClicks = (entry.value?.cues ?? []).filter(cue => cue <= time).length + clicksStart.value
+  go(currentSlideNo.value, Math.min(clicksTotal.value, targetClicks))
+}
+
 function tick() {
   frame = requestAnimationFrame(tick)
   const element = activeEl()
   if (!element || element.paused) return
 
+  playhead.value = element.currentTime
   const cues = entry.value?.cues ?? []
   while (cueIndex < cues.length && element.currentTime >= cues[cueIndex]) {
     cueIndex++
-    // Guarded rather than assumed: the cue count is authored by hand against an
-    // estimate, while clicksTotal is the real number and is only known now that
-    // the slide is on screen. Over-marking a slide would otherwise run `next()`
-    // past the last reveal and skip the following slide entirely.
     if (clicks.value < clicksTotal.value) next()
   }
 }
 
-function clearTimers() {
-  clearTimeout(dwell)
-  clearTimeout(gapTimer)
-  for (const timer of handoffTimers) clearTimeout(timer)
-  dwell = null
-  gapTimer = null
-  handoffTimers = []
-}
-
-async function advance() {
-  if (hasNext.value) await nextSlide()
-}
-
-function onEnded(event) {
-  // The idle element is buffering the next clip and can fire its own events;
-  // only the one actually playing should advance the deck.
-  if (event.target !== activeEl()) return
-
-  if (clicks.value < clicksTotal.value) {
-    console.warn(
-      `AvatarNarrator: slide ${currentSlideNo.value} has ${clicksTotal.value - clicks.value} ` +
-        `reveal(s) the narration never cued — add [click] markers or they never show in auto mode`,
-    )
-  }
-  autoAdvanced = true
-  advance()
-}
-
-/** Points the idle element at whatever comes next so the fetch is already done
-    by the time the deck gets there. Deliberately after the crossfade: assigning
-    `src` blanks the element, and until the fade completes it is still the
-    outgoing picture on screen. */
-function preloadNext() {
-  const url = sourceOf(entryFor(currentSlideNo.value + 1))
-  const buffer = idleEl()
-  if (!url || !buffer || buffer.dataset.src === url) return
-  buffer.dataset.src = url
-  buffer.src = url
-}
-
-/** A chapter change should feel like one. Read after the route has moved, so
-    this is the incoming slide's layout. */
 function gapForCurrent() {
-  const layout = currentSlideRoute.value?.meta?.slide?.frontmatter?.layout
-  return layout === 'section' ? SECTION_GAP_MS : SLIDE_GAP_MS
+  return frontmatter.value.layout === 'section' ? SECTION_GAP_MS : SLIDE_GAP_MS
 }
 
-/**
- * Starts whatever slide is now on screen. Bound to the slide number only —
- * `clicks` deliberately isn't watched, because this component changes it itself
- * and would otherwise restart the clip on its own cue.
- */
+function swapTo(target) {
+  if (!target) {
+    failPlayback('The narration player could not be prepared.')
+    return
+  }
+  const outgoing = activeEl()
+  activeIndex.value = 1 - activeIndex.value
+  currentMediaEl = target
+  if (target.readyState > 0 && target.currentTime !== 0) target.currentTime = 0
+  outgoing?.pause()
+}
+
+function playTarget(target) {
+  if (!target) return
+  target.playbackRate = playbackRate.value
+  phase.value = 'buffering'
+  speaking.value = true
+  target.play().catch(error => failPlayback(`Playback was blocked: ${error.message}`))
+}
+
+function scheduleSilentSlide() {
+  phase.value = 'transitioning'
+  speaking.value = false
+  dwellTimer = setTimeout(() => advance(), SILENT_DWELL_MS)
+}
+
+function isIntermission() {
+  return Boolean(frontmatter.value.narrationPause)
+}
+
 function playCurrent({ gap = 0 } = {}) {
-  clearTimers()
+  clearPlaybackTimers()
   cueIndex = 0
+  playhead.value = 0
+  errorMessage.value = ''
 
-  if (!enabled.value || !started.value || paused.value) return
-
-  if (!entry.value) {
-    // No narration for this slide: hold a beat, then keep moving. Silence is a
-    // legitimate authoring choice, so this isn't treated as an error.
-    dwell = setTimeout(advance, SILENT_DWELL_MS)
+  if (!enabled.value || !hasStarted.value) return
+  if (isIntermission()) {
+    phase.value = 'intermission'
+    speaking.value = false
     return
   }
 
-  const url = sourceOf(entry.value)
+  currentCandidates.value = candidatesFor(currentSlideNo.value)
+  currentSourceIndex.value = 0
+  if (!currentCandidates.value.length) {
+    scheduleSilentSlide()
+    return
+  }
+
   const target = idleEl()
-  if (!url || !target) return
-
-  // Usually already loaded by preloadNext(); this covers a jump to an arbitrary
-  // slide, where the buffer holds the wrong clip.
-  if (target.dataset.src !== url) {
-    target.dataset.src = url
-    target.src = url
-  }
-
-  /** Puts `target` on screen. The outgoing element is paused and dropped to
-      transparent in the same tick, so whatever is underneath — the still —
-      is what any dissolve resolves against. */
-  const swap = () => {
-    const outgoing = activeEl()
-    activeIndex.value = 1 - activeIndex.value
-    // Seeking before metadata arrives throws in some engines, and a freshly
-    // assigned source is at 0 anyway.
-    if (target.readyState > 0 && target.currentTime !== 0) target.currentTime = 0
-    outgoing?.pause()
-  }
+  currentMediaEl = target
+  resetMediaElement(target, currentCandidates.value[0])
 
   const speak = () => {
-    // Autoplay with sound is blocked until the document has been interacted
-    // with, which is why start() exists at all. A rejection after that point is
-    // a real failure — surface it rather than leaving a deck that silently stops.
-    target.play().catch(error => console.error('AvatarNarrator: playback blocked', error))
+    playTarget(target)
     handoffTimers.push(setTimeout(preloadNext, DISSOLVE_MS + 40))
   }
 
   if (gap <= 0) {
-    // Manual navigation: no settle, because a keypress should be answered now.
-    swap()
-    speaking.value = true
+    swapTo(target)
     speak()
     return
   }
 
-  // Settle to the still, swap underneath it, then come back off it so the face
-  // is live and sharp just as the first word lands. The extra time on a section
-  // divider goes into the rest, not into the dissolves.
+  phase.value = 'transitioning'
   speaking.value = false
   handoffTimers = [
-    setTimeout(() => {
-      swap()
-      speaking.value = true
-    }, Math.max(0, gap - DISSOLVE_MS)),
+    setTimeout(() => swapTo(target), Math.max(0, gap - DISSOLVE_MS)),
     setTimeout(speak, gap),
   ]
 }
 
-/** The browser's autoplay policy needs a gesture before audio can start, so the
-    first play is always user-initiated. Everything after it is chained. */
+async function advance() {
+  if (currentSlideNo.value >= total.value) {
+    phase.value = 'ended'
+    speaking.value = false
+    return
+  }
+  autoAdvanced = true
+  await nextSlide()
+}
+
+function onEnded(event) {
+  if (event.target !== activeEl()) return
+  playhead.value = event.target.duration || entry.value?.duration || 0
+  speaking.value = false
+
+  if (clicks.value < clicksTotal.value) {
+    console.warn(
+      `AvatarNarrator: slide ${currentSlideNo.value} has ${clicksTotal.value - clicks.value} ` +
+        'reveal(s) the narration never cued',
+    )
+  }
+  advance()
+}
+
+function onCanPlay(event) {
+  if (event.target !== currentMediaEl) return
+  if (!hasStarted.value && phase.value === 'loading') phase.value = 'ready'
+}
+
+function onPlaying(event) {
+  if (event.target !== activeEl()) return
+  phase.value = 'playing'
+  errorMessage.value = ''
+}
+
+function onWaiting(event) {
+  if (event.target === activeEl() && ['playing', 'buffering'].includes(phase.value)) phase.value = 'buffering'
+}
+
+function onMediaError(event) {
+  if (event.target !== currentMediaEl && event.target !== activeEl()) return
+  const nextCandidate = currentCandidates.value[currentSourceIndex.value + 1]
+  if (nextCandidate) {
+    currentSourceIndex.value++
+    resetMediaElement(event.target, nextCandidate)
+    if (hasStarted.value && phase.value !== 'paused') playTarget(event.target)
+    return
+  }
+  failPlayback('The narration clip could not be loaded.')
+}
+
+function failPlayback(message) {
+  clearPlaybackTimers()
+  speaking.value = false
+  errorMessage.value = message
+  phase.value = 'error'
+}
+
 function start() {
-  started.value = true
-  paused.value = false
+  if (phase.value !== 'ready') return
+  hasStarted.value = true
   playCurrent()
 }
 
+function pause() {
+  if (!['playing', 'buffering', 'transitioning'].includes(phase.value)) return
+  pausedSlide = currentSlideNo.value
+  clearPlaybackTimers()
+  for (const element of elements()) element?.pause()
+  phase.value = 'paused'
+}
+
+function resume() {
+  if (phase.value !== 'paused') return
+  const element = activeEl()
+  const validSource = currentCandidates.value.some(candidate => candidate.url === element?.dataset.src)
+  if (pausedSlide === currentSlideNo.value && validSource && element?.readyState > 0) playTarget(element)
+  else playCurrent()
+}
+
 function toggle() {
-  if (!started.value) return start()
-  paused.value = !paused.value
-  if (paused.value) {
-    activeEl()?.pause()
-    clearTimers()
-  } else {
-    activeEl()
-      ?.play()
-      .catch(() => {})
+  if (phase.value === 'ready') start()
+  else if (phase.value === 'paused') resume()
+  else pause()
+}
+
+function backTen() {
+  const element = activeEl()
+  if (!element?.duration) return
+  const target = Math.max(0, element.currentTime - 10)
+  element.currentTime = target
+  playhead.value = target
+  cueIndex = (entry.value?.cues ?? []).filter(cue => cue <= target).length
+  syncClicksToTime(target)
+}
+
+function changeSpeed(event) {
+  playbackRate.value = Number(event.target.value)
+  for (const element of elements()) {
+    if (element) element.playbackRate = playbackRate.value
   }
+  localStorage.setItem('narrator-speed', String(playbackRate.value))
+}
+
+function toggleCaptions() {
+  captionsEnabled.value = !captionsEnabled.value
+  localStorage.setItem('narrator-captions', captionsEnabled.value ? '1' : '0')
+}
+
+function toggleNarratorView() {
+  narratorView.value = narratorView.value === 'voice' ? 'mascot' : 'voice'
+  localStorage.setItem('narrator-view', narratorView.value)
+}
+
+async function navigateSlide(direction) {
+  autoAdvanced = false
+  if (direction < 0) await prevSlide()
+  else await nextSlide()
+}
+
+async function goChapter(no) {
+  hasStarted.value = true
+  controlsOpen.value = false
+  transcriptOpen.value = false
+  if (no === currentSlideNo.value) playCurrent()
+  else await go(no)
+}
+
+function startBreak() {
+  clearBreakTimer()
+  breakSeconds.value = 5 * 60
+  breakTimer = setInterval(() => {
+    breakSeconds.value = Math.max(0, breakSeconds.value - 1)
+    if (breakSeconds.value === 0) clearBreakTimer()
+  }, 1000)
+}
+
+async function continueIntermission() {
+  clearBreakTimer()
+  breakSeconds.value = 0
+  autoAdvanced = true
+  await nextSlide()
+}
+
+async function restart() {
+  hasStarted.value = true
+  if (currentSlideNo.value === 1) playCurrent()
+  else await go(1)
+}
+
+function retryCurrent() {
+  if (!manifest.value) {
+    loadManifests()
+    return
+  }
+  hasStarted.value = true
+  playCurrent()
+}
+
+function leaveAutoMode() {
+  const url = new URL(location.href)
+  url.searchParams.delete('auto')
+  url.searchParams.delete('mascot')
+  location.assign(url)
+}
+
+async function loadManifests() {
+  phase.value = 'loading'
+  errorMessage.value = ''
+  try {
+    const response = await fetch(MANIFEST_URL)
+    if (!response.ok) throw new Error(`manifest returned ${response.status}`)
+    manifest.value = await response.json()
+    mascotManifest.value = await fetch(MASCOT_URL).then(r => (r.ok ? r.json() : null)).catch(() => null)
+    await nextTick()
+    primeCurrent()
+  } catch (error) {
+    failPlayback(`Narration could not be prepared: ${error.message}`)
+  }
+}
+
+function onKeydown(event) {
+  if (!enabled.value || ['INPUT', 'SELECT', 'BUTTON'].includes(event.target?.tagName)) return
+  if (event.key === 'k' || event.key === ' ') {
+    event.preventDefault()
+    toggle()
+  } else if (event.key.toLowerCase() === 'c') {
+    toggleCaptions()
+  } else if (event.key.toLowerCase() === 'm') {
+    toggleNarratorView()
+  }
+}
+
+function onVisibilityChange() {
+  if (document.hidden) pause()
 }
 
 watch(currentSlideNo, () => {
+  const remainPaused = phase.value === 'paused'
+  clearBreakTimer()
+  breakSeconds.value = 0
   const gap = autoAdvanced ? gapForCurrent() : 0
   autoAdvanced = false
-  playCurrent({ gap })
+  if (!manifest.value) return
+  if (!hasStarted.value) primeCurrent()
+  else if (remainPaused) {
+    clearPlaybackTimers()
+    currentCandidates.value = candidatesFor(currentSlideNo.value)
+    currentSourceIndex.value = 0
+    currentMediaEl = idleEl()
+    if (currentCandidates.value[0]) resetMediaElement(currentMediaEl, currentCandidates.value[0])
+    speaking.value = false
+    playhead.value = 0
+    pausedSlide = currentSlideNo.value
+    phase.value = 'paused'
+  }
+  else playCurrent({ gap })
 })
 
-/** A mascot clip is keyed by the speech asset it was rendered from, so one
-    made before a slide was re-synthesised is skipped rather than played out of
-    sync with the new cues — that slide falls back to its HeyGen asset. */
-function applyMascot(loaded, mascot) {
-  let applied = 0
-  for (const [no, clip] of Object.entries(mascot.slides ?? {})) {
-    const entry = loaded.slides?.[no]
-    const speech = (entry?.video ?? entry?.audio)?.split('/').pop()
-    if (!entry || clip.source !== speech) continue
-    loaded.slides[no] = { ...entry, video: clip.video }
-    applied++
-  }
-  if (applied && mascot.still) loaded.still = mascot.still
-}
-
-onMounted(async () => {
+onMounted(() => {
   if (!enabled.value) return
+  playbackRate.value = Number(localStorage.getItem('narrator-speed')) || 1
+  captionsEnabled.value = localStorage.getItem('narrator-captions') !== '0'
+  narratorView.value = localStorage.getItem('narrator-view') === 'voice' ? 'voice' : 'mascot'
   frame = requestAnimationFrame(tick)
-  try {
-    const response = await fetch(MANIFEST_URL)
-    if (!response.ok) throw new Error(`${response.status}`)
-    const loaded = await response.json()
-    if (new URLSearchParams(location.search).get('mascot') !== '0') {
-      const mascot = await fetch(MASCOT_URL).then(r => (r.ok ? r.json() : null)).catch(() => null)
-      if (mascot) applyMascot(loaded, mascot)
-    }
-    manifest.value = loaded
-    preloadNext()
-  } catch (error) {
-    console.error(`AvatarNarrator: no manifest at ${MANIFEST_URL} — run \`yarn narration:build\``, error)
-  }
+  document.addEventListener('keydown', onKeydown, true)
+  document.addEventListener('visibilitychange', onVisibilityChange)
+  loadManifests()
 })
 
 onBeforeUnmount(() => {
   cancelAnimationFrame(frame)
-  clearTimers()
+  clearPlaybackTimers()
+  clearBreakTimer()
+  document.removeEventListener('keydown', onKeydown, true)
+  document.removeEventListener('visibilitychange', onVisibilityChange)
 })
 </script>
 
 <template>
-  <div v-if="enabled" class="narrator" :data-placement="placement" :data-idle="!entry || null">
-    <div class="narrator-frame">
-      <!-- Under both media elements. In audio-only mode it is the whole
-           picture; in video mode it covers the moment before the first clip
-           has painted. -->
-      <img v-if="still" class="narrator-layer" :src="still" alt="" />
-      <video
-        v-for="(_, index) in 2"
-        :key="index"
-        :ref="el => (index === 0 ? (videoA = el) : (videoB = el))"
-        class="narrator-layer narrator-video"
-        :class="{ 'is-active': activeIndex === index && hasVideo && speaking }"
-        playsinline
-        preload="auto"
-        @ended="onEnded"
-      />
+  <div v-if="enabled" class="narrator-ui" :data-phase="phase">
+    <section v-if="!hasStarted && ['loading', 'ready'].includes(phase)" class="narrator-card narrator-start" aria-live="polite">
+      <img v-if="still" class="narrator-start-avatar" :src="still" alt="" />
+      <div>
+        <p class="narrator-kicker">AI-narrated version</p>
+        <h2>Watch Mikkel’s talk</h2>
+        <p class="narrator-card-copy">Synthetic voice and character reading Mikkel’s first-person presentation.</p>
+        <p class="narrator-meta">{{ formatClock(totalDuration) }} · {{ total }} slides · captions included</p>
+      </div>
+      <button class="narrator-primary" type="button" :disabled="phase === 'loading'" @click="start">
+        {{ phase === 'loading' ? 'Preparing narration…' : 'Play from beginning' }}
+      </button>
+      <details v-if="phase === 'ready'" class="narrator-chapters">
+        <summary>Start from a chapter</summary>
+        <div class="narrator-chapter-list">
+          <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">
+            <span>{{ chapter.title }}</span><span>{{ chapter.no }}</span>
+          </button>
+        </div>
+      </details>
+    </section>
+
+    <section v-if="phase === 'intermission'" class="narrator-card narrator-moment" aria-live="polite">
+      <p class="narrator-kicker">Halfway point</p>
+      <h2>{{ breakSeconds ? 'Break timer' : 'Take a breath' }}</h2>
+      <p v-if="breakSeconds" class="narrator-break-clock">{{ formatClock(breakSeconds) }}</p>
+      <p v-else class="narrator-card-copy">Continue now, or take five minutes before Cognitive Debt.</p>
+      <div class="narrator-actions">
+        <button class="narrator-primary" type="button" @click="continueIntermission">Continue</button>
+        <button v-if="!breakSeconds" class="narrator-secondary" type="button" @click="startBreak">Start 5 min break</button>
+      </div>
+    </section>
+
+    <section v-if="phase === 'ended'" class="narrator-card narrator-moment" aria-live="polite">
+      <p class="narrator-kicker">Talk complete</p>
+      <h2>Thanks for watching</h2>
+      <p class="narrator-card-copy">Replay the talk or jump back to a chapter.</p>
+      <button class="narrator-primary" type="button" @click="restart">Replay from beginning</button>
+      <div class="narrator-chapter-list narrator-end-chapters">
+        <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">
+          <span>{{ chapter.title }}</span><span>{{ chapter.no }}</span>
+        </button>
+      </div>
+    </section>
+
+    <section v-if="phase === 'error'" class="narrator-card narrator-moment" role="alert">
+      <p class="narrator-kicker">Playback problem</p>
+      <h2>Narration stopped</h2>
+      <p class="narrator-card-copy">{{ errorMessage }}</p>
+      <div class="narrator-actions">
+        <button class="narrator-primary" type="button" @click="retryCurrent">Retry</button>
+        <button v-if="canGoForward" class="narrator-secondary" type="button" @click="navigateSlide(1)">Next slide</button>
+        <button class="narrator-secondary" type="button" @click="leaveAutoMode">Open without narration</button>
+      </div>
+    </section>
+
+    <div
+      v-if="manifest"
+      class="narrator"
+      :data-placement="placement"
+      :data-emphasis="tileEmphasis"
+      :data-hidden="!hasStarted || !avatarVisible || ['ended', 'error', 'intermission'].includes(phase) || null"
+    >
+      <div class="narrator-frame">
+        <img v-if="still" class="narrator-layer" :src="still" alt="" />
+        <video
+          v-for="(_, index) in 2"
+          :key="index"
+          :ref="element => (index === 0 ? (videoA = element) : (videoB = element))"
+          class="narrator-layer narrator-video"
+          :class="{ 'is-active': activeIndex === index && currentSource?.visual && speaking && avatarVisible }"
+          playsinline
+          preload="auto"
+          @canplay="onCanPlay"
+          @ended="onEnded"
+          @error="onMediaError"
+          @playing="onPlaying"
+          @waiting="onWaiting"
+        />
+      </div>
     </div>
-    <button class="narrator-toggle" type="button" @click="toggle">
-      {{ !started ? 'Start narration' : paused ? 'Resume' : 'Pause' }}
-    </button>
+
+    <div v-if="currentCaption && ['playing', 'buffering', 'paused'].includes(phase)" class="narrator-caption" aria-live="off">
+      {{ currentCaption }}
+    </div>
+
+    <aside v-if="transcriptOpen && entry?.transcript" class="narrator-transcript" aria-label="Current slide transcript">
+      <div>
+        <strong>{{ currentChapter?.title }} · Slide {{ currentSlideNo }}</strong>
+        <button type="button" aria-label="Close transcript" @click="transcriptOpen = false">×</button>
+      </div>
+      <p>{{ entry.transcript }}</p>
+    </aside>
+
+    <nav v-if="hasStarted && !['ended', 'error', 'intermission'].includes(phase)" class="narrator-controls" aria-label="Narration controls">
+      <div class="narrator-progress" :style="{ '--narrator-progress': `${(overallElapsed / totalDuration) * 100 || 0}%` }" />
+      <div class="narrator-controls-row">
+        <button type="button" :disabled="!canGoBack" aria-label="Previous slide" title="Previous slide" @click="navigateSlide(-1)">←</button>
+        <button type="button" aria-label="Back ten seconds" title="Back 10 seconds" @click="backTen">−10</button>
+        <button class="narrator-play" type="button" :aria-label="phase === 'paused' ? 'Resume narration' : 'Pause narration'" @click="toggle">
+          {{ phase === 'paused' ? '▶' : 'Ⅱ' }}
+        </button>
+        <button type="button" :disabled="!canGoForward" aria-label="Next slide" title="Next slide" @click="navigateSlide(1)">→</button>
+        <div class="narrator-status">
+          <strong>{{ statusLabel }}</strong>
+          <span>{{ formatClock(overallElapsed) }} · −{{ formatClock(remainingDuration) }}</span>
+        </div>
+        <button type="button" :aria-pressed="captionsEnabled" title="Toggle captions (C)" @click="toggleCaptions">CC</button>
+        <button type="button" :aria-pressed="narratorView === 'voice'" title="Toggle narrator picture (M)" @click="toggleNarratorView">
+          {{ narratorView === 'voice' ? 'Voice' : 'Face' }}
+        </button>
+        <label class="narrator-speed">
+          <span class="sr-only">Playback speed</span>
+          <select :value="playbackRate" title="Playback speed" @change="changeSpeed">
+            <option value="0.8">0.8×</option>
+            <option value="1">1×</option>
+            <option value="1.2">1.2×</option>
+            <option value="1.5">1.5×</option>
+          </select>
+        </label>
+        <button type="button" :aria-expanded="transcriptOpen" title="Transcript" @click="transcriptOpen = !transcriptOpen; controlsOpen = false">Transcript</button>
+        <button type="button" :aria-expanded="controlsOpen" title="Chapters" @click="controlsOpen = !controlsOpen; transcriptOpen = false">Chapters</button>
+      </div>
+      <div v-if="controlsOpen" class="narrator-control-chapters">
+        <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">{{ chapter.title }}</button>
+      </div>
+    </nav>
   </div>
 </template>
 
 <style scoped>
-/* `fixed` here does NOT mean "relative to the viewport": Slidev scales
-   .slidev-slide-content with a transform, and a transformed ancestor becomes
-   the containing block for fixed descendants. So the tile is positioned in the
-   slide's own coordinate space and scales with it — which is what a slide
-   overlay wants, since the framing then holds at any window size. Measured:
-   1200x830 viewport, scale 1.2245, a 180px tile painting at 220px.
-
-   It still doesn't ride the slide transition — GlobalBottom is a sibling of the
-   slide components, so the crossfade doesn't apply to it. */
-.narrator {
+.narrator-ui {
   position: fixed;
+  inset: 0;
   z-index: 60;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.5rem;
-  /* In slide coordinates (the 980px frame). 180 was sized for a head-and-
-     shoulders render; the mascot is framed tighter and reads at 140. */
-  width: 140px;
+  pointer-events: none;
+  color: var(--brand-text);
 }
 
-.narrator[data-placement='bottom-right'] { right: 1.5rem; bottom: 1.5rem; }
-.narrator[data-placement='bottom-left'] { left: 1.5rem; bottom: 1.5rem; }
+.narrator-ui button,
+.narrator-ui details,
+.narrator-ui select {
+  pointer-events: auto;
+}
+
+.narrator-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(430px, calc(100% - 3rem));
+  transform: translate(-50%, -50%);
+  padding: 1.4rem;
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 22%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--brand-bg) 94%, transparent);
+  box-shadow: 0 18px 60px rgb(0 0 0 / 22%);
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+}
+
+.narrator-start {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 1rem;
+}
+
+.narrator-start-avatar {
+  width: 72px;
+  height: 72px;
+  grid-row: span 2;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  background: var(--brand-bg-accent);
+}
+
+.narrator-card h2 {
+  margin: 0.12rem 0 0.45rem;
+  color: var(--brand-primary);
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.narrator-kicker,
+.narrator-meta,
+.narrator-card-copy {
+  margin: 0;
+}
+
+.narrator-kicker {
+  color: var(--brand-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.narrator-card-copy {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  opacity: 0.82;
+}
+
+.narrator-meta {
+  margin-top: 0.55rem;
+  font-size: 0.76rem;
+  opacity: 0.68;
+}
+
+.narrator-primary,
+.narrator-secondary,
+.narrator-chapter-list button {
+  border-radius: 0.6rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.narrator-primary {
+  grid-column: 1 / -1;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--brand-primary);
+  background: var(--brand-primary);
+  color: var(--brand-bg);
+  font-weight: 650;
+}
+
+.narrator-primary:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.narrator-secondary {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 32%, transparent);
+  background: var(--brand-bg);
+  color: var(--brand-primary);
+}
+
+.narrator-chapters {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+}
+
+.narrator-chapters summary {
+  cursor: pointer;
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+.narrator-chapter-list {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 0.55rem;
+}
+
+.narrator-chapter-list button {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.42rem 0.55rem;
+  border: 0;
+  background: var(--brand-surface);
+  color: var(--brand-text);
+  text-align: left;
+}
+
+.narrator-moment {
+  text-align: center;
+}
+
+.narrator-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.narrator-moment .narrator-primary {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.narrator-actions .narrator-primary {
+  margin-top: 0;
+}
+
+.narrator-break-clock {
+  margin: 0.7rem 0;
+  color: var(--brand-primary);
+  font-size: 2.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.narrator-end-chapters {
+  margin-top: 0.8rem;
+  text-align: left;
+}
+
+.narrator {
+  position: absolute;
+  width: 118px;
+  transition: width var(--motion-base) var(--motion-ease);
+}
+
+.narrator[data-emphasis='featured'] {
+  width: 150px;
+}
+
+.narrator[data-placement='bottom-right'] { right: 1.5rem; bottom: 4.8rem; }
+.narrator[data-placement='bottom-left'] { left: 1.5rem; bottom: 4.8rem; }
 .narrator[data-placement='top-right'] { right: 1.5rem; top: 1.5rem; }
 .narrator[data-placement='top-left'] { left: 1.5rem; top: 1.5rem; }
+.narrator[data-placement='hidden'],
+.narrator[data-hidden] { right: 1.5rem; bottom: 4.8rem; }
 
-/* Above the tile in the top corners, so the control never sits over the slide
-   title's line while the tile itself is clear of it. */
-.narrator[data-placement^='top'] {
-  flex-direction: column-reverse;
-}
-
-/* Shrunk to a pixel rather than removed: the media elements inside are what is
-   playing the narration, and an element taken out of the render tree may be
-   throttled. The Pause control stays — losing the picture shouldn't cost the
-   only way to stop the deck. */
-.narrator[data-placement='hidden'] {
-  right: 1.5rem;
-  bottom: 1.5rem;
-}
-
-.narrator[data-placement='hidden'] .narrator-frame {
+.narrator[data-placement='hidden'] .narrator-frame,
+.narrator[data-hidden] .narrator-frame {
   width: 1px;
   height: 1px;
-  aspect-ratio: auto;
   opacity: 0;
   box-shadow: none;
 }
 
-/* Square tile against a 16:9 source: object-fit below crops to the face rather
-   than letterboxing. Asking HeyGen for a square render instead would bake the
-   bars into the pixels — see scripts/narration-build.mjs. */
 .narrator-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
   overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--brand-primary) 24%, transparent);
   border-radius: 0.75rem;
   background: var(--brand-bg-accent);
   box-shadow: 0 6px 24px rgb(0 0 0 / 18%);
-  transition: opacity var(--motion-slow) var(--motion-ease);
 }
 
 .narrator-layer {
@@ -453,19 +897,6 @@ onBeforeUnmount(() => {
   object-fit: cover;
 }
 
-/* The dissolve itself: opacity, plus a scale small enough to be felt rather
-   than seen. Both are compositor properties — nothing here re-rasterises, which
-   is why it stays smooth while an animated blur did not.
- *
- * Between slides neither element is active, so the tile resolves to the still
- * underneath — the same face at rest — and the source swap happens there, where
- * there is nothing to see. The outgoing clip is fully gone before the incoming
- * one appears, so the two never blend.
- *
- * An audio-only source paints nothing, so its element is simply never made
- * active and the still shows through for the whole slide. Transparent rather
- * than `display: none`: an element removed from the render tree may have its
- * playback throttled, and it still has to play. */
 .narrator-video {
   opacity: 0;
   transform: scale(1.015);
@@ -479,28 +910,156 @@ onBeforeUnmount(() => {
   transform: scale(1);
 }
 
-/* Print and reduced motion get the resolved state, never a frame caught
-   mid-dissolve. */
-@media (prefers-reduced-motion: reduce) {
-  .narrator-video {
-    transition-duration: 1ms;
-  }
+.narrator-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 4.7rem;
+  width: min(680px, calc(100% - 12rem));
+  transform: translateX(-50%);
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.55rem;
+  background: rgb(0 0 0 / 82%);
+  color: white;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  text-align: center;
+  text-wrap: balance;
 }
 
-/* A slide with no narration would otherwise leave the last frame of the
-   previous one sitting there, mouth open. */
-.narrator[data-idle] .narrator-frame {
+.narrator-transcript {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 4.8rem;
+  width: 310px;
+  max-height: 240px;
+  overflow: auto;
+  padding: 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 20%, transparent);
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--brand-bg) 96%, transparent);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 18%);
+  font-size: 0.72rem;
+  line-height: 1.45;
+  pointer-events: auto;
+}
+
+.narrator-transcript > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--brand-primary);
+}
+
+.narrator-transcript button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.narrator-transcript p {
+  margin: 0.55rem 0 0;
+}
+
+.narrator-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  width: min(780px, calc(100% - 3rem));
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 20%, transparent);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--brand-bg) 94%, transparent);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 18%);
+  backdrop-filter: blur(12px);
+  pointer-events: auto;
+}
+
+.narrator-progress {
+  height: 3px;
+  background:
+    linear-gradient(90deg, var(--brand-primary) var(--narrator-progress), color-mix(in srgb, var(--brand-text) 12%, transparent) 0);
+}
+
+.narrator-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.38rem;
+}
+
+.narrator-controls button,
+.narrator-controls select {
+  min-height: 30px;
+  padding: 0.28rem 0.48rem;
+  border: 0;
+  border-radius: 0.42rem;
+  background: transparent;
+  color: var(--brand-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.narrator-controls button:hover,
+.narrator-controls button:focus-visible,
+.narrator-controls select:hover,
+.narrator-controls select:focus-visible {
+  outline: none;
+  background: var(--brand-surface);
+}
+
+.narrator-controls button:disabled {
+  cursor: default;
   opacity: 0.35;
 }
 
-.narrator-toggle {
-  padding: 0.35rem 0.6rem;
-  border: 1px solid var(--brand-primary);
-  border-radius: 0.5rem;
-  background: var(--brand-bg);
-  color: var(--brand-primary);
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
+.narrator-controls .narrator-play {
+  min-width: 34px;
+  background: var(--brand-primary);
+  color: var(--brand-bg);
+}
+
+.narrator-status {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 0.35rem;
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+.narrator-status strong,
+.narrator-status span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.narrator-status span {
+  opacity: 0.62;
+  font-variant-numeric: tabular-nums;
+}
+
+.narrator-speed select {
+  appearance: none;
+}
+
+.narrator-control-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0 0.45rem 0.45rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .narrator,
+  .narrator-video {
+    transition-duration: 1ms;
+  }
 }
 </style>

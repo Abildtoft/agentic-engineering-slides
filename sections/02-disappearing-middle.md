@@ -16,6 +16,8 @@ BRIDGE: "We've established the shift is real and accelerating. Now let's look at
 -->
 
 ---
+narrator: hidden
+---
 
 # The Middle of Software Work
 
@@ -196,6 +198,8 @@ DELIVERY:
 SOURCE: Jenny Wen (Design Lead, Anthropic; formerly Design Director, Notion), via Lenny Rachitsky (x.com/lennysan/status/2028484407108194507)
 -->
 
+---
+narrator: hidden
 ---
 
 # One Surviving Skill Set
