@@ -22,7 +22,8 @@
  *
  * Usage:
  *   MASCOT_API_KEY=mascot_dev_… yarn narration:mascot [--slides=11-59] [--force]
- *     [--mascot=retrobot] [--fps=30] [--size=720] [--bg=#ffffff] [--zoom=1.35] [--focus-y=0.44]
+ *     [--mascot=retrobot] [--fps=24] [--size=512] [--bg=#ffffff] [--zoom=1.35] [--focus-y=0.44]
+ *   yarn narration:mascot --optimize-existing
  *
  * A `mascot_dev_…` key is the right one: the render runs on localhost, which is
  * the only origin a dev key accepts, and the deck ships the video, not the SDK.
@@ -30,7 +31,7 @@
  */
 import { spawn } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, readdir, rename, stat, unlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { createServer } from 'vite'
 import { chromium } from 'playwright-core'
@@ -48,9 +49,12 @@ const flag = name => args.includes(`--${name}`)
 const option = (name, fallback) => args.find(a => a.startsWith(`--${name}=`))?.split('=')[1] ?? fallback
 
 const force = flag('force')
+const optimizeExisting = flag('optimize-existing')
 const mascotId = option('mascot', 'retrobot')
-const fps = Number(option('fps', 30))
-const size = Number(option('size', 720))
+// The tile tops out around 300 physical pixels on a 1080p display. 512px keeps
+// it crisp on dense screens without shipping 720px frames that are never seen.
+const fps = Number(option('fps', 24))
+const size = Number(option('size', 512))
 const bg = option('bg', '#ffffff')
 const zoom = Number(option('zoom', 1.35))
 const focusY = Number(option('focus-y', 0.44))
@@ -58,7 +62,7 @@ const slides = parseSlideList(option('slides'))
 const BATCH = 30
 
 const { MASCOT_API_KEY } = process.env
-if (!MASCOT_API_KEY) fail('MASCOT_API_KEY is not set — create a mascot_dev_… key at app.mascot.bot/api-keys')
+if (!MASCOT_API_KEY && !optimizeExisting) fail('MASCOT_API_KEY is not set — create a mascot_dev_… key at app.mascot.bot/api-keys')
 
 function fail(message) {
   console.error(`narration-mascot: ${message}`)
@@ -90,6 +94,54 @@ function run(cmd, cmdArgs, { input } = {}) {
     child.on('close', code => (code === 0 ? resolve() : reject(new Error(`${cmd} exited ${code}\n${stderr.slice(-2000)}`))))
     if (input) input(child.stdin)
   })
+}
+
+/**
+ * Re-encodes already-reviewed mascot clips for the small on-slide tile. This
+ * path is deliberately offline: it does not load the Rive character, run
+ * inference, or call a metered service. New filenames use the cache hash the
+ * renderer will calculate for these settings, so later renders see honest
+ * cache entries rather than 720px files masquerading as 512px output.
+ */
+async function optimizeExistingClips() {
+  const manifest = JSON.parse(await readFile(MASCOT_MANIFEST, 'utf-8'))
+  const previousFiles = []
+
+  for (const [no, entry] of Object.entries(manifest.slides ?? {})) {
+    const oldFile = entry.video.split('/').pop()
+    const hash = createHash('sha256')
+      .update(`${entry.source} ${manifest.mascot.id}@${manifest.mascot.version} ${fps} ${size} ${bg} ${zoom} ${focusY} v1`)
+      .digest('hex')
+      .slice(0, 12)
+    const file = `slide-${String(no).padStart(2, '0')}-mascot-${hash}.mp4`
+
+    if (!(await exists(join(OUT_DIR, file)))) {
+      await run('ffmpeg', [
+        '-y', '-loglevel', 'error', '-i', join(OUT_DIR, oldFile),
+        '-map', '0:v', '-map', '0:a?', '-vf', `scale=${size}:${size}`, '-r', String(fps),
+        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-pix_fmt', 'yuv420p',
+        '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(OUT_DIR, file),
+      ])
+    }
+    manifest.slides[no] = { ...entry, hash, video: `/narration/${file}` }
+    if (oldFile !== file) previousFiles.push(oldFile)
+    console.log(`  ${String(no).padStart(2)} ${oldFile} -> ${file}`)
+  }
+
+  const stillFile = join(OUT_DIR, 'mascot-still.png')
+  const nextStill = join(OUT_DIR, 'mascot-still.optimized.png')
+  await run('ffmpeg', ['-y', '-loglevel', 'error', '-i', stillFile, '-vf', `scale=${size}:${size}`, nextStill])
+  await rename(nextStill, stillFile)
+
+  manifest.mascot = { ...manifest.mascot, fps, size, bg, zoom, focusY }
+  await writeFile(MASCOT_MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`)
+  for (const file of previousFiles) await unlink(join(OUT_DIR, file)).catch(() => {})
+  console.log(`\noptimized ${Object.keys(manifest.slides ?? {}).length} mascot clips to ${size}px at ${fps}fps`)
+}
+
+if (optimizeExisting) {
+  await optimizeExistingClips()
+  process.exit(0)
 }
 
 /** Pin the character: the API's versions are immutable, so a cached .riv never
@@ -232,8 +284,8 @@ try {
         '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', 'pipe:0',
         '-i', join(OUT_DIR, source),
         '-map', '0:v', '-map', '1:a',
-        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-pix_fmt', 'yuv420p',
-        '-c:a', 'aac', '-b:a', '128k',
+        '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '24', '-pix_fmt', 'yuv420p',
+        '-c:a', 'aac', '-b:a', '96k',
         '-shortest', '-movflags', '+faststart',
         outPath,
       ],
