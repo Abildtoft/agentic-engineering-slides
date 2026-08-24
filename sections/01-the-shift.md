@@ -75,6 +75,107 @@ SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/206145
 class: v-center
 ---
 
+# Almost Nobody Is Here Yet
+
+<div class="adoption-ladder mt-10">
+
+<v-click>
+
+<p><span class="adoption-num">84%</span> of the world has never used AI</p>
+
+</v-click>
+<v-click>
+
+<p><span class="adoption-num">0.3%</span> has ever paid for it</p>
+
+</v-click>
+<v-click>
+
+<p><span class="adoption-num">0.04%</span> has tried AI coding tools</p>
+
+</v-click>
+
+</div>
+
+<style>
+/* Funnel of three stats: numbers right-aligned in a shared column so the
+   shrinking magnitude reads down the page, brand-coloured like the agenda
+   counters. */
+.adoption-ladder p {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0 0 1.3rem;
+}
+.adoption-num {
+  color: var(--brand-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 2.6rem;
+  line-height: 1;
+  min-width: 9.5rem;
+  text-align: right;
+}
+</style>
+
+<!--
+KEY POINTS:
+- Quantifies the 1997 claim before any coding content — this is general AI adoption, not developer stats
+- 84% of Earth's population (8.1B) have never used AI; only 0.3% have ever paid; 0.04% have tried AI coding tools
+- The funnel narrows toward the subject of this talk: the last number is the bleeding edge this room is standing on
+
+BRIDGE: "Which raises a fair question — if almost nobody is here yet, why does this talk keep pointing at software?"
+
+DELIVERY:
+- Three clicks, one number each; let the magnitude drop do the work
+- The 84% is the room-calibrator: most people's daily lives are untouched, and that is compatible with everything that follows
+- Land the last number slowly — "four in ten thousand" — then bridge
+
+SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
+-->
+
+---
+layout: statement
+---
+
+# Not Just a Developer Story
+
+<v-click>
+
+<p class="mt-8 text-2xl leading-relaxed opacity-80">
+AI is reaching every discipline that works with knowledge.
+</p>
+
+</v-click>
+<v-click>
+
+<p class="mt-4 text-2xl leading-relaxed opacity-80">
+Software is simply <span class="font-bold" style="color: var(--brand-primary)">first</span> — code is work an AI can check.
+</p>
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Says explicitly that the talk is not developers-only: software is the lens, not the subject
+- Why software runs first, mechanically: code gives an AI a tight feedback loop — run it, test it, see if it broke, thousands of times in seconds. No other profession offers that yet
+- What happens to software work in the next hour is the early picture of what reaches design, law, finance, sales, medicine
+
+BRIDGE: "So here are the tools that shift runs on today."
+
+DELIVERY:
+- Address the non-developers in the room directly — this is the slide that keeps them in the talk
+- Two clicks: the broad claim first, then the reason software leads
+- Don't over-explain the feedback-loop point; one sentence, then move
+
+SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897) — task vs. job framing; AI as a wave on the scale of internet/mobile touching every profession
+-->
+
+---
+class: v-center
+---
+
 # It's Not Just One Tool
 
 Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
@@ -123,15 +224,13 @@ ADDITIONAL POINTS:
 - Start with recognizable tool names so the audience sees the breadth
 - The convergence framing belongs on the tool list: this wasn't one model release — models got good enough, tooling matured, and adoption hit production scale in one compressed window
 - Frame this as workflow change, not just speed improvement
-- Eriksson provides a useful scale anchor: 84% of Earth's population (8.1B) have never used AI; only 0.3% have paid for AI; 0.04% have tried AI coding tools. The adoption numbers above are the bleeding edge — the rest of the world hasn't even started yet.
+- The Eriksson adoption funnel (84% / 0.3% / 0.04%) now has its own slide two back — no need to repeat it here
 
 DELIVERY:
 - Verbal bridge into the company grid (trimmed from the slide): "So zoom out from tool names to company behavior."
 - Open on the tool names with the convergence line: "This wasn't one model release. In a single 30-day window last December, all three frontier labs shipped — and the whole category renamed itself from assistants to agents."
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
 - The asterisk lands on its own click, after the room has had a beat to be impressed by the grid — it re-reads numbers they've already accepted rather than qualifying them up front. It is a setup, not a disclaimer: say the implication out loud — these are the last numbers these companies published, so every one of them is a floor, not a ceiling. Dated: Spotify Feb 2026 (the newest of the four), Anthropic/OpenAI Jan 2026, Google Q4 earnings call; Nadella's 20–30% is the oldest and predates the rest by roughly a year, which is why the slide says "at least six months" rather than naming a window. Re-check the wording if you present this after roughly Q1 2027
-- Optional verbal after the company stats: "And keep this in perspective — 84% of the world has never used AI at all. Only 0.04% have tried coding tools. We're still at the very beginning."
-
 SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
 SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
 SOURCE: Google CEO Sundar Pichai, earnings call

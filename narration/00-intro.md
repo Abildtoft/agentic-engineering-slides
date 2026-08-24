@@ -1,7 +1,8 @@
 <!-- 1. cover — Agentic Engineering — ~1 clicks -->
 
-There is a name going around for what we are all doing right now. You have heard
-it in your standups, you have probably used it yourself. Vibe coding.
+There is a name going around for what is happening to software right now. You
+have seen it in the headlines, maybe heard it around your own office, and you
+may well have used it yourself. Vibe coding.
 [click] Except that is not what this is. And the gap between that name and what
 is actually happening is most of what I want to talk about today.
 

@@ -1,4 +1,4 @@
-<!-- 43. section — What Matters -->
+<!-- 45. section — What Matters -->
 
 We have diagnosed the risks. Now let's name what endures. The central question
 for this section is simple: what capabilities become more valuable when the
@@ -7,7 +7,7 @@ second body section, so I will move through it with some energy.
 
 ---
 
-<!-- 44. quote — ~2 clicks -->
+<!-- 46. quote — ~2 clicks -->
 
 Robert Martin captured the experience perfectly. In his words: it is amazing
 how much work it is to wrestle these agents to my will.
@@ -21,7 +21,7 @@ judgment get applied? Zoom out from the agent loop, and there are three places.
 
 ---
 
-<!-- 45. default — Three Loops. Three Clocks. — ~1 clicks -->
+<!-- 47. default — Three Loops. Three Clocks. — ~1 clicks -->
 
 Three nested loops, running on three different clocks. The centre ring is the
 one from the harness section. The agent turns a spec into tested software, and
@@ -40,7 +40,7 @@ judgment is the compounding asset.
 
 ---
 
-<!-- 46. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
+<!-- 48. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
 
 Which leads to a line that should sound like a contradiction for a second. The
 fastest way to build is to find the cheapest way to learn.
@@ -57,7 +57,7 @@ experiment now. But cheap learning is what earns the right to build.
 
 ---
 
-<!-- 47. statement — The prototype is the new brief. — ~3 clicks -->
+<!-- 49. statement — The prototype is the new brief. — ~3 clicks -->
 
 One artifact captures cheap learning better than anything else. Andrew Chen's
 phrasing is that the prototype is the new PRD. I would widen it: the prototype
@@ -79,7 +79,7 @@ real data or real users, everything from the guardrails section applies.
 
 ---
 
-<!-- 48. default — The Long Tail of Internal Software — ~3 clicks -->
+<!-- 50. default — The Long Tail of Internal Software — ~3 clicks -->
 
 Now, do not mistake cheaper learning for shrinking demand. The opposite is
 happening, and it lands first here. Every team runs on invisible workflows.
@@ -101,7 +101,7 @@ retires these tools. Hold that thought.
 
 ---
 
-<!-- 49. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
+<!-- 51. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
 
 So if the work expands, the question becomes what kind of work. Because there
 is a failure mode here, and it is just building yesteryear's software faster.
@@ -115,7 +115,7 @@ at all.
 
 ---
 
-<!-- 50. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
+<!-- 52. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
 
 Choosing what is worth building is frontier work, and there is a clean
 division of labour for it. Think of knowledge as a graph. Facts are nodes, and
@@ -132,7 +132,7 @@ maps the edges.
 
 ---
 
-<!-- 51. default — Clarity Merchants — ~3 clicks -->
+<!-- 53. default — Clarity Merchants — ~3 clicks -->
 
 That makes the human work more specific. We become clarity merchants. We were
 never bottlenecked by typing speed. We are bottlenecked by coherence.
@@ -152,7 +152,7 @@ speed.
 
 ---
 
-<!-- 52. default — How much of the problem do you own? — ~1 clicks -->
+<!-- 54. default — How much of the problem do you own? — ~1 clicks -->
 
 There is a sharper way to ask what all that clarity work adds up to. How much
 of the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.
@@ -170,7 +170,7 @@ own after it leaves your hands.
 
 ---
 
-<!-- 53. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
+<!-- 55. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
 
 And rung seven at product scale looks like this. Many products do not die
 from missing features. They die from accumulation. It is easy to prompt a new

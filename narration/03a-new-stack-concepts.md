@@ -1,4 +1,4 @@
-<!-- 19. section — The New Stack: Core Concepts -->
+<!-- 21. section — The New Stack: Core Concepts -->
 
 We have named the shift. The middle is compressing, and the value moves to
 intent and judgment. So what does the new way of working actually look like,
@@ -8,7 +8,7 @@ code or not, because the concepts apply either way.
 
 ---
 
-<!-- 20. default — From Producing Outputs to Designing the Loop — ~3 clicks -->
+<!-- 22. default — From Producing Outputs to Designing the Loop — ~3 clicks -->
 
 One thing to get out of the way first, because it is where most people's
 mental model is stuck.
@@ -27,7 +27,7 @@ are the runway markings.
 
 ---
 
-<!-- 21. default — Context Engineering — ~3 clicks -->
+<!-- 23. default — Context Engineering — ~3 clicks -->
 
 Start with context.
 [click] We always needed it. The first wave was copy-pasting code into a chat
@@ -46,7 +46,7 @@ Documentation is now production infrastructure.
 
 ---
 
-<!-- 22. default — Spec-Driven Development — ~4 clicks -->
+<!-- 24. default — Spec-Driven Development — ~4 clicks -->
 
 The second discipline.
 [click] Context shapes what the agent knows. Specs shape what good looks like.
