@@ -1,4 +1,4 @@
-<!-- 21. section — The New Stack: Tools -->
+<!-- 22. section — The New Stack: Tools -->
 
 Those are the two disciplines. Context, and specs. Without the right building
 blocks they stay theoretical, so let me show you the pieces that make them
@@ -7,7 +7,7 @@ Every vendor has a version of each of these.
 
 ---
 
-<!-- 22. two-cols-header — Markdown Is the Program Now — ~2 clicks -->
+<!-- 23. two-cols-header — Markdown Is the Program Now — ~2 clicks -->
 
 The medium for almost all of it is markdown. Human-readable and
 machine-readable, and versionable like code. Agent instructions, skills, agent
@@ -23,7 +23,7 @@ making the same mistake in the same place.
 
 ---
 
-<!-- 23. default — Skills: Reusable Playbooks — ~2 clicks -->
+<!-- 24. default — Skills: Reusable Playbooks — ~2 clicks -->
 
 The first tool built on that medium is the skill. A skill is a folder of
 instructions for one kind of task. You do the task once, carefully, and then
@@ -40,7 +40,7 @@ because the next building block is the opposite.
 
 ---
 
-<!-- 24. center — The Kitchen Analogy — ~3 clicks -->
+<!-- 25. center — The Kitchen Analogy — ~3 clicks -->
 
 An analogy to hold all of this together. APIs are utensils, each one does one
 thing. Skills are recipes. And MCP is the kitchen itself. You are not building
@@ -59,7 +59,7 @@ the other.
 
 ---
 
-<!-- 25. default — MCP Example: Figma ↔ Frontend — ~3 clicks -->
+<!-- 26. default — MCP Example: Figma ↔ Frontend — ~3 clicks -->
 
 Here is the same pattern in a domain that is not tickets and repos. Design.
 The agent talks to a Figma MCP server, pulls the design context and the
@@ -80,7 +80,7 @@ execution. And a bridge between them.
 
 ---
 
-<!-- 26. default — Harness Engineering — ~2 clicks -->
+<!-- 27. default — Harness Engineering — ~2 clicks -->
 
 You have now seen the pieces. Context files, skills, MCP servers. This is the
 machine they all plug into. Context goes in. The model reasons and decides. It
@@ -98,7 +98,7 @@ Hashimoto's version: the model is the engine. The harness is the car.
 
 ---
 
-<!-- 27. default — Guardrails — ~3 clicks -->
+<!-- 28. default — Guardrails — ~3 clicks -->
 
 The model in the middle of that machine is stochastic. So the next question is
 reliability.
@@ -117,7 +117,7 @@ might. And a gate can guard anything you care about.
 
 ---
 
-<!-- 28. default — Set the Constraints Around Your Agents — ~3 clicks -->
+<!-- 29. default — Set the Constraints Around Your Agents — ~3 clicks -->
 
 Tests and reviews are two gates. Here is the full ring. Correctness, security,
 performance, accessibility, maintainability, cost, back-pressure,
@@ -136,7 +136,7 @@ line to designing the gates, and the gates decide what is good enough to ship.
 
 ---
 
-<!-- 29. default — From Issue to Pull Request: One Command — ~3 clicks -->
+<!-- 30. default — From Issue to Pull Request: One Command — ~3 clicks -->
 
 That ring, composed into a pipeline. One command, a Linear issue ID, and out
 the other end a pull request. It is an orchestrator, not a monolith: it
@@ -155,7 +155,7 @@ And so your loop shrinks to two moments: write the issue, review the PR.
 
 ---
 
-<!-- 30. center — Temperature Check — Demo, Questions, Break? -->
+<!-- 31. center — Temperature Check — Demo, Questions, Break? -->
 
 That is my harness, and that is the halfway mark. In the room, this is where
 I stop and let the audience choose: a live demo, open questions, or a short

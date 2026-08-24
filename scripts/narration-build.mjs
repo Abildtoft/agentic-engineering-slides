@@ -51,6 +51,7 @@
  */
 import { mkdir, readFile, readdir, stat, unlink, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
+import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { CUE_LEAD_SECONDS, ROOT, buildCaptions, buildIndex, loadDeck, resolveCues } from './narration-lib.mjs'
 
@@ -99,7 +100,6 @@ const { HEYGEN_API_KEY, HEYGEN_VOICE_ID, HEYGEN_AVATAR_ID } = process.env
  * class of render the approved clips came from.
  */
 const HEYGEN_ENGINE = process.env.HEYGEN_ENGINE ?? 'avatar_iii'
-if (!HEYGEN_API_KEY) fail('HEYGEN_API_KEY is not set')
 if (!HEYGEN_VOICE_ID) fail('HEYGEN_VOICE_ID is not set — list options with GET /v3/voices?engine=starfish')
 if (!HEYGEN_AVATAR_ID && !dryRun) fail('HEYGEN_AVATAR_ID is not set')
 
@@ -108,11 +108,36 @@ function fail(message) {
   process.exit(1)
 }
 
+async function resolveHeyGenAuth() {
+  const configDir = process.env.HEYGEN_CONFIG_DIR ?? join(homedir(), '.heygen')
+  const stored = await readFile(join(configDir, 'credentials'), 'utf-8')
+    .then(JSON.parse)
+    .catch(() => null)
+  const oauth = stored?.oauth
+
+  if (oauth?.access_token) {
+    const expiresAt = Date.parse(oauth.expires_at)
+    if (Number.isFinite(expiresAt) && expiresAt <= Date.now()) {
+      fail('HeyGen OAuth session expired — run `npx hyperframes auth refresh` or sign in again')
+    }
+    return { Authorization: `${oauth.token_type ?? 'Bearer'} ${oauth.access_token}` }
+  }
+
+  if (HEYGEN_API_KEY) {
+    console.warn('narration-build: no OAuth session found; using HEYGEN_API_KEY (API wallet billing)')
+    return { 'X-Api-Key': HEYGEN_API_KEY }
+  }
+
+  fail('HeyGen is not authenticated — run `npx hyperframes auth login`')
+}
+
+const authHeaders = await resolveHeyGenAuth()
+
 async function heygen(path, { method = 'GET', body } = {}) {
   const response = await fetch(`${API}${path}`, {
     method,
     headers: {
-      'X-Api-Key': HEYGEN_API_KEY,
+      ...authHeaders,
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
@@ -244,6 +269,25 @@ if (problems.length) {
 
 await mkdir(OUT_DIR, { recursive: true })
 const previous = JSON.parse(await readFile(MANIFEST, 'utf-8').catch(() => '{"slides":{}}'))
+const previousEntries = Object.values(previous.slides ?? {})
+const previousByNarrationKey = new Map(
+  previousEntries.filter(entry => entry.narrationKey).map(entry => [entry.narrationKey, entry]),
+)
+const previousByTranscript = new Map()
+for (const entry of previousEntries) {
+  if (!entry.transcript) continue
+  const matches = previousByTranscript.get(entry.transcript) ?? []
+  matches.push(entry)
+  previousByTranscript.set(entry.transcript, matches)
+}
+
+const narrationKeyFor = entry => `${entry.file}:${entry.sourceIndex}`
+const previousFor = entry => {
+  const byKey = previousByNarrationKey.get(narrationKeyFor(entry))
+  if (byKey) return byKey
+  const byTranscript = previousByTranscript.get(entry.text)
+  return byTranscript?.length === 1 ? byTranscript[0] : null
+}
 
 const avatar = dryRun ? null : await fetchAvatar()
 const resolution = resolutionFor(avatar?.height)
@@ -260,6 +304,7 @@ const manifest = {
 
 const withNarrationMetadata = (built, entry, words = null) => ({
   ...built,
+  narrationKey: narrationKeyFor(entry),
   transcript: entry.text,
   captions: buildCaptions(entry.text, words, built.duration),
 })
@@ -279,8 +324,9 @@ const absent = []
  */
 async function saveProgress(error, done) {
   for (const entry of entries) {
-    if (manifest.slides[entry.no] || !previous.slides?.[entry.no]) continue
-    manifest.slides[entry.no] = withNarrationMetadata(previous.slides[entry.no], entry)
+    const cached = previousFor(entry)
+    if (manifest.slides[entry.no] || !cached) continue
+    manifest.slides[entry.no] = withNarrationMetadata(cached, entry)
   }
   await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`)
   console.error(`\nnarration-build: stopped after slide ${done} — ${error.message}`)
@@ -303,7 +349,7 @@ async function buildSlide(entry) {
   if (only && entry.file !== only) {
     // Carry the untouched slides through, or a filtered run would publish a
     // manifest containing only the section it rebuilt.
-    const kept = previous.slides?.[entry.no]
+    const kept = previousFor(entry)
     if (kept) {
       manifest.slides[entry.no] = withNarrationMetadata(kept, entry)
       // Rebuilding these would defeat --only, so say so instead of fixing it.
@@ -323,7 +369,7 @@ async function buildSlide(entry) {
       .slice(0, 12)
   const hash = hashFor(mode)
 
-  const cached = previous.slides?.[entry.no]
+  const cached = previousFor(entry)
 
   // An audio pass never downgrades a rendered clip whose prose is current: the
   // clip is the better asset, and replacing its entry would orphan the mp4 so

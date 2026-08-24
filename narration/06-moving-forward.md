@@ -1,11 +1,11 @@
-<!-- 52. section — Moving Forward -->
+<!-- 53. section — Moving Forward -->
 
 Last section, and the shortest. This should feel like a landing, not a new
 argument. Across everything we have covered, what actually survives?
 
 ---
 
-<!-- 53. default — What Survives — ~3 clicks -->
+<!-- 54. default — What Survives — ~3 clicks -->
 
 Execution is increasingly abundant. People who combine strategy with
 execution will remain rare. The same split plays out in engineering, product
@@ -25,7 +25,7 @@ industry feels so uneven right now.
 
 ---
 
-<!-- 54. statement — Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems. — ~1 clicks -->
+<!-- 55. statement — Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems. — ~1 clicks -->
 
 Remember the cascade from earlier? The constraint did not disappear. It moved
 upstream, to getting expert knowledge out of heads and into systems. The
@@ -41,7 +41,7 @@ asset is the institutional loop, not the frontier model.
 
 ---
 
-<!-- 55. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
+<!-- 56. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
 
 Which makes posture the real decision. In a period of compounding change,
 playing defense is its own risk.
@@ -55,7 +55,7 @@ emphasis is on learn, not on faster.
 
 ---
 
-<!-- 56. default — Where to Start — ~3 clicks -->
+<!-- 57. default — Where to Start — ~3 clicks -->
 
 Offense sounds abstract. On Monday morning it looks like this. You do not need
 an AI strategy to begin. You need one finished pilot.
@@ -73,7 +73,7 @@ obsolete before the ink dries.
 
 ---
 
-<!-- 57. two-cols-header — The Next Few Years — ~2 clicks -->
+<!-- 58. two-cols-header — The Next Few Years — ~2 clicks -->
 
 And that posture lands differently depending on where you are in your career,
 so let me split the room for a moment.
@@ -95,7 +95,7 @@ most.
 
 ---
 
-<!-- 58. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
+<!-- 59. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
 
 All of which points to the same conclusion. The craft evolves. It always has.
 But it remains craft.
@@ -108,7 +108,7 @@ ambiguity into clarity.
 
 ---
 
-<!-- 59. cover — Thank You — ~1 clicks -->
+<!-- 60. cover — Thank You — ~1 clicks -->
 
 Thank you. That is the talk. If you want to follow up, my details are on the
 screen.

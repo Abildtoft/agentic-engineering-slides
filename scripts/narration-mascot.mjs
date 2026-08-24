@@ -162,6 +162,9 @@ async function fetchMascot() {
 await mkdir(CACHE_DIR, { recursive: true })
 const speech = JSON.parse(await readFile(MANIFEST, 'utf-8'))
 const previous = JSON.parse(await readFile(MASCOT_MANIFEST, 'utf-8').catch(() => '{"slides":{}}'))
+const previousBySource = new Map(
+  Object.values(previous.slides ?? {}).filter(entry => entry.source).map(entry => [entry.source, entry]),
+)
 const mascot = await fetchMascot()
 
 const server = await createServer({
@@ -232,15 +235,19 @@ try {
 
   for (const [no, entry] of Object.entries(speech.slides)) {
     const source = (entry.video ?? entry.audio)?.split('/').pop()
-    if (!source || !(await exists(join(OUT_DIR, source)))) continue
+    if (!source) continue
+
+    const cached = previousBySource.get(source) ?? previous.slides?.[no]
+    if (!(await exists(join(OUT_DIR, source)))) {
+      if (cached) manifest.slides[no] = cached
+      continue
+    }
 
     const hash = createHash('sha256')
       .update(`${source} ${mascot.id}@${mascot.version} ${fps} ${size} ${bg} ${zoom} ${focusY} v1`)
       .digest('hex')
       .slice(0, 12)
     const file = `slide-${String(no).padStart(2, '0')}-mascot-${hash}.mp4`
-    const cached = previous.slides?.[no]
-
     if (slides && !slides.has(Number(no))) {
       if (cached) manifest.slides[no] = cached
       continue

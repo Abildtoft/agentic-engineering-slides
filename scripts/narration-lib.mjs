@@ -5,7 +5,7 @@ import { load } from '@slidev/parser/fs'
 export const ROOT = new URL('..', import.meta.url).pathname.replace(/\/$/, '')
 export const NARRATION_DIR = join(ROOT, 'narration')
 
-/** slides.md's own three slides have no section file of their own. */
+/** The entry file's intro slides have no section file of their own. */
 const ENTRY_NARRATION_FILE = '00-intro'
 
 /**

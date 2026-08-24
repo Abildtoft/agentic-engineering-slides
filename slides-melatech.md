@@ -58,6 +58,10 @@ layout: statement
 - Moving Forward
 
 ---
+src: ./sections/00-acknowledgements.md
+---
+
+---
 src: ./sections/01-the-shift.md
 ---
 

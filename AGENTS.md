@@ -256,6 +256,9 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   it rewrites the header comments from the current deck and preserves prose
 - Credentials live in `.env` (gitignored; `.env.example` documents them) and are
   loaded with node's `--env-file-if-exists`, so there is no dotenv dependency
+- **PREFER** HeyGen OAuth authentication for narration and media generation;
+  run `npx hyperframes auth login` and verify `Billing: subscription` with
+  `npx hyperframes auth status` before synthesis
 - `yarn narration:voices` is the preflight, and the voice check is the one that
   matters: `word_timestamps` only comes back for **Starfish-engine** voices, and
   any other voice synthesises fine while returning null there — the build then

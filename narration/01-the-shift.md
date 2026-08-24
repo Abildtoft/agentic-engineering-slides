@@ -1,4 +1,4 @@
-<!-- 4. section — The Shift Is Here -->
+<!-- 5. section — The Shift Is Here -->
 
 You have heard this before. For three years running, someone has stood roughly
 where I am standing and told you that everything was about to change. And for
@@ -8,7 +8,7 @@ I would rather show you the pattern than assert it.
 
 ---
 
-<!-- 5. statement — We're in 1997 for AI — ~3 clicks -->
+<!-- 6. statement — We're in 1997 for AI — ~3 clicks -->
 
 Here is my honest calibration for where we actually are. 1997. The category is
 real, and almost nothing about it is settled yet.
@@ -23,7 +23,7 @@ in the room. That is where we are standing.
 
 ---
 
-<!-- 6. default — It's Not Just One Tool — ~2 clicks -->
+<!-- 7. default — It's Not Just One Tool — ~2 clicks -->
 
 These are the tools developers now use to build software with AI. Claude Code,
 Cursor, Windsurf, Copilot, Gemini CLI, Codex. Six names, but this was not one
@@ -45,7 +45,7 @@ chose to publish, which makes every one of them a floor, not a ceiling.
 
 ---
 
-<!-- 7. default — Same Job, Same Me, Different Years — ~6 clicks -->
+<!-- 8. default — Same Job, Same Me, Different Years — ~6 clicks -->
 
 If that still sounds like vendor hype, you do not have to take their word for
 it. This is my own record. Every piece of software work leaves a trail, and
@@ -67,7 +67,7 @@ out to be the part that matters most.
 
 ---
 
-<!-- 8. default — The Curve Bent in January — ~2 clicks -->
+<!-- 9. default — The Curve Bent in January — ~2 clicks -->
 
 Now the same data month by month, because the totals are not the interesting
 part. When it happened is. Watch the flat year draw itself out. That was me
@@ -80,7 +80,7 @@ means one single month out-produced the entire year that came before it.
 
 ---
 
-<!-- 9. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
+<!-- 10. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
 
 Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
 summer 2026, he wrote, people working with the most advanced AI will feel like
