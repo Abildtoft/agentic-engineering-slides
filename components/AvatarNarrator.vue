@@ -3,7 +3,8 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useNav } from '@slidev/client'
 
 /**
- * Self-presenting mode for `?auto=1`.
+ * Self-presenting mode — the default way the deck opens. `?auto=0` opts out
+ * for live presentation (the presenter window and print are excluded anyway).
  *
  * The media clock owns click timing, while `phase` owns the viewer experience.
  * Keeping those concerns separate is important: a network stall must stop cues,
@@ -36,7 +37,7 @@ const {
 
 const enabled = computed(() => {
   const query = new URLSearchParams(location.search)
-  return !isPrintMode.value && !isPresenter.value && query.get('auto') === '1'
+  return !isPrintMode.value && !isPresenter.value && query.get('auto') !== '0'
 })
 
 const phase = ref('loading')
@@ -123,6 +124,11 @@ const still = computed(() => {
   return mascotManifest.value?.still ?? manifest.value?.still ?? null
 })
 
+const cardVisible = computed(() =>
+  (!hasStarted.value && ['loading', 'ready'].includes(phase.value))
+  || ['intermission', 'ended', 'error'].includes(phase.value),
+)
+
 const chapters = computed(() => {
   const found = [{ no: 1, title: 'Introduction' }]
   for (const route of slides.value) {
@@ -140,6 +146,19 @@ const currentChapter = computed(() => {
     active = chapter
   }
   return active
+})
+
+const chapterRows = computed(() => {
+  const list = chapters.value
+  return list.map((chapter, index) => {
+    const end = list[index + 1]?.no ?? total.value + 1
+    let duration = 0
+    for (let no = chapter.no; no < end; no++) duration += entryFor(no)?.duration ?? 0
+    const state = chapter.no === currentChapter.value.no
+      ? 'current'
+      : chapter.no < currentChapter.value.no ? 'played' : 'upcoming'
+    return { ...chapter, index: index + 1, duration, state }
+  })
 })
 
 const totalDuration = computed(() =>
@@ -478,7 +497,7 @@ function retryCurrent() {
 
 function leaveAutoMode() {
   const url = new URL(location.href)
-  url.searchParams.delete('auto')
+  url.searchParams.set('auto', '0')
   url.searchParams.delete('mascot')
   location.assign(url)
 }
@@ -538,6 +557,7 @@ watch(currentSlideNo, () => {
 
 onMounted(() => {
   if (!enabled.value) return
+  document.documentElement.dataset.narrated = ''
   playbackRate.value = Number(localStorage.getItem('narrator-speed')) || 1
   captionsEnabled.value = localStorage.getItem('narrator-captions') !== '0'
   narratorView.value = localStorage.getItem('narrator-view') === 'voice' ? 'voice' : 'mascot'
@@ -548,6 +568,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  delete document.documentElement.dataset.narrated
   cancelAnimationFrame(frame)
   clearPlaybackTimers()
   clearBreakTimer()
@@ -558,22 +579,40 @@ onBeforeUnmount(() => {
 
 <template>
   <div v-if="enabled" class="narrator-ui" :data-phase="phase">
+    <Transition name="narrator-scrim">
+      <div v-if="cardVisible" class="narrator-scrim" aria-hidden="true" />
+    </Transition>
     <section v-if="!hasStarted && ['loading', 'ready'].includes(phase)" class="narrator-card narrator-start" aria-live="polite">
       <img v-if="still" class="narrator-start-avatar" :src="still" alt="" />
       <div>
-        <p class="narrator-kicker">AI-narrated version</p>
-        <h2>Watch Mikkel’s talk</h2>
-        <p class="narrator-card-copy">Synthetic voice and character reading Mikkel’s first-person presentation.</p>
+        <p class="narrator-kicker">AI-narrated talk</p>
+        <h2>Agentic Engineering</h2>
+        <p class="narrator-card-copy">
+          How AI agents are reshaping software engineering: the shift underway, what happens
+          to the middle of the job, the new stack — context, specs, skills, MCP — the
+          cognitive debt it creates, and the skills that survive. Mikkel’s first-person
+          talk, read by a synthetic voice and character.
+        </p>
         <p class="narrator-meta">{{ formatClock(totalDuration) }} · {{ total }} slides · captions included</p>
       </div>
       <button class="narrator-primary" type="button" :disabled="phase === 'loading'" @click="start">
         {{ phase === 'loading' ? 'Preparing narration…' : 'Play from beginning' }}
       </button>
+      <button class="narrator-dismiss" type="button" @click="leaveAutoMode">Present without narration</button>
       <details v-if="phase === 'ready'" class="narrator-chapters">
         <summary>Start from a chapter</summary>
         <div class="narrator-chapter-list">
-          <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">
-            <span>{{ chapter.title }}</span><span>{{ chapter.no }}</span>
+          <button
+            v-for="chapter in chapterRows"
+            :key="chapter.no"
+            type="button"
+            :data-state="chapter.state"
+            :aria-current="chapter.state === 'current' ? 'true' : undefined"
+            @click="goChapter(chapter.no)"
+          >
+            <span class="narrator-chapter-index">{{ String(chapter.index).padStart(2, '0') }}</span>
+            <span class="narrator-chapter-title">{{ chapter.title }}</span>
+            <span class="narrator-chapter-length">{{ formatClock(chapter.duration) }}</span>
           </button>
         </div>
       </details>
@@ -596,9 +635,18 @@ onBeforeUnmount(() => {
       <p class="narrator-card-copy">Replay the talk or jump back to a chapter.</p>
       <button class="narrator-primary" type="button" @click="restart">Replay from beginning</button>
       <div class="narrator-chapter-list narrator-end-chapters">
-        <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">
-          <span>{{ chapter.title }}</span><span>{{ chapter.no }}</span>
-        </button>
+        <button
+            v-for="chapter in chapterRows"
+            :key="chapter.no"
+            type="button"
+            :data-state="chapter.state"
+            :aria-current="chapter.state === 'current' ? 'true' : undefined"
+            @click="goChapter(chapter.no)"
+          >
+            <span class="narrator-chapter-index">{{ String(chapter.index).padStart(2, '0') }}</span>
+            <span class="narrator-chapter-title">{{ chapter.title }}</span>
+            <span class="narrator-chapter-length">{{ formatClock(chapter.duration) }}</span>
+          </button>
       </div>
     </section>
 
@@ -639,10 +687,6 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <div v-if="currentCaption && ['playing', 'buffering', 'paused'].includes(phase)" class="narrator-caption" aria-live="off">
-      {{ currentCaption }}
-    </div>
-
     <aside v-if="transcriptOpen && entry?.transcript" class="narrator-transcript" aria-label="Current slide transcript">
       <div>
         <strong>{{ currentChapter?.title }} · Slide {{ currentSlideNo }}</strong>
@@ -653,6 +697,7 @@ onBeforeUnmount(() => {
 
     <nav v-if="hasStarted && !['ended', 'error', 'intermission'].includes(phase)" class="narrator-controls" aria-label="Narration controls">
       <div class="narrator-progress" :style="{ '--narrator-progress': `${(overallElapsed / totalDuration) * 100 || 0}%` }" />
+      <div v-if="captionsEnabled" class="narrator-caption" aria-live="off">{{ currentCaption }}</div>
       <div class="narrator-controls-row">
         <button type="button" :disabled="!canGoBack" aria-label="Previous slide" title="Previous slide" @click="navigateSlide(-1)">←</button>
         <button type="button" aria-label="Back ten seconds" title="Back 10 seconds" @click="backTen">−10</button>
@@ -680,8 +725,19 @@ onBeforeUnmount(() => {
         <button type="button" :aria-expanded="transcriptOpen" title="Transcript" @click="transcriptOpen = !transcriptOpen; controlsOpen = false">Transcript</button>
         <button type="button" :aria-expanded="controlsOpen" title="Chapters" @click="controlsOpen = !controlsOpen; transcriptOpen = false">Chapters</button>
       </div>
-      <div v-if="controlsOpen" class="narrator-control-chapters">
-        <button v-for="chapter in chapters" :key="chapter.no" type="button" @click="goChapter(chapter.no)">{{ chapter.title }}</button>
+      <div v-if="controlsOpen" class="narrator-chapter-list narrator-control-chapters">
+        <button
+            v-for="chapter in chapterRows"
+            :key="chapter.no"
+            type="button"
+            :data-state="chapter.state"
+            :aria-current="chapter.state === 'current' ? 'true' : undefined"
+            @click="goChapter(chapter.no)"
+          >
+            <span class="narrator-chapter-index">{{ String(chapter.index).padStart(2, '0') }}</span>
+            <span class="narrator-chapter-title">{{ chapter.title }}</span>
+            <span class="narrator-chapter-length">{{ formatClock(chapter.duration) }}</span>
+          </button>
       </div>
     </nav>
   </div>
@@ -700,6 +756,23 @@ onBeforeUnmount(() => {
 .narrator-ui details,
 .narrator-ui select {
   pointer-events: auto;
+}
+
+.narrator-scrim {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--brand-bg) 12%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.narrator-scrim-enter-active,
+.narrator-scrim-leave-active {
+  transition: opacity var(--motion-slow) var(--motion-ease);
+}
+
+.narrator-scrim-enter-from,
+.narrator-scrim-leave-to {
+  opacity: 0;
 }
 
 .narrator-card {
@@ -794,6 +867,20 @@ onBeforeUnmount(() => {
   color: var(--brand-primary);
 }
 
+.narrator-dismiss {
+  grid-column: 1 / -1;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--brand-text);
+  font: inherit;
+  font-size: 0.78rem;
+  opacity: 0.6;
+  text-decoration: underline;
+  cursor: pointer;
+  justify-self: center;
+}
+
 .narrator-chapters {
   grid-column: 1 / -1;
   font-size: 0.78rem;
@@ -812,13 +899,49 @@ onBeforeUnmount(() => {
 }
 
 .narrator-chapter-list button {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.42rem 0.55rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.55rem;
+  align-items: baseline;
+  padding: 0.42rem 0.6rem;
   border: 0;
   background: var(--brand-surface);
   color: var(--brand-text);
   text-align: left;
+}
+
+.narrator-chapter-list button:hover,
+.narrator-chapter-list button:focus-visible {
+  background: color-mix(in srgb, var(--brand-primary) 10%, var(--brand-surface));
+}
+
+.narrator-chapter-index {
+  color: var(--brand-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.narrator-chapter-length {
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+/* Where you are in the talk: chapters already heard recede, the live one
+   carries the tint. */
+.narrator-chapter-list button[data-state='played'] :is(.narrator-chapter-title, .narrator-chapter-index) {
+  opacity: 0.55;
+}
+
+.narrator-chapter-list button[data-state='current'] {
+  background: color-mix(in srgb, var(--brand-primary) 12%, var(--brand-surface));
+}
+
+.narrator-chapter-list button[data-state='current'] .narrator-chapter-title {
+  color: var(--brand-primary);
+  font-weight: 650;
 }
 
 .narrator-moment {
@@ -863,12 +986,12 @@ onBeforeUnmount(() => {
   width: 150px;
 }
 
-.narrator[data-placement='bottom-right'] { right: 1.5rem; bottom: 4.8rem; }
-.narrator[data-placement='bottom-left'] { left: 1.5rem; bottom: 4.8rem; }
+.narrator[data-placement='bottom-right'] { right: 0.75rem; bottom: 0.75rem; }
+.narrator[data-placement='bottom-left'] { left: 0.75rem; bottom: 0.75rem; }
 .narrator[data-placement='top-right'] { right: 1.5rem; top: 1.5rem; }
 .narrator[data-placement='top-left'] { left: 1.5rem; top: 1.5rem; }
 .narrator[data-placement='hidden'],
-.narrator[data-hidden] { right: 1.5rem; bottom: 4.8rem; }
+.narrator[data-hidden] { right: 0.75rem; bottom: 0.75rem; }
 
 .narrator[data-placement='hidden'] .narrator-frame,
 .narrator[data-hidden] .narrator-frame {
@@ -911,25 +1034,22 @@ onBeforeUnmount(() => {
 }
 
 .narrator-caption {
-  position: absolute;
-  left: 50%;
-  bottom: 4.7rem;
-  width: min(680px, calc(100% - 12rem));
-  transform: translateX(-50%);
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.55rem;
-  background: rgb(0 0 0 / 82%);
-  color: white;
+  /* Lives inside the dock so the chrome is one band over the slide, not two.
+     The row keeps its height while a caption is empty so the dock never
+     jumps between sentences. */
+  min-height: 1.7rem;
+  padding: 0.3rem 0.75rem 0;
   font-size: 0.86rem;
   line-height: 1.35;
   text-align: center;
   text-wrap: balance;
+  color: var(--brand-text);
 }
 
 .narrator-transcript {
   position: absolute;
   right: 1.5rem;
-  bottom: 4.8rem;
+  bottom: calc(150px + 1.5rem); /* clears the featured tile in the corner below */
   width: 310px;
   max-height: 240px;
   overflow: auto;
@@ -967,7 +1087,7 @@ onBeforeUnmount(() => {
   position: absolute;
   left: 50%;
   bottom: 0.8rem;
-  width: min(780px, calc(100% - 3rem));
+  width: min(620px, calc(100% - 3rem));
   transform: translateX(-50%);
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--brand-primary) 20%, transparent);
@@ -1050,10 +1170,9 @@ onBeforeUnmount(() => {
 }
 
 .narrator-control-chapters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  padding: 0 0.45rem 0.45rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 0;
+  padding: 0.1rem 0.45rem 0.45rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

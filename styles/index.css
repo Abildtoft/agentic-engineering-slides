@@ -20,6 +20,45 @@
   --motion-rise: 8px;
 }
 
+/* Narrated auto-mode (the default; ?auto=0 opts out) reserves the bottom of the frame for the caption
+   band and the control dock by padding every layout, so content reflows upward
+   and the slide still fills the screen. <AvatarNarrator> sets the attribute.
+   110px in slide units clears the caption's top edge (measured: 443px on a
+   552px slide). Centred layouts rise by half the added padding; top-anchored
+   ones are unchanged unless they ran into the band. */
+html[data-narrated] .slidev-layout {
+  padding-top: 1.25rem;
+  padding-bottom: var(--narrated-band, 100px);
+}
+
+/* Tall top-anchored slides need their vertical rhythm tightened, not just
+   room beneath: a slide whose content already reaches the floor can't be
+   padded upward. Theme defaults are 1rem paragraph margins and a 1rem h1. */
+html[data-narrated] .slidev-layout h1 { margin-bottom: 0.6rem; }
+html[data-narrated] .slidev-layout :is(p, h2, h3, ul, ol, blockquote, .mt-10, .mt-8) {
+  margin-block: 0.55rem;
+}
+
+/* The cover logo moves to the top-right corner, clear of both the dock and the
+   featured tile in the bottom-right. */
+html[data-narrated] .slidev-layout .brand-logo { top: 2.5rem; bottom: auto; }
+
+/* Slides whose markup carries its own spacing utilities opt in with
+   `class: narrated-compact`; the generic rhythm rule above can't reach those. */
+html[data-narrated] .narrated-compact :is(.mt-4, .mt-3) { margin-top: 0.4rem; }
+html[data-narrated] .narrated-compact .mb-3 { margin-bottom: 0.4rem; }
+html[data-narrated] .narrated-compact .p-4 { padding-block: 0.6rem; }
+
+/* Top-anchored diagram slides already fill the frame, so padding alone can't
+   lift their closing line out of the band. The diagram SVGs are
+   `width: 100%; height: auto`, so clamping height shrinks only the picture
+   (centred by preserveAspectRatio); headings and text keep their places.
+   Icons and logos sit far below the clamp and are unaffected. */
+html[data-narrated] .slidev-layout svg,
+html[data-narrated] .slidev-layout img {
+  max-height: var(--narrated-figure-max, 220px);
+}
+
 .slidev-layout {
   color: var(--brand-text);
   background: var(--brand-bg);

@@ -18,6 +18,8 @@ BRIDGE: "You've seen the concepts — context engineering and spec-driven develo
 
 ---
 layout: two-cols-header
+class: narrated-compact
+narrator: bottom-left
 ---
 
 # Markdown Is the Program Now
