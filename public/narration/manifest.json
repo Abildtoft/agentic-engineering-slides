@@ -44,7 +44,8 @@
           "end": 16.353,
           "text": "most of what I want to talk about today."
         }
-      ]
+      ],
+      "narrationKey": "00-intro:0"
     },
     "2": {
       "hash": "e5364db00773",
@@ -69,7 +70,8 @@
           "end": 8.333,
           "text": "been unrecognisable to me two years ago."
         }
-      ]
+      ],
+      "narrationKey": "00-intro:1"
     },
     "3": {
       "hash": "cd35c779212f",
@@ -119,9 +121,55 @@
           "end": 20.271,
           "text": "and where to start on Monday."
         }
-      ]
+      ],
+      "narrationKey": "00-intro:2"
     },
     "4": {
+      "hash": "b244c740c36e",
+      "audio": "/narration/slide-04-b244c740c36e.mp3",
+      "duration": 29.02204081632653,
+      "cues": [],
+      "narrationKey": "00-acknowledgements:0",
+      "transcript": "This talk is a synthesis. Addy Osmani's work on agency, outer loops, and\ndisciplined AI workflows shapes much of its backbone. Karri Saarinen, Armin\nRonacher, Andrew Ng, Margaret-Anne Storey, Peter Naur, Garry Tan, OpenAI's Codex\nteam, Martin Eriksson, Matteo Collina, and Simon Willison supplied other key\nframes. I have redrawn and combined their ideas for this deck; their work\nremains theirs, and specific claims are cited throughout.",
+      "captions": [
+        {
+          "start": 0.14,
+          "end": 1.419,
+          "text": "This talk is a synthesis."
+        },
+        {
+          "start": 2,
+          "end": 7.039,
+          "text": "Addy Osmani's work on agency, outer loops, and disciplined AI workflows shapes"
+        },
+        {
+          "start": 7.079,
+          "end": 12.179,
+          "text": "much of its backbone. Karri Saarinen, Armin Ronacher, Andrew Ng, Margaret-Anne"
+        },
+        {
+          "start": 12.259,
+          "end": 18.559,
+          "text": "Storey, Peter Naur, Garry Tan, OpenAI's Codex team, Martin Eriksson, Matteo"
+        },
+        {
+          "start": 18.659,
+          "end": 21.68,
+          "text": "Collina, and Simon Willison supplied other key frames."
+        },
+        {
+          "start": 22.199,
+          "end": 24.579,
+          "text": "I have redrawn and combined their ideas for this deck;"
+        },
+        {
+          "start": 25.279,
+          "end": 29.022,
+          "text": "their work remains theirs, and specific claims are cited throughout."
+        }
+      ]
+    },
+    "5": {
       "hash": "c13e2f24d28b",
       "video": "/narration/slide-04-acf9f3dffd33.mp4",
       "duration": 18.311836734693877,
@@ -164,9 +212,10 @@
           "end": 18.312,
           "text": "rather show you the pattern than assert it."
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:0"
     },
-    "5": {
+    "6": {
       "hash": "d98054e1f679",
       "video": "/narration/slide-05-5afcb46fcb96.mp4",
       "duration": 37.04163265306122,
@@ -238,9 +287,10 @@
           "end": 37.042,
           "text": "That is where we are standing."
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:1"
     },
-    "6": {
+    "7": {
       "hash": "922a30759939",
       "videoId": "1cb9dcd2c54b465e9438f42ef8edf363",
       "video": "/narration/slide-06-7cef0cef40e0.mp4",
@@ -351,9 +401,10 @@
           "end": 69.329,
           "text": "every one of them a floor, not a ceiling."
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:2"
     },
-    "7": {
+    "8": {
       "hash": "e8df2cecac3f",
       "videoId": "214def85085e47e7affe16eb9c391f10",
       "video": "/narration/slide-07-cedf06b10232.mp4",
@@ -493,9 +544,10 @@
           "end": 71.68,
           "text": "most."
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:3"
     },
-    "8": {
+    "9": {
       "hash": "b505915acb18",
       "videoId": "6f5ae401170c480386a44ef08c502c0d",
       "video": "/narration/slide-08-40da28884354.mp4",
@@ -566,9 +618,10 @@
           "end": 37.068,
           "text": "Then the curve bent."
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:4"
     },
-    "9": {
+    "10": {
       "hash": "9fa687e5dae6",
       "videoId": "bc4f9015402749728c46cdb73126c153",
       "video": "/narration/slide-09-93504dc839a2.mp4",
@@ -611,9 +664,10 @@
           "end": 22.361,
           "text": "Which side of that divide are you on?"
         }
-      ]
+      ],
+      "narrationKey": "01-the-shift:5"
     },
-    "10": {
+    "11": {
       "hash": "7d81b1324424",
       "video": "/narration/slide-10-0015871f9efb.mp4",
       "duration": 20.845714285714287,
@@ -656,9 +710,10 @@
           "end": 20.846,
           "text": "say up front that it is not only an engineering question."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:0"
     },
-    "11": {
+    "12": {
       "hash": "f7ab72634fcb",
       "audio": "/narration/slide-11-f7ab72634fcb.mp3",
       "duration": 58.35755102040817,
@@ -764,9 +819,10 @@
           "end": 58.358,
           "text": "drops to 20%?"
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:1"
     },
-    "12": {
+    "13": {
       "hash": "88955d067e42",
       "audio": "/narration/slide-12-88955d067e42.mp3",
       "duration": 40.15020408163265,
@@ -841,9 +897,10 @@
           "end": 40.15,
           "text": "faster."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:2"
     },
-    "13": {
+    "14": {
       "hash": "d410afc90f2c",
       "audio": "/narration/slide-13-d410afc90f2c.mp3",
       "duration": 31.164081632653062,
@@ -897,9 +954,10 @@
           "end": 31.164,
           "text": "discipline in the room."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:3"
     },
-    "14": {
+    "15": {
       "hash": "bd0487bb6b3a",
       "audio": "/narration/slide-14-bd0487bb6b3a.mp3",
       "duration": 38.79183673469388,
@@ -969,9 +1027,10 @@
           "end": 38.792,
           "text": "at once."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:4"
     },
-    "15": {
+    "16": {
       "hash": "7bf7d574c2fe",
       "audio": "/narration/slide-15-7bf7d574c2fe.mp3",
       "duration": 50.02448979591837,
@@ -1062,9 +1121,10 @@
           "end": 50.024,
           "text": "turning ambiguity into clarity."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:5"
     },
-    "16": {
+    "17": {
       "hash": "217182cc6813",
       "audio": "/narration/slide-16-217182cc6813.mp3",
       "duration": 57.391020408163264,
@@ -1155,9 +1215,10 @@
           "end": 57.391,
           "text": "That is the new stack."
         }
-      ]
+      ],
+      "narrationKey": "02-disappearing-middle:6"
     },
-    "17": {
+    "18": {
       "hash": "c3bd31aa36b5",
       "audio": "/narration/slide-17-c3bd31aa36b5.mp3",
       "duration": 20.45387755102041,
@@ -1204,9 +1265,10 @@
           "end": 20.454,
           "text": "code or not, because the concepts apply either way."
         }
-      ]
+      ],
+      "narrationKey": "03a-new-stack-concepts:0"
     },
-    "18": {
+    "19": {
       "hash": "d7a0b95638e7",
       "audio": "/narration/slide-18-d7a0b95638e7.mp3",
       "duration": 51.2,
@@ -1302,9 +1364,10 @@
           "end": 51.2,
           "text": "Context is the direction. Specs are the runway markings."
         }
-      ]
+      ],
+      "narrationKey": "03a-new-stack-concepts:1"
     },
-    "19": {
+    "20": {
       "hash": "cfec9220807f",
       "audio": "/narration/slide-19-cfec9220807f.mp3",
       "duration": 57.44326530612245,
@@ -1400,9 +1463,10 @@
           "end": 57.443,
           "text": "That is context too. Documentation is now production infrastructure."
         }
-      ]
+      ],
+      "narrationKey": "03a-new-stack-concepts:2"
     },
-    "20": {
+    "21": {
       "hash": "b14650d2adbe",
       "audio": "/narration/slide-20-b14650d2adbe.mp3",
       "duration": 61.779591836734696,
@@ -1504,9 +1568,10 @@
           "end": 61.78,
           "text": "for code."
         }
-      ]
+      ],
+      "narrationKey": "03a-new-stack-concepts:3"
     },
-    "21": {
+    "22": {
       "hash": "15224b9af94c",
       "audio": "/narration/slide-21-15224b9af94c.mp3",
       "duration": 17.47591836734694,
@@ -1538,9 +1603,10 @@
           "end": 17.476,
           "text": "is tool-agnostic. Every vendor has a version of each of these."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:0"
     },
-    "22": {
+    "23": {
       "hash": "e54cdfdfc2d4",
       "audio": "/narration/slide-22-e54cdfdfc2d4.mp3",
       "duration": 45.68816326530612,
@@ -1620,9 +1686,10 @@
           "end": 45.688,
           "text": "the same place."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:1"
     },
-    "23": {
+    "24": {
       "hash": "86547a9f8ad4",
       "audio": "/narration/slide-23-86547a9f8ad4.mp3",
       "duration": 47.673469387755105,
@@ -1707,9 +1774,10 @@
           "end": 47.673,
           "text": "opposite. Prompting evaporates. Skill packs compound."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:2"
     },
-    "24": {
+    "25": {
       "hash": "82c596e9cece",
       "audio": "/narration/slide-24-82c596e9cece.mp3",
       "duration": 56.946938775510205,
@@ -1820,9 +1888,10 @@
           "end": 56.947,
           "text": "Soft guidance on one side, a hard contract on the other."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:3"
     },
-    "25": {
+    "26": {
       "hash": "34c0668f0c66",
       "audio": "/narration/slide-25-34c0668f0c66.mp3",
       "duration": 62.04081632653061,
@@ -1933,9 +2002,10 @@
           "end": 62.041,
           "text": "And a bridge between them."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:4"
     },
-    "26": {
+    "27": {
       "hash": "02675480ed80",
       "audio": "/narration/slide-26-02675480ed80.mp3",
       "duration": 60.7869387755102,
@@ -2050,9 +2120,10 @@
           "end": 60.787,
           "text": "The harness is the car."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:5"
     },
-    "27": {
+    "28": {
       "hash": "31c768014268",
       "audio": "/narration/slide-27-31c768014268.mp3",
       "duration": 53.838367346938774,
@@ -2143,9 +2214,10 @@
           "end": 53.838,
           "text": "might. And a gate can guard anything you care about."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:6"
     },
-    "28": {
+    "29": {
       "hash": "92a6d0abec2f",
       "audio": "/narration/slide-28-92a6d0abec2f.mp3",
       "duration": 56.79020408163265,
@@ -2251,9 +2323,10 @@
           "end": 56.79,
           "text": "gates, and the gates decide what is good enough to ship."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:7"
     },
-    "29": {
+    "30": {
       "hash": "5d355a22186f",
       "audio": "/narration/slide-29-5d355a22186f.mp3",
       "duration": 56.137142857142855,
@@ -2349,9 +2422,10 @@
           "end": 56.137,
           "text": "write the issue, review the PR."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:8"
     },
-    "30": {
+    "31": {
       "hash": "3150380384da",
       "audio": "/narration/slide-30-3150380384da.mp3",
       "duration": 14.94204081632653,
@@ -2383,9 +2457,10 @@
           "end": 14.942,
           "text": "The second half is about the cost nobody puts on the invoice."
         }
-      ]
+      ],
+      "narrationKey": "03b-new-stack-tools:9"
     },
-    "31": {
+    "32": {
       "hash": "03c6b6d1f007",
       "audio": "/narration/slide-31-03c6b6d1f007.mp3",
       "duration": 27.141224489795917,
@@ -2432,9 +2507,10 @@
           "end": 27.141,
           "text": "And the cost has a name."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:0"
     },
-    "32": {
+    "33": {
       "hash": "538d93c70168",
       "audio": "/narration/slide-32-538d93c70168.mp3",
       "duration": 42.370612244897956,
@@ -2510,9 +2586,10 @@
           "end": 42.371,
           "text": "lost the plot."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:1"
     },
-    "33": {
+    "34": {
       "hash": "4d7860dd99fd",
       "audio": "/narration/slide-33-4d7860dd99fd.mp3",
       "duration": 48.09142857142857,
@@ -2604,9 +2681,10 @@
           "end": 48.091,
           "text": "It is structural."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:2"
     },
-    "34": {
+    "35": {
       "hash": "6d20d7113f04",
       "audio": "/narration/slide-34-6d20d7113f04.mp3",
       "duration": 39.26204081632653,
@@ -2686,9 +2764,10 @@
           "end": 39.262,
           "text": "judgment. It still has to be earned."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:3"
     },
-    "35": {
+    "36": {
       "hash": "ec5bc50abc22",
       "audio": "/narration/slide-35-ec5bc50abc22.mp3",
       "duration": 45.008979591836734,
@@ -2769,9 +2848,10 @@
           "end": 45.009,
           "text": "Monday."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:4"
     },
-    "36": {
+    "37": {
       "hash": "3b5c05889aaf",
       "audio": "/narration/slide-36-3b5c05889aaf.mp3",
       "duration": 39.20979591836735,
@@ -2831,9 +2911,10 @@
           "end": 39.21,
           "text": "And the biggest hole is in the layer we trust most."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:5"
     },
-    "37": {
+    "38": {
       "hash": "56f990c6f6ea",
       "audio": "/narration/slide-37-56f990c6f6ea.mp3",
       "duration": 59.74204081632653,
@@ -2928,9 +3009,10 @@
           "end": 59.742,
           "text": "the reviewer's brain has already accepted the answer."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:6"
     },
-    "38": {
+    "39": {
       "hash": "7154b381d300",
       "audio": "/narration/slide-38-7154b381d300.mp3",
       "duration": 52.76734693877551,
@@ -3030,9 +3112,10 @@
           "end": 52.767,
           "text": "The mechanism is predictable, and predictable means manageable."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:7"
     },
-    "39": {
+    "40": {
       "hash": "46a0a6842f5c",
       "audio": "/narration/slide-39-46a0a6842f5c.mp3",
       "duration": 35.76163265306123,
@@ -3102,9 +3185,10 @@
           "end": 35.762,
           "text": "And keep capturing the upside."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:8"
     },
-    "40": {
+    "41": {
       "hash": "0798c321d301",
       "audio": "/narration/slide-40-0798c321d301.mp3",
       "duration": 43.12816326530612,
@@ -3180,9 +3264,10 @@
           "end": 43.128,
           "text": "The final question is what kind of people this model rewards."
         }
-      ]
+      ],
+      "narrationKey": "04-cognitive-debt:9"
     },
-    "41": {
+    "42": {
       "hash": "cf77c4b9a18a",
       "audio": "/narration/slide-41-cf77c4b9a18a.mp3",
       "duration": 16.822857142857142,
@@ -3219,9 +3304,10 @@
           "end": 16.823,
           "text": "section, so I will move through it with some energy."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:0"
     },
-    "42": {
+    "43": {
       "hash": "6287d34c02c1",
       "audio": "/narration/slide-42-6287d34c02c1.mp3",
       "duration": 34.011428571428574,
@@ -3232,63 +3318,64 @@
       "transcript": "Robert Martin captured the experience perfectly. In his words: it is amazing\nhow much work it is to wrestle these agents to my will. Do not get me wrong, it is crazy productive. But it is also a lot of\nhard, focused work. All my software engineering and problem-solving skills are brought\ninto play, even though I barely look at the code. That is the hinge. The\ncompression of the implementation middle is not making engineering less\nimportant. It is revealing what was always important. So where does that\njudgment get applied? Zoom out from the agent loop, and there are three places.",
       "captions": [
         {
-          "start": 0.199,
-          "end": 2.299,
+          "start": 0,
+          "end": 1.981,
           "text": "Robert Martin captured the experience perfectly."
         },
         {
-          "start": 2.839,
-          "end": 5.539,
+          "start": 1.981,
+          "end": 5.944,
           "text": "In his words: it is amazing how much work it is to"
         },
         {
-          "start": 5.579,
-          "end": 7.059,
+          "start": 5.944,
+          "end": 7.925,
           "text": "wrestle these agents to my will."
         },
         {
-          "start": 7.599,
-          "end": 10.179,
+          "start": 7.925,
+          "end": 10.897,
           "text": "Do not get me wrong, it is crazy productive."
         },
         {
-          "start": 10.5,
-          "end": 13.019,
+          "start": 10.897,
+          "end": 14.199,
           "text": "But it is also a lot of hard, focused work."
         },
         {
-          "start": 13.819,
-          "end": 17.34,
+          "start": 14.199,
+          "end": 17.831,
           "text": "All my software engineering and problem-solving skills are brought into play,"
         },
         {
-          "start": 17.94,
-          "end": 19.519,
+          "start": 17.831,
+          "end": 20.473,
           "text": "even though I barely look at the code."
         },
         {
-          "start": 19.979,
-          "end": 23.939,
+          "start": 20.473,
+          "end": 24.435,
           "text": "That is the hinge. The compression of the implementation middle is not"
         },
         {
-          "start": 24,
-          "end": 28.379,
+          "start": 24.435,
+          "end": 28.068,
           "text": "making engineering less important. It is revealing what was always important."
         },
         {
-          "start": 28.939,
-          "end": 30.619,
+          "start": 28.068,
+          "end": 30.379,
           "text": "So where does that judgment get applied?"
         },
         {
-          "start": 31.039,
+          "start": 30.379,
           "end": 34.011,
           "text": "Zoom out from the agent loop, and there are three places."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:1"
     },
-    "43": {
+    "44": {
       "hash": "81c23928139e",
       "audio": "/narration/slide-43-81c23928139e.mp3",
       "duration": 61.25714285714286,
@@ -3387,9 +3474,10 @@
           "end": 61.257,
           "text": "into reusable judgment is the compounding asset."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:2"
     },
-    "44": {
+    "45": {
       "hash": "51c79e12c8ac",
       "audio": "/narration/slide-44-51c79e12c8ac.mp3",
       "duration": 45.714285714285715,
@@ -3474,9 +3562,10 @@
           "end": 45.714,
           "text": "But cheap learning is what earns the right to build."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:3"
     },
-    "45": {
+    "46": {
       "hash": "5cd9a1319db7",
       "audio": "/narration/slide-45-5cd9a1319db7.mp3",
       "duration": 62.77224489795918,
@@ -3582,9 +3671,10 @@
           "end": 62.772,
           "text": "from the guardrails section applies."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:4"
     },
-    "46": {
+    "47": {
       "hash": "58a53ac540af",
       "audio": "/narration/slide-46-58a53ac540af.mp3",
       "duration": 65.56734693877551,
@@ -3705,9 +3795,10 @@
           "end": 65.567,
           "text": "Hold that thought."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:5"
     },
-    "47": {
+    "48": {
       "hash": "9f2b50b04935",
       "audio": "/narration/slide-47-9f2b50b04935.mp3",
       "duration": 32.60081632653061,
@@ -3772,9 +3863,10 @@
           "end": 32.601,
           "text": "all."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:6"
     },
-    "48": {
+    "49": {
       "hash": "d6f9bc827e11",
       "audio": "/narration/slide-48-d6f9bc827e11.mp3",
       "duration": 45.1134693877551,
@@ -3860,9 +3952,10 @@
           "end": 45.113,
           "text": "AI maps the edges."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:7"
     },
-    "49": {
+    "50": {
       "hash": "5f9170450dc9",
       "audio": "/narration/slide-49-5f9170450dc9.mp3",
       "duration": 58.35755102040817,
@@ -3963,9 +4056,10 @@
           "end": 58.358,
           "text": "and focus, finishing and judgment scale with you, not with AI speed."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:8"
     },
-    "50": {
+    "51": {
       "hash": "1572be7776e4",
       "audio": "/narration/slide-50-1572be7776e4.mp3",
       "duration": 56.52897959183674,
@@ -4079,9 +4173,10 @@
           "end": 56.529,
           "text": "it leaves your hands."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:9"
     },
-    "51": {
+    "52": {
       "hash": "1a56e246ac7e",
       "audio": "/narration/slide-51-1a56e246ac7e.mp3",
       "duration": 43.91183673469388,
@@ -4171,9 +4266,10 @@
           "end": 43.912,
           "text": "Subtraction never does."
         }
-      ]
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:10"
     },
-    "52": {
+    "53": {
       "hash": "ef35f1dfdecf",
       "audio": "/narration/slide-52-ef35f1dfdecf.mp3",
       "duration": 9.195102040816327,
@@ -4195,9 +4291,10 @@
           "end": 9.195,
           "text": "Across everything we have covered, what actually survives?"
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:0"
     },
-    "53": {
+    "54": {
       "hash": "19f7c3b84d09",
       "audio": "/narration/slide-53-19f7c3b84d09.mp3",
       "duration": 58.409795918367344,
@@ -4313,9 +4410,10 @@
           "end": 58.41,
           "text": "right now."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:1"
     },
-    "54": {
+    "55": {
       "hash": "7559033bf684",
       "audio": "/narration/slide-54-7559033bf684.mp3",
       "duration": 47.307755102040815,
@@ -4394,9 +4492,10 @@
           "end": 47.308,
           "text": "the frontier model."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:2"
     },
-    "55": {
+    "56": {
       "hash": "7e3e839c6128",
       "audio": "/narration/slide-55-7e3e839c6128.mp3",
       "duration": 34.32489795918367,
@@ -4456,9 +4555,10 @@
           "end": 34.325,
           "text": "environment changes. The emphasis is on learn, not on faster."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:3"
     },
-    "56": {
+    "57": {
       "hash": "e8e0d12ed9f2",
       "audio": "/narration/slide-56-e8e0d12ed9f2.mp3",
       "duration": 50.546938775510206,
@@ -4544,9 +4644,10 @@
           "end": 50.547,
           "text": "will be obsolete before the ink dries."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:4"
     },
-    "57": {
+    "58": {
       "hash": "b0e8c75a7480",
       "audio": "/narration/slide-57-b0e8c75a7480.mp3",
       "duration": 64.6008163265306,
@@ -4661,9 +4762,10 @@
           "end": 64.601,
           "text": "start. It is the one I worry about most."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:5"
     },
-    "58": {
+    "59": {
       "hash": "cd6c1954483e",
       "audio": "/narration/slide-58-cd6c1954483e.mp3",
       "duration": 21.34204081632653,
@@ -4719,9 +4821,10 @@
           "end": 21.342,
           "text": "As it always was."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:6"
     },
-    "59": {
+    "60": {
       "hash": "0650dd779974",
       "audio": "/narration/slide-59-0650dd779974.mp3",
       "duration": 8.385306122448979,
@@ -4750,7 +4853,8 @@
           "end": 8.385,
           "text": "I would open the floor."
         }
-      ]
+      ],
+      "narrationKey": "06-moving-forward:7"
     }
   }
 }
