@@ -18,11 +18,11 @@
       "speechMs": 13710
     },
     "2": {
-      "hash": "4bc9312cdf04",
-      "source": "slide-02-2104d07cf97d.mp4",
-      "video": "/narration/slide-02-mascot-4bc9312cdf04.mp4",
-      "durationMs": 8320,
-      "speechMs": 8260
+      "hash": "bab7ed3d530d",
+      "source": "slide-02-21e513e4b617.mp3",
+      "video": "/narration/slide-02-mascot-bab7ed3d530d.mp4",
+      "durationMs": 35318,
+      "speechMs": 31880
     },
     "3": {
       "hash": "4cfcfd3045d9",
@@ -41,51 +41,51 @@
     "5": {
       "hash": "c865ec124c3b",
       "source": "slide-04-acf9f3dffd33.mp4",
-      "video": "/narration/slide-04-mascot-c865ec124c3b.mp4",
-      "durationMs": 18310,
-      "speechMs": 15890
+      "video": "/narration/slide-05-mascot-c865ec124c3b.mp4",
+      "durationMs": 18325,
+      "speechMs": 15710
     },
     "6": {
       "hash": "7a17fa0b1e42",
       "source": "slide-05-5afcb46fcb96.mp4",
-      "video": "/narration/slide-05-mascot-7a17fa0b1e42.mp4",
-      "durationMs": 37040,
-      "speechMs": 32900
+      "video": "/narration/slide-06-mascot-7a17fa0b1e42.mp4",
+      "durationMs": 37056,
+      "speechMs": 32440
     },
     "7": {
       "hash": "a2fe0706ad49",
       "source": "slide-06-7cef0cef40e0.mp4",
-      "video": "/narration/slide-06-mascot-a2fe0706ad49.mp4",
+      "video": "/narration/slide-07-mascot-a2fe0706ad49.mp4",
       "durationMs": 69333,
-      "speechMs": 62590
+      "speechMs": 62580
     },
     "8": {
       "hash": "a90542686150",
       "source": "slide-07-cedf06b10232.mp4",
-      "video": "/narration/slide-07-mascot-a90542686150.mp4",
+      "video": "/narration/slide-08-mascot-a90542686150.mp4",
       "durationMs": 71680,
       "speechMs": 61620
     },
     "9": {
       "hash": "824721634b93",
       "source": "slide-08-40da28884354.mp4",
-      "video": "/narration/slide-08-mascot-824721634b93.mp4",
+      "video": "/narration/slide-09-mascot-824721634b93.mp4",
       "durationMs": 37077,
       "speechMs": 32000
     },
     "10": {
       "hash": "7c89d8207046",
       "source": "slide-09-93504dc839a2.mp4",
-      "video": "/narration/slide-09-mascot-7c89d8207046.mp4",
-      "durationMs": 22360,
-      "speechMs": 20630
+      "video": "/narration/slide-10-mascot-7c89d8207046.mp4",
+      "durationMs": 22379,
+      "speechMs": 20540
     },
     "11": {
       "hash": "a3bd2a01ec90",
       "source": "slide-10-0015871f9efb.mp4",
-      "video": "/narration/slide-10-mascot-a3bd2a01ec90.mp4",
+      "video": "/narration/slide-11-mascot-a3bd2a01ec90.mp4",
       "durationMs": 20864,
-      "speechMs": 17340
+      "speechMs": 17350
     },
     "12": {
       "hash": "5196b99698ed",

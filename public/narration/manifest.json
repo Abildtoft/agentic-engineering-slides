@@ -48,30 +48,74 @@
       "narrationKey": "00-intro:0"
     },
     "2": {
-      "hash": "e5364db00773",
-      "video": "/narration/slide-02-2104d07cf97d.mp4",
-      "duration": 8.333061224489796,
+      "hash": "21e513e4b617",
+      "audio": "/narration/slide-02-21e513e4b617.mp3",
+      "duration": 35.31755102040816,
       "cues": [],
-      "videoId": "c044f9fbbc8b4cd293b379f3c3d76b74",
-      "transcript": "Hi, I'm Mikkel. I build software at Consensus, and for the past year I have been\nbuilding it in a way that would have been unrecognisable to me two years ago.",
+      "narrationKey": "00-intro:1",
+      "transcript": "Hi, I'm Mikkel. I'm the Innovation Director at Consensus, which means my job is\nto push the innovative factor in our products forward — to spot what is about to\nchange, and make sure we are on the right side of it. I got here sideways: I\nstudied philosophy before I became a developer, added a Master in IT Management\nalong the way, and I have always cared as much about the product as the code. So\nI work in the cross-section between disciplines — and that cross-section is\nexactly where this talk lives. For the past year I have been building software\nin a way that would have been unrecognisable to me two years ago, and I want to\nshow you what that looks like.",
       "captions": [
         {
           "start": 0,
-          "end": 3.226,
-          "text": "Hi, I'm Mikkel. I build software at Consensus, and for the past"
+          "end": 3.364,
+          "text": "Hi, I'm Mikkel. I'm the Innovation Director at Consensus, which means my"
         },
         {
-          "start": 3.226,
-          "end": 6.451,
-          "text": "year I have been building it in a way that would have"
+          "start": 3.364,
+          "end": 6.727,
+          "text": "job is to push the innovative factor in our products forward —"
         },
         {
-          "start": 6.451,
-          "end": 8.333,
-          "text": "been unrecognisable to me two years ago."
+          "start": 6.727,
+          "end": 10.091,
+          "text": "to spot what is about to change, and make sure we are"
+        },
+        {
+          "start": 10.091,
+          "end": 11.773,
+          "text": "on the right side of it."
+        },
+        {
+          "start": 11.773,
+          "end": 15.136,
+          "text": "I got here sideways: I studied philosophy before I became a developer,"
+        },
+        {
+          "start": 15.136,
+          "end": 18.5,
+          "text": "added a Master in IT Management along the way, and I have"
+        },
+        {
+          "start": 18.5,
+          "end": 21.303,
+          "text": "always cared as much about the product as the code."
+        },
+        {
+          "start": 21.303,
+          "end": 24.666,
+          "text": "So I work in the cross-section between disciplines — and that cross-section"
+        },
+        {
+          "start": 24.666,
+          "end": 26.348,
+          "text": "is exactly where this talk lives."
+        },
+        {
+          "start": 26.348,
+          "end": 29.712,
+          "text": "For the past year I have been building software in a way"
+        },
+        {
+          "start": 29.712,
+          "end": 33.075,
+          "text": "that would have been unrecognisable to me two years ago, and I"
+        },
+        {
+          "start": 33.075,
+          "end": 35.318,
+          "text": "want to show you what that looks like."
         }
-      ],
-      "narrationKey": "00-intro:1"
+      ]
     },
     "3": {
       "hash": "cd35c779212f",
