@@ -7,6 +7,7 @@ dist
 .pnp.*
 .yarn/install-state.gz
 .gstack/
+.vercel
 
 # Rendered avatar clips are tracked through Git LFS — see .gitattributes.
 #
