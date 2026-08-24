@@ -1,4 +1,4 @@
-<!-- 31. section — Cognitive Debt -->
+<!-- 32. section — Cognitive Debt -->
 
 We have just spent a whole section on an incredible toolkit. Context, skills,
 MCPs, hooks, harnesses, agents. Each layer added power. But each layer also
@@ -9,7 +9,7 @@ has a cost. And the cost has a name.
 
 ---
 
-<!-- 32. default — Two Kinds of Debt — ~3 clicks -->
+<!-- 33. default — Two Kinds of Debt — ~3 clicks -->
 
 Peter Naur wrote, back in 1985, that a program is more than its source code.
 A program is a theory that lives in the minds of the developers. Everything in
@@ -25,7 +25,7 @@ code, the humans may have simply lost the plot.
 
 ---
 
-<!-- 33. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
+<!-- 34. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
 
 That sounds abstract, so here is a concrete case. Margaret-Anne Storey gave a
 student team AI coding tools and tracked them for ten weeks.
@@ -44,7 +44,7 @@ junior problem. It is structural.
 
 ---
 
-<!-- 34. statement — The trap is not AI. — ~2 clicks -->
+<!-- 35. statement — The trap is not AI. — ~2 clicks -->
 
 So let me be precise about what the trap is, because it would be easy to walk
 out of here with the wrong lesson. The trap is not AI.
@@ -59,7 +59,7 @@ judgment. It still has to be earned.
 
 ---
 
-<!-- 35. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
+<!-- 36. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
 
 If understanding is what is at risk, the practical response is to change what
 humans actually review. Line-by-line pull request review does not scale with
@@ -76,7 +76,7 @@ can take back to your team on Monday.
 
 ---
 
-<!-- 36. default — The Swiss-Cheese Model — ~2 clicks -->
+<!-- 37. default — The Swiss-Cheese Model — ~2 clicks -->
 
 Once you start thinking in layered controls, there is a metaphor that fits.
 James Reason's Swiss-cheese model. Each slice is a safeguard, and each one has
@@ -91,7 +91,7 @@ we trust most.
 
 ---
 
-<!-- 37. fact — ~2 clicks -->
+<!-- 38. fact — ~2 clicks -->
 
 Human review. Three preregistered studies at Wharton, nearly fourteen hundred
 participants, almost ten thousand trials. When the AI was wrong, 79.8% of
@@ -110,7 +110,7 @@ brain has already accepted the answer.
 
 ---
 
-<!-- 38. default — The Confidence Spiral — ~2 clicks -->
+<!-- 39. default — The Confidence Spiral — ~2 clicks -->
 
 And here is how that shows up in everyday working habits. Each prompt is a
 slot-machine pull. The response partially satisfies and opens a new question,
@@ -129,7 +129,7 @@ is predictable, and predictable means manageable.
 
 ---
 
-<!-- 39. statement — This is a choice, not a fate. — ~2 clicks -->
+<!-- 40. statement — This is a choice, not a fate. — ~2 clicks -->
 
 So let's exhale. This is a choice, not a fate. And the stakes are real: in
 security, privacy and compliance, a comprehension failure becomes an incident,
@@ -143,7 +143,7 @@ Hold people accountable. And keep capturing the upside.
 
 ---
 
-<!-- 40. default — The Antidote — The Human in the Loop — ~3 clicks -->
+<!-- 41. default — The Antidote — The Human in the Loop — ~3 clicks -->
 
 Here is the antidote, as three team operating rules.
 [click] The spec. Intent, authored by a human. Ask why, not just what. If you

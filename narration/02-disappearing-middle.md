@@ -1,4 +1,4 @@
-<!-- 10. section — The Compressing Middle -->
+<!-- 11. section — The Compressing Middle -->
 
 So the shift is real, and it is accelerating. That is the easy part, and it is
 the part everyone argues about. The harder question is the one underneath it:
@@ -8,7 +8,7 @@ engineering question.
 
 ---
 
-<!-- 11. default — The Middle of Software Work — ~3 clicks -->
+<!-- 12. default — The Middle of Software Work — ~3 clicks -->
 
 Think of software work as having three parts. At one end, figuring out what to
 build. At the other, the outcome it produces. And in between, a wide middle:
@@ -28,7 +28,7 @@ the effort, what happens when it drops to 20%?
 
 ---
 
-<!-- 12. statement — The artifact was never the job. — ~2 clicks -->
+<!-- 13. statement — The artifact was never the job. — ~2 clicks -->
 
 Here is a sentence that should sound slightly wrong for a second, after
 everything I just said. The artifact was never the job.
@@ -43,7 +43,7 @@ the job. If the job was the thinking, it just got faster.
 
 ---
 
-<!-- 13. quote -->
+<!-- 14. quote -->
 
 Twenty-five years apart, two one-liners show how far the culture has moved.
 Linus Torvalds, in 2000: talk is cheap, show me the code. Half of this room has
@@ -55,7 +55,7 @@ thing, and it is scarce in every discipline in the room.
 
 ---
 
-<!-- 14. quote — ~2 clicks -->
+<!-- 15. quote — ~2 clicks -->
 
 Jenny Wen leads design at Anthropic, the company building these agents, so she
 is watching this from the inside. Here is the scene she describes. Engineers
@@ -71,7 +71,7 @@ at once.
 
 ---
 
-<!-- 15. default — One Surviving Skill Set — ~1 clicks -->
+<!-- 16. default — One Surviving Skill Set — ~1 clicks -->
 
 For a long time, product, design and engineering handed work to each other in
 sequence. We always wanted it to be a Venn diagram. In practice it was a
@@ -89,7 +89,7 @@ is the zone the market is rewarding.
 
 ---
 
-<!-- 16. default — The Bottleneck Cascade — ~3 clicks -->
+<!-- 17. default — The Bottleneck Cascade — ~3 clicks -->
 
 There is an old pattern here, and it is worth seeing it in full.
 [click] When weaving sped up, yarn became the constraint. When spinning caught
