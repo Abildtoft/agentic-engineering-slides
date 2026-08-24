@@ -83,18 +83,26 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
 
 ### Narrated Auto-Mode
 
-The default way the deck opens: a pre-rendered HeyGen avatar narrates each
-slide and the narration drives the clicks, behind a start card that needs a
-click before anything plays. `?auto=0` opts out for live presentation (the
-start card also carries a "Present without narration" link that navigates
-there), and presenter mode and print are excluded regardless — so the
-live-presentation path still has no network dependency.
+The default way the deck opens: a pre-rendered narrator speaks each slide and
+the narration drives the clicks, behind a start card that needs a click before
+anything plays. `?auto=0` opts out for live presentation (the start card also
+carries a "Present without narration" link that navigates there), and presenter
+mode and print are excluded regardless — so the live-presentation path still
+has no network dependency.
+
+**HeyGen is voice-only — we do not render HeyGen avatar videos.** Speech comes
+from `yarn narration:audio` (TTS + word-timed cues) and the face is the locally
+rendered Mascotbot character (`yarn narration:mascot`, below). A bare
+`yarn narration:build` (avatar video mode) is retired: don't run it, and don't
+add new `videoId` entries. The nine avatar `.mp4`s still in the manifest are
+legacy speech sources kept because the mascot clips were rendered from them and
+the player falls back to them; leave them alone but never mint more.
 
 ```
 narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
 scripts/narration-lib.mjs # deck ↔ narration pairing, cue splitting, validation
 scripts/narration-scaffold.mjs  # regenerates narration/ from the deck (offline)
-scripts/narration-build.mjs     # HeyGen: prose → clips + cue manifest
+scripts/narration-build.mjs     # HeyGen: prose → speech + cue manifest (audio mode only — see policy above)
 scripts/narration-recover.mjs   # re-downloads clips the manifest names but disk lost
 public/narration/manifest.json  # cue times; also the build cache (tracked)
 public/narration/*.mp4          # rendered clips (tracked — see the size note)
@@ -256,9 +264,16 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   it rewrites the header comments from the current deck and preserves prose
 - Credentials live in `.env` (gitignored; `.env.example` documents them) and are
   loaded with node's `--env-file-if-exists`, so there is no dotenv dependency
-- **PREFER** HeyGen OAuth authentication for narration and media generation;
-  run `npx hyperframes auth login` and verify `Billing: subscription` with
-  `npx hyperframes auth status` before synthesis
+- **OAuth does not put API synthesis on the subscription.** Measured
+  (2026-08-24): a Bearer token whose `/v3/users/me` reports
+  `billing_type: subscription` (creator plan, premium credits available) still
+  gets `402 insufficient_credit — "requires 'api' credits"` from
+  `POST /v3/voices/speech`. The public API bills only the API-credit wallet, no
+  matter how you authenticate — `Billing: subscription` in `npx hyperframes
+  auth status` describes the account, not what the API will draw on. Top up API
+  credits before synthesis; `narration-build` prefers the OAuth session from
+  `~/.heygen/credentials` and falls back to `HEYGEN_API_KEY`, but the bill
+  lands in the same place either way
 - `yarn narration:voices` is the preflight, and the voice check is the one that
   matters: `word_timestamps` only comes back for **Starfish-engine** voices, and
   any other voice synthesises fine while returning null there — the build then
@@ -275,13 +290,14 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   cannot tell a changed parameter from changed prose — so it takes an explicit
   slide list and never applies itself. Verified: after restamping, a bare
   `yarn narration:build` reports `10 reused, 0.0 min of new speech`
-- **`yarn narration:audio` is the mode to work in.** It builds everything except
-  the rendered clip — real voice, real word-timed cues, real auto-advance — and
-  shows a still of the avatar (`/v2/avatar/{id}/details` → `preview_image_url`)
-  instead. Video generation is the overwhelming majority of the credit cost, so
-  the prose can be revised as many times as it needs to be here, and
-  `yarn narration:build` run once at the end. `mode` is part of the cache hash,
-  so switching rebuilds rather than serving the other mode's asset
+- **`yarn narration:audio` is the terminal mode, not a rehearsal mode.** It
+  builds everything the deck ships — real voice, real word-timed cues, real
+  auto-advance — showing a still (`preview_image_url`) until the mascot clip is
+  rendered from the same speech asset. Under the voice-only policy there is no
+  "final video pass" afterwards: revise prose, rebuild audio, re-run
+  `yarn narration:mascot`, done. `mode` is part of the cache hash, so a video
+  build would rebuild rather than serve the audio asset — another reason not to
+  run one
 - **A cache hit requires the asset on disk, not just a matching hash.** The
   manifest is tracked and the clips are gitignored, so a fresh clone or a pruned
   `public/narration/` starts with a full cache pointing at nothing — trusting the
