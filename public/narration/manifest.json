@@ -177,37 +177,37 @@
       "transcript": "This talk is a synthesis. Addy Osmani's work on agency, outer loops, and\ndisciplined AI workflows shapes much of its backbone. Karri Saarinen, Armin\nRonacher, Andrew Ng, Margaret-Anne Storey, Peter Naur, Garry Tan, OpenAI's Codex\nteam, Martin Eriksson, Matteo Collina, and Simon Willison supplied other key\nframes. I have redrawn and combined their ideas for this deck; their work\nremains theirs, and specific claims are cited throughout.",
       "captions": [
         {
-          "start": 0.14,
-          "end": 1.419,
+          "start": 0,
+          "end": 2.166,
           "text": "This talk is a synthesis."
         },
         {
-          "start": 2,
-          "end": 7.039,
+          "start": 2.166,
+          "end": 7.364,
           "text": "Addy Osmani's work on agency, outer loops, and disciplined AI workflows shapes"
         },
         {
-          "start": 7.079,
-          "end": 12.179,
+          "start": 7.364,
+          "end": 12.129,
           "text": "much of its backbone. Karri Saarinen, Armin Ronacher, Andrew Ng, Margaret-Anne"
         },
         {
-          "start": 12.259,
-          "end": 18.559,
+          "start": 12.129,
+          "end": 16.893,
           "text": "Storey, Peter Naur, Garry Tan, OpenAI's Codex team, Martin Eriksson, Matteo"
         },
         {
-          "start": 18.659,
-          "end": 21.68,
+          "start": 16.893,
+          "end": 20.359,
           "text": "Collina, and Simon Willison supplied other key frames."
         },
         {
-          "start": 22.199,
-          "end": 24.579,
+          "start": 20.359,
+          "end": 24.69,
           "text": "I have redrawn and combined their ideas for this deck;"
         },
         {
-          "start": 25.279,
+          "start": 24.69,
           "end": 29.022,
           "text": "their work remains theirs, and specific claims are cited throughout."
         }
@@ -666,6 +666,187 @@
       "narrationKey": "01-the-shift:4"
     },
     "10": {
+      "hash": "481ea32ef3ae",
+      "audio": "/narration/slide-10-481ea32ef3ae.mp3",
+      "duration": 107.70285714285714,
+      "cues": [
+        9.51,
+        20.369,
+        37.369,
+        58.869,
+        80.409
+      ],
+      "narrationKey": "01-the-shift:5",
+      "transcript": "Before you file that curve away as me simply working eighteen times faster,\nlet me be honest about what it is made of, because the multiplier is the\neasiest number in this talk to misread. On the work I was already doing — the production systems, the feature\nwork — the honest speedup is maybe two or three times. Real, but that is not\nwhere the curve comes from. The rest of it is work that was not worth starting a year ago. Less\nthan half of those merged pieces of work land in systems that are in\nproduction use today. The rest is new products and internal tooling that used\nto sit below the threshold of what one person could justify building at all. Three examples, all real. This talk — the deck you are watching right\nnow narrates itself, through a pipeline that did not exist a year ago. A\nreal-time multiplayer quiz platform for live events. And a flight simulator\nfor the conversations that actually decide deals, where salespeople rehearse\nthe hard ones against an AI counterpart that reacts not just to what they\nsay, but to how they say it. And there is a discipline that comes with all this. When code is this\ncheap to write, it has to become cheap to let go of, too. Some of that work\nhas already been thrown away — on purpose, and faster than I would ever have\ndared before. That used to feel like waste. It is not. Hanging on to software\nnobody needs is the waste, and for the first time we can afford to stop doing\nit. And mechanically, this is not one heroic typist. At peak it is more\nthan ten agents working in parallel, each in its own isolated copy of the\ncode, and everything that merges passes layered review — automated reviewers\nfirst, then my own judgment, then colleagues, scaled to how much damage a\nmistake could do. The number is big because the set of things worth building\nexploded — and working inside that expansion, honestly, already feels like\nliving in a different world.",
+      "captions": [
+        {
+          "start": 0.119,
+          "end": 3.139,
+          "text": "Before you file that curve away as me simply working eighteen times"
+        },
+        {
+          "start": 3.22,
+          "end": 6.579,
+          "text": "faster, let me be honest about what it is made of, because"
+        },
+        {
+          "start": 6.639,
+          "end": 9.399,
+          "text": "the multiplier is the easiest number in this talk to misread."
+        },
+        {
+          "start": 9.76,
+          "end": 13.019,
+          "text": "On the work I was already doing — the production systems, the"
+        },
+        {
+          "start": 13.179,
+          "end": 17.219,
+          "text": "feature work — the honest speedup is maybe two or three times."
+        },
+        {
+          "start": 17.819,
+          "end": 20.239,
+          "text": "Real, but that is not where the curve comes from."
+        },
+        {
+          "start": 20.619,
+          "end": 22.979,
+          "text": "The rest of it is work that was not worth starting a"
+        },
+        {
+          "start": 23.079,
+          "end": 26.879,
+          "text": "year ago. Less than half of those merged pieces of work land"
+        },
+        {
+          "start": 26.899,
+          "end": 29.019,
+          "text": "in systems that are in production use today."
+        },
+        {
+          "start": 29.42,
+          "end": 33,
+          "text": "The rest is new products and internal tooling that used to sit"
+        },
+        {
+          "start": 33.059,
+          "end": 36.739,
+          "text": "below the threshold of what one person could justify building at all."
+        },
+        {
+          "start": 37.619,
+          "end": 40.959,
+          "text": "Three examples, all real. This talk — the deck you are watching"
+        },
+        {
+          "start": 41.02,
+          "end": 44.439,
+          "text": "right now narrates itself, through a pipeline that did not exist a"
+        },
+        {
+          "start": 44.5,
+          "end": 48.159,
+          "text": "year ago. A real-time multiplayer quiz platform for live events."
+        },
+        {
+          "start": 48.579,
+          "end": 52.039,
+          "text": "And a flight simulator for the conversations that actually decide deals,"
+        },
+        {
+          "start": 52.099,
+          "end": 56.02,
+          "text": "where salespeople rehearse the hard ones against an AI counterpart that reacts"
+        },
+        {
+          "start": 56.099,
+          "end": 58.799,
+          "text": "not just to what they say, but to how they say it."
+        },
+        {
+          "start": 59.119,
+          "end": 61.02,
+          "text": "And there is a discipline that comes with all this."
+        },
+        {
+          "start": 61.459,
+          "end": 64.319,
+          "text": "When code is this cheap to write, it has to become cheap"
+        },
+        {
+          "start": 64.36,
+          "end": 65.559,
+          "text": "to let go of, too."
+        },
+        {
+          "start": 66.18,
+          "end": 69.199,
+          "text": "Some of that work has already been thrown away — on purpose,"
+        },
+        {
+          "start": 69.239,
+          "end": 71.4,
+          "text": "and faster than I would ever have dared before."
+        },
+        {
+          "start": 72.019,
+          "end": 73.299,
+          "text": "That used to feel like waste."
+        },
+        {
+          "start": 73.619,
+          "end": 77.419,
+          "text": "It is not. Hanging on to software nobody needs is the waste,"
+        },
+        {
+          "start": 77.479,
+          "end": 80.019,
+          "text": "and for the first time we can afford to stop doing it."
+        },
+        {
+          "start": 80.659,
+          "end": 83.259,
+          "text": "And mechanically, this is not one heroic typist."
+        },
+        {
+          "start": 83.58,
+          "end": 86.919,
+          "text": "At peak it is more than ten agents working in parallel, each"
+        },
+        {
+          "start": 86.959,
+          "end": 90.439,
+          "text": "in its own isolated copy of the code, and everything that merges"
+        },
+        {
+          "start": 90.479,
+          "end": 94.659,
+          "text": "passes layered review — automated reviewers first, then my own judgment,"
+        },
+        {
+          "start": 94.72,
+          "end": 98.279,
+          "text": "then colleagues, scaled to how much damage a mistake could do."
+        },
+        {
+          "start": 98.339,
+          "end": 102.239,
+          "text": "The number is big because the set of things worth building exploded"
+        },
+        {
+          "start": 102.239,
+          "end": 106.54,
+          "text": "— and working inside that expansion, honestly, already feels like living"
+        },
+        {
+          "start": 106.579,
+          "end": 107.703,
+          "text": "in a different world."
+        }
+      ]
+    },
+    "11": {
       "hash": "9fa687e5dae6",
       "videoId": "bc4f9015402749728c46cdb73126c153",
       "video": "/narration/slide-09-93504dc839a2.mp4",
@@ -709,9 +890,9 @@
           "text": "Which side of that divide are you on?"
         }
       ],
-      "narrationKey": "01-the-shift:5"
+      "narrationKey": "01-the-shift:6"
     },
-    "11": {
+    "12": {
       "hash": "7d81b1324424",
       "video": "/narration/slide-10-0015871f9efb.mp4",
       "duration": 20.845714285714287,
@@ -757,7 +938,7 @@
       ],
       "narrationKey": "02-disappearing-middle:0"
     },
-    "12": {
+    "13": {
       "hash": "f7ab72634fcb",
       "audio": "/narration/slide-11-f7ab72634fcb.mp3",
       "duration": 58.35755102040817,
@@ -866,7 +1047,7 @@
       ],
       "narrationKey": "02-disappearing-middle:1"
     },
-    "13": {
+    "14": {
       "hash": "88955d067e42",
       "audio": "/narration/slide-12-88955d067e42.mp3",
       "duration": 40.15020408163265,
@@ -944,7 +1125,7 @@
       ],
       "narrationKey": "02-disappearing-middle:2"
     },
-    "14": {
+    "15": {
       "hash": "d410afc90f2c",
       "audio": "/narration/slide-13-d410afc90f2c.mp3",
       "duration": 31.164081632653062,
@@ -1001,7 +1182,7 @@
       ],
       "narrationKey": "02-disappearing-middle:3"
     },
-    "15": {
+    "16": {
       "hash": "bd0487bb6b3a",
       "audio": "/narration/slide-14-bd0487bb6b3a.mp3",
       "duration": 38.79183673469388,
@@ -1074,7 +1255,7 @@
       ],
       "narrationKey": "02-disappearing-middle:4"
     },
-    "16": {
+    "17": {
       "hash": "7bf7d574c2fe",
       "audio": "/narration/slide-15-7bf7d574c2fe.mp3",
       "duration": 50.02448979591837,
@@ -1168,7 +1349,7 @@
       ],
       "narrationKey": "02-disappearing-middle:5"
     },
-    "17": {
+    "18": {
       "hash": "217182cc6813",
       "audio": "/narration/slide-16-217182cc6813.mp3",
       "duration": 57.391020408163264,
@@ -1262,7 +1443,7 @@
       ],
       "narrationKey": "02-disappearing-middle:6"
     },
-    "18": {
+    "19": {
       "hash": "c3bd31aa36b5",
       "audio": "/narration/slide-17-c3bd31aa36b5.mp3",
       "duration": 20.45387755102041,
@@ -1312,7 +1493,7 @@
       ],
       "narrationKey": "03a-new-stack-concepts:0"
     },
-    "19": {
+    "20": {
       "hash": "d7a0b95638e7",
       "audio": "/narration/slide-18-d7a0b95638e7.mp3",
       "duration": 51.2,
@@ -1411,7 +1592,7 @@
       ],
       "narrationKey": "03a-new-stack-concepts:1"
     },
-    "20": {
+    "21": {
       "hash": "cfec9220807f",
       "audio": "/narration/slide-19-cfec9220807f.mp3",
       "duration": 57.44326530612245,
@@ -1510,7 +1691,7 @@
       ],
       "narrationKey": "03a-new-stack-concepts:2"
     },
-    "21": {
+    "22": {
       "hash": "b14650d2adbe",
       "audio": "/narration/slide-20-b14650d2adbe.mp3",
       "duration": 61.779591836734696,
@@ -1615,7 +1796,7 @@
       ],
       "narrationKey": "03a-new-stack-concepts:3"
     },
-    "22": {
+    "23": {
       "hash": "15224b9af94c",
       "audio": "/narration/slide-21-15224b9af94c.mp3",
       "duration": 17.47591836734694,
@@ -1650,7 +1831,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:0"
     },
-    "23": {
+    "24": {
       "hash": "e54cdfdfc2d4",
       "audio": "/narration/slide-22-e54cdfdfc2d4.mp3",
       "duration": 45.68816326530612,
@@ -1733,7 +1914,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:1"
     },
-    "24": {
+    "25": {
       "hash": "86547a9f8ad4",
       "audio": "/narration/slide-23-86547a9f8ad4.mp3",
       "duration": 47.673469387755105,
@@ -1821,7 +2002,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:2"
     },
-    "25": {
+    "26": {
       "hash": "82c596e9cece",
       "audio": "/narration/slide-24-82c596e9cece.mp3",
       "duration": 56.946938775510205,
@@ -1935,7 +2116,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:3"
     },
-    "26": {
+    "27": {
       "hash": "34c0668f0c66",
       "audio": "/narration/slide-25-34c0668f0c66.mp3",
       "duration": 62.04081632653061,
@@ -2049,7 +2230,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:4"
     },
-    "27": {
+    "28": {
       "hash": "02675480ed80",
       "audio": "/narration/slide-26-02675480ed80.mp3",
       "duration": 60.7869387755102,
@@ -2167,7 +2348,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:5"
     },
-    "28": {
+    "29": {
       "hash": "31c768014268",
       "audio": "/narration/slide-27-31c768014268.mp3",
       "duration": 53.838367346938774,
@@ -2261,7 +2442,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:6"
     },
-    "29": {
+    "30": {
       "hash": "92a6d0abec2f",
       "audio": "/narration/slide-28-92a6d0abec2f.mp3",
       "duration": 56.79020408163265,
@@ -2370,7 +2551,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:7"
     },
-    "30": {
+    "31": {
       "hash": "5d355a22186f",
       "audio": "/narration/slide-29-5d355a22186f.mp3",
       "duration": 56.137142857142855,
@@ -2469,7 +2650,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:8"
     },
-    "31": {
+    "32": {
       "hash": "3150380384da",
       "audio": "/narration/slide-30-3150380384da.mp3",
       "duration": 14.94204081632653,
@@ -2504,7 +2685,7 @@
       ],
       "narrationKey": "03b-new-stack-tools:9"
     },
-    "32": {
+    "33": {
       "hash": "03c6b6d1f007",
       "audio": "/narration/slide-31-03c6b6d1f007.mp3",
       "duration": 27.141224489795917,
@@ -2554,7 +2735,7 @@
       ],
       "narrationKey": "04-cognitive-debt:0"
     },
-    "33": {
+    "34": {
       "hash": "538d93c70168",
       "audio": "/narration/slide-32-538d93c70168.mp3",
       "duration": 42.370612244897956,
@@ -2633,7 +2814,7 @@
       ],
       "narrationKey": "04-cognitive-debt:1"
     },
-    "34": {
+    "35": {
       "hash": "4d7860dd99fd",
       "audio": "/narration/slide-33-4d7860dd99fd.mp3",
       "duration": 48.09142857142857,
@@ -2728,7 +2909,7 @@
       ],
       "narrationKey": "04-cognitive-debt:2"
     },
-    "35": {
+    "36": {
       "hash": "6d20d7113f04",
       "audio": "/narration/slide-34-6d20d7113f04.mp3",
       "duration": 39.26204081632653,
@@ -2811,7 +2992,7 @@
       ],
       "narrationKey": "04-cognitive-debt:3"
     },
-    "36": {
+    "37": {
       "hash": "ec5bc50abc22",
       "audio": "/narration/slide-35-ec5bc50abc22.mp3",
       "duration": 45.008979591836734,
@@ -2895,7 +3076,7 @@
       ],
       "narrationKey": "04-cognitive-debt:4"
     },
-    "37": {
+    "38": {
       "hash": "3b5c05889aaf",
       "audio": "/narration/slide-36-3b5c05889aaf.mp3",
       "duration": 39.20979591836735,
@@ -2958,7 +3139,7 @@
       ],
       "narrationKey": "04-cognitive-debt:5"
     },
-    "38": {
+    "39": {
       "hash": "56f990c6f6ea",
       "audio": "/narration/slide-37-56f990c6f6ea.mp3",
       "duration": 59.74204081632653,
@@ -3056,7 +3237,7 @@
       ],
       "narrationKey": "04-cognitive-debt:6"
     },
-    "39": {
+    "40": {
       "hash": "7154b381d300",
       "audio": "/narration/slide-38-7154b381d300.mp3",
       "duration": 52.76734693877551,
@@ -3159,7 +3340,7 @@
       ],
       "narrationKey": "04-cognitive-debt:7"
     },
-    "40": {
+    "41": {
       "hash": "46a0a6842f5c",
       "audio": "/narration/slide-39-46a0a6842f5c.mp3",
       "duration": 35.76163265306123,
@@ -3232,7 +3413,7 @@
       ],
       "narrationKey": "04-cognitive-debt:8"
     },
-    "41": {
+    "42": {
       "hash": "0798c321d301",
       "audio": "/narration/slide-40-0798c321d301.mp3",
       "duration": 43.12816326530612,
@@ -3311,7 +3492,7 @@
       ],
       "narrationKey": "04-cognitive-debt:9"
     },
-    "42": {
+    "43": {
       "hash": "cf77c4b9a18a",
       "audio": "/narration/slide-41-cf77c4b9a18a.mp3",
       "duration": 16.822857142857142,
@@ -3351,7 +3532,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:0"
     },
-    "43": {
+    "44": {
       "hash": "6287d34c02c1",
       "audio": "/narration/slide-42-6287d34c02c1.mp3",
       "duration": 34.011428571428574,
@@ -3419,7 +3600,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:1"
     },
-    "44": {
+    "45": {
       "hash": "81c23928139e",
       "audio": "/narration/slide-43-81c23928139e.mp3",
       "duration": 61.25714285714286,
@@ -3521,7 +3702,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:2"
     },
-    "45": {
+    "46": {
       "hash": "51c79e12c8ac",
       "audio": "/narration/slide-44-51c79e12c8ac.mp3",
       "duration": 45.714285714285715,
@@ -3609,7 +3790,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:3"
     },
-    "46": {
+    "47": {
       "hash": "5cd9a1319db7",
       "audio": "/narration/slide-45-5cd9a1319db7.mp3",
       "duration": 62.77224489795918,
@@ -3718,7 +3899,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:4"
     },
-    "47": {
+    "48": {
       "hash": "58a53ac540af",
       "audio": "/narration/slide-46-58a53ac540af.mp3",
       "duration": 65.56734693877551,
@@ -3842,7 +4023,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:5"
     },
-    "48": {
+    "49": {
       "hash": "9f2b50b04935",
       "audio": "/narration/slide-47-9f2b50b04935.mp3",
       "duration": 32.60081632653061,
@@ -3910,7 +4091,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:6"
     },
-    "49": {
+    "50": {
       "hash": "d6f9bc827e11",
       "audio": "/narration/slide-48-d6f9bc827e11.mp3",
       "duration": 45.1134693877551,
@@ -3999,7 +4180,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:7"
     },
-    "50": {
+    "51": {
       "hash": "5f9170450dc9",
       "audio": "/narration/slide-49-5f9170450dc9.mp3",
       "duration": 58.35755102040817,
@@ -4103,7 +4284,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:8"
     },
-    "51": {
+    "52": {
       "hash": "1572be7776e4",
       "audio": "/narration/slide-50-1572be7776e4.mp3",
       "duration": 56.52897959183674,
@@ -4220,7 +4401,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:9"
     },
-    "52": {
+    "53": {
       "hash": "1a56e246ac7e",
       "audio": "/narration/slide-51-1a56e246ac7e.mp3",
       "duration": 43.91183673469388,
@@ -4313,7 +4494,7 @@
       ],
       "narrationKey": "05-pipeline-and-what-matters:10"
     },
-    "53": {
+    "54": {
       "hash": "ef35f1dfdecf",
       "audio": "/narration/slide-52-ef35f1dfdecf.mp3",
       "duration": 9.195102040816327,
@@ -4338,7 +4519,7 @@
       ],
       "narrationKey": "06-moving-forward:0"
     },
-    "54": {
+    "55": {
       "hash": "19f7c3b84d09",
       "audio": "/narration/slide-53-19f7c3b84d09.mp3",
       "duration": 58.409795918367344,
@@ -4457,7 +4638,7 @@
       ],
       "narrationKey": "06-moving-forward:1"
     },
-    "55": {
+    "56": {
       "hash": "7559033bf684",
       "audio": "/narration/slide-54-7559033bf684.mp3",
       "duration": 47.307755102040815,
@@ -4539,7 +4720,7 @@
       ],
       "narrationKey": "06-moving-forward:2"
     },
-    "56": {
+    "57": {
       "hash": "7e3e839c6128",
       "audio": "/narration/slide-55-7e3e839c6128.mp3",
       "duration": 34.32489795918367,
@@ -4602,7 +4783,7 @@
       ],
       "narrationKey": "06-moving-forward:3"
     },
-    "57": {
+    "58": {
       "hash": "e8e0d12ed9f2",
       "audio": "/narration/slide-56-e8e0d12ed9f2.mp3",
       "duration": 50.546938775510206,
@@ -4691,7 +4872,7 @@
       ],
       "narrationKey": "06-moving-forward:4"
     },
-    "58": {
+    "59": {
       "hash": "b0e8c75a7480",
       "audio": "/narration/slide-57-b0e8c75a7480.mp3",
       "duration": 64.6008163265306,
@@ -4809,7 +4990,7 @@
       ],
       "narrationKey": "06-moving-forward:5"
     },
-    "59": {
+    "60": {
       "hash": "cd6c1954483e",
       "audio": "/narration/slide-58-cd6c1954483e.mp3",
       "duration": 21.34204081632653,
@@ -4868,7 +5049,7 @@
       ],
       "narrationKey": "06-moving-forward:6"
     },
-    "60": {
+    "61": {
       "hash": "0650dd779974",
       "audio": "/narration/slide-59-0650dd779974.mp3",
       "duration": 8.385306122448979,
