@@ -9,8 +9,15 @@ is actually happening is most of what I want to talk about today.
 
 <!-- 2. statement — Hi, I'm Mikkel. -->
 
-Hi, I'm Mikkel. I build software at Consensus, and for the past year I have been
-building it in a way that would have been unrecognisable to me two years ago.
+Hi, I'm Mikkel. I'm the Innovation Director at Consensus, which means my job is
+to push the innovative factor in our products forward — to spot what is about to
+change, and make sure we are on the right side of it. I got here sideways: I
+studied philosophy before I became a developer, added a Master in IT Management
+along the way, and I have always cared as much about the product as the code. So
+I work in the cross-section between disciplines — and that cross-section is
+exactly where this talk lives. For the past year I have been building software
+in a way that would have been unrecognisable to me two years ago, and I want to
+show you what that looks like.
 
 ---
 
