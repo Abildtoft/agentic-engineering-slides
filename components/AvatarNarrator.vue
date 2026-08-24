@@ -48,7 +48,7 @@ const hasStarted = ref(false)
 const speaking = ref(false)
 const playhead = ref(0)
 const playbackRate = ref(1)
-const captionsEnabled = ref(true)
+const captionsEnabled = ref(false)
 const narratorView = ref('mascot')
 const controlsOpen = ref(false)
 const transcriptOpen = ref(false)
@@ -559,7 +559,7 @@ onMounted(() => {
   if (!enabled.value) return
   document.documentElement.dataset.narrated = ''
   playbackRate.value = Number(localStorage.getItem('narrator-speed')) || 1
-  captionsEnabled.value = localStorage.getItem('narrator-captions') !== '0'
+  captionsEnabled.value = localStorage.getItem('narrator-captions') === '1'
   narratorView.value = localStorage.getItem('narrator-view') === 'voice' ? 'voice' : 'mascot'
   frame = requestAnimationFrame(tick)
   document.addEventListener('keydown', onKeydown, true)
