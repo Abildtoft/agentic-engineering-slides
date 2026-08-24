@@ -23,7 +23,36 @@ in the room. That is where we are standing.
 
 ---
 
-<!-- 7. default — It's Not Just One Tool — ~2 clicks -->
+<!-- 7. default — Almost Nobody Is Here Yet — ~3 clicks -->
+
+And if 1997 sounds like an exaggeration, here is how early this actually is.
+[click] 84% of the world's population has never used AI. Not "doesn't use it
+every day" — never touched it once. Whatever you have heard about how fast this
+is moving, most people's daily lives are still completely untouched by it.
+[click] Three people in a thousand have ever paid for it.
+[click] And the thing this talk is about — building software with AI — has been
+tried by 0.04%. Four people in every ten thousand. So whatever this turns out
+to be, nobody in this room is late to it. Almost nobody is here yet.
+
+---
+
+<!-- 8. statement — Not Just a Developer Story — ~2 clicks -->
+
+Which raises a fair question: if almost nobody is here yet, why does the rest
+of this talk keep pointing at software? Because this is not a developer story.
+[click] AI is starting to reach every discipline that works with knowledge —
+design, law, finance, sales, medicine. The pattern is the same everywhere; only
+the timing differs.
+[click] Software just happens to be first, and for a mechanical reason. Code is
+work an AI can check on its own: it can run what it wrote, test it, and see
+whether it broke — thousands of times, in seconds. No other profession gives it
+that tight a feedback loop yet. So treat software as the lens, not the subject.
+What is happening to my profession right now is the early picture of what
+reaches everyone else's.
+
+---
+
+<!-- 9. default — It's Not Just One Tool — ~2 clicks -->
 
 These are the tools developers now use to build software with AI. Claude Code,
 Cursor, Windsurf, Copilot, Gemini CLI, Codex. Six names, but this was not one
@@ -45,7 +74,7 @@ chose to publish, which makes every one of them a floor, not a ceiling.
 
 ---
 
-<!-- 8. default — Same Job, Same Me, Different Years — ~6 clicks -->
+<!-- 10. default — Same Job, Same Me, Different Years — ~6 clicks -->
 
 If that still sounds like vendor hype, you do not have to take their word for
 it. This is my own record. Every piece of software work leaves a trail, and
@@ -67,7 +96,7 @@ out to be the part that matters most.
 
 ---
 
-<!-- 9. default — The Curve Bent in January — ~2 clicks -->
+<!-- 11. default — The Curve Bent in January — ~2 clicks -->
 
 Now the same data month by month, because the totals are not the interesting
 part. When it happened is. Watch the flat year draw itself out. That was me
@@ -80,7 +109,7 @@ means one single month out-produced the entire year that came before it.
 
 ---
 
-<!-- 10. default — What ×18 Actually Measures — ~5 clicks -->
+<!-- 12. default — What ×18 Actually Measures — ~5 clicks -->
 
 Before you file that curve away as me simply working eighteen times faster,
 let me be honest about what it is made of, because the multiplier is the
@@ -114,7 +143,7 @@ living in a different world.
 
 ---
 
-<!-- 11. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
+<!-- 13. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
 
 Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
 summer 2026, he wrote, people working with the most advanced AI will feel like
