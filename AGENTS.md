@@ -83,11 +83,12 @@ Consensus is the default: it owns `slides.md`, so a bare `slidev`, `yarn dev`, `
 
 ### Narrated Auto-Mode
 
-An opt-in second way to run the deck: a pre-rendered HeyGen avatar narrates each
-slide and the narration drives the clicks. Opened normally the deck is entirely
-unaffected — `<AvatarNarrator>` fetches nothing and renders nothing without
-`?auto=1`, which is the point. The live-presentation path stays the one with no
-network dependency.
+The default way the deck opens: a pre-rendered HeyGen avatar narrates each
+slide and the narration drives the clicks, behind a start card that needs a
+click before anything plays. `?auto=0` opts out for live presentation (the
+start card also carries a "Present without narration" link that navigates
+there), and presenter mode and print are excluded regardless — so the
+live-presentation path still has no network dependency.
 
 ```
 narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
@@ -347,14 +348,36 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   transition — `GlobalBottom` is a sibling of the slide components
 - Un-narrated slides hold for `SILENT_DWELL_MS` (3.5s) and move on, so a partly
   written deck races through the gaps rather than stalling
+- **Auto-mode reserves the bottom of the frame without shrinking the slide.**
+  `<AvatarNarrator>` sets `html[data-narrated]`, and `styles/index.css` (a) pads
+  every layout 100px at the bottom so centred slides rise clear of the dock,
+  (b) tightens the vertical rhythm — 1.25rem top padding, 0.6rem under the
+  h1, 0.55rem paragraph margins — because a top-anchored slide whose content
+  already reaches the floor can't be padded upward, only compacted, and
+  (c) clamps `svg`/`img` to 220px tall, which shrinks only the diagram (they
+  are `width: 100%; height: auto`) while headings and text keep their places.
+  Slides carrying their own spacing utilities opt into `class:
+  narrated-compact`, which tightens `.mt-4`/`.mb-3`/`.p-4` (only "Markdown Is
+  the Program Now" so far), and the cover logo moves to the top-right corner, away from the dock and the featured tile.
+  Letterboxing the whole slide to 0.78 was tried first and rejected — it
+  cleared everything in one rule but made the picture much smaller than the
+  screen. Measured at 1080p in the final click state
+  (`.context/measure-narrator-overlap.mjs`): 24 of 59 slides had content
+  under the dock or caption before — whole takeaway lines, quote
+  attributions, the agency ladder's rung labels — and none do now
+- **Captions live inside the dock**, above the controls row, so the chrome is
+  one band over the slide rather than two; the row keeps its height while a
+  caption is empty so the dock never jumps between sentences. Dock and
+  transcript are 620px wide (slide units) so they clear a bottom-corner tile
 - The tile's corner is per slide: `narrator: top-right | bottom-left | top-left |
   hidden` in frontmatter, defaulting to `bottom-right`. The key is ignored when
-  the deck is presented normally. **Full-frame diagram slides generally want
-  `hidden`** — verified on both data slides in section 1, where every corner
-  covers a number the slide exists to show (`MergeLedgerCompare`'s multipliers
-  sit hard right on each row; `MergeLedgerChart`'s curve climbs into the
-  top-right). Hidden shrinks the tile to 1px at `opacity: 0` rather than
-  removing it, so the media element keeps playing, and the Pause control stays
+  the deck is presented normally. Bottom corners sit in the frame corner
+  (`0.75rem`), i.e. in the letterbox band, so they touch the slide only at its
+  extreme corner; top corners still overlay the slide. `hidden` remains for
+  slides whose content runs into that corner (the data slides in section 1 —
+  `MergeLedgerCompare`'s multipliers sit hard right on each row). Hidden
+  shrinks the tile to 1px at `opacity: 0` rather than removing it, so the
+  media element keeps playing, and the Pause control stays
 
 ### Mascot Narration (Mascotbot)
 
