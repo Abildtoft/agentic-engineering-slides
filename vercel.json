@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "installCommand": "yarn workspaces focus --production",
+  "installCommand": "corepack yarn workspaces focus --production",
   "buildCommand": "yarn build",
   "outputDirectory": "dist",
   "rewrites": [
