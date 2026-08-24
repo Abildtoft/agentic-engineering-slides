@@ -80,7 +80,41 @@ means one single month out-produced the entire year that came before it.
 
 ---
 
-<!-- 10. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
+<!-- 10. default — What ×18 Actually Measures — ~5 clicks -->
+
+Before you file that curve away as me simply working eighteen times faster,
+let me be honest about what it is made of, because the multiplier is the
+easiest number in this talk to misread.
+[click] On the work I was already doing — the production systems, the feature
+work — the honest speedup is maybe two or three times. Real, but that is not
+where the curve comes from.
+[click] The rest of it is work that was not worth starting a year ago. Less
+than half of those merged pieces of work land in systems that are in
+production use today. The rest is new products and internal tooling that used
+to sit below the threshold of what one person could justify building at all.
+[click] Three examples, all real. This talk — the deck you are watching right
+now narrates itself, through a pipeline that did not exist a year ago. A
+real-time multiplayer quiz platform for live events. And a flight simulator
+for the conversations that actually decide deals, where salespeople rehearse
+the hard ones against an AI counterpart that reacts not just to what they
+say, but to how they say it.
+[click] And there is a discipline that comes with all this. When code is this
+cheap to write, it has to become cheap to let go of, too. Some of that work
+has already been thrown away — on purpose, and faster than I would ever have
+dared before. That used to feel like waste. It is not. Hanging on to software
+nobody needs is the waste, and for the first time we can afford to stop doing
+it.
+[click] And mechanically, this is not one heroic typist. At peak it is more
+than ten agents working in parallel, each in its own isolated copy of the
+code, and everything that merges passes layered review — automated reviewers
+first, then my own judgment, then colleagues, scaled to how much damage a
+mistake could do. The number is big because the set of things worth building
+exploded — and working inside that expansion, honestly, already feels like
+living in a different world.
+
+---
+
+<!-- 11. quote — “By summer 2026, people working with frontier AI will feel like they live in a parallel world” -->
 
 Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
 summer 2026, he wrote, people working with the most advanced AI will feel like

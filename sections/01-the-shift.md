@@ -209,7 +209,7 @@ KEY POINTS:
 - Prior year (Aug '24 – Jul '25) totalled 343; March 2026 alone was 790
 - August 2026: 534 after thirteen days — half-month already out-merged the prior year
 
-BRIDGE: "Jack Clark put a date on this feeling — and my curve peaks right on it."
+BRIDGE: "Before you file that away as a productivity miracle — here's what the curve is actually made of."
 
 ADDITIONAL POINTS:
 - Full months September 2024 through July 2026; the partial Augusts at each end are dropped
@@ -223,9 +223,75 @@ DELIVERY:
 - The slide arrives with only the flat year, drawing itself out slowly and stopping dead at December 2025. Let the draw finish before speaking to it: "That was me being productive." Sit in that beat — the line going nowhere is the setup.
 - Click: the curve bends and accelerates through spring. Say nothing while it climbs; the peak label landing is the cue.
 - Click: the March line is the gut punch — pause and let it sink in
-- Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. This is the line that earns the Jack Clark quote next.
+- Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. The Jack Clark quote cashes this line in two slides from now, after the multiplier is unpacked.
 
 SOURCE: Personal Merge Ledger export (see previous slide)
+-->
+
+---
+class: v-center
+---
+
+# What ×18 Actually Measures
+
+<v-click>
+
+**The old work, done faster** — an honest 2–3×, not 18
+
+</v-click>
+
+<v-click>
+
+**The rest wasn't worth starting a year ago** — under half lands in production repos; the rest is greenfield products and internal tooling
+
+</v-click>
+
+<v-click>
+
+- This deck — it narrates itself
+- A real-time multiplayer quiz platform for live events
+- A flight simulator for the conversations that decide deals
+
+</v-click>
+
+<v-click>
+
+**Cheap to build means cheap to discard** — more of this work gets deleted sooner, on purpose, than ever before
+
+</v-click>
+
+<v-click>
+
+**How it's physically possible** — 10+ agents in parallel in isolated workspaces, layered review on every merge
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Preempts the room's question off the last two slides: how is that number even possible?
+- The multiplier is not speed. The set of things worth building exploded
+- Under half of the volume lands in production repos — say it before a skeptic finds it
+- Cheap code kills the sunk-cost reflex: be willing to discard work faster than before. Keeping software nobody needs is the real waste, and the low build cost is what makes experiments affordable to abandon
+- Same aggregate-only rule as the two ledger slides: describe the greenfield work, never name repos or clients
+
+BRIDGE: "Working inside that expansion already feels like a different world — and Jack Clark put a date on the feeling."
+
+ADDITIONAL POINTS:
+- The 2–3× concession is deliberate: conceding a modest speedup on the old work buys credibility for the bigger claim
+- This is the personal-ledger version of the long-tail argument later in the deck (LongTailDiagram): the build threshold dropped, so the tail became buildable — plant the idea, don't spoil that slide
+- The isolated workspaces are Conductor (one git worktree per agent); kept generic on the slide, name it if asked
+- Review layering, if pressed: agent review passes and CI gates on everything, then self-review, then human colleague review scaled to repo risk — production repos get full human review
+- If asked "so can my team do 18×?": not everyone has meaningful greenfield work waiting, so don't promise a multiplier. The honest promise is that the *kinds of tasks* you can undertake change completely
+
+DELIVERY:
+- Arrive off the chart's silence: "Before you file that away as a productivity miracle, let me tell you what it's actually made of."
+- Click: the 2–3× line. Concede it warmly — "on the work I was already doing, the honest speedup is small."
+- Click: the reframe. This is the slide's real sentence: "The rest of the curve isn't me doing my job faster. It's work that wasn't worth starting a year ago."
+- Click: the three examples, one breath each; the flight simulator is the one to slow down for — "it reacts not just to what the reps say, but how they say it"
+- Click: the discard line — own it, don't apologise: "some of this work is already gone, deliberately. That used to feel like waste. Hanging on to software nobody needs is the waste."
+- Click: the mechanics line, matter-of-fact — it answers "how", it isn't the point. Then the bridge into Clark
+
+SOURCE: Personal Merge Ledger export (see the two previous slides); the production/greenfield characterisation is the speaker's own accounting, aggregate only
 -->
 
 ---
