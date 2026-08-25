@@ -62,6 +62,9 @@ videos a long-lived browser cache.
    - `DECK_ACCESS_PIN`: the PIN shared with viewers.
    - `DECK_COOKIE_SECRET`: a private signing secret of at least 32 characters. Generate one with
      `openssl rand -base64 32`.
+4. Add `VITE_POSTHOG_KEY` with the PostHog project key and scope it to **Production**. Add
+   `VITE_POSTHOG_HOST` too if the project does not use the default EU ingestion host
+   (`https://eu.i.posthog.com`). Redeploy after changing either value.
 
 The server-side gate covers the deck, direct slide links, and static narration assets. A successful
 unlock sets a signed, `HttpOnly`, `Secure` cookie for seven days; the PIN is never sent to the
@@ -70,6 +73,17 @@ affected environment is redeployed. Older immutable deployment URLs retain their
 so retire or independently protect them when rotation must revoke every session. For an emergency
 public deployment, set `DISABLE_PIN_GATE=true` and redeploy; leave it unset during normal operation.
 The gate runs on Vercel, not under the local `yarn dev` server.
+
+PostHog is loaded only in production builds that have `VITE_POSTHOG_KEY`. It captures the initial
+deck visit, Slidev route changes as pageviews, page leaves, and PostHog's standard autocapture
+events. Anonymous analytics state is persisted in local storage only; PostHog cookies and session
+recording are disabled. Production-only Vercel scoping keeps local development and preview
+deployments untracked.
+
+The narration player also captures named events for starting, pausing, resuming, disabling,
+caption and transcript toggles, face/voice changes, playback speed, chapter selection,
+intermissions, completion, replay, and terminal playback errors. Each event includes the current
+slide, chapter, playback position, total duration, playback rate, phase, and media source.
 
 The Vercel install uses production dependencies only, so hosting does not need the private
 `MASCOT_API_KEY` required by the offline mascot-rendering scripts.
