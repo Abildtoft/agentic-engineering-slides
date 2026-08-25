@@ -443,8 +443,11 @@ public/narration/mascot-still.png
   metered (the timeline carries `speechMs`). Changing `--fps/--size/--bg/
   --mascot` re-renders from the cached timeline without touching the model
 - **Key and registry.** `@mascotbot/*` is on a private registry that takes
-  the same key the SDK runs on; `.yarnrc.yml` reads it from `MASCOT_API_KEY`
-  (so `MASCOT_API_KEY=… yarn install`). A `mascot_dev_…` key is the right one
+  the same key the SDK runs on. The private SDK lives in the isolated
+  `scripts/mascot-render/` package so Vercel's middleware builder never tries
+  to install it; `.yarnrc.yml` reads `MASCOT_API_KEY`, so install it with
+  `MASCOT_API_KEY=… yarn --cwd scripts/mascot-render install`. A
+  `mascot_dev_…` key is the right one
   — the render runs on localhost, the only origin a dev key accepts, and the
   deck ships video, not the SDK. Note the licence: the commercial right to
   ship Mascotbot's characters comes with a paid plan, so check the plan
