@@ -111,9 +111,10 @@ fails validation. Tests close the loop. The agent tries, fails, and retries on
 its own, which is exactly what that bounce in the diagram is drawing. Simon
 Willison says tests are free now, effectively free, and no longer remotely
 optional.
-[click] Name the pattern: deterministic gates around probabilistic agents.
-Hard checkpoints that never hallucinate, wrapped around a model that always
-might. And a gate can guard anything you care about.
+[click] Name the pattern: explicit gates around probabilistic agents. Automate
+what can be measured, and assign ownership where judgment remains. The system
+needs hard checkpoints, but it also needs named humans for the questions no
+test can settle.
 
 ---
 
@@ -121,8 +122,8 @@ might. And a gate can guard anything you care about.
 
 Tests and reviews are two gates. Here is the full ring. Correctness, security,
 performance, accessibility, maintainability, cost, back-pressure,
-comprehensibility. Eight things you might care about, each one a check the
-model cannot argue with.
+comprehensibility. Eight things you might care about. Some become deterministic
+checks; others remain explicit, accountable judgments.
 [click] The agent works inside the ring. It produces more code than you can
 read, and an attempt that fails a gate bounces straight back. You never see
 it. Addy Osmani calls this the inner loop, and it is not yours anymore.
@@ -151,7 +152,8 @@ disappear. Then a fresh, full verification run. A gap is reported as a gap,
 never claimed as a pass.
 [click] Then the PR, and CI iterated until green. If it hits a blocker it
 stops, with the evidence preserved. A failed gate is a stop, not a warning.
-And so your loop shrinks to two moments: write the issue, review the PR.
+And so your loop shrinks to two moments: approve the intent, then review the
+evidence and own the result.
 
 ---
 

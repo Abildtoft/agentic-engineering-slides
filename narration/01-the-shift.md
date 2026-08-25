@@ -25,14 +25,15 @@ in the room. That is where we are standing.
 
 <!-- 7. default — Almost Nobody Is Here Yet — ~3 clicks -->
 
-And if 1997 sounds like an exaggeration, here is how early this actually is.
-[click] 84% of the world's population has never used AI. Not "doesn't use it
-every day" — never touched it once. Whatever you have heard about how fast this
-is moving, most people's daily lives are still completely untouched by it.
-[click] Three people in a thousand have ever paid for it.
-[click] And the thing this talk is about — building software with AI — has been
-tried by 0.04%. Four people in every ten thousand. So whatever this turns out
-to be, nobody in this room is late to it. Almost nobody is here yet.
+And if 1997 sounds like an exaggeration, here is one estimate of how early this
+actually is. Martin Eriksson reports it as this funnel.
+[click] His estimate puts the share that has never used AI at 84%. Whatever you
+have heard about how fast this is moving, most people's daily lives are still
+untouched by it.
+[click] He estimates that three people in a thousand have ever paid for it.
+[click] And the thing this talk is about — building software with AI — at four
+people in every ten thousand. Treat the exact numbers as estimates; the shape is
+the point. Whatever this becomes, nobody in this room is late to it.
 
 ---
 
@@ -68,9 +69,10 @@ code since December. Google says AI now writes over 30% of all its new code.
 Microsoft puts it at 20 to 30%. And at the AI labs themselves, Anthropic and
 OpenAI, the teams report that essentially all of their code is now written by
 AI.
-[click] One thing about those numbers before we move on. Every single one of
-them is at least six months old. These are the last figures these companies
-chose to publish, which makes every one of them a floor, not a ceiling.
+[click] One thing about those numbers before we move on. They are directional,
+company-reported, and already dated. The definitions differ, so do not compare
+them as one clean dataset. Read the convergence instead: across very different
+companies, AI-generated code has moved into ordinary production work.
 
 ---
 
@@ -109,7 +111,7 @@ means one single month out-produced the entire year that came before it.
 
 ---
 
-<!-- 12. default — What ×18 Actually Measures — ~5 clicks -->
+<!-- 12. default — What ×18 Actually Measures — ~4 clicks -->
 
 Before you file that curve away as me simply working eighteen times faster,
 let me be honest about what it is made of, because the multiplier is the
@@ -133,13 +135,9 @@ has already been thrown away — on purpose, and faster than I would ever have
 dared before. That used to feel like waste. It is not. Hanging on to software
 nobody needs is the waste, and for the first time we can afford to stop doing
 it.
-[click] And mechanically, this is not one heroic typist. At peak it is more
-than ten agents working in parallel, each in its own isolated copy of the
-code, and everything that merges passes layered review — automated reviewers
-first, then my own judgment, then colleagues, scaled to how much damage a
-mistake could do. The number is big because the set of things worth building
-exploded — and working inside that expansion, honestly, already feels like
-living in a different world.
+The number is big because the set of things worth building exploded — and
+working inside that expansion, honestly, already feels like living in a
+different world.
 
 ---
 

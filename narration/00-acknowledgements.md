@@ -1,8 +1,10 @@
 <!-- 4. default — This talk is a synthesis. -->
 
-This talk is a synthesis. Addy Osmani's work on agency, outer loops, and
-disciplined AI workflows shapes much of its backbone. Karri Saarinen, Armin
-Ronacher, Andrew Ng, Margaret-Anne Storey, Peter Naur, Garry Tan, OpenAI's Codex
-team, Martin Eriksson, Matteo Collina, and Simon Willison supplied other key
-frames. I have redrawn and combined their ideas for this deck; their work
-remains theirs, and specific claims are cited throughout.
+This talk is a synthesis. Its argument, and the ideas behind several figures
+and charts, build on other people's work. Addy Osmani is the strongest single
+influence: agency, outer loops, focused workflows, evidence, and judgment.
+Several visuals are my redraws and adaptations of ideas from his work. Other
+researchers and practitioners shaped the sections on feedback loops,
+bottlenecks, cognitive debt, harness engineering, strategy, and responsible
+practice. The synthesis and presentation are mine; the underlying frameworks
+remain theirs.

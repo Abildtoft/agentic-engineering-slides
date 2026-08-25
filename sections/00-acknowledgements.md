@@ -4,45 +4,33 @@ class: v-center
 
 # This talk is a synthesis.
 
-<p class="text-lg opacity-75 mt-2 mb-7">Its ideas and diagrams build on work by:</p>
+<p class="text-xl opacity-80 mt-2 mb-8">Its argument — and the ideas behind several figures and charts — build on the work of others.</p>
 
-<div class="grid grid-cols-2 gap-x-12 gap-y-5 text-left">
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Addy Osmani</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">Agency, outer loops, focused workflows</p>
+<div class="grid grid-cols-[1.15fr_1fr] gap-10 items-stretch text-left">
+  <div class="p-6 rounded-xl" style="background: color-mix(in srgb, var(--brand-primary) 8%, transparent); border: 1px solid color-mix(in srgb, var(--brand-primary) 22%, transparent)">
+    <p class="text-xs uppercase tracking-widest opacity-60 my-0">Primary influence</p>
+    <p class="text-2xl font-semibold mt-2 mb-3" style="color: var(--brand-primary)">Addy Osmani</p>
+    <p class="text-base opacity-80 my-0">Agency, outer loops, focused workflows, evidence, and judgment.</p>
+    <p class="text-base font-medium mt-5 mb-0">Several figures and charts are redrawn adaptations of ideas from his work.</p>
   </div>
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Andrew Ng</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">Three feedback loops, on three clocks</p>
-  </div>
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Karri Saarinen · Armin Ronacher</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">The compressing middle, bottlenecks, back-pressure</p>
-  </div>
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Garry Tan · OpenAI Codex</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">Markdown skills and harness engineering</p>
-  </div>
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Margaret-Anne Storey · Peter Naur</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">Cognitive debt and theory building</p>
-  </div>
-  <div>
-    <p class="text-base font-semibold my-0" style="color: var(--brand-primary)">Martin Eriksson · Matteo Collina · Simon Willison</p>
-    <p class="text-sm opacity-75 mt-1 mb-0">Strategy, judgment, roles, responsible practice</p>
+
+  <div class="flex flex-col justify-center">
+    <p class="text-xs uppercase tracking-widest opacity-60 my-0">The wider synthesis</p>
+    <p class="text-lg leading-relaxed mt-3 mb-0">Feedback loops · bottlenecks · changing roles · cognitive debt · harness engineering · strategy · responsible practice</p>
+    <p class="text-sm opacity-65 mt-5 mb-0">Ideas gathered from researchers and practitioners across software, product, design, and organizational learning.</p>
   </div>
 </div>
 
-<p class="text-sm opacity-55 mt-7 mb-0">Specific claims, quotations, and data are attributed in the presenter notes.</p>
+<p class="text-sm opacity-55 mt-7 mb-0">The synthesis and visual language are mine; the frameworks remain their authors’ work.</p>
 
 <!--
 KEY POINTS:
 - Say this plainly and early: this is a synthesis, not a claim to have invented every framework
 - Addy Osmani is the strongest single influence across the deck: specs, loops, evidence, agency, and judgment
-- The diagrams are redrawn in the deck's visual language; the underlying frameworks remain their authors' work
-- Individual evidence and quotations continue to carry their own source notes throughout
+- Several figures and charts are redrawn adaptations of ideas from Addy's work
+- The diagrams use the deck's visual language; the underlying frameworks remain their authors' work
 
-BRIDGE: "With that debt acknowledged, let me show you the pattern all of them are pointing at."
+BRIDGE: "With that lineage clear, let me show you the pattern these ideas point toward."
 
 SOURCE: Addy Osmani, "Own the Outer Loop" (addyosmani.com/blog/own-the-outer-loop/)
 SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyosmani.com/blog/ai-coding-workflow/)

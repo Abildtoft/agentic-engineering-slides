@@ -167,7 +167,7 @@ The human checkpoint moves upstream: **specs, constraints, acceptance criteria.*
 </v-click>
 <v-click>
 
-Trust moves downstream: **tests, type checks, contracts, rollout guardrails.**
+Verification moves downstream: **tests, type checks, contracts, rollout guardrails.**
 
 </v-click>
 <v-click>
@@ -192,7 +192,7 @@ ADDITIONAL POINTS:
 
 DELIVERY:
 - Position as an operating-model shift, not a provocative slogan
-- Emphasize "review intent" and "deterministic checks" as complementary controls
+- Emphasize "review intent" and explicit verification as complementary controls: deterministic checks where possible, accountable judgment where necessary
 - Land the final line as a framing question the audience can reuse in their teams
 
 SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)

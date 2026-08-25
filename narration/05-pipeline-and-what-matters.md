@@ -1,9 +1,7 @@
 <!-- 45. section — What Matters -->
 
-We have diagnosed the risks. Now let's name what endures. The central question
-for this section is simple: what capabilities become more valuable when the
-cost of execution collapses? This is a short bridge into the close, not a
-second body section, so I will move through it with some energy.
+We have diagnosed the risks. Now let's name what endures. What capabilities
+become more valuable when the cost of execution collapses?
 
 ---
 
@@ -59,23 +57,24 @@ experiment now. But cheap learning is what earns the right to build.
 
 <!-- 49. statement — The prototype is the new brief. — ~3 clicks -->
 
-One artifact captures cheap learning better than anything else. Andrew Chen's
-phrasing is that the prototype is the new PRD. I would widen it: the prototype
-is the new brief.
+The artifact was never the job. But it is now the cheapest evidence that the
+thinking happened. Andrew Chen's phrasing is that the prototype is the new PRD.
+I would widen it: the prototype is the new brief.
 [click] A concept you can click beats a concept you can read. People react to
 artifacts, not descriptions. Instead of describing an idea in a deck, hand
 someone something they can click. The reaction is a different class of
 evidence.
-[click] And the first draft no longer needs a developer. A written idea
+[click] And the first draft no longer needs to wait for a developer. A written idea
 becomes a working demo in an afternoon, not a sprint. The people closest to
 the domain build the throwaway draft, and developers harden only what earns
 survival. That is how prototyping protects development hours instead of
 consuming them.
-[click] Most prototypes should die. That sounds like failure until you hear
+[click] Remember the eighteen-times curve: cheap to build has to mean cheap to
+discard. Most prototypes should die. That sounds like failure until you hear
 the second half: that is the point. They are the cheapest way to find out you
-are wrong. A dead prototype is validated learning at the lowest possible
-price. A dead production feature is not. And the moment a prototype touches
-real data or real users, everything from the guardrails section applies.
+are wrong. A dead prototype is validated learning at the lowest possible price.
+A dead production feature is not. And the moment a prototype touches real data
+or real users, everything from the guardrails section applies.
 
 ---
 
@@ -145,7 +144,7 @@ missing edge case, the architecture that will not scale. And articulate why an
 interaction is wrong. The principle, not the vibe. None of this is
 engineering-only work. Most companies apply AI at the feature layer. The
 winners rethink at the strategy layer, and this list is strategy-layer work.
-[click] The work has not changed. The boundaries have. An agent can generate
+[click] The core work has not changed. The boundaries have. An agent can generate
 five features in a day. Integrating them into a system that makes sense is
 still your job, and focus, finishing and judgment scale with you, not with AI
 speed.
@@ -159,10 +158,11 @@ of the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.
 Execute a fix. Diagnose the cause. Propose options. Recommend one. Resolve it
 yourself. And at the top, discern: decide whether it was worth doing at all.
 Good engineers live at recommend from day one, and earn resolve.
-[click] Agents will run rungs one through six for you, and it is getting
-cheap fast. Rung seven never does. Discernment looks like doing nothing, which
-is why it is hard to grant and harder to trust. It means you priced the fix
-against everything else on the table and put your name on the tradeoff.
+[click] Agents can run rungs one through six for you, and it is getting cheap
+fast. They can assist with rung seven too, but accountability for discernment
+never gets cheap. It looks like doing nothing, which is why it is hard to grant
+and harder to trust. It means you priced the fix against everything else on the
+table and put your name on the tradeoff.
 Deciding it was not worth doing. Deciding the evidence is good enough to ship.
 Being the person who can explain why when you turn out to be wrong. Agency was
 never about how much you can do. It is about how much of the problem you still
