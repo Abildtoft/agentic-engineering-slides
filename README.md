@@ -57,6 +57,19 @@ videos a long-lived browser cache.
 2. After the repository is connected, open **Project Settings → Git**, enable **Git Large File
    Storage (LFS)**, and redeploy. The narrated `.mp4` files are stored through Git LFS and will be
    missing from the published deck unless Vercel pulls the LFS objects.
+3. Under **Project Settings → Environment Variables**, add the following values to Production and
+   Preview, then redeploy:
+   - `DECK_ACCESS_PIN`: the PIN shared with viewers.
+   - `DECK_COOKIE_SECRET`: a private signing secret of at least 32 characters. Generate one with
+     `openssl rand -base64 32`.
+
+The server-side gate covers the deck, direct slide links, and static narration assets. A successful
+unlock sets a signed, `HttpOnly`, `Secure` cookie for seven days; the PIN is never sent to the
+client bundle or stored in the cookie. Rotating `DECK_COOKIE_SECRET` invalidates sessions after the
+affected environment is redeployed. Older immutable deployment URLs retain their previous secret,
+so retire or independently protect them when rotation must revoke every session. For an emergency
+public deployment, set `DISABLE_PIN_GATE=true` and redeploy; leave it unset during normal operation.
+The gate runs on Vercel, not under the local `yarn dev` server.
 
 The Vercel install uses production dependencies only, so hosting does not need the private
 `MASCOT_API_KEY` required by the offline mascot-rendering scripts.
