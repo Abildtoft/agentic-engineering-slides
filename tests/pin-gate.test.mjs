@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
 import { afterEach, beforeEach, test } from 'node:test'
 
 import pinGate from '../middleware.js'
@@ -10,6 +11,9 @@ const ENVIRONMENT_KEYS = [
 ]
 
 const COOKIE_SECRET = 'a-test-cookie-secret-that-is-at-least-32-characters'
+const vercelConfig = JSON.parse(
+  await readFile(new URL('../vercel.json', import.meta.url), 'utf8'),
+)
 
 beforeEach(() => {
   process.env.DECK_ACCESS_PIN = '246810'
@@ -94,13 +98,13 @@ test('rejects a tampered session cookie', async () => {
 })
 
 test('rejects an expired session cookie', async () => {
-  const issuedAt = Date.now()
   const originalDateNow = Date.now
   const unlockResponse = await pinGate(unlockRequest('246810'))
   const cookie = unlockResponse.headers.get('set-cookie').split(';', 1)[0]
+  const expiresAt = Number(cookie.split('.')[1])
 
   try {
-    Date.now = () => issuedAt + 7 * 24 * 60 * 60 * 1000 + 1
+    Date.now = () => expiresAt + 1
     const response = await pinGate(new Request('https://slides.example.com/', {
       headers: { cookie },
     }))
@@ -139,4 +143,8 @@ test('can be explicitly disabled', async () => {
   const response = await pinGate(new Request('https://slides.example.com/'))
 
   assert.equal(response, undefined)
+})
+
+test('uses production dependency mode for Vercel function packaging', () => {
+  assert.equal(vercelConfig.build?.env?.NODE_ENV, 'production')
 })

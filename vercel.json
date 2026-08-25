@@ -3,6 +3,11 @@
   "framework": "vite",
   "installCommand": "corepack yarn workspaces focus --production",
   "buildCommand": "yarn build",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
   "outputDirectory": "dist",
   "rewrites": [
     {
