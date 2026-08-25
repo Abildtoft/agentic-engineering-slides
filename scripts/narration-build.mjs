@@ -19,10 +19,10 @@
  * /v2/avatar/{id}/details, /v2/video/generate, /v1/video_status.get and
  * /v2/user/remaining_quota.
  *
- * One clip per slide, not one per click step. The deck has 59 slides but ~171
- * click steps; per-step clips would mean 171 avatar entrances and exits, and a
- * hard cut mid-sentence every time a bullet appears. A slide is the natural
- * unit of speech, and the cues ride inside it.
+ * One clip per slide, not one per click step. The deck has 63 slides with 128
+ * narration cue markers; per-cue clips would mean 128 avatar entrances and
+ * exits, and a hard cut mid-sentence every time a bullet appears. A slide is
+ * the natural unit of speech, and the cues ride inside it.
  *
  * Costed and cached: the manifest doubles as the cache, keyed on a hash of the
  * prose and the voice/avatar settings, so a re-run after fixing one typo

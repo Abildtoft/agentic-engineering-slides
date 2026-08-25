@@ -94,9 +94,12 @@ has no network dependency.
 from `yarn narration:audio` (TTS + word-timed cues) and the face is the locally
 rendered Mascotbot character (`yarn narration:mascot`, below). A bare
 `yarn narration:build` (avatar video mode) is retired: don't run it, and don't
-add new `videoId` entries. The nine avatar `.mp4`s still in the manifest are
-legacy speech sources kept because the mascot clips were rendered from them and
-the player falls back to them; leave them alone but never mint more.
+add new `videoId` entries. The avatar `.mp4`s still in the manifest are legacy
+speech sources for slides whose prose has not changed yet; keep one only while
+the current manifest references it. When an audio rebuild supersedes one,
+`pruneOrphans` should delete it and the deletion should be committed alongside
+the new audio-backed manifest and mascot clip. Do not restore superseded avatar
+videos and never mint new ones.
 
 ```
 narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
@@ -109,10 +112,10 @@ public/narration/*.mp4          # rendered clips (tracked — see the size note)
 components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 ```
 
-- **One clip per slide, not per click step.** The deck is 59 slides but ~171
-  click steps; per-step clips mean 171 avatar entrances and a hard cut every
-  time a bullet appears. A slide is the natural unit of speech, and the reveals
-  ride inside it on cue times
+- **ALWAYS — One clip per slide, not per click step.** The deck is 63 slides with 128
+  narration cue markers; per-cue clips mean 128 avatar entrances and a hard cut
+  every time a bullet appears. A slide is the natural unit of speech, and the
+  reveals ride inside it on cue times
 - Cues are marked inline in the prose as `[click]`. The marker is stripped
   before synthesis and its position recorded, so the avatar never says the word
 - **The two HeyGen calls are ordered, not interchangeable.** `POST
@@ -305,9 +308,11 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   manifest of 404s. That is auto-mode silently broken rather than loudly
   unbuilt, and it surfaces only when someone presses Start. `--only` can't
   repair the sections it is excluding, so it warns about them instead
-- **A lost clip is a download, not a re-render.** The account keeps every
-  rendered video, so the manifest records its `videoId` and the build fetches it
-  back when the prose is unchanged and only the local file is gone. This is not
+- **A lost, still-current legacy video is a download, not a re-render.** The
+  account keeps every rendered video, so the manifest records its `videoId` and
+  the build fetches it back when the prose is unchanged and only the referenced
+  local file is gone. A video superseded by an audio rebuild is intentionally
+  deleted instead and must not be recovered. This distinction is not
   just about cost: a render is **not reproducible** — the same prose comes back
   as a different take, with different head movement, silently replacing a clip
   that was already reviewed. `yarn narration:recover` does the same repair
@@ -343,8 +348,8 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   orphaned the `.mp4` for `pruneOrphans` to delete — an approved take gone
   because someone rehearsed. The build now keeps a video entry whose hash still
   matches the *video*-mode hash of the current prose; once the prose moves, it
-  re-synthesises like any other slide. A video build still replaces audio
-  entries, which is the direction that should win
+  re-synthesises like any other slide and prunes the now-superseded video. Video
+  builds are retired, so do not turn an audio-backed entry back into video
 - `/v3/videos` pages on **`token=`**, like `/v3/voices`. `next_token=` and
   `page_token=` are both accepted and both ignored — they re-serve page one, so
   a loop built on either collects the same 20 videos forever. Terminate on an
@@ -381,7 +386,8 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   Letterboxing the whole slide to 0.78 was tried first and rejected — it
   cleared everything in one rule but made the picture much smaller than the
   screen. Measured at 1080p in the final click state
-  (`.context/measure-narrator-overlap.mjs`): 24 of 59 slides had content
+  (`.context/measure-narrator-overlap.mjs`): in the 59-slide deck measured at
+  the time, 24 slides had content
   under the dock or caption before — whole takeaway lines, quote
   attributions, the agency ladder's rung labels — and none do now
 - **Captions live inside the dock**, above the controls row, so the chrome is
@@ -514,7 +520,7 @@ and reduced motion do. Break this and an exported PDF gets blank elements.
 | Section dividers | `section-shift` (fade + 20px Y), overriding the deck default so a chapter change reads differently from a step within one |
 | `v-click` reveals | Opacity + an 8px rise; instant when navigating backward (`.slidev-nav-go-backward`). The global backward rule only matches `.slidev-vclick-target`, so components with `$clicks`-driven transitions each carry their own zero-duration override. The **whole** selector goes inside `:global(...)` — Vue's scoped compiler keeps only the `:global()` portion of a mixed selector like `:global(.a) .b` and silently drops the rest |
 | Dense build slides | Opt in with `class: dim-prior` — dims already-revealed lines to 0.5 so the eye finds the live one. Gated on `:has(.slidev-vclick-hidden)`: once the last reveal lands, the whole slide rests at full strength — a finished slide dimmed to 0.5 reads as disabled, in Q&A and in the exported PDF, which captures exactly that final state. Deliberately not global; most slides want the speaker able to point back at full strength. Currently on four slides |
-| `cover`, `statement`, `fact` | Staggered entrance on the heading. `fact` gets opacity only — that layout runs to within ~12px of the bottom edge, so no Y travel. The opening cover is the exception: its title is `<CoverTitleSwap>`, below, and its subtitle arrives at the end of that build, so it opts out of the `h1 + p` entrance with `:not(.cover-title-swap)`. The closing "Thank You" cover still takes the plain path, and its one click — "Questions..?", the floor opening — rides the global `v-click` reveal with no motion of its own |
+| `cover`, `statement`, `fact` | Staggered entrance on the heading. `fact` gets opacity only — that layout runs to within ~12px of the bottom edge, so no Y travel. The opening cover is the exception: its title is `<CoverTitleSwap>`, below, and its subtitle arrives at the end of that build, so it opts out of the `h1 + p` entrance with `:not(.cover-title-swap)`. The closing "Thank You" cover still takes the plain path, and its one click — "Questions?", the floor opening — rides the global `v-click` reveal with no motion of its own |
 | `quote` | The 4px rule draws itself (`scaleY`), as a `::before` — a `border-left` can only animate its width, in layout, against the text. `padding-left: calc(1rem + 4px)` carries the border's old offset so text position is unchanged. Progressive quotes and `QuotePair` carry the rule per line/quote, not per container: a v-click hides with opacity so hidden content keeps its height, and a container-level rule would draw to final height on entry. Click-gated segments ride the v-click state as a `transition` (reversible, instant backward), each extended up over the line gap so the finished bar is seamless |
 | Markdown blockquotes | Same drawn rule, sharing the `quote` layout's `::before` declaration. All eight in the deck sit inside a `<v-click>`, so the rule always takes the transition path rather than the entry animation — the `.slidev-vclick-target` / `-hidden` / backward overrides are duplicated for the `blockquote` selector because the progressive-line ones carry a different geometry (negative `left`, extended `top`). Unlike the layout, the rule spans the attribution too: it is a paragraph inside the same block here, not a separate grid item |
 | `MermaidDiagram` | Builds node by node on entry, ~90ms apart, in mermaid source order. Reads `.node[data-id]` / `.edge[data-from][data-to]` off the rendered SVG, which is **not** a documented `beautiful-mermaid` contract — a version bump that renames those loses the stagger and keeps the diagram. Edges wait for the later of their two endpoints, or feedback arrows draw out of nodes that don't exist yet. Disable per slide with `reveal="none"` |
