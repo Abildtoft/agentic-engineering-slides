@@ -1,6 +1,7 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useNav } from '@slidev/client'
+import { captureAnalytics, elapsedSecondsSince } from '../utils/analytics.mjs'
 
 /**
  * Self-presenting mode — the default way the deck opens. `?auto=0` opts out
@@ -16,6 +17,7 @@ const MASCOT_URL = '/narration/mascot.json'
 const SILENT_DWELL_MS = 3500
 const SLIDE_GAP_MS = 700
 const SECTION_GAP_MS = 1500
+const INTERMISSION_DURATION_SECONDS = 5 * 60
 const DISSOLVE_MS = 220
 const DISSOLVE_EASE = 'cubic-bezier(0.4, 0, 0.6, 1)'
 
@@ -64,11 +66,13 @@ const idleEl = () => elements()[1 - activeIndex.value]
 let frame = null
 let dwellTimer = null
 let breakTimer = null
+let breakStartedAt = null
 let handoffTimers = []
 let cueIndex = 0
 let autoAdvanced = false
 let pausedSlide = null
 let currentMediaEl = null
+let completionTracked = false
 const currentCandidates = ref([])
 const currentSourceIndex = ref(0)
 
@@ -194,6 +198,25 @@ function formatClock(seconds) {
   return `${Math.floor(rounded / 60)}:${String(rounded % 60).padStart(2, '0')}`
 }
 
+function roundedSeconds(seconds) {
+  return Math.round((Number(seconds) || 0) * 100) / 100
+}
+
+function captureNarration(event, properties = {}) {
+  captureAnalytics(event, {
+    slide_number: currentSlideNo.value,
+    slide_count: total.value,
+    chapter: currentChapter.value?.title ?? 'Introduction',
+    playback_position_seconds: roundedSeconds(playhead.value),
+    talk_position_seconds: roundedSeconds(overallElapsed.value),
+    total_duration_seconds: roundedSeconds(totalDuration.value),
+    playback_rate: playbackRate.value,
+    phase: phase.value,
+    media_source: currentSource.value?.kind ?? 'none',
+    ...properties,
+  })
+}
+
 function clearPlaybackTimers() {
   clearTimeout(dwellTimer)
   dwellTimer = null
@@ -201,9 +224,14 @@ function clearPlaybackTimers() {
   handoffTimers = []
 }
 
-function clearBreakTimer() {
+function stopBreakTimer() {
   clearInterval(breakTimer)
   breakTimer = null
+}
+
+function clearBreakTimer() {
+  stopBreakTimer()
+  breakStartedAt = null
 }
 
 function resetMediaElement(element, candidate) {
@@ -340,6 +368,10 @@ async function advance() {
   if (currentSlideNo.value >= total.value) {
     phase.value = 'ended'
     speaking.value = false
+    if (!completionTracked) {
+      completionTracked = true
+      captureNarration('talk_completed', { completion_percent: 100 })
+    }
     return
   }
   autoAdvanced = true
@@ -392,20 +424,23 @@ function failPlayback(message) {
   speaking.value = false
   errorMessage.value = message
   phase.value = 'error'
+  captureNarration('narration_error', { error_message: message })
 }
 
 function start() {
   if (phase.value !== 'ready') return
   hasStarted.value = true
+  captureNarration('narration_started', { start_method: 'start_card' })
   playCurrent()
 }
 
-function pause() {
+function pause(reason = 'control') {
   if (!['playing', 'buffering', 'transitioning'].includes(phase.value)) return
   pausedSlide = currentSlideNo.value
   clearPlaybackTimers()
   for (const element of elements()) element?.pause()
   phase.value = 'paused'
+  captureNarration('narration_paused', { reason })
 }
 
 function resume() {
@@ -414,6 +449,7 @@ function resume() {
   const validSource = currentCandidates.value.some(candidate => candidate.url === element?.dataset.src)
   if (pausedSlide === currentSlideNo.value && validSource && element?.readyState > 0) playTarget(element)
   else playCurrent()
+  captureNarration('narration_resumed')
 }
 
 function toggle() {
@@ -433,21 +469,45 @@ function backTen() {
 }
 
 function changeSpeed(event) {
+  const previousRate = playbackRate.value
   playbackRate.value = Number(event.target.value)
   for (const element of elements()) {
     if (element) element.playbackRate = playbackRate.value
   }
   localStorage.setItem('narrator-speed', String(playbackRate.value))
+  captureNarration('playback_speed_changed', {
+    previous_rate: previousRate,
+    playback_rate: playbackRate.value,
+  })
 }
 
 function toggleCaptions() {
   captionsEnabled.value = !captionsEnabled.value
   localStorage.setItem('narrator-captions', captionsEnabled.value ? '1' : '0')
+  captureNarration('captions_toggled', { enabled: captionsEnabled.value })
 }
 
 function toggleNarratorView() {
   narratorView.value = narratorView.value === 'voice' ? 'mascot' : 'voice'
   localStorage.setItem('narrator-view', narratorView.value)
+  captureNarration('narrator_view_changed', { view: narratorView.value === 'voice' ? 'voice' : 'face' })
+}
+
+function toggleTranscript() {
+  transcriptOpen.value = !transcriptOpen.value
+  controlsOpen.value = false
+  captureNarration('transcript_toggled', { open: transcriptOpen.value })
+}
+
+function closeTranscript() {
+  if (!transcriptOpen.value) return
+  transcriptOpen.value = false
+  captureNarration('transcript_toggled', { open: false })
+}
+
+function toggleChapters() {
+  controlsOpen.value = !controlsOpen.value
+  if (transcriptOpen.value) closeTranscript()
 }
 
 async function navigateSlide(direction) {
@@ -457,6 +517,20 @@ async function navigateSlide(direction) {
 }
 
 async function goChapter(no) {
+  const targetChapter = chapterRows.value.find(chapter => chapter.no === no)
+  const wasStarted = hasStarted.value
+  if (!wasStarted) {
+    captureNarration('narration_started', {
+      start_method: 'chapter',
+      target_slide_number: no,
+      target_chapter: targetChapter?.title,
+    })
+  }
+  captureNarration('chapter_selected', {
+    target_slide_number: no,
+    target_chapter: targetChapter?.title,
+  })
+  completionTracked = false
   hasStarted.value = true
   controlsOpen.value = false
   transcriptOpen.value = false
@@ -466,14 +540,19 @@ async function goChapter(no) {
 
 function startBreak() {
   clearBreakTimer()
-  breakSeconds.value = 5 * 60
+  breakStartedAt = Date.now()
+  breakSeconds.value = INTERMISSION_DURATION_SECONDS
   breakTimer = setInterval(() => {
-    breakSeconds.value = Math.max(0, breakSeconds.value - 1)
-    if (breakSeconds.value === 0) clearBreakTimer()
+    const elapsed = elapsedSecondsSince(breakStartedAt, Date.now(), INTERMISSION_DURATION_SECONDS)
+    breakSeconds.value = INTERMISSION_DURATION_SECONDS - elapsed
+    if (breakSeconds.value === 0) stopBreakTimer()
   }, 1000)
+  captureNarration('intermission_started', { break_duration_seconds: INTERMISSION_DURATION_SECONDS })
 }
 
 async function continueIntermission() {
+  const breakElapsed = elapsedSecondsSince(breakStartedAt, Date.now(), INTERMISSION_DURATION_SECONDS)
+  captureNarration('intermission_continued', { break_elapsed_seconds: breakElapsed })
   clearBreakTimer()
   breakSeconds.value = 0
   autoAdvanced = true
@@ -481,6 +560,8 @@ async function continueIntermission() {
 }
 
 async function restart() {
+  captureNarration('talk_replayed')
+  completionTracked = false
   hasStarted.value = true
   if (currentSlideNo.value === 1) playCurrent()
   else await go(1)
@@ -496,6 +577,7 @@ function retryCurrent() {
 }
 
 function leaveAutoMode() {
+  captureNarration('narration_disabled', { disabled_from_phase: phase.value })
   const url = new URL(location.href)
   url.searchParams.set('auto', '0')
   url.searchParams.delete('mascot')
@@ -530,7 +612,7 @@ function onKeydown(event) {
 }
 
 function onVisibilityChange() {
-  if (document.hidden) pause()
+  if (document.hidden) pause('tab_hidden')
 }
 
 watch(currentSlideNo, () => {
@@ -690,7 +772,7 @@ onBeforeUnmount(() => {
     <aside v-if="transcriptOpen && entry?.transcript" class="narrator-transcript" aria-label="Current slide transcript">
       <div>
         <strong>{{ currentChapter?.title }} · Slide {{ currentSlideNo }}</strong>
-        <button type="button" aria-label="Close transcript" @click="transcriptOpen = false">×</button>
+        <button type="button" aria-label="Close transcript" @click="closeTranscript">×</button>
       </div>
       <p>{{ entry.transcript }}</p>
     </aside>
@@ -722,8 +804,8 @@ onBeforeUnmount(() => {
             <option value="1.5">1.5×</option>
           </select>
         </label>
-        <button type="button" :aria-expanded="transcriptOpen" title="Transcript" @click="transcriptOpen = !transcriptOpen; controlsOpen = false">Transcript</button>
-        <button type="button" :aria-expanded="controlsOpen" title="Chapters" @click="controlsOpen = !controlsOpen; transcriptOpen = false">Chapters</button>
+        <button type="button" :aria-expanded="transcriptOpen" title="Transcript" @click="toggleTranscript">Transcript</button>
+        <button type="button" :aria-expanded="controlsOpen" title="Chapters" @click="toggleChapters">Chapters</button>
       </div>
       <div v-if="controlsOpen" class="narrator-chapter-list narrator-control-chapters">
         <button
