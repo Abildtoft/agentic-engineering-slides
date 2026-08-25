@@ -55,6 +55,7 @@ const narratorView = ref('mascot')
 const controlsOpen = ref(false)
 const transcriptOpen = ref(false)
 const breakSeconds = ref(0)
+const startAvatarLoaded = ref(false)
 
 const videoA = ref(null)
 const videoB = ref(null)
@@ -126,6 +127,10 @@ const avatarVisible = computed(() => narratorView.value !== 'voice' && placement
 const still = computed(() => {
   if (currentSource.value?.kind === 'original') return manifest.value?.still ?? null
   return mascotManifest.value?.still ?? manifest.value?.still ?? null
+})
+
+watch(still, () => {
+  startAvatarLoaded.value = false
 })
 
 const cardVisible = computed(() =>
@@ -588,10 +593,18 @@ async function loadManifests() {
   phase.value = 'loading'
   errorMessage.value = ''
   try {
-    const response = await fetch(MANIFEST_URL)
+    const [response, mascot] = await Promise.all([
+      fetch(MANIFEST_URL),
+      fetch(MASCOT_URL).then(r => (r.ok ? r.json() : null)).catch(() => null),
+    ])
     if (!response.ok) throw new Error(`manifest returned ${response.status}`)
-    manifest.value = await response.json()
-    mascotManifest.value = await fetch(MASCOT_URL).then(r => (r.ok ? r.json() : null)).catch(() => null)
+    const loadedManifest = await response.json()
+
+    // Commit both manifests in the same render. Publishing the speech manifest
+    // first briefly exposed its HeyGen still before the preferred mascot
+    // manifest arrived, making the start card flash between two faces.
+    mascotManifest.value = mascot
+    manifest.value = loadedManifest
     await nextTick()
     primeCurrent()
   } catch (error) {
@@ -665,7 +678,16 @@ onBeforeUnmount(() => {
       <div v-if="cardVisible" class="narrator-scrim" aria-hidden="true" />
     </Transition>
     <section v-if="!hasStarted && ['loading', 'ready'].includes(phase)" class="narrator-card narrator-start" aria-live="polite">
-      <img v-if="still" class="narrator-start-avatar" :src="still" alt="" />
+      <div class="narrator-start-avatar" aria-hidden="true">
+        <img
+          v-if="still"
+          :src="still"
+          :class="{ 'is-loaded': startAvatarLoaded && phase !== 'loading' }"
+          alt=""
+          @load="startAvatarLoaded = true"
+        />
+        <span v-if="phase === 'loading' || !startAvatarLoaded" class="narrator-start-spinner" />
+      </div>
       <div>
         <p class="narrator-kicker">AI-narrated talk</p>
         <h2>Agentic Engineering</h2>
@@ -879,12 +901,46 @@ onBeforeUnmount(() => {
 }
 
 .narrator-start-avatar {
+  position: relative;
   width: 72px;
   height: 72px;
   grid-row: span 2;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: 0.8rem;
   background: var(--brand-bg-accent);
+}
+
+.narrator-start-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity var(--motion-base) var(--motion-ease);
+}
+
+.narrator-start-avatar img.is-loaded {
+  opacity: 1;
+}
+
+.narrator-start-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border: 3px solid color-mix(in srgb, var(--brand-bg) 28%, transparent);
+  border-top-color: var(--brand-bg);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: narrator-spin 0.8s linear infinite;
+}
+
+@keyframes narrator-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .narrator-start-spinner { animation: none; }
 }
 
 .narrator-card h2 {
