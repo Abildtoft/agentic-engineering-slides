@@ -145,9 +145,48 @@ function escapeHtml(value) {
     .replaceAll('>', '&gt;')
 }
 
-function accessPage(returnPath, invalidPin = false) {
+function otpFields(length, invalidPin) {
+  return Array.from({ length }, (_, index) => {
+    const isAutocompleteTarget = index === 0
+    const pattern = isAutocompleteTarget ? `[0-9]{1,${length}}` : '[0-9]'
+    const maxlength = isAutocompleteTarget ? length : 1
+
+    return `
+          <input
+            class="otp-digit"
+            data-otp-digit
+            name="pin-digit"
+            type="password"
+            inputmode="numeric"
+            pattern="${pattern}"
+            maxlength="${maxlength}"
+            aria-label="Digit ${index + 1} of ${length}"
+            aria-invalid="${invalidPin}"
+            ${isAutocompleteTarget ? 'autocomplete="one-time-code" autofocus' : 'autocomplete="off"'}
+            ${index === length - 1 ? 'enterkeyhint="done"' : 'enterkeyhint="next"'}
+            required
+          >`
+  }).join('')
+}
+
+function pinControl(pin, invalidPin) {
+  if (!/^\d{4,8}$/.test(pin)) {
+    return `<label for="pin">Access PIN</label>
+        <input id="pin" name="pin" type="password" autocomplete="current-password" maxlength="128" aria-invalid="${invalidPin}" aria-describedby="pin-error" required autofocus>`
+  }
+
+  return `<fieldset class="otp-fieldset" aria-describedby="pin-hint pin-error">
+        <legend>Access PIN</legend>
+        <p id="pin-hint" class="sr-only">Enter all ${pin.length} digits.</p>
+        <div class="otp" data-otp role="group" aria-label="${pin.length}-digit PIN" style="--otp-length: ${pin.length}">
+          ${otpFields(pin.length, invalidPin)}
+        </div>
+      </fieldset>`
+}
+
+function accessPage(returnPath, config, nonce, invalidPin = false) {
   const errorMessage = invalidPin
-    ? '<p class="error" role="alert">That PIN was not recognised. Try again.</p>'
+    ? 'That PIN was not recognised. Try again.'
     : ''
 
   return `<!doctype html>
@@ -207,7 +246,7 @@ function accessPage(returnPath, invalidPin = false) {
         font-size: 0.875rem;
         font-weight: 700;
       }
-      input {
+      input:not(.otp-digit) {
         width: 100%;
         min-height: 3.25rem;
         padding: 0.75rem 1rem;
@@ -219,10 +258,50 @@ function accessPage(returnPath, invalidPin = false) {
         font-size: 1.2rem;
         letter-spacing: 0.12em;
       }
-      input:focus {
+      input:not(.otp-digit):focus {
         border-color: #397da9;
         outline: 3px solid rgb(83 150 199 / 24%);
       }
+      .otp-fieldset {
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .otp-fieldset legend {
+        margin-bottom: 0.65rem;
+        padding: 0;
+        font-size: 0.875rem;
+        font-weight: 700;
+      }
+      .otp {
+        display: grid;
+        grid-template-columns: repeat(var(--otp-length), minmax(0, 1fr));
+        gap: clamp(0.35rem, 2vw, 0.6rem);
+      }
+      .otp-digit {
+        width: 100%;
+        min-width: 0;
+        aspect-ratio: 0.85;
+        border: 1px solid #9aabbd;
+        border-radius: 0.65rem;
+        color: #002353;
+        background: white;
+        font: inherit;
+        font-size: clamp(1.35rem, 7vw, 1.75rem);
+        font-variant-numeric: tabular-nums;
+        font-weight: 650;
+        line-height: 1;
+        text-align: center;
+        caret-color: #397da9;
+      }
+      .otp-digit:hover { border-color: #6f879e; }
+      .otp-digit:focus {
+        border-color: #397da9;
+        outline: 3px solid rgb(83 150 199 / 24%);
+      }
+      .otp-digit[aria-invalid="true"] { border-color: #b95050; }
+      .otp-digit[aria-invalid="true"]:focus { outline-color: rgb(185 80 80 / 22%); }
       button {
         width: 100%;
         min-height: 3.25rem;
@@ -237,7 +316,23 @@ function accessPage(returnPath, invalidPin = false) {
       }
       button:hover { background: #083b73; }
       button:focus-visible { outline: 3px solid rgb(83 150 199 / 55%); outline-offset: 3px; }
+      button:disabled { cursor: not-allowed; opacity: 0.52; }
       .error { margin: 0 0 1rem; color: #a52b2b; font-size: 0.875rem; }
+      .error:empty { display: none; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      @media (max-width: 26rem) {
+        main { padding: 1.75rem; }
+      }
     </style>
   </head>
   <body>
@@ -245,30 +340,140 @@ function accessPage(returnPath, invalidPin = false) {
       <p class="eyebrow">Private presentation</p>
       <h1>Enter the access PIN</h1>
       <p class="intro">This presentation is shared with a limited audience.</p>
-      ${errorMessage}
-      <form method="post" action="${UNLOCK_PATH}">
+      <p id="pin-error" class="error" role="alert">${errorMessage}</p>
+      <form method="post" action="${UNLOCK_PATH}" data-pin-form>
         <input type="hidden" name="next" value="${escapeHtml(returnPath)}">
-        <label for="pin">Access PIN</label>
-        <input id="pin" name="pin" type="password" inputmode="numeric" autocomplete="current-password" maxlength="128" required autofocus>
-        <button type="submit">Open presentation</button>
+        ${pinControl(config.pin, invalidPin)}
+        <button type="submit" data-submit>Open presentation</button>
       </form>
     </main>
+    <script nonce="${nonce}">
+      (() => {
+        const group = document.querySelector('[data-otp]')
+        if (!group) return
+
+        const fields = [...group.querySelectorAll('[data-otp-digit]')]
+        const submit = document.querySelector('[data-submit]')
+        const digitsOnly = value => value.replace(/\\D/g, '')
+
+        function updateSubmit() {
+          submit.disabled = fields.some(field => !field.value)
+        }
+
+        function focusField(index) {
+          const field = fields[Math.max(0, Math.min(index, fields.length - 1))]
+          field.focus()
+          field.select()
+        }
+
+        function insertDigits(startIndex, value) {
+          const digits = digitsOnly(value)
+          if (!digits) return
+
+          for (let offset = 0; offset < digits.length && startIndex + offset < fields.length; offset++)
+            fields[startIndex + offset].value = digits[offset]
+
+          const nextEmpty = fields.findIndex((field, index) => index >= startIndex && !field.value)
+          focusField(nextEmpty >= 0 ? nextEmpty : Math.min(startIndex + digits.length, fields.length - 1))
+          updateSubmit()
+        }
+
+        group.addEventListener('input', (event) => {
+          const index = fields.indexOf(event.target)
+          if (index < 0) return
+
+          const digits = digitsOnly(event.target.value)
+          event.target.value = digits[0] || ''
+
+          if (digits.length > 1)
+            insertDigits(index, digits)
+          else if (digits && index < fields.length - 1)
+            focusField(index + 1)
+
+          updateSubmit()
+        })
+
+        group.addEventListener('paste', (event) => {
+          const index = fields.indexOf(event.target)
+          if (index < 0) return
+
+          const digits = digitsOnly(event.clipboardData.getData('text'))
+          if (!digits) return
+
+          event.preventDefault()
+          insertDigits(index, digits)
+        })
+
+        group.addEventListener('keydown', (event) => {
+          const index = fields.indexOf(event.target)
+          if (index < 0) return
+
+          if (event.key === 'Backspace' && !event.target.value && index > 0) {
+            event.preventDefault()
+            fields[index - 1].value = ''
+            focusField(index - 1)
+            updateSubmit()
+          }
+          else if (event.key === 'ArrowLeft') {
+            event.preventDefault()
+            focusField(index - 1)
+          }
+          else if (event.key === 'ArrowRight') {
+            event.preventDefault()
+            focusField(index + 1)
+          }
+          else if (event.key === 'Home') {
+            event.preventDefault()
+            focusField(0)
+          }
+          else if (event.key === 'End') {
+            event.preventDefault()
+            focusField(fields.length - 1)
+          }
+        })
+
+        group.addEventListener('focusin', (event) => {
+          if (fields.includes(event.target)) event.target.select()
+        })
+
+        updateSubmit()
+      })()
+    </script>
   </body>
 </html>`
 }
 
-function htmlResponse(body, status) {
+function htmlResponse(body, status, nonce = null) {
+  const scriptPolicy = nonce ? `; script-src 'nonce-${nonce}'` : ''
+
   return new Response(body, {
     status,
     headers: {
       'Cache-Control': 'no-store',
-      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+      'Content-Security-Policy': `default-src 'none'; style-src 'unsafe-inline'${scriptPolicy}; form-action 'self'; base-uri 'none'; frame-ancestors 'none'`,
       'Content-Type': 'text/html; charset=utf-8',
       'Referrer-Policy': 'no-referrer',
       'X-Content-Type-Options': 'nosniff',
       'X-Frame-Options': 'DENY',
     },
   })
+}
+
+function accessResponse(returnPath, config, invalidPin = false, status = 401) {
+  const nonce = bytesToBase64Url(crypto.getRandomValues(new Uint8Array(16)))
+  return htmlResponse(accessPage(returnPath, config, nonce, invalidPin), status, nonce)
+}
+
+function readSubmittedPin(form) {
+  const directPin = form.get('pin')
+  if (typeof directPin === 'string')
+    return directPin
+
+  const pinDigits = form.getAll('pin-digit')
+  if (pinDigits.length === 0 || !pinDigits.every(digit => typeof digit === 'string'))
+    return null
+
+  return pinDigits.join('')
 }
 
 function configurationErrorResponse() {
@@ -291,10 +496,10 @@ async function unlock(request, config) {
     form = await request.formData()
   }
   catch {
-    return htmlResponse(accessPage('/', true), 400)
+    return accessResponse('/', config, true, 400)
   }
 
-  const submittedPin = form.get('pin')
+  const submittedPin = readSubmittedPin(form)
   const url = new URL(request.url)
   const returnPath = safeReturnPath(form.get('next'), url.origin)
 
@@ -302,7 +507,7 @@ async function unlock(request, config) {
     typeof submittedPin !== 'string'
     || !(await pinMatches(submittedPin, config.pin, config.cookieSecret))
   )
-    return htmlResponse(accessPage(returnPath, true), 401)
+    return accessResponse(returnPath, config, true)
 
   const expiresAt = Date.now() + COOKIE_TTL_SECONDS * 1000
   const token = await createSessionToken(config.cookieSecret, expiresAt)
@@ -344,5 +549,5 @@ export default async function pinGate(request) {
     return undefined
 
   const returnPath = safeReturnPath(`${url.pathname}${url.search}`, url.origin)
-  return htmlResponse(accessPage(returnPath), 401)
+  return accessResponse(returnPath, gateConfig)
 }
