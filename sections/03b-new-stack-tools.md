@@ -368,14 +368,14 @@ narrator: hidden
 </v-click>
 <v-click>
 
-**Deterministic gates around probabilistic agents** — and a gate can guard anything you care about.
+**Explicit gates around probabilistic agents.** Automate the measurable; own the judgment.
 
 </v-click>
 
 <!--
 KEY POINTS:
 - Outputs are nondeterministic — system design, not prompt craft
-- Name the pattern: deterministic gates + probabilistic agents
+- Name the pattern: explicit gates around probabilistic agents
 - Hooks and tests are entirely verbal — the two rails ARE tests and reviews
 - TDD: the test IS the spec. Willison: "Tests are free now."
 - Every repeated human intervention signals an incomplete harness
@@ -390,7 +390,7 @@ ADDITIONAL POINTS:
 - Tests are the most familiar guardrail and the one to dwell on: they close the loop attempt → failure → retry, and are executable definitions of done
 - Willison in full (worth quoting verbatim): "Tests are free now. They're effectively free." He starts every coding session by telling the agent how to run the tests; the prompt "red-green TDD" is five tokens and dramatically improves reliability. "Tests are no longer even remotely optional"
 - Schema validation, permission scoping, and linters are the other members of the set
-- Guardrails convert stochastic generation into controlled iteration
+- Guardrails convert stochastic generation into controlled iteration: deterministic checks where possible, accountable judgment where necessary
 - Connects backward to MCP contracts and forward to the Swiss-cheese model in Section 04
 - Callback line for verbal use: "Context shapes what the agent knows. Specs shape what good looks like. Guardrails shape boundaries."
 - For designers: visual regression tests, accessibility checks, component snapshots serve the same role
@@ -463,7 +463,7 @@ ADDITIONAL POINTS:
 - Quality is the set of checks that produce the evidence. Osmani's supporting figures, if challenged: 96% do not fully trust AI code, only 48% always verify before commit, 38% say reviewing AI code takes longer than reviewing human code
 - Osmani's "quality is back pressure — grant only as much autonomy as you can still stop and check" is the same idea as Ronacher's back-pressure gate above; name one or the other, not both
 - Eight constraint dimensions: correctness (unit, property, mutation tests), security (SAST, dependency and secret scanning), performance (perf budgets, load tests), accessibility (axe, contrast, keyboard), maintainability (coverage, complexity), cost efficiency (token/compute budgets), back-pressure (throttle inflow, cap work in progress), comprehensibility (review, answerability)
-- The quality gates are deterministic: unit, property, acceptance and mutation tests, schema contracts, token and compute budgets, quality metrics — checks the model can't argue with
+- Automate the gates that can be deterministic: unit, property, acceptance and mutation tests, schema contracts, token and compute budgets, and measurable quality thresholds. Comprehensibility and other judgment calls still need named human ownership
 - Back-pressure is the odd one out and worth a sentence: when agents produce more than the pipeline can absorb, throttle inflow or shed load so the system remains operable; it controls the queue rather than judging output quality (Ronacher's framing)
 - Comprehensibility as a gate connects forward to Section 04's explainability gate: no merge until someone can answer for the change
 
@@ -498,7 +498,7 @@ narrator: hidden
 
 <v-click at="3">
 
-<p class="text-lg mt-4">The constraint ring, composed into a pipeline. <strong>Your loop shrinks to two moments: write the issue, review the PR.</strong></p>
+<p class="text-lg mt-4">The constraint ring, composed into a pipeline. <strong>Your loop shrinks to two moments: approve the intent, review the evidence.</strong></p>
 
 </v-click>
 
@@ -508,7 +508,7 @@ KEY POINTS:
 - Orchestrator, not monolith — composes narrower skills, owns sequencing and handoffs
 - Quality loop is the heart: gates run, findings fixed, re-run to *bounded* convergence
 - `--ship` authorizes the irreversible tail; without it, stops review-ready
-- What crosses to you is evidence: a green PR, gates cleared, verification passed
+- What crosses to you is evidence: a green PR, gates cleared, verification passed — human judgment approves the intent and owns the result
 
 BRIDGE: "That's my harness. Halfway mark — your call what comes next: demo, questions, or a break."
 
@@ -524,7 +524,7 @@ ADDITIONAL POINTS:
 DELIVERY:
 - Walk left to right, one click per stage; the audience has just seen the agent circle, the dotted gate ring, and the checkbox gate on the previous slide — name the reuse: "same ring, now in a pipeline"
 - On click 2, dwell on the loop: "this is where most of the wall-clock goes, and none of my attention"
-- Land the payoff line verbatim — it is the whole argument of the section in one sentence
+- Land the payoff line verbatim — it is the whole argument of the section in one sentence and sets up the review-of-intent argument in Cognitive Debt
 - If asked what happens when it fails: it stops at the blocker with the evidence preserved — a failed gate is a stop, not a warning
 
 SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal workflow, live demo material)
@@ -543,7 +543,8 @@ narrationPause: true
 <!--
 DELIVERY:
 - Deliberate pause before the second half — read the room and let them choose
-- If demo: prime them first — watch three things: where context enters, where a deterministic check catches a failure, and how the human changes the next move
+- If demo: connect back to the ×18 mechanics — the workflow can run 10+ agents in isolated workspaces with layered review on every merge
+- Prime the demo with three things to watch: where context enters, where a deterministic check catches a failure, and how the human changes the next move
 - If questions: park anything that Cognitive Debt or What Matters will answer anyway
 - If break: keep it short, then pick up with Cognitive Debt
 -->

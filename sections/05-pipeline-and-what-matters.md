@@ -166,7 +166,7 @@ A concept you can click beats a concept you can read. **People react to artifact
 </v-click>
 <v-click>
 
-The first draft no longer needs a developer. A written idea becomes a working demo **in an afternoon, not a sprint.**
+The first draft no longer needs to wait for a developer. A written idea becomes a working demo **in an afternoon, not a sprint.**
 
 </v-click>
 <v-click>
@@ -357,7 +357,7 @@ class: dim-prior v-center
 </v-click>
 <v-click>
 
-The work hasn't changed. The boundaries have. Focus, finishing, and judgment **scale with you, not with AI speed.**
+The core work hasn't changed. The boundaries have. Focus, finishing, and judgment **scale with you, not with AI speed.**
 
 </v-click>
 
@@ -405,7 +405,7 @@ narrator: hidden
 
 <div class="text-center">
 
-Agents will run rungs 1–6 for you — and it's getting cheap fast. **Rung 7 never does.**
+Agents can run rungs 1–6 for you — and it's getting cheap fast. **Accountability for rung 7 never gets cheap.**
 
 </div>
 
@@ -414,8 +414,8 @@ Agents will run rungs 1–6 for you — and it's getting cheap fast. **Rung 7 ne
 <!--
 KEY POINTS:
 - Osmani's ladder: Flag → Execute → Diagnose → Propose → Recommend → Resolve → Discern
-- Agents now run rungs 1–6, and all of it is getting cheap, fast
-- Rung 7, Discern, doesn't get cheap
+- Agents can now run rungs 1–6, and all of it is getting cheap, fast
+- Rung 7, Discern, can be assisted; accountability for it cannot be delegated
 - Good engineers live at rung 5 (Recommend) from day one; you earn 6 (Resolve)
 
 BRIDGE: "And rung 7 at product scale? That's the next slide."

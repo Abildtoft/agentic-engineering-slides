@@ -67,7 +67,7 @@ agentic output. You saw my numbers earlier. There is no reading speed that
 keeps up.
 [click] So the human checkpoint moves upstream, to before generation. Specs,
 constraints, acceptance criteria. That is where your attention goes.
-[click] And trust moves downstream, to the things that do not get tired.
+[click] And verification moves downstream, to the things that do not get tired.
 Tests, type checks, contracts, rollout guardrails. This is not removing
 accountability. It is relocating it.
 [click] The question shifts from, did you write this correctly, to, are we

@@ -1,7 +1,6 @@
 <!-- 56. section — Moving Forward -->
 
-Last section, and the shortest. This should feel like a landing, not a new
-argument. Across everything we have covered, what actually survives?
+Across everything we have covered, what actually survives?
 
 ---
 
@@ -25,15 +24,16 @@ industry feels so uneven right now.
 
 ---
 
-<!-- 58. statement — Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems. — ~1 clicks -->
+<!-- 58. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
 
 Remember the cascade from earlier? The constraint did not disappear. It moved
-upstream, to getting expert knowledge out of heads and into systems. The
-instruction files, the skills, the docs: that is the knowledge-extraction
-mechanism. And it is already reaching past engineers. The same primitives,
-context, MCP, skills, guardrails, are being wrapped in task-first interfaces
-so domain experts can operate them directly, while engineers design the
-harness. Workflow design has become cross-functional infrastructure.
+upstream, to getting expert knowledge out of heads and into systems, without
+letting it disappear from the people accountable for them. The instruction
+files, the skills, the docs: that is the knowledge-extraction mechanism. And it
+is already reaching past engineers. The same primitives, context, MCP, skills,
+guardrails, are being wrapped in task-first interfaces so domain experts can
+operate them directly, while engineers design the harness. Workflow design has
+become cross-functional infrastructure.
 [click] Satya Nadella has the ownership test: you should be able to swap the
 model without losing the company-specific expertise. If swapping the model
 wipes out your expertise, you did not own the learning system. The durable
@@ -43,7 +43,8 @@ asset is the institutional loop, not the frontier model.
 
 <!-- 59. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
 
-Which makes posture the real decision. In a period of compounding change,
+Which makes posture the real decision. This is the divide from the opening: not
+simply who has access, but who is learning. In a period of compounding change,
 playing defense is its own risk.
 [click] Protect what works. Wait for clarity. It feels safe. It isn't. The
 real failure mode is not reckless shipping. It is strategic drift.
@@ -103,8 +104,10 @@ But it remains craft.
 rising levels of abstraction. This is another level. A big one. But another
 level.
 [click] The future of software engineering is not syntax. It is turning
-ambiguity into clarity.
-[click] As it always was.
+ambiguity into clarity. As it always was.
+[click] And that is the difference between vibe coding and agentic engineering:
+not who typed the code, but whether someone can explain the intent, the
+evidence and the tradeoffs.
 
 ---
 

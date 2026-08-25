@@ -105,7 +105,9 @@ layout: statement
 class: statement-wide
 ---
 
-# Remember the cascade. The constraint didn't disappear — it moved upstream, to getting expert knowledge out of heads and into systems.
+# Remember the cascade. The constraint moved upstream.
+
+Get expert knowledge out of heads and into systems — **without letting it disappear from the people accountable for them.**
 
 <v-click>
 
@@ -116,7 +118,7 @@ If swapping the model wipes out your expertise, you did not own the learning sys
 <!--
 KEY POINTS:
 - Callback to Section 2's Bottleneck Cascade — don't re-explain it
-- Ultimate bottleneck: getting expert knowledge OUT of humans, INTO systems
+- Ultimate bottleneck: getting expert knowledge out of humans and into systems without erasing the understanding held by accountable people
 - Nadella's ownership test: switch the model without losing the expertise
 - Cherny's point: CLAUDE.md's, skills, and docs ARE the knowledge-extraction mechanism
 - Durable asset = the institutional loop, not the frontier model
@@ -315,13 +317,13 @@ The future of software engineering isn't syntax — it's **turning ambiguity int
 </v-click>
 <v-click>
 
-*(as it always was)*
+<p class="mt-6 text-xl">That is the difference between <strong>vibe coding</strong> and <strong>agentic engineering.</strong></p>
 
 </v-click>
 
 <!--
 KEY POINTS:
-- Final thesis restatement — the last thing the audience hears before "Thank You"
+- Final thesis restatement and explicit payoff to the opening Vibe Coding → Agentic Engineering title swap
 - Three-part cadence: change is real, change is historical, craft remains
 - The audience leaves with empowerment, not existential uncertainty
 
@@ -342,7 +344,7 @@ layout: cover
 
 Mikkel Abildtoft · mab@consensus.dk
 
-<p v-click class="closing-questions">Questions..?</p>
+<p v-click class="closing-questions">Questions?</p>
 
 <!--
 The contact line rides the cover layout's `h1 + p` entrance. Swap in the

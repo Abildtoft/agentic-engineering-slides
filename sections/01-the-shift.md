@@ -81,21 +81,23 @@ class: v-center
 
 <v-click>
 
-<p><span class="adoption-num">84%</span> of the world has never used AI</p>
+<p><span class="adoption-num">84%</span> estimated never to have used AI</p>
 
 </v-click>
 <v-click>
 
-<p><span class="adoption-num">0.3%</span> has ever paid for it</p>
+<p><span class="adoption-num">0.3%</span> estimated ever to have paid for it</p>
 
 </v-click>
 <v-click>
 
-<p><span class="adoption-num">0.04%</span> has tried AI coding tools</p>
+<p><span class="adoption-num">0.04%</span> estimated to have tried AI coding tools</p>
 
 </v-click>
 
 </div>
+
+<p class="text-sm opacity-55 mt-6 mb-0">Estimates reported by Martin Eriksson.</p>
 
 <style>
 /* Funnel of three stats: numbers right-aligned in a shared column so the
@@ -122,14 +124,14 @@ class: v-center
 <!--
 KEY POINTS:
 - Quantifies the 1997 claim before any coding content — this is general AI adoption, not developer stats
-- 84% of Earth's population (8.1B) have never used AI; only 0.3% have ever paid; 0.04% have tried AI coding tools
+- Eriksson reports estimates that 84% have never used AI, 0.3% have paid, and 0.04% have tried AI coding tools; present the funnel's shape as the claim, not false precision
 - The funnel narrows toward the subject of this talk: the last number is the bleeding edge this room is standing on
 
 BRIDGE: "Which raises a fair question — if almost nobody is here yet, why does this talk keep pointing at software?"
 
 DELIVERY:
 - Three clicks, one number each; let the magnitude drop do the work
-- The 84% is the room-calibrator: most people's daily lives are untouched, and that is compatible with everything that follows
+- The 84% estimate is the room-calibrator: most people's daily lives remain untouched, and that is compatible with everything that follows
 - Land the last number slowly — "four in ten thousand" — then bridge
 
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
@@ -206,7 +208,7 @@ Claude Code, Cursor, Windsurf, Copilot, Gemini CLI, Codex.
 </v-click>
 <v-click>
 
-<p class="text-sm opacity-55 mt-8 mb-0">* Every figure here is at least six months old.</p>
+<p class="text-sm opacity-55 mt-8 mb-0">* Directional, company-reported, and already dated.</p>
 
 </v-click>
 
@@ -230,7 +232,7 @@ DELIVERY:
 - Verbal bridge into the company grid (trimmed from the slide): "So zoom out from tool names to company behavior."
 - Open on the tool names with the convergence line: "This wasn't one model release. In a single 30-day window last December, all three frontier labs shipped — and the whole category renamed itself from assistants to agents."
 - All four companies appear together — scan through them, anchor on Spotify as the vivid story, compress the rest
-- The asterisk lands on its own click, after the room has had a beat to be impressed by the grid — it re-reads numbers they've already accepted rather than qualifying them up front. It is a setup, not a disclaimer: say the implication out loud — these are the last numbers these companies published, so every one of them is a floor, not a ceiling. Dated: Spotify Feb 2026 (the newest of the four), Anthropic/OpenAI Jan 2026, Google Q4 earnings call; Nadella's 20–30% is the oldest and predates the rest by roughly a year, which is why the slide says "at least six months" rather than naming a window. Re-check the wording if you present this after roughly Q1 2027
+- The asterisk lands on its own click, after the room has had a beat to absorb the grid. Treat the figures as directional signals, not directly comparable measurements: they are company-reported, use different definitions, and are already dated. Spotify is from Feb 2026, Anthropic/OpenAI from Jan 2026, Google from its Q4 earnings call, and Nadella's 20–30% predates the rest by roughly a year. Re-check the wording before presenting
 SOURCE: SemiAnalysis (@SemiAnalysis, x.com/SemiAnalysis, 2/27/26) — 4% now, 20%+ projected by year-end
 SOURCE: Spotify co-CEO Gustav Söderström, Q4 earnings call (techcrunch.com/2026/02/12/spotify-says-its-best-developers-havent-written-a-line-of-code-since-december-thanks-to-ai/)
 SOURCE: Google CEO Sundar Pichai, earnings call
@@ -359,12 +361,6 @@ class: v-center
 
 </v-click>
 
-<v-click>
-
-**How it's physically possible** — 10+ agents in parallel in isolated workspaces, layered review on every merge
-
-</v-click>
-
 <!--
 KEY POINTS:
 - Preempts the room's question off the last two slides: how is that number even possible?
@@ -378,7 +374,8 @@ BRIDGE: "Working inside that expansion already feels like a different world — 
 ADDITIONAL POINTS:
 - The 2–3× concession is deliberate: conceding a modest speedup on the old work buys credibility for the bigger claim
 - This is the personal-ledger version of the long-tail argument later in the deck (LongTailDiagram): the build threshold dropped, so the tail became buildable — plant the idea, don't spoil that slide
-- The isolated workspaces are Conductor (one git worktree per agent); kept generic on the slide, name it if asked
+- The mechanics — 10+ agents in parallel in isolated workspaces, layered review on every merge — move to the temperature-check demo setup so this slide stays focused on what the multiplier means
+- The isolated workspaces are Conductor (one git worktree per agent); name it in the demo setup or if asked
 - Review layering, if pressed: agent review passes and CI gates on everything, then self-review, then human colleague review scaled to repo risk — production repos get full human review
 - If asked "so can my team do 18×?": not everyone has meaningful greenfield work waiting, so don't promise a multiplier. The honest promise is that the *kinds of tasks* you can undertake change completely
 
@@ -388,7 +385,7 @@ DELIVERY:
 - Click: the reframe. This is the slide's real sentence: "The rest of the curve isn't me doing my job faster. It's work that wasn't worth starting a year ago."
 - Click: the three examples, one breath each; the flight simulator is the one to slow down for — "it reacts not just to what the reps say, but how they say it"
 - Click: the discard line — own it, don't apologise: "some of this work is already gone, deliberately. That used to feel like waste. Hanging on to software nobody needs is the waste."
-- Click: the mechanics line, matter-of-fact — it answers "how", it isn't the point. Then the bridge into Clark
+- Bridge directly from deliberate discard to Clark. If the room needs the mechanics, preview the temperature-check demo: 10+ agents in isolated workspaces with layered review on every merge
 
 SOURCE: Personal Merge Ledger export (see the two previous slides); the production/greenfield characterisation is the speaker's own accounting, aggregate only
 -->
