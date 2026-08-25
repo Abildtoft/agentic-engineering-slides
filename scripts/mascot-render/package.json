@@ -1,0 +1,9 @@
+{
+  "name": "@agentic-engineering-slides/mascot-render",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@4.12.0",
+  "dependencies": {
+    "@mascotbot/core": "^0.3.1"
+  }
+}

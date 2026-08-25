@@ -11,8 +11,11 @@ const ENVIRONMENT_KEYS = [
 ]
 
 const COOKIE_SECRET = 'a-test-cookie-secret-that-is-at-least-32-characters'
-const vercelConfig = JSON.parse(
-  await readFile(new URL('../vercel.json', import.meta.url), 'utf8'),
+const rootPackage = JSON.parse(
+  await readFile(new URL('../package.json', import.meta.url), 'utf8'),
+)
+const mascotPackage = JSON.parse(
+  await readFile(new URL('../scripts/mascot-render/package.json', import.meta.url), 'utf8'),
 )
 
 beforeEach(() => {
@@ -145,6 +148,8 @@ test('can be explicitly disabled', async () => {
   assert.equal(response, undefined)
 })
 
-test('uses production dependency mode for Vercel function packaging', () => {
-  assert.equal(vercelConfig.build?.env?.NODE_ENV, 'production')
+test('keeps the private Mascotbot SDK out of Vercel function packaging', () => {
+  assert.equal(rootPackage.dependencies?.['@mascotbot/core'], undefined)
+  assert.equal(rootPackage.devDependencies?.['@mascotbot/core'], undefined)
+  assert.equal(mascotPackage.dependencies?.['@mascotbot/core'], '^0.3.1')
 })
