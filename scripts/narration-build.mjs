@@ -30,7 +30,7 @@
  *
  * Usage:
  *   HEYGEN_API_KEY=... HEYGEN_VOICE_ID=... HEYGEN_AVATAR_ID=... \
- *     yarn narration:build [--audio-only] [--dry-run] [--only=NN-slug] [--force] [--restamp=4-10]
+ *     yarn narration:build [--audio-only] [--dry-run] [--only=NN-slug] [--slides=32,39,44] [--force] [--restamp=4-10]
  *
  * --dry-run stops after the TTS step: it prints the resolved cue times and the
  * total spoken duration without spending any video credits. Run it first.
@@ -66,6 +66,7 @@ const option = name => args.find(a => a.startsWith(`--${name}=`))?.split('=')[1]
 const dryRun = flag('dry-run')
 const force = flag('force')
 const only = option('only')
+const slides = parseSlideList(option('slides'))
 const restamp = parseSlideList(option('restamp'))
 
 /** "4-10,12" -> Set {4,...,10,12} */
@@ -346,7 +347,7 @@ for (const entry of entries) {
 }
 
 async function buildSlide(entry) {
-  if (only && entry.file !== only) {
+  if ((only && entry.file !== only) || (slides.size && !slides.has(entry.no))) {
     // Carry the untouched slides through, or a filtered run would publish a
     // manifest containing only the section it rebuilt.
     const kept = previousFor(entry)
@@ -480,7 +481,7 @@ if (!dryRun) await writeFile(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`)
  * points at current hashes — but they are shipped: `public/` is copied wholesale
  * into `dist/`, so stale clips would bloat the build without ever being played.
  *
- * Safe to run after a filtered `--only` pass: untouched slides are carried into
+ * Safe to run after a filtered `--only` or `--slides` pass: untouched slides are carried into
  * the manifest from the previous one, so the keep-set is always the whole deck.
  */
 async function pruneOrphans() {
@@ -514,8 +515,9 @@ console.log(
 )
 
 if (absent.length) {
+  const filter = only ? `--only=${only}` : `--slides=${[...slides].join(',')}`
   console.warn(
-    `! ${absent.length} slide(s) outside --only=${only} name an asset that is not on disk ` +
-      `(slide ${absent.join(', ')}). Auto-mode will 404 on them until you re-run without --only.`,
+    `! ${absent.length} slide(s) outside ${filter} name an asset that is not on disk ` +
+      `(slide ${absent.join(', ')}). Auto-mode will 404 on them until you re-run without a filter.`,
   )
 }

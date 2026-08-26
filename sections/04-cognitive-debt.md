@@ -158,7 +158,7 @@ class: dim-prior v-center
 
 # From Reviewing Code to Reviewing Intent
 
-Line-by-line PR review does not scale with agentic output.
+Code review worked because reading was faster than writing. **Agentic output reversed that.**
 
 <v-click>
 
@@ -178,6 +178,7 @@ The question shifts from “Did you write this correctly?” to **“Are we solv
 
 <!--
 KEY POINTS:
+- Review used to scale by accident: a senior could read code faster than a junior could write it; agentic output reverses that relationship
 - Review moves from post-hoc diff reading to upstream intent validation
 - Say verbally: the upstream review happens *before generation*
 - Not "no accountability" — relocating accountability
@@ -187,6 +188,7 @@ BRIDGE: "And once you start thinking in layered controls, the Swiss-cheese model
 
 ADDITIONAL POINTS:
 - Trimmed qualifier, say verbally: the full closing question is "are we solving the right problem *under the right constraints*"
+- A reviewer of agent-written code may be the first human to see it. The job is no longer only checking an author's reasoning; it is recovering intent that the diff never captured
 - Put this in the cognitive-debt section because the review model now directly sets up the layered-failure argument
 - Explicitly anchor the layer concept to the Swiss-cheese model (James Reason)
 
@@ -196,6 +198,7 @@ DELIVERY:
 - Land the final line as a framing question the audience can reuse in their teams
 
 SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
+SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/)
 -->
 
 ---
@@ -410,6 +413,8 @@ class: dim-prior v-center
 <!--
 KEY POINTS:
 - Close with the practical control model: intent, review, ownership — team operating rules
+- Raise the intake bar before review starts: require stated intent, a readable diff, test output, and proof the tests actually ran
+- Read changes to tests especially carefully; an agent can make a failing change green by rewriting the assertion around the new behavior
 - Off-screen check: the reasoning log — document not just what changed, but why
 - Commit-message example: can't explain your own change = debt already accumulating
 - At least one human must fully understand each change before it ships
@@ -428,6 +433,7 @@ DELIVERY:
 - Optional verbal after "the output — shipped, understood, owned": "Intercom did something smart here. When they built Fin — their AI support agent — they didn't just bolt it on. They shifted to outcome-based pricing: 99 cents per resolved ticket. That forces you to own quality, not volume. If the AI doesn't actually work, you don't get paid. That's the kind of structural incentive that prevents cognitive debt from compounding."
 
 SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
+SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/)
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 -->

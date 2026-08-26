@@ -62,9 +62,10 @@ judgment. It still has to be earned.
 <!-- 39. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
 
 If understanding is what is at risk, the practical response is to change what
-humans actually review. Line-by-line pull request review does not scale with
-agentic output. You saw my numbers earlier. There is no reading speed that
-keeps up.
+humans actually review. Code review used to work because of a happy accident:
+a senior could read code faster than a junior could write it. Agentic output
+reversed that. The reviewer may now be the first human to see the code, forced
+to reconstruct intent that the diff never captured.
 [click] So the human checkpoint moves upstream, to before generation. Specs,
 constraints, acceptance criteria. That is where your attention goes.
 [click] And verification moves downstream, to the things that do not get tired.
@@ -145,7 +146,11 @@ Hold people accountable. And keep capturing the upside.
 
 <!-- 44. default — The Antidote — The Human in the Loop — ~3 clicks -->
 
-Here is the antidote, as three team operating rules.
+Here is the antidote, as three team operating rules. Raise the intake bar
+before review starts: require stated intent, a readable diff, test output, and
+proof the tests actually ran. Read changes to tests especially carefully. An
+agent can make a failing change green by rewriting the assertion around its new
+behavior.
 [click] The spec. Intent, authored by a human. Ask why, not just what. If you
 cannot explain your own change in the commit message, the debt has already
 started accumulating.

@@ -2597,110 +2597,125 @@
       ]
     },
     "32": {
-      "hash": "901a40ab0e76",
-      "audio": "/narration/slide-32-901a40ab0e76.mp3",
-      "duration": 60.839183673469385,
+      "hash": "81ad4ede016b",
+      "audio": "/narration/slide-32-81ad4ede016b.mp3",
+      "duration": 73.66530612244898,
       "cues": [
-        17.969,
-        34.77,
-        46.309
+        29.59,
+        46.289,
+        59.689
       ],
       "narrationKey": "03b-new-stack-tools:7",
-      "transcript": "Tests and reviews are two gates. Here is the full ring. Correctness, security,\nperformance, accessibility, maintainability, cost, back-pressure,\ncomprehensibility. Eight things you might care about. Some become deterministic\nchecks; others remain explicit, accountable judgments. The agent works inside the ring. It produces more code than you can\nread, and an attempt that fails a gate bounces straight back. You never see\nit. Addy Osmani calls this the inner loop, and it is not yours anymore.\nInvestigate, implement, test, report. What clears every gate crosses out of the agent's loop and into yours.\nDecide, verify, approve, own. That one you still hold. Only output that clears\nevery gate ships. So the boundary is evidence. Diffs, tests, logs, a short why. Not\ntrust, and not your reading speed. You moved from reading the output line by\nline to designing the gates, and the gates decide what is good enough to ship.",
+      "transcript": "Tests and reviews are two gates. Here is the full ring. Correctness, security,\nperformance, accessibility, maintainability, cost, back-pressure,\ncomprehensibility. Eight things you might care about. Some become deterministic\nchecks; others remain explicit, accountable judgments. The ring is not equally\nthick everywhere. Scale it by blast radius, code lifespan, and who must\nunderstand the result, not by whether the author was a human or an agent. The agent works inside the ring. It produces more code than you can\nread, and an attempt that fails a gate bounces straight back. You never see\nit. Addy Osmani calls this the inner loop, and it is not yours anymore.\nInvestigate, implement, test, report. What clears every gate crosses out of the agent's loop and into yours.\nDecide, verify, approve, own. That one you still hold. Only output that clears\nevery gate ships. So the boundary is evidence. Diffs, tests, logs, a short why. Not\ntrust, and not your reading speed. You moved from reading the output line by\nline to designing the gates, and the gates decide what is good enough to ship.",
       "captions": [
         {
-          "start": 0,
-          "end": 2.45,
+          "start": 0.099,
+          "end": 1.959,
           "text": "Tests and reviews are two gates."
         },
         {
-          "start": 2.45,
-          "end": 4.491,
+          "start": 2.539,
+          "end": 3.74,
           "text": "Here is the full ring."
         },
         {
-          "start": 4.491,
-          "end": 6.941,
+          "start": 4.219,
+          "end": 9.619,
           "text": "Correctness, security, performance, accessibility, maintainability, cost,"
         },
         {
-          "start": 6.941,
-          "end": 10.208,
+          "start": 9.979,
+          "end": 13.579,
           "text": "back-pressure, comprehensibility. Eight things you might care about."
         },
         {
-          "start": 10.208,
-          "end": 13.883,
+          "start": 14.319,
+          "end": 19,
           "text": "Some become deterministic checks; others remain explicit, accountable judgments."
         },
         {
-          "start": 13.883,
-          "end": 16.333,
+          "start": 19.68,
+          "end": 21.379,
+          "text": "The ring is not equally thick everywhere."
+        },
+        {
+          "start": 21.779,
+          "end": 25.479,
+          "text": "Scale it by blast radius, code lifespan, and who must understand the"
+        },
+        {
+          "start": 25.539,
+          "end": 28.979,
+          "text": "result, not by whether the author was a human or an agent."
+        },
+        {
+          "start": 29.84,
+          "end": 31.359,
           "text": "The agent works inside the ring."
         },
         {
-          "start": 16.333,
-          "end": 21.232,
+          "start": 31.719,
+          "end": 34.779,
           "text": "It produces more code than you can read, and an attempt that"
         },
         {
-          "start": 21.232,
-          "end": 23.682,
+          "start": 34.919,
+          "end": 36.659,
           "text": "fails a gate bounces straight back."
         },
         {
-          "start": 23.682,
-          "end": 28.582,
+          "start": 37.059,
+          "end": 40.7,
           "text": "You never see it. Addy Osmani calls this the inner loop, and"
         },
         {
-          "start": 28.582,
-          "end": 30.624,
+          "start": 40.739,
+          "end": 42.179,
           "text": "it is not yours anymore."
         },
         {
-          "start": 30.624,
-          "end": 34.707,
+          "start": 42.54,
+          "end": 48.719,
           "text": "Investigate, implement, test, report. What clears every gate crosses out"
         },
         {
-          "start": 34.707,
-          "end": 37.565,
+          "start": 48.739,
+          "end": 50.599,
           "text": "of the agent's loop and into yours."
         },
         {
-          "start": 37.565,
-          "end": 41.24,
+          "start": 51.52,
+          "end": 56.86,
           "text": "Decide, verify, approve, own. That one you still hold."
         },
         {
-          "start": 41.24,
-          "end": 44.098,
+          "start": 57.279,
+          "end": 59.619,
           "text": "Only output that clears every gate ships."
         },
         {
-          "start": 44.098,
-          "end": 46.14,
+          "start": 59.939,
+          "end": 61.579,
           "text": "So the boundary is evidence."
         },
         {
-          "start": 46.14,
-          "end": 48.59,
+          "start": 61.919,
+          "end": 64.779,
           "text": "Diffs, tests, logs, a short why."
         },
         {
-          "start": 48.59,
-          "end": 51.448,
+          "start": 65.04,
+          "end": 67.079,
           "text": "Not trust, and not your reading speed."
         },
         {
-          "start": 51.448,
-          "end": 56.348,
+          "start": 67.439,
+          "end": 70.459,
           "text": "You moved from reading the output line by line to designing the"
         },
         {
-          "start": 56.348,
-          "end": 60.839,
+          "start": 70.519,
+          "end": 73.665,
           "text": "gates, and the gates decide what is good enough to ship."
         }
       ]
@@ -3147,85 +3162,90 @@
       ]
     },
     "39": {
-      "hash": "b02a709dfcb4",
-      "audio": "/narration/slide-39-b02a709dfcb4.mp3",
-      "duration": 45.4269387755102,
+      "hash": "256d9f3b4adf",
+      "audio": "/narration/slide-39-256d9f3b4adf.mp3",
+      "duration": 52.08816326530612,
       "cues": [
-        13.889,
-        22.769,
-        34.149
+        20.469,
+        29.189,
+        41.349
       ],
       "narrationKey": "04-cognitive-debt:4",
-      "transcript": "If understanding is what is at risk, the practical response is to change what\nhumans actually review. Line-by-line pull request review does not scale with\nagentic output. You saw my numbers earlier. There is no reading speed that\nkeeps up. So the human checkpoint moves upstream, to before generation. Specs,\nconstraints, acceptance criteria. That is where your attention goes. And verification moves downstream, to the things that do not get tired.\nTests, type checks, contracts, rollout guardrails. This is not removing\naccountability. It is relocating it. The question shifts from, did you write this correctly, to, are we\nsolving the right problem, under the right constraints. That is a question you\ncan take back to your team on Monday.",
+      "transcript": "If understanding is what is at risk, the practical response is to change what\nhumans actually review. Code review used to work because of a happy accident:\na senior could read code faster than a junior could write it. Agentic output\nreversed that. The reviewer may now be the first human to see the code, forced\nto reconstruct intent that the diff never captured. So the human checkpoint moves upstream, to before generation. Specs,\nconstraints, acceptance criteria. That is where your attention goes. And verification moves downstream, to the things that do not get tired.\nTests, type checks, contracts, rollout guardrails. This is not removing\naccountability. It is relocating it. The question shifts from, did you write this correctly, to, are we\nsolving the right problem, under the right constraints. That is a question you\ncan take back to your team on Monday.",
       "captions": [
         {
-          "start": 0,
-          "end": 4.581,
+          "start": 0.399,
+          "end": 3.799,
           "text": "If understanding is what is at risk, the practical response is to"
         },
         {
-          "start": 4.581,
-          "end": 6.49,
+          "start": 3.839,
+          "end": 5.739,
           "text": "change what humans actually review."
         },
         {
-          "start": 6.49,
-          "end": 10.307,
-          "text": "Line-by-line pull request review does not scale with agentic output."
+          "start": 6.42,
+          "end": 8.899,
+          "text": "Code review used to work because of a happy accident:"
         },
         {
-          "start": 10.307,
-          "end": 12.216,
-          "text": "You saw my numbers earlier."
+          "start": 9.38,
+          "end": 12.139,
+          "text": "a senior could read code faster than a junior could write it."
         },
         {
-          "start": 12.216,
-          "end": 15.27,
-          "text": "There is no reading speed that keeps up."
+          "start": 12.519,
+          "end": 16.1,
+          "text": "Agentic output reversed that. The reviewer may now be the first human"
         },
         {
-          "start": 15.27,
-          "end": 18.705,
-          "text": "So the human checkpoint moves upstream, to before generation."
+          "start": 16.139,
+          "end": 19.499,
+          "text": "to see the code, forced to reconstruct intent that the diff never"
         },
         {
-          "start": 18.705,
-          "end": 22.523,
+          "start": 19.559,
+          "end": 23.819,
+          "text": "captured. So the human checkpoint moves upstream, to before generation."
+        },
+        {
+          "start": 24.319,
+          "end": 29.059,
           "text": "Specs, constraints, acceptance criteria. That is where your attention goes."
         },
         {
-          "start": 22.523,
-          "end": 27.103,
+          "start": 29.439,
+          "end": 33.259,
           "text": "And verification moves downstream, to the things that do not get tired."
         },
         {
-          "start": 27.103,
-          "end": 29.394,
+          "start": 33.68,
+          "end": 37.519,
           "text": "Tests, type checks, contracts, rollout guardrails."
         },
         {
-          "start": 29.394,
-          "end": 31.303,
+          "start": 38.099,
+          "end": 39.819,
           "text": "This is not removing accountability."
         },
         {
-          "start": 31.303,
-          "end": 35.883,
+          "start": 40.2,
+          "end": 43.739,
           "text": "It is relocating it. The question shifts from, did you write this"
         },
         {
-          "start": 35.883,
-          "end": 40.464,
+          "start": 43.799,
+          "end": 48.479,
           "text": "correctly, to, are we solving the right problem, under the right constraints."
         },
         {
-          "start": 40.464,
-          "end": 45.045,
+          "start": 49.299,
+          "end": 51.419,
           "text": "That is a question you can take back to your team on"
         },
         {
-          "start": 45.045,
-          "end": 45.427,
+          "start": 51.5,
+          "end": 52.088,
           "text": "Monday."
         }
       ]
@@ -3568,80 +3588,105 @@
       ]
     },
     "44": {
-      "hash": "0798c321d301",
-      "audio": "/narration/slide-44-0798c321d301.mp3",
-      "duration": 44.329795918367346,
+      "hash": "0674c4eb4eab",
+      "audio": "/narration/slide-44-0674c4eb4eab.mp3",
+      "duration": 59.76816326530612,
       "cues": [
-        3.029,
-        15.189,
-        26.709
+        19.569,
+        30.369,
+        41.969
       ],
       "narrationKey": "04-cognitive-debt:9",
-      "transcript": "Here is the antidote, as three team operating rules. The spec. Intent, authored by a human. Ask why, not just what. If you\ncannot explain your own change in the commit message, the debt has already\nstarted accumulating. The explainability gate. No merge until the author can explain the\nintent, the tradeoffs and the failure modes. At least one human fully\nunderstands each change before it ships. And the ownership check. One named human owns the change end to end.\nIf that fails, slow down and re-scope. That is the operating model, and it\nconnects straight back to the harness discipline from earlier: the harness is\nthe preventive mechanism. The final question is what kind of people this model\nrewards.",
+      "transcript": "Here is the antidote, as three team operating rules. Raise the intake bar\nbefore review starts: require stated intent, a readable diff, test output, and\nproof the tests actually ran. Read changes to tests especially carefully. An\nagent can make a failing change green by rewriting the assertion around its new\nbehavior. The spec. Intent, authored by a human. Ask why, not just what. If you\ncannot explain your own change in the commit message, the debt has already\nstarted accumulating. The explainability gate. No merge until the author can explain the\nintent, the tradeoffs and the failure modes. At least one human fully\nunderstands each change before it ships. And the ownership check. One named human owns the change end to end.\nIf that fails, slow down and re-scope. That is the operating model, and it\nconnects straight back to the harness discipline from earlier: the harness is\nthe preventive mechanism. The final question is what kind of people this model\nrewards.",
       "captions": [
         {
-          "start": 0,
-          "end": 3.325,
+          "start": 0.119,
+          "end": 3.079,
           "text": "Here is the antidote, as three team operating rules."
         },
         {
-          "start": 3.325,
-          "end": 5.911,
-          "text": "The spec. Intent, authored by a human."
+          "start": 3.539,
+          "end": 5.5,
+          "text": "Raise the intake bar before review starts:"
         },
         {
-          "start": 5.911,
-          "end": 7.758,
+          "start": 5.839,
+          "end": 10.539,
+          "text": "require stated intent, a readable diff, test output, and proof the tests"
+        },
+        {
+          "start": 10.639,
+          "end": 14.079,
+          "text": "actually ran. Read changes to tests especially carefully."
+        },
+        {
+          "start": 14.539,
+          "end": 17.6,
+          "text": "An agent can make a failing change green by rewriting the assertion"
+        },
+        {
+          "start": 17.68,
+          "end": 20.34,
+          "text": "around its new behavior. The spec."
+        },
+        {
+          "start": 20.819,
+          "end": 22.539,
+          "text": "Intent, authored by a human."
+        },
+        {
+          "start": 23.019,
+          "end": 24.719,
           "text": "Ask why, not just what."
         },
         {
-          "start": 7.758,
-          "end": 12.191,
+          "start": 25.059,
+          "end": 28.239,
           "text": "If you cannot explain your own change in the commit message, the"
         },
         {
-          "start": 12.191,
-          "end": 14.038,
+          "start": 28.299,
+          "end": 30.219,
           "text": "debt has already started accumulating."
         },
         {
-          "start": 14.038,
-          "end": 18.471,
+          "start": 30.619,
+          "end": 34.959,
           "text": "The explainability gate. No merge until the author can explain the intent,"
         },
         {
-          "start": 18.471,
-          "end": 20.687,
+          "start": 35.259,
+          "end": 37.099,
           "text": "the tradeoffs and the failure modes."
         },
         {
-          "start": 20.687,
-          "end": 24.751,
+          "start": 37.799,
+          "end": 41.739,
           "text": "At least one human fully understands each change before it ships."
         },
         {
-          "start": 24.751,
-          "end": 29.184,
+          "start": 42.219,
+          "end": 45.619,
           "text": "And the ownership check. One named human owns the change end to"
         },
         {
-          "start": 29.184,
-          "end": 32.139,
+          "start": 45.68,
+          "end": 48.539,
           "text": "end. If that fails, slow down and re-scope."
         },
         {
-          "start": 32.139,
-          "end": 36.572,
+          "start": 48.84,
+          "end": 51.7,
           "text": "That is the operating model, and it connects straight back to the"
         },
         {
-          "start": 36.572,
-          "end": 40.266,
+          "start": 51.779,
+          "end": 55.699,
           "text": "harness discipline from earlier: the harness is the preventive mechanism."
         },
         {
-          "start": 40.266,
-          "end": 44.33,
+          "start": 56.219,
+          "end": 59.768,
           "text": "The final question is what kind of people this model rewards."
         }
       ]

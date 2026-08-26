@@ -123,7 +123,9 @@ test can settle.
 Tests and reviews are two gates. Here is the full ring. Correctness, security,
 performance, accessibility, maintainability, cost, back-pressure,
 comprehensibility. Eight things you might care about. Some become deterministic
-checks; others remain explicit, accountable judgments.
+checks; others remain explicit, accountable judgments. The ring is not equally
+thick everywhere. Scale it by blast radius, code lifespan, and who must
+understand the result, not by whether the author was a human or an agent.
 [click] The agent works inside the ring. It produces more code than you can
 read, and an attempt that fails a gate bounces straight back. You never see
 it. Addy Osmani calls this the inner loop, and it is not yours anymore.
