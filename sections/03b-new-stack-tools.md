@@ -450,6 +450,7 @@ narrator: hidden
 KEY POINTS:
 - Payoff of the guardrails beat: name the constraints, make the exit criterion explicit
 - Osmani's split: agents run the inner loop; you decide, verify, approve, own
+- Review depth scales with risk, not authorship: calibrate the ring by blast radius, code lifespan, and who must understand the result
 - VOCABULARY — say "your loop", never "the outer loop" (§05 reserves "outer" for Ng)
 - The boundary is evidence, not trust — diffs, tests, logs, a short why
 - Human role shifts from reading output line by line to designing the gates
@@ -478,6 +479,7 @@ DELIVERY:
 SOURCE: "Set the constraints around your agents" diagram (shared reference image), adapted
 SOURCE: Armin Ronacher, "The Final Bottleneck" (lucumr.pocoo.org/2026/2/13/the-final-bottleneck/) — back-pressure framing
 SOURCE: Addy Osmani, "Own the Outer Loop" (addyosmani.com/blog/own-the-outer-loop/, 7/15/26) — inner/outer loop split; see sources/osmani-own-the-outer-loop.md
+SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/) — risk-calibrated review
 -->
 
 ---
