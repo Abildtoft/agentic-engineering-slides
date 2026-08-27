@@ -601,7 +601,7 @@ async function loadManifests() {
     const loadedManifest = await response.json()
 
     // Commit both manifests in the same render. Publishing the speech manifest
-    // first briefly exposed its HeyGen still before the preferred mascot
+    // first briefly exposed its fallback still before the preferred mascot
     // manifest arrived, making the start card flash between two faces.
     mascotManifest.value = mascot
     manifest.value = loadedManifest
@@ -695,7 +695,8 @@ onBeforeUnmount(() => {
           How AI agents are reshaping software engineering: the shift underway, what happens
           to the middle of the job, the new stack — context, specs, skills, MCP — the
           cognitive debt it creates, and the skills that survive. Mikkel’s first-person
-          talk, read by a synthetic voice and character.
+          talk, read by a synthetic voice and character. The robot narrator is a
+          deliberate choice: if the delivery ever sounds robotic, he’s staying on theme.
         </p>
         <p class="narrator-meta">{{ formatClock(totalDuration) }} · {{ total }} slides · captions included</p>
       </div>

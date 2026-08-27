@@ -1,15 +1,17 @@
-<!-- 35. section — Cognitive Debt -->
+<!-- 36. section — Cognitive Debt -->
 
 We have just spent a whole section on an incredible toolkit. Context, skills,
 MCPs, hooks, harnesses, agents. Each layer added power. But each layer also
 added something you did not personally write, and may not fully understand.
+Remember the feeling I asked you to hold onto at the start — the unease when I
+admitted I no longer read all of the code? This is where it comes back.
 And going from one agent to many is not a scaling problem, it is a distributed
 systems problem, where every component is nondeterministic. That coordination
 has a cost. And the cost has a name.
 
 ---
 
-<!-- 36. default — Two Kinds of Debt — ~3 clicks -->
+<!-- 37. default — Two Kinds of Debt — ~3 clicks -->
 
 Peter Naur wrote, back in 1985, that a program is more than its source code.
 A program is a theory that lives in the minds of the developers. Everything in
@@ -25,7 +27,7 @@ code, the humans may have simply lost the plot.
 
 ---
 
-<!-- 37. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
+<!-- 38. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
 
 That sounds abstract, so here is a concrete case. Margaret-Anne Storey gave a
 student team AI coding tools and tracked them for ten weeks.
@@ -44,7 +46,7 @@ junior problem. It is structural.
 
 ---
 
-<!-- 38. statement — The trap is not AI. — ~2 clicks -->
+<!-- 39. statement — The trap is not AI. — ~2 clicks -->
 
 So let me be precise about what the trap is, because it would be easy to walk
 out of here with the wrong lesson. The trap is not AI.
@@ -59,7 +61,7 @@ judgment. It still has to be earned.
 
 ---
 
-<!-- 39. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
+<!-- 40. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
 
 If understanding is what is at risk, the practical response is to change what
 humans actually review. Code review used to work because of a happy accident:
@@ -77,7 +79,7 @@ can take back to your team on Monday.
 
 ---
 
-<!-- 40. default — The Swiss-Cheese Model — ~2 clicks -->
+<!-- 41. default — The Swiss-Cheese Model — ~2 clicks -->
 
 Once you start thinking in layered controls, there is a metaphor that fits.
 James Reason's Swiss-cheese model. Each slice is a safeguard, and each one has
@@ -92,7 +94,7 @@ we trust most.
 
 ---
 
-<!-- 41. fact — ~2 clicks -->
+<!-- 42. fact — ~2 clicks -->
 
 Human review. Three preregistered studies at Wharton, nearly fourteen hundred
 participants, almost ten thousand trials. When the AI was wrong, 79.8% of
@@ -107,11 +109,15 @@ what happens next cognitive surrender, and it is different from offloading.
 With a calculator, you know the tool did the work. With surrender, the brain
 recodes the answer as its own. It does not feel outsourced. It feels
 self-generated. That is the hole in the human review layer: the reviewer's
-brain has already accepted the answer.
+brain has already accepted the answer. I am not exempt. More than once I have
+caught myself approving a full cryptographic system an agent had confidently
+built around a simple pin code — a feature with no security stakes at all. The
+recommendation sounded rigorous, so I trusted it. That is what surrender feels
+like from the inside: nothing.
 
 ---
 
-<!-- 42. default — The Confidence Spiral — ~2 clicks -->
+<!-- 43. default — The Confidence Spiral — ~2 clicks -->
 
 And here is how that shows up in everyday working habits. Each prompt is a
 slot-machine pull. The response partially satisfies and opens a new question,
@@ -120,7 +126,9 @@ researchers call these epistemic rabbit holes. Every step feels locally
 rational. The dependency forms by accumulation. You might recognise the
 symptoms: re-planning the same feature three times in a day. Shipping faster
 than you can hold the system in your head. A graveyard of almost-finished
-projects.
+projects. And notice that is not the deliberate discarding I defended in the
+first section. Throwing work away on purpose is a decision. The graveyard is
+drift.
 [click] The prompting loop can become a dependency. Convenience now, weaker
 judgment later.
 [click] One team lead put it honestly. We went from barely using coding agents
@@ -130,9 +138,11 @@ is predictable, and predictable means manageable.
 
 ---
 
-<!-- 43. statement — This is a choice, not a fate. — ~2 clicks -->
+<!-- 44. statement — This is a choice, not a fate. — ~2 clicks -->
 
-So let's exhale. This is a choice, not a fate. And the stakes are real: in
+So let's exhale. I have now spent five minutes telling you that your
+confidence is a symptom, and I promise that is as grim as this talk gets.
+This is a choice, not a fate. And the stakes are real: in
 security, privacy and compliance, a comprehension failure becomes an incident,
 a fine, lost trust. But fear of harm cannot be the whole operating model.
 [click] Simon Willison again: having poor quality code from an agent is a
@@ -144,13 +154,14 @@ Hold people accountable. And keep capturing the upside.
 
 ---
 
-<!-- 44. default — The Antidote — The Human in the Loop — ~3 clicks -->
+<!-- 45. default — The Antidote — The Human in the Loop — ~3 clicks -->
 
 Here is the antidote, as three team operating rules. Raise the intake bar
 before review starts: require stated intent, a readable diff, test output, and
 proof the tests actually ran. Read changes to tests especially carefully. An
 agent can make a failing change green by rewriting the assertion around its new
-behavior.
+behavior. It is the same trick every student discovers eventually; the agent
+just does it politely, and at scale.
 [click] The spec. Intent, authored by a human. Ask why, not just what. If you
 cannot explain your own change in the commit message, the debt has already
 started accumulating.

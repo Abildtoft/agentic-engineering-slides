@@ -1,10 +1,10 @@
-<!-- 56. section — Moving Forward -->
+<!-- 57. section — Moving Forward -->
 
 Across everything we have covered, what actually survives?
 
 ---
 
-<!-- 57. default — What Survives — ~3 clicks -->
+<!-- 58. default — What Survives — ~3 clicks -->
 
 Execution is increasingly abundant. People who combine strategy with
 execution will remain rare. The same split plays out in engineering, product
@@ -24,15 +24,15 @@ industry feels so uneven right now.
 
 ---
 
-<!-- 58. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
+<!-- 59. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
 
 Remember the cascade from earlier? The constraint did not disappear. It moved
 upstream, to getting expert knowledge out of heads and into systems, without
 letting it disappear from the people accountable for them. The instruction
 files, the skills, the docs: that is the knowledge-extraction mechanism. And it
-is already reaching past engineers. The same primitives, context, MCP, skills,
-guardrails, are being wrapped in task-first interfaces so domain experts can
-operate them directly, while engineers design the harness. Workflow design has
+is already reaching past engineers. The same primitives are being wrapped in
+task-first interfaces so domain experts can operate them directly, while
+engineers design the harness. Workflow design has
 become cross-functional infrastructure.
 [click] Satya Nadella has the ownership test: you should be able to swap the
 model without losing the company-specific expertise. If swapping the model
@@ -41,7 +41,7 @@ asset is the institutional loop, not the frontier model.
 
 ---
 
-<!-- 59. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
+<!-- 60. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
 
 Which makes posture the real decision. This is the divide from the opening: not
 simply who has access, but who is learning. In a period of compounding change,
@@ -56,11 +56,13 @@ emphasis is on learn, not on faster.
 
 ---
 
-<!-- 60. default — Where to Start — ~3 clicks -->
+<!-- 61. default — Where to Start — ~3 clicks -->
 
 Offense sounds abstract. On Monday morning it looks like this. You do not need
 an AI strategy to begin. You need one finished pilot.
-[click] Pick one workflow. Recurring, annoying, low-risk. Run it end to end,
+[click] Pick one workflow — that Monday-morning report from the long tail, or
+whatever it is you assemble by hand every week. Recurring, annoying, low-risk.
+Run it end to end,
 pairing the person who knows the work with the person who can build. Domain
 knowledge chooses the work, technical skill wires it up, and both review the
 result. That pairing is the smallest complete learning loop.
@@ -69,15 +71,16 @@ what works. Prompts, playbooks, guardrails. Captured judgment is the asset
 that compounds, and it is how one person's experiment becomes the
 organisation's capability.
 [click] Strategy is what you write down after the third pilot works. Not
-before. A strategy written first is a document about tools that will be
-obsolete before the ink dries.
+before. Nobody wrote a winning internet strategy in 1997 either; the companies
+that won just started building. A strategy written first is a document about
+tools that will be obsolete before the ink dries.
 
 ---
 
-<!-- 61. two-cols-header — The Next Few Years — ~2 clicks -->
+<!-- 62. two-cols-header — The Next Few Years — ~2 clicks -->
 
 And that posture lands differently depending on where you are in your career,
-so let me split the room for a moment.
+so let me split the audience for a moment.
 [click] If you are earlier in your career: use AI to punch above your weight.
 But understand and be able to explain every line, every prompt and every
 decision you ship. That is a hard rule, not a nice-to-have. Seek out the
@@ -96,7 +99,7 @@ most.
 
 ---
 
-<!-- 62. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
+<!-- 63. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
 
 All of which points to the same conclusion. The craft evolves. It always has.
 But it remains craft.
@@ -111,9 +114,11 @@ evidence and the tradeoffs.
 
 ---
 
-<!-- 63. cover — Thank You — ~1 clicks -->
+<!-- 64. cover — Thank You — ~1 clicks -->
 
-Thank you. That is the talk. If you want to follow up, my details are on the
-screen.
+Thank you. That is the talk — including this narration, which was written as
+markdown and spoken by the very pipeline you just met. The middle compressed.
+The thinking, I hope, still showed. If you want to follow up, my details are on
+the screen.
 [click] And if you were in the room with me, this is where I would open the
 floor.

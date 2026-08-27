@@ -1,9 +1,50 @@
 # Narrated auto-mode — status and next steps
 
-_Last updated 2026-08-23. Mechanism lives in `AGENTS.md`; this file is state and
+_Last updated 2026-08-26. Mechanism lives in `AGENTS.md`; this file is state and
 what to do next._
 
-## Where this stands
+## 2026-08-27 — New slide 31: harness comparison videos
+
+Section 03b gained **"Same Model, Same Prompt"** right after Harness
+Engineering: Justin Schroeder's side-by-side demo (same model, same one-shot
+prompt, same provider/quant, same system prompt — only the harness differs),
+two looping clips played by the new `SlideVideo` component (`public/
+harness-without.mp4` / `harness-with.mp4`, plain blobs, not LFS). The deck is
+now **64 slides**; narration is scaffolded and the prose block is written, so
+the cutover below synthesises 64 slides, not 63. Until that rebuild runs, the
+tracked manifest still carries the old numbering from slide 31 onward.
+
+## 2026-08-26 — Speech switched to ElevenLabs; HeyGen retired
+
+The build pipeline no longer calls HeyGen. `yarn narration:audio` now
+synthesises with **ElevenLabs `eleven_v3`** via the with-timestamps endpoint
+(character alignment → word-timed cues, exact by construction), default voice
+**"Eric — Smooth, Trustworthy"** (friendly, conversational American male,
+`ELEVENLABS_VOICE_ID` overrides), at **1.1× pace** baked into the audio with
+ffmpeg `atempo` (`NARRATION_PACE`; all cue/caption timings scaled to match).
+`narration:recover` and the video render mode were deleted with the HeyGen
+pipeline. Sections below this one predate the switch and describe that retired
+pipeline; the traps about hashes, LFS, scaffolding and cache-vs-disk still hold.
+
+**Nothing has been re-synthesised yet** — the manifest still plays the HeyGen
+voice. To cut over:
+
+1. Add `ELEVENLABS_API_KEY` to `.env` (see `.env.example`); ffmpeg on PATH.
+2. `yarn narration:voices` — verifies the voice by name/labels, the model, the
+   character quota against the full deck, and ffmpeg.
+3. `yarn narration:audio --dry-run` — cue times and total duration. The voice
+   and pace are in the cache hash, so expect **all 63 slides** to synthesise.
+4. `yarn narration:audio` — the rebuild. Legacy HeyGen `.mp4`s (slides 3–10)
+   are superseded and pruned; **commit those deletions** with the new manifest.
+5. Listen (`/?auto=1`), revise prose, rebuild — only changed slides re-run.
+6. `yarn narration:mascot` — re-render the face from the new speech, then
+   commit the new mascot clips (LFS).
+
+Until step 6, slides play the new voice over the still — mascot clips are keyed
+to the speech asset they were rendered from, so a stale mascot never plays over
+new audio.
+
+## Where this stands (2026-08-23, HeyGen era)
 
 The deck has a second way to run: `?auto=1` turns it into a self-presenting
 talk. A HeyGen avatar ("Matt", voice "Ben") narrates, click reveals fire on cue
@@ -185,18 +226,16 @@ These have each already cost something once. Full detail in `AGENTS.md`.
 ```
 yarn narration:scaffold          # regenerate narration/ from the deck (offline)
 yarn narration:captions          # add captions to cached clips (offline)
-yarn narration:voices            # preflight: voice, avatar, balance
-yarn narration:build --dry-run   # cue times + duration; cached slides cost nothing
-yarn narration:audio             # cheap mode — voice + cues + a still
-yarn narration:build             # the real render
-yarn narration:build --restamp=4-10   # re-key cached entries, no render
-yarn narration:recover           # re-download clips from the account, free
+yarn narration:voices            # preflight: voice, model, quota, ffmpeg
+yarn narration:audio --dry-run   # cue times + duration; cached slides cost nothing
+yarn narration:audio             # synthesise speech + cue manifest (ElevenLabs)
+yarn narration:audio --restamp=4-10   # re-key cached entries, no synthesis
 yarn narration:mascot --optimize-existing  # resize current mascot clips offline
 ```
 
-Credentials: `HEYGEN_API_KEY` comes from the Conductor-exported environment;
-`.env` carries the two resource ids (they are also in `manifest.json`, which is
-how a fresh workspace can recreate it). See `.env.example`.
+Credentials: `ELEVENLABS_API_KEY` in `.env` is the only secret; the voice id is
+an account-scoped resource identifier with a sensible default. See
+`.env.example`.
 
 ## Verified / not verified
 

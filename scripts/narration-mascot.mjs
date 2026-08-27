@@ -1,10 +1,10 @@
 /**
  * Renders a Mascotbot character speaking each slide's narration, as a video
- * clip the deck's auto-mode plays in place of the HeyGen avatar.
+ * clip the deck's auto-mode plays as its face.
  *
- * Input is the speech the HeyGen pipeline already produced — the `.mp3` or
+ * Input is the speech the narration build already produced — the `.mp3` or
  * `.mp4` each manifest entry points at — so this never synthesises anything
- * and never touches HeyGen. Per slide:
+ * and never calls a TTS API. Per slide:
  *
  *   1. ffmpeg extracts 16 kHz mono float32 from the speech asset.
  *   2. Mascotbot's lip-sync model turns that into a viseme timeline, once; the
@@ -17,7 +17,7 @@
  * The result is written to public/narration/mascot.json, a sibling of
  * manifest.json that the player layers on top: where a mascot clip exists for
  * a slide's *current* speech asset, it plays instead of entry.video/audio. The
- * HeyGen manifest and clips are left exactly as they are, so going back is
+ * speech manifest and clips are left exactly as they are, so going back is
  * deleting one file.
  *
  * Usage:
@@ -330,7 +330,7 @@ try {
 
   const completeManifest = await saveManifest(manifest)
 
-  // Only this script's own output is pruned; the HeyGen clips are not ours to touch.
+  // Only this script's own output is pruned; the speech clips are not ours to touch.
   // A filtered run may only have source media for a subset of slides in this
   // workspace. Prune against the complete saved manifest, including carried
   // entries, rather than deleting their tracked clips as if they were stale.

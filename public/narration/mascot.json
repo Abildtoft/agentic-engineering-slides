@@ -11,445 +11,452 @@
   "still": "/narration/mascot-still.png",
   "slides": {
     "1": {
-      "hash": "16b1f5d9cfec",
-      "source": "slide-01-2509ad405d75.mp3",
-      "video": "/narration/slide-01-mascot-16b1f5d9cfec.mp4",
-      "durationMs": 18181,
-      "speechMs": 16350
+      "hash": "85090e61b87c",
+      "source": "slide-01-6c4644d2b2a8.mp3",
+      "video": "/narration/slide-01-mascot-85090e61b87c.mp4",
+      "durationMs": 16537,
+      "speechMs": 14700
     },
     "2": {
-      "hash": "bab7ed3d530d",
-      "source": "slide-02-21e513e4b617.mp3",
-      "video": "/narration/slide-02-mascot-bab7ed3d530d.mp4",
-      "durationMs": 35318,
-      "speechMs": 31880
+      "hash": "5143d3b37d56",
+      "source": "slide-02-8cb123f2f8f5.mp3",
+      "video": "/narration/slide-02-mascot-5143d3b37d56.mp4",
+      "durationMs": 36083,
+      "speechMs": 31670
     },
     "3": {
-      "hash": "4cfcfd3045d9",
-      "source": "slide-03-69ccf9dd427f.mp4",
-      "video": "/narration/slide-03-mascot-4cfcfd3045d9.mp4",
-      "durationMs": 20270,
-      "speechMs": 18140
+      "hash": "86b315d230b4",
+      "source": "slide-03-9cb229993ee7.mp3",
+      "video": "/narration/slide-03-mascot-86b315d230b4.mp4",
+      "durationMs": 35470,
+      "speechMs": 29300
     },
     "4": {
-      "hash": "50bfabcdf61f",
-      "source": "slide-04-c917f44e7954.mp3",
-      "video": "/narration/slide-04-mascot-50bfabcdf61f.mp4",
-      "durationMs": 33620,
-      "speechMs": 29460
+      "hash": "a30902e14ae0",
+      "source": "slide-04-ffe2e3ec081c.mp3",
+      "video": "/narration/slide-04-mascot-a30902e14ae0.mp4",
+      "durationMs": 24475,
+      "speechMs": 21240
     },
     "5": {
-      "hash": "c865ec124c3b",
-      "source": "slide-04-acf9f3dffd33.mp4",
-      "video": "/narration/slide-05-mascot-c865ec124c3b.mp4",
-      "durationMs": 18325,
-      "speechMs": 15710
+      "hash": "538f04c45424",
+      "source": "slide-05-4e8706b77d4e.mp3",
+      "video": "/narration/slide-05-mascot-538f04c45424.mp4",
+      "durationMs": 19472,
+      "speechMs": 17050
     },
     "6": {
-      "hash": "7a17fa0b1e42",
-      "source": "slide-05-5afcb46fcb96.mp4",
-      "video": "/narration/slide-06-mascot-7a17fa0b1e42.mp4",
-      "durationMs": 37056,
-      "speechMs": 32440
+      "hash": "5179e4493118",
+      "source": "slide-06-a922e6bcfeb6.mp3",
+      "video": "/narration/slide-06-mascot-5179e4493118.mp4",
+      "durationMs": 40658,
+      "speechMs": 35410
     },
     "7": {
-      "hash": "1d915195e269",
-      "source": "slide-07-07add7f9cf19.mp3",
-      "video": "/narration/slide-07-mascot-1d915195e269.mp4",
-      "durationMs": 34560,
-      "speechMs": 30440
+      "hash": "64060527e755",
+      "source": "slide-07-8603a2ef6956.mp3",
+      "video": "/narration/slide-07-mascot-64060527e755.mp4",
+      "durationMs": 36140,
+      "speechMs": 31120
     },
     "8": {
-      "hash": "a6ac2349f8a3",
-      "source": "slide-08-58b89b136cba.mp3",
-      "video": "/narration/slide-08-mascot-a6ac2349f8a3.mp4",
-      "durationMs": 44852,
-      "speechMs": 39830
+      "hash": "ef76f95b0792",
+      "source": "slide-08-aa1d0385b821.mp3",
+      "video": "/narration/slide-08-mascot-ef76f95b0792.mp4",
+      "durationMs": 41545,
+      "speechMs": 36090
     },
     "9": {
-      "hash": "5b91f1db8547",
-      "source": "slide-09-c159d3637d94.mp3",
-      "video": "/narration/slide-09-mascot-5b91f1db8547.mp4",
-      "durationMs": 77087,
-      "speechMs": 68900
+      "hash": "f8322ce26f89",
+      "source": "slide-09-27056c1687f3.mp3",
+      "video": "/narration/slide-09-mascot-f8322ce26f89.mp4",
+      "durationMs": 77005,
+      "speechMs": 66630
     },
     "10": {
-      "hash": "a90542686150",
-      "source": "slide-07-cedf06b10232.mp4",
-      "video": "/narration/slide-10-mascot-a90542686150.mp4",
-      "durationMs": 71680,
-      "speechMs": 61620
+      "hash": "1fd8d9cbbeaa",
+      "source": "slide-10-ec1919434f3c.mp3",
+      "video": "/narration/slide-10-mascot-1fd8d9cbbeaa.mp4",
+      "durationMs": 85457,
+      "speechMs": 72200
     },
     "11": {
-      "hash": "824721634b93",
-      "source": "slide-08-40da28884354.mp4",
-      "video": "/narration/slide-11-mascot-824721634b93.mp4",
-      "durationMs": 37077,
-      "speechMs": 32000
+      "hash": "a1b053ba8a7c",
+      "source": "slide-11-2c63981df183.mp3",
+      "video": "/narration/slide-11-mascot-a1b053ba8a7c.mp4",
+      "durationMs": 33998,
+      "speechMs": 30110
     },
     "12": {
-      "hash": "39ac659dc2e2",
-      "source": "slide-12-42f3f9aa819b.mp3",
-      "video": "/narration/slide-12-mascot-39ac659dc2e2.mp4",
-      "durationMs": 89443,
-      "speechMs": 79470
+      "hash": "fa01d833b5b3",
+      "source": "slide-12-e56baef1b381.mp3",
+      "video": "/narration/slide-12-mascot-fa01d833b5b3.mp4",
+      "durationMs": 97149,
+      "speechMs": 81470
     },
     "13": {
-      "hash": "7c89d8207046",
-      "source": "slide-09-93504dc839a2.mp4",
-      "video": "/narration/slide-13-mascot-7c89d8207046.mp4",
-      "durationMs": 22379,
-      "speechMs": 20540
+      "hash": "0ce4a8591ff1",
+      "source": "slide-13-fcc80d04aadb.mp3",
+      "video": "/narration/slide-13-mascot-0ce4a8591ff1.mp4",
+      "durationMs": 21279,
+      "speechMs": 18660
     },
     "14": {
-      "hash": "a3bd2a01ec90",
-      "source": "slide-10-0015871f9efb.mp4",
-      "video": "/narration/slide-14-mascot-a3bd2a01ec90.mp4",
-      "durationMs": 20864,
-      "speechMs": 17350
+      "hash": "4221e539a334",
+      "source": "slide-14-fe498c9d5ce0.mp3",
+      "video": "/narration/slide-14-mascot-4221e539a334.mp4",
+      "durationMs": 17874,
+      "speechMs": 15420
     },
     "15": {
-      "hash": "58d131b2d79d",
-      "source": "slide-15-f7ab72634fcb.mp3",
-      "video": "/narration/slide-15-mascot-58d131b2d79d.mp4",
-      "durationMs": 55641,
-      "speechMs": 47750
+      "hash": "72e18b2e3319",
+      "source": "slide-15-7bfebdc19095.mp3",
+      "video": "/narration/slide-15-mascot-72e18b2e3319.mp4",
+      "durationMs": 54270,
+      "speechMs": 47110
     },
     "16": {
-      "hash": "a5caabf4dc65",
-      "source": "slide-16-88955d067e42.mp3",
-      "video": "/narration/slide-16-mascot-a5caabf4dc65.mp4",
-      "durationMs": 40882,
-      "speechMs": 35570
+      "hash": "9047ffa14ce4",
+      "source": "slide-16-99ee016ecef1.mp3",
+      "video": "/narration/slide-16-mascot-9047ffa14ce4.mp4",
+      "durationMs": 36619,
+      "speechMs": 31360
     },
     "17": {
-      "hash": "153d2dcdc169",
-      "source": "slide-17-d410afc90f2c.mp3",
-      "video": "/narration/slide-17-mascot-153d2dcdc169.mp4",
-      "durationMs": 30250,
-      "speechMs": 26030
+      "hash": "696e00a6c0a4",
+      "source": "slide-17-afcdcb474db2.mp3",
+      "video": "/narration/slide-17-mascot-696e00a6c0a4.mp4",
+      "durationMs": 30815,
+      "speechMs": 25010
     },
     "18": {
-      "hash": "9a6bfa430b49",
-      "source": "slide-18-bd0487bb6b3a.mp3",
-      "video": "/narration/slide-18-mascot-9a6bfa430b49.mp4",
-      "durationMs": 39262,
-      "speechMs": 34840
+      "hash": "edbe15af20c6",
+      "source": "slide-18-beb9f4520bce.mp3",
+      "video": "/narration/slide-18-mascot-edbe15af20c6.mp4",
+      "durationMs": 42877,
+      "speechMs": 36130
     },
     "19": {
-      "hash": "6393e648c60b",
-      "source": "slide-19-7bf7d574c2fe.mp3",
-      "video": "/narration/slide-19-mascot-6393e648c60b.mp4",
-      "durationMs": 47987,
-      "speechMs": 40360
+      "hash": "132d5c212132",
+      "source": "slide-19-4a27815c2be3.mp3",
+      "video": "/narration/slide-19-mascot-132d5c212132.mp4",
+      "durationMs": 64266,
+      "speechMs": 53810
     },
     "20": {
-      "hash": "1ddf763d9f4b",
-      "source": "slide-20-217182cc6813.mp3",
-      "video": "/narration/slide-20-mascot-1ddf763d9f4b.mp4",
-      "durationMs": 57574,
-      "speechMs": 49220
+      "hash": "0a77a088b75e",
+      "source": "slide-20-c25c0614545d.mp3",
+      "video": "/narration/slide-20-mascot-0a77a088b75e.mp4",
+      "durationMs": 53746,
+      "speechMs": 46560
     },
     "21": {
-      "hash": "7d5a0f3e3839",
-      "source": "slide-21-c3bd31aa36b5.mp3",
-      "video": "/narration/slide-21-mascot-7d5a0f3e3839.mp4",
-      "durationMs": 18887,
-      "speechMs": 17020
+      "hash": "23b86d7ec820",
+      "source": "slide-21-9a3ff55ad865.mp3",
+      "video": "/narration/slide-21-mascot-23b86d7ec820.mp4",
+      "durationMs": 19271,
+      "speechMs": 17400
     },
     "22": {
-      "hash": "45958200af0c",
-      "source": "slide-22-d7a0b95638e7.mp3",
-      "video": "/narration/slide-22-mascot-45958200af0c.mp4",
-      "durationMs": 53577,
-      "speechMs": 44220
+      "hash": "448966dc286d",
+      "source": "slide-22-edad59a89c03.mp3",
+      "video": "/narration/slide-22-mascot-448966dc286d.mp4",
+      "durationMs": 49873,
+      "speechMs": 43670
     },
     "23": {
-      "hash": "916322b214da",
-      "source": "slide-23-cfec9220807f.mp3",
-      "video": "/narration/slide-23-mascot-916322b214da.mp4",
-      "durationMs": 58410,
-      "speechMs": 51430
+      "hash": "6bed1e3a147c",
+      "source": "slide-23-31e506741f2e.mp3",
+      "video": "/narration/slide-23-mascot-6bed1e3a147c.mp4",
+      "durationMs": 55534,
+      "speechMs": 47870
     },
     "24": {
-      "hash": "ccf5c536809a",
-      "source": "slide-24-b14650d2adbe.mp3",
-      "video": "/narration/slide-24-mascot-ccf5c536809a.mp4",
-      "durationMs": 60160,
-      "speechMs": 50250
+      "hash": "58975a4955c2",
+      "source": "slide-24-dfa7251d2434.mp3",
+      "video": "/narration/slide-24-mascot-58975a4955c2.mp4",
+      "durationMs": 56208,
+      "speechMs": 47300
     },
     "25": {
-      "hash": "c4ad2cde336c",
-      "source": "slide-25-15224b9af94c.mp3",
-      "video": "/narration/slide-25-mascot-c4ad2cde336c.mp4",
-      "durationMs": 16327,
-      "speechMs": 14210
+      "hash": "af1b606edf22",
+      "source": "slide-25-bf852b0f5689.mp3",
+      "video": "/narration/slide-25-mascot-af1b606edf22.mp4",
+      "durationMs": 27204,
+      "speechMs": 23180
     },
     "26": {
-      "hash": "0f70281780c4",
-      "source": "slide-26-e54cdfdfc2d4.mp3",
-      "video": "/narration/slide-26-mascot-0f70281780c4.mp4",
-      "durationMs": 43442,
-      "speechMs": 38080
+      "hash": "1a193d757148",
+      "source": "slide-26-40120d8d2aa7.mp3",
+      "video": "/narration/slide-26-mascot-1a193d757148.mp4",
+      "durationMs": 47679,
+      "speechMs": 42110
     },
     "27": {
-      "hash": "2f9ee4d1ff0d",
-      "source": "slide-27-86547a9f8ad4.mp3",
-      "video": "/narration/slide-27-mascot-2f9ee4d1ff0d.mp4",
-      "durationMs": 50312,
-      "speechMs": 44150
+      "hash": "f14204b5e723",
+      "source": "slide-27-e7db8fdbfbd4.mp3",
+      "video": "/narration/slide-27-mascot-f14204b5e723.mp4",
+      "durationMs": 47074,
+      "speechMs": 41860
     },
     "28": {
-      "hash": "fb72068a16c1",
-      "source": "slide-28-82c596e9cece.mp3",
-      "video": "/narration/slide-28-mascot-fb72068a16c1.mp4",
-      "durationMs": 58906,
-      "speechMs": 51310
+      "hash": "d947ab1034c3",
+      "source": "slide-28-c9521cd8963f.mp3",
+      "video": "/narration/slide-28-mascot-d947ab1034c3.mp4",
+      "durationMs": 56066,
+      "speechMs": 49220
     },
     "29": {
-      "hash": "79d28bef19a0",
-      "source": "slide-29-34c0668f0c66.mp3",
-      "video": "/narration/slide-29-mascot-79d28bef19a0.mp4",
-      "durationMs": 64183,
-      "speechMs": 57620
+      "hash": "3e20b3f0d064",
+      "source": "slide-29-57df3d848c5a.mp3",
+      "video": "/narration/slide-29-mascot-3e20b3f0d064.mp4",
+      "durationMs": 61269,
+      "speechMs": 52490
     },
     "30": {
-      "hash": "e4c79c6d7ef0",
-      "source": "slide-30-02675480ed80.mp3",
-      "video": "/narration/slide-30-mascot-e4c79c6d7ef0.mp4",
-      "durationMs": 59638,
-      "speechMs": 50840
+      "hash": "6be500906b0c",
+      "source": "slide-30-880763b40549.mp3",
+      "video": "/narration/slide-30-mascot-6be500906b0c.mp4",
+      "durationMs": 63083,
+      "speechMs": 55520
     },
     "31": {
-      "hash": "31941fb8025e",
-      "source": "slide-31-4e7307621919.mp3",
-      "video": "/narration/slide-31-mascot-31941fb8025e.mp4",
-      "durationMs": 56529,
-      "speechMs": 48460
+      "hash": "3d4de148c690",
+      "source": "slide-31-ceaa202aae00.mp3",
+      "video": "/narration/slide-31-mascot-3d4de148c690.mp4",
+      "durationMs": 41349,
+      "speechMs": 36270
     },
     "32": {
-      "hash": "7c9a4289cc1f",
-      "source": "slide-32-81ad4ede016b.mp3",
-      "video": "/narration/slide-32-mascot-7c9a4289cc1f.mp4",
-      "durationMs": 73665,
-      "speechMs": 61990
+      "hash": "4b712761969f",
+      "source": "slide-32-8b8be551fa9e.mp3",
+      "video": "/narration/slide-32-mascot-4b712761969f.mp4",
+      "durationMs": 86877,
+      "speechMs": 75510
     },
     "33": {
-      "hash": "408c524c5fa2",
-      "source": "slide-33-fd30766315f1.mp3",
-      "video": "/narration/slide-33-mascot-408c524c5fa2.mp4",
-      "durationMs": 58776,
-      "speechMs": 50690
+      "hash": "c106a04be8eb",
+      "source": "slide-33-562807de14e8.mp3",
+      "video": "/narration/slide-33-mascot-c106a04be8eb.mp4",
+      "durationMs": 70276,
+      "speechMs": 58900
     },
     "34": {
-      "hash": "1815200d89fd",
-      "source": "slide-34-3150380384da.mp3",
-      "video": "/narration/slide-34-mascot-1815200d89fd.mp4",
-      "durationMs": 15621,
-      "speechMs": 12470
+      "hash": "5cb46039f675",
+      "source": "slide-34-98e90afbbfbf.mp3",
+      "video": "/narration/slide-34-mascot-5cb46039f675.mp4",
+      "durationMs": 58346,
+      "speechMs": 49360
     },
     "35": {
-      "hash": "e758a4cba1b5",
-      "source": "slide-35-03c6b6d1f007.mp3",
-      "video": "/narration/slide-35-mascot-e758a4cba1b5.mp4",
-      "durationMs": 27272,
-      "speechMs": 24420
+      "hash": "a6adb0304037",
+      "source": "slide-35-85434cf8639d.mp3",
+      "video": "/narration/slide-35-mascot-a6adb0304037.mp4",
+      "durationMs": 22269,
+      "speechMs": 18380
     },
     "36": {
-      "hash": "06b7760f5490",
-      "source": "slide-36-538d93c70168.mp3",
-      "video": "/narration/slide-36-mascot-06b7760f5490.mp4",
-      "durationMs": 39889,
-      "speechMs": 34900
+      "hash": "773fad210ca8",
+      "source": "slide-36-2b8cba8e9149.mp3",
+      "video": "/narration/slide-36-mascot-773fad210ca8.mp4",
+      "durationMs": 34807,
+      "speechMs": 31080
     },
     "37": {
-      "hash": "82c24971c166",
-      "source": "slide-37-4d7860dd99fd.mp3",
-      "video": "/narration/slide-37-mascot-82c24971c166.mp4",
-      "durationMs": 48353,
-      "speechMs": 41420
+      "hash": "d58b02876088",
+      "source": "slide-37-7a393fcb941d.mp3",
+      "video": "/narration/slide-37-mascot-d58b02876088.mp4",
+      "durationMs": 41603,
+      "speechMs": 36220
     },
     "38": {
-      "hash": "954b20c0afa1",
-      "source": "slide-38-6d20d7113f04.mp3",
-      "video": "/narration/slide-38-mascot-954b20c0afa1.mp4",
-      "durationMs": 37381,
-      "speechMs": 32300
+      "hash": "ac11f982e061",
+      "source": "slide-38-8191dad3b205.mp3",
+      "video": "/narration/slide-38-mascot-ac11f982e061.mp4",
+      "durationMs": 44732,
+      "speechMs": 38540
     },
     "39": {
-      "hash": "2d33b953de32",
-      "source": "slide-39-256d9f3b4adf.mp3",
-      "video": "/narration/slide-39-mascot-2d33b953de32.mp4",
-      "durationMs": 52088,
-      "speechMs": 44720
+      "hash": "6ff806897e95",
+      "source": "slide-39-2495e89a1a5d.mp3",
+      "video": "/narration/slide-39-mascot-6ff806897e95.mp4",
+      "durationMs": 37733,
+      "speechMs": 31440
     },
     "40": {
-      "hash": "5a284d8b8e0d",
-      "source": "slide-40-3b5c05889aaf.mp3",
-      "video": "/narration/slide-40-mascot-5a284d8b8e0d.mp4",
-      "durationMs": 37486,
-      "speechMs": 33510
+      "hash": "5fc7b4d50805",
+      "source": "slide-40-8b822d17c188.mp3",
+      "video": "/narration/slide-40-mascot-5fc7b4d50805.mp4",
+      "durationMs": 50467,
+      "speechMs": 41840
     },
     "41": {
-      "hash": "ea4f61d3b7ba",
-      "source": "slide-41-56f990c6f6ea.mp3",
-      "video": "/narration/slide-41-mascot-ea4f61d3b7ba.mp4",
-      "durationMs": 59011,
-      "speechMs": 50970
+      "hash": "c8416555d3d6",
+      "source": "slide-41-5418b753bbc3.mp3",
+      "video": "/narration/slide-41-mascot-c8416555d3d6.mp4",
+      "durationMs": 35943,
+      "speechMs": 30810
     },
     "42": {
-      "hash": "221e83a8adc9",
-      "source": "slide-42-7154b381d300.mp3",
-      "video": "/narration/slide-42-mascot-221e83a8adc9.mp4",
-      "durationMs": 52010,
-      "speechMs": 44920
+      "hash": "5be7e951de8d",
+      "source": "slide-42-d3a1a3cf6a98.mp3",
+      "video": "/narration/slide-42-mascot-5be7e951de8d.mp4",
+      "durationMs": 72541,
+      "speechMs": 60410
     },
     "43": {
-      "hash": "946ab8e53e1e",
-      "source": "slide-43-46a0a6842f5c.mp3",
-      "video": "/narration/slide-43-mascot-946ab8e53e1e.mp4",
-      "durationMs": 36780,
-      "speechMs": 31730
+      "hash": "37af33968a27",
+      "source": "slide-43-19b283ef7c93.mp3",
+      "video": "/narration/slide-43-mascot-37af33968a27.mp4",
+      "durationMs": 59416,
+      "speechMs": 50410
     },
     "44": {
-      "hash": "d84ebca974fd",
-      "source": "slide-44-0674c4eb4eab.mp3",
-      "video": "/narration/slide-44-mascot-d84ebca974fd.mp4",
-      "durationMs": 59768,
-      "speechMs": 51660
+      "hash": "e77da9392c16",
+      "source": "slide-44-059d71271dbd.mp3",
+      "video": "/narration/slide-44-mascot-e77da9392c16.mp4",
+      "durationMs": 41208,
+      "speechMs": 34150
     },
     "45": {
-      "hash": "9efb13da1f42",
-      "source": "slide-45-06d7ed7ecdf5.mp3",
-      "video": "/narration/slide-45-mascot-9efb13da1f42.mp4",
-      "durationMs": 7760,
-      "speechMs": 6820
+      "hash": "8f0d04c7ed9e",
+      "source": "slide-45-9b0b40e4f970.mp3",
+      "video": "/narration/slide-45-mascot-8f0d04c7ed9e.mp4",
+      "durationMs": 63537,
+      "speechMs": 54830
     },
     "46": {
-      "hash": "8f53c5dbea92",
-      "source": "slide-46-6287d34c02c1.mp3",
-      "video": "/narration/slide-46-mascot-8f53c5dbea92.mp4",
-      "durationMs": 34011,
-      "speechMs": 29550
+      "hash": "b42a6690d82c",
+      "source": "slide-46-b4fc53292301.mp3",
+      "video": "/narration/slide-46-mascot-b42a6690d82c.mp4",
+      "durationMs": 8005,
+      "speechMs": 6930
     },
     "47": {
-      "hash": "1817b4807bff",
-      "source": "slide-47-81c23928139e.mp3",
-      "video": "/narration/slide-47-mascot-1817b4807bff.mp4",
-      "durationMs": 59847,
-      "speechMs": 52150
+      "hash": "a273e7b1fcda",
+      "source": "slide-47-76a2b979ec4d.mp3",
+      "video": "/narration/slide-47-mascot-a273e7b1fcda.mp4",
+      "durationMs": 30743,
+      "speechMs": 26030
     },
     "48": {
-      "hash": "b6468204e7a6",
-      "source": "slide-48-51c79e12c8ac.mp3",
-      "video": "/narration/slide-48-mascot-b6468204e7a6.mp4",
-      "durationMs": 46263,
-      "speechMs": 39480
+      "hash": "b13855a5ca38",
+      "source": "slide-48-0003b0affd9b.mp3",
+      "video": "/narration/slide-48-mascot-b13855a5ca38.mp4",
+      "durationMs": 58402,
+      "speechMs": 49030
     },
     "49": {
-      "hash": "695cca2fd37e",
-      "source": "slide-49-31123f030765.mp3",
-      "video": "/narration/slide-49-mascot-695cca2fd37e.mp4",
-      "durationMs": 69486,
-      "speechMs": 59030
+      "hash": "308a90edd0d8",
+      "source": "slide-49-a549e172a62d.mp3",
+      "video": "/narration/slide-49-mascot-308a90edd0d8.mp4",
+      "durationMs": 51006,
+      "speechMs": 41380
     },
     "50": {
-      "hash": "66fc81cd7375",
-      "source": "slide-50-58a53ac540af.mp3",
-      "video": "/narration/slide-50-mascot-66fc81cd7375.mp4",
-      "durationMs": 70113,
-      "speechMs": 60710
+      "hash": "b9eb4d8fe948",
+      "source": "slide-50-39fd05d02387.mp3",
+      "video": "/narration/slide-50-mascot-b9eb4d8fe948.mp4",
+      "durationMs": 90277,
+      "speechMs": 78410
     },
     "51": {
-      "hash": "253f68f4c649",
-      "source": "slide-51-9f2b50b04935.mp3",
-      "video": "/narration/slide-51-mascot-253f68f4c649.mp4",
-      "durationMs": 35683,
-      "speechMs": 31460
+      "hash": "abe5011e007a",
+      "source": "slide-51-8637556cb7d1.mp3",
+      "video": "/narration/slide-51-mascot-abe5011e007a.mp4",
+      "durationMs": 67872,
+      "speechMs": 59070
     },
     "52": {
-      "hash": "dc69e6cd6be2",
-      "source": "slide-52-d6f9bc827e11.mp3",
-      "video": "/narration/slide-52-mascot-dc69e6cd6be2.mp4",
-      "durationMs": 44042,
-      "speechMs": 39080
+      "hash": "6f0e5f3da97a",
+      "source": "slide-52-d8863eac6749.mp3",
+      "video": "/narration/slide-52-mascot-6f0e5f3da97a.mp4",
+      "durationMs": 33009,
+      "speechMs": 29230
     },
     "53": {
-      "hash": "0716fb9cb559",
-      "source": "slide-53-8ba8763cd7b4.mp3",
-      "video": "/narration/slide-53-mascot-0716fb9cb559.mp4",
-      "durationMs": 55745,
-      "speechMs": 48830
+      "hash": "64fa3d1c801e",
+      "source": "slide-53-933ae9779a67.mp3",
+      "video": "/narration/slide-53-mascot-64fa3d1c801e.mp4",
+      "durationMs": 40880,
+      "speechMs": 34750
     },
     "54": {
-      "hash": "e9590f3dce31",
-      "source": "slide-54-121b683508e7.mp3",
-      "video": "/narration/slide-54-mascot-e9590f3dce31.mp4",
-      "durationMs": 58540,
-      "speechMs": 49240
+      "hash": "da913c367cbd",
+      "source": "slide-54-1d72a7ec5f26.mp3",
+      "video": "/narration/slide-54-mascot-da913c367cbd.mp4",
+      "durationMs": 63666,
+      "speechMs": 53510
     },
     "55": {
-      "hash": "155d9c64aaf8",
-      "source": "slide-55-1a56e246ac7e.mp3",
-      "video": "/narration/slide-55-mascot-155d9c64aaf8.mp4",
-      "durationMs": 44382,
-      "speechMs": 38430
+      "hash": "57e1e0317bca",
+      "source": "slide-55-8b2d82a5f13f.mp3",
+      "video": "/narration/slide-55-mascot-57e1e0317bca.mp4",
+      "durationMs": 56053,
+      "speechMs": 46970
     },
     "56": {
-      "hash": "e6c2f7835743",
-      "source": "slide-56-8cc19fd73237.mp3",
-      "video": "/narration/slide-56-mascot-e6c2f7835743.mp4",
-      "durationMs": 3480,
-      "speechMs": 3070
+      "hash": "a2115390697c",
+      "source": "slide-56-a1240d063c3e.mp3",
+      "video": "/narration/slide-56-mascot-a2115390697c.mp4",
+      "durationMs": 47856,
+      "speechMs": 39200
     },
     "57": {
-      "hash": "be55eb82d0fb",
-      "source": "slide-57-19f7c3b84d09.mp3",
-      "video": "/narration/slide-57-mascot-be55eb82d0fb.mp4",
-      "durationMs": 58175,
-      "speechMs": 48390
+      "hash": "a652a0d7f3b7",
+      "source": "slide-57-b0a9223f58b2.mp3",
+      "video": "/narration/slide-57-mascot-a652a0d7f3b7.mp4",
+      "durationMs": 2790,
+      "speechMs": 2530
     },
     "58": {
-      "hash": "eaf5feb81766",
-      "source": "slide-58-9786c6fdce00.mp3",
-      "video": "/narration/slide-58-mascot-eaf5feb81766.mp4",
-      "durationMs": 50155,
-      "speechMs": 43510
+      "hash": "865394a8462c",
+      "source": "slide-58-74dab4143957.mp3",
+      "video": "/narration/slide-58-mascot-865394a8462c.mp4",
+      "durationMs": 56279,
+      "speechMs": 45780
     },
     "59": {
-      "hash": "f9911e130c35",
-      "source": "slide-59-c68693c67a90.mp3",
-      "video": "/narration/slide-59-mascot-f9911e130c35.mp4",
-      "durationMs": 39941,
-      "speechMs": 34130
+      "hash": "44c67411b2f2",
+      "source": "slide-59-04ec76c695cf.mp3",
+      "video": "/narration/slide-59-mascot-44c67411b2f2.mp4",
+      "durationMs": 47479,
+      "speechMs": 40990
     },
     "60": {
-      "hash": "b3a5e3185d12",
-      "source": "slide-60-e8e0d12ed9f2.mp3",
-      "video": "/narration/slide-60-mascot-b3a5e3185d12.mp4",
-      "durationMs": 49580,
-      "speechMs": 42650
+      "hash": "21ea0e53d978",
+      "source": "slide-60-c68ac6501470.mp3",
+      "video": "/narration/slide-60-mascot-21ea0e53d978.mp4",
+      "durationMs": 36548,
+      "speechMs": 32040
     },
     "61": {
-      "hash": "58720d1766d5",
-      "source": "slide-61-b0e8c75a7480.mp3",
-      "video": "/narration/slide-61-mascot-58720d1766d5.mp4",
-      "durationMs": 67788,
-      "speechMs": 58250
+      "hash": "1cac5ce867eb",
+      "source": "slide-61-e92b043670be.mp3",
+      "video": "/narration/slide-61-mascot-1cac5ce867eb.mp4",
+      "durationMs": 61742,
+      "speechMs": 53090
     },
     "62": {
-      "hash": "d681df4634ad",
-      "source": "slide-62-74cce1e7a470.mp3",
-      "video": "/narration/slide-62-mascot-d681df4634ad.mp4",
-      "durationMs": 32444,
-      "speechMs": 28040
+      "hash": "379fd39af641",
+      "source": "slide-62-3d9e086966e9.mp3",
+      "video": "/narration/slide-62-mascot-379fd39af641.mp4",
+      "durationMs": 66524,
+      "speechMs": 57210
     },
     "63": {
-      "hash": "469eecf156ce",
-      "source": "slide-63-0650dd779974.mp3",
-      "video": "/narration/slide-63-mascot-469eecf156ce.mp4",
-      "durationMs": 9561,
-      "speechMs": 7140
+      "hash": "8bc9c7f59720",
+      "source": "slide-63-af6611d6008c.mp3",
+      "video": "/narration/slide-63-mascot-8bc9c7f59720.mp4",
+      "durationMs": 31070,
+      "speechMs": 26550
+    },
+    "64": {
+      "hash": "479de86815c1",
+      "source": "slide-64-c28c64e5ecde.mp3",
+      "video": "/narration/slide-64-mascot-479de86815c1.mp4",
+      "durationMs": 17473,
+      "speechMs": 14470
     }
   }
 }
