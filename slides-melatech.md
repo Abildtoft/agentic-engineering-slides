@@ -52,7 +52,6 @@ layout: statement
 - The Shift Is Here
 - The Compressing Middle
 - The New Stack
-- **TEMPERATURE CHECK**
 - Cognitive Debt
 - What Matters
 - Moving Forward

@@ -554,7 +554,7 @@ KEY POINTS:
 - `--ship` authorizes the irreversible tail; without it, stops review-ready
 - What crosses to you is evidence: a green PR, gates cleared, verification passed — human judgment approves the intent and owns the result
 
-BRIDGE: "That's my harness. Halfway mark — your call what comes next: demo, questions, or a break."
+BRIDGE: "That's my harness. The second half is about the cost nobody puts on the invoice." (If the room wants a demo, questions or a break, this is the natural place to offer one.)
 
 ADDITIONAL POINTS:
 - The ring's gates are wired into the loop; the composed skills are issue implementation, code review, convention review, refactor discovery, verification, PR creation, CI fixing — the command owns only their sequencing, convergence criteria, and handoffs
@@ -572,23 +572,4 @@ DELIVERY:
 - If asked what happens when it fails: it stops at the blocker with the evidence preserved — a failed gate is a stop, not a warning
 
 SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal workflow, live demo material)
--->
-
----
-layout: center
-class: text-center
-narrationPause: true
----
-
-# Temperature Check — Demo, Questions, Break?
-
-<p class="mx-auto" style="max-width: 70ch">Halfway through. Your call on what comes next: a live demo, open questions, or a quick break.</p>
-
-<!--
-DELIVERY:
-- Deliberate pause before the second half — read the room and let them choose
-- If demo: connect back to the ×18 mechanics — the workflow can run 10+ agents in isolated workspaces with layered review on every merge
-- Prime the demo with three things to watch: where context enters, where a deterministic check catches a failure, and how the human changes the next move
-- If questions: park anything that Cognitive Debt or What Matters will answer anyway
-- If break: keep it short, then pick up with Cognitive Debt
 -->

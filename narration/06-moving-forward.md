@@ -1,10 +1,12 @@
-<!-- 57. section — Moving Forward -->
+<!-- 56. section — Moving Forward -->
 
-Across everything we have covered, what actually survives?
+We have covered the shift, the compressing middle, the new stack, and the debt
+it can quietly build. One question is left, and it is the one the whole talk
+has been circling: what actually survives?
 
 ---
 
-<!-- 58. default — What Survives — ~3 clicks -->
+<!-- 57. default — What Survives — ~3 clicks -->
 
 Execution is increasingly abundant. People who combine strategy with
 execution will remain rare. The same split plays out in engineering, product
@@ -24,11 +26,11 @@ industry feels so uneven right now.
 
 ---
 
-<!-- 59. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
+<!-- 58. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
 
 Remember the cascade from earlier? The constraint did not disappear. It moved
 upstream, to getting expert knowledge out of heads and into systems, without
-letting it disappear from the people accountable for them. The instruction
+letting it disappear from the people accountable for it. The instruction
 files, the skills, the docs: that is the knowledge-extraction mechanism. And it
 is already reaching past engineers. The same primitives are being wrapped in
 task-first interfaces so domain experts can operate them directly, while
@@ -41,7 +43,7 @@ asset is the institutional loop, not the frontier model.
 
 ---
 
-<!-- 60. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
+<!-- 59. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
 
 Which makes posture the real decision. This is the divide from the opening: not
 simply who has access, but who is learning. In a period of compounding change,
@@ -56,7 +58,7 @@ emphasis is on learn, not on faster.
 
 ---
 
-<!-- 61. default — Where to Start — ~3 clicks -->
+<!-- 60. default — Where to Start — ~3 clicks -->
 
 Offense sounds abstract. On Monday morning it looks like this. You do not need
 an AI strategy to begin. You need one finished pilot.
@@ -77,7 +79,7 @@ tools that will be obsolete before the ink dries.
 
 ---
 
-<!-- 62. two-cols-header — The Next Few Years — ~2 clicks -->
+<!-- 61. two-cols-header — The Next Few Years — ~2 clicks -->
 
 And that posture lands differently depending on where you are in your career,
 so let me split the audience for a moment.
@@ -99,7 +101,7 @@ most.
 
 ---
 
-<!-- 63. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
+<!-- 62. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
 
 All of which points to the same conclusion. The craft evolves. It always has.
 But it remains craft.
@@ -114,7 +116,7 @@ evidence and the tradeoffs.
 
 ---
 
-<!-- 64. cover — Thank You — ~1 clicks -->
+<!-- 63. cover — Thank You — ~1 clicks -->
 
 Thank you. That is the talk — including this narration, which was written as
 markdown and spoken by the very pipeline you just met. The middle compressed.

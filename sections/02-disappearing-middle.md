@@ -137,7 +137,7 @@ layout: quote
   first="Talk is cheap. Show me the code."
   firstAttribution="Linus Torvalds, 2000"
   second="For the first time ever, good talk is exponentially more valuable than good code."
-  secondAttribution="Nadh, 2025"
+  secondAttribution="Kailash Nadh, 2025"
 />
 
 <!--

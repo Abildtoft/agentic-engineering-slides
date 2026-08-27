@@ -18,7 +18,7 @@ of it, everything that follows will sound like an overreaction.
 artifact yourself. You are designing the loop around the agent. Choose the
 work, set the bar, improve the loop. That is the shortest description I have of
 the new job. And I want to be honest that not every organisation is there yet.
-Security reviews, compliance, a sceptical team. Those are real. Treat what
+Security reviews, compliance, a skeptical team. Those are real. Treat what
 follows as the target state, not the assumption.
 [click] Two disciplines make that loop work. Context engineering, and
 spec-driven development. Martin Eriksson has a line I like: speed without
