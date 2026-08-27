@@ -30,10 +30,10 @@ the effort, what happens when it drops to 20%?
 
 <!-- 16. statement — The artifact was never the job. — ~2 clicks -->
 
-Here is a sentence that should sound slightly wrong for a second, after
+The next sentence should sound slightly wrong for a second, after
 everything I just said. The artifact was never the job.
-[click] Duolingo's Chief Product Officer put it this way: a PM with a good idea
-can now get to a first draft faster than ever. They can visualise concepts,
+[click] Duolingo's Chief Product Officer put it this way: a product manager
+with a good idea can now get to a first draft faster than ever. They can visualise concepts,
 test directions, move quickly. The distance between an idea and a thing you can
 look at has collapsed.
 [click] But the job was never the deck, or the prototype, or the code. The job
@@ -48,8 +48,9 @@ the job. If the job was the thinking, it just got faster.
 Twenty-five years apart, two one-liners show how far the culture has moved.
 Linus Torvalds, the creator of Linux, in 2000: talk is cheap, show me the code.
 Half of us have that line somewhere in our hearts. I know I do.
-[click] And then Nadh, last year: for the first time ever, good talk is
-exponentially more valuable than good code. Talk here does not mean vague
+[click] And then Kailash Nadh, the CTO of the Indian broker Zerodha, last
+year: for the first time ever, good talk is exponentially more valuable than
+good code. Talk here does not mean vague
 ideation. It means a precise statement of the problem. That is now the scarce
 thing, and it is scarce in every discipline, not just this one.
 

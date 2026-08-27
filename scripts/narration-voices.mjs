@@ -23,7 +23,7 @@ const { ELEVENLABS_API_KEY } = process.env
 const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? 'cjVigY5qzO86Huf0OWal'
 const MODEL_ID = process.env.ELEVENLABS_MODEL_ID ?? 'eleven_v3'
 const STABILITY = Number(process.env.ELEVENLABS_STABILITY ?? 0.5)
-const PACE = Number(process.env.NARRATION_PACE ?? 1.1)
+const PACE = Number(process.env.NARRATION_PACE ?? 1.2)
 const list = process.argv.includes('--list')
 
 if (!ELEVENLABS_API_KEY) {

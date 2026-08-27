@@ -1,4 +1,4 @@
-<!-- 36. section — Cognitive Debt -->
+<!-- 35. section — Cognitive Debt -->
 
 We have just spent a whole section on an incredible toolkit. Context, skills,
 MCPs, hooks, harnesses, agents. Each layer added power. But each layer also
@@ -11,7 +11,7 @@ has a cost. And the cost has a name.
 
 ---
 
-<!-- 37. default — Two Kinds of Debt — ~3 clicks -->
+<!-- 36. default — Two Kinds of Debt — ~3 clicks -->
 
 Peter Naur wrote, back in 1985, that a program is more than its source code.
 A program is a theory that lives in the minds of the developers. Everything in
@@ -27,7 +27,7 @@ code, the humans may have simply lost the plot.
 
 ---
 
-<!-- 38. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
+<!-- 37. quote — “I no longer have a firm mental model of what my projects can do and how they work, which means each additional feature becomes harder to reason about.” — ~4 clicks -->
 
 That sounds abstract, so here is a concrete case. Margaret-Anne Storey gave a
 student team AI coding tools and tracked them for ten weeks.
@@ -38,15 +38,15 @@ design decisions had been made. And notice the misdiagnosis risk here: a team
 in that state will blame the code quality, when the problem is that the
 understanding is gone.
 [click] That is Storey's account.
-[click] And in case you think it is a student problem, here is Simon Willison,
-one of the most experienced developers working with these tools. I no longer
+[click] And in case you think it is a student problem, here is Simon Willison
+again — you heard him earlier on tests. I no longer
 have a firm mental model of what my projects can do and how they work, which
 means each additional feature becomes harder to reason about. This is not a
 junior problem. It is structural.
 
 ---
 
-<!-- 39. statement — The trap is not AI. — ~2 clicks -->
+<!-- 38. statement — The trap is not AI. — ~2 clicks -->
 
 So let me be precise about what the trap is, because it would be easy to walk
 out of here with the wrong lesson. The trap is not AI.
@@ -61,7 +61,7 @@ judgment. It still has to be earned.
 
 ---
 
-<!-- 40. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
+<!-- 39. default — From Reviewing Code to Reviewing Intent — ~3 clicks -->
 
 If understanding is what is at risk, the practical response is to change what
 humans actually review. Code review used to work because of a happy accident:
@@ -79,7 +79,7 @@ can take back to your team on Monday.
 
 ---
 
-<!-- 41. default — The Swiss-Cheese Model — ~2 clicks -->
+<!-- 40. default — The Swiss-Cheese Model — ~2 clicks -->
 
 Once you start thinking in layered controls, there is a metaphor that fits.
 James Reason's Swiss-cheese model. Each slice is a safeguard, and each one has
@@ -94,7 +94,7 @@ we trust most.
 
 ---
 
-<!-- 42. fact — ~2 clicks -->
+<!-- 41. fact — ~2 clicks -->
 
 Human review. Three preregistered studies at Wharton, nearly fourteen hundred
 participants, almost ten thousand trials. When the AI was wrong, 79.8% of
@@ -117,9 +117,9 @@ like from the inside: nothing.
 
 ---
 
-<!-- 43. default — The Confidence Spiral — ~2 clicks -->
+<!-- 42. default — The Confidence Spiral — ~2 clicks -->
 
-And here is how that shows up in everyday working habits. Each prompt is a
+And this is how that shows up in everyday working habits. Each prompt is a
 slot-machine pull. The response partially satisfies and opens a new question,
 so there is never quite enough to stop and always enough to continue. The
 researchers call these epistemic rabbit holes. Every step feels locally
@@ -131,14 +131,14 @@ first section. Throwing work away on purpose is a decision. The graveyard is
 drift.
 [click] The prompting loop can become a dependency. Convenience now, weaker
 judgment later.
-[click] One team lead put it honestly. We went from barely using coding agents
+[click] The same team lead put it honestly. We went from barely using coding agents
 to using them for every minor change in six months, and I think they have
 eroded our ability to delay gratification. I am not moralising. The mechanism
 is predictable, and predictable means manageable.
 
 ---
 
-<!-- 44. statement — This is a choice, not a fate. — ~2 clicks -->
+<!-- 43. statement — This is a choice, not a fate. — ~2 clicks -->
 
 So let's exhale. I have now spent five minutes telling you that your
 confidence is a symptom, and I promise that is as grim as this talk gets.
@@ -154,7 +154,7 @@ Hold people accountable. And keep capturing the upside.
 
 ---
 
-<!-- 45. default — The Antidote — The Human in the Loop — ~3 clicks -->
+<!-- 44. default — The Antidote — The Human in the Loop — ~3 clicks -->
 
 Here is the antidote, as three team operating rules. Raise the intake bar
 before review starts: require stated intent, a readable diff, test output, and

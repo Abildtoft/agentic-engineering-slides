@@ -17,6 +17,7 @@ const MASCOT_URL = '/narration/mascot.json'
 const SILENT_DWELL_MS = 3500
 const SLIDE_GAP_MS = 700
 const SECTION_GAP_MS = 1500
+const STALL_TIMEOUT_MS = 12000
 const INTERMISSION_DURATION_SECONDS = 5 * 60
 const DISSOLVE_MS = 220
 const DISSOLVE_EASE = 'cubic-bezier(0.4, 0, 0.6, 1)'
@@ -66,6 +67,7 @@ const idleEl = () => elements()[1 - activeIndex.value]
 
 let frame = null
 let dwellTimer = null
+let stallTimer = null
 let breakTimer = null
 let breakStartedAt = null
 let handoffTimers = []
@@ -183,8 +185,24 @@ const remainingDuration = computed(() => Math.max(0, totalDuration.value - overa
 const canGoBack = computed(() => currentSlideNo.value > 1)
 const canGoForward = computed(() => currentSlideNo.value < total.value)
 
+// A deep link opens the start card mid-deck, and Play resumes there — the
+// label and the quoted duration have to say so, or the button lies.
+const startsMidDeck = computed(() => currentSlideNo.value > 1)
+const startLabel = computed(() =>
+  startsMidDeck.value ? `Play from slide ${currentSlideNo.value}` : 'Play from beginning',
+)
+const startDuration = computed(() =>
+  startsMidDeck.value
+    ? `${formatClock(remainingDuration.value)} left of ${formatClock(totalDuration.value)}`
+    : formatClock(totalDuration.value),
+)
+
 const currentCaption = computed(() => {
   if (!captionsEnabled.value) return ''
+  // Before a slide has spoken (paused pre-play, or the settle between slides)
+  // the playhead sits at 0, where the first caption would already match —
+  // don't show words that haven't been said yet.
+  if (!speaking.value && playhead.value === 0) return ''
   const captions = entry.value?.captions ?? []
   return captions.find(caption => playhead.value >= caption.start && playhead.value < caption.end)?.text ?? ''
 })
@@ -225,9 +243,40 @@ function captureNarration(event, properties = {}) {
 function clearPlaybackTimers() {
   clearTimeout(dwellTimer)
   dwellTimer = null
+  clearTimeout(stallTimer)
+  stallTimer = null
   for (const timer of handoffTimers) clearTimeout(timer)
   handoffTimers = []
 }
+
+/**
+ * A network stall parks the element in `buffering` without ever firing an
+ * `error` event, so the deck would sit on "Buffering…" forever. The watchdog
+ * walks the same source chain the error handler does, then gives up into the
+ * error card with its Retry / Next slide / leave options.
+ */
+function onStallTimeout() {
+  stallTimer = null
+  const element = currentMediaEl ?? activeEl()
+  const nextCandidate = currentCandidates.value[currentSourceIndex.value + 1]
+  if (element && nextCandidate) {
+    currentSourceIndex.value++
+    resetMediaElement(element, nextCandidate)
+    playTarget(element)
+    stallTimer = setTimeout(onStallTimeout, STALL_TIMEOUT_MS)
+    return
+  }
+  failPlayback('The narration stalled while loading.')
+}
+
+watch(phase, value => {
+  if (value === 'buffering') {
+    if (!stallTimer) stallTimer = setTimeout(onStallTimeout, STALL_TIMEOUT_MS)
+  } else {
+    clearTimeout(stallTimer)
+    stallTimer = null
+  }
+})
 
 function stopBreakTimer() {
   clearInterval(breakTimer)
@@ -464,6 +513,9 @@ function toggle() {
 }
 
 function backTen() {
+  // During the inter-slide settle the active element is still the outgoing
+  // clip, and seeking it would sync clicks against the new slide's cues.
+  if (!['playing', 'paused', 'buffering'].includes(phase.value)) return
   const element = activeEl()
   if (!element?.duration) return
   const target = Math.max(0, element.currentTime - 10)
@@ -539,6 +591,9 @@ async function goChapter(no) {
   hasStarted.value = true
   controlsOpen.value = false
   transcriptOpen.value = false
+  // An explicit chapter choice means "take me there and play it" — clearing
+  // the paused phase here keeps the slide watcher from re-entering paused.
+  if (phase.value === 'paused') phase.value = 'transitioning'
   if (no === currentSlideNo.value) playCurrent()
   else await go(no)
 }
@@ -612,16 +667,34 @@ async function loadManifests() {
   }
 }
 
+function closePanels() {
+  controlsOpen.value = false
+  closeTranscript()
+}
+
 function onKeydown(event) {
-  if (!enabled.value || ['INPUT', 'SELECT', 'BUTTON'].includes(event.target?.tagName)) return
-  if (event.key === 'k' || event.key === ' ') {
+  if (!enabled.value) return
+  // Modified keys are somebody else's shortcut — Cmd+C is copy, not captions.
+  if (event.metaKey || event.ctrlKey || event.altKey) return
+  if (['INPUT', 'SELECT', 'BUTTON'].includes(event.target?.tagName)) return
+  const key = event.key.toLowerCase()
+  if (key === 'k' || event.key === ' ') {
     event.preventDefault()
     toggle()
-  } else if (event.key.toLowerCase() === 'c') {
+  } else if (key === 'c') {
     toggleCaptions()
-  } else if (event.key.toLowerCase() === 'm') {
+  } else if (key === 'm') {
     toggleNarratorView()
+  } else if (event.key === 'Escape' && (controlsOpen.value || transcriptOpen.value)) {
+    event.preventDefault()
+    closePanels()
   }
+}
+
+function onPointerDown(event) {
+  if (!controlsOpen.value && !transcriptOpen.value) return
+  if (event.target.closest?.('.narrator-controls, .narrator-transcript')) return
+  closePanels()
 }
 
 function onVisibilityChange() {
@@ -658,6 +731,7 @@ onMounted(() => {
   narratorView.value = localStorage.getItem('narrator-view') === 'voice' ? 'voice' : 'mascot'
   frame = requestAnimationFrame(tick)
   document.addEventListener('keydown', onKeydown, true)
+  document.addEventListener('pointerdown', onPointerDown)
   document.addEventListener('visibilitychange', onVisibilityChange)
   loadManifests()
 })
@@ -668,6 +742,7 @@ onBeforeUnmount(() => {
   clearPlaybackTimers()
   clearBreakTimer()
   document.removeEventListener('keydown', onKeydown, true)
+  document.removeEventListener('pointerdown', onPointerDown)
   document.removeEventListener('visibilitychange', onVisibilityChange)
 })
 </script>
@@ -698,10 +773,10 @@ onBeforeUnmount(() => {
           talk, read by a synthetic voice and character. The robot narrator is a
           deliberate choice: if the delivery ever sounds robotic, he’s staying on theme.
         </p>
-        <p class="narrator-meta">{{ formatClock(totalDuration) }} · {{ total }} slides · captions included</p>
+        <p class="narrator-meta">{{ startDuration }} · {{ total }} slides · captions included</p>
       </div>
       <button class="narrator-primary" type="button" :disabled="phase === 'loading'" @click="start">
-        {{ phase === 'loading' ? 'Preparing narration…' : 'Play from beginning' }}
+        {{ phase === 'loading' ? 'Preparing narration…' : startLabel }}
       </button>
       <button class="narrator-dismiss" type="button" @click="leaveAutoMode">Present without narration</button>
       <details v-if="phase === 'ready'" class="narrator-chapters">
@@ -732,6 +807,7 @@ onBeforeUnmount(() => {
         <button class="narrator-primary" type="button" @click="continueIntermission">Continue</button>
         <button v-if="!breakSeconds" class="narrator-secondary" type="button" @click="startBreak">Start 5 min break</button>
       </div>
+      <button class="narrator-dismiss" type="button" @click="leaveAutoMode">Present without narration</button>
     </section>
 
     <section v-if="phase === 'ended'" class="narrator-card narrator-moment" aria-live="polite">
@@ -885,6 +961,10 @@ onBeforeUnmount(() => {
   left: 50%;
   top: 50%;
   width: min(430px, calc(100% - 3rem));
+  /* The expanded chapter list can outgrow the frame, and the frame doesn't
+     scroll — the card has to, or its header and last chapters are clipped. */
+  max-height: calc(100% - 2.5rem);
+  overflow-y: auto;
   transform: translate(-50%, -50%);
   padding: 1.4rem;
   border: 1px solid color-mix(in srgb, var(--brand-primary) 22%, transparent);
@@ -1099,6 +1179,11 @@ onBeforeUnmount(() => {
   margin-top: 1rem;
 }
 
+.narrator-moment .narrator-dismiss {
+  display: inline-block;
+  margin-top: 0.9rem;
+}
+
 .narrator-actions .narrator-primary {
   margin-top: 0;
 }
@@ -1274,6 +1359,13 @@ onBeforeUnmount(() => {
 .narrator-controls button:disabled {
   cursor: default;
   opacity: 0.35;
+}
+
+/* An active toggle (captions on, voice-only on, an open panel) has to look
+   held down — the label alone doesn't say which state you're in. */
+.narrator-controls button[aria-pressed='true'],
+.narrator-controls button[aria-expanded='true'] {
+  background: color-mix(in srgb, var(--brand-primary) 14%, transparent);
 }
 
 .narrator-controls .narrator-play {

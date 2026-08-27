@@ -111,8 +111,8 @@ public/narration/*.mp4          # rendered clips (tracked — see the size note)
 components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 ```
 
-- **ALWAYS — One clip per slide, not per click step.** The deck is 63 slides with 128
-  narration cue markers; per-cue clips mean 128 avatar entrances and a hard cut
+- **ALWAYS — One clip per slide, not per click step.** The deck is 63 slides with 130
+  narration cue markers; per-cue clips mean 130 avatar entrances and a hard cut
   every time a bullet appears. A slide is the natural unit of speech, and the
   reveals ride inside it on cue times
 - Cues are marked inline in the prose as `[click]`. The marker is stripped
@@ -136,7 +136,7 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   tests carry them; ElevenLabs words never match the pattern, so it is a no-op
   on fresh builds
 - **Pace is baked into the audio, not requested from the API.**
-  `NARRATION_PACE` (default 1.1, range 0.5–2) runs every fresh clip through
+  `NARRATION_PACE` (default 1.2, range 0.5–2) runs every fresh clip through
   ffmpeg's pitch-preserving `atempo`, and every word timing, cue, caption and
   duration is divided by the same factor — a uniform time-stretch, so the
   scaling is exact, not estimated. This is deliberately not
@@ -233,8 +233,10 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   and Open without narration
 - The bottom dock is the control plane: previous/next slide, ten-second rewind,
   playback speed, remaining time, captions, per-slide transcript, chapters and
-  a voice-only view. Space or K toggles playback, C toggles captions and M
-  toggles the picture. Hiding the tab pauses rather than letting the deck run
+  a voice-only view. Space or K toggles playback, C toggles captions, M
+  toggles the picture, and Escape (or a click elsewhere) closes an open
+  transcript or chapter panel; modified keys (Cmd+C and friends) are left
+  alone. Hiding the tab pauses rather than letting the deck run
   out of sight
 - Captions and transcripts live on each `manifest.json` slide entry. Fresh
   synthesis writes captions from the alignment's word timings; `yarn

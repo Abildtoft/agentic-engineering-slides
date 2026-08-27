@@ -26,7 +26,7 @@ in the room. That is where we are standing.
 
 <!-- 7. default — Almost Nobody Is Here Yet — ~3 clicks -->
 
-And if 1997 sounds like an exaggeration, here is one estimate of how early this
+And if 1997 sounds like an exaggeration, consider one estimate of how early this
 actually is. Martin Eriksson reports it as this funnel.
 [click] His estimate puts the share that has never used AI at 84%. Whatever you
 have heard about how fast this is moving, most people's daily lives are still
@@ -86,7 +86,7 @@ that changed between them is the way I work.
 [click] Last year: 343 finished pieces of work that made it into the product.
 In our world those are called merged pull requests, and I want to give that
 number its due. That was a normal, productive year, and I was proud of it.
-[click] This year, the same measure, same person.
+[click] This year, the same measure, same person: over six thousand.
 [click] Commits tell the same story. A commit is a saved step along the way,
 so this is roughly how many times the work moved forward. 967 in the old year.
 [click] And 16 times that in the new one.
@@ -151,6 +151,6 @@ different world.
 
 Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
 summer 2026, he wrote, people working with the most advanced AI will feel like
-they live in a parallel world. It is summer 2026. So here is the question I
-would ask you to hold onto for the rest of this hour, and I genuinely do not
+they live in a parallel world. It is summer 2026. So this is the question I
+would ask you to hold onto for the rest of this talk, and I genuinely do not
 know the answer for your team. Which side of that divide are you on?

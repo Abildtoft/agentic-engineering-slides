@@ -13,7 +13,7 @@
  * normalisation surprises: the alignment covers the text as written, so
  * numerals and abbreviations count as one token each, always.
  *
- * Pace is baked into the audio, not the player. `NARRATION_PACE` (default 1.1)
+ * Pace is baked into the audio, not the player. `NARRATION_PACE` (default 1.2)
  * runs the downloaded clip through ffmpeg's `atempo` — pitch-preserving, and
  * exact: time t in the original maps to t/pace, so every word timing and cue
  * is scaled by the same factor. This is deliberately not `voice_settings.speed`,
@@ -100,7 +100,7 @@ const MODEL_ID = process.env.ELEVENLABS_MODEL_ID ?? 'eleven_v3'
     (most expressive, occasionally off-script), 0.5 Natural, 1.0 Robust. */
 const STABILITY = Number(process.env.ELEVENLABS_STABILITY ?? 0.5)
 /** Baked into the audio via atempo; every timestamp is divided by this. */
-const PACE = Number(process.env.NARRATION_PACE ?? 1.1)
+const PACE = Number(process.env.NARRATION_PACE ?? 1.2)
 /** Best-effort determinism: a re-synthesised slide (a lost mp3, a --force run
     with unchanged prose) comes back as close to the same take as the model
     allows, instead of a fresh performance nobody reviewed. */

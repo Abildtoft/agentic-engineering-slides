@@ -57,15 +57,15 @@ agent can do. Resources, things it can read. And prompts, templates it can
 reuse. All of it schema-validated, so handoffs are predictable. Ask for a
 Linear issue about the bug you just found, and the agent picks the create
 issue tool and gets back an issue number. No interpretation at the interface.
-[click] So here is the contrast. Skills tell the agent how to think. MCP tells
-it what it can safely operate. Soft guidance on one side, a hard contract on
-the other.
+[click] So set the two side by side. Skills tell the agent how to think. MCP
+tells it what it can safely operate. Soft guidance on one side, a hard contract
+on the other.
 
 ---
 
 <!-- 29. default — MCP Example: Figma ↔ Frontend — ~3 clicks -->
 
-Here is the same pattern in a domain that is not tickets and repos. Design.
+Now the same pattern in a domain that is not tickets and repos. Design.
 The agent talks to a Figma MCP server, pulls the design context and the
 variable definitions for an approved frame, and turns them into a scoped spec
 with acceptance criteria. Then it builds. Design intent becomes structured
@@ -94,8 +94,8 @@ cycle repeats. Read, think, act, observe, again.
 [click] The model is one box. Everything else is the harness. An agent is a
 model plus a harness. That includes specialised agents: one persona, a narrow
 toolset, a single job, each one a markdown file you can version. One team
-went from thirtieth to fifth on a coding benchmark changing only the harness.
-Same model. The leverage is in the system around it.
+went from thirtieth to fifth on a coding benchmark by changing only the
+harness. Same model. The leverage is in the system around it.
 [click] Which gives you the operating rule. When an agent fails, do not just
 fix the output. Improve the harness, so the whole loop gets better. Mitchell
 Hashimoto's version: the model is the engine. The harness is the car. And if
@@ -106,7 +106,7 @@ is everything that lets the chef cook the same dish twice.
 
 <!-- 31. default — Same Model, Same Prompt — ~2 clicks -->
 
-Here is that leverage, made visible. Justin Schroeder ran the same model twice
+That leverage, made visible. Justin Schroeder ran the same model twice
 on the same one-shot prompt: a small explorable zen garden. Same provider,
 same quantisation, even the same system prompt. The only variable is the
 harness. With a weak harness, this is what came back: a bare disc, a few
@@ -140,8 +140,8 @@ deletion outright and makes the agent use the operating system's trash can
 instead, like everyone else in the company. Tests close the loop. The agent
 tries, fails, and retries on
 its own, which is exactly what that bounce in the diagram is drawing. Simon
-Willison says tests are free now, effectively free, and no longer remotely
-optional.
+Willison, one of the most experienced developers working with these tools,
+says tests are free now, effectively free, and no longer remotely optional.
 [click] Name the pattern: explicit gates around probabilistic agents. Automate
 what can be measured, and assign ownership where judgment remains. The system
 needs hard checkpoints, but it also needs named humans for the questions no
@@ -151,7 +151,7 @@ test can settle.
 
 <!-- 33. default — Set the Constraints Around Your Agents — ~3 clicks -->
 
-Tests and reviews are two gates. Here is the full ring: eight things you might
+Tests and reviews are two gates. This is the full ring: eight things you might
 care about, running from correctness and security around to cost and
 comprehensibility. Some become deterministic
 checks; others remain explicit, accountable judgments. The ring is not equally
@@ -177,23 +177,15 @@ the other end a pull request. It is an orchestrator, not a monolith: it
 composes narrower skills and owns only the sequencing and the handoffs.
 [click] It starts with a read-only preflight, then implements the issue on its
 own branch.
-[click] Then the quality loop, which is where most of the wall-clock goes and
-none of my attention. Code review, convention review, refactor gates, all run
+[click] Then the quality loop, which is where most of the wall-clock time
+goes and none of my attention. Code review, convention review, refactor gates, all run
 against the diff. Findings get fixed, the gates run again, and a remediation
 budget stops it looping forever. It never widens the scope to make a finding
 disappear. Then a fresh, full verification run. A gap is reported as a gap,
 never claimed as a pass.
-[click] Then the PR, and CI iterated until green. If it hits a blocker it
-stops, with the evidence preserved. A failed gate is a stop, not a warning.
-And so your loop shrinks to two moments: approve the intent, then review the
-evidence and own the result.
-
----
-
-<!-- 35. center — Temperature Check — Demo, Questions, Break? -->
-
-That is my harness, and that is the halfway mark. In the room, this is where
-I stop and let the audience choose: a live demo, open questions, or a short
-break. You, however, are watching a recording, and I cannot hear your answer —
-so we will keep going. If you want the break anyway, the pause button wins
-every vote. The second half is about the cost nobody puts on the invoice.
+[click] Then the pull request, and the automated checks rerun until they
+pass. If it hits a blocker it stops, with the evidence preserved. A failed
+gate is a stop, not a warning. And so your loop shrinks to two moments:
+approve the intent, then review the evidence and own the result. That is my
+harness. And the second half of this talk is about the cost nobody puts on
+the invoice.
