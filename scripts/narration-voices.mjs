@@ -1,140 +1,116 @@
 /**
- * Preflight for `yarn narration:build`. Confirms the key works, and that the
- * configured voice and avatar both exist and are usable.
+ * Preflight for `yarn narration:audio`. Confirms the key works, that the
+ * configured voice and model exist on the account, that the character quota
+ * covers the deck, and that ffmpeg is present when a pace change needs it.
  *
- * The voice check is the one that earns its keep. Cue timing depends entirely
- * on `word_timestamps`, which /v3/voices/speech only returns for voices on the
- * Starfish engine — anything else synthesises perfectly well and returns null
- * there, so the build silently falls back to spacing cues evenly through the
- * clip. That failure looks like success right up until the reveals drift away
- * from the voice on stage. Cheaper to catch it here than to re-render an hour
- * of video afterwards.
+ * The voice check is the one that earns its keep: a mistyped voice id fails
+ * with a 404 only after the first slide's request, and a voice that isn't the
+ * one you meant synthesises the whole deck in the wrong person before anyone
+ * listens. Resolving it here prints the name and labels so "friendly American
+ * male" is verified, not assumed.
  *
- *   yarn narration:voices            # check the configured IDs
- *   yarn narration:voices --list     # ...and print every Starfish voice
- *
- * Endpoints are v3 throughout. The v2/v1 equivalents still answer, but every
- * one of them returns a `warning` naming a 2026-10-31 sunset.
+ *   yarn narration:voices            # check the configured voice/model/quota
+ *   yarn narration:voices --list     # ...and print every voice on the account
  */
-const API = 'https://api.heygen.com'
-const { HEYGEN_API_KEY, HEYGEN_VOICE_ID, HEYGEN_AVATAR_ID } = process.env
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
+import { buildIndex, loadDeck } from './narration-lib.mjs'
+
+const run = promisify(execFile)
+
+const API = 'https://api.elevenlabs.io'
+const { ELEVENLABS_API_KEY } = process.env
+const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? 'cjVigY5qzO86Huf0OWal'
+const MODEL_ID = process.env.ELEVENLABS_MODEL_ID ?? 'eleven_v3'
+const STABILITY = Number(process.env.ELEVENLABS_STABILITY ?? 0.5)
+const PACE = Number(process.env.NARRATION_PACE ?? 1.1)
 const list = process.argv.includes('--list')
 
-if (!HEYGEN_API_KEY) {
-  console.error('narration-voices: HEYGEN_API_KEY is not set — add it to .env (see .env.example)')
+if (!ELEVENLABS_API_KEY) {
+  console.error('narration-voices: ELEVENLABS_API_KEY is not set — add it to .env (see .env.example)')
   process.exit(1)
 }
 
-async function heygen(path) {
+async function elevenlabs(path) {
   const response = await fetch(`${API}${path}`, {
-    headers: { 'X-Api-Key': HEYGEN_API_KEY, Accept: 'application/json' },
+    headers: { 'xi-api-key': ELEVENLABS_API_KEY, Accept: 'application/json' },
   })
   const payload = await response.json().catch(() => null)
-  if (!response.ok || payload?.error) {
-    throw new Error(`GET ${path} -> ${response.status} ${JSON.stringify(payload?.error ?? payload)}`)
+  if (!response.ok) {
+    throw new Error(`GET ${path} -> ${response.status} ${JSON.stringify(payload?.detail ?? payload)}`)
   }
-  // The whole envelope, not payload.data: v3 puts the page cursor
-  // (`has_more` / `next_token`) as a sibling of `data`, so unwrapping here
-  // would silently discard it and cap every listing at one page.
   return payload
 }
 
-const dataOf = payload => payload.data ?? payload
-
 let ok = true
 
-/**
- * /v3/voices returns 20 per page behind `has_more` / `next_token` — around 60
- * pages on this account. Reading only the first page reports almost every
- * compatible voice as incompatible, which is worse than not checking at all:
- * it sends you off to change a voice that was fine.
- */
-async function allStarfishVoices() {
-  const collected = []
-  let token = null
-  // A page cap rather than a bare `while (token)`: a server-side change that
-  // stopped advancing the token would otherwise spin here forever.
-  for (let page = 0; page < 200; page++) {
-    const payload = await heygen(`/v3/voices?engine=starfish${token ? `&token=${encodeURIComponent(token)}` : ''}`)
-    // `data` is the array itself on v3, but has been an object with a `voices`
-    // key elsewhere in the API — accept either.
-    const page_ = dataOf(payload)
-    collected.push(...(Array.isArray(page_) ? page_ : (page_.voices ?? [])))
-    token = payload.has_more ? payload.next_token : null
-    if (!token) break
-  }
-  return collected
-}
-
-const starfish = await allStarfishVoices()
-
 if (list) {
-  for (const voice of starfish) {
-    console.log(`  ${voice.voice_id}  ${voice.name ?? ''} ${voice.language ?? ''} ${voice.gender ?? ''}`.trimEnd())
+  const { voices } = await elevenlabs('/v1/voices')
+  for (const voice of voices ?? []) {
+    const labels = Object.values(voice.labels ?? {}).filter(Boolean).join(', ')
+    console.log(`  ${voice.voice_id}  ${voice.name ?? ''}${labels ? `  (${labels})` : ''}`)
   }
-  console.log(`\n${starfish.length} Starfish voices.\n`)
+  console.log(`\n${voices?.length ?? 0} voices on the account.\n`)
 }
 
-const match = starfish.find(v => v.voice_id === HEYGEN_VOICE_ID)
-if (!HEYGEN_VOICE_ID) {
-  console.error('✗ HEYGEN_VOICE_ID is not set')
-  ok = false
-} else if (match) {
-  console.log(`✓ voice ${HEYGEN_VOICE_ID} — ${match.name ?? 'unnamed'}, Starfish, word timings available`)
-} else {
-  console.error(
-    `✗ voice ${HEYGEN_VOICE_ID} is not in the Starfish list.\n` +
-      '  It may still synthesise, but /v3/voices/speech will return no word_timestamps,\n' +
-      '  so every [click] cue would be spaced evenly instead of timed to the words.\n' +
-      '  Run with --list to pick a compatible voice.',
-  )
+try {
+  const voice = await elevenlabs(`/v1/voices/${VOICE_ID}`)
+  const labels = Object.values(voice.labels ?? {}).filter(Boolean).join(', ')
+  console.log(`✓ voice ${VOICE_ID} — ${voice.name ?? 'unnamed'}${labels ? ` (${labels})` : ''}`)
+} catch (error) {
+  console.error(`✗ voice ${VOICE_ID} does not resolve — ${error.message}`)
+  console.error('  Run with --list to pick one.')
   ok = false
 }
 
-/**
- * Resolved by direct lookup rather than by scanning a listing.
- *
- * In v3 an "avatar" is a *group* and the id you pass to video generation is a
- * *look* inside it, so `/v3/avatars` (~1.4k groups) will never contain a usable
- * avatar_id and searching it reports valid avatars as missing.
- * `/v3/avatars/looks/{look_id}` answers the question directly in one request —
- * note the path, which is not the `/v3/avatars/{group_id}/looks/{look_id}` the
- * docs describe; that one 404s, and we'd need the group id we don't have.
- */
-if (!HEYGEN_AVATAR_ID) {
-  console.error('✗ HEYGEN_AVATAR_ID is not set')
-  ok = false
-} else {
-  try {
-    const look = dataOf(await heygen(`/v3/avatars/looks/${HEYGEN_AVATAR_ID}`))
-    const detail = [look.gender, look.avatar_type, `${look.image_width}x${look.image_height}`]
-      .filter(Boolean)
-      .join(', ')
-    console.log(`✓ avatar ${HEYGEN_AVATAR_ID} — ${look.name ?? 'unnamed'} (${detail})`)
-    // A look can exist while its training is still running, in which case
-    // generation fails later for a reason that has nothing to do with the
-    // request.
-    if (look.status && look.status !== 'completed') {
-      console.error(`✗ avatar status is "${look.status}", not "completed" — generation will fail`)
-      ok = false
-    }
-  } catch (error) {
-    console.error(`✗ avatar ${HEYGEN_AVATAR_ID} does not resolve — ${error.message}`)
+try {
+  const models = await elevenlabs('/v1/models')
+  const model = models.find?.(m => m.model_id === MODEL_ID)
+  if (model) {
+    console.log(`✓ model ${MODEL_ID} — ${model.name ?? ''}`)
+  } else {
+    console.error(`✗ model ${MODEL_ID} is not available on this account`)
     ok = false
   }
+} catch (error) {
+  console.warn(`? could not list models — ${error.message}`)
 }
 
-// Rendering fails with a 402 rather than a validation error when the wallet is
-// empty, which reads as a broken request unless you know to look here.
+if (MODEL_ID.startsWith('eleven_v3') && ![0, 0.5, 1].includes(STABILITY)) {
+  console.error(`✗ ELEVENLABS_STABILITY=${STABILITY} — eleven_v3 accepts only 0.0 (Creative), 0.5 (Natural) or 1.0 (Robust)`)
+  ok = false
+}
+
+// Synthesis is billed per character. Sizing the whole deck against the quota
+// here beats discovering an exhausted plan halfway through a build (the run
+// saves progress and resumes, but the deck stays half old voice, half new).
 try {
-  const me = dataOf(await heygen('/v3/users/me'))
-  const balance = me.wallet?.remaining_balance
-  if (typeof balance === 'number') {
-    console.log(`${balance > 0 ? '✓' : '✗'} balance ${balance.toFixed(2)} ${(me.wallet.currency ?? '').toUpperCase()}`)
-    if (balance <= 0) ok = false
+  const { entries, problems } = await buildIndex(await loadDeck())
+  if (problems.length) {
+    console.warn(`? narration is out of sync with the deck — character estimate skipped`)
+  } else {
+    const characters = entries.reduce((sum, entry) => sum + entry.text.length, 0)
+    const subscription = await elevenlabs('/v1/user/subscription')
+    const remaining = subscription.character_limit - subscription.character_count
+    const enough = remaining >= characters
+    console.log(
+      `${enough ? '✓' : '✗'} quota — a full rebuild is ~${characters.toLocaleString('en-US')} characters, ` +
+        `${remaining.toLocaleString('en-US')} remaining on the ${subscription.tier ?? '?'} plan`,
+    )
+    if (!enough) ok = false
   }
 } catch (error) {
-  console.warn(`? could not read the account balance — ${error.message}`)
+  console.warn(`? could not read the subscription quota — ${error.message}`)
+}
+
+if (PACE !== 1) {
+  try {
+    await run('ffmpeg', ['-version'])
+    console.log(`✓ ffmpeg on PATH — NARRATION_PACE=${PACE} will be applied with atempo`)
+  } catch {
+    console.error(`✗ NARRATION_PACE=${PACE} needs ffmpeg on PATH, and it is missing`)
+    ok = false
+  }
 }
 
 process.exit(ok ? 0 : 1)

@@ -1,6 +1,6 @@
 /**
  * Adds transcripts and deterministic captions to the existing narration
- * manifest without calling HeyGen or touching media assets.
+ * manifest without calling the TTS API or touching media assets.
  *
  * Fresh synthesis writes captions from exact word timings. This command is the
  * zero-cost migration for cached clips built before captions existed.

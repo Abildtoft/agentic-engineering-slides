@@ -2,7 +2,10 @@
 
 Those are the two disciplines. Context, and specs. Without the right building
 blocks they stay theoretical, so let me show you the pieces that make them
-real. I will use my own setup as the example, but the pattern is tool-agnostic.
+real. To be clear, this is a highlights reel, not an inventory: the toolbox is
+far bigger than one section can hold, and growing monthly. These are the
+handful of terms you will meet everywhere. I will use my own setup as the
+example, but the pattern is tool-agnostic.
 Every vendor has a version of each of these.
 
 ---
@@ -15,7 +18,8 @@ definitions, all markdown. On the left is a piece of the actual file from the
 repo behind these slides. Headings, bullets, some bold text. That is it.
 [click] And on the right is what the agent sees. The same thing. Headings
 become sections, lists become constraints. It is the onboarding document you
-would write for a new hire, except the new hire is an agent.
+would write for a new hire, except the new hire is an agent. And unlike any
+new hire I have ever met, the agent actually reads it.
 [click] It is read at the start of every session. One file at the root
 carries the project-wide rules, and files in subdirectories add local
 constraints. Start with the root file. Only add more when the agent keeps
@@ -94,20 +98,47 @@ went from thirtieth to fifth on a coding benchmark changing only the harness.
 Same model. The leverage is in the system around it.
 [click] Which gives you the operating rule. When an agent fails, do not just
 fix the output. Improve the harness, so the whole loop gets better. Mitchell
-Hashimoto's version: the model is the engine. The harness is the car.
+Hashimoto's version: the model is the engine. The harness is the car. And if
+you would rather stay in the kitchen: the model is the chef, and the harness
+is everything that lets the chef cook the same dish twice.
 
 ---
 
-<!-- 31. default — Guardrails — ~3 clicks -->
+<!-- 31. default — Same Model, Same Prompt — ~2 clicks -->
+
+Here is that leverage, made visible. Justin Schroeder ran the same model twice
+on the same one-shot prompt: a small explorable zen garden. Same provider,
+same quantisation, even the same system prompt. The only variable is the
+harness. With a weak harness, this is what came back: a bare disc, a few
+floating poles, the pieces of a garden that never became one.
+[click] And with a strong harness — same model, same words — paths, a koi
+pond, lanterns, light coming through the trees. A place you can actually walk
+around in.
+[click] Everything you would control for in an experiment is controlled here.
+The difference on screen is the harness. So when an agent's output
+disappoints, the first place to look is not the model.
+
+---
+
+<!-- 32. default — Guardrails — ~3 clicks -->
 
 The model in the middle of that machine is stochastic. So the next question is
 reliability.
 [click] Same prompt, different result. Every time. Reliability does not come
 from a perfected prompt. It comes from the system around the model.
 [click] Two rails keep the loop honest, and they are ones you already know.
-Tests, and reviews. Hooks fire inside the loop: block a destructive command
-before it runs, format the file after every write, reject the output if it
-fails validation. Tests close the loop. The agent tries, fails, and retries on
+Tests, and reviews. Part of that enforcement runs inside the loop itself,
+through hooks. A hook is a small automatic rule that fires at a fixed moment:
+before a command runs, or after a file is written. And where a skill was soft
+guidance the model interprets, a hook is hard — not a suggestion, just
+something that happens, every time. Hooks block a destructive command before
+it runs, format the file after every write, reject the output if it fails
+validation. That first one is not theoretical for me. I once spent
+several hours building out specs, then watched an agent delete them before I
+had saved them anywhere. Unrecoverable. My harness now has a hook that blocks
+deletion outright and makes the agent use the operating system's trash can
+instead, like everyone else in the company. Tests close the loop. The agent
+tries, fails, and retries on
 its own, which is exactly what that bounce in the diagram is drawing. Simon
 Willison says tests are free now, effectively free, and no longer remotely
 optional.
@@ -118,11 +149,11 @@ test can settle.
 
 ---
 
-<!-- 32. default — Set the Constraints Around Your Agents — ~3 clicks -->
+<!-- 33. default — Set the Constraints Around Your Agents — ~3 clicks -->
 
-Tests and reviews are two gates. Here is the full ring. Correctness, security,
-performance, accessibility, maintainability, cost, back-pressure,
-comprehensibility. Eight things you might care about. Some become deterministic
+Tests and reviews are two gates. Here is the full ring: eight things you might
+care about, running from correctness and security around to cost and
+comprehensibility. Some become deterministic
 checks; others remain explicit, accountable judgments. The ring is not equally
 thick everywhere. Scale it by blast radius, code lifespan, and who must
 understand the result, not by whether the author was a human or an agent.
@@ -139,7 +170,7 @@ line to designing the gates, and the gates decide what is good enough to ship.
 
 ---
 
-<!-- 33. default — From Issue to Pull Request: One Command — ~3 clicks -->
+<!-- 34. default — From Issue to Pull Request: One Command — ~3 clicks -->
 
 That ring, composed into a pipeline. One command, a Linear issue ID, and out
 the other end a pull request. It is an orchestrator, not a monolith: it
@@ -159,9 +190,10 @@ evidence and own the result.
 
 ---
 
-<!-- 34. center — Temperature Check — Demo, Questions, Break? -->
+<!-- 35. center — Temperature Check — Demo, Questions, Break? -->
 
 That is my harness, and that is the halfway mark. In the room, this is where
 I stop and let the audience choose: a live demo, open questions, or a short
-break. Here, we will keep going. The second half is about the cost nobody puts
-on the invoice.
+break. You, however, are watching a recording, and I cannot hear your answer —
+so we will keep going. If you want the break anyway, the pause button wins
+every vote. The second half is about the cost nobody puts on the invoice.

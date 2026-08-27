@@ -29,3 +29,6 @@ different from the last three times someone told you that. Then the part of the
 job that is compressing, and the new stack you build on top of it. We will take a
 temperature check together in the middle. Then the cost nobody puts on the
 invoice, what actually still matters, and where to start on Monday.
+One assumption before we begin: I will take the basic vocabulary as read — what
+a large language model is, what a prompt is, what a token is. Everything more
+specialised than that gets introduced along the way.

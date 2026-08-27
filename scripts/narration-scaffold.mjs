@@ -7,7 +7,7 @@
  * positionally and the run reports it, so the misalignment is visible in the
  * diff rather than at the podium.
  *
- * Nothing here talks to HeyGen — it is a local, offline scaffold.
+ * Nothing here talks to any API — it is a local, offline scaffold.
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'

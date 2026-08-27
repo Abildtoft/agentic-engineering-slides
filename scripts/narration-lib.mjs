@@ -109,23 +109,63 @@ export function splitCues(prose) {
 export const CUE_LEAD_SECONDS = 0.25
 
 /**
- * Resolves each [click] marker to a time by counting words into HeyGen's
- * word_timestamps.
+ * Folds a character-level alignment (ElevenLabs' `alignment` from
+ * /v1/text-to-speech/{id}/with-timestamps) into word timings: each run of
+ * non-whitespace characters becomes one `{ word, start, end }`.
+ *
+ * Grouping on whitespace is the point, not a convenience — it is the same
+ * tokenisation `resolveCues` counts with (`\S+`), so the two can never
+ * disagree on word count. The alignment must be the one over the *original*
+ * text; `normalized_alignment` re-tokenises ("2026" into three words) and
+ * would break the count.
+ */
+export function wordsFromAlignment(alignment) {
+  const characters = alignment?.characters ?? []
+  const starts = alignment?.character_start_times_seconds ?? []
+  const ends = alignment?.character_end_times_seconds ?? []
+  const words = []
+  let current = null
+  characters.forEach((character, i) => {
+    if (/\s/.test(character)) {
+      current = null
+      return
+    }
+    if (current) {
+      current.word += character
+      current.end = ends[i]
+    } else {
+      current = { word: character, start: starts[i], end: ends[i] }
+      words.push(current)
+    }
+  })
+  return words
+}
+
+/** Word timings for audio time-stretched by `pace` (ffmpeg atempo): uniform
+    tempo change, so t maps exactly to t/pace. */
+export function scaleWordTimes(words, pace) {
+  if (pace === 1) return words
+  return words.map(({ word, start, end }) => ({ word, start: start / pace, end: end / pace }))
+}
+
+/**
+ * Resolves each [click] marker to a time by counting words into the
+ * synthesiser's word timings.
  *
  * The two tokenisations only have to agree on *count*, not on spelling — the
- * words themselves are never compared, because the synthesiser normalises them
- * ("2026" spoken as three words, "MCP" as three letters) and a string match
- * would desynchronise the moment it hit one. Counting survives that as long as
- * the prose avoids constructs that expand; where it doesn't, the caller is told
- * via `estimated` and cues fall back to even spacing — wrong by a fraction of a
- * second rather than by a whole slide.
+ * words themselves are never compared, because a synthesiser may normalise
+ * them ("2026" spoken as three words, "MCP" as three letters) and a string
+ * match would desynchronise the moment it hit one. Counting survives that as
+ * long as the prose avoids constructs that expand; where it doesn't, the
+ * caller is told via `estimated` and cues fall back to even spacing — wrong by
+ * a fraction of a second rather than by a whole slide.
  */
 export function resolveCues(segments, wordTimestamps, duration) {
-  // HeyGen brackets the array with `<start>` and `<end>` sentinel entries that
-  // carry timings but aren't spoken. Counting them shifts every cue one word
-  // early — a constant offset that looks like a plausible reveal rather than a
-  // bug, which is exactly why it survived until a real API response was
-  // inspected. Confirmed on a live call: 8 entries for 6 spoken words.
+  // HeyGen-era manifests bracket the array with `<start>` and `<end>` sentinel
+  // entries that carry timings but aren't spoken. Counting them shifts every
+  // cue one word early — a constant offset that looks like a plausible reveal
+  // rather than a bug. ElevenLabs word timings never match the pattern, so the
+  // filter is a no-op there.
   const spoken = (wordTimestamps ?? []).filter(w => !/^<[^>]*>$/.test(w.word))
   const wordsIn = text => (text.match(/\S+/g) || []).length
   const cues = []

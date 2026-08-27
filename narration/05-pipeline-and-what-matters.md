@@ -1,11 +1,11 @@
-<!-- 45. section — What Matters -->
+<!-- 46. section — What Matters -->
 
 We have diagnosed the risks. Now let's name what endures. What capabilities
 become more valuable when the cost of execution collapses?
 
 ---
 
-<!-- 46. quote — ~2 clicks -->
+<!-- 47. quote — ~2 clicks -->
 
 Robert Martin captured the experience perfectly. In his words: it is amazing
 how much work it is to wrestle these agents to my will.
@@ -19,7 +19,7 @@ judgment get applied? Zoom out from the agent loop, and there are three places.
 
 ---
 
-<!-- 47. default — Three Loops. Three Clocks. — ~1 clicks -->
+<!-- 48. default — Three Loops. Three Clocks. — ~1 clicks -->
 
 Three nested loops, running on three different clocks. The centre ring is the
 one from the harness section. The agent turns a spec into tested software, and
@@ -38,11 +38,12 @@ judgment is the compounding asset.
 
 ---
 
-<!-- 48. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
+<!-- 49. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
 
 Which leads to a line that should sound like a contradiction for a second. The
 fastest way to build is to find the cheapest way to learn.
-[click] Every one of those loops is a learning loop, and they are priced very
+[click] Remember the jet fuel burning on the runway? This is the runway. Every
+one of those loops is a learning loop, and they are priced very
 differently. The inner loop is nearly free now. So accelerating it just gets
 you to the wrong answer sooner. Every team I see optimising AI adoption is
 optimising the minutes loop, and the minutes loop was never the problem.
@@ -55,7 +56,7 @@ experiment now. But cheap learning is what earns the right to build.
 
 ---
 
-<!-- 49. statement — The prototype is the new brief. — ~3 clicks -->
+<!-- 50. statement — The prototype is the new brief. — ~3 clicks -->
 
 The artifact was never the job. But it is now the cheapest evidence that the
 thinking happened. Andrew Chen's phrasing is that the prototype is the new PRD.
@@ -63,12 +64,17 @@ I would widen it: the prototype is the new brief.
 [click] A concept you can click beats a concept you can read. People react to
 artifacts, not descriptions. Instead of describing an idea in a deck, hand
 someone something they can click. The reaction is a different class of
-evidence.
+evidence. We now do this for complicated system changes: rather than asking
+stakeholders to sign off on a written spec, we hand them a throwaway prototype
+of the actual interaction, and they approve behaviour they have seen instead
+of behaviour they have imagined.
 [click] And the first draft no longer needs to wait for a developer. A written idea
 becomes a working demo in an afternoon, not a sprint. The people closest to
 the domain build the throwaway draft, and developers harden only what earns
-survival. That is how prototyping protects development hours instead of
-consuming them.
+survival. The quiz platform from the first section started exactly that way,
+as an experiment to see what I could build with tools I had never used before.
+It earned survival. It is rapidly turning into a full production system now. That is how
+prototyping protects development hours instead of consuming them.
 [click] Remember the eighteen-times curve: cheap to build has to mean cheap to
 discard. Most prototypes should die. That sounds like failure until you hear
 the second half: that is the point. They are the cheapest way to find out you
@@ -78,7 +84,7 @@ or real users, everything from the guardrails section applies.
 
 ---
 
-<!-- 50. default — The Long Tail of Internal Software — ~3 clicks -->
+<!-- 51. default — The Long Tail of Internal Software — ~3 clicks -->
 
 Now, do not mistake cheaper learning for shrinking demand. The opposite is
 happening, and it lands first here. Every team runs on invisible workflows.
@@ -100,7 +106,7 @@ retires these tools. Hold that thought.
 
 ---
 
-<!-- 51. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
+<!-- 52. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
 
 So if the work expands, the question becomes what kind of work. Because there
 is a failure mode here, and it is just building yesteryear's software faster.
@@ -114,7 +120,7 @@ at all.
 
 ---
 
-<!-- 52. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
+<!-- 53. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
 
 Choosing what is worth building is frontier work, and there is a clean
 division of labour for it. Think of knowledge as a graph. Facts are nodes, and
@@ -131,10 +137,12 @@ maps the edges.
 
 ---
 
-<!-- 53. default — Clarity Merchants — ~3 clicks -->
+<!-- 54. default — Clarity Merchants — ~3 clicks -->
 
-That makes the human work more specific. We become clarity merchants. We were
-never bottlenecked by typing speed. We are bottlenecked by coherence.
+That makes the human work more specific. We become clarity merchants. I
+studied philosophy before I ever wrote code, and for twenty years that looked
+like a detour. It turns out it was vocational training. We were never
+bottlenecked by typing speed. We are bottlenecked by coherence.
 [click] Frame the problem before the agent writes a line, which includes
 deciding what the smallest useful version is. Design the context so the same
 mistake cannot happen three times. That is what an agent instructions file is
@@ -151,7 +159,7 @@ speed.
 
 ---
 
-<!-- 54. default — How much of the problem do you own? — ~1 clicks -->
+<!-- 55. default — How much of the problem do you own? — ~1 clicks -->
 
 There is a sharper way to ask what all that clarity work adds up to. How much
 of the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.
@@ -170,7 +178,7 @@ own after it leaves your hands.
 
 ---
 
-<!-- 55. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
+<!-- 56. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
 
 And rung seven at product scale looks like this. Many products do not die
 from missing features. They die from accumulation. It is easy to prompt a new
@@ -181,5 +189,6 @@ They ship features, and they kill them. They have the guts to say: this is not
 solving it. This adds complexity. This does not matter.
 [click] And it is not only a product skill. PMs kill features. Designers
 simplify flows. Engineers remove abstractions. Subtraction is a
-cross-discipline skill. Addition gets cheaper every quarter. Subtraction never
-does.
+cross-discipline skill — the same discipline as those thrown-away projects
+from the first section, applied to a living product. Addition gets cheaper
+every quarter. Subtraction never does.

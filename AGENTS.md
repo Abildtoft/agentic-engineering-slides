@@ -90,23 +90,22 @@ carries a "Present without narration" link that navigates there), and presenter
 mode and print are excluded regardless — so the live-presentation path still
 has no network dependency.
 
-**HeyGen is voice-only — we do not render HeyGen avatar videos.** Speech comes
-from `yarn narration:audio` (TTS + word-timed cues) and the face is the locally
-rendered Mascotbot character (`yarn narration:mascot`, below). A bare
-`yarn narration:build` (avatar video mode) is retired: don't run it, and don't
-add new `videoId` entries. The avatar `.mp4`s still in the manifest are legacy
-speech sources for slides whose prose has not changed yet; keep one only while
-the current manifest references it. When an audio rebuild supersedes one,
-`pruneOrphans` should delete it and the deletion should be committed alongside
-the new audio-backed manifest and mascot clip. Do not restore superseded avatar
-videos and never mint new ones.
+**Speech is ElevenLabs, the face is Mascotbot — HeyGen is fully retired.**
+`yarn narration:audio` synthesises each slide's prose with ElevenLabs
+(`eleven_v3`, word-timed cues from the alignment) and the picture is the
+locally rendered Mascotbot character (`yarn narration:mascot`, below). Don't
+add HeyGen calls back and never mint new `videoId` entries. Any HeyGen-voiced
+`.mp4`s still in the manifest are legacy speech sources that the next full
+ElevenLabs build supersedes (the provider is in the cache hash, so every slide
+re-keys); `pruneOrphans` deletes them and the deletion is committed alongside
+the new manifest and mascot clips. Do not restore superseded avatar videos.
 
 ```
 narration/NN-slug.md      # spoken prose, one block per slide, `---` separated
 scripts/narration-lib.mjs # deck ↔ narration pairing, cue splitting, validation
 scripts/narration-scaffold.mjs  # regenerates narration/ from the deck (offline)
-scripts/narration-build.mjs     # HeyGen: prose → speech + cue manifest (audio mode only — see policy above)
-scripts/narration-recover.mjs   # re-downloads clips the manifest names but disk lost
+scripts/narration-build.mjs     # ElevenLabs: prose → speech + cue manifest
+scripts/narration-voices.mjs    # preflight: key, voice, model, quota, ffmpeg
 public/narration/manifest.json  # cue times; also the build cache (tracked)
 public/narration/*.mp4          # rendered clips (tracked — see the size note)
 components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
@@ -118,69 +117,52 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   reveals ride inside it on cue times
 - Cues are marked inline in the prose as `[click]`. The marker is stripped
   before synthesis and its position recorded, so the avatar never says the word
-- **The two HeyGen calls are ordered, not interchangeable.** `POST
-  /v3/voices/speech` first, because `word_timestamps` is the only thing in
-  either API that can say *when* a phrase is spoken — that is what resolves a
-  `[click]` into a time. Then `POST /v2/video/generate` with `voice: { type:
-  'audio' }` pointing at that same audio. Generating the video from text
-  instead re-synthesises the speech and silently invalidates every cue
-- Cue resolution counts words into the timestamps rather than matching them.
-  Measured against a live response: `word_timestamps` preserves the **written**
-  tokenisation, one entry per whitespace-separated input token — `"2026"`,
-  `"343"`, `"57,179"` and `"30%"` each come back as a single entry, not expanded
-  into the words they are read as. So numerals are safe in narration prose and
-  the counts line up. Where they don't, the build warns and spaces cues evenly
-- **`word_timestamps` is bracketed by `<start>` and `<end>` sentinel entries**
-  that carry timings but are never spoken — 8 entries for 6 words on a verified
-  live response. They must be filtered before counting, or every cue lands one
-  word early. A constant one-word offset reads as a plausible reveal rather than
-  a bug, so it will not announce itself; `resolveCues` strips anything matching
-  `<…>` and the unit case in the smoke test pins the expected time
-- Render at **16:9** (`1280x720`), not square. A square `dimension` letterboxes
-  rather than crops — it bakes white bars into the pixels, which no CSS can
-  remove. The corner tile is square and crops to the face with
-  `object-fit: cover`
-- `/v3/voices` and `/v3/avatars` are **paginated** (`has_more` / `next_token`,
-  20 per page — ~60 pages of Starfish voices). Reading page one and concluding a
-  voice is unsupported is worse than not checking
-- **Everything is on v3.** The v1/v2 equivalents still answer, but each returns a
-  `warning` naming a **2026-10-31 sunset**: `/v2/avatars`,
-  `/v2/avatar/{id}/details`, `/v2/video/generate`, `/v1/video_status.get`,
-  `/v2/user/remaining_quota`. Check `payload.warning` after adding any endpoint —
-  that field is the only place the deprecation appears
-
-  | Use | Endpoint |
-  |---|---|
-  | Synthesise + word timings | `POST /v3/voices/speech` |
-  | Render from that audio | `POST /v3/videos` (`type: avatar`, `audio_url`) |
-  | Poll a render | `GET /v3/videos/{id}` |
-  | Resolve the avatar | `GET /v3/avatars/looks/{look_id}` |
-  | Account balance | `GET /v3/users/me` |
-
-- In v3 an **avatar is a group and the id you generate with is a *look* inside
-  it**, so `/v3/avatars` (~1.4k groups) will never contain a usable `avatar_id`
-  and searching it reports valid avatars as missing. Resolve a look with
-  `GET /v3/avatars/looks/{look_id}` — note the path: the
-  `/v3/avatars/{group_id}/looks/{look_id}` the docs describe returns a bare 404,
-  and it would need a group id we don't have anyway
-- `POST /v3/videos` takes `aspect_ratio: 'auto'`, which is the structural fix for
-  the letterbox — the render matches the avatar's native framing instead of a
-  hardcoded `dimension`. The look record carries `image_width`/`image_height` and
-  `preferred_orientation` if you need to know what that will be
-- **`POST /v3/videos` defaults to the Avatar IV engine, billed at $4/min.**
-  Avatar III is $1/min and is what the v2 endpoint rendered. Measured: four
-  clips, 3.3 min, $13.47 with `engine` omitted. The build sends
-  `engine: avatar_iii` (`HEYGEN_ENGINE` overrides) and keys video entries on
-  it. Check `supported_api_engines` on the look record before changing it.
-  The web plan's monthly credits are a separate pool — the API only draws on
-  the wallet
-- **`--dry-run` reads cached cue times** for any slide whose speech is built in
-  either mode, and synthesises only the rest. It used to bypass the cache and
-  once re-synthesised 49 slides for $1.08 to print numbers the manifest held
-- `GET /v3/users/me` reports `wallet.remaining_balance` in **actual currency**,
-  which is a far more useful number than a credit count; the preflight fails on a
-  zero balance because rendering otherwise dies with a 402 that reads like a
-  malformed request
+- **One ElevenLabs call per slide**: `POST
+  /v1/text-to-speech/{voice_id}/with-timestamps` returns the audio
+  (`audio_base64`) and a character-level `alignment` in the same response —
+  the alignment is what resolves a `[click]` into a time. Always read
+  `alignment` (the original text), never `normalized_alignment`: normalisation
+  re-tokenises ("2026" into three words) and the whole cue mechanism rests on
+  the word count matching the written prose
+- Cue resolution counts words into the timings rather than matching them, and
+  with ElevenLabs the counts line up **by construction**:
+  `wordsFromAlignment()` groups the alignment's characters into
+  whitespace-separated runs, which is the same `\S+` tokenisation
+  `resolveCues` counts with. Numerals, abbreviations and punctuation are all
+  safe. If a response ever disagrees anyway, the build warns and spaces cues
+  evenly — wrong by a fraction of a second rather than by a whole slide
+- `resolveCues` still strips `<start>`/`<end>`-style sentinel entries — a
+  HeyGen-era word-timing artefact kept because legacy manifests and the unit
+  tests carry them; ElevenLabs words never match the pattern, so it is a no-op
+  on fresh builds
+- **Pace is baked into the audio, not requested from the API.**
+  `NARRATION_PACE` (default 1.1, range 0.5–2) runs every fresh clip through
+  ffmpeg's pitch-preserving `atempo`, and every word timing, cue, caption and
+  duration is divided by the same factor — a uniform time-stretch, so the
+  scaling is exact, not estimated. This is deliberately not
+  `voice_settings.speed`, which `eleven_v3` does not reliably honour; a local
+  stretch works for any model and keeps timestamps provably in sync. It needs
+  `ffmpeg` on PATH (already required by the mascot renderer); pace is in the
+  cache hash, so changing it rebuilds the deck
+- **`eleven_v3` reads stability as three modes, not a slider**: 0.0 Creative
+  (most expressive, occasionally off-script), 0.5 Natural (the default here),
+  1.0 Robust. The build and preflight both reject anything else for v3.
+  v3 also interprets square-bracket audio tags (`[excited]`, `[whispers]`) in
+  the prose — do not use them in narration without testing one slide first:
+  the marker interacts with the alignment's word count, and `[click]` is
+  already reserved for cues (it is stripped before synthesis, so it never
+  reaches the API)
+- The default voice is **"Eric — Smooth, Trustworthy"**
+  (`cjVigY5qzO86Huf0OWal`), ElevenLabs' premade friendly, conversational
+  middle-aged American male; `ELEVENLABS_VOICE_ID` overrides, and the voice id
+  is part of the cache hash, so a voice change re-synthesises the deck
+- Synthesis sends a fixed `seed`, so a re-synthesised slide (a lost `.mp3`, a
+  `--force` run on unchanged prose) comes back as close to the same take as
+  the model allows — best-effort, but better than a fresh performance nobody
+  reviewed
+- **`--dry-run` reads cached cue times** for any slide whose speech is already
+  built, and synthesises only the rest — every synthesis call bills per
+  character, so a dry run over uncached slides is cheap, not free
 - Narration is keyed by `(source file, index within file)`, never by deck-wide
   slide number — a slide inserted early would otherwise re-point every later
   line onto the wrong slide, and nothing would notice until the podium.
@@ -247,15 +229,15 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   loading, ready, playing, paused, buffering, transitioning, intermission,
   ended and error each own their controls. This is what makes pause safe during
   a gap, a silent slide or manual navigation. Media failure walks the source
-  chain (Mascotbot → HeyGen video/audio) before showing Retry, Next slide and
-  Open without narration
+  chain (Mascotbot → the original speech clip) before showing Retry, Next slide
+  and Open without narration
 - The bottom dock is the control plane: previous/next slide, ten-second rewind,
   playback speed, remaining time, captions, per-slide transcript, chapters and
   a voice-only view. Space or K toggles playback, C toggles captions and M
   toggles the picture. Hiding the tab pauses rather than letting the deck run
   out of sight
 - Captions and transcripts live on each `manifest.json` slide entry. Fresh
-  synthesis writes captions from HeyGen word timings; `yarn
+  synthesis writes captions from the alignment's word timings; `yarn
   narration:captions` adds deterministic word-distributed captions to older
   cached clips without making an API call or changing their hash
 - A deliberate recorded-talk pause is `narrationPause: true` in slide
@@ -266,41 +248,30 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 - After adding, removing or reordering slides, run `yarn narration:scaffold`;
   it rewrites the header comments from the current deck and preserves prose
 - Credentials live in `.env` (gitignored; `.env.example` documents them) and are
-  loaded with node's `--env-file-if-exists`, so there is no dotenv dependency
-- **OAuth does not put API synthesis on the subscription.** Measured
-  (2026-08-24): a Bearer token whose `/v3/users/me` reports
-  `billing_type: subscription` (creator plan, premium credits available) still
-  gets `402 insufficient_credit — "requires 'api' credits"` from
-  `POST /v3/voices/speech`. The public API bills only the API-credit wallet, no
-  matter how you authenticate — `Billing: subscription` in `npx hyperframes
-  auth status` describes the account, not what the API will draw on. Top up API
-  credits before synthesis; `narration-build` prefers the OAuth session from
-  `~/.heygen/credentials` and falls back to `HEYGEN_API_KEY`, but the bill
-  lands in the same place either way
-- `yarn narration:voices` is the preflight, and the voice check is the one that
-  matters: `word_timestamps` only comes back for **Starfish-engine** voices, and
-  any other voice synthesises fine while returning null there — the build then
-  spaces every cue evenly and the drift only shows up on stage. `--list` prints
-  the compatible voices
-- Run `yarn narration:build --dry-run` before spending credits: it stops after
+  loaded with node's `--env-file-if-exists`, so there is no dotenv dependency.
+  `ELEVENLABS_API_KEY` is the only secret; the voice id is an account-scoped
+  resource identifier, not a secret
+- `yarn narration:voices` is the preflight: it resolves the configured voice
+  and prints its name and labels (so "friendly American male" is verified, not
+  assumed), confirms the model exists on the account, sizes a full rebuild in
+  characters against the subscription quota, and checks ffmpeg is on PATH when
+  `NARRATION_PACE` needs it. `--list` prints every voice on the account
+- Run `yarn narration:audio --dry-run` before spending credits: it stops after
   the TTS step and prints resolved cue times and total spoken duration
 - **A parameter entering the hash string invalidates every cached clip**, even
   though the files on disk are still right. That happened when `resolution`
-  was added: slides 4–10 mismatched and a bare build would have re-rendered
-  them (~$2) into different, larger takes. `--restamp=4-10` re-keys the named
-  entries to the current hash without rendering, provided the asset is on disk
-  and matches the build mode. It is an assertion, not a check — the script
-  cannot tell a changed parameter from changed prose — so it takes an explicit
-  slide list and never applies itself. Verified: after restamping, a bare
-  `yarn narration:build` reports `10 reused, 0.0 min of new speech`
+  was added to the HeyGen build: slides 4–10 mismatched and a bare build would
+  have re-rendered them (~$2) into different, larger takes. `--restamp=4-10`
+  re-keys the named entries to the current hash without synthesising, provided
+  the asset is on disk. It is an assertion, not a check — the script cannot
+  tell a changed parameter from changed prose — so it takes an explicit slide
+  list and never applies itself. It refuses legacy video entries: asserting a
+  HeyGen clip onto an ElevenLabs hash would claim the old voice is the new one
 - **`yarn narration:audio` is the terminal mode, not a rehearsal mode.** It
   builds everything the deck ships — real voice, real word-timed cues, real
-  auto-advance — showing a still (`preview_image_url`) until the mascot clip is
-  rendered from the same speech asset. Under the voice-only policy there is no
-  "final video pass" afterwards: revise prose, rebuild audio, re-run
-  `yarn narration:mascot`, done. `mode` is part of the cache hash, so a video
-  build would rebuild rather than serve the audio asset — another reason not to
-  run one
+  auto-advance — showing the manifest still until the mascot clip is rendered
+  from the same speech asset. There is no "final video pass" afterwards:
+  revise prose, rebuild audio, re-run `yarn narration:mascot`, done
 - **A cache hit requires the asset on disk, not just a matching hash.** The
   manifest is tracked and the clips are gitignored, so a fresh clone or a pruned
   `public/narration/` starts with a full cache pointing at nothing — trusting the
@@ -308,59 +279,27 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
   manifest of 404s. That is auto-mode silently broken rather than loudly
   unbuilt, and it surfaces only when someone presses Start. `--only` can't
   repair the sections it is excluding, so it warns about them instead
-- **A lost, still-current legacy video is a download, not a re-render.** The
-  account keeps every rendered video, so the manifest records its `videoId` and
-  the build fetches it back when the prose is unchanged and only the referenced
-  local file is gone. A video superseded by an audio rebuild is intentionally
-  deleted instead and must not be recovered. This distinction is not
-  just about cost: a render is **not reproducible** — the same prose comes back
-  as a different take, with different head movement, silently replacing a clip
-  that was already reviewed. `yarn narration:recover` does the same repair
-  standalone, and for entries predating `videoId` it matches on duration:
-  distinct per slide, but the account also holds re-renders of the *same* slide
-  at identical durations, so the newest wins (it is the one the current hash was
-  written alongside) and the ambiguity is printed rather than hidden. Verified
-  on the ten intro clips — 62 MB restored, balance unmoved at $17.15
-- Audio-mode assets have no equivalent recovery. A TTS result is not a video and
-  is not listed anywhere; `.mp3` entries have to be re-synthesised, which is
-  cheap, so the scripts report them rather than trying
-- **The clips are tracked, through Git LFS** (`.gitattributes`). Versioning them
-  is what lets a clone play the narrated deck with no API key and nothing to
-  rebuild — which recovery alone can't promise, since it needs a key, a balance
-  and HeyGen still holding the render. LFS rather than plain blobs because
-  filenames are content-hashed: every prose revision adds an object, and
-  `pruneOrphans` deleting the stale file doesn't shrink history. Ten of 59
-  slides is already 62 MB; at v3's ~520 KB/s a complete deck is near a gigabyte
+- **Speech assets have no account-side recovery.** A TTS result is not stored
+  or listed anywhere by ElevenLabs, so a lost `.mp3` simply re-synthesises on
+  the next build — cheap, and seeded so the take barely moves. (The retired
+  HeyGen pipeline's `narration:recover`, which re-downloaded rendered videos
+  by `videoId`, went with it: there is nothing left it could recover)
+- **The clips are tracked, through Git LFS** (`.gitattributes`). Versioning
+  them is what lets a clone play the narrated deck with no API key and nothing
+  to rebuild. LFS rather than plain blobs because filenames are
+  content-hashed: every prose revision adds an object, and `pruneOrphans`
+  deleting the stale file doesn't shrink history
 - **`git-lfs` has to be installed to clone this repo usefully** — without it the
   clips arrive as pointer text and auto-mode plays nothing. `brew install
   git-lfs && git lfs install`. Worth knowing that GitHub's free tier is 1 GB of
   LFS storage and 1 GB of bandwidth per month, and **every fresh checkout draws
   on that bandwidth** — a Conductor workspace per branch adds up faster than a
   single working copy would
-- Audio-mode `.mp3`s stay gitignored: cheap to re-synthesise, and superseded the
-  moment the slide's clip renders. Measured over the whole deck: 36.4 min of
-  TTS cost $1.88, **$0.05/min against $0.48/min for a render** — about a tenth,
-  not the ~1% the early smoke test suggested, so a full audio pass is a
-  two-dollar decision rather than a free one
-- **An audio build never downgrades a current video clip.** The mode is in the
-  hash, so a video entry always mismatches an audio build; left alone that
-  re-synthesised the slide, replaced its manifest entry with the `.mp3`, and
-  orphaned the `.mp4` for `pruneOrphans` to delete — an approved take gone
-  because someone rehearsed. The build now keeps a video entry whose hash still
-  matches the *video*-mode hash of the current prose; once the prose moves, it
-  re-synthesises like any other slide and prunes the now-superseded video. Video
-  builds are retired, so do not turn an audio-backed entry back into video
-- `/v3/videos` pages on **`token=`**, like `/v3/voices`. `next_token=` and
-  `page_token=` are both accepted and both ignored — they re-serve page one, so
-  a loop built on either collects the same 20 videos forever. Terminate on an
-  **empty page**, not on `has_more`: a 21-video listing pages 20 → 1 → 0 and
-  `has_more` only turns false on that final empty page
-- `GET /v3/videos/{id}` adds nothing to the list entry — no dimensions, no
-  resolution — so identical-duration re-renders can only be told apart by
-  `created_at`, or by bytes: measured on one slide's four renders, 156 KB/s is
-  the v2 original, ~750 KB/s the 1080p upscales, and ~520 KB/s the corrected v3
-  720p. The listing's `video_url` is signed and expires, so re-read it per
-  download rather than reusing one fetched earlier in the run
+- The speech `.mp3`s stay gitignored: cheap to re-synthesise, and superseded
+  as the shipped asset the moment the slide's mascot clip renders from them.
+  ElevenLabs bills per character (the preflight sizes the whole deck against
+  the quota), so a full re-voice is a conscious, bounded spend — not free, and
+  the manifest cache is what keeps a typo fix from paying for the deck again
 - Audio and video can coexist per slide: the player picks `entry.video` first,
   then `entry.audio`, so a few slides can carry a rendered face while the rest
   stay audio. One `<video>` element plays both — an audio source is held at
@@ -407,14 +346,15 @@ components/AvatarNarrator.vue   # the player, mounted from global-bottom.vue
 ### Mascot Narration (Mascotbot)
 
 A second face for auto-mode, rendered locally for free: a Mascotbot 2D
-character (Rive) lip-synced to the **same speech clips** the HeyGen pipeline
-produced. `yarn narration:mascot` never synthesises and never calls HeyGen.
+character (Rive) lip-synced to the **same speech clips** the ElevenLabs
+pipeline produced. `yarn narration:mascot` never synthesises and never calls
+a TTS API.
 
 ```
 scripts/narration-mascot.mjs    # orchestrator: ffmpeg + headless Chrome + Mascotbot
 scripts/mascot-render/          # the page Chrome renders: virtual clock + Rive + SDK
 public/narration/mascot.json    # sibling manifest the player layers over manifest.json
-public/narration/*-mascot-*.mp4 # the clips (LFS, like the HeyGen ones)
+public/narration/*-mascot-*.mp4 # the clips (tracked through LFS)
 public/narration/mascot-still.png
 ```
 
@@ -423,7 +363,7 @@ public/narration/mascot-still.png
   when the source still matches the slide's current `video`/`audio`, and keeps
   that original speech asset as a runtime fallback. A re-synthesised slide
   therefore cannot play a mascot out of sync with the new cues.
-  `?mascot=0` reverses the preference and tries the HeyGen asset first.
+  `?mascot=0` reverses the preference and tries the speech asset first.
   Cues, gaps, auto-advance, dissolve: all unchanged — the clip is just
   `entry.video`
 - **Deterministic render on a virtual clock.** `index.html` patches
@@ -431,7 +371,7 @@ public/narration/mascot-still.png
   node steps time in 1/fps increments, seeks the viseme timeline to each
   frame, and captures the canvas. Measured ~90 fps capture at 512px, i.e.
   ~3× real time, and the same timeline always produces the same frames —
-  unlike a HeyGen render, a mascot clip *is* reproducible
+  unlike an API-side avatar render, a mascot clip *is* reproducible
 - Delivery defaults are **512px at 24fps**, CRF 24 with 96 kbps mono audio. The
   tile tops out around 300 physical pixels on a 1080p display; the former
   720px/30fps set was 275.7 MiB for detail no viewer could see. The shipped set
@@ -458,7 +398,7 @@ public/narration/mascot-still.png
   canvas blank with no error past `LoadError`
 - WebGL clears to transparent and `yuv420p` flattens alpha to black, so
   frames are composited onto `--bg` in a 2D canvas before capture
-- The HeyGen build's `pruneOrphans` skips `*-mascot-*.mp4`, `mascot.json` and
+- The speech build's `pruneOrphans` skips `*-mascot-*.mp4`, `mascot.json` and
   `mascot-still.png`; the mascot script prunes only its own stale clips.
   Neither touches the other's files
 - Needs `ffmpeg` on PATH and Google Chrome (driven through `playwright-core`

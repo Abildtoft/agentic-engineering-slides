@@ -16,8 +16,9 @@ real, and almost nothing about it is settled yet.
 [click] And it is only as big as the internet or mobile. Both of those things
 are true at the same time, and most arguments about AI are just people holding
 one of them and refusing the other.
-[click] Think about what 1997 actually looked like. Most things did not work
-reliably. Most of what would end up mattering had not been built. And the
+[click] Think about what 1997 actually looked like. The best-funded company on
+the internet sold pet food, and going online made a sound. Most things did not
+work reliably. Most of what would end up mattering had not been built. And the
 companies that went on to win the next decade were, for the most part, not yet
 in the room. That is where we are standing.
 
@@ -33,7 +34,7 @@ untouched by it.
 [click] He estimates that three people in a thousand have ever paid for it.
 [click] And the thing this talk is about — building software with AI — at four
 people in every ten thousand. Treat the exact numbers as estimates; the shape is
-the point. Whatever this becomes, nobody in this room is late to it.
+the point. Whatever this becomes, none of us is late to it.
 
 ---
 
@@ -55,9 +56,9 @@ reaches everyone else's.
 
 <!-- 9. default — It's Not Just One Tool — ~2 clicks -->
 
-These are the tools developers now use to build software with AI. Claude Code,
-Cursor, Windsurf, Copilot, Gemini CLI, Codex. Six names, but this was not one
-product launch. In a single 30-day window last December, all three of the big
+These are the tools developers now use to build software with AI — Claude
+Code, Cursor, Copilot, and the rest. Six names on the screen, but this was not
+one product launch. In a single 30-day window last December, all three of the big
 AI companies shipped new versions, and the whole category quietly renamed
 itself. They stopped calling these things assistants and started calling them
 agents. An assistant suggests the next line while you type. An agent is given
@@ -95,6 +96,11 @@ an entire year. That is the honest number, and I am not proud of it.
 [click] This year, 57,179. That multiplier is not a typo. The agents check
 their own work far more thoroughly than I ever checked mine, and that turns
 out to be the part that matters most.
+And that volume forces an admission I want to make out loud: I cannot read all
+of that code anymore, and I do not even try to. If that makes you uneasy, good.
+Hold onto that feeling, because what it means to work this way without losing
+your grip on the system is a question this talk takes seriously, and we will
+come back to it.
 
 ---
 

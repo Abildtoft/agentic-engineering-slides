@@ -46,12 +46,12 @@ the job. If the job was the thinking, it just got faster.
 <!-- 17. quote -->
 
 Twenty-five years apart, two one-liners show how far the culture has moved.
-Linus Torvalds, in 2000: talk is cheap, show me the code. Half of this room has
-that line somewhere in their heart, and honestly, so do I.
+Linus Torvalds, the creator of Linux, in 2000: talk is cheap, show me the code.
+Half of us have that line somewhere in our hearts. I know I do.
 [click] And then Nadh, last year: for the first time ever, good talk is
 exponentially more valuable than good code. Talk here does not mean vague
 ideation. It means a precise statement of the problem. That is now the scarce
-thing, and it is scarce in every discipline in the room.
+thing, and it is scarce in every discipline, not just this one.
 
 ---
 
@@ -77,9 +77,13 @@ For a long time, product, design and engineering handed work to each other in
 sequence. We always wanted it to be a Venn diagram. In practice it was a
 waterfall. And the walls between the disciplines were built from one thing:
 implementation was expensive, so you had to be careful about what reached it.
-[click] Take that cost out, and the walls start to go with it. The three
-disciplines do not collapse into one, but they overlap far more than they used
-to.
+[click] Take that cost out, and the walls start to go with it. I watched it
+happen in my own calendar the week I wrote this. I spent part of that week
+programming product launch videos, while our media team was using an agent to
+build a 3D web application from scratch. The engineer was doing media work,
+the media team was doing engineering, and nobody had scheduled the swap. The
+three disciplines do not collapse into one, but they overlap far more than
+they used to.
 [click] And what sits in the overlap is judgment. That is the thing that does
 not compress. Some teams have a name for the person who lives there: the
 product engineer, who frames the problem, ships the code and measures the

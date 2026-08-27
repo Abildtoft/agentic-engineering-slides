@@ -9,8 +9,10 @@ dist
 .gstack/
 .vercel
 
-# Rendered avatar clips are tracked through Git LFS — see .gitattributes.
+# Rendered narration clips (mascot .mp4s) are tracked through Git LFS — see
+# .gitattributes.
 #
-# Audio-mode speech stays out: it is the cheap rehearsal artefact, re-synthesised
-# on every prose edit, and worth nothing once the video exists.
+# The ElevenLabs speech .mp3s stay out: cheap to re-synthesise (seeded, so the
+# take barely moves), and superseded as the shipped asset the moment the slide's
+# mascot clip renders from them.
 public/narration/*.mp3

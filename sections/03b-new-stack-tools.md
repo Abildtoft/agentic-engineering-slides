@@ -351,6 +351,48 @@ SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.co
 
 ---
 layout: default
+class: text-center v-center
+narrator: hidden
+---
+
+# Same Model, Same Prompt
+
+<div class="flex gap-6 mt-6 items-start">
+  <div class="flex-1">
+    <SlideVideo src="/harness-without.mp4" poster="/harness-without-poster.jpg" label="Weak harness" />
+  </div>
+  <div class="flex-1">
+    <v-click>
+      <SlideVideo src="/harness-with.mp4" poster="/harness-with-poster.jpg" label="Strong harness" />
+    </v-click>
+  </div>
+</div>
+
+<v-click>
+
+<p class="text-base opacity-85 mt-4 mb-1 mx-auto">Same model, same one-shot prompt, same provider, even the same system prompt. <strong>The only change is the harness.</strong></p>
+<p class="text-sm opacity-60 mt-0 mx-auto">Demo by Justin Schroeder</p>
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Justin Schroeder's controlled experiment: one model, one one-shot prompt for an interactive 3D zen garden, same provider, same quantization, same system prompt — run through two different harnesses
+- Weak harness: a bare disc with floating poles and detached blobs — the pieces of a zen garden, unassembled
+- Strong harness: paths, a koi pond, lanterns, light through the trees — a place you can actually walk through
+- This is the previous slide's claim made visible: the leverage is in the system around the model
+
+BRIDGE: "So the harness decides what the model can deliver. But the model in the middle is still stochastic — the next question is reliability."
+
+DELIVERY:
+- Let the left clip run a beat before saying anything — the emptiness is the point
+- Click the right clip in silence too, then land the caption: "Everything you'd control for in an experiment is controlled. The harness is the variable."
+
+SOURCE: Justin Schroeder (x.com/jpschroeder/status/2091920006829199772)
+-->
+
+---
+layout: default
 narrator: hidden
 ---
 
