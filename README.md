@@ -1,10 +1,11 @@
-# Agentic Engineering — Copenhagen Talk
+# Agentic Engineering
 
 Slidev presentation about how AI is reshaping software engineering.
 
 ## Getting Started
 
 ```bash
+corepack enable
 yarn install
 yarn dev
 ```
@@ -16,8 +17,20 @@ Opens at http://localhost:3030
 | Command | Description |
 |---------|-------------|
 | `yarn dev` | Start dev server (port 3030) |
-| `yarn build` | Build static SPA |
-| `yarn export` | Export to PDF |
+| `yarn dev:melatech` | Start the Melatech deck (port 3030) |
+| `yarn test` | Run all deck, access-gate, narration, and analytics tests |
+| `yarn verify` | Run all tests and build both branded decks |
+| `yarn doctor` | Check local runtime, Yarn/LFS setup, shipped narration media, and optional authoring tools |
+| `yarn build` / `yarn build:melatech` | Build the Consensus / Melatech static SPA |
+| `yarn export` / `yarn export:melatech` | Export the Consensus / Melatech deck to PDF |
+
+`yarn verify` is the local definition of done and is also run in CI. The deck-parity test allows
+brand-specific cover configuration but requires every slide's content, notes, behavioral
+frontmatter, and shared source ordering to stay identical.
+
+Run `yarn doctor` after cloning or before narration work. Required playback checks fail the
+command; missing paid credentials and authoring-only tools are reported separately without making
+an otherwise healthy deck fail.
 
 ## Structure
 
@@ -29,6 +42,7 @@ sources/           Research notes (one file per source)
 public/            Static assets (images)
 components/        Custom Vue components (auto-imported)
 styles/            Custom CSS (--brand-* variables; per-theme values in styles/themes/)
+tests/             Deck parity, access-gate, narration, and analytics checks
 uno.config.ts      UnoCSS theme (brand color tokens)
 ```
 

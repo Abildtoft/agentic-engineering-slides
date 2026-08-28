@@ -200,8 +200,8 @@ export function resolveCues(segments, wordTimestamps, duration) {
 /**
  * Turns narration prose into short, readable caption chunks.
  *
- * A live build supplies HeyGen's word timings, so each chunk follows the real
- * voice. Existing cached manifests predate captions; for those, the same
+ * A fresh ElevenLabs build supplies word timings, so each chunk follows the
+ * real voice. Existing cached manifests predate captions; for those, the same
  * chunks are distributed by word count across the known clip duration. That
  * fallback is intentionally deterministic, which lets `narration:captions`
  * add useful captions without re-synthesising speech or spending credits.

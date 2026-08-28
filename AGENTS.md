@@ -90,6 +90,12 @@ carries a "Present without narration" link that navigates there), and presenter
 mode and print are excluded regardless — so the live-presentation path still
 has no network dependency.
 
+**Feature freeze:** do not expand the narration product surface until browser-level tests cover
+playback transitions, buffering, source fallback, pause/resume across gaps, manual navigation and
+keyboard controls. Bug fixes, test extraction, dependency maintenance, prose/cue changes and media
+rebuilds are allowed. New controls, playback states, providers, analytics events or integrations
+require that coverage first; document the tested behavior alongside the change.
+
 **Speech is ElevenLabs, the face is Mascotbot — HeyGen is fully retired.**
 `yarn narration:audio` synthesises each slide's prose with ElevenLabs
 (`eleven_v3`, word-timed cues from the alignment) and the picture is the
