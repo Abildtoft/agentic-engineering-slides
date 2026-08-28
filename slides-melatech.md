@@ -46,15 +46,47 @@ layout: statement
 # Hi, I'm Mikkel.
 
 ---
+class: v-center
+---
 
 # Agenda
 
-- The Shift Is Here
-- The Compressing Middle
-- The New Stack
-- Cognitive Debt
-- What Matters
-- Moving Forward
+<div class="agenda-list">
+
+1. The Shift Is Here
+2. The Compressing Middle
+3. The New Stack
+4. Cognitive Debt
+5. What Matters
+6. Moving Forward
+
+</div>
+
+<style>
+/* Replace the browser list numbering with brand-coloured two-digit counters, so
+   the deck's second frame matches the finish of the diagrams later on. */
+.agenda-list ol {
+  list-style: none;
+  counter-reset: agenda;
+  padding-left: 0;
+}
+.agenda-list li {
+  counter-increment: agenda;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+.agenda-list li::before {
+  content: counter(agenda, decimal-leading-zero);
+  color: var(--brand-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+</style>
 
 ---
 src: ./sections/00-acknowledgements.md
