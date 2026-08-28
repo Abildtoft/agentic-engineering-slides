@@ -1,7 +1,6 @@
 <!--
   Rendered once behind every slide, in both themes. <AvatarNarrator> is inert
-  unless the deck is opened with ?auto=1, so this costs the normal presentation
-  path nothing.
+  in presenter and print modes, and when the viewer opts out with ?auto=0.
 -->
 <template>
   <AvatarNarrator />
