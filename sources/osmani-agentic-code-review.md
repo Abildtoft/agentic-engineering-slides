@@ -28,6 +28,6 @@ Thesis: the hard part of engineering moved from writing code to deciding whether
 
 - Anchor source for the bonus workshop section (`sections/07-bonus-code-review.md`) — supplies the socratic questions' payoffs, all the statistics slides, the tier table, the intake-bar slide, and the borrowed-confidence close.
 - Counterweight to Section 1's ×18 ledger: raw output vs delivered value (4× vs 12%) is the honest bridge between the two decks.
-- Extends [[osmani-own-the-outer-loop]] (the outer-loop verbs decide/verify/approve/own are what "moves up a level" here) and the constraint-ring slide in 03b; [[how-to-kill-the-code-review]] is the adjacent older note.
+- Extends [[osmani-own-the-outer-loop]] (the outer-loop verbs decide/verify/approve/own are what "moves up a level" here) and the constraint-ring slide in 03b; [[how-to-kill-the-code-review]] is the adjacent older note; [[osmani-selective-human-review]] is his September 2026 short form of the tiering.
 
 https://addyosmani.com/blog/agentic-code-review/
