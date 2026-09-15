@@ -183,12 +183,14 @@ KEY POINTS:
 - Say verbally: the upstream review happens *before generation*
 - Not "no accountability" — relocating accountability
 - Deterministic verification is the safety net when output exceeds diff-reading capacity
+- Osmani's practice: agents do the first pass, humans cover blast radius. Every PR gets a multi-agent review that finds bugs, verifies them, ranks them by severity, and suggests fixes; approval stays human wherever it matters
 
 BRIDGE: "And once you start thinking in layered controls, the Swiss-cheese model becomes the right metaphor."
 
 ADDITIONAL POINTS:
 - Trimmed qualifier, say verbally: the full closing question is "are we solving the right problem *under the right constraints*"
 - A reviewer of agent-written code may be the first human to see it. The job is no longer only checking an author's reasoning; it is recovering intent that the diff never captured
+- If asked "so do you read all the code?": no, and Osmani says the same. More code means more selective human review. Low-blast-radius changes on less sensitive code can skip a deep human read once the agent review is clean, and there are a lot of those. Core and sensitive paths keep an owner and human sign-off
 - Put this in the cognitive-debt section because the review model now directly sets up the layered-failure argument
 - Explicitly anchor the layer concept to the Swiss-cheese model (James Reason)
 
@@ -199,6 +201,7 @@ DELIVERY:
 
 SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
 SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/)
+SOURCE: Addy Osmani on selective human review (x.com/addyosmani/status/2097027173941141799, 9/7/26) — see sources/osmani-selective-human-review.md
 -->
 
 ---
@@ -418,6 +421,7 @@ KEY POINTS:
 - Off-screen check: the reasoning log — document not just what changed, but why
 - Commit-message example: can't explain your own change = debt already accumulating
 - At least one human must fully understand each change before it ships
+- The ownership check matters most on core and sensitive paths. Osmani: that's where human time goes (verification, constraints, earning trust in what agents can safely cover) and the point is to keep recoverability
 - Link back to section 3: harness discipline is the preventive mechanism
 
 BRIDGE: "That is the operating model. The final question is what kind of people this model rewards."
@@ -434,6 +438,7 @@ DELIVERY:
 
 SOURCE: Addy Osmani, on Anthropic study (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7423836698100416513-H0W4)
 SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/)
+SOURCE: Addy Osmani on selective human review (x.com/addyosmani/status/2097027173941141799, 9/7/26)
 SOURCE: Margaret-Anne Storey (margaretstorey.com/blog/2026/02/09/cognitive-debt/)
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 -->
