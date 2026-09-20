@@ -28,6 +28,13 @@
  * A `mascot_dev_…` key is the right one: the render runs on localhost, which is
  * the only origin a dev key accepts, and the deck ships the video, not the SDK.
  * Needs ffmpeg on PATH and Google Chrome installed (driven via playwright-core).
+ *
+ * --real-browser is the fallback for when the licence refuses a driven page
+ * ("Init refused: webdriver_present. Real-browser runtime required"). It opens
+ * an ordinary Chrome window and lets the page pull its own work over HTTP, so
+ * no automation is attached to the browser at all. The tab has to stay in
+ * front: Chrome throttles timers and rAF in background tabs, and the licence
+ * refresh the lip-sync budget depends on is paced off wall time.
  */
 import { spawn } from 'node:child_process'
 import { createHash } from 'node:crypto'
@@ -59,6 +66,7 @@ const bg = option('bg', '#ffffff')
 const zoom = Number(option('zoom', 1.35))
 const focusY = Number(option('focus-y', 0.44))
 const slides = parseSlideList(option('slides'))
+const realBrowser = flag('real-browser')
 const BATCH = 30
 
 const { MASCOT_API_KEY } = process.env
@@ -167,6 +175,96 @@ const previousBySource = new Map(
 )
 const mascot = await fetchMascot()
 
+/**
+ * Control channel for --real-browser. Mascotbot's licence refuses to initialise
+ * under WebDriver ("Init refused: webdriver_present. Real-browser runtime
+ * required"), which rules out driving the render page with playwright. Rather
+ * than dress a WebDriver session up as something else, this mode gives up the
+ * driver entirely: an ordinary Chrome tab loads the page, long-polls for
+ * commands and posts results back, so the only browser involved is the one the
+ * person launched. The page runs the same window.mascot functions either way.
+ *
+ * HTTP long-poll rather than a socket so the script keeps its dependency set —
+ * one command is in flight at a time, so the round trip costs nothing measurable
+ * against a 30-frame render batch.
+ */
+function createControlChannel() {
+  let seq = 0
+  const queue = []
+  const waiting = new Map()
+  let poll = null
+  let onHello = null
+  const hello = new Promise(resolve => (onHello = resolve))
+
+  const pump = () => {
+    if (!poll || !queue.length) return
+    const response = poll
+    poll = null
+    response.setHeader('content-type', 'application/json')
+    response.end(JSON.stringify(queue.shift()))
+  }
+
+  const body = request =>
+    new Promise((resolve, reject) => {
+      const chunks = []
+      request.on('data', chunk => chunks.push(chunk))
+      request.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')))
+      request.on('error', reject)
+    })
+
+  return {
+    hello,
+    call(cmd, arg, { timeout = 120_000, label } = {}) {
+      const id = ++seq
+      return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => {
+          waiting.delete(id)
+          reject(new Error(`${cmd}: no answer from the browser after ${Math.round(timeout / 1000)}s — is the tab still open and in front?`))
+        }, timeout)
+        waiting.set(id, {
+          resolve: value => (clearTimeout(timer), resolve(value)),
+          reject: error => (clearTimeout(timer), reject(error)),
+        })
+        queue.push({ id, cmd, arg, label })
+        pump()
+      })
+    },
+    plugin: {
+      name: 'mascot-control',
+      configureServer(vite) {
+        vite.middlewares.use('/ctl/hello', (_request, response) => {
+          onHello()
+          response.statusCode = 204
+          response.end()
+        })
+        // Held open until there is something to do; 204 lets the page re-poll
+        // before any proxy decides the request is dead.
+        vite.middlewares.use('/ctl/poll', (_request, response) => {
+          poll = response
+          const idle = setTimeout(() => {
+            if (poll !== response) return
+            poll = null
+            response.statusCode = 204
+            response.end()
+          }, 25_000)
+          response.on('close', () => clearTimeout(idle))
+          pump()
+        })
+        vite.middlewares.use('/ctl/result', async (request, response) => {
+          const { id, value, error } = JSON.parse(await body(request))
+          const pending = waiting.get(id)
+          waiting.delete(id)
+          if (pending) error ? pending.reject(new Error(error)) : pending.resolve(value)
+          response.statusCode = 204
+          response.end()
+        })
+      },
+    },
+  }
+}
+
+const control = realBrowser ? createControlChannel() : null
+
 const server = await createServer({
   root: RENDER_DIR,
   configFile: false,
@@ -178,17 +276,22 @@ const server = await createServer({
   server: { port: 0, strictPort: false, fs: { allow: [ROOT, CACHE_DIR] } },
   // The SDK and Rive resolve from the project's node_modules, not the page's dir.
   resolve: { preserveSymlinks: false },
+  plugins: control ? [control.plugin] : [],
 })
 await server.listen()
 const origin = server.resolvedUrls.local[0].replace(/\/$/, '')
 const fsUrl = path => `${origin}/@fs${path}`
 
-const browser = await chromium.launch({ channel: 'chrome', headless: true })
-const page = await browser.newPage({ viewport: { width: size, height: size } })
-page.on('console', message => {
-  if (['error', 'warning', 'log'].includes(message.type()) && !/404|webauthn|\[vite\]/.test(message.text())) console.error(`  [page] ${message.text()}`)
-})
-page.on('pageerror', error => console.error(`  [page] ${error.message}`))
+let browser = null
+let page = null
+if (!realBrowser) {
+  browser = await chromium.launch({ channel: 'chrome', headless: true })
+  page = await browser.newPage({ viewport: { width: size, height: size } })
+  page.on('console', message => {
+    if (['error', 'warning', 'log'].includes(message.type()) && !/404|webauthn|\[vite\]/.test(message.text())) console.error(`  [page] ${message.text()}`)
+  })
+  page.on('pageerror', error => console.error(`  [page] ${error.message}`))
+}
 
 /** Slides not yet reached in this run keep their previous entry, so a partial
     manifest is always a complete one. */
@@ -208,13 +311,48 @@ async function pageJob(name, start, arg, timeout = 120_000) {
   return result.value
 }
 
+/**
+ * One call into the render page, whichever half is driving it. The commands and
+ * their arguments are identical in both modes; only the transport differs.
+ */
+async function call(cmd, arg, { timeout = 120_000, label } = {}) {
+  if (realBrowser) return control.call(cmd, arg, { timeout, label })
+  switch (cmd) {
+    case 'init':
+      return pageJob('init', opts => window.mascot.init(opts), arg, timeout)
+    case 'timeline':
+      return pageJob('timeline', url => window.mascot.timeline(url), arg, timeout)
+    case 'setTimeline':
+      return page.evaluate(json => window.mascot.setTimeline(json), arg)
+    case 'still':
+      return page.evaluate(() => window.mascot.still())
+    case 'frames':
+      return page.evaluate(opts => window.mascot.frames(opts), arg)
+    default:
+      throw new Error(`unknown page command "${cmd}"`)
+  }
+}
+
 try {
-  await page.goto(`${origin}/`)
-  await page.waitForFunction(() => window.__mascotReady, null, { timeout: 30_000 })
-  const init = await pageJob(
+  if (realBrowser) {
+    const url = `${origin}/?drive=http`
+    console.log(`\nOpen this in a normal Chrome window and leave the tab in front:\n  ${url}\n`)
+    // The licence check is the reason this mode exists, so the browser is
+    // launched the way a person would launch it — no automation attached.
+    await run('open', ['-a', 'Google Chrome', url]).catch(() => {})
+    await Promise.race([
+      control.hello,
+      new Promise((_, reject) => setTimeout(() => reject(new Error('no browser connected after 120s — open the URL above by hand')), 120_000)),
+    ])
+    console.log('browser connected')
+  } else {
+    await page.goto(`${origin}/`)
+    await page.waitForFunction(() => window.__mascotReady, null, { timeout: 30_000 })
+  }
+  const init = await call(
     'init',
-    opts => window.mascot.init(opts),
     { apiKey: MASCOT_API_KEY, rivUrl: fsUrl(mascot.file), stateMachine: mascot.stateMachine, size, bg, zoom, focusY },
+    { label: 'licensing the lip-sync engine' },
   )
   console.log(`mascot ${mascot.id}@${mascot.version} (${mascot.stateMachine}), lip-sync ${init.status}, inputs: ${init.inputs.join(', ') || 'none found'}`)
   if (!init.inputs.includes('100')) fail('the character exposes no viseme inputs — the mouth would never move')
@@ -225,7 +363,7 @@ try {
     slides: {},
   }
 
-  const stillPng = await page.evaluate(() => window.mascot.still())
+  const stillPng = await call('still', undefined, { label: 'still frame' })
   await writeFile(join(OUT_DIR, 'mascot-still.png'), Buffer.from(stillPng, 'base64'))
 
   let rendered = 0
@@ -276,10 +414,10 @@ try {
     } else {
       // Paced to the licence refresh: about real time, see main.js.
       process.stdout.write(`  ${label}  inferring lip-sync (~${Math.ceil((entry.duration ?? 60) / 8) * 10}s)`)
-      timeline = await pageJob('timeline', url => window.mascot.timeline(url), fsUrl(pcm), 600_000)
+      timeline = await call('timeline', fsUrl(pcm), { timeout: 600_000, label: `${label} — lip-sync` })
       await writeFile(timelinePath, JSON.stringify(timeline))
     }
-    await page.evaluate(json => window.mascot.setTimeline(json), timeline.timeline)
+    await call('setTimeline', timeline.timeline)
 
     // 3 + 4. Frames on the virtual clock, piped straight into the encoder.
     const durationMs = Math.max(timeline.durationMs, (entry.duration ?? 0) * 1000)
@@ -302,9 +440,10 @@ try {
           try {
             for (let from = 0; from < total; from += BATCH) {
               const count = Math.min(BATCH, total - from)
-              const frames = await page.evaluate(
-                opts => window.mascot.frames(opts),
+              const frames = await call(
+                'frames',
                 { fromMs: (from / fps) * 1000, count, fps },
+                { label: `${label} — frames ${from + 1}-${from + count}/${total}` },
               )
               for (const frame of frames) {
                 if (!stdin.write(Buffer.from(frame, 'base64'))) await new Promise(resolve => stdin.once('drain', resolve))
@@ -349,6 +488,6 @@ try {
       (pruned ? `, pruned ${pruned} stale clip(s)` : ''),
   )
 } finally {
-  await browser.close()
+  await browser?.close()
   await server.close()
 }

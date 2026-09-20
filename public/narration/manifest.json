@@ -7,7 +7,7 @@
     "1": {
       "hash": "6c4644d2b2a8",
       "audio": "/narration/slide-01-6c4644d2b2a8.mp3",
-      "duration": 16.467415,
+      "duration": 16.469138,
       "cues": [
         9.816666666666666
       ],
@@ -41,7 +41,7 @@
         },
         {
           "start": 14.787,
-          "end": 16.467,
+          "end": 16.469,
           "text": "most of what I want to talk about today."
         }
       ]
@@ -49,7 +49,7 @@
     "2": {
       "hash": "502eb0c8eaec",
       "audio": "/narration/slide-02-502eb0c8eaec.mp3",
-      "duration": 34.54322,
+      "duration": 35.075578,
       "cues": [],
       "narrationKey": "00-intro:1",
       "transcript": "Hi, I'm Mikkel. I'm the Innovation Director at Consensus, which means my job is\nto push innovation in our products forward — to spot what is about to\nchange, and make sure we are on the right side of it. I got here sideways: I\nstudied philosophy before I became a developer, added a Master in IT Management\nalong the way, and I have always cared as much about the product as the code. So\nI work in the cross-section between disciplines — and that cross-section is\nexactly where this talk lives. For the past year I have been building software\nin a way that would have been unrecognisable to me two years ago, and I want to\nshow you what that looks like.",
@@ -66,52 +66,52 @@
         },
         {
           "start": 6.96,
-          "end": 9.4,
+          "end": 8.867,
           "text": "what is about to change, and make sure we are on the"
         },
         {
-          "start": 9.444,
-          "end": 12.133,
+          "start": 8.911,
+          "end": 11.4,
           "text": "right side of it. I got here sideways:"
         },
         {
-          "start": 12.433,
-          "end": 15.733,
+          "start": 11.733,
+          "end": 15.267,
           "text": "I studied philosophy before I became a developer, added a Master in"
         },
         {
-          "start": 15.822,
-          "end": 18.933,
+          "start": 15.356,
+          "end": 18.333,
           "text": "IT Management along the way, and I have always cared as much"
         },
         {
-          "start": 18.977,
-          "end": 20.667,
+          "start": 18.356,
+          "end": 20.067,
           "text": "about the product as the code."
         },
         {
-          "start": 20.933,
-          "end": 24.933,
+          "start": 20.333,
+          "end": 24.4,
           "text": "So I work in the cross-section between disciplines — and that cross-section"
         },
         {
-          "start": 25,
-          "end": 27.2,
+          "start": 24.556,
+          "end": 26.867,
           "text": "is exactly where this talk lives."
         },
         {
-          "start": 27.4,
-          "end": 29.933,
+          "start": 27.083,
+          "end": 30.133,
           "text": "For the past year I have been building software in a way"
         },
         {
-          "start": 29.96,
-          "end": 33.067,
+          "start": 30.173,
+          "end": 33.333,
           "text": "that would have been unrecognisable to me two years ago, and I"
         },
         {
-          "start": 33.093,
-          "end": 34.543,
+          "start": 33.36,
+          "end": 35.076,
           "text": "want to show you what that looks like."
         }
       ]
@@ -119,7 +119,7 @@
     "3": {
       "hash": "e267ca2fac33",
       "audio": "/narration/slide-03-e267ca2fac33.mp3",
-      "duration": 29.881769,
+      "duration": 29.882018,
       "cues": [],
       "narrationKey": "00-intro:2",
       "transcript": "Here is where we are going. We start with the shift itself, and why this time is\ndifferent from the last three times someone told you that. Then the part of the\njob that is compressing, and the new stack you build on top of it. Then the cost\nnobody puts on the invoice, what actually still matters, and where to start on\nMonday.\nOne assumption before we begin: I will take the basic vocabulary as read — what\na large language model is, what a prompt is, what a token is. Everything more\nspecialised than that gets introduced along the way.",
@@ -166,16 +166,16 @@
         },
         {
           "start": 20.233,
-          "end": 23.667,
+          "end": 23.4,
           "text": "I will take the basic vocabulary as read — what a large"
         },
         {
-          "start": 23.697,
-          "end": 26.533,
+          "start": 23.437,
+          "end": 26.333,
           "text": "language model is, what a prompt is, what a token is."
         },
         {
-          "start": 26.588,
+          "start": 26.424,
           "end": 29.882,
           "text": "Everything more specialised than that gets introduced along the way."
         }
@@ -184,7 +184,7 @@
     "4": {
       "hash": "ffe2e3ec081c",
       "audio": "/narration/slide-04-ffe2e3ec081c.mp3",
-      "duration": 24.0061,
+      "duration": 24.472494,
       "cues": [],
       "narrationKey": "00-acknowledgements:0",
       "transcript": "This talk is a synthesis. Its argument, and the ideas behind several figures\nand charts, build on other people's work. Addy Osmani is the strongest single\ninfluence, and several visuals are my redraws and adaptations of ideas from\nhis work. Many other researchers and practitioners shaped individual sections\n— the themes are on the slide, and I will name people as we go. The synthesis\nand presentation are mine; the underlying frameworks remain theirs.",
@@ -216,17 +216,17 @@
         },
         {
           "start": 16.714,
-          "end": 18.867,
+          "end": 19,
           "text": "themes are on the slide, and I will name people as we"
         },
         {
-          "start": 18.933,
-          "end": 21.867,
+          "start": 19.111,
+          "end": 22.4,
           "text": "go. The synthesis and presentation are mine;"
         },
         {
-          "start": 21.883,
-          "end": 24.006,
+          "start": 22.417,
+          "end": 24.472,
           "text": "the underlying frameworks remain theirs."
         }
       ]
@@ -234,7 +234,7 @@
     "5": {
       "hash": "4e8706b77d4e",
       "audio": "/narration/slide-05-4e8706b77d4e.mp3",
-      "duration": 19.470726,
+      "duration": 20.932608,
       "cues": [],
       "narrationKey": "01-the-shift:0",
       "transcript": "You have heard this before. For three years running, someone has stood roughly\nwhere I am standing and told you that everything was about to change. And for\nthree years, the people who rolled their eyes were right. So let me say that\nplainly first: the skepticism was earned. Something has changed since then, and\nI would rather show you the pattern than assert it.",
@@ -251,27 +251,27 @@
         },
         {
           "start": 5.067,
-          "end": 7.933,
+          "end": 7.867,
           "text": "and told you that everything was about to change."
         },
         {
-          "start": 8.083,
-          "end": 11.2,
+          "start": 8,
+          "end": 11.933,
           "text": "And for three years, the people who rolled their eyes were right."
         },
         {
-          "start": 11.423,
-          "end": 13.533,
+          "start": 12.2,
+          "end": 14.533,
           "text": "So let me say that plainly first:"
         },
         {
-          "start": 13.55,
-          "end": 17.6,
+          "start": 14.55,
+          "end": 18.933,
           "text": "the skepticism was earned. Something has changed since then, and I would"
         },
         {
-          "start": 17.628,
-          "end": 19.471,
+          "start": 18.962,
+          "end": 20.933,
           "text": "rather show you the pattern than assert it."
         }
       ]
@@ -279,7 +279,7 @@
     "6": {
       "hash": "a922e6bcfeb6",
       "audio": "/narration/slide-06-a922e6bcfeb6.mp3",
-      "duration": 38.681156,
+      "duration": 38.676689,
       "cues": [
         7.8966666666666665,
         10.583333333333334,
@@ -350,7 +350,7 @@
         },
         {
           "start": 36.787,
-          "end": 38.681,
+          "end": 38.677,
           "text": "That is where we are standing."
         }
       ]
@@ -358,68 +358,68 @@
     "7": {
       "hash": "d0aa6caef4d1",
       "audio": "/narration/slide-07-d0aa6caef4d1.mp3",
-      "duration": 36.684104,
+      "duration": 34.064739,
       "cues": [
-        8.1,
-        18.905833333333334,
-        22.883333333333336
+        7.416666666666666,
+        17.705833333333334,
+        21.183333333333334
       ],
       "narrationKey": "01-the-shift:2",
       "transcript": "And if 1997 sounds like an exaggeration, consider one estimate of how early this\nactually is. Martin Eriksson reports it as this funnel. His estimate puts the share that has never used AI at 84%. Whatever you\nhave heard about how fast this is moving, most people's daily lives are still\nuntouched by it. He estimates that three people in a thousand have ever paid for it. And the thing this talk is about — building software with AI — at four\npeople in every ten thousand. Treat the exact numbers as estimates; the shape is\nthe point. Whatever this becomes, none of us is late to it.",
       "captions": [
         {
           "start": 0,
-          "end": 4,
+          "end": 3.933,
           "text": "And if 1997 sounds like an exaggeration, consider one estimate of how"
         },
         {
-          "start": 4.067,
-          "end": 8.2,
+          "start": 3.978,
+          "end": 7.533,
           "text": "early this actually is. Martin Eriksson reports it as this funnel."
         },
         {
-          "start": 8.35,
-          "end": 12.933,
+          "start": 7.667,
+          "end": 12.067,
           "text": "His estimate puts the share that has never used AI at 84%."
         },
         {
-          "start": 13.03,
-          "end": 16.733,
+          "start": 12.17,
+          "end": 15.667,
           "text": "Whatever you have heard about how fast this is moving, most people's"
         },
         {
-          "start": 16.777,
-          "end": 18.933,
+          "start": 15.711,
+          "end": 17.8,
           "text": "daily lives are still untouched by it."
         },
         {
-          "start": 19.156,
-          "end": 22.733,
+          "start": 17.956,
+          "end": 21,
           "text": "He estimates that three people in a thousand have ever paid for"
         },
         {
-          "start": 22.8,
-          "end": 26.267,
+          "start": 21.067,
+          "end": 24.067,
           "text": "it. And the thing this talk is about — building software with"
         },
         {
-          "start": 26.4,
-          "end": 30.2,
+          "start": 24.333,
+          "end": 27.4,
           "text": "AI — at four people in every ten thousand."
         },
         {
-          "start": 30.277,
-          "end": 32.4,
+          "start": 27.523,
+          "end": 29.933,
           "text": "Treat the exact numbers as estimates;"
         },
         {
-          "start": 32.417,
-          "end": 33.667,
+          "start": 29.95,
+          "end": 31,
           "text": "the shape is the point."
         },
         {
-          "start": 33.741,
-          "end": 36.684,
+          "start": 31.067,
+          "end": 34.065,
           "text": "Whatever this becomes, none of us is late to it."
         }
       ]
@@ -427,10 +427,10 @@
     "8": {
       "hash": "aa1d0385b821",
       "audio": "/narration/slide-08-aa1d0385b821.mp3",
-      "duration": 42.667596,
+      "duration": 41.472494,
       "cues": [
         8.994166666666667,
-        19.105833333333333
+        18.9575
       ],
       "narrationKey": "01-the-shift:3",
       "transcript": "Which raises a fair question: if almost nobody is here yet, why does the rest\nof this talk keep pointing at software? Because this is not a developer story. AI is starting to reach every discipline that works with knowledge —\ndesign, law, finance, sales, medicine. The pattern is the same everywhere; only\nthe timing differs. Software just happens to be first, and for a mechanical reason. Code is\nwork an AI can check on its own: it can run what it wrote, test it, and see\nwhether it broke — thousands of times, in seconds. No other profession gives it\nthat tight a feedback loop yet. So treat software as the lens, not the subject.\nWhat is happening to my profession right now is the early picture of what\nreaches everyone else's.",
@@ -457,21 +457,21 @@
         },
         {
           "start": 9.244,
-          "end": 12.267,
+          "end": 12.133,
           "text": "AI is starting to reach every discipline that works with knowledge —"
         },
         {
-          "start": 12.343,
-          "end": 15.933,
+          "start": 12.209,
+          "end": 15.733,
           "text": "design, law, finance, sales, medicine."
         },
         {
-          "start": 16.083,
-          "end": 17.933,
+          "start": 15.867,
+          "end": 17.733,
           "text": "The pattern is the same everywhere;"
         },
         {
-          "start": 17.987,
+          "start": 17.787,
           "end": 21.6,
           "text": "only the timing differs. Software just happens to be first, and for"
         },
@@ -482,32 +482,32 @@
         },
         {
           "start": 24.85,
-          "end": 27.933,
+          "end": 27.733,
           "text": "own: it can run what it wrote, test it, and see whether"
         },
         {
-          "start": 27.956,
+          "start": 27.777,
           "end": 30.733,
           "text": "it broke — thousands of times, in seconds."
         },
         {
-          "start": 30.933,
+          "start": 30.889,
           "end": 33.667,
           "text": "No other profession gives it that tight a feedback loop yet."
         },
         {
-          "start": 33.911,
-          "end": 37.067,
+          "start": 33.844,
+          "end": 36.867,
           "text": "So treat software as the lens, not the subject."
         },
         {
-          "start": 37.213,
-          "end": 40.667,
+          "start": 36.96,
+          "end": 39.6,
           "text": "What is happening to my profession right now is the early picture"
         },
         {
-          "start": 40.756,
-          "end": 42.668,
+          "start": 39.644,
+          "end": 41.472,
           "text": "of what reaches everyone else's."
         }
       ]
@@ -515,10 +515,10 @@
     "9": {
       "hash": "27056c1687f3",
       "audio": "/narration/slide-09-27056c1687f3.mp3",
-      "duration": 78.471474,
+      "duration": 77.338526,
       "cues": [
-        33.30583333333334,
-        59.21666666666667
+        32.905833333333334,
+        57.86666666666667
       ],
       "narrationKey": "01-the-shift:4",
       "transcript": "These are the tools developers now use to build software with AI — Claude\nCode, Cursor, Copilot, and the rest. Six names on the screen, but this was not\none product launch. In a single 30-day window last December, all three of the big\nAI companies shipped new versions, and the whole category quietly renamed\nitself. They stopped calling these things assistants and started calling them\nagents. An assistant suggests the next line while you type. An agent is given\na task, goes away, and comes back with the work done. That is the shift\nunderneath all six names. So zoom out from the tool names to what the companies themselves are\nsaying. Spotify's co-CEO says their best developers have not written a line of\ncode since December. Google says AI now writes over 30% of all its new code.\nMicrosoft puts it at 20 to 30%. And at the AI labs themselves, Anthropic and\nOpenAI, the teams report that essentially all of their code is now written by\nAI. One thing about those numbers before we move on. They are directional,\ncompany-reported, and already dated. The definitions differ, so do not compare\nthem as one clean dataset. Read the convergence instead: across very different\ncompanies, AI-generated code has moved into ordinary production work.",
@@ -555,77 +555,77 @@
         },
         {
           "start": 21.667,
-          "end": 25.667,
+          "end": 25.467,
           "text": "them agents. An assistant suggests the next line while you type."
         },
         {
-          "start": 25.777,
+          "start": 25.667,
           "end": 29,
           "text": "An agent is given a task, goes away, and comes back with"
         },
         {
           "start": 29.017,
-          "end": 33.4,
+          "end": 32.867,
           "text": "the work done. That is the shift underneath all six names."
         },
         {
-          "start": 33.556,
-          "end": 36.533,
+          "start": 33.156,
+          "end": 36.4,
           "text": "So zoom out from the tool names to what the companies themselves"
         },
         {
-          "start": 36.567,
-          "end": 41.2,
+          "start": 36.433,
+          "end": 40.667,
           "text": "are saying. Spotify's co-CEO says their best developers have not written"
         },
         {
-          "start": 41.233,
-          "end": 43.467,
+          "start": 40.7,
+          "end": 42.267,
           "text": "a line of code since December."
         },
         {
-          "start": 43.542,
-          "end": 48.267,
+          "start": 42.419,
+          "end": 47.4,
           "text": "Google says AI now writes over 30% of all its new code."
         },
         {
-          "start": 48.32,
-          "end": 50.467,
+          "start": 47.46,
+          "end": 49.6,
           "text": "Microsoft puts it at 20 to 30%."
         },
         {
-          "start": 50.683,
-          "end": 55.533,
+          "start": 49.85,
+          "end": 55,
           "text": "And at the AI labs themselves, Anthropic and OpenAI, the teams report"
         },
         {
-          "start": 55.547,
-          "end": 59.2,
+          "start": 55.027,
+          "end": 57.867,
           "text": "that essentially all of their code is now written by AI."
         },
         {
-          "start": 59.467,
-          "end": 62.433,
+          "start": 58.117,
+          "end": 60.9,
           "text": "One thing about those numbers before we move on."
         },
         {
-          "start": 62.493,
-          "end": 66.3,
+          "start": 60.973,
+          "end": 65,
           "text": "They are directional, company-reported, and already dated."
         },
         {
-          "start": 66.375,
-          "end": 70.933,
+          "start": 65.1,
+          "end": 69.5,
           "text": "The definitions differ, so do not compare them as one clean dataset."
         },
         {
-          "start": 71.027,
-          "end": 75.6,
+          "start": 69.587,
+          "end": 74.4,
           "text": "Read the convergence instead: across very different companies, AI-generated"
         },
         {
-          "start": 75.72,
-          "end": 78.471,
+          "start": 74.533,
+          "end": 77.339,
           "text": "code has moved into ordinary production work."
         }
       ]
@@ -633,14 +633,14 @@
     "10": {
       "hash": "04c4fe98cb09",
       "audio": "/narration/slide-10-04c4fe98cb09.mp3",
-      "duration": 84.337868,
+      "duration": 85.066916,
       "cues": [
-        14.79,
-        27.136666666666667,
-        31.17666666666667,
-        40.333333333333336,
-        42.31666666666667,
-        55.28333333333334
+        15.003333333333332,
+        26.816666666666666,
+        30.763333333333335,
+        40.46666666666667,
+        42.93333333333334,
+        56.23
       ],
       "narrationKey": "01-the-shift:5",
       "transcript": "If that still sounds like vendor hype, you do not have to take their word for\nit. This is my own record. Every piece of software work leaves a trail, and\nthis is mine: same person, same job, two consecutive years. The only thing\nthat changed between them is the way I work. Last year: 343 finished pieces of work that made it into the product.\nIn our world those are called merged pull requests, and I want to give that\nnumber its due. That was a normal, productive year, and I was proud of it. This year, the same measure, same person: over six thousand. Commits tell the same story. A commit is a saved step along the way,\nso this is roughly how many times the work moved forward. 967 in the old year. And 16 times that in the new one. And then the tests. A test is a small automatic check that a piece of\nsoftware still does what it is supposed to. Last year I wrote five. Five, in\nan entire year. That is the honest number, and I am not proud of it. This year, 57,179. That multiplier is not a typo. The agents check\ntheir own work far more thoroughly than I ever checked mine, and that turns\nout to be the part that matters most.\nAnd that volume forces an admission I want to make out loud: I cannot read all\nof that code anymore, and I do not even try to. If that makes you uneasy, good.\nHold onto that feeling, because what it means to work this way without losing\nyour grip on the system is a question this talk takes seriously, and we will\ncome back to it.",
@@ -657,142 +657,142 @@
         },
         {
           "start": 3.773,
-          "end": 5,
+          "end": 5.4,
           "text": "This is my own record."
         },
         {
-          "start": 5.123,
-          "end": 9.333,
+          "start": 5.467,
+          "end": 9.267,
           "text": "Every piece of software work leaves a trail, and this is mine:"
         },
         {
-          "start": 9.373,
-          "end": 12.467,
+          "start": 9.307,
+          "end": 12.333,
           "text": "same person, same job, two consecutive years."
         },
         {
-          "start": 12.583,
-          "end": 14.933,
+          "start": 12.467,
+          "end": 15.133,
           "text": "The only thing that changed between them is the way I work."
         },
         {
-          "start": 15.04,
-          "end": 18.733,
+          "start": 15.253,
+          "end": 18.867,
           "text": "Last year: 343 finished pieces of work that made it into the"
         },
         {
-          "start": 18.792,
-          "end": 23.067,
+          "start": 18.917,
+          "end": 22.667,
           "text": "product. In our world those are called merged pull requests, and I"
         },
         {
-          "start": 23.08,
-          "end": 24.433,
+          "start": 22.693,
+          "end": 24,
           "text": "want to give that number its due."
         },
         {
-          "start": 24.48,
-          "end": 27.267,
+          "start": 24.053,
+          "end": 26.933,
           "text": "That was a normal, productive year, and I was proud of it."
         },
         {
-          "start": 27.387,
-          "end": 30.267,
+          "start": 27.067,
+          "end": 29.867,
           "text": "This year, the same measure, same person:"
         },
         {
-          "start": 30.307,
-          "end": 33.1,
+          "start": 29.893,
+          "end": 32.733,
           "text": "over six thousand. Commits tell the same story."
         },
         {
-          "start": 33.25,
-          "end": 36.133,
+          "start": 33.033,
+          "end": 36.067,
           "text": "A commit is a saved step along the way, so this is"
         },
         {
-          "start": 36.167,
-          "end": 38.067,
+          "start": 36.108,
+          "end": 38.333,
           "text": "roughly how many times the work moved forward."
         },
         {
-          "start": 38.533,
-          "end": 40.467,
+          "start": 38.867,
+          "end": 40.533,
           "text": "967 in the old year."
         },
         {
-          "start": 40.583,
-          "end": 42.4,
+          "start": 40.717,
+          "end": 43,
           "text": "And 16 times that in the new one."
         },
         {
-          "start": 42.567,
-          "end": 46.533,
+          "start": 43.183,
+          "end": 47.2,
           "text": "And then the tests. A test is a small automatic check that"
         },
         {
-          "start": 46.567,
-          "end": 48.867,
+          "start": 47.233,
+          "end": 49.6,
           "text": "a piece of software still does what it is supposed to."
         },
         {
-          "start": 49,
-          "end": 50.9,
+          "start": 49.76,
+          "end": 51.667,
           "text": "Last year I wrote five."
         },
         {
-          "start": 51,
-          "end": 52.667,
+          "start": 51.747,
+          "end": 53.333,
           "text": "Five, in an entire year."
         },
         {
-          "start": 52.8,
-          "end": 55.4,
+          "start": 53.48,
+          "end": 56.333,
           "text": "That is the honest number, and I am not proud of it."
         },
         {
-          "start": 55.533,
-          "end": 61.6,
+          "start": 56.48,
+          "end": 62.133,
           "text": "This year, 57,179. That multiplier is not a typo."
         },
         {
-          "start": 61.75,
-          "end": 64.533,
+          "start": 62.267,
+          "end": 65.067,
           "text": "The agents check their own work far more thoroughly than I ever"
         },
         {
-          "start": 64.567,
-          "end": 67.067,
+          "start": 65.092,
+          "end": 67.4,
           "text": "checked mine, and that turns out to be the part that matters"
         },
         {
-          "start": 67.133,
-          "end": 69.933,
+          "start": 67.467,
+          "end": 70.933,
           "text": "most. And that volume forces an admission I want to make out"
         },
         {
-          "start": 70,
-          "end": 73.267,
+          "start": 71,
+          "end": 74.2,
           "text": "loud: I cannot read all of that code anymore, and I do"
         },
         {
-          "start": 73.3,
-          "end": 76.133,
+          "start": 74.233,
+          "end": 77.2,
           "text": "not even try to. If that makes you uneasy, good."
         },
         {
-          "start": 76.253,
-          "end": 79.2,
+          "start": 77.32,
+          "end": 80.067,
           "text": "Hold onto that feeling, because what it means to work this way"
         },
         {
-          "start": 79.225,
-          "end": 81.933,
+          "start": 80.1,
+          "end": 82.8,
           "text": "without losing your grip on the system is a question this talk"
         },
         {
-          "start": 81.967,
-          "end": 84.338,
+          "start": 82.833,
+          "end": 85.067,
           "text": "takes seriously, and we will come back to it."
         }
       ]
@@ -800,10 +800,10 @@
     "11": {
       "hash": "2c63981df183",
       "audio": "/narration/slide-11-2c63981df183.mp3",
-      "duration": 34.079887,
+      "duration": 37.217324,
       "cues": [
-        18.76666666666667,
-        30.133333333333336
+        19.000000000000004,
+        32.95
       ],
       "narrationKey": "01-the-shift:6",
       "transcript": "Now the same data month by month, because the totals are not the interesting\npart. When it happened is. Watch the flat year draw itself out. That was me\nbeing productive: somewhere between 25 and 65 finished pieces of work a month,\nevery month, for a year. Nothing wrong with that line. It is just a line that\ngoes nowhere. And then January. 176. Then 264 in February. Then 790 in March, which\nmeans one single month out-produced the entire year that came before it. The skeptics were right for three years. Then the curve bent.",
@@ -840,32 +840,32 @@
         },
         {
           "start": 17.156,
-          "end": 18.8,
+          "end": 19.067,
           "text": "It is just a line that goes nowhere."
         },
         {
-          "start": 19.017,
-          "end": 24.333,
+          "start": 19.25,
+          "end": 25.733,
           "text": "And then January. 176. Then 264 in February."
         },
         {
-          "start": 24.4,
-          "end": 28.933,
+          "start": 25.867,
+          "end": 31.533,
           "text": "Then 790 in March, which means one single month out-produced the entire"
         },
         {
-          "start": 29,
-          "end": 30.2,
+          "start": 31.613,
+          "end": 33,
           "text": "year that came before it."
         },
         {
-          "start": 30.383,
-          "end": 32.467,
+          "start": 33.2,
+          "end": 35.4,
           "text": "The skeptics were right for three years."
         },
         {
-          "start": 32.613,
-          "end": 34.08,
+          "start": 35.533,
+          "end": 37.217,
           "text": "Then the curve bent."
         }
       ]
@@ -873,12 +873,12 @@
     "12": {
       "hash": "e56baef1b381",
       "audio": "/narration/slide-12-e56baef1b381.mp3",
-      "duration": 95.479841,
+      "duration": 91.483175,
       "cues": [
-        9.594166666666668,
-        20.05,
+        9.772499999999999,
+        19.05,
         36.36083333333333,
-        61.71666666666667
+        61.016666666666666
       ],
       "narrationKey": "01-the-shift:7",
       "transcript": "Before you file that curve away as me simply working eighteen times faster,\nlet me be honest about what it is made of, because the multiplier is the\neasiest number in this talk to misread. On the work I was already doing — the production systems, the feature\nwork — the honest speedup is maybe two or three times. Real, but that is not\nwhere the curve comes from. The rest of it is work that was not worth starting a year ago. Less\nthan half of those merged pieces of work land in systems that are in\nproduction use today. The rest is new products and internal tooling that used\nto sit below the threshold of what one person could justify building at all. Three examples, all real. This talk — the deck you are watching right\nnow narrates itself, through a pipeline that did not exist a year ago. A\nreal-time multiplayer quiz platform for live events. And a flight simulator\nfor the conversations that actually decide deals, where salespeople rehearse\nthe hard ones against an AI counterpart that reacts not just to what they\nsay, but to how they say it. And there is a discipline that comes with all this. When code is this\ncheap to write, it has to become cheap to let go of, too. Some of that work\nhas already been thrown away — on purpose, and faster than I would ever have\ndared before. That used to feel like waste. It is not. Hanging on to software\nnobody needs is the waste, and for the first time we can afford to stop doing\nit.\nThe number is big because the set of things worth building exploded — and\nworking inside that expansion, honestly, already feels like living in a\ndifferent world.",
@@ -890,137 +890,137 @@
         },
         {
           "start": 3.058,
-          "end": 6.4,
+          "end": 6.6,
           "text": "faster, let me be honest about what it is made of, because"
         },
         {
-          "start": 6.433,
-          "end": 9.533,
+          "start": 6.617,
+          "end": 9.733,
           "text": "the multiplier is the easiest number in this talk to misread."
         },
         {
-          "start": 9.844,
-          "end": 13,
+          "start": 10.022,
+          "end": 12.8,
           "text": "On the work I was already doing — the production systems, the"
         },
         {
-          "start": 13.042,
-          "end": 16.8,
+          "start": 12.833,
+          "end": 16.2,
           "text": "feature work — the honest speedup is maybe two or three times."
         },
         {
-          "start": 16.933,
-          "end": 20.133,
+          "start": 16.293,
+          "end": 19.133,
           "text": "Real, but that is not where the curve comes from."
         },
         {
-          "start": 20.3,
-          "end": 23.067,
+          "start": 19.3,
+          "end": 21.933,
           "text": "The rest of it is work that was not worth starting a"
         },
         {
-          "start": 23.107,
-          "end": 27,
+          "start": 21.973,
+          "end": 26.2,
           "text": "year ago. Less than half of those merged pieces of work land"
         },
         {
-          "start": 27.044,
-          "end": 28.867,
+          "start": 26.244,
+          "end": 28.4,
           "text": "in systems that are in production use today."
         },
         {
-          "start": 29.017,
-          "end": 32.667,
+          "start": 28.55,
+          "end": 32.733,
           "text": "The rest is new products and internal tooling that used to sit"
         },
         {
-          "start": 32.711,
+          "start": 32.789,
           "end": 36.467,
           "text": "below the threshold of what one person could justify building at all."
         },
         {
           "start": 36.611,
-          "end": 41.067,
+          "end": 41.133,
           "text": "Three examples, all real. This talk — the deck you are watching"
         },
         {
-          "start": 41.1,
-          "end": 44.933,
+          "start": 41.167,
+          "end": 45.067,
           "text": "right now narrates itself, through a pipeline that did not exist a"
         },
         {
-          "start": 44.973,
-          "end": 49.267,
+          "start": 45.107,
+          "end": 49.467,
           "text": "year ago. A real-time multiplayer quiz platform for live events."
         },
         {
-          "start": 49.4,
-          "end": 53.867,
+          "start": 49.6,
+          "end": 53.8,
           "text": "And a flight simulator for the conversations that actually decide deals,"
         },
         {
-          "start": 53.889,
+          "start": 53.823,
           "end": 58.267,
           "text": "where salespeople rehearse the hard ones against an AI counterpart that reacts"
         },
         {
           "start": 58.35,
-          "end": 61.733,
+          "end": 61.067,
           "text": "not just to what they say, but to how they say it."
         },
         {
-          "start": 61.967,
-          "end": 64.6,
+          "start": 61.267,
+          "end": 63.733,
           "text": "And there is a discipline that comes with all this."
         },
         {
-          "start": 64.72,
-          "end": 68.067,
+          "start": 63.827,
+          "end": 66.867,
           "text": "When code is this cheap to write, it has to become cheap"
         },
         {
-          "start": 68.156,
-          "end": 69.6,
+          "start": 66.978,
+          "end": 68.067,
           "text": "to let go of, too."
         },
         {
-          "start": 69.787,
-          "end": 73.333,
+          "start": 68.253,
+          "end": 71.867,
           "text": "Some of that work has already been thrown away — on purpose,"
         },
         {
-          "start": 73.433,
-          "end": 75.867,
+          "start": 71.9,
+          "end": 74.4,
           "text": "and faster than I would ever have dared before."
         },
         {
-          "start": 76.04,
-          "end": 77.867,
+          "start": 74.52,
+          "end": 76,
           "text": "That used to feel like waste."
         },
         {
-          "start": 78.067,
-          "end": 82.667,
+          "start": 76.222,
+          "end": 80.2,
           "text": "It is not. Hanging on to software nobody needs is the waste,"
         },
         {
-          "start": 82.683,
-          "end": 85.533,
+          "start": 80.233,
+          "end": 82.8,
           "text": "and for the first time we can afford to stop doing it."
         },
         {
-          "start": 85.733,
-          "end": 89.333,
+          "start": 82.983,
+          "end": 86.733,
           "text": "The number is big because the set of things worth building exploded"
         },
         {
-          "start": 89.567,
-          "end": 94.067,
+          "start": 86.9,
+          "end": 90.6,
           "text": "— and working inside that expansion, honestly, already feels like living"
         },
         {
-          "start": 94.133,
-          "end": 95.48,
+          "start": 90.623,
+          "end": 91.483,
           "text": "in a different world."
         }
       ]
@@ -1028,7 +1028,7 @@
     "13": {
       "hash": "b0218bb10d40",
       "audio": "/narration/slide-13-b0218bb10d40.mp3",
-      "duration": 21.274921,
+      "duration": 21.268617,
       "cues": [],
       "narrationKey": "01-the-shift:8",
       "transcript": "Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By\nsummer 2026, he wrote, people working with the most advanced AI will feel like\nthey live in a parallel world. It is summer 2026. So this is the question I\nwould ask you to hold onto for the rest of this talk, and I genuinely do not\nknow the answer for your team. Which side of that divide are you on?",
@@ -1065,7 +1065,7 @@
         },
         {
           "start": 19.1,
-          "end": 21.275,
+          "end": 21.269,
           "text": "Which side of that divide are you on?"
         }
       ]
@@ -1073,7 +1073,7 @@
     "14": {
       "hash": "fe498c9d5ce0",
       "audio": "/narration/slide-14-fe498c9d5ce0.mp3",
-      "duration": 17.879864,
+      "duration": 17.872336,
       "cues": [],
       "narrationKey": "02-disappearing-middle:0",
       "transcript": "So the shift is real, and it is accelerating. That is the easy part, and it is\nthe part everyone argues about. The harder question is the one underneath it:\nwhat exactly is changing about the work? Not the tools. The work. That is what\nthis next stretch is about, and I want to say up front that it is not only an\nengineering question.",
@@ -1110,7 +1110,7 @@
         },
         {
           "start": 15.3,
-          "end": 17.88,
+          "end": 17.872,
           "text": "say up front that it is not only an engineering question."
         }
       ]
@@ -1118,108 +1118,108 @@
     "15": {
       "hash": "7bfebdc19095",
       "audio": "/narration/slide-15-7bfebdc19095.mp3",
-      "duration": 54.985374,
+      "duration": 54.407007,
       "cues": [
-        16.35,
-        26.8,
-        35.49666666666667
+        15.666666666666668,
+        25.96666666666667,
+        34.71
       ],
       "narrationKey": "02-disappearing-middle:1",
       "transcript": "Think of software work as having three parts. At one end, figuring out what to\nbuild. At the other, the outcome it produces. And in between, a wide middle:\ntranslating intent into a plan, implementing it, integrating it, coordinating\neveryone involved. Karri Saarinen, who runs Linear, describes that middle as the place\nthat absorbed most of the time, attention and craft of software teams. For most\nof us, the middle was the job. And it is where juniors learn. You grow up inside that middle. That is\nwhere craft gets built, and I want to plant that thought now, because we will\ncome back to it. This is the part that is changing. Not disappearing, compressing. And\nit is compressing on the product and design side too. The translation layer\nbetween roles, the handoffs, the tickets that exist to carry intent from one\ndiscipline to another. That was middle work as well. If the middle was 80% of\nthe effort, what happens when it drops to 20%?",
       "captions": [
         {
           "start": 0,
-          "end": 2.333,
+          "end": 2.4,
           "text": "Think of software work as having three parts."
         },
         {
-          "start": 2.489,
-          "end": 5,
+          "start": 2.578,
+          "end": 4.933,
           "text": "At one end, figuring out what to build."
         },
         {
-          "start": 5.156,
+          "start": 5.044,
           "end": 7.6,
           "text": "At the other, the outcome it produces."
         },
         {
           "start": 7.683,
-          "end": 10.4,
+          "end": 10.133,
           "text": "And in between, a wide middle:"
         },
         {
-          "start": 10.444,
-          "end": 15.333,
+          "start": 10.178,
+          "end": 14.667,
           "text": "translating intent into a plan, implementing it, integrating it, coordinating"
         },
         {
-          "start": 15.393,
-          "end": 19.267,
+          "start": 14.711,
+          "end": 19,
           "text": "everyone involved. Karri Saarinen, who runs Linear, describes that middle"
         },
         {
-          "start": 19.333,
-          "end": 23,
+          "start": 19.023,
+          "end": 22.4,
           "text": "as the place that absorbed most of the time, attention and craft"
         },
         {
-          "start": 23.156,
-          "end": 26.867,
+          "start": 22.444,
+          "end": 26.067,
           "text": "of software teams. For most of us, the middle was the job."
         },
         {
-          "start": 27.05,
-          "end": 29,
+          "start": 26.217,
+          "end": 27.8,
           "text": "And it is where juniors learn."
         },
         {
-          "start": 29.1,
-          "end": 30.9,
+          "start": 27.967,
+          "end": 29.8,
           "text": "You grow up inside that middle."
         },
         {
-          "start": 30.96,
-          "end": 33.667,
+          "start": 29.88,
+          "end": 32.6,
           "text": "That is where craft gets built, and I want to plant that"
         },
         {
-          "start": 33.7,
-          "end": 35.6,
+          "start": 32.633,
+          "end": 34.8,
           "text": "thought now, because we will come back to it."
         },
         {
-          "start": 35.747,
-          "end": 37.533,
+          "start": 34.96,
+          "end": 37,
           "text": "This is the part that is changing."
         },
         {
-          "start": 37.667,
-          "end": 41.867,
+          "start": 37.083,
+          "end": 41.133,
           "text": "Not disappearing, compressing. And it is compressing on the product and design"
         },
         {
-          "start": 41.92,
-          "end": 46.467,
+          "start": 41.187,
+          "end": 45.533,
           "text": "side too. The translation layer between roles, the handoffs, the tickets"
         },
         {
-          "start": 46.48,
-          "end": 49.267,
+          "start": 45.56,
+          "end": 48.133,
           "text": "that exist to carry intent from one discipline to another."
         },
         {
-          "start": 49.36,
-          "end": 51.033,
+          "start": 48.267,
+          "end": 50.167,
           "text": "That was middle work as well."
         },
         {
-          "start": 51.133,
-          "end": 53.733,
+          "start": 50.311,
+          "end": 53.2,
           "text": "If the middle was 80% of the effort, what happens when it"
         },
         {
-          "start": 53.789,
-          "end": 54.985,
+          "start": 53.256,
+          "end": 54.407,
           "text": "drops to 20%?"
         }
       ]
@@ -1227,10 +1227,10 @@
     "16": {
       "hash": "9a3ebd42f200",
       "audio": "/narration/slide-16-9a3ebd42f200.mp3",
-      "duration": 36.949683,
+      "duration": 37.016576,
       "cues": [
         6.839166666666666,
-        20.8
+        21.016666666666666
       ],
       "narrationKey": "02-disappearing-middle:2",
       "transcript": "The next sentence should sound slightly wrong for a second, after\neverything I just said. The artifact was never the job. Duolingo's Chief Product Officer put it this way: a product manager\nwith a good idea can now get to a first draft faster than ever. They can visualise concepts,\ntest directions, move quickly. The distance between an idea and a thing you can\nlook at has collapsed. But the job was never the deck, or the prototype, or the code. The job\nis deciding what should happen next. The artifact is just evidence that the\nthinking happened. When one task was most of a job, automating the task can end\nthe job. If the job was the thinking, it just got faster.",
@@ -1267,37 +1267,37 @@
         },
         {
           "start": 17.617,
-          "end": 19.867,
+          "end": 20.133,
           "text": "The distance between an idea and a thing you can look at"
         },
         {
-          "start": 19.95,
-          "end": 23.867,
+          "start": 20.2,
+          "end": 24,
           "text": "has collapsed. But the job was never the deck, or the prototype,"
         },
         {
-          "start": 23.911,
-          "end": 27.067,
+          "start": 24.044,
+          "end": 27.267,
           "text": "or the code. The job is deciding what should happen next."
         },
         {
-          "start": 27.2,
-          "end": 29.8,
+          "start": 27.417,
+          "end": 30,
           "text": "The artifact is just evidence that the thinking happened."
         },
         {
-          "start": 29.973,
-          "end": 33.533,
+          "start": 30.147,
+          "end": 33.133,
           "text": "When one task was most of a job, automating the task can"
         },
         {
-          "start": 33.583,
+          "start": 33.183,
           "end": 36.4,
           "text": "end the job. If the job was the thinking, it just got"
         },
         {
-          "start": 36.458,
-          "end": 36.95,
+          "start": 36.467,
+          "end": 37.017,
           "text": "faster."
         }
       ]
@@ -1305,9 +1305,9 @@
     "17": {
       "hash": "b87c1f15e5cc",
       "audio": "/narration/slide-17-b87c1f15e5cc.mp3",
-      "duration": 34.271361,
+      "duration": 36.276349,
       "cues": [
-        13.508333333333335
+        14.216666666666667
       ],
       "narrationKey": "02-disappearing-middle:3",
       "transcript": "Twenty-five years apart, two one-liners show how far the culture has moved.\nLinus Torvalds, the creator of Linux, in 2000: talk is cheap, show me the code.\nHalf of us have that line somewhere in our hearts. I know I do. And then Kailash Nadh, the CTO of the Indian broker Zerodha, last\nyear: for the first time ever, good talk is exponentially more valuable than\ngood code. Talk here does not mean vague\nideation. It means a precise statement of the problem. That is now the scarce\nthing, and it is scarce in every discipline, not just this one.",
@@ -1319,52 +1319,52 @@
         },
         {
           "start": 3.983,
-          "end": 7.267,
+          "end": 7.6,
           "text": "Linus Torvalds, the creator of Linux, in 2000:"
         },
         {
-          "start": 7.387,
-          "end": 9.533,
+          "start": 7.8,
+          "end": 10.333,
           "text": "talk is cheap, show me the code."
         },
         {
-          "start": 9.68,
-          "end": 12.267,
+          "start": 10.533,
+          "end": 13.367,
           "text": "Half of us have that line somewhere in our hearts."
         },
         {
-          "start": 12.433,
-          "end": 16.067,
+          "start": 13.45,
+          "end": 17.533,
           "text": "I know I do. And then Kailash Nadh, the CTO of the"
         },
         {
-          "start": 16.105,
-          "end": 18.2,
+          "start": 17.572,
+          "end": 19.733,
           "text": "Indian broker Zerodha, last year:"
         },
         {
-          "start": 18.35,
-          "end": 22.733,
+          "start": 19.983,
+          "end": 24.333,
           "text": "for the first time ever, good talk is exponentially more valuable than"
         },
         {
-          "start": 22.773,
-          "end": 26.533,
+          "start": 24.373,
+          "end": 28.467,
           "text": "good code. Talk here does not mean vague ideation."
         },
         {
-          "start": 26.578,
-          "end": 29.4,
+          "start": 28.6,
+          "end": 31,
           "text": "It means a precise statement of the problem."
         },
         {
-          "start": 29.507,
-          "end": 32.667,
+          "start": 31.107,
+          "end": 34.533,
           "text": "That is now the scarce thing, and it is scarce in every"
         },
         {
-          "start": 32.715,
-          "end": 34.271,
+          "start": 34.576,
+          "end": 36.276,
           "text": "discipline, not just this one."
         }
       ]
@@ -1372,7 +1372,7 @@
     "18": {
       "hash": "beb9f4520bce",
       "audio": "/narration/slide-18-beb9f4520bce.mp3",
-      "duration": 43.274671,
+      "duration": 43.281451,
       "cues": [
         16.033333333333335,
         32.89666666666667
@@ -1427,17 +1427,17 @@
         },
         {
           "start": 33.147,
-          "end": 38.067,
+          "end": 37.6,
           "text": "This is not anti-design. It is not engineering getting faster while everyone"
         },
         {
-          "start": 38.12,
+          "start": 37.653,
           "end": 42.333,
           "text": "else stands still. It is the operating model changing for every role"
         },
         {
           "start": 42.422,
-          "end": 43.275,
+          "end": 43.281,
           "text": "at once."
         }
       ]
@@ -1445,11 +1445,11 @@
     "19": {
       "hash": "4a27815c2be3",
       "audio": "/narration/slide-19-4a27815c2be3.mp3",
-      "duration": 60.802245,
+      "duration": 60.807823,
       "cues": [
         14.976666666666667,
         38.65,
-        55.9275
+        55.65
       ],
       "narrationKey": "02-disappearing-middle:5",
       "transcript": "For a long time, product, design and engineering handed work to each other in\nsequence. We always wanted it to be a Venn diagram. In practice it was a\nwaterfall. And the walls between the disciplines were built from one thing:\nimplementation was expensive, so you had to be careful about what reached it. Take that cost out, and the walls start to go with it. I watched it\nhappen in my own calendar the week I wrote this. I spent part of that week\nprogramming product launch videos, while our media team was using an agent to\nbuild a 3D web application from scratch. The engineer was doing media work,\nthe media team was doing engineering, and nobody had scheduled the swap. The\nthree disciplines do not collapse into one, but they overlap far more than\nthey used to. And what sits in the overlap is judgment. That is the thing that does\nnot compress. Some teams have a name for the person who lives there: the\nproduct engineer, who frames the problem, ships the code and measures the\noutcome. I do not think every company will adopt that title. I do think that\nis the zone the market is rewarding. Three job titles. One job: turning ambiguity into clarity.",
@@ -1536,27 +1536,27 @@
         },
         {
           "start": 45.95,
-          "end": 49.667,
+          "end": 49.733,
           "text": "the product engineer, who frames the problem, ships the code and measures"
         },
         {
-          "start": 49.683,
-          "end": 52.867,
+          "start": 49.767,
+          "end": 53.067,
           "text": "the outcome. I do not think every company will adopt that title."
         },
         {
-          "start": 53.067,
-          "end": 56.067,
+          "start": 53.333,
+          "end": 55.8,
           "text": "I do think that is the zone the market is rewarding."
         },
         {
-          "start": 56.178,
-          "end": 58.867,
+          "start": 55.9,
+          "end": 58.4,
           "text": "Three job titles. One job:"
         },
         {
-          "start": 58.9,
-          "end": 60.802,
+          "start": 58.475,
+          "end": 60.808,
           "text": "turning ambiguity into clarity."
         }
       ]
@@ -1564,11 +1564,11 @@
     "20": {
       "hash": "c25c0614545d",
       "audio": "/narration/slide-20-c25c0614545d.mp3",
-      "duration": 53.077778,
+      "duration": 52.949456,
       "cues": [
         2.63,
         16.25583333333333,
-        39.59416666666667
+        39.79416666666667
       ],
       "narrationKey": "02-disappearing-middle:6",
       "transcript": "There is an old pattern here, and it is worth seeing it in full. When weaving sped up, yarn became the constraint. When spinning caught\nup, the constraint moved to raw cotton. And when the cotton gin flooded the\nmarket with cotton, the constraint snapped back to weaving, and the power loom\nanswered it. It never ends. It circles. Every time a bottleneck is removed, the constraint moves upstream. Not\naway. Upstream. The same thing is happening in radiology right now. Geoffrey\nHinton predicted AI would replace radiologists within five years. Instead,\nsalaries went up 44%, and AI mammography catches 29% more cancers. When the\ncost collapsed, demand exploded, and the constraint moved to the humans\ninterpreting the results. So the middle is compressing, and the constraint is moving to clarity,\njudgment and system design. Armin Ronacher has the operating principle: figure\nout your bottleneck, automate it, then find the next bottleneck. That is the\nnew stack.",
@@ -1614,43 +1614,43 @@
           "text": "Not away. Upstream. The same thing is happening in radiology right now."
         },
         {
-          "start": 24.341,
-          "end": 28.4,
+          "start": 24.326,
+          "end": 28.067,
           "text": "Geoffrey Hinton predicted AI would replace radiologists within five years."
         },
         {
-          "start": 28.458,
-          "end": 34.067,
+          "start": 28.15,
+          "end": 33.933,
           "text": "Instead, salaries went up 44%, and AI mammography catches 29% more cancers."
         },
         {
-          "start": 34.16,
-          "end": 38,
+          "start": 34.027,
+          "end": 38.133,
           "text": "When the cost collapsed, demand exploded, and the constraint moved to the"
         },
         {
-          "start": 38.047,
-          "end": 42.333,
+          "start": 38.191,
+          "end": 42.2,
           "text": "humans interpreting the results. So the middle is compressing, and the constraint"
         },
         {
-          "start": 42.356,
-          "end": 45.133,
+          "start": 42.244,
+          "end": 44.933,
           "text": "is moving to clarity, judgment and system design."
         },
         {
-          "start": 45.333,
-          "end": 47.533,
+          "start": 45.156,
+          "end": 47.333,
           "text": "Armin Ronacher has the operating principle:"
         },
         {
-          "start": 47.6,
-          "end": 51.667,
+          "start": 47.419,
+          "end": 51.467,
           "text": "figure out your bottleneck, automate it, then find the next bottleneck."
         },
         {
-          "start": 51.773,
-          "end": 53.078,
+          "start": 51.587,
+          "end": 52.949,
           "text": "That is the new stack."
         }
       ]
@@ -1658,7 +1658,7 @@
     "21": {
       "hash": "9a3ff55ad865",
       "audio": "/narration/slide-21-9a3ff55ad865.mp3",
-      "duration": 19.400227,
+      "duration": 19.061814,
       "cues": [],
       "narrationKey": "03a-new-stack-concepts:0",
       "transcript": "We have named the shift. The middle is compressing, and the value moves to\nintent and judgment. So what does the new way of working actually look like,\nday to day? That is the next two sections. This one is the concepts. The next\none is the tools. And I want to keep both of them accessible whether you write\ncode or not, because the concepts apply either way.",
@@ -1675,32 +1675,32 @@
         },
         {
           "start": 5.689,
-          "end": 8.033,
+          "end": 8.333,
           "text": "So what does the new way of working actually look like, day"
         },
         {
-          "start": 8.033,
+          "start": 8.356,
           "end": 10.467,
           "text": "to day? That is the next two sections."
         },
         {
           "start": 10.587,
-          "end": 12.433,
+          "end": 12.2,
           "text": "This one is the concepts."
         },
         {
-          "start": 12.475,
-          "end": 13.867,
+          "start": 12.25,
+          "end": 13.467,
           "text": "The next one is the tools."
         },
         {
-          "start": 14.033,
-          "end": 16.467,
+          "start": 13.633,
+          "end": 16.067,
           "text": "And I want to keep both of them accessible whether you write"
         },
         {
-          "start": 16.507,
-          "end": 19.4,
+          "start": 16.12,
+          "end": 19.062,
           "text": "code or not, because the concepts apply either way."
         }
       ]
@@ -1708,11 +1708,11 @@
     "22": {
       "hash": "b5cfcb3b9275",
       "audio": "/narration/slide-22-b5cfcb3b9275.mp3",
-      "duration": 52.341837,
+      "duration": 50.942177,
       "cues": [
         4.116666666666667,
-        11.616666666666667,
-        37.333333333333336
+        11.39,
+        35.46666666666667
       ],
       "narrationKey": "03a-new-stack-concepts:1",
       "transcript": "One thing to get out of the way first, because it is where most people's\nmental model is stuck. The agentic level is not faster autocomplete. If that is your picture\nof it, everything that follows will sound like an overreaction. What actually changes is this. You are no longer producing every\nartifact yourself. You are designing the loop around the agent. Choose the\nwork, set the bar, improve the loop. That is the shortest description I have of\nthe new job. And I want to be honest that not every organisation is there yet.\nSecurity reviews, compliance, a skeptical team. Those are real. Treat what\nfollows as the target state, not the assumption. Two disciplines make that loop work. Context engineering, and\nspec-driven development. Martin Eriksson has a line I like: speed without\ndirection is just burning jet fuel on a runway. Context is the direction. Specs\nare the runway markings.",
@@ -1729,77 +1729,77 @@
         },
         {
           "start": 4.367,
-          "end": 7.667,
+          "end": 7.6,
           "text": "The agentic level is not faster autocomplete."
         },
         {
-          "start": 7.911,
-          "end": 10.533,
+          "start": 7.756,
+          "end": 10.4,
           "text": "If that is your picture of it, everything that follows will sound"
         },
         {
-          "start": 10.56,
-          "end": 14,
+          "start": 10.413,
+          "end": 13.467,
           "text": "like an overreaction. What actually changes is this."
         },
         {
-          "start": 14.083,
-          "end": 17,
+          "start": 13.65,
+          "end": 16.933,
           "text": "You are no longer producing every artifact yourself."
         },
         {
-          "start": 17.117,
-          "end": 19.6,
+          "start": 17.05,
+          "end": 18.867,
           "text": "You are designing the loop around the agent."
         },
         {
-          "start": 19.695,
-          "end": 23.067,
+          "start": 18.972,
+          "end": 22.067,
           "text": "Choose the work, set the bar, improve the loop."
         },
         {
-          "start": 23.187,
-          "end": 25.867,
+          "start": 22.187,
+          "end": 24.8,
           "text": "That is the shortest description I have of the new job."
         },
         {
-          "start": 25.95,
-          "end": 28.467,
+          "start": 24.917,
+          "end": 27.333,
           "text": "And I want to be honest that not every organisation is there"
         },
         {
-          "start": 28.517,
-          "end": 32.4,
+          "start": 27.4,
+          "end": 31.2,
           "text": "yet. Security reviews, compliance, a skeptical team."
         },
         {
-          "start": 32.511,
-          "end": 36.733,
+          "start": 31.267,
+          "end": 34.867,
           "text": "Those are real. Treat what follows as the target state, not the"
         },
         {
-          "start": 36.782,
-          "end": 39.267,
+          "start": 34.909,
+          "end": 37.6,
           "text": "assumption. Two disciplines make that loop work."
         },
         {
-          "start": 39.375,
-          "end": 42.267,
+          "start": 37.717,
+          "end": 41,
           "text": "Context engineering, and spec-driven development."
         },
         {
-          "start": 42.391,
-          "end": 44.4,
+          "start": 41.133,
+          "end": 43.133,
           "text": "Martin Eriksson has a line I like:"
         },
         {
-          "start": 44.544,
-          "end": 48.4,
+          "start": 43.222,
+          "end": 46.533,
           "text": "speed without direction is just burning jet fuel on a runway."
         },
         {
-          "start": 48.517,
-          "end": 52.342,
+          "start": 46.658,
+          "end": 50.942,
           "text": "Context is the direction. Specs are the runway markings."
         }
       ]
@@ -1807,11 +1807,11 @@
     "23": {
       "hash": "31e506741f2e",
       "audio": "/narration/slide-23-31e506741f2e.mp3",
-      "duration": 53.665533,
+      "duration": 53.144218,
       "cues": [
         0.9275,
         15.700000000000001,
-        37.075
+        36.708333333333336
       ],
       "narrationKey": "03a-new-stack-concepts:2",
       "transcript": "Start with context. We always needed it. The first wave was copy-pasting code into a chat\nwindow, and the context was never enough. You have all lived that. What\nchanged is that agents can now go and find the context themselves. They\nnavigate the project, read the files, build their own picture. But every context window is finite, and models reason worse as it\nfills up. So context engineering is not dumping everything in. It is getting\nthe important information into that budget. Right information, right order,\nright time. For most teams the highest-leverage first step is a single file at\nthe root of the repo: an onboarding document where the reader is an agent. And this is not an engineering-only idea. Laura Tacho put it well: the\nVenn diagram of developer experience and agent experience is a circle. Your\ndesign docs, your component specs, your design tokens. That is context too.\nDocumentation is now production infrastructure.",
@@ -1868,37 +1868,37 @@
         },
         {
           "start": 32.617,
-          "end": 33.533,
+          "end": 34,
           "text": "the root of the repo:"
         },
         {
-          "start": 33.778,
-          "end": 37.233,
+          "start": 34.023,
+          "end": 36.9,
           "text": "an onboarding document where the reader is an agent."
         },
         {
-          "start": 37.325,
-          "end": 39.467,
+          "start": 36.958,
+          "end": 39.067,
           "text": "And this is not an engineering-only idea."
         },
         {
-          "start": 39.544,
-          "end": 41.467,
+          "start": 39.144,
+          "end": 40.533,
           "text": "Laura Tacho put it well:"
         },
         {
-          "start": 41.483,
-          "end": 45,
+          "start": 40.667,
+          "end": 44.933,
           "text": "the Venn diagram of developer experience and agent experience is a circle."
         },
         {
-          "start": 45.107,
-          "end": 48.767,
+          "start": 45.053,
+          "end": 48.667,
           "text": "Your design docs, your component specs, your design tokens."
         },
         {
-          "start": 48.84,
-          "end": 53.666,
+          "start": 48.8,
+          "end": 53.144,
           "text": "That is context too. Documentation is now production infrastructure."
         }
       ]
@@ -1906,12 +1906,12 @@
     "24": {
       "hash": "dfa7251d2434",
       "audio": "/narration/slide-24-dfa7251d2434.mp3",
-      "duration": 57.202018,
+      "duration": 56.206395,
       "cues": [
         0.75,
         7.716666666666668,
-        27.86666666666667,
-        40.93333333333334
+        27.000000000000004,
+        38.86666666666667
       ],
       "narrationKey": "03a-new-stack-concepts:3",
       "transcript": "The second discipline. Context shapes what the agent knows. Specs shape what good looks like.\nThe two are a pair. A spec, concretely, is the smallest clear, testable packet of intent.\nScope, constraints, acceptance criteria. A large project becomes a series of\nthose packets, and that is not new. It is issue decomposition and acceptance\ncriteria, practices you already have, applied with more discipline because the\ncontext window rewards it. The cycle is spec, implement, verify, refine. You write the spec, and\nyou own the verification. That second part is where human judgment stays\nessential, and it is the part people are most tempted to skip. Addy Osmani's rule of thumb: models do best with focused prompts.\nImplement one function, fix one bug, add one feature at a time. Narrow,\nwell-specified tasks beat vague mega-prompts every time. And that holds for\nproduct and design work just as much as for code.",
@@ -1938,72 +1938,72 @@
         },
         {
           "start": 12.467,
-          "end": 17.2,
+          "end": 17.333,
           "text": "Scope, constraints, acceptance criteria. A large project becomes a series"
         },
         {
-          "start": 17.223,
-          "end": 19.4,
+          "start": 17.378,
+          "end": 19.333,
           "text": "of those packets, and that is not new."
         },
         {
           "start": 19.533,
-          "end": 23.933,
+          "end": 23.467,
           "text": "It is issue decomposition and acceptance criteria, practices you already"
         },
         {
-          "start": 24,
-          "end": 28,
+          "start": 23.533,
+          "end": 27.133,
           "text": "have, applied with more discipline because the context window rewards it."
         },
         {
-          "start": 28.117,
-          "end": 32.067,
+          "start": 27.25,
+          "end": 31.067,
           "text": "The cycle is spec, implement, verify, refine."
         },
         {
-          "start": 32.167,
-          "end": 35.133,
+          "start": 31.183,
+          "end": 33.667,
           "text": "You write the spec, and you own the verification."
         },
         {
-          "start": 35.253,
-          "end": 38.933,
+          "start": 33.787,
+          "end": 37.067,
           "text": "That second part is where human judgment stays essential, and it is"
         },
         {
-          "start": 38.95,
-          "end": 41,
+          "start": 37.1,
+          "end": 38.933,
           "text": "the part people are most tempted to skip."
         },
         {
-          "start": 41.183,
-          "end": 43.333,
+          "start": 39.117,
+          "end": 41.267,
           "text": "Addy Osmani's rule of thumb:"
         },
         {
-          "start": 43.391,
-          "end": 45.467,
+          "start": 41.324,
+          "end": 43.2,
           "text": "models do best with focused prompts."
         },
         {
-          "start": 45.54,
-          "end": 49.667,
+          "start": 43.273,
+          "end": 47.933,
           "text": "Implement one function, fix one bug, add one feature at a time."
         },
         {
-          "start": 49.772,
-          "end": 53.933,
+          "start": 48.009,
+          "end": 52.467,
           "text": "Narrow, well-specified tasks beat vague mega-prompts every time."
         },
         {
-          "start": 54.067,
-          "end": 56.533,
+          "start": 52.65,
+          "end": 55.533,
           "text": "And that holds for product and design work just as much as"
         },
         {
-          "start": 56.567,
-          "end": 57.202,
+          "start": 55.567,
+          "end": 56.206,
           "text": "for code."
         }
       ]
@@ -2011,7 +2011,7 @@
     "25": {
       "hash": "bf852b0f5689",
       "audio": "/narration/slide-25-bf852b0f5689.mp3",
-      "duration": 26.010522,
+      "duration": 29.275397,
       "cues": [],
       "narrationKey": "03b-new-stack-tools:0",
       "transcript": "Those are the two disciplines. Context, and specs. Without the right building\nblocks they stay theoretical, so let me show you the pieces that make them\nreal. To be clear, this is a highlights reel, not an inventory: the toolbox is\nfar bigger than one section can hold, and growing monthly. These are the\nhandful of terms you will meet everywhere. I will use my own setup as the\nexample, but the pattern is tool-agnostic.\nEvery vendor has a version of each of these.",
@@ -2028,32 +2028,32 @@
         },
         {
           "start": 6.111,
-          "end": 8.733,
+          "end": 8.8,
           "text": "so let me show you the pieces that make them real."
         },
         {
-          "start": 8.911,
-          "end": 12.4,
+          "start": 9.089,
+          "end": 13.733,
           "text": "To be clear, this is a highlights reel, not an inventory:"
         },
         {
-          "start": 12.417,
-          "end": 15.533,
+          "start": 13.75,
+          "end": 17.267,
           "text": "the toolbox is far bigger than one section can hold, and growing"
         },
         {
-          "start": 15.583,
-          "end": 18.8,
+          "start": 17.342,
+          "end": 21.534,
           "text": "monthly. These are the handful of terms you will meet everywhere."
         },
         {
-          "start": 18.967,
-          "end": 21.667,
+          "start": 21.933,
+          "end": 24.933,
           "text": "I will use my own setup as the example, but the pattern"
         },
         {
-          "start": 21.777,
-          "end": 26.011,
+          "start": 25.023,
+          "end": 29.275,
           "text": "is tool-agnostic. Every vendor has a version of each of these."
         }
       ]
@@ -2061,7 +2061,7 @@
     "26": {
       "hash": "40120d8d2aa7",
       "audio": "/narration/slide-26-40120d8d2aa7.mp3",
-      "duration": 48.00907,
+      "duration": 48.065147,
       "cues": [
         18.883333333333336,
         34.63916666666667
@@ -2131,17 +2131,17 @@
         },
         {
           "start": 40.733,
-          "end": 44.2,
+          "end": 44.201,
           "text": "subdirectories add local constraints. Start with the root file."
         },
         {
-          "start": 44.333,
+          "start": 44.307,
           "end": 47.133,
           "text": "Only add more when the agent keeps making the same mistake in"
         },
         {
-          "start": 47.15,
-          "end": 48.009,
+          "start": 47.167,
+          "end": 48.065,
           "text": "the same place."
         }
       ]
@@ -2149,10 +2149,10 @@
     "27": {
       "hash": "e7db8fdbfbd4",
       "audio": "/narration/slide-27-e7db8fdbfbd4.mp3",
-      "duration": 46.814989,
+      "duration": 48.414512,
       "cues": [
-        19.483333333333334,
-        43.064166666666665
+        19.905833333333334,
+        44.855
       ],
       "narrationKey": "03b-new-stack-tools:2",
       "transcript": "The first tool built on that medium is the skill. A skill is a folder of\ninstructions for one kind of task. You do the task once, carefully, and then\nyou turn the workflow into something reusable. Skills shape how the agent\nthinks. And they are not only for code. A design review, an accessibility\naudit, a copy edit, all work the same way. There are two ways a skill gets used. You can call one explicitly with\na slash command. Or the agent reads the short descriptions of every skill it\nhas and matches your request to one on its own. That dotted line in the\ndiagram is the agent choosing, not you. Either way, the instructions are soft\nguidance. The model interprets them and can adapt. Hold onto that word, soft,\nbecause the next building block is the opposite. Prompting evaporates. Skill packs compound.",
@@ -2169,67 +2169,67 @@
         },
         {
           "start": 6.05,
-          "end": 9.733,
+          "end": 9.533,
           "text": "You do the task once, carefully, and then you turn the workflow"
         },
         {
-          "start": 9.76,
-          "end": 13.667,
+          "start": 9.573,
+          "end": 13.6,
           "text": "into something reusable. Skills shape how the agent thinks."
         },
         {
-          "start": 13.767,
-          "end": 15.267,
+          "start": 13.75,
+          "end": 15.333,
           "text": "And they are not only for code."
         },
         {
-          "start": 15.367,
-          "end": 19.067,
+          "start": 15.6,
+          "end": 19.4,
           "text": "A design review, an accessibility audit, a copy edit, all work the"
         },
         {
-          "start": 19.12,
-          "end": 22,
+          "start": 19.453,
+          "end": 21.933,
           "text": "same way. There are two ways a skill gets used."
         },
         {
-          "start": 22.083,
-          "end": 24.6,
+          "start": 22.017,
+          "end": 24.667,
           "text": "You can call one explicitly with a slash command."
         },
         {
-          "start": 24.8,
-          "end": 28.2,
+          "start": 24.889,
+          "end": 28.467,
           "text": "Or the agent reads the short descriptions of every skill it has"
         },
         {
-          "start": 28.267,
-          "end": 30.333,
+          "start": 28.533,
+          "end": 31.2,
           "text": "and matches your request to one on its own."
         },
         {
-          "start": 30.48,
-          "end": 33.667,
+          "start": 31.347,
+          "end": 35.4,
           "text": "That dotted line in the diagram is the agent choosing, not you."
         },
         {
-          "start": 33.762,
-          "end": 36.333,
+          "start": 35.514,
+          "end": 38.267,
           "text": "Either way, the instructions are soft guidance."
         },
         {
-          "start": 36.45,
-          "end": 38.733,
+          "start": 38.367,
+          "end": 40.667,
           "text": "The model interprets them and can adapt."
         },
         {
-          "start": 38.867,
-          "end": 42.6,
+          "start": 40.787,
+          "end": 44.4,
           "text": "Hold onto that word, soft, because the next building block is the"
         },
         {
-          "start": 42.652,
-          "end": 46.815,
+          "start": 44.452,
+          "end": 48.415,
           "text": "opposite. Prompting evaporates. Skill packs compound."
         }
       ]
@@ -2237,11 +2237,11 @@
     "28": {
       "hash": "344675ee5640",
       "audio": "/narration/slide-28-344675ee5640.mp3",
-      "duration": 57.474921,
+      "duration": 58.210113,
       "cues": [
-        14.26666666666667,
-        24.843333333333334,
-        46.594166666666666
+        14.633333333333333,
+        25.843333333333334,
+        48.21666666666667
       ],
       "narrationKey": "03b-new-stack-tools:3",
       "transcript": "An analogy to hold all of this together. APIs are utensils, each one does one\nthing. Skills are recipes. And MCP is the kitchen itself. You are not building\nthe kitchen from scratch. You are equipping it and writing the recipes. MCP, the Model Context Protocol, is a standard plug format. Think USB.\nOne protocol for connecting tools and data to an agent, instead of a custom\nintegration for every app. Each server publishes what it offers in three kinds. Tools, things the\nagent can do. Resources, things it can read. And prompts, templates it can\nreuse. All of it schema-validated, so handoffs are predictable. Ask for a\nLinear issue about the bug you just found, and the agent picks the create\nissue tool and gets back an issue number. No interpretation at the interface. So set the two side by side. Skills tell the agent how to think. MCP\ntells it what it can safely operate. Soft guidance on one side, a hard contract\non the other.",
@@ -2253,97 +2253,97 @@
         },
         {
           "start": 1.92,
-          "end": 5.2,
+          "end": 5.667,
           "text": "APIs are utensils, each one does one thing."
         },
         {
-          "start": 5.343,
-          "end": 9.667,
+          "start": 5.791,
+          "end": 9.933,
           "text": "Skills are recipes. And MCP is the kitchen itself."
         },
         {
-          "start": 9.817,
-          "end": 11.8,
+          "start": 10.1,
+          "end": 12.133,
           "text": "You are not building the kitchen from scratch."
         },
         {
-          "start": 11.917,
-          "end": 14.267,
+          "start": 12.233,
+          "end": 14.6,
           "text": "You are equipping it and writing the recipes."
         },
         {
-          "start": 14.517,
-          "end": 18.667,
+          "start": 14.883,
+          "end": 19.2,
           "text": "MCP, the Model Context Protocol, is a standard plug format."
         },
         {
-          "start": 18.744,
-          "end": 23.067,
+          "start": 19.267,
+          "end": 23.933,
           "text": "Think USB. One protocol for connecting tools and data to an agent,"
         },
         {
-          "start": 23.092,
-          "end": 24.933,
+          "start": 23.967,
+          "end": 25.933,
           "text": "instead of a custom integration for every app."
         },
         {
-          "start": 25.093,
-          "end": 28.267,
+          "start": 26.093,
+          "end": 29.2,
           "text": "Each server publishes what it offers in three kinds."
         },
         {
-          "start": 28.389,
-          "end": 30.533,
+          "start": 29.322,
+          "end": 31.4,
           "text": "Tools, things the agent can do."
         },
         {
-          "start": 30.64,
-          "end": 32.667,
+          "start": 31.507,
+          "end": 33.6,
           "text": "Resources, things it can read."
         },
         {
-          "start": 32.767,
-          "end": 35.2,
+          "start": 33.7,
+          "end": 36.067,
           "text": "And prompts, templates it can reuse."
         },
         {
-          "start": 35.333,
-          "end": 38.2,
+          "start": 36.217,
+          "end": 39.4,
           "text": "All of it schema-validated, so handoffs are predictable."
         },
         {
-          "start": 38.367,
-          "end": 41.4,
+          "start": 39.633,
+          "end": 42.667,
           "text": "Ask for a Linear issue about the bug you just found, and"
         },
         {
-          "start": 41.417,
-          "end": 44.333,
+          "start": 42.683,
+          "end": 45.467,
           "text": "the agent picks the create issue tool and gets back an issue"
         },
         {
-          "start": 44.372,
-          "end": 46.667,
+          "start": 45.505,
+          "end": 48.333,
           "text": "number. No interpretation at the interface."
         },
         {
-          "start": 46.844,
-          "end": 48.533,
+          "start": 48.467,
+          "end": 50.2,
           "text": "So set the two side by side."
         },
         {
-          "start": 48.658,
-          "end": 50.8,
+          "start": 50.314,
+          "end": 52.2,
           "text": "Skills tell the agent how to think."
         },
         {
-          "start": 51.083,
-          "end": 54.067,
+          "start": 52.433,
+          "end": 54.8,
           "text": "MCP tells it what it can safely operate."
         },
         {
-          "start": 54.173,
-          "end": 57.475,
+          "start": 54.92,
+          "end": 58.21,
           "text": "Soft guidance on one side, a hard contract on the other."
         }
       ]
@@ -2351,11 +2351,11 @@
     "29": {
       "hash": "b93d369c2e7d",
       "audio": "/narration/slide-29-b93d369c2e7d.mp3",
-      "duration": 61.393311,
+      "duration": 61.271837,
       "cues": [
-        18.500833333333336,
-        29.034166666666668,
-        42.4675
+        19.233333333333334,
+        29.900000000000002,
+        42.96666666666667
       ],
       "narrationKey": "03b-new-stack-tools:4",
       "transcript": "Now the same pattern in a domain that is not tickets and repos. Design.\nThe agent talks to a Figma MCP server, pulls the design context and the\nvariable definitions for an approved frame, and turns them into a scoped spec\nwith acceptance criteria. Then it builds. Design intent becomes structured\ninput, not guessing from a screenshot. The handoff is schema-bound. Frames, components and tokens cross over\nthrough contracts, not copy and paste, so there is less ambiguity and fewer\ninterpretation errors. And there is one source of truth. Designers approve in Figma, and\nengineers execute from it. That is design governance, not just convenience.\nYour Figma file was always structured data. MCP makes it legible to the agent. And it now goes both ways. The running UI can be sent back into\nFigma for review. Jenny Wen argues Figma is still indispensable, because it is\nthe one place you can diverge across eight or ten directions without the\ninvestment bias of having built one. Figma for exploration. Code for\nexecution. And a bridge between them.",
@@ -2372,92 +2372,92 @@
         },
         {
           "start": 7.381,
-          "end": 11.067,
+          "end": 10.8,
           "text": "design context and the variable definitions for an approved frame, and turns"
         },
         {
-          "start": 11.093,
-          "end": 13.6,
+          "start": 10.84,
+          "end": 13.4,
           "text": "them into a scoped spec with acceptance criteria."
         },
         {
-          "start": 13.693,
-          "end": 17.933,
+          "start": 13.52,
+          "end": 18.599,
           "text": "Then it builds. Design intent becomes structured input, not guessing from"
         },
         {
-          "start": 17.933,
-          "end": 20.934,
+          "start": 18.6,
+          "end": 21.4,
           "text": "a screenshot. The handoff is schema-bound."
         },
         {
-          "start": 21.058,
-          "end": 25.401,
+          "start": 21.524,
+          "end": 26,
           "text": "Frames, components and tokens cross over through contracts, not copy and"
         },
         {
-          "start": 25.457,
-          "end": 29.134,
+          "start": 26.056,
+          "end": 30,
           "text": "paste, so there is less ambiguity and fewer interpretation errors."
         },
         {
-          "start": 29.284,
-          "end": 31.001,
+          "start": 30.15,
+          "end": 31.733,
           "text": "And there is one source of truth."
         },
         {
-          "start": 31.115,
-          "end": 34.534,
+          "start": 31.838,
+          "end": 35.2,
           "text": "Designers approve in Figma, and engineers execute from it."
         },
         {
-          "start": 34.668,
-          "end": 37.534,
+          "start": 35.32,
+          "end": 38,
           "text": "That is design governance, not just convenience."
         },
         {
-          "start": 37.627,
-          "end": 40.267,
+          "start": 38.147,
+          "end": 40.733,
           "text": "Your Figma file was always structured data."
         },
         {
-          "start": 40.534,
-          "end": 42.601,
+          "start": 40.95,
+          "end": 43.067,
           "text": "MCP makes it legible to the agent."
         },
         {
-          "start": 42.718,
-          "end": 44.201,
+          "start": 43.217,
+          "end": 44.733,
           "text": "And it now goes both ways."
         },
         {
-          "start": 44.318,
-          "end": 47.001,
+          "start": 44.85,
+          "end": 47.667,
           "text": "The running UI can be sent back into Figma for review."
         },
         {
-          "start": 47.123,
-          "end": 51.134,
+          "start": 47.8,
+          "end": 51.4,
           "text": "Jenny Wen argues Figma is still indispensable, because it is the one"
         },
         {
-          "start": 51.19,
-          "end": 54.734,
+          "start": 51.444,
+          "end": 54.867,
           "text": "place you can diverge across eight or ten directions without the investment"
         },
         {
-          "start": 54.841,
-          "end": 56.334,
+          "start": 54.933,
+          "end": 56.067,
           "text": "bias of having built one."
         },
         {
-          "start": 56.668,
-          "end": 59.401,
+          "start": 56.467,
+          "end": 59.8,
           "text": "Figma for exploration. Code for execution."
         },
         {
-          "start": 59.501,
-          "end": 61.393,
+          "start": 59.883,
+          "end": 61.272,
           "text": "And a bridge between them."
         }
       ]
@@ -2465,10 +2465,10 @@
     "30": {
       "hash": "aa4482a9f91d",
       "audio": "/narration/slide-30-aa4482a9f91d.mp3",
-      "duration": 63.803129,
+      "duration": 64.737234,
       "cues": [
-        23.516666666666666,
-        44.2275
+        24.083333333333332,
+        44.339166666666664
       ],
       "narrationKey": "03b-new-stack-tools:5",
       "transcript": "You have now seen the pieces. Context files, skills, MCP servers. This is the\nmachine they all plug into. Context goes in. The model reasons and decides. It\ntakes action: shell commands, tools, MCPs. Results get persisted and observed,\nthrough tests and logs and screenshots, and feed back to the model. And the\ncycle repeats. Read, think, act, observe, again. The model is one box. Everything else is the harness. An agent is a\nmodel plus a harness. That includes specialised agents: one persona, a narrow\ntoolset, a single job, each one a markdown file you can version. One team\nwent from thirtieth to fifth on a coding benchmark by changing only the\nharness. Same model. The leverage is in the system around it. Which gives you the operating rule. When an agent fails, do not just\nfix the output. Improve the harness, so the whole loop gets better. Mitchell\nHashimoto's version: the model is the engine. The harness is the car. And if\nyou would rather stay in the kitchen: the model is the chef, and the harness\nis everything that lets the chef cook the same dish twice.",
@@ -2485,112 +2485,112 @@
         },
         {
           "start": 4.107,
-          "end": 6.067,
+          "end": 5.8,
           "text": "This is the machine they all plug into."
         },
         {
-          "start": 6.15,
-          "end": 9.333,
+          "start": 5.917,
+          "end": 9,
           "text": "Context goes in. The model reasons and decides."
         },
         {
-          "start": 9.444,
-          "end": 12.733,
+          "start": 9.156,
+          "end": 12.867,
           "text": "It takes action: shell commands, tools, MCPs."
         },
         {
-          "start": 12.858,
+          "start": 12.95,
           "end": 17.4,
           "text": "Results get persisted and observed, through tests and logs and screenshots,"
         },
         {
-          "start": 17.417,
-          "end": 18.6,
+          "start": 17.467,
+          "end": 18.733,
           "text": "and feed back to the model."
         },
         {
-          "start": 18.667,
-          "end": 23.6,
+          "start": 18.867,
+          "end": 24.2,
           "text": "And the cycle repeats. Read, think, act, observe, again."
         },
         {
-          "start": 23.767,
-          "end": 25.333,
+          "start": 24.333,
+          "end": 26.167,
           "text": "The model is one box."
         },
         {
-          "start": 25.387,
-          "end": 26.867,
+          "start": 26.194,
+          "end": 27.4,
           "text": "Everything else is the harness."
         },
         {
-          "start": 27.023,
-          "end": 29.2,
+          "start": 27.533,
+          "end": 29.533,
           "text": "An agent is a model plus a harness."
         },
         {
-          "start": 29.28,
-          "end": 33.6,
+          "start": 29.613,
+          "end": 34.133,
           "text": "That includes specialised agents: one persona, a narrow toolset, a single"
         },
         {
-          "start": 33.7,
-          "end": 36.2,
+          "start": 34.233,
+          "end": 36.867,
           "text": "job, each one a markdown file you can version."
         },
         {
-          "start": 36.383,
-          "end": 40.067,
+          "start": 36.983,
+          "end": 40.133,
           "text": "One team went from thirtieth to fifth on a coding benchmark by"
         },
         {
-          "start": 40.103,
+          "start": 40.163,
           "end": 42.267,
           "text": "changing only the harness. Same model."
         },
         {
-          "start": 42.417,
-          "end": 44.401,
+          "start": 42.383,
+          "end": 44.467,
           "text": "The leverage is in the system around it."
         },
         {
-          "start": 44.477,
-          "end": 46.067,
+          "start": 44.589,
+          "end": 46.5,
           "text": "Which gives you the operating rule."
         },
         {
-          "start": 46.147,
-          "end": 48.667,
+          "start": 46.56,
+          "end": 49.267,
           "text": "When an agent fails, do not just fix the output."
         },
         {
-          "start": 48.742,
-          "end": 51.333,
+          "start": 49.333,
+          "end": 51.933,
           "text": "Improve the harness, so the whole loop gets better."
         },
         {
-          "start": 51.444,
-          "end": 55,
+          "start": 52.008,
+          "end": 55.333,
           "text": "Mitchell Hashimoto's version: the model is the engine."
         },
         {
-          "start": 55.1,
-          "end": 56.467,
+          "start": 55.433,
+          "end": 56.8,
           "text": "The harness is the car."
         },
         {
-          "start": 56.65,
-          "end": 58.733,
+          "start": 56.983,
+          "end": 59,
           "text": "And if you would rather stay in the kitchen:"
         },
         {
-          "start": 58.8,
-          "end": 61.733,
+          "start": 59.117,
+          "end": 62.4,
           "text": "the model is the chef, and the harness is everything that lets"
         },
         {
-          "start": 61.767,
-          "end": 63.803,
+          "start": 62.433,
+          "end": 64.737,
           "text": "the chef cook the same dish twice."
         }
       ]
@@ -2598,10 +2598,10 @@
     "31": {
       "hash": "42f068d6bfb4",
       "audio": "/narration/slide-31-42f068d6bfb4.mp3",
-      "duration": 42.068027,
+      "duration": 43.936825,
       "cues": [
         22.35,
-        31.507500000000004
+        32.3625
       ],
       "narrationKey": "03b-new-stack-tools:6",
       "transcript": "That leverage, made visible. Justin Schroeder ran the same model twice\non the same one-shot prompt: a small explorable zen garden. Same provider,\nsame quantisation, even the same system prompt. The only variable is the\nharness. With a weak harness, this is what came back: a bare disc, a few\nfloating poles, the pieces of a garden that never became one. And with a strong harness — same model, same words — paths, a koi\npond, lanterns, light coming through the trees. A place you can actually walk\naround in. Everything you would control for in an experiment is controlled here.\nThe difference on screen is the harness. So when an agent's output\ndisappoints, the first place to look is not the model.",
@@ -2638,37 +2638,37 @@
         },
         {
           "start": 21.2,
-          "end": 24.967,
+          "end": 24.933,
           "text": "that never became one. And with a strong harness — same model,"
         },
         {
-          "start": 25.013,
-          "end": 29.2,
+          "start": 24.973,
+          "end": 29.533,
           "text": "same words — paths, a koi pond, lanterns, light coming through the"
         },
         {
-          "start": 29.267,
-          "end": 31.667,
+          "start": 29.622,
+          "end": 32.567,
           "text": "trees. A place you can actually walk around in."
         },
         {
-          "start": 31.758,
-          "end": 35.267,
+          "start": 32.612,
+          "end": 36.7,
           "text": "Everything you would control for in an experiment is controlled here."
         },
         {
-          "start": 35.4,
-          "end": 37.733,
+          "start": 36.792,
+          "end": 39.3,
           "text": "The difference on screen is the harness."
         },
         {
-          "start": 37.889,
-          "end": 41,
+          "start": 39.467,
+          "end": 43.133,
           "text": "So when an agent's output disappoints, the first place to look is"
         },
         {
-          "start": 41.1,
-          "end": 42.068,
+          "start": 43.183,
+          "end": 43.937,
           "text": "not the model."
         }
       ]
@@ -2676,11 +2676,11 @@
     "32": {
       "hash": "4349b8176611",
       "audio": "/narration/slide-32-4349b8176611.mp3",
-      "duration": 93.543129,
+      "duration": 89.606644,
       "cues": [
         4.323333333333334,
         12.15,
-        78.49666666666667
+        75.48333333333333
       ],
       "narrationKey": "03b-new-stack-tools:7",
       "transcript": "The model in the middle of that machine is stochastic. So the next question is\nreliability. Same prompt, different result. Every time. Reliability does not come\nfrom a perfected prompt. It comes from the system around the model. Two rails keep the loop honest, and they are ones you already know.\nTests, and reviews. Part of that enforcement runs inside the loop itself,\nthrough hooks. A hook is a small automatic rule that fires at a fixed moment:\nbefore a command runs, or after a file is written. And where a skill was soft\nguidance the model interprets, a hook is hard — not a suggestion, just\nsomething that happens, every time. Hooks block a destructive command before\nit runs, format the file after every write, reject the output if it fails\nvalidation. That first one is not theoretical for me. I once spent\nseveral hours building out specs, then watched an agent delete them before I\nhad saved them anywhere. Unrecoverable. My harness now has a hook that blocks\ndeletion outright and makes the agent use the operating system's trash can\ninstead, like everyone else in the company. Tests close the loop. The agent\ntries, fails, and retries on\nits own, which is exactly what that bounce in the diagram is drawing. Simon\nWillison, one of the most experienced developers working with these tools,\nsays tests are free now, effectively free, and no longer remotely optional. Name the pattern: explicit gates around probabilistic agents. Automate\nwhat can be measured, and assign ownership where judgment remains. The system\nneeds hard checkpoints, but it also needs named humans for the questions no\ntest can settle.",
@@ -2712,112 +2712,112 @@
         },
         {
           "start": 12.4,
-          "end": 15.267,
+          "end": 15.533,
           "text": "Two rails keep the loop honest, and they are ones you already"
         },
         {
-          "start": 15.32,
-          "end": 20,
+          "start": 15.587,
+          "end": 20.6,
           "text": "know. Tests, and reviews. Part of that enforcement runs inside the loop"
         },
         {
-          "start": 20.058,
-          "end": 24.467,
+          "start": 20.667,
+          "end": 24.533,
           "text": "itself, through hooks. A hook is a small automatic rule that fires"
         },
         {
-          "start": 24.489,
+          "start": 24.556,
           "end": 27.867,
           "text": "at a fixed moment: before a command runs, or after a file"
         },
         {
-          "start": 27.933,
-          "end": 31.8,
+          "start": 27.889,
+          "end": 31.467,
           "text": "is written. And where a skill was soft guidance the model interprets,"
         },
         {
-          "start": 31.833,
-          "end": 35.333,
+          "start": 31.533,
+          "end": 34.467,
           "text": "a hook is hard — not a suggestion, just something that happens,"
         },
         {
-          "start": 35.378,
-          "end": 39.733,
+          "start": 34.5,
+          "end": 38.667,
           "text": "every time. Hooks block a destructive command before it runs, format the"
         },
         {
-          "start": 39.8,
-          "end": 43.333,
+          "start": 38.72,
+          "end": 42.6,
           "text": "file after every write, reject the output if it fails validation."
         },
         {
-          "start": 43.453,
-          "end": 45.667,
+          "start": 42.72,
+          "end": 44.933,
           "text": "That first one is not theoretical for me."
         },
         {
-          "start": 45.833,
-          "end": 49.2,
+          "start": 45.1,
+          "end": 48.267,
           "text": "I once spent several hours building out specs, then watched an agent"
         },
         {
-          "start": 49.248,
-          "end": 51.6,
+          "start": 48.305,
+          "end": 50.2,
           "text": "delete them before I had saved them anywhere."
         },
         {
-          "start": 51.822,
-          "end": 56.933,
+          "start": 50.444,
+          "end": 55,
           "text": "Unrecoverable. My harness now has a hook that blocks deletion outright and"
         },
         {
-          "start": 56.967,
-          "end": 60.667,
+          "start": 55.023,
+          "end": 58.333,
           "text": "makes the agent use the operating system's trash can instead, like everyone"
         },
         {
-          "start": 60.707,
-          "end": 63.533,
+          "start": 58.373,
+          "end": 60.667,
           "text": "else in the company. Tests close the loop."
         },
         {
-          "start": 63.667,
-          "end": 67.8,
+          "start": 60.783,
+          "end": 65,
           "text": "The agent tries, fails, and retries on its own, which is exactly"
         },
         {
-          "start": 67.827,
-          "end": 69.6,
+          "start": 65.027,
+          "end": 66.8,
           "text": "what that bounce in the diagram is drawing."
         },
         {
-          "start": 69.723,
-          "end": 73.133,
+          "start": 66.933,
+          "end": 69.867,
           "text": "Simon Willison, one of the most experienced developers working with these"
         },
         {
-          "start": 73.189,
-          "end": 77.933,
+          "start": 69.922,
+          "end": 74.933,
           "text": "tools, says tests are free now, effectively free, and no longer remotely"
         },
         {
-          "start": 77.985,
-          "end": 83,
+          "start": 74.985,
+          "end": 79.6,
           "text": "optional. Name the pattern: explicit gates around probabilistic agents."
         },
         {
-          "start": 83.1,
-          "end": 87.067,
+          "start": 79.711,
+          "end": 83.6,
           "text": "Automate what can be measured, and assign ownership where judgment remains."
         },
         {
-          "start": 87.217,
-          "end": 91.667,
+          "start": 83.733,
+          "end": 87.6,
           "text": "The system needs hard checkpoints, but it also needs named humans for"
         },
         {
-          "start": 91.683,
-          "end": 93.543,
+          "start": 87.633,
+          "end": 89.607,
           "text": "the questions no test can settle."
         }
       ]
@@ -2825,11 +2825,11 @@
     "33": {
       "hash": "504dedfa7eb6",
       "audio": "/narration/slide-33-504dedfa7eb6.mp3",
-      "duration": 63.870612,
+      "duration": 69.341088,
       "cues": [
-        24.150000000000002,
-        38.61666666666667,
-        50.86083333333333
+        24.21666666666667,
+        40.93666666666667,
+        54.060833333333335
       ],
       "narrationKey": "03b-new-stack-tools:8",
       "transcript": "Tests and reviews are two gates. This is the full ring: eight things you might\ncare about, running from correctness and security around to cost and\ncomprehensibility. Some become deterministic\nchecks; others remain explicit, accountable judgments. The ring is not equally\nthick everywhere. Scale it by blast radius, code lifespan, and who must\nunderstand the result, not by whether the author was a human or an agent. The agent works inside the ring. It produces more code than you can\nread, and an attempt that fails a gate bounces straight back. You never see\nit. Addy Osmani calls this the inner loop, and it is not yours anymore.\nInvestigate, implement, test, report. What clears every gate crosses out of the agent's loop and into yours.\nDecide, verify, approve, own. That one you still hold. Only output that clears\nevery gate ships. So the boundary is evidence. Diffs, tests, logs, a short why. Not\ntrust, and not your reading speed. You moved from reading the output line by\nline to designing the gates, and the gates decide what is good enough to ship.",
@@ -2851,97 +2851,97 @@
         },
         {
           "start": 7.409,
-          "end": 9.667,
+          "end": 9.733,
           "text": "around to cost and comprehensibility."
         },
         {
-          "start": 9.827,
-          "end": 14.4,
+          "start": 9.853,
+          "end": 14.8,
           "text": "Some become deterministic checks; others remain explicit, accountable judgments."
         },
         {
-          "start": 14.55,
-          "end": 16.733,
+          "start": 14.917,
+          "end": 17.033,
           "text": "The ring is not equally thick everywhere."
         },
         {
-          "start": 16.867,
-          "end": 20.867,
+          "start": 17.094,
+          "end": 20.733,
           "text": "Scale it by blast radius, code lifespan, and who must understand the"
         },
         {
-          "start": 20.924,
-          "end": 24.267,
+          "start": 20.791,
+          "end": 24.333,
           "text": "result, not by whether the author was a human or an agent."
         },
         {
-          "start": 24.4,
-          "end": 26.133,
+          "start": 24.467,
+          "end": 26.267,
           "text": "The agent works inside the ring."
         },
         {
-          "start": 26.267,
-          "end": 29,
+          "start": 26.467,
+          "end": 29.667,
           "text": "It produces more code than you can read, and an attempt that"
         },
         {
-          "start": 29.056,
-          "end": 30.733,
+          "start": 29.733,
+          "end": 32.067,
           "text": "fails a gate bounces straight back."
         },
         {
-          "start": 30.833,
-          "end": 34.733,
+          "start": 32.15,
+          "end": 36.467,
           "text": "You never see it. Addy Osmani calls this the inner loop, and"
         },
         {
-          "start": 34.756,
-          "end": 35.933,
+          "start": 36.511,
+          "end": 37.733,
           "text": "it is not yours anymore."
         },
         {
-          "start": 36.037,
-          "end": 41.133,
+          "start": 37.815,
+          "end": 43,
           "text": "Investigate, implement, test, report. What clears every gate crosses out"
         },
         {
-          "start": 41.156,
-          "end": 43,
+          "start": 43.023,
+          "end": 45.067,
           "text": "of the agent's loop and into yours."
         },
         {
-          "start": 43.105,
-          "end": 48.333,
+          "start": 45.2,
+          "end": 50.733,
           "text": "Decide, verify, approve, own. That one you still hold."
         },
         {
-          "start": 48.427,
-          "end": 50.933,
+          "start": 50.907,
+          "end": 54.133,
           "text": "Only output that clears every gate ships."
         },
         {
-          "start": 51.111,
-          "end": 52.533,
+          "start": 54.311,
+          "end": 56.433,
           "text": "So the boundary is evidence."
         },
         {
-          "start": 52.7,
-          "end": 55.533,
+          "start": 56.617,
+          "end": 59.667,
           "text": "Diffs, tests, logs, a short why."
         },
         {
-          "start": 55.7,
-          "end": 57.933,
+          "start": 59.833,
+          "end": 62.333,
           "text": "Not trust, and not your reading speed."
         },
         {
-          "start": 58.083,
-          "end": 61.267,
+          "start": 62.517,
+          "end": 66,
           "text": "You moved from reading the output line by line to designing the"
         },
         {
-          "start": 61.333,
-          "end": 63.871,
+          "start": 66.078,
+          "end": 69.341,
           "text": "gates, and the gates decide what is good enough to ship."
         }
       ]
@@ -2949,7 +2949,7 @@
     "34": {
       "hash": "497a2e635dc2",
       "audio": "/narration/slide-34-497a2e635dc2.mp3",
-      "duration": 63.33644,
+      "duration": 63.390748,
       "cues": [
         13.772500000000003,
         17.71,
@@ -3024,33 +3024,33 @@
           "text": "Then the pull request, and the automated checks rerun until they pass."
         },
         {
-          "start": 45.8,
-          "end": 49.333,
+          "start": 45.823,
+          "end": 49.267,
           "text": "If it hits a blocker it stops, with the evidence preserved."
         },
         {
-          "start": 49.6,
-          "end": 52.067,
+          "start": 49.533,
+          "end": 51.8,
           "text": "A failed gate is a stop, not a warning."
         },
         {
-          "start": 52.217,
-          "end": 54.6,
+          "start": 51.917,
+          "end": 54.267,
           "text": "And so your loop shrinks to two moments:"
         },
         {
-          "start": 54.642,
-          "end": 57.8,
+          "start": 54.308,
+          "end": 57.733,
           "text": "approve the intent, then review the evidence and own the result."
         },
         {
-          "start": 57.933,
-          "end": 61,
+          "start": 57.867,
+          "end": 61.2,
           "text": "That is my harness. And the second half of this talk is"
         },
         {
-          "start": 61.033,
-          "end": 63.336,
+          "start": 61.223,
+          "end": 63.391,
           "text": "about the cost nobody puts on the invoice."
         }
       ]
@@ -3058,7 +3058,7 @@
     "35": {
       "hash": "2b8cba8e9149",
       "audio": "/narration/slide-35-2b8cba8e9149.mp3",
-      "duration": 34.466508,
+      "duration": 34.596893,
       "cues": [],
       "narrationKey": "04-cognitive-debt:0",
       "transcript": "We have just spent a whole section on an incredible toolkit. Context, skills,\nMCPs, hooks, harnesses, agents. Each layer added power. But each layer also\nadded something you did not personally write, and may not fully understand.\nRemember the feeling I asked you to hold onto at the start — the unease when I\nadmitted I no longer read all of the code? This is where it comes back.\nAnd going from one agent to many is not a scaling problem, it is a distributed\nsystems problem, where every component is nondeterministic. That coordination\nhas a cost. And the cost has a name.",
@@ -3090,32 +3090,32 @@
         },
         {
           "start": 17.2,
-          "end": 20,
+          "end": 19.867,
           "text": "— the unease when I admitted I no longer read all of"
         },
         {
-          "start": 20.033,
-          "end": 22.4,
+          "start": 19.883,
+          "end": 22.2,
           "text": "the code? This is where it comes back."
         },
         {
-          "start": 22.467,
-          "end": 25.867,
+          "start": 22.333,
+          "end": 26,
           "text": "And going from one agent to many is not a scaling problem,"
         },
         {
-          "start": 25.889,
-          "end": 30,
+          "start": 26.044,
+          "end": 30.667,
           "text": "it is a distributed systems problem, where every component is nondeterministic."
         },
         {
-          "start": 30.12,
-          "end": 31.8,
+          "start": 30.8,
+          "end": 32.733,
           "text": "That coordination has a cost."
         },
         {
-          "start": 31.917,
-          "end": 34.467,
+          "start": 32.85,
+          "end": 34.597,
           "text": "And the cost has a name."
         }
       ]
@@ -3123,7 +3123,7 @@
     "36": {
       "hash": "7a393fcb941d",
       "audio": "/narration/slide-36-7a393fcb941d.mp3",
-      "duration": 40.334376,
+      "duration": 40.284286,
       "cues": [
         10.850000000000001,
         17.67,
@@ -3194,7 +3194,7 @@
         },
         {
           "start": 39.4,
-          "end": 40.334,
+          "end": 40.284,
           "text": "lost the plot."
         }
       ]
@@ -3202,7 +3202,7 @@
     "37": {
       "hash": "d9de371ae1ce",
       "audio": "/narration/slide-37-d9de371ae1ce.mp3",
-      "duration": 43.477642,
+      "duration": 43.011995,
       "cues": [
         7.227500000000001,
         11.994166666666667,
@@ -3264,32 +3264,32 @@
         },
         {
           "start": 27.967,
-          "end": 31.4,
+          "end": 31.267,
           "text": "student problem, here is Simon Willison again — you heard him earlier"
         },
         {
-          "start": 31.444,
-          "end": 34.467,
+          "start": 31.289,
+          "end": 34.533,
           "text": "on tests. I no longer have a firm mental model of what"
         },
         {
-          "start": 34.533,
+          "start": 34.578,
           "end": 37.867,
           "text": "my projects can do and how they work, which means each additional"
         },
         {
           "start": 37.917,
-          "end": 40.067,
+          "end": 39.867,
           "text": "feature becomes harder to reason about."
         },
         {
-          "start": 40.187,
-          "end": 41.933,
+          "start": 39.987,
+          "end": 41.8,
           "text": "This is not a junior problem."
         },
         {
-          "start": 42.023,
-          "end": 43.478,
+          "start": 41.867,
+          "end": 43.012,
           "text": "It is structural."
         }
       ]
@@ -3297,7 +3297,7 @@
     "38": {
       "hash": "2495e89a1a5d",
       "audio": "/narration/slide-38-2495e89a1a5d.mp3",
-      "duration": 37.742653,
+      "duration": 37.736372,
       "cues": [
         7.194166666666667,
         27.583333333333332
@@ -3372,7 +3372,7 @@
         },
         {
           "start": 35.392,
-          "end": 37.743,
+          "end": 37.736,
           "text": "judgment. It still has to be earned."
         }
       ]
@@ -3380,7 +3380,7 @@
     "39": {
       "hash": "8b822d17c188",
       "audio": "/narration/slide-39-8b822d17c188.mp3",
-      "duration": 50.471587,
+      "duration": 50.474263,
       "cues": [
         19.1725,
         28.541666666666664,
@@ -3461,7 +3461,7 @@
         },
         {
           "start": 49.914,
-          "end": 50.472,
+          "end": 50.474,
           "text": "Monday."
         }
       ]
@@ -3469,7 +3469,7 @@
     "40": {
       "hash": "5418b753bbc3",
       "audio": "/narration/slide-40-5418b753bbc3.mp3",
-      "duration": 35.947642,
+      "duration": 35.87195,
       "cues": [
         9.683333333333334,
         18.44333333333333
@@ -3524,7 +3524,7 @@
         },
         {
           "start": 33.383,
-          "end": 35.948,
+          "end": 35.872,
           "text": "And the biggest hole is in the layer we trust most."
         }
       ]
@@ -3532,7 +3532,7 @@
     "41": {
       "hash": "d3a1a3cf6a98",
       "audio": "/narration/slide-41-d3a1a3cf6a98.mp3",
-      "duration": 71.541701,
+      "duration": 73.614127,
       "cues": [
         11.558333333333334,
         27.99
@@ -3587,16 +3587,16 @@
         },
         {
           "start": 30.789,
-          "end": 35.4,
+          "end": 35,
           "text": "Think of AI as System 3, an external cognitive system running outside"
         },
         {
-          "start": 35.427,
-          "end": 39.733,
+          "start": 35.013,
+          "end": 39.533,
           "text": "your head. The researchers call what happens next cognitive surrender, and"
         },
         {
-          "start": 39.756,
+          "start": 39.578,
           "end": 40.933,
           "text": "it is different from offloading."
         },
@@ -3611,48 +3611,48 @@
           "text": "With surrender, the brain recodes the answer as its own."
         },
         {
-          "start": 46.889,
-          "end": 48.467,
+          "start": 46.867,
+          "end": 48.333,
           "text": "It does not feel outsourced."
         },
         {
-          "start": 48.623,
-          "end": 52.933,
+          "start": 48.511,
+          "end": 53.333,
           "text": "It feels self-generated. That is the hole in the human review layer:"
         },
         {
-          "start": 52.95,
-          "end": 55,
+          "start": 53.35,
+          "end": 55.733,
           "text": "the reviewer's brain has already accepted the answer."
         },
         {
-          "start": 55.3,
-          "end": 58.467,
+          "start": 56.033,
+          "end": 59.2,
           "text": "I am not exempt. More than once I have caught myself approving"
         },
         {
-          "start": 58.5,
-          "end": 62.067,
+          "start": 59.233,
+          "end": 63.6,
           "text": "a full cryptographic system an agent had confidently built around a simple"
         },
         {
-          "start": 62.133,
-          "end": 65.2,
+          "start": 63.667,
+          "end": 67.133,
           "text": "pin code — a feature with no security stakes at all."
         },
         {
-          "start": 65.35,
-          "end": 68.067,
+          "start": 67.317,
+          "end": 70.133,
           "text": "The recommendation sounded rigorous, so I trusted it."
         },
         {
-          "start": 68.2,
-          "end": 71.067,
+          "start": 70.28,
+          "end": 73.067,
           "text": "That is what surrender feels like from the inside:"
         },
         {
-          "start": 71.108,
-          "end": 71.542,
+          "start": 73.117,
+          "end": 73.614,
           "text": "nothing."
         }
       ]
@@ -3660,10 +3660,10 @@
     "42": {
       "hash": "5dd01a488096",
       "audio": "/narration/slide-42-5dd01a488096.mp3",
-      "duration": 58.26288,
+      "duration": 55.459864,
       "cues": [
-        37.31666666666667,
-        42.5
+        35.38333333333333,
+        40.13333333333333
       ],
       "narrationKey": "04-cognitive-debt:7",
       "transcript": "And this is how that shows up in everyday working habits. Each prompt is a\nslot-machine pull. The response partially satisfies and opens a new question,\nso there is never quite enough to stop and always enough to continue. The\nresearchers call these epistemic rabbit holes. Every step feels locally\nrational. The dependency forms by accumulation. You might recognise the\nsymptoms: re-planning the same feature three times in a day. Shipping faster\nthan you can hold the system in your head. A graveyard of almost-finished\nprojects. And notice that is not the deliberate discarding I defended in the\nfirst section. Throwing work away on purpose is a decision. The graveyard is\ndrift. The prompting loop can become a dependency. Convenience now, weaker\njudgment later. The same team lead put it honestly. We went from barely using coding agents\nto using them for every minor change in six months, and I think they have\neroded our ability to delay gratification. I am not moralising. The mechanism\nis predictable, and predictable means manageable.",
@@ -3680,92 +3680,92 @@
         },
         {
           "start": 4.467,
-          "end": 8.2,
+          "end": 8.067,
           "text": "The response partially satisfies and opens a new question, so there is"
         },
         {
-          "start": 8.233,
-          "end": 10.8,
+          "start": 8.1,
+          "end": 10.533,
           "text": "never quite enough to stop and always enough to continue."
         },
         {
-          "start": 10.967,
-          "end": 14,
+          "start": 10.717,
+          "end": 13.6,
           "text": "The researchers call these epistemic rabbit holes."
         },
         {
-          "start": 14.078,
-          "end": 16.333,
+          "start": 13.678,
+          "end": 15.8,
           "text": "Every step feels locally rational."
         },
         {
-          "start": 16.417,
-          "end": 18.667,
+          "start": 15.917,
+          "end": 18,
           "text": "The dependency forms by accumulation."
         },
         {
-          "start": 18.8,
-          "end": 20.867,
+          "start": 18.133,
+          "end": 19.733,
           "text": "You might recognise the symptoms:"
         },
         {
-          "start": 20.911,
-          "end": 23.267,
+          "start": 19.933,
+          "end": 22.467,
           "text": "re-planning the same feature three times in a day."
         },
         {
-          "start": 23.348,
-          "end": 25.8,
+          "start": 22.548,
+          "end": 25.067,
           "text": "Shipping faster than you can hold the system in your head."
         },
         {
-          "start": 26.1,
-          "end": 28.6,
+          "start": 25.4,
+          "end": 27.733,
           "text": "A graveyard of almost-finished projects."
         },
         {
-          "start": 28.767,
-          "end": 31.8,
+          "start": 27.867,
+          "end": 30.533,
           "text": "And notice that is not the deliberate discarding I defended in the"
         },
         {
-          "start": 31.833,
-          "end": 35.4,
+          "start": 30.567,
+          "end": 33.8,
           "text": "first section. Throwing work away on purpose is a decision."
         },
         {
-          "start": 35.55,
-          "end": 39.867,
+          "start": 33.917,
+          "end": 37.733,
           "text": "The graveyard is drift. The prompting loop can become a dependency."
         },
         {
-          "start": 39.944,
-          "end": 42.6,
+          "start": 37.811,
+          "end": 40.267,
           "text": "Convenience now, weaker judgment later."
         },
         {
-          "start": 42.75,
-          "end": 44.867,
+          "start": 40.383,
+          "end": 42.2,
           "text": "The same team lead put it honestly."
         },
         {
-          "start": 45.067,
-          "end": 48.4,
+          "start": 42.378,
+          "end": 45.067,
           "text": "We went from barely using coding agents to using them for every"
         },
         {
-          "start": 48.456,
-          "end": 51.4,
+          "start": 45.123,
+          "end": 48,
           "text": "minor change in six months, and I think they have eroded our"
         },
         {
-          "start": 51.45,
-          "end": 54.6,
+          "start": 48.058,
+          "end": 51.267,
           "text": "ability to delay gratification. I am not moralising."
         },
         {
-          "start": 54.733,
-          "end": 58.263,
+          "start": 51.417,
+          "end": 55.46,
           "text": "The mechanism is predictable, and predictable means manageable."
         }
       ]
@@ -3773,7 +3773,7 @@
     "43": {
       "hash": "059d71271dbd",
       "audio": "/narration/slide-43-059d71271dbd.mp3",
-      "duration": 41.205896,
+      "duration": 41.213946,
       "cues": [
         21.083333333333336,
         33.70583333333334
@@ -3848,7 +3848,7 @@
         },
         {
           "start": 39.55,
-          "end": 41.206,
+          "end": 41.214,
           "text": "And keep capturing the upside."
         }
       ]
@@ -3856,11 +3856,11 @@
     "44": {
       "hash": "9b0b40e4f970",
       "audio": "/narration/slide-44-9b0b40e4f970.mp3",
-      "duration": 60.674286,
+      "duration": 62.337574,
       "cues": [
-        24.150000000000002,
-        33.53333333333333,
-        43.93333333333334
+        24.6,
+        34.4,
+        44.516666666666666
       ],
       "narrationKey": "04-cognitive-debt:9",
       "transcript": "Here is the antidote, as three team operating rules. Raise the intake bar\nbefore review starts: require stated intent, a readable diff, test output, and\nproof the tests actually ran. Read changes to tests especially carefully. An\nagent can make a failing change green by rewriting the assertion around its new\nbehavior. It is the same trick every student discovers eventually; the agent\njust does it politely, and at scale. The spec. Intent, authored by a human. Ask why, not just what. If you\ncannot explain your own change in the commit message, the debt has already\nstarted accumulating. The explainability gate. No merge until the author can explain the\nintent, the tradeoffs and the failure modes. At least one human fully\nunderstands each change before it ships. And the ownership check. One named human owns the change end to end.\nIf that fails, slow down and re-scope. That is the operating model, and it\nconnects straight back to the harness discipline from earlier: the harness is\nthe preventive mechanism. The final question is what kind of people this model\nrewards.",
@@ -3892,72 +3892,72 @@
         },
         {
           "start": 18.105,
-          "end": 21.267,
+          "end": 21.333,
           "text": "around its new behavior. It is the same trick every student discovers"
         },
         {
-          "start": 21.309,
-          "end": 24.333,
+          "start": 21.376,
+          "end": 24.733,
           "text": "eventually; the agent just does it politely, and at scale."
         },
         {
-          "start": 24.4,
-          "end": 27.267,
+          "start": 24.85,
+          "end": 27.867,
           "text": "The spec. Intent, authored by a human."
         },
         {
-          "start": 27.383,
-          "end": 28.867,
+          "start": 28.033,
+          "end": 29.533,
           "text": "Ask why, not just what."
         },
         {
-          "start": 29.067,
-          "end": 31.933,
+          "start": 29.756,
+          "end": 32.667,
           "text": "If you cannot explain your own change in the commit message, the"
         },
         {
-          "start": 31.987,
-          "end": 33.667,
+          "start": 32.733,
+          "end": 34.533,
           "text": "debt has already started accumulating."
         },
         {
-          "start": 33.783,
-          "end": 38.267,
+          "start": 34.65,
+          "end": 39.133,
           "text": "The explainability gate. No merge until the author can explain the intent,"
         },
         {
-          "start": 38.283,
-          "end": 40.333,
+          "start": 39.15,
+          "end": 41,
           "text": "the tradeoffs and the failure modes."
         },
         {
-          "start": 40.444,
-          "end": 44.067,
+          "start": 41.156,
+          "end": 44.667,
           "text": "At least one human fully understands each change before it ships."
         },
         {
-          "start": 44.183,
-          "end": 48.2,
+          "start": 44.767,
+          "end": 48.867,
           "text": "And the ownership check. One named human owns the change end to"
         },
         {
-          "start": 48.283,
-          "end": 51,
+          "start": 48.933,
+          "end": 52.2,
           "text": "end. If that fails, slow down and re-scope."
         },
         {
-          "start": 51.133,
-          "end": 54.2,
+          "start": 52.307,
+          "end": 55,
           "text": "That is the operating model, and it connects straight back to the"
         },
         {
-          "start": 54.233,
-          "end": 57.6,
+          "start": 55.042,
+          "end": 58.733,
           "text": "harness discipline from earlier: the harness is the preventive mechanism."
         },
         {
-          "start": 57.75,
-          "end": 60.674,
+          "start": 58.867,
+          "end": 62.338,
           "text": "The final question is what kind of people this model rewards."
         }
       ]
@@ -3965,7 +3965,7 @@
     "45": {
       "hash": "b4fc53292301",
       "audio": "/narration/slide-45-b4fc53292301.mp3",
-      "duration": 7.998413,
+      "duration": 8.006576,
       "cues": [],
       "narrationKey": "05-pipeline-and-what-matters:0",
       "transcript": "We have diagnosed the risks. Now let's name what endures. What capabilities\nbecome more valuable when the cost of execution collapses?",
@@ -3982,7 +3982,7 @@
         },
         {
           "start": 3.4,
-          "end": 7.998,
+          "end": 8.007,
           "text": "What capabilities become more valuable when the cost of execution collapses?"
         }
       ]
@@ -3990,7 +3990,7 @@
     "46": {
       "hash": "76a2b979ec4d",
       "audio": "/narration/slide-46-76a2b979ec4d.mp3",
-      "duration": 30.407596,
+      "duration": 30.207732,
       "cues": [
         6.550000000000001,
         11.950000000000001
@@ -4050,7 +4050,7 @@
         },
         {
           "start": 27.72,
-          "end": 30.408,
+          "end": 30.208,
           "text": "Zoom out from the agent loop, and there are three places."
         }
       ]
@@ -4058,9 +4058,9 @@
     "47": {
       "hash": "0003b0affd9b",
       "audio": "/narration/slide-47-0003b0affd9b.mp3",
-      "duration": 58.869932,
+      "duration": 55.079093,
       "cues": [
-        42.75
+        39.96666666666667
       ],
       "narrationKey": "05-pipeline-and-what-matters:2",
       "transcript": "Three nested loops, running on three different clocks. The centre ring is the\none from the harness section. The agent turns a spec into tested software, and\nit can cycle every few minutes. Around it, the developer loop. You review the\ncurrent product and update the vision, the design, the spec, less often, and\nat a higher level. And the outer ring is the market. Real users, production,\nexperiments. Hours to weeks, and the only loop that produces real-world\nevidence. Information flows inward: evidence, to vision, to spec, to agent.\nAndrew Ng calls the durable human advantage a context advantage. As long as\nyou know something about the user that the agent does not, you still have\nsomething to inject into the system. And so the maintainer's job moves outward. Choose the work, set the\nbar, improve the loop. You work on the loop, not only inside it. The model is\nreplaceable. The loop that captures feedback and turns it into reusable\njudgment is the compounding asset.",
@@ -4091,68 +4091,68 @@
           "text": "You review the current product and update the vision, the design, the"
         },
         {
-          "start": 15.093,
-          "end": 17.933,
+          "start": 15.08,
+          "end": 18,
           "text": "spec, less often, and at a higher level."
         },
         {
-          "start": 18.183,
-          "end": 20.667,
+          "start": 18.15,
+          "end": 20.2,
           "text": "And the outer ring is the market."
         },
         {
-          "start": 20.787,
-          "end": 25.733,
+          "start": 20.253,
+          "end": 24.4,
           "text": "Real users, production, experiments. Hours to weeks, and the only loop that"
         },
         {
-          "start": 25.785,
-          "end": 29.533,
+          "start": 24.459,
+          "end": 28,
           "text": "produces real-world evidence. Information flows inward:"
         },
         {
-          "start": 29.585,
-          "end": 32.4,
+          "start": 28.044,
+          "end": 30.867,
           "text": "evidence, to vision, to spec, to agent."
         },
         {
-          "start": 32.533,
-          "end": 37.367,
+          "start": 30.972,
+          "end": 34.867,
           "text": "Andrew Ng calls the durable human advantage a context advantage."
         },
         {
-          "start": 37.489,
-          "end": 39.867,
+          "start": 35.044,
+          "end": 37.133,
           "text": "As long as you know something about the user that the agent"
         },
         {
-          "start": 39.893,
-          "end": 42.867,
+          "start": 37.173,
+          "end": 40.067,
           "text": "does not, you still have something to inject into the system."
         },
         {
-          "start": 43,
-          "end": 45.6,
+          "start": 40.217,
+          "end": 42.667,
           "text": "And so the maintainer's job moves outward."
         },
         {
-          "start": 45.705,
-          "end": 48.6,
+          "start": 42.752,
+          "end": 45.733,
           "text": "Choose the work, set the bar, improve the loop."
         },
         {
-          "start": 48.783,
-          "end": 51.467,
+          "start": 45.9,
+          "end": 48.533,
           "text": "You work on the loop, not only inside it."
         },
         {
-          "start": 51.6,
-          "end": 55.667,
+          "start": 48.617,
+          "end": 52,
           "text": "The model is replaceable. The loop that captures feedback and turns it"
         },
         {
-          "start": 55.707,
-          "end": 58.87,
+          "start": 52.04,
+          "end": 55.079,
           "text": "into reusable judgment is the compounding asset."
         }
       ]
@@ -4160,10 +4160,10 @@
     "48": {
       "hash": "a549e172a62d",
       "audio": "/narration/slide-48-a549e172a62d.mp3",
-      "duration": 52.349297,
+      "duration": 50.738571,
       "cues": [
-        8.313333333333334,
-        36.23916666666667
+        6.624166666666667,
+        34.7725
       ],
       "narrationKey": "05-pipeline-and-what-matters:3",
       "transcript": "Which leads to a line that should sound like a contradiction for a second. The\nfastest way to build is to find the cheapest way to learn. Remember the jet fuel burning on the runway? This is the runway. Every\none of those loops is a learning loop, and they are priced very\ndifferently. The inner loop is nearly free now. So accelerating it just gets\nyou to the wrong answer sooner. Every team I see optimising AI adoption is\noptimising the minutes loop, and the minutes loop was never the problem.\nAgents made building cheap. They did not make being wrong cheap. That bill\nstill arrives. So the question to ask is: what is the cheapest thing that would\nchange our mind? Often it is not code. A prototype, a landing page, five\nconversations. This is not anti-building. Building is often the cheapest\nexperiment now. But cheap learning is what earns the right to build.",
@@ -4175,77 +4175,77 @@
         },
         {
           "start": 2.5,
-          "end": 6.533,
+          "end": 5.933,
           "text": "a second. The fastest way to build is to find the cheapest"
         },
         {
-          "start": 6.667,
-          "end": 10.667,
+          "start": 5.983,
+          "end": 9.6,
           "text": "way to learn. Remember the jet fuel burning on the runway?"
         },
         {
-          "start": 10.8,
-          "end": 14.267,
+          "start": 9.76,
+          "end": 13.8,
           "text": "This is the runway. Every one of those loops is a learning"
         },
         {
-          "start": 14.32,
-          "end": 17.067,
+          "start": 13.853,
+          "end": 16.267,
           "text": "loop, and they are priced very differently."
         },
         {
-          "start": 17.167,
-          "end": 19.267,
+          "start": 16.467,
+          "end": 18.867,
           "text": "The inner loop is nearly free now."
         },
         {
-          "start": 19.422,
-          "end": 22.533,
+          "start": 18.977,
+          "end": 22.133,
           "text": "So accelerating it just gets you to the wrong answer sooner."
         },
         {
-          "start": 22.656,
-          "end": 27.733,
+          "start": 22.289,
+          "end": 27.267,
           "text": "Every team I see optimising AI adoption is optimising the minutes loop,"
         },
         {
-          "start": 27.75,
-          "end": 29.733,
+          "start": 27.3,
+          "end": 29.2,
           "text": "and the minutes loop was never the problem."
         },
         {
-          "start": 29.858,
-          "end": 34.2,
+          "start": 29.333,
+          "end": 33.267,
           "text": "Agents made building cheap. They did not make being wrong cheap."
         },
         {
-          "start": 34.307,
-          "end": 38,
+          "start": 33.4,
+          "end": 36.8,
           "text": "That bill still arrives. So the question to ask is:"
         },
         {
-          "start": 38.067,
-          "end": 40.6,
+          "start": 36.813,
+          "end": 38.8,
           "text": "what is the cheapest thing that would change our mind?"
         },
         {
-          "start": 40.756,
-          "end": 42.533,
+          "start": 38.956,
+          "end": 40.667,
           "text": "Often it is not code."
         },
         {
-          "start": 42.767,
-          "end": 45.467,
+          "start": 40.9,
+          "end": 43.867,
           "text": "A prototype, a landing page, five conversations."
         },
         {
-          "start": 45.547,
-          "end": 49.133,
+          "start": 44,
+          "end": 48.267,
           "text": "This is not anti-building. Building is often the cheapest experiment now."
         },
         {
-          "start": 49.267,
-          "end": 52.349,
+          "start": 48.4,
+          "end": 50.739,
           "text": "But cheap learning is what earns the right to build."
         }
       ]
@@ -4253,11 +4253,11 @@
     "49": {
       "hash": "cb3b5ebf344d",
       "audio": "/narration/slide-49-cb3b5ebf344d.mp3",
-      "duration": 92.479909,
+      "duration": 92.673447,
       "cues": [
-        12.65,
-        38.333333333333336,
-        66.78666666666668
+        12.083333333333334,
+        37.50833333333334,
+        66.90583333333333
       ],
       "narrationKey": "05-pipeline-and-what-matters:4",
       "transcript": "The artifact was never the job. But it is now the cheapest evidence that the\nthinking happened. Andrew Chen's phrasing is that the prototype is the new\nrequirements document. I would widen it: the prototype is the new brief. A concept you can click beats a concept you can read. People react to\nartifacts, not descriptions. Instead of describing an idea in a deck, hand\nsomeone something they can click. The reaction is a different class of\nevidence. We now do this for complicated system changes: rather than asking\nstakeholders to sign off on a written spec, we hand them a throwaway prototype\nof the actual interaction, and they approve behaviour they have seen instead\nof behaviour they have imagined. And the first draft no longer needs to wait for a developer. A written idea\nbecomes a working demo in an afternoon, not a sprint. The people closest to\nthe domain build the throwaway draft, and developers harden only what earns\nsurvival. The quiz platform from the first section started exactly that way,\nas an experiment to see what I could build with tools I had never used before.\nIt earned survival. It is rapidly turning into a full production system now. That is how\nprototyping protects development hours instead of consuming them. Remember the eighteen-times curve: cheap to build has to mean cheap to\ndiscard. Most prototypes should die. That sounds like failure until you hear\nthe second half: that is the point. They are the cheapest way to find out you\nare wrong. A dead prototype is validated learning at the lowest possible price.\nA dead production feature is not. And the moment a prototype touches real data\nor real users, everything from the guardrails section applies.",
@@ -4278,133 +4278,133 @@
           "text": "Andrew Chen's phrasing is that the prototype is the new requirements document."
         },
         {
-          "start": 9.533,
-          "end": 12.6,
+          "start": 9.433,
+          "end": 12.067,
           "text": "I would widen it: the prototype is the new brief."
         },
         {
-          "start": 12.9,
-          "end": 16.067,
+          "start": 12.333,
+          "end": 15.333,
           "text": "A concept you can click beats a concept you can read."
         },
         {
-          "start": 16.162,
-          "end": 18.933,
+          "start": 15.438,
+          "end": 18,
           "text": "People react to artifacts, not descriptions."
         },
         {
-          "start": 19.008,
-          "end": 22.333,
+          "start": 18.075,
+          "end": 21.333,
           "text": "Instead of describing an idea in a deck, hand someone something they"
         },
         {
-          "start": 22.367,
-          "end": 25.6,
+          "start": 21.4,
+          "end": 24.667,
           "text": "can click. The reaction is a different class of evidence."
         },
         {
-          "start": 25.756,
-          "end": 28.067,
+          "start": 24.8,
+          "end": 27.067,
           "text": "We now do this for complicated system changes:"
         },
         {
-          "start": 28.143,
-          "end": 31.533,
+          "start": 27.142,
+          "end": 30.667,
           "text": "rather than asking stakeholders to sign off on a written spec, we"
         },
         {
-          "start": 31.573,
-          "end": 34.867,
+          "start": 30.707,
+          "end": 34.2,
           "text": "hand them a throwaway prototype of the actual interaction, and they approve"
         },
         {
-          "start": 34.907,
-          "end": 38.4,
+          "start": 34.247,
+          "end": 37.633,
           "text": "behaviour they have seen instead of behaviour they have imagined."
         },
         {
-          "start": 38.583,
-          "end": 41.467,
+          "start": 37.758,
+          "end": 40.467,
           "text": "And the first draft no longer needs to wait for a developer."
         },
         {
-          "start": 41.7,
-          "end": 45.2,
+          "start": 40.7,
+          "end": 44.067,
           "text": "A written idea becomes a working demo in an afternoon, not a"
         },
         {
-          "start": 45.228,
-          "end": 49.2,
+          "start": 44.124,
+          "end": 48.6,
           "text": "sprint. The people closest to the domain build the throwaway draft, and"
         },
         {
-          "start": 49.242,
-          "end": 51.533,
+          "start": 48.648,
+          "end": 50.867,
           "text": "developers harden only what earns survival."
         },
         {
-          "start": 51.65,
-          "end": 55.867,
+          "start": 51,
+          "end": 54.933,
           "text": "The quiz platform from the first section started exactly that way, as"
         },
         {
-          "start": 55.889,
-          "end": 58,
+          "start": 54.956,
+          "end": 57.667,
           "text": "an experiment to see what I could build with tools I had"
         },
         {
-          "start": 58.033,
-          "end": 60.133,
+          "start": 57.7,
+          "end": 60.067,
           "text": "never used before. It earned survival."
         },
         {
-          "start": 60.289,
+          "start": 60.222,
           "end": 63.133,
           "text": "It is rapidly turning into a full production system now."
         },
         {
-          "start": 63.24,
-          "end": 66.933,
+          "start": 63.253,
+          "end": 67.067,
           "text": "That is how prototyping protects development hours instead of consuming them."
         },
         {
-          "start": 67.037,
-          "end": 71.333,
+          "start": 67.156,
+          "end": 71.267,
           "text": "Remember the eighteen-times curve: cheap to build has to mean cheap to"
         },
         {
-          "start": 71.4,
-          "end": 73.733,
+          "start": 71.333,
+          "end": 74.033,
           "text": "discard. Most prototypes should die."
         },
         {
-          "start": 73.853,
-          "end": 77.133,
+          "start": 74.093,
+          "end": 77.067,
           "text": "That sounds like failure until you hear the second half:"
         },
         {
-          "start": 77.16,
-          "end": 79.533,
+          "start": 77.093,
+          "end": 79.467,
           "text": "that is the point. They are the cheapest way to find out"
         },
         {
-          "start": 79.583,
-          "end": 83.467,
+          "start": 79.517,
+          "end": 83.4,
           "text": "you are wrong. A dead prototype is validated learning at the lowest"
         },
         {
-          "start": 83.503,
-          "end": 86.667,
+          "start": 83.459,
+          "end": 86.533,
           "text": "possible price. A dead production feature is not."
         },
         {
-          "start": 86.817,
-          "end": 90.6,
+          "start": 86.65,
+          "end": 90.867,
           "text": "And the moment a prototype touches real data or real users, everything"
         },
         {
-          "start": 90.627,
-          "end": 92.48,
+          "start": 90.893,
+          "end": 92.673,
           "text": "from the guardrails section applies."
         }
       ]
@@ -4412,11 +4412,11 @@
     "50": {
       "hash": "8637556cb7d1",
       "audio": "/narration/slide-50-8637556cb7d1.mp3",
-      "duration": 68.748912,
+      "duration": 68.267891,
       "cues": [
         23.01666666666667,
-        31.394166666666667,
-        51.78666666666667
+        31.63916666666667,
+        51.72
       ],
       "narrationKey": "05-pipeline-and-what-matters:5",
       "transcript": "Now, do not mistake cheaper learning for shrinking demand. The opposite is\nhappening, and it lands first here. Every team runs on invisible workflows.\nThe report assembled by hand every Monday, the data moved by copy and paste,\nthe checklist that lives in someone's head. Rank every one of them by payoff\nand you get this curve. The head is the roadmap. It is the only part that ever\ngot built. Everything else was too small for a development project and too\nspecific to buy off the shelf. Below the build threshold. So it stayed manual. As production cost collapses, the threshold drops. And demand expands.\nAn economist would call this Jevons Paradox: when coal engines got more\nefficient, we did not use less coal, we used more. The backlog nobody ever\nwrote down becomes buildable. Ask yourself what you assemble by hand every\nweek. That list is the backlog. Internal tools are also the safest place to start: known users, low\nblast radius, and the guardrails story works at small scale. One honest\ncaveat. The threshold drops, it does not vanish. Someone still owns, runs and\nretires these tools. Hold that thought.",
@@ -4463,72 +4463,72 @@
         },
         {
           "start": 23.267,
-          "end": 26.8,
+          "end": 27.267,
           "text": "Everything else was too small for a development project and too specific"
         },
         {
-          "start": 26.844,
-          "end": 27.933,
+          "start": 27.333,
+          "end": 28.733,
           "text": "to buy off the shelf."
         },
         {
-          "start": 28.067,
-          "end": 31.467,
+          "start": 28.8,
+          "end": 31.667,
           "text": "Below the build threshold. So it stayed manual."
         },
         {
-          "start": 31.644,
-          "end": 34.8,
+          "start": 31.889,
+          "end": 35.4,
           "text": "As production cost collapses, the threshold drops."
         },
         {
-          "start": 34.9,
-          "end": 39.533,
+          "start": 35.467,
+          "end": 39.4,
           "text": "And demand expands. An economist would call this Jevons Paradox:"
         },
         {
-          "start": 39.56,
-          "end": 42.933,
+          "start": 39.547,
+          "end": 43.4,
           "text": "when coal engines got more efficient, we did not use less coal,"
         },
         {
-          "start": 42.977,
-          "end": 47.133,
+          "start": 43.533,
+          "end": 47.467,
           "text": "we used more. The backlog nobody ever wrote down becomes buildable."
         },
         {
-          "start": 47.283,
+          "start": 47.633,
           "end": 50.067,
           "text": "Ask yourself what you assemble by hand every week."
         },
         {
-          "start": 50.173,
-          "end": 51.933,
+          "start": 50.2,
+          "end": 51.867,
           "text": "That list is the backlog."
         },
         {
-          "start": 52.037,
-          "end": 55.2,
+          "start": 51.97,
+          "end": 55.133,
           "text": "Internal tools are also the safest place to start:"
         },
         {
-          "start": 55.244,
-          "end": 59.467,
+          "start": 55.167,
+          "end": 59,
           "text": "known users, low blast radius, and the guardrails story works at small"
         },
         {
-          "start": 59.533,
-          "end": 64.133,
+          "start": 59.067,
+          "end": 63.867,
           "text": "scale. One honest caveat. The threshold drops, it does not vanish."
         },
         {
-          "start": 64.225,
-          "end": 67.767,
+          "start": 63.942,
+          "end": 67.067,
           "text": "Someone still owns, runs and retires these tools."
         },
         {
-          "start": 67.84,
-          "end": 68.749,
+          "start": 67.2,
+          "end": 68.268,
           "text": "Hold that thought."
         }
       ]
@@ -4536,7 +4536,7 @@
     "51": {
       "hash": "d8863eac6749",
       "audio": "/narration/slide-51-d8863eac6749.mp3",
-      "duration": 32.875442,
+      "duration": 32.869637,
       "cues": [
         9.527500000000002,
         23.21666666666667
@@ -4596,7 +4596,7 @@
         },
         {
           "start": 32.517,
-          "end": 32.875,
+          "end": 32.87,
           "text": "all."
         }
       ]
@@ -4604,7 +4604,7 @@
     "52": {
       "hash": "933ae9779a67",
       "audio": "/narration/slide-52-933ae9779a67.mp3",
-      "duration": 39.604921,
+      "duration": 39.589229,
       "cues": [
         15.05,
         22.883333333333336,
@@ -4685,7 +4685,7 @@
         },
         {
           "start": 38.422,
-          "end": 39.605,
+          "end": 39.589,
           "text": "AI maps the edges."
         }
       ]
@@ -4693,11 +4693,11 @@
     "53": {
       "hash": "1d72a7ec5f26",
       "audio": "/narration/slide-53-1d72a7ec5f26.mp3",
-      "duration": 63.878957,
+      "duration": 64.885261,
       "cues": [
         16.5725,
-        28.80333333333333,
-        49.50000000000001
+        28.736666666666668,
+        50.733333333333334
       ],
       "narrationKey": "05-pipeline-and-what-matters:8",
       "transcript": "That makes the human work more specific. We become clarity merchants. I\nstudied philosophy before I ever wrote code, and for twenty years that looked\nlike a detour. It turns out it was vocational training. We were never\nbottlenecked by typing speed. We are bottlenecked by coherence. Frame the problem before the agent writes a line, which includes\ndeciding what the smallest useful version is. Design the context so the same\nmistake cannot happen three times. That is what an agent instructions file is\nfor. Spot the flaw that clean code is hiding: the wrong abstraction, the\nmissing edge case, the architecture that will not scale. And articulate why an\ninteraction is wrong. The principle, not the vibe. None of this is\nengineering-only work. Most companies apply AI at the feature layer. The\nwinners rethink at the strategy layer, and this list is strategy-layer work. The core work has not changed. The boundaries have. An agent can generate\nfive features in a day. Integrating them into a system that makes sense is\nstill your job, and focus, finishing and judgment scale with you, not with AI\nspeed.",
@@ -4749,62 +4749,62 @@
         },
         {
           "start": 26.24,
-          "end": 28.867,
+          "end": 28.8,
           "text": "That is what an agent instructions file is for."
         },
         {
-          "start": 29.053,
-          "end": 31.667,
+          "start": 28.987,
+          "end": 32.2,
           "text": "Spot the flaw that clean code is hiding:"
         },
         {
-          "start": 31.683,
-          "end": 35.067,
+          "start": 32.217,
+          "end": 35.8,
           "text": "the wrong abstraction, the missing edge case, the architecture that will"
         },
         {
-          "start": 35.133,
-          "end": 38.4,
+          "start": 35.833,
+          "end": 39.533,
           "text": "not scale. And articulate why an interaction is wrong."
         },
         {
-          "start": 38.5,
-          "end": 40.133,
+          "start": 39.633,
+          "end": 41.333,
           "text": "The principle, not the vibe."
         },
         {
-          "start": 40.333,
-          "end": 42.6,
+          "start": 41.467,
+          "end": 43.667,
           "text": "None of this is engineering-only work."
         },
         {
-          "start": 42.693,
-          "end": 45.133,
+          "start": 43.787,
+          "end": 46.267,
           "text": "Most companies apply AI at the feature layer."
         },
         {
-          "start": 45.217,
-          "end": 49.2,
+          "start": 46.383,
+          "end": 50.4,
           "text": "The winners rethink at the strategy layer, and this list is strategy-layer"
         },
         {
-          "start": 49.267,
-          "end": 51.4,
+          "start": 50.453,
+          "end": 52.6,
           "text": "work. The core work has not changed."
         },
         {
-          "start": 51.5,
-          "end": 55.333,
+          "start": 52.7,
+          "end": 56.667,
           "text": "The boundaries have. An agent can generate five features in a day."
         },
         {
-          "start": 55.419,
-          "end": 59.133,
+          "start": 56.742,
+          "end": 60.333,
           "text": "Integrating them into a system that makes sense is still your job,"
         },
         {
-          "start": 59.167,
-          "end": 63.879,
+          "start": 60.383,
+          "end": 64.885,
           "text": "and focus, finishing and judgment scale with you, not with AI speed."
         }
       ]
@@ -4812,9 +4812,9 @@
     "54": {
       "hash": "8b2d82a5f13f",
       "audio": "/narration/slide-54-8b2d82a5f13f.mp3",
-      "duration": 57.675057,
+      "duration": 56.053061,
       "cues": [
-        22.055
+        22.1975
       ],
       "narrationKey": "05-pipeline-and-what-matters:9",
       "transcript": "There is a sharper way to ask what all that clarity work adds up to. How much\nof the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.\nExecute a fix. Diagnose the cause. Propose options. Recommend one. Resolve it\nyourself. And at the top, discern: decide whether it was worth doing at all.\nGood engineers live at recommend from day one, and earn resolve. Agents can run rungs one through six for you, and it is getting cheap\nfast. They can assist with rung seven too, but accountability for discernment\nnever gets cheap. It looks like doing nothing, which is why it is hard to grant\nand harder to trust. It means you priced the fix against everything else on the\ntable and put your name on the tradeoff.\nDeciding it was not worth doing. Deciding the evidence is good enough to ship.\nBeing the person who can explain why when you turn out to be wrong. Agency was\nnever about how much you can do. It is about how much of the problem you still\nown after it leaves your hands.",
@@ -4856,188 +4856,255 @@
         },
         {
           "start": 16.172,
-          "end": 18.133,
+          "end": 18,
           "text": "decide whether it was worth doing at all."
         },
         {
-          "start": 18.307,
-          "end": 22.2,
+          "start": 18.187,
+          "end": 22.367,
           "text": "Good engineers live at recommend from day one, and earn resolve."
         },
         {
-          "start": 22.305,
+          "start": 22.448,
           "end": 25.467,
           "text": "Agents can run rungs one through six for you, and it is"
         },
         {
-          "start": 25.492,
+          "start": 25.5,
           "end": 30.133,
           "text": "getting cheap fast. They can assist with rung seven too, but accountability"
         },
         {
-          "start": 30.15,
-          "end": 32.133,
+          "start": 30.167,
+          "end": 31.933,
           "text": "for discernment never gets cheap."
         },
         {
-          "start": 32.289,
-          "end": 34.867,
+          "start": 32.156,
+          "end": 34.667,
           "text": "It looks like doing nothing, which is why it is hard to"
         },
         {
-          "start": 34.933,
-          "end": 36.6,
+          "start": 34.723,
+          "end": 36.333,
           "text": "grant and harder to trust."
         },
         {
-          "start": 36.844,
-          "end": 39.6,
+          "start": 36.578,
+          "end": 39.4,
           "text": "It means you priced the fix against everything else on the table"
         },
         {
-          "start": 39.7,
-          "end": 41.9,
+          "start": 39.533,
+          "end": 41.567,
           "text": "and put your name on the tradeoff."
         },
         {
-          "start": 42.025,
-          "end": 44.067,
+          "start": 41.675,
+          "end": 43.467,
           "text": "Deciding it was not worth doing."
         },
         {
-          "start": 44.25,
-          "end": 46.467,
+          "start": 43.583,
+          "end": 45.533,
           "text": "Deciding the evidence is good enough to ship."
         },
         {
-          "start": 46.6,
-          "end": 49.533,
+          "start": 45.644,
+          "end": 48.6,
           "text": "Being the person who can explain why when you turn out to"
         },
         {
-          "start": 49.578,
-          "end": 53.267,
+          "start": 48.644,
+          "end": 52.133,
           "text": "be wrong. Agency was never about how much you can do."
         },
         {
-          "start": 53.4,
-          "end": 56.667,
+          "start": 52.244,
+          "end": 55,
           "text": "It is about how much of the problem you still own after"
         },
         {
-          "start": 56.689,
-          "end": 57.675,
+          "start": 55.023,
+          "end": 56.053,
           "text": "it leaves your hands."
         }
       ]
     },
     "55": {
-      "hash": "444a55cd7018",
-      "audio": "/narration/slide-55-444a55cd7018.mp3",
-      "duration": 48.538707,
+      "hash": "3eeadb8bc520",
+      "audio": "/narration/slide-55-3eeadb8bc520.mp3",
+      "duration": 33.343152,
       "cues": [
-        18.28333333333333,
-        29.200000000000003
+        11.520000000000001
       ],
       "narrationKey": "05-pipeline-and-what-matters:10",
-      "transcript": "And rung seven at product scale looks like this. Many products do not die\nfrom missing features. They die from accumulation. It is easy to prompt a new\nfeature into existence, so naturally the bar for what ships drops. That is the\naccumulation trap, and it is the flip side of the long tail I just sold you. Great product people fall in love with the problem, not the roadmap.\nThey ship features, and they kill them. They have the guts to say: this is not\nsolving it. This adds complexity. This does not matter. And it is not only a product skill. Product managers kill features. Designers\nsimplify flows. Engineers remove abstractions. Subtraction is a\ncross-discipline skill — the same discipline as those thrown-away projects\nfrom the first section, applied to a living product. Addition gets cheaper\nevery quarter. Subtraction never does.",
+      "transcript": "And there is a rung the ladder doesn't draw. Call it rung zero: deciding to\nclimb at all. Agents can run rungs one through six for you. Nothing anywhere\nin that stack decides a problem is worth picking up in the first place. Mitchell Hashimoto — he built Terraform, he's building Ghostty — spent\nyears around unusually effective people and landed on this: the difference\nbetween mediocre and excellent work and outcomes is predominantly one of\nagency. They don't wait for things to happen to them; they go out and make\nthings happen. Hold on to rung zero. It comes back at the end of the talk.",
       "captions": [
         {
           "start": 0,
-          "end": 2.933,
-          "text": "And rung seven at product scale looks like this."
+          "end": 1.6,
+          "text": "And there is a rung the ladder doesn't draw."
         },
         {
-          "start": 3.187,
-          "end": 6.267,
-          "text": "Many products do not die from missing features."
+          "start": 1.72,
+          "end": 4.601,
+          "text": "Call it rung zero: deciding to climb at all."
         },
         {
-          "start": 6.333,
-          "end": 9.533,
-          "text": "They die from accumulation. It is easy to prompt a new feature"
+          "start": 4.742,
+          "end": 7.533,
+          "text": "Agents can run rungs one through six for you."
         },
         {
-          "start": 9.573,
-          "end": 13.2,
-          "text": "into existence, so naturally the bar for what ships drops."
+          "start": 7.608,
+          "end": 10.733,
+          "text": "Nothing anywhere in that stack decides a problem is worth picking up"
         },
         {
-          "start": 13.32,
-          "end": 16.667,
-          "text": "That is the accumulation trap, and it is the flip side of"
+          "start": 10.756,
+          "end": 15.467,
+          "text": "in the first place. Mitchell Hashimoto — he built Terraform, he's building"
         },
         {
-          "start": 16.683,
-          "end": 18.4,
-          "text": "the long tail I just sold you."
+          "start": 15.522,
+          "end": 20.533,
+          "text": "Ghostty — spent years around unusually effective people and landed on this:"
         },
         {
-          "start": 18.533,
-          "end": 21.867,
-          "text": "Great product people fall in love with the problem, not the roadmap."
+          "start": 20.55,
+          "end": 24.667,
+          "text": "the difference between mediocre and excellent work and outcomes is predominantly"
         },
         {
-          "start": 21.96,
-          "end": 24,
-          "text": "They ship features, and they kill them."
+          "start": 24.733,
+          "end": 28.533,
+          "text": "one of agency. They don't wait for things to happen to them;"
         },
         {
-          "start": 24.12,
-          "end": 25.467,
-          "text": "They have the guts to say:"
+          "start": 28.56,
+          "end": 30.133,
+          "text": "they go out and make things happen."
         },
         {
-          "start": 25.547,
-          "end": 27.067,
-          "text": "this is not solving it."
+          "start": 30.267,
+          "end": 31.8,
+          "text": "Hold on to rung zero."
         },
         {
-          "start": 27.093,
-          "end": 29.2,
-          "text": "This adds complexity. This does not matter."
-        },
-        {
-          "start": 29.45,
-          "end": 31.667,
-          "text": "And it is not only a product skill."
-        },
-        {
-          "start": 31.733,
-          "end": 35.4,
-          "text": "Product managers kill features. Designers simplify flows."
-        },
-        {
-          "start": 35.467,
-          "end": 39.733,
-          "text": "Engineers remove abstractions. Subtraction is a cross-discipline skill —"
-        },
-        {
-          "start": 39.75,
-          "end": 42.333,
-          "text": "the same discipline as those thrown-away projects from the first section,"
-        },
-        {
-          "start": 42.417,
-          "end": 44.067,
-          "text": "applied to a living product."
-        },
-        {
-          "start": 44.185,
-          "end": 46.467,
-          "text": "Addition gets cheaper every quarter."
-        },
-        {
-          "start": 46.583,
-          "end": 48.539,
-          "text": "Subtraction never does."
+          "start": 31.867,
+          "end": 33.343,
+          "text": "It comes back at the end of the talk."
         }
       ]
     },
     "56": {
+      "hash": "2976a4fa8c0f",
+      "audio": "/narration/slide-56-2976a4fa8c0f.mp3",
+      "duration": 50.862313,
+      "cues": [
+        18.960833333333333,
+        30.700000000000003
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:11",
+      "transcript": "Now back up the ladder to rung seven, and scale it to a whole product.\nMany products do not die\nfrom missing features. They die from accumulation. It is easy to prompt a new\nfeature into existence, so naturally the bar for what ships drops. That is the\naccumulation trap, and it is the flip side of the long tail I just sold you. Great product people fall in love with the problem, not the roadmap.\nThey ship features, and they kill them. They have the guts to say: this is not\nsolving it. This adds complexity. This does not matter. And it is not only a product skill. Product managers kill features. Designers\nsimplify flows. Engineers remove abstractions. Subtraction is a\ncross-discipline skill — the same discipline as those thrown-away projects\nfrom the first section, applied to a living product. Addition gets cheaper\nevery quarter. Subtraction never does.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 2.467,
+          "text": "Now back up the ladder to rung seven, and scale it to"
+        },
+        {
+          "start": 2.5,
+          "end": 6.4,
+          "text": "a whole product. Many products do not die from missing features."
+        },
+        {
+          "start": 6.453,
+          "end": 10.133,
+          "text": "They die from accumulation. It is easy to prompt a new feature"
+        },
+        {
+          "start": 10.173,
+          "end": 14.2,
+          "text": "into existence, so naturally the bar for what ships drops."
+        },
+        {
+          "start": 14.293,
+          "end": 17.4,
+          "text": "That is the accumulation trap, and it is the flip side of"
+        },
+        {
+          "start": 17.417,
+          "end": 19.067,
+          "text": "the long tail I just sold you."
+        },
+        {
+          "start": 19.211,
+          "end": 22.8,
+          "text": "Great product people fall in love with the problem, not the roadmap."
+        },
+        {
+          "start": 22.907,
+          "end": 25.067,
+          "text": "They ship features, and they kill them."
+        },
+        {
+          "start": 25.16,
+          "end": 26.533,
+          "text": "They have the guts to say:"
+        },
+        {
+          "start": 26.64,
+          "end": 28.067,
+          "text": "this is not solving it."
+        },
+        {
+          "start": 28.16,
+          "end": 30.8,
+          "text": "This adds complexity. This does not matter."
+        },
+        {
+          "start": 30.95,
+          "end": 32.667,
+          "text": "And it is not only a product skill."
+        },
+        {
+          "start": 32.742,
+          "end": 36.733,
+          "text": "Product managers kill features. Designers simplify flows."
+        },
+        {
+          "start": 36.82,
+          "end": 41.8,
+          "text": "Engineers remove abstractions. Subtraction is a cross-discipline skill —"
+        },
+        {
+          "start": 41.817,
+          "end": 44.733,
+          "text": "the same discipline as those thrown-away projects from the first section,"
+        },
+        {
+          "start": 44.808,
+          "end": 46.4,
+          "text": "applied to a living product."
+        },
+        {
+          "start": 46.526,
+          "end": 48.867,
+          "text": "Addition gets cheaper every quarter."
+        },
+        {
+          "start": 49,
+          "end": 50.862,
+          "text": "Subtraction never does."
+        }
+      ]
+    },
+    "57": {
       "hash": "f41089ad40e4",
-      "audio": "/narration/slide-56-f41089ad40e4.mp3",
-      "duration": 10.866463,
+      "audio": "/narration/slide-57-f41089ad40e4.mp3",
+      "duration": 10.868005,
       "cues": [],
       "narrationKey": "06-moving-forward:0",
       "transcript": "We have covered the shift, the compressing middle, the new stack, and the debt\nit can quietly build. One question is left, and it is the one the whole talk\nhas been circling: what actually survives?",
@@ -5059,19 +5126,19 @@
         },
         {
           "start": 8.35,
-          "end": 10.866,
+          "end": 10.868,
           "text": "has been circling: what actually survives?"
         }
       ]
     },
-    "57": {
+    "58": {
       "hash": "74dab4143957",
-      "audio": "/narration/slide-57-74dab4143957.mp3",
-      "duration": 55.466213,
+      "audio": "/narration/slide-58-74dab4143957.mp3",
+      "duration": 54.605125,
       "cues": [
         8.616666666666667,
-        20.083333333333332,
-        44.843333333333334
+        20.536666666666665,
+        44.443333333333335
       ],
       "narrationKey": "06-moving-forward:1",
       "transcript": "Execution is increasingly abundant. People who combine strategy with\nexecution will remain rare. The same split plays out in engineering, product\nand design. On the at-risk side: syntax and framework knowledge, routine\nimplementation, translation and handoff work, the speed of code production.\nNot worthless. Less scarce. No longer the bottleneck. More valuable than ever: problem formulation and judgment. Taste, and\nthe courage to subtract. Systems thinking and end-to-end ownership. And\nmentorship and knowledge transfer. None of this is new. It was always what the\nbest people did. Now it is the entire job. So if your value sits mostly on the\nleft, you have work to do. If you can own a problem end to end, the tools just\nmade you more powerful. This is not a tooling upgrade. It is a different operating model. Some\norganisations are already here. Others are years behind. That is why the\nindustry feels so uneven right now.",
@@ -5093,102 +5160,102 @@
         },
         {
           "start": 10.124,
-          "end": 14.6,
+          "end": 14.667,
           "text": "syntax and framework knowledge, routine implementation, translation and handoff"
         },
         {
-          "start": 14.653,
-          "end": 16.533,
+          "start": 14.72,
+          "end": 17.033,
           "text": "work, the speed of code production."
         },
         {
-          "start": 16.667,
-          "end": 20.2,
+          "start": 17.125,
+          "end": 20.667,
           "text": "Not worthless. Less scarce. No longer the bottleneck."
         },
         {
-          "start": 20.333,
-          "end": 23.867,
+          "start": 20.787,
+          "end": 24,
           "text": "More valuable than ever: problem formulation and judgment."
         },
         {
-          "start": 23.989,
-          "end": 26.333,
+          "start": 24.122,
+          "end": 26.467,
           "text": "Taste, and the courage to subtract."
         },
         {
-          "start": 26.433,
-          "end": 29.467,
+          "start": 26.567,
+          "end": 29.333,
           "text": "Systems thinking and end-to-end ownership."
         },
         {
-          "start": 29.583,
-          "end": 31.8,
+          "start": 29.433,
+          "end": 31.667,
           "text": "And mentorship and knowledge transfer."
         },
         {
-          "start": 31.92,
-          "end": 33.067,
+          "start": 31.8,
+          "end": 33.267,
           "text": "None of this is new."
         },
         {
-          "start": 33.311,
-          "end": 35.2,
+          "start": 33.356,
+          "end": 35,
           "text": "It was always what the best people did."
         },
         {
-          "start": 35.367,
-          "end": 37.067,
+          "start": 35.133,
+          "end": 36.6,
           "text": "Now it is the entire job."
         },
         {
-          "start": 37.244,
-          "end": 40.333,
+          "start": 36.822,
+          "end": 39.733,
           "text": "So if your value sits mostly on the left, you have work"
         },
         {
-          "start": 40.356,
-          "end": 43.333,
+          "start": 39.756,
+          "end": 43,
           "text": "to do. If you can own a problem end to end, the"
         },
         {
-          "start": 43.389,
-          "end": 45,
+          "start": 43.044,
+          "end": 44.6,
           "text": "tools just made you more powerful."
         },
         {
-          "start": 45.093,
-          "end": 46.667,
+          "start": 44.693,
+          "end": 46.2,
           "text": "This is not a tooling upgrade."
         },
         {
-          "start": 46.844,
-          "end": 48.867,
+          "start": 46.356,
+          "end": 48.133,
           "text": "It is a different operating model."
         },
         {
-          "start": 49,
-          "end": 50.933,
+          "start": 48.253,
+          "end": 50.067,
           "text": "Some organisations are already here."
         },
         {
-          "start": 51.047,
-          "end": 54.867,
+          "start": 50.162,
+          "end": 54,
           "text": "Others are years behind. That is why the industry feels so uneven"
         },
         {
-          "start": 54.889,
-          "end": 55.466,
+          "start": 54.033,
+          "end": 54.605,
           "text": "right now."
         }
       ]
     },
-    "58": {
+    "59": {
       "hash": "e6ac3268a55a",
-      "audio": "/narration/slide-58-e6ac3268a55a.mp3",
-      "duration": 47.067256,
+      "audio": "/narration/slide-59-e6ac3268a55a.mp3",
+      "duration": 47.271497,
       "cues": [
-        30.933333333333337
+        31.28333333333334
       ],
       "narrationKey": "06-moving-forward:2",
       "transcript": "Remember the cascade from earlier? The constraint did not disappear. It moved\nupstream, to getting expert knowledge out of heads and into systems, without\nletting it disappear from the people accountable for it. The instruction\nfiles, the skills, the docs: that is the knowledge-extraction mechanism. And it\nis already reaching past engineers. The same primitives are being wrapped in\ntask-first interfaces so domain experts can operate them directly, while\nengineers design the harness. Workflow design has\nbecome cross-functional infrastructure. Satya Nadella has the ownership test: you should be able to swap the\nmodel without losing the company-specific expertise. If swapping the model\nwipes out your expertise, you did not own the learning system. The durable\nasset is the institutional loop, not the frontier model.",
@@ -5240,43 +5307,43 @@
         },
         {
           "start": 27.511,
-          "end": 31,
+          "end": 31.333,
           "text": "Workflow design has become cross-functional infrastructure."
         },
         {
-          "start": 31.183,
-          "end": 33.733,
+          "start": 31.533,
+          "end": 33.867,
           "text": "Satya Nadella has the ownership test:"
         },
         {
-          "start": 33.883,
-          "end": 36.933,
+          "start": 33.983,
+          "end": 37.4,
           "text": "you should be able to swap the model without losing the company-specific"
         },
         {
-          "start": 37.007,
-          "end": 41.333,
+          "start": 37.487,
+          "end": 41.867,
           "text": "expertise. If swapping the model wipes out your expertise, you did not"
         },
         {
-          "start": 41.417,
-          "end": 46.067,
+          "start": 41.933,
+          "end": 46.2,
           "text": "own the learning system. The durable asset is the institutional loop, not"
         },
         {
-          "start": 46.1,
-          "end": 47.067,
+          "start": 46.233,
+          "end": 47.271,
           "text": "the frontier model."
         }
       ]
     },
-    "59": {
+    "60": {
       "hash": "c68ac6501470",
-      "audio": "/narration/slide-59-c68ac6501470.mp3",
-      "duration": 36.736961,
+      "audio": "/narration/slide-60-c68ac6501470.mp3",
+      "duration": 37.608889,
       "cues": [
-        10.350000000000001,
-        19.01666666666667
+        10.425,
+        19.55
       ],
       "narrationKey": "06-moving-forward:3",
       "transcript": "Which makes posture the real decision. This is the divide from the opening: not\nsimply who has access, but who is learning. In a period of compounding change,\nplaying defense is its own risk. Protect what works. Wait for clarity. It feels safe. It isn't. The\nreal failure mode is not reckless shipping. It is strategic drift. Every new generation of agents makes today's optimal workflow\ntemporary, so do not overfit your organisation to the current model, the\ncurrent editor, the current orchestration pattern. Keep the harness strong,\nthe process light, and learn faster than the environment changes. The\nemphasis is on learn, not on faster.",
@@ -5298,62 +5365,165 @@
         },
         {
           "start": 6.733,
-          "end": 10.533,
+          "end": 10.6,
           "text": "In a period of compounding change, playing defense is its own risk."
         },
         {
-          "start": 10.6,
-          "end": 12.8,
+          "start": 10.675,
+          "end": 13.2,
           "text": "Protect what works. Wait for clarity."
         },
         {
-          "start": 12.933,
-          "end": 14.533,
+          "start": 13.289,
+          "end": 15.2,
           "text": "It feels safe. It isn't."
         },
         {
-          "start": 14.683,
-          "end": 17.4,
+          "start": 15.367,
+          "end": 18,
           "text": "The real failure mode is not reckless shipping."
         },
         {
-          "start": 17.511,
-          "end": 22.2,
+          "start": 18.133,
+          "end": 22.667,
           "text": "It is strategic drift. Every new generation of agents makes today's optimal"
         },
         {
-          "start": 22.252,
-          "end": 26.467,
+          "start": 22.726,
+          "end": 27,
           "text": "workflow temporary, so do not overfit your organisation to the current model,"
         },
         {
-          "start": 26.483,
-          "end": 29.133,
+          "start": 27.017,
+          "end": 29.467,
           "text": "the current editor, the current orchestration pattern."
         },
         {
-          "start": 29.24,
-          "end": 32.733,
+          "start": 29.587,
+          "end": 33.333,
           "text": "Keep the harness strong, the process light, and learn faster than the"
         },
         {
-          "start": 32.773,
-          "end": 36.737,
+          "start": 33.373,
+          "end": 37.609,
           "text": "environment changes. The emphasis is on learn, not on faster."
         }
       ]
     },
-    "60": {
-      "hash": "e92b043670be",
-      "audio": "/narration/slide-60-e92b043670be.mp3",
-      "duration": 60.410363,
+    "61": {
+      "hash": "6f0188e1bc71",
+      "audio": "/narration/slide-61-6f0188e1bc71.mp3",
+      "duration": 47.674649,
       "cues": [
-        8.736666666666668,
-        30.643333333333338,
-        45.001666666666665
+        17.7775,
+        26.75
       ],
       "narrationKey": "06-moving-forward:4",
-      "transcript": "Offense sounds abstract. On Monday morning it looks like this. You do not need\nan AI strategy to begin. You need one finished pilot. Pick one workflow — that Monday-morning report from the long tail, or\nwhatever it is you assemble by hand every week. Recurring, annoying, low-risk.\nRun it end to end,\npairing the person who knows the work with the person who can build. Domain\nknowledge chooses the work, technical skill wires it up, and both review the\nresult. That pairing is the smallest complete learning loop. Keep a human in the loop while trust is being earned, and write down\nwhat works. Prompts, playbooks, guardrails. Captured judgment is the asset\nthat compounds, and it is how one person's experiment becomes the\norganisation's capability. Strategy is what you write down after the third pilot works. Not\nbefore. Nobody wrote a winning internet strategy in 1997 either; the companies\nthat won just started building. A strategy written first is a document about\ntools that will be obsolete before the ink dries.",
+      "transcript": "And here is what an hour of implementation getting cheap actually leaves\nbehind. Ideas were never the scarce input. Hashimoto's claim predates agents\nand survives them: he cannot stress enough how little an idea matters compared\nto the agency of the people executing it. Now the code is cheap too. Which is rung zero again, at the scale of a career. What is left\nbetween an idea and a shipped thing is agency, and that is the part nobody\nautomated. He has a line I keep coming back to. Look around the room you are\nsitting in. Look at everything. Every noun. Almost all of it exists because a\nperson willed it into existence, and nothing is stopping you from doing the\nsame. There is a sharp corollary too: if you dismiss someone else's success\nbecause you had the idea first, you just conceded the point. The difference\nwas you.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 3.467,
+          "text": "And here is what an hour of implementation getting cheap actually leaves"
+        },
+        {
+          "start": 3.524,
+          "end": 7.333,
+          "text": "behind. Ideas were never the scarce input."
+        },
+        {
+          "start": 7.373,
+          "end": 10.4,
+          "text": "Hashimoto's claim predates agents and survives them:"
+        },
+        {
+          "start": 10.422,
+          "end": 14,
+          "text": "he cannot stress enough how little an idea matters compared to the"
+        },
+        {
+          "start": 14.105,
+          "end": 16.067,
+          "text": "agency of the people executing it."
+        },
+        {
+          "start": 16.2,
+          "end": 17.967,
+          "text": "Now the code is cheap too."
+        },
+        {
+          "start": 18.027,
+          "end": 20.867,
+          "text": "Which is rung zero again, at the scale of a career."
+        },
+        {
+          "start": 21,
+          "end": 25,
+          "text": "What is left between an idea and a shipped thing is agency,"
+        },
+        {
+          "start": 25.017,
+          "end": 26.8,
+          "text": "and that is the part nobody automated."
+        },
+        {
+          "start": 27,
+          "end": 28.8,
+          "text": "He has a line I keep coming back to."
+        },
+        {
+          "start": 28.92,
+          "end": 30.733,
+          "text": "Look around the room you are sitting in."
+        },
+        {
+          "start": 30.8,
+          "end": 32.6,
+          "text": "Look at everything. Every noun."
+        },
+        {
+          "start": 32.724,
+          "end": 36.867,
+          "text": "Almost all of it exists because a person willed it into existence,"
+        },
+        {
+          "start": 36.9,
+          "end": 39.2,
+          "text": "and nothing is stopping you from doing the same."
+        },
+        {
+          "start": 39.322,
+          "end": 41.267,
+          "text": "There is a sharp corollary too:"
+        },
+        {
+          "start": 41.511,
+          "end": 45.067,
+          "text": "if you dismiss someone else's success because you had the idea first,"
+        },
+        {
+          "start": 45.1,
+          "end": 46.267,
+          "text": "you just conceded the point."
+        },
+        {
+          "start": 46.367,
+          "end": 47.675,
+          "text": "The difference was you."
+        }
+      ]
+    },
+    "62": {
+      "hash": "60af4f9b6bbd",
+      "audio": "/narration/slide-62-60af4f9b6bbd.mp3",
+      "duration": 69.68102,
+      "cues": [
+        8.736666666666668,
+        29.45666666666667,
+        43.135
+      ],
+      "narrationKey": "06-moving-forward:5",
+      "transcript": "Offense sounds abstract. On Monday morning it looks like this. You do not need\nan AI strategy to begin. You need one finished pilot. Pick one workflow — that Monday-morning report from the long tail, or\nwhatever it is you assemble by hand every week. Recurring, annoying, low-risk.\nRun it end to end,\npairing the person who knows the work with the person who can build. Domain\nknowledge chooses the work, technical skill wires it up, and both review the\nresult. That pairing is the smallest complete learning loop. Keep a human in the loop while trust is being earned, and write down\nwhat works. Prompts, playbooks, guardrails. Captured judgment is the asset\nthat compounds, and it is how one person's experiment becomes the\norganisation's capability. Strategy is what you write down after the third pilot works. Not\nbefore. Nobody wrote a winning internet strategy in 1997 either; the companies\nthat won just started building. A strategy written first is a document about\ntools that will be obsolete before the ink dries. And that is where Hashimoto\nlands too. His number one tip is four words long: act with agency. One\nfinished pilot is the smallest version of it available to you on Monday.",
       "captions": [
         {
           "start": 0,
@@ -5372,90 +5542,110 @@
         },
         {
           "start": 8.987,
-          "end": 12.267,
+          "end": 12.8,
           "text": "Pick one workflow — that Monday-morning report from the long tail, or"
         },
         {
-          "start": 12.348,
-          "end": 14.867,
+          "start": 12.83,
+          "end": 14.667,
           "text": "whatever it is you assemble by hand every week."
         },
         {
-          "start": 15.05,
-          "end": 19.733,
+          "start": 14.817,
+          "end": 19.6,
           "text": "Recurring, annoying, low-risk. Run it end to end, pairing the person who"
         },
         {
-          "start": 19.777,
-          "end": 21.733,
+          "start": 19.633,
+          "end": 21.467,
           "text": "knows the work with the person who can build."
         },
         {
-          "start": 21.858,
-          "end": 26.4,
+          "start": 21.572,
+          "end": 25.8,
           "text": "Domain knowledge chooses the work, technical skill wires it up, and both"
         },
         {
-          "start": 26.457,
-          "end": 30.733,
+          "start": 25.858,
+          "end": 29.6,
           "text": "review the result. That pairing is the smallest complete learning loop."
         },
         {
-          "start": 30.893,
-          "end": 34.067,
+          "start": 29.707,
+          "end": 32.667,
           "text": "Keep a human in the loop while trust is being earned, and"
         },
         {
-          "start": 34.111,
-          "end": 38.133,
+          "start": 32.7,
+          "end": 36.333,
           "text": "write down what works. Prompts, playbooks, guardrails."
         },
         {
-          "start": 38.253,
-          "end": 42,
+          "start": 36.427,
+          "end": 40.133,
           "text": "Captured judgment is the asset that compounds, and it is how one"
         },
         {
-          "start": 42.047,
-          "end": 45.133,
+          "start": 40.181,
+          "end": 43.267,
           "text": "person's experiment becomes the organisation's capability."
         },
         {
-          "start": 45.252,
-          "end": 48.633,
+          "start": 43.385,
+          "end": 46.8,
           "text": "Strategy is what you write down after the third pilot works."
         },
         {
-          "start": 48.692,
-          "end": 52.867,
+          "start": 46.917,
+          "end": 51.4,
           "text": "Not before. Nobody wrote a winning internet strategy in 1997 either;"
         },
         {
-          "start": 52.9,
-          "end": 54.933,
+          "start": 51.433,
+          "end": 53.333,
           "text": "the companies that won just started building."
         },
         {
-          "start": 55.2,
-          "end": 58.467,
+          "start": 53.633,
+          "end": 56.933,
           "text": "A strategy written first is a document about tools that will be"
         },
         {
-          "start": 58.541,
-          "end": 60.41,
+          "start": 56.993,
+          "end": 58.867,
           "text": "obsolete before the ink dries."
+        },
+        {
+          "start": 59.033,
+          "end": 61.333,
+          "text": "And that is where Hashimoto lands too."
+        },
+        {
+          "start": 61.467,
+          "end": 63.933,
+          "text": "His number one tip is four words long:"
+        },
+        {
+          "start": 64.067,
+          "end": 68.067,
+          "text": "act with agency. One finished pilot is the smallest version of it"
+        },
+        {
+          "start": 68.113,
+          "end": 69.681,
+          "text": "available to you on Monday."
         }
       ]
     },
-    "61": {
+    "63": {
       "hash": "3d9e086966e9",
-      "audio": "/narration/slide-61-3d9e086966e9.mp3",
-      "duration": 68.401224,
+      "audio": "/narration/slide-63-3d9e086966e9.mp3",
+      "duration": 66.409592,
       "cues": [
         5.3725000000000005,
-        35.660833333333336
+        34.59416666666667
       ],
-      "narrationKey": "06-moving-forward:5",
+      "narrationKey": "06-moving-forward:6",
       "transcript": "And that posture lands differently depending on where you are in your career,\nso let me split the audience for a moment. If you are earlier in your career: use AI to punch above your weight.\nBut understand and be able to explain every line, every prompt and every\ndecision you ship. That is a hard rule, not a nice-to-have. Seek out the\ncontexts where you build judgment, not just supervise output. And expand your\nrange. Simon Willison's advice is blunt: do not learn a new language, just\nstart writing code in it. He shipped three Go projects without studying Go.\nThe overhead that used to keep you in your lane is gone. If you are more senior: define value and multiply the team, not just\nwrite code. If you only execute tickets, your leverage compresses. If you\ndefine value and ship it, it expands. Lean on automation for the grunt work.\nCreate environments where juniors learn to reason, not just review AI output.\nAnd invest in mentorship. All-senior teams do not scale tacit knowledge, and\nthe old apprenticeship model assumed a lot of routine middle work that is now\ngone. This is the thread I planted at the start. It is the one I worry about\nmost.",
       "captions": [
         {
@@ -5475,106 +5665,106 @@
         },
         {
           "start": 7.5,
-          "end": 9.533,
+          "end": 9.667,
           "text": "use AI to punch above your weight."
         },
         {
-          "start": 9.633,
-          "end": 14.067,
+          "start": 9.733,
+          "end": 13.533,
           "text": "But understand and be able to explain every line, every prompt and"
         },
         {
-          "start": 14.111,
-          "end": 18.067,
+          "start": 13.578,
+          "end": 17.4,
           "text": "every decision you ship. That is a hard rule, not a nice-to-have."
         },
         {
-          "start": 18.213,
-          "end": 22.733,
+          "start": 17.533,
+          "end": 21.867,
           "text": "Seek out the contexts where you build judgment, not just supervise output."
         },
         {
-          "start": 22.817,
-          "end": 26.533,
+          "start": 21.983,
+          "end": 25.8,
           "text": "And expand your range. Simon Willison's advice is blunt:"
         },
         {
-          "start": 26.667,
-          "end": 29.667,
+          "start": 25.956,
+          "end": 28.733,
           "text": "do not learn a new language, just start writing code in it."
         },
         {
-          "start": 29.867,
-          "end": 32.733,
+          "start": 28.956,
+          "end": 31.733,
           "text": "He shipped three Go projects without studying Go."
         },
         {
-          "start": 32.85,
-          "end": 35.733,
+          "start": 31.867,
+          "end": 34.667,
           "text": "The overhead that used to keep you in your lane is gone."
         },
         {
-          "start": 35.911,
-          "end": 37.133,
+          "start": 34.844,
+          "end": 36.533,
           "text": "If you are more senior:"
         },
         {
-          "start": 37.248,
-          "end": 41,
+          "start": 36.6,
+          "end": 40.133,
           "text": "define value and multiply the team, not just write code."
         },
         {
-          "start": 41.2,
-          "end": 44.133,
+          "start": 40.333,
+          "end": 43.4,
           "text": "If you only execute tickets, your leverage compresses."
         },
         {
-          "start": 44.289,
-          "end": 47.133,
+          "start": 43.556,
+          "end": 46.667,
           "text": "If you define value and ship it, it expands."
         },
         {
-          "start": 47.28,
-          "end": 49.467,
+          "start": 46.787,
+          "end": 48.6,
           "text": "Lean on automation for the grunt work."
         },
         {
-          "start": 49.572,
-          "end": 54.4,
+          "start": 48.705,
+          "end": 53,
           "text": "Create environments where juniors learn to reason, not just review AI output."
         },
         {
-          "start": 54.517,
-          "end": 59.8,
+          "start": 53.133,
+          "end": 58.067,
           "text": "And invest in mentorship. All-senior teams do not scale tacit knowledge,"
         },
         {
-          "start": 59.817,
-          "end": 63.067,
+          "start": 58.083,
+          "end": 60.733,
           "text": "and the old apprenticeship model assumed a lot of routine middle work"
         },
         {
-          "start": 63.107,
-          "end": 65.733,
+          "start": 60.8,
+          "end": 63.6,
           "text": "that is now gone. This is the thread I planted at the"
         },
         {
-          "start": 65.8,
-          "end": 68.401,
+          "start": 63.656,
+          "end": 66.41,
           "text": "start. It is the one I worry about most."
         }
       ]
     },
-    "62": {
+    "64": {
       "hash": "af6611d6008c",
-      "audio": "/narration/slide-62-af6611d6008c.mp3",
-      "duration": 31.200816,
+      "audio": "/narration/slide-64-af6611d6008c.mp3",
+      "duration": 32.140113,
       "cues": [
-        6.15,
-        15.383333333333335,
-        21.533333333333335
+        6.660833333333333,
+        15.633333333333333,
+        21.7
       ],
-      "narrationKey": "06-moving-forward:6",
+      "narrationKey": "06-moving-forward:7",
       "transcript": "All of which points to the same conclusion. The craft evolves. It always has.\nBut it remains craft. Grady Booch: the entire history of software engineering is one of\nrising levels of abstraction. This is another level. A big one. But another\nlevel. The future of software engineering is not syntax. It is turning\nambiguity into clarity. As it always was. And that is the difference between vibe coding and agentic engineering:\nnot who typed the code, but whether someone can explain the intent, the\nevidence and the tradeoffs.",
       "captions": [
         {
@@ -5584,64 +5774,64 @@
         },
         {
           "start": 2.1,
-          "end": 4.4,
+          "end": 4.533,
           "text": "The craft evolves. It always has."
         },
         {
-          "start": 4.517,
-          "end": 7.667,
+          "start": 4.65,
+          "end": 8,
           "text": "But it remains craft. Grady Booch:"
         },
         {
-          "start": 7.783,
-          "end": 11.2,
+          "start": 8.133,
+          "end": 11.8,
           "text": "the entire history of software engineering is one of rising levels of"
         },
         {
-          "start": 11.25,
-          "end": 13.133,
+          "start": 11.856,
+          "end": 13.867,
           "text": "abstraction. This is another level."
         },
         {
-          "start": 13.333,
-          "end": 15.533,
+          "start": 13.933,
+          "end": 15.8,
           "text": "A big one. But another level."
         },
         {
-          "start": 15.633,
-          "end": 18.333,
+          "start": 15.883,
+          "end": 18.533,
           "text": "The future of software engineering is not syntax."
         },
         {
-          "start": 18.444,
-          "end": 20.4,
+          "start": 18.6,
+          "end": 20.667,
           "text": "It is turning ambiguity into clarity."
         },
         {
-          "start": 20.556,
-          "end": 24,
+          "start": 20.822,
+          "end": 24.067,
           "text": "As it always was. And that is the difference between vibe coding"
         },
         {
-          "start": 24.117,
-          "end": 28.467,
+          "start": 24.183,
+          "end": 28.667,
           "text": "and agentic engineering: not who typed the code, but whether someone can"
         },
         {
-          "start": 28.508,
-          "end": 31.201,
+          "start": 28.717,
+          "end": 32.14,
           "text": "explain the intent, the evidence and the tradeoffs."
         }
       ]
     },
-    "63": {
+    "65": {
       "hash": "c28c64e5ecde",
-      "audio": "/narration/slide-63-c28c64e5ecde.mp3",
-      "duration": 17.482993,
+      "audio": "/narration/slide-65-c28c64e5ecde.mp3",
+      "duration": 17.483424,
       "cues": [
         13.666666666666666
       ],
-      "narrationKey": "06-moving-forward:7",
+      "narrationKey": "06-moving-forward:8",
       "transcript": "Thank you. That is the talk — including this narration, which was written as\nmarkdown and spoken by the very pipeline you just met. The middle compressed.\nThe thinking, I hope, still showed. If you want to follow up, my details are on\nthe screen. And if you were in the room with me, this is where I would open the\nfloor.",
       "captions": [
         {
