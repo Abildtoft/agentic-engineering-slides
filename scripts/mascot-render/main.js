@@ -88,8 +88,12 @@ async function initialise({ apiKey, rivUrl, stateMachine, size, bg, zoom, focusY
       onLoadError: error => reject(new Error(`rive load failed: ${error}`)),
     })
   })
-  // The runtime sizes its drawing surface from the canvas on load.
-  rive.resizeDrawingSurfaceToCanvas()
+  // The runtime sizes its drawing surface from the canvas on load. Pin the
+  // pixel ratio to 1: the crop below is in backing-store pixels, and on a
+  // Retina display (the --real-browser path runs in a normal window) the
+  // default multiplies the surface by devicePixelRatio, so a 512px window cut
+  // from a 2x surface lands on the top-left quadrant — an antenna, not a face.
+  rive.resizeDrawingSurfaceToCanvas(1)
   const riveInputs = getRiveInputs(rive)
   playback = new MascotPlayback({ riveInputs, stream: false, enableNaturalLipSync: true })
   // Let the idle animation settle out of its first frame before anything is captured.

@@ -121,7 +121,21 @@ most.
 
 ---
 
-<!-- 64. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
+<!-- 64. quote — “Yes, there are still Italian shoe makers around. But look at your feet.” — ~1 clicks -->
+
+Thorsten Ball, who has spent his career building developer tools, put where
+all of that leads more bluntly than I would. The craft of writing code will
+disappear. The craft of building software will be more important than ever.
+Knowing how to solve a business problem with software, how other software did
+it and why, when and how to ship it, how to get feedback on it. That, he says,
+is the new game.
+[click] And to anyone who objects that writing code is a craft worth keeping,
+his answer: yes, there are still Italian shoemakers around. But look at your
+feet.
+
+---
+
+<!-- 65. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
 
 All of which points to the same conclusion. The craft evolves. It always has.
 But it remains craft.
@@ -136,7 +150,7 @@ evidence and the tradeoffs.
 
 ---
 
-<!-- 65. cover — Thank You — ~1 clicks -->
+<!-- 66. cover — Thank You — ~1 clicks -->
 
 Thank you. That is the talk — including this narration, which was written as
 markdown and spoken by the very pipeline you just met. The middle compressed.

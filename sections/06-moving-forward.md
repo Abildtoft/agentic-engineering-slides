@@ -330,7 +330,7 @@ KEY POINTS:
 - Willison: "don't learn it, just start writing code in it" — three Go projects
 - Shared conclusion: human value is increasingly multiplicative
 
-BRIDGE: "And all of that points to the same conclusion."
+BRIDGE: "Thorsten Ball put where all of that leads more bluntly than I would."
 
 ADDITIONAL POINTS:
 - The strongest advice from Evans for worried workers: do not declare AI evil and wait it out. Submerge yourself in the tools, understand the new constraints, and make yourself a strong hire in the changed market. It may not be sufficient for everyone, but it is the only defensible path.
@@ -347,6 +347,47 @@ SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/stat
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">“The craft of writing code will disappear.</div>
+
+  <div class="quote-progressive-line">The craft of building software will be more important than ever.”</div>
+</div>
+
+Thorsten Ball
+
+<v-click>
+
+## “Yes, there are still Italian shoe makers around. But look at your feet.”
+
+</v-click>
+
+<!--
+KEY POINTS:
+- An outside witness saying the deck's conclusion more bluntly than the deck does. Ball builds developer tools for a living (Amp, previously Zed; wrote the interpreter and compiler books), so "the craft of writing code will disappear" is not an outsider's dismissal
+- The two lines stay on screen together. The first alone reads as an endorsement of vibe coding, which is the thing the cover crosses out; the second is the whole point
+- His definition of the craft that matters: knowing how to solve business problems with software, how other software did it and why and why not, when and how to ship it, how to get feedback on it. That list is "What Survives" from the section opener, in one sentence
+- The shoemaker line answers the objection before anyone raises it: craft-as-handwork survives as a niche, not as the job
+
+BRIDGE: "Which is the conclusion, in my own words."
+
+ADDITIONAL POINTS:
+- The post is seventeen beliefs, deliberately maximalist ("most predictions I see are still way too conservative"). Two of them are the strongest form of the opposite view to claims made earlier in this deck, and are worth knowing if challenged: "code review will die — it's already dead" (Section 4 says review relocates upstream and tiers by blast radius, not that it dies) and "unit tests might die too" (Willison in Section 3b: tests are no longer even remotely optional)
+- "Most bugs won't be coding bugs. They'll be 'you asked for the wrong thing' bugs" is the one-line version of "are we solving the right problem?" from the review slide
+- "Meat proxies" who shove tickets into agents and report back is the bottom rung of the agency ladder, named from the other side
+- "The terminal is dead," from a self-described lover of the terminal, in a deck whose main tool slide is a CLI. Good for a smile if the room is technical
+
+DELIVERY:
+- Read the two lines as one thought with a beat between them, not as a contradiction
+- Click the shoemaker line and let the laugh happen before moving on
+
+SOURCE: Thorsten Ball, "What I believe about the future of software development", X post, September 19, 2026 (sources/thorsten-ball-future-of-software-development.md)
 -->
 
 ---
