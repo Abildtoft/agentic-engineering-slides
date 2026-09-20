@@ -9,7 +9,7 @@ const manifest = JSON.parse(await readFile(join(narrationDir, 'manifest.json'), 
 const mascot = JSON.parse(await readFile(join(narrationDir, 'mascot.json'), 'utf-8'))
 
 test('every narrated slide carries a bounded transcript and captions', () => {
-  assert.equal(Object.keys(manifest.slides).length, 63)
+  assert.equal(Object.keys(manifest.slides).length, 65)
 
   for (const [no, slide] of Object.entries(manifest.slides)) {
     assert.ok(slide.transcript, `slide ${no} has a transcript`)
