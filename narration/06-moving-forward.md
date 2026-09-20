@@ -1,4 +1,4 @@
-<!-- 56. section — Moving Forward -->
+<!-- 57. section — Moving Forward -->
 
 We have covered the shift, the compressing middle, the new stack, and the debt
 it can quietly build. One question is left, and it is the one the whole talk
@@ -6,7 +6,7 @@ has been circling: what actually survives?
 
 ---
 
-<!-- 57. default — What Survives — ~3 clicks -->
+<!-- 58. default — What Survives — ~3 clicks -->
 
 Execution is increasingly abundant. People who combine strategy with
 execution will remain rare. The same split plays out in engineering, product
@@ -26,7 +26,7 @@ industry feels so uneven right now.
 
 ---
 
-<!-- 58. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
+<!-- 59. statement — Remember the cascade. The constraint moved upstream. — ~1 clicks -->
 
 Remember the cascade from earlier? The constraint did not disappear. It moved
 upstream, to getting expert knowledge out of heads and into systems, without
@@ -43,7 +43,7 @@ asset is the institutional loop, not the frontier model.
 
 ---
 
-<!-- 59. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
+<!-- 60. statement — In a period of compounding change, playing defense is its own risk. — ~2 clicks -->
 
 Which makes posture the real decision. This is the divide from the opening: not
 simply who has access, but who is learning. In a period of compounding change,
@@ -58,7 +58,25 @@ emphasis is on learn, not on faster.
 
 ---
 
-<!-- 60. default — Where to Start — ~3 clicks -->
+<!-- 61. statement — Ideas were always cheap. Now the code is cheap too. — ~2 clicks -->
+
+And here is what an hour of implementation getting cheap actually leaves
+behind. Ideas were never the scarce input. Hashimoto's claim predates agents
+and survives them: he cannot stress enough how little an idea matters compared
+to the agency of the people executing it. Now the code is cheap too.
+[click] Which is rung zero again, at the scale of a career. What is left
+between an idea and a shipped thing is agency, and that is the part nobody
+automated.
+[click] He has a line I keep coming back to. Look around the room you are
+sitting in. Look at everything. Every noun. Almost all of it exists because a
+person willed it into existence, and nothing is stopping you from doing the
+same. There is a sharp corollary too: if you dismiss someone else's success
+because you had the idea first, you just conceded the point. The difference
+was you.
+
+---
+
+<!-- 62. default — Where to Start — ~3 clicks -->
 
 Offense sounds abstract. On Monday morning it looks like this. You do not need
 an AI strategy to begin. You need one finished pilot.
@@ -75,11 +93,13 @@ organisation's capability.
 [click] Strategy is what you write down after the third pilot works. Not
 before. Nobody wrote a winning internet strategy in 1997 either; the companies
 that won just started building. A strategy written first is a document about
-tools that will be obsolete before the ink dries.
+tools that will be obsolete before the ink dries. And that is where Hashimoto
+lands too. His number one tip is four words long: act with agency. One
+finished pilot is the smallest version of it available to you on Monday.
 
 ---
 
-<!-- 61. two-cols-header — The Next Few Years — ~2 clicks -->
+<!-- 63. two-cols-header — The Next Few Years — ~2 clicks -->
 
 And that posture lands differently depending on where you are in your career,
 so let me split the audience for a moment.
@@ -101,7 +121,7 @@ most.
 
 ---
 
-<!-- 62. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
+<!-- 64. statement — The craft evolves. It always has. But it remains craft. — ~3 clicks -->
 
 All of which points to the same conclusion. The craft evolves. It always has.
 But it remains craft.
@@ -116,7 +136,7 @@ evidence and the tradeoffs.
 
 ---
 
-<!-- 63. cover — Thank You — ~1 clicks -->
+<!-- 65. cover — Thank You — ~1 clicks -->
 
 Thank you. That is the talk — including this narration, which was written as
 markdown and spoken by the very pipeline you just met. The middle compressed.
