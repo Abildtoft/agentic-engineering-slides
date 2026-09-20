@@ -71,11 +71,18 @@
     <style>
       html, body { margin: 0; background: #000; }
       canvas { display: block; }
+      /* Only visible in the ?drive=http path, where a person is watching the tab. */
+      #status {
+        position: fixed; left: 0; right: 0; bottom: 0;
+        font: 12px/2 ui-monospace, monospace; color: #9fb4c7; background: #0b0f14;
+        padding: 0 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      }
     </style>
   </head>
   <body>
     <canvas id="rive"></canvas>
     <canvas id="out"></canvas>
+    <div id="status">idle</div>
     <script type="module" src="./main.js"></script>
   </body>
 </html>

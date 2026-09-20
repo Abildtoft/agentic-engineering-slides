@@ -241,3 +241,69 @@ window.mascot = {
   },
 }
 window.__mascotReady = true
+
+/**
+ * Real-browser driver. The lip-sync licence refuses to initialise when the page
+ * is under WebDriver ("Init refused: webdriver_present"), so this path lets an
+ * ordinary, user-launched Chrome tab run the render instead: the page pulls
+ * commands from the orchestrator over HTTP long-poll and posts results back,
+ * calling exactly the same window.mascot functions node would have evaluated.
+ *
+ * Opt in with ?drive=http. Without it nothing here runs and the playwright
+ * path is untouched.
+ */
+if (new URLSearchParams(location.search).get('drive') === 'http') {
+  const status = document.getElementById('status')
+  const say = text => {
+    if (status) status.textContent = text
+  }
+
+  /** __jobs is polled rather than awaited directly, the same contract node uses. */
+  const awaitJob = name =>
+    new Promise((resolve, reject) => {
+      const tick = () => {
+        const entry = window.__jobs[name]
+        if (!entry?.done) return void setTimeout(tick, 100)
+        entry.error ? reject(new Error(entry.error)) : resolve(entry.value)
+      }
+      tick()
+    })
+
+  const invoke = async (cmd, arg) => {
+    if (cmd === 'ping') return 'ok'
+    if (cmd === 'init' || cmd === 'timeline') {
+      window.mascot[cmd](arg)
+      return awaitJob(cmd)
+    }
+    return window.mascot[cmd](arg)
+  }
+
+  ;(async () => {
+    await fetch('/ctl/hello', { method: 'POST' }).catch(() => {})
+    say('connected — waiting for work')
+    for (;;) {
+      let command
+      try {
+        const response = await fetch('/ctl/poll', { method: 'POST' })
+        if (response.status === 204) continue
+        command = await response.json()
+      } catch {
+        say('orchestrator gone — retrying')
+        await new Promise(resolve => setTimeout(resolve, 500))
+        continue
+      }
+      say(command.label ?? command.cmd)
+      let payload
+      try {
+        payload = { id: command.id, value: await invoke(command.cmd, command.arg) }
+      } catch (error) {
+        payload = { id: command.id, error: String(error?.stack ?? error) }
+      }
+      await fetch('/ctl/result', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch(() => {})
+    }
+  })()
+}
