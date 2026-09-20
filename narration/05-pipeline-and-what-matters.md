@@ -178,9 +178,23 @@ own after it leaves your hands.
 
 ---
 
-<!-- 55. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
+<!-- 55. statement — The ladder has a rung zero: deciding to climb it. — ~1 clicks -->
 
-And rung seven at product scale looks like this. Many products do not die
+And there is a rung the ladder doesn't draw. Call it rung zero: deciding to
+climb at all. Agents can run rungs one through six for you. Nothing anywhere
+in that stack decides a problem is worth picking up in the first place.
+[click] Mitchell Hashimoto — he built Terraform, he's building Ghostty — spent
+years around unusually effective people and landed on this: the difference
+between mediocre and excellent work and outcomes is predominantly one of
+agency. They don't wait for things to happen to them; they go out and make
+things happen. Hold on to rung zero. It comes back at the end of the talk.
+
+---
+
+<!-- 56. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
+
+Now back up the ladder to rung seven, and scale it to a whole product.
+Many products do not die
 from missing features. They die from accumulation. It is easy to prompt a new
 feature into existence, so naturally the bar for what ships drops. That is the
 accumulation trap, and it is the flip side of the long tail I just sold you.

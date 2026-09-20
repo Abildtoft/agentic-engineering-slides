@@ -187,6 +187,50 @@ SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/206145
 -->
 
 ---
+layout: statement
+class: statement-wide
+---
+
+# Ideas were always cheap. Now the code is cheap too.
+
+<v-click>
+
+Rung zero, at the scale of a career. What's left between an idea and a shipped thing is **agency** — and that is the part nobody automated.
+
+</v-click>
+<v-click>
+
+> “I can’t stress enough how little an idea matters compared to the agency of the people executing the idea.”
+>
+> Mitchell Hashimoto
+
+</v-click>
+
+<!--
+KEY POINTS:
+- BEAT 2 OF 3 — pays off "rung zero" from Section 5 and sets up the imperative on the next slide. Arc: Section 5 observed the difference, this slide says why it matters now, Where to Start says what to do about it
+- The deck has spent an hour on implementation getting cheap; this names what that leaves behind
+- Ideas were never the scarce input — Hashimoto's claim predates agents and survives them
+- Collapse the two: when execution is abundant, the distance from idea to shipped thing is almost entirely agency
+- Sets up the next slide: the pilot is the smallest act of agency available on Monday
+
+BRIDGE: "So what does agency look like on Monday morning? It looks like one pilot."
+
+ADDITIONAL POINTS:
+- Hashimoto's superpower framing: the belief that the world around you is completely mutable. "Look around the room you're sitting in. Every noun. It almost all exists because a person willed it into existence."
+- The self-own corollary, good for a laugh: dismissing someone's success with "I had that idea first" concedes the point — if the idea was the same, the difference was you
+- Distinguish explicitly from Osmani's ladder in Section 5: that agency is how much of the problem you still own; this agency is whether you move at all
+- Careful not to read as hustle-culture — the claim is about ownership and initiative, not hours
+
+DELIVERY:
+- Land "Now the code is cheap too" as the payoff of the whole deck, then pause before the click
+- Read the quote flat and let it sit; it does not need selling
+- Optional closer into the next slide: Hashimoto's own tip is four words — "act with agency"
+
+SOURCE: Mitchell Hashimoto, X post, September 11, 2026 (x.com/mitchellh/status/2098232985938194881)
+-->
+
+---
 class: v-center
 ---
 
@@ -208,6 +252,10 @@ You don't need an AI strategy to begin. You need one finished pilot.
 
 Strategy is what you write down **after the third pilot works.**
 
+> “Number one tip: act with agency.”
+>
+> Mitchell Hashimoto
+
 </v-click>
 
 <!--
@@ -222,6 +270,9 @@ BRIDGE: "And that posture lands differently depending on where you are in your c
 ADDITIONAL POINTS:
 - This slide is for the org that says "everyone experiments a little, but we have no strategy"
 - The failure mode of strategy-first: a document about tools that will be obsolete before the ink dries (callback to the previous slide — keep the process light)
+- BEAT 3 OF 3 — the arc lands here as an instruction. Section 5 observed it, the previous slide priced it, this slide is Monday morning. The four-word quote is the button on the last click, not a click of its own
+- One finished pilot IS rung zero at human scale: the smallest available act of deciding to climb
+- Hashimoto is the licence for the whole slide: nobody is going to hand you the path for this shift, so the first pilot is something you take rather than something you are given
 - The pairing: domain knowledge chooses the work, technical skill wires it up, both review the result
 - "Write down what works" is the same mechanism as Section 3's AGENTS.md and skills, and the same thesis as the knowledge-into-systems slide earlier in this section — playbooks are how individual experiments become organizational capability
 - Human in the loop is the Section 4 antidote applied at pilot scale
@@ -231,8 +282,9 @@ ADDITIONAL POINTS:
 DELIVERY:
 - This is the leadership slide — aim it at whoever owns the "we should have a strategy" feeling
 - If the room allows, ask: "What would your first pilot be?" and let one or two answers land before moving on
-- Hold the last click; it releases the pressure the strategy question has been building
+- Hold the last click; it releases the pressure the strategy question has been building — the Hashimoto line rides the same click, so read it as the send-off, not as a new point
 
+SOURCE: Mitchell Hashimoto, X post, September 11, 2026 (x.com/mitchellh/status/2098232985938194881)
 SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
 SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)

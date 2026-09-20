@@ -418,7 +418,7 @@ KEY POINTS:
 - Rung 7, Discern, can be assisted; accountability for it cannot be delegated
 - Good engineers live at rung 5 (Recommend) from day one; you earn 6 (Resolve)
 
-BRIDGE: "And rung 7 at product scale? That's the next slide."
+BRIDGE: "But there is a rung zero the ladder doesn't draw."
 
 ADDITIONAL POINTS:
 - "High agency is the art of knowing when to delegate, when to inspect, when to stop, and when to own the result of a process"
@@ -431,6 +431,43 @@ DELIVERY:
 - Optional verbal closer: "Agency was never about how much you can do. It's about how much of the problem you still own after it leaves your hands."
 
 SOURCE: Addy Osmani, "The Agency Ladder" (linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7489205791766274048-H0sG)
+-->
+
+---
+layout: statement
+---
+
+# The ladder has a rung zero: deciding to climb it.
+
+<v-click>
+
+> “The difference between mediocre and excellent work and outcomes is predominantly one of agency. They don’t wait for things to happen to them — they go out and make things happen.”
+>
+> Mitchell Hashimoto
+
+</v-click>
+
+<!--
+KEY POINTS:
+- BEAT 1 OF 3 — this coins "rung zero"; Section 6 recalls it twice (the cheap-ideas statement, then Where to Start). Say the phrase clearly, it has to survive a chapter boundary
+- Two senses of the same word, deliberately placed back to back
+- Osmani's ladder: how much of the problem you still own after it leaves your hands
+- Hashimoto's agency: whether you pick the problem up in the first place
+- Agents can run rungs 1–6, but nothing in the stack decides that something is worth doing
+- This beat is diagnostic only — it observes a difference between people. Do not draw the conclusion here; Section 6 does that
+
+BRIDGE: "And rung 7 at product scale? That's the next slide."
+
+ADDITIONAL POINTS:
+- Say the ambiguity out loud rather than letting the room resolve it wrongly — the word is doing two jobs on purpose
+- Hashimoto's underlying belief: the world around you is completely mutable, and almost every noun in the room exists because someone willed it into existence
+- The connection to the tooling half of the talk: a harness nobody chose to build is worth exactly as much as a fix nobody chose to make
+
+DELIVERY:
+- This is a ten-second slide — land it and move; do not let it become a motivational detour
+- If the room is senior, the Hashimoto line lands harder than the ladder did
+
+SOURCE: Mitchell Hashimoto, X post, September 11, 2026 (x.com/mitchellh/status/2098232985938194881)
 -->
 
 ---
