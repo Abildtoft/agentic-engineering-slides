@@ -406,6 +406,11 @@ public/narration/mascot-still.png
   canvas blank with no error past `LoadError`
 - WebGL clears to transparent and `yuv420p` flattens alpha to black, so
   frames are composited onto `--bg` in a 2D canvas before capture
+- The Rive drawing surface is pinned to a 1x pixel ratio
+  (`resizeDrawingSurfaceToCanvas(1)`). The crop is in backing-store pixels, and
+  a `--real-browser` render runs in a normal window on a Retina display, where
+  the default 2x surface put the crop on the top-left quadrant — an antenna
+  instead of a face. Headless Chrome is 1x, which is why it never showed there
 - The speech build's `pruneOrphans` skips `*-mascot-*.mp4`, `mascot.json` and
   `mascot-still.png`; the mascot script prunes only its own stale clips.
   Neither touches the other's files
