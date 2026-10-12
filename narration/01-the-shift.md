@@ -151,6 +151,23 @@ different world.
 
 Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By
 summer 2026, he wrote, people working with the most advanced AI will feel like
-they live in a parallel world. It is summer 2026. So this is the question I
-would ask you to hold onto for the rest of this talk, and I genuinely do not
-know the answer for your team. Which side of that divide are you on?
+they live in a parallel world. That summer has come and gone. So this is the
+question I would ask you to hold onto for the rest of this talk, and I
+genuinely do not know the answer for your team. Which side of that divide are
+you on? If you write code, there is an honest way to tell: think about last
+week, and how much of your code you actually typed yourself.
+
+---
+
+<!-- 14. quote — ~1 clicks -->
+
+In September, at Rails World in Austin, David Heinemeier Hansson, the Dane who
+created Ruby on Rails, put that question to a hall full of developers: who here
+still writes a material amount of code by hand, every week? About five hands
+went up. Just over a year earlier, he had been one of the best-known holdouts
+in our industry. When he let an AI drive his editor, he said, he could
+literally feel competence draining out of his fingers. This is what he says
+now. We are not going to write the vast majority of code by hand any longer.
+[click] Coding agents have gotten so good that it is simply not an
+economically viable enterprise, going forward, to have humans typing out lines
+of Ruby, Rust, or C++. Not a matter of taste. A matter of price.

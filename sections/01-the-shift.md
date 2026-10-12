@@ -319,6 +319,7 @@ ADDITIONAL POINTS:
 - Two faint gridlines (500 / 1,000) ground the scale; the dashed rule landing at Jan '26 with the climb ties the title's "January" to the axis
 - The story months carry their counts on the curve — 176 (the bend), 264 (the doubling), 790 (out-merged the prior year), 1,354 (peak), 1,172 (now); Apr and May stay unlabeled, they only echo their neighbours
 - The chart reads the slide's clicks without consuming any: the climb rides click 1, so the text reveal is pinned past it with `at="2"` and the slide declares `clicks: 2`
+- If challenged on the month: DHH dates the inflection to 24 November 2025, Opus 4.5 — "the Kodak Brownie of our era… There was everything before November 24 and then there was everything after." His tipping point lands a month before this bend: the same curve, from someone else's career
 
 DELIVERY:
 - The slide arrives with only the flat year, drawing itself out slowly and stopping dead at December 2025. Let the draw finish before speaking to it: "That was me being productive." Sit in that beat — the line going nowhere is the setup.
@@ -327,6 +328,7 @@ DELIVERY:
 - Into that pause, say the section's verdict without putting it on screen: "The skeptics were right for three years. Then the curve bent." Say it flat, no emphasis, then stop talking. The Jack Clark quote cashes this line in two slides from now, after the multiplier is unpacked.
 
 SOURCE: Personal Merge Ledger export (see previous slide)
+SOURCE: David Heinemeier Hansson, Rails World 2026 opening keynote (youtube.com/watch?v=vDjW_dRyKXY, 11:19) — 24 November 2025 as the inflection; see sources/dhh-over-my-dead-pencil.md
 -->
 
 ---
@@ -400,14 +402,60 @@ Jack Clark, co-founder of Anthropic
 
 <!--
 KEY POINTS:
-- This is the section-1 synthesis in one sentence
+- This is the section-1 synthesis in one sentence — the prediction half of the close; the next slide is the result
 - The "parallel world" idea frames urgency without panic
+- Clark's date has passed: speak of it as a deadline that came due, not one still ahead
 - Land the audience question: adoption is now a strategic choice
 
-BRIDGE: "That question — which side of the divide — is what the rest of this session is about. Let's start with what's actually changing."
+BRIDGE: "Let's find out. Developers in the room: hands up if you still write a material amount of code by hand, every week."
 
 DELIVERY:
-- Ask the question and leave silence
+- Ask "Which side of that divide are you on?" and leave silence, then turn it into the show of hands
+- Take the poll on this slide, before advancing: the next slide's first line answers it for them
+- Count the hands out loud, whatever the number; the next slide works either way
 
 SOURCE: Jack Clark, "Silent Sirens, Flashing For Us All" (x.com/jackclarkSF/status/2003526145380151614)
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">“We’re not going to write the vast majority of code by hand any longer.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">Coding agents have gotten so good that it’s simply not an economically viable enterprise going forward to have humans typing out lines of Ruby, Rust, or C++.”</div>
+  </v-click>
+</div>
+
+David Heinemeier Hansson, creator of Ruby on Rails
+
+<!--
+KEY POINTS:
+- The result half of the close: Clark predicted the parallel world, DHH reports from inside it
+- Rails World, Austin, 23 September 2026: he asked a hall of Rails developers who still writes a material amount of code by hand each week. His count: "about five"
+- The messenger is the evidence. Danish, not an AI vendor, and in July 2025 the best-known holdout in the industry: "I don't let it drive my code… I can literally feel competence draining out of my fingers." Fourteen months later, 37signals went "pencils down"
+- "Economically viable" is the hinge: not a matter of taste, a matter of price
+
+BRIDGE: "If almost nobody is typing the code anymore, what happens to everything that used to sit around it?"
+
+ADDITIONAL POINTS:
+- "It's Not Just One Tool" makes this claim with company-reported numbers; here it comes from a practitioner with nothing to sell, who argued the opposite a year earlier
+- At 37signals, hand-written code is now "an exceptional state. It is like seeing a bug in Sentry" — the Harness Engineering slide picks this up
+- His own ledger, if asked: about 30,000 lines of production Ruby a year for 21 years, then 150,000 lines in August 2026 alone. He concedes most of it is verbose Rust he never reads — the same reason this deck keeps lines changed off its own ledger slides
+- The post ends: "Don't go down with the pencils. There's so much to build. We need you."
+- Thorsten Ball's "the craft of writing code will disappear" in Section 6 is the same observation arriving as a conclusion, with the craft that replaces it
+
+DELIVERY:
+- Arrive straight off your own show of hands: "In Austin in September, DHH asked a room full of Rails developers the same question. About five hands went up." Then read the first line
+- Say he's Danish; this room will know him
+- Click for the second line, lean on "economically viable", and stop
+- Either poll result works. Many hands here: "That's Clark's divide, in this room." A handful: "Same as Austin."
+
+SOURCE: David Heinemeier Hansson, "Over my dead pencil" (world.hey.com/dhh/over-my-dead-pencil-fb0f3647, 6 October 2026)
+SOURCE: Rails World 2026 opening keynote, Austin, 23 September 2026 (youtube.com/watch?v=vDjW_dRyKXY — "pencils down" at 20:45, the poll at 21:46)
+SOURCE: Lex Fridman Podcast #474, 12 July 2025 (lexfridman.com/dhh-david-heinemeier-hansson-transcript/) — "competence draining out of my fingers"
+SOURCE: Notes in sources/dhh-over-my-dead-pencil.md
 -->

@@ -42,7 +42,7 @@ test('the optimized mascot manifest covers every speech source with a local asse
 test('diagram slides hide the tile and nothing pauses the narration', async () => {
   const deck = await loadDeck()
   const hidden = deck.slides.filter(slide => slide.frontmatter?.narrator === 'hidden').map(slide => slide.index + 1)
-  const expected = [10, 11, 15, 19, 27, 28, 29, 30, 31, 32, 33, 34, 40, 47, 50, 52, 54]
+  const expected = [10, 11, 16, 20, 28, 29, 30, 31, 32, 33, 34, 35, 41, 48, 51, 53, 55]
 
   assert.deepEqual(hidden, expected)
   // The Temperature Check intermission was cut with its slide; the player
