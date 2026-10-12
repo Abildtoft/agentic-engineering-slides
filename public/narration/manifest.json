@@ -1026,51 +1026,153 @@
       ]
     },
     "13": {
-      "hash": "b0218bb10d40",
-      "audio": "/narration/slide-13-b0218bb10d40.mp3",
-      "duration": 21.268617,
+      "hash": "aa6833d849d9",
+      "audio": "/narration/slide-13-aa6833d849d9.mp3",
+      "duration": 28.817664,
       "cues": [],
       "narrationKey": "01-the-shift:8",
-      "transcript": "Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By\nsummer 2026, he wrote, people working with the most advanced AI will feel like\nthey live in a parallel world. It is summer 2026. So this is the question I\nwould ask you to hold onto for the rest of this talk, and I genuinely do not\nknow the answer for your team. Which side of that divide are you on?",
+      "transcript": "Jack Clark, one of the co-founders of Anthropic, put a date on this feeling. By\nsummer 2026, he wrote, people working with the most advanced AI will feel like\nthey live in a parallel world. That summer has come and gone. So this is the\nquestion I would ask you to hold onto for the rest of this talk, and I\ngenuinely do not know the answer for your team. Which side of that divide are\nyou on? If you write code, there is an honest way to tell: think about last\nweek, and how much of your code you actually typed yourself.",
       "captions": [
         {
           "start": 0,
-          "end": 3.358,
+          "end": 2.933,
           "text": "Jack Clark, one of the co-founders of Anthropic, put a date on"
         },
         {
-          "start": 3.358,
-          "end": 6.716,
+          "start": 2.96,
+          "end": 7.067,
           "text": "this feeling. By summer 2026, he wrote, people working with the most"
         },
         {
-          "start": 6.716,
-          "end": 9.795,
+          "start": 7.141,
+          "end": 11.067,
           "text": "advanced AI will feel like they live in a parallel world."
         },
         {
-          "start": 9.795,
-          "end": 13.153,
-          "text": "It is summer 2026. So this is the question I would ask"
+          "start": 11.16,
+          "end": 13,
+          "text": "That summer has come and gone."
         },
         {
-          "start": 13.153,
-          "end": 16.511,
-          "text": "you to hold onto for the rest of this talk, and I"
+          "start": 13.156,
+          "end": 15.333,
+          "text": "So this is the question I would ask you to hold onto"
         },
         {
-          "start": 16.511,
-          "end": 19.03,
-          "text": "genuinely do not know the answer for your team."
+          "start": 15.367,
+          "end": 19.067,
+          "text": "for the rest of this talk, and I genuinely do not know"
         },
         {
-          "start": 19.03,
-          "end": 21.269,
+          "start": 19.1,
+          "end": 20.333,
+          "text": "the answer for your team."
+        },
+        {
+          "start": 20.4,
+          "end": 22,
           "text": "Which side of that divide are you on?"
+        },
+        {
+          "start": 22.133,
+          "end": 25.133,
+          "text": "If you write code, there is an honest way to tell:"
+        },
+        {
+          "start": 25.156,
+          "end": 27.8,
+          "text": "think about last week, and how much of your code you actually"
+        },
+        {
+          "start": 27.856,
+          "end": 28.818,
+          "text": "typed yourself."
         }
       ]
     },
     "14": {
+      "hash": "8c037328be12",
+      "audio": "/narration/slide-14-8c037328be12.mp3",
+      "duration": 43.073084,
+      "cues": [
+        29.645000000000003
+      ],
+      "narrationKey": "01-the-shift:9",
+      "transcript": "In September, at Rails World in Austin, David Heinemeier Hansson, the Dane who\ncreated Ruby on Rails, put that question to a hall full of developers: who here\nstill writes a material amount of code by hand, every week? About five hands\nwent up. Just over a year earlier, he had been one of the best-known holdouts\nin our industry. When he let an AI drive his editor, he said, he could\nliterally feel competence draining out of his fingers. This is what he says\nnow. We are not going to write the vast majority of code by hand any longer. Coding agents have gotten so good that it is simply not an\neconomically viable enterprise, going forward, to have humans typing out lines\nof Ruby, Rust, or C++. Not a matter of taste. A matter of price.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 4.2,
+          "text": "In September, at Rails World in Austin, David Heinemeier Hansson, the Dane"
+        },
+        {
+          "start": 4.233,
+          "end": 7.4,
+          "text": "who created Ruby on Rails, put that question to a hall full"
+        },
+        {
+          "start": 7.423,
+          "end": 10.933,
+          "text": "of developers: who here still writes a material amount of code by"
+        },
+        {
+          "start": 11.027,
+          "end": 14.533,
+          "text": "hand, every week? About five hands went up."
+        },
+        {
+          "start": 14.613,
+          "end": 17,
+          "text": "Just over a year earlier, he had been one of the best-known"
+        },
+        {
+          "start": 17.053,
+          "end": 20.4,
+          "text": "holdouts in our industry. When he let an AI drive his editor,"
+        },
+        {
+          "start": 20.423,
+          "end": 24.067,
+          "text": "he said, he could literally feel competence draining out of his fingers."
+        },
+        {
+          "start": 24.187,
+          "end": 25.733,
+          "text": "This is what he says now."
+        },
+        {
+          "start": 26.023,
+          "end": 28.533,
+          "text": "We are not going to write the vast majority of code by"
+        },
+        {
+          "start": 28.613,
+          "end": 32.4,
+          "text": "hand any longer. Coding agents have gotten so good that it is"
+        },
+        {
+          "start": 32.438,
+          "end": 36.8,
+          "text": "simply not an economically viable enterprise, going forward, to have humans"
+        },
+        {
+          "start": 36.848,
+          "end": 40.333,
+          "text": "typing out lines of Ruby, Rust, or C++."
+        },
+        {
+          "start": 40.45,
+          "end": 41.6,
+          "text": "Not a matter of taste."
+        },
+        {
+          "start": 41.833,
+          "end": 43.073,
+          "text": "A matter of price."
+        }
+      ]
+    },
+    "15": {
       "hash": "fe498c9d5ce0",
       "audio": "/narration/slide-14-fe498c9d5ce0.mp3",
       "duration": 17.872336,
@@ -1115,7 +1217,7 @@
         }
       ]
     },
-    "15": {
+    "16": {
       "hash": "7bfebdc19095",
       "audio": "/narration/slide-15-7bfebdc19095.mp3",
       "duration": 54.407007,
@@ -1224,7 +1326,7 @@
         }
       ]
     },
-    "16": {
+    "17": {
       "hash": "9a3ebd42f200",
       "audio": "/narration/slide-16-9a3ebd42f200.mp3",
       "duration": 37.016576,
@@ -1302,7 +1404,7 @@
         }
       ]
     },
-    "17": {
+    "18": {
       "hash": "b87c1f15e5cc",
       "audio": "/narration/slide-17-b87c1f15e5cc.mp3",
       "duration": 36.276349,
@@ -1369,7 +1471,7 @@
         }
       ]
     },
-    "18": {
+    "19": {
       "hash": "beb9f4520bce",
       "audio": "/narration/slide-18-beb9f4520bce.mp3",
       "duration": 43.281451,
@@ -1442,7 +1544,7 @@
         }
       ]
     },
-    "19": {
+    "20": {
       "hash": "4a27815c2be3",
       "audio": "/narration/slide-19-4a27815c2be3.mp3",
       "duration": 60.807823,
@@ -1561,7 +1663,7 @@
         }
       ]
     },
-    "20": {
+    "21": {
       "hash": "c25c0614545d",
       "audio": "/narration/slide-20-c25c0614545d.mp3",
       "duration": 52.949456,
@@ -1655,7 +1757,7 @@
         }
       ]
     },
-    "21": {
+    "22": {
       "hash": "9a3ff55ad865",
       "audio": "/narration/slide-21-9a3ff55ad865.mp3",
       "duration": 19.061814,
@@ -1705,7 +1807,7 @@
         }
       ]
     },
-    "22": {
+    "23": {
       "hash": "b5cfcb3b9275",
       "audio": "/narration/slide-22-b5cfcb3b9275.mp3",
       "duration": 50.942177,
@@ -1804,7 +1906,7 @@
         }
       ]
     },
-    "23": {
+    "24": {
       "hash": "31e506741f2e",
       "audio": "/narration/slide-23-31e506741f2e.mp3",
       "duration": 53.144218,
@@ -1903,7 +2005,7 @@
         }
       ]
     },
-    "24": {
+    "25": {
       "hash": "dfa7251d2434",
       "audio": "/narration/slide-24-dfa7251d2434.mp3",
       "duration": 56.206395,
@@ -2008,7 +2110,7 @@
         }
       ]
     },
-    "25": {
+    "26": {
       "hash": "bf852b0f5689",
       "audio": "/narration/slide-25-bf852b0f5689.mp3",
       "duration": 29.275397,
@@ -2058,7 +2160,7 @@
         }
       ]
     },
-    "26": {
+    "27": {
       "hash": "40120d8d2aa7",
       "audio": "/narration/slide-26-40120d8d2aa7.mp3",
       "duration": 48.065147,
@@ -2146,7 +2248,7 @@
         }
       ]
     },
-    "27": {
+    "28": {
       "hash": "e7db8fdbfbd4",
       "audio": "/narration/slide-27-e7db8fdbfbd4.mp3",
       "duration": 48.414512,
@@ -2234,7 +2336,7 @@
         }
       ]
     },
-    "28": {
+    "29": {
       "hash": "344675ee5640",
       "audio": "/narration/slide-28-344675ee5640.mp3",
       "duration": 58.210113,
@@ -2348,7 +2450,7 @@
         }
       ]
     },
-    "29": {
+    "30": {
       "hash": "b93d369c2e7d",
       "audio": "/narration/slide-29-b93d369c2e7d.mp3",
       "duration": 61.271837,
@@ -2462,7 +2564,7 @@
         }
       ]
     },
-    "30": {
+    "31": {
       "hash": "aa4482a9f91d",
       "audio": "/narration/slide-30-aa4482a9f91d.mp3",
       "duration": 64.737234,
@@ -2595,7 +2697,7 @@
         }
       ]
     },
-    "31": {
+    "32": {
       "hash": "42f068d6bfb4",
       "audio": "/narration/slide-31-42f068d6bfb4.mp3",
       "duration": 43.936825,
@@ -2673,7 +2775,7 @@
         }
       ]
     },
-    "32": {
+    "33": {
       "hash": "4349b8176611",
       "audio": "/narration/slide-32-4349b8176611.mp3",
       "duration": 89.606644,
@@ -2822,7 +2924,7 @@
         }
       ]
     },
-    "33": {
+    "34": {
       "hash": "504dedfa7eb6",
       "audio": "/narration/slide-33-504dedfa7eb6.mp3",
       "duration": 69.341088,
@@ -2946,7 +3048,7 @@
         }
       ]
     },
-    "34": {
+    "35": {
       "hash": "497a2e635dc2",
       "audio": "/narration/slide-34-497a2e635dc2.mp3",
       "duration": 63.390748,
@@ -3055,7 +3157,7 @@
         }
       ]
     },
-    "35": {
+    "36": {
       "hash": "2b8cba8e9149",
       "audio": "/narration/slide-35-2b8cba8e9149.mp3",
       "duration": 34.596893,
@@ -3120,7 +3222,7 @@
         }
       ]
     },
-    "36": {
+    "37": {
       "hash": "7a393fcb941d",
       "audio": "/narration/slide-36-7a393fcb941d.mp3",
       "duration": 40.284286,
@@ -3199,7 +3301,7 @@
         }
       ]
     },
-    "37": {
+    "38": {
       "hash": "d9de371ae1ce",
       "audio": "/narration/slide-37-d9de371ae1ce.mp3",
       "duration": 43.011995,
@@ -3294,7 +3396,7 @@
         }
       ]
     },
-    "38": {
+    "39": {
       "hash": "2495e89a1a5d",
       "audio": "/narration/slide-38-2495e89a1a5d.mp3",
       "duration": 37.736372,
@@ -3377,7 +3479,7 @@
         }
       ]
     },
-    "39": {
+    "40": {
       "hash": "8b822d17c188",
       "audio": "/narration/slide-39-8b822d17c188.mp3",
       "duration": 50.474263,
@@ -3466,7 +3568,7 @@
         }
       ]
     },
-    "40": {
+    "41": {
       "hash": "5418b753bbc3",
       "audio": "/narration/slide-40-5418b753bbc3.mp3",
       "duration": 35.87195,
@@ -3529,7 +3631,7 @@
         }
       ]
     },
-    "41": {
+    "42": {
       "hash": "d3a1a3cf6a98",
       "audio": "/narration/slide-41-d3a1a3cf6a98.mp3",
       "duration": 73.614127,
@@ -3657,7 +3759,7 @@
         }
       ]
     },
-    "42": {
+    "43": {
       "hash": "5dd01a488096",
       "audio": "/narration/slide-42-5dd01a488096.mp3",
       "duration": 55.459864,
@@ -3770,7 +3872,7 @@
         }
       ]
     },
-    "43": {
+    "44": {
       "hash": "059d71271dbd",
       "audio": "/narration/slide-43-059d71271dbd.mp3",
       "duration": 41.213946,
@@ -3853,7 +3955,7 @@
         }
       ]
     },
-    "44": {
+    "45": {
       "hash": "9b0b40e4f970",
       "audio": "/narration/slide-44-9b0b40e4f970.mp3",
       "duration": 62.337574,
@@ -3962,7 +4064,7 @@
         }
       ]
     },
-    "45": {
+    "46": {
       "hash": "b4fc53292301",
       "audio": "/narration/slide-45-b4fc53292301.mp3",
       "duration": 8.006576,
@@ -3987,7 +4089,7 @@
         }
       ]
     },
-    "46": {
+    "47": {
       "hash": "76a2b979ec4d",
       "audio": "/narration/slide-46-76a2b979ec4d.mp3",
       "duration": 30.207732,
@@ -4055,7 +4157,7 @@
         }
       ]
     },
-    "47": {
+    "48": {
       "hash": "0003b0affd9b",
       "audio": "/narration/slide-47-0003b0affd9b.mp3",
       "duration": 55.079093,
@@ -4157,7 +4259,7 @@
         }
       ]
     },
-    "48": {
+    "49": {
       "hash": "a549e172a62d",
       "audio": "/narration/slide-48-a549e172a62d.mp3",
       "duration": 50.738571,
@@ -4250,7 +4352,7 @@
         }
       ]
     },
-    "49": {
+    "50": {
       "hash": "cb3b5ebf344d",
       "audio": "/narration/slide-49-cb3b5ebf344d.mp3",
       "duration": 92.673447,
@@ -4409,7 +4511,7 @@
         }
       ]
     },
-    "50": {
+    "51": {
       "hash": "8637556cb7d1",
       "audio": "/narration/slide-50-8637556cb7d1.mp3",
       "duration": 68.267891,
@@ -4533,7 +4635,7 @@
         }
       ]
     },
-    "51": {
+    "52": {
       "hash": "d8863eac6749",
       "audio": "/narration/slide-51-d8863eac6749.mp3",
       "duration": 32.869637,
@@ -4601,7 +4703,7 @@
         }
       ]
     },
-    "52": {
+    "53": {
       "hash": "933ae9779a67",
       "audio": "/narration/slide-52-933ae9779a67.mp3",
       "duration": 39.589229,
@@ -4690,7 +4792,7 @@
         }
       ]
     },
-    "53": {
+    "54": {
       "hash": "1d72a7ec5f26",
       "audio": "/narration/slide-53-1d72a7ec5f26.mp3",
       "duration": 64.885261,
@@ -4809,7 +4911,7 @@
         }
       ]
     },
-    "54": {
+    "55": {
       "hash": "8b2d82a5f13f",
       "audio": "/narration/slide-54-8b2d82a5f13f.mp3",
       "duration": 56.053061,
@@ -4931,7 +5033,7 @@
         }
       ]
     },
-    "55": {
+    "56": {
       "hash": "3eeadb8bc520",
       "audio": "/narration/slide-55-3eeadb8bc520.mp3",
       "duration": 33.551973,
@@ -4998,7 +5100,7 @@
         }
       ]
     },
-    "56": {
+    "57": {
       "hash": "2976a4fa8c0f",
       "audio": "/narration/slide-56-2976a4fa8c0f.mp3",
       "duration": 51.003855,
@@ -5101,7 +5203,7 @@
         }
       ]
     },
-    "57": {
+    "58": {
       "hash": "f41089ad40e4",
       "audio": "/narration/slide-57-f41089ad40e4.mp3",
       "duration": 10.868005,
@@ -5131,7 +5233,7 @@
         }
       ]
     },
-    "58": {
+    "59": {
       "hash": "74dab4143957",
       "audio": "/narration/slide-58-74dab4143957.mp3",
       "duration": 54.605125,
@@ -5250,7 +5352,7 @@
         }
       ]
     },
-    "59": {
+    "60": {
       "hash": "e6ac3268a55a",
       "audio": "/narration/slide-59-e6ac3268a55a.mp3",
       "duration": 47.271497,
@@ -5337,7 +5439,7 @@
         }
       ]
     },
-    "60": {
+    "61": {
       "hash": "c68ac6501470",
       "audio": "/narration/slide-60-c68ac6501470.mp3",
       "duration": 37.608889,
@@ -5410,7 +5512,7 @@
         }
       ]
     },
-    "61": {
+    "62": {
       "hash": "6f0188e1bc71",
       "audio": "/narration/slide-61-6f0188e1bc71.mp3",
       "duration": 47.674649,
@@ -5513,7 +5615,7 @@
         }
       ]
     },
-    "62": {
+    "63": {
       "hash": "60af4f9b6bbd",
       "audio": "/narration/slide-62-60af4f9b6bbd.mp3",
       "duration": 69.68102,
@@ -5637,7 +5739,7 @@
         }
       ]
     },
-    "63": {
+    "64": {
       "hash": "3d9e086966e9",
       "audio": "/narration/slide-63-3d9e086966e9.mp3",
       "duration": 66.409592,
@@ -5755,7 +5857,7 @@
         }
       ]
     },
-    "64": {
+    "65": {
       "hash": "e408278c4e12",
       "audio": "/narration/slide-64-e408278c4e12.mp3",
       "duration": 30.6139,
@@ -5817,7 +5919,7 @@
         }
       ]
     },
-    "65": {
+    "66": {
       "hash": "af6611d6008c",
       "audio": "/narration/slide-65-af6611d6008c.mp3",
       "duration": 31.541224,
@@ -5886,7 +5988,7 @@
         }
       ]
     },
-    "66": {
+    "67": {
       "hash": "c28c64e5ecde",
       "audio": "/narration/slide-66-c28c64e5ecde.mp3",
       "duration": 17.476984,
