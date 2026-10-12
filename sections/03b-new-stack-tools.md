@@ -97,6 +97,7 @@ ADDITIONAL POINTS:
 - Claude Code uses CLAUDE.md — same concept, vendor-specific naming
 - Adoption advice belongs in your mouth, not on the slide (no room): start with one root file, add directory-level files only when the agent repeats the same mistake
 - Real example: this presentation was built with an AGENTS.md specifying Slidev conventions, Yarn 4, multi-file structure
+- Optional verbal, from the person who loves Ruby most (DHH, Rails World 2026 keynote): "There is actually a programming language I like better than Ruby… It's called English."
 
 DELIVERY:
 - Keep this brief — 90 seconds maximum
@@ -107,6 +108,7 @@ DELIVERY:
 
 SOURCE: Garry Tan, "Markdown is the program now" (x.com/garrytan/status/2061454423034110372)
 SOURCE: Pragmatic Engineer, "Building Claude Code with Boris Cherny" (newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny)
+SOURCE: David Heinemeier Hansson, Rails World 2026 opening keynote (youtube.com/watch?v=vDjW_dRyKXY, 38:12) — English over Ruby; see sources/dhh-over-my-dead-pencil.md
 -->
 
 ---
@@ -341,12 +343,14 @@ DELIVERY:
 - Optional verbal: "One team demonstrated this concretely: they went from 30th to 5th place on a coding benchmark by only changing the harness. Same model. The system around the model is where the leverage lives."
 - Optional verbal (forward-looking): "And here's the interesting part — harness primitives get absorbed into model training. Skills, compaction, verification loops — these become training data. The model gets better at using the harness it was trained in. It's a co-evolution."
 - Close on Hashimoto verbally rather than on screen — the slide has no room for it and the line lands fine spoken: "The model is the engine. The harness is the car."
+- Optional verbal on the second click, calling back to DHH at the end of Section 1. At 37signals, hand-written code is now "an exceptional state. It is like seeing a bug in Sentry… then we fix the machine. We fix the factory." A hand-written fix is a bug report against the harness
 
 SOURCE: OpenAI, "Harness Engineering" (openai.com/index/harness-engineering/)
 SOURCE: Mitchell Hashimoto, "My AI Adoption Journey" (mitchellh.com/writing/my-ai-adoption-journey)
 SOURCE: Virat Trivedy, "Can Someone Please Define a Harness?" (x.com/Vtrivedy10/status/2031408954517971368)
 SOURCE: Entire, "Hello Entire World" (entire.io/blog/hello-entire-world)
 SOURCE: Addy Osmani, "My LLM coding workflow going into 2026" (addyo.substack.com)
+SOURCE: David Heinemeier Hansson, Rails World 2026 opening keynote (youtube.com/watch?v=vDjW_dRyKXY, 21:05) — "we fix the factory"; see sources/dhh-over-my-dead-pencil.md
 -->
 
 ---

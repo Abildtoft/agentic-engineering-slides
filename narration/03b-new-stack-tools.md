@@ -1,4 +1,4 @@
-<!-- 25. section — The New Stack: Tools -->
+<!-- 26. section — The New Stack: Tools -->
 
 Those are the two disciplines. Context, and specs. Without the right building
 blocks they stay theoretical, so let me show you the pieces that make them
@@ -10,7 +10,7 @@ Every vendor has a version of each of these.
 
 ---
 
-<!-- 26. two-cols-header — Markdown Is the Program Now — ~2 clicks -->
+<!-- 27. two-cols-header — Markdown Is the Program Now — ~2 clicks -->
 
 The medium for almost all of it is markdown. Human-readable and
 machine-readable, and versionable like code. Agent instructions, skills, agent
@@ -27,7 +27,7 @@ making the same mistake in the same place.
 
 ---
 
-<!-- 27. default — Skills: Reusable Playbooks — ~2 clicks -->
+<!-- 28. default — Skills: Reusable Playbooks — ~2 clicks -->
 
 The first tool built on that medium is the skill. A skill is a folder of
 instructions for one kind of task. You do the task once, carefully, and then
@@ -44,7 +44,7 @@ because the next building block is the opposite.
 
 ---
 
-<!-- 28. center — The Kitchen Analogy — ~3 clicks -->
+<!-- 29. center — The Kitchen Analogy — ~3 clicks -->
 
 An analogy to hold all of this together. APIs are utensils, each one does one
 thing. Skills are recipes. And MCP is the kitchen itself. You are not building
@@ -63,7 +63,7 @@ on the other.
 
 ---
 
-<!-- 29. default — MCP Example: Figma ↔ Frontend — ~3 clicks -->
+<!-- 30. default — MCP Example: Figma ↔ Frontend — ~3 clicks -->
 
 Now the same pattern in a domain that is not tickets and repos. Design.
 The agent talks to a Figma MCP server, pulls the design context and the
@@ -84,7 +84,7 @@ execution. And a bridge between them.
 
 ---
 
-<!-- 30. default — Harness Engineering — ~2 clicks -->
+<!-- 31. default — Harness Engineering — ~2 clicks -->
 
 You have now seen the pieces. Context files, skills, MCP servers. This is the
 machine they all plug into. Context goes in. The model reasons and decides. It
@@ -104,7 +104,7 @@ is everything that lets the chef cook the same dish twice.
 
 ---
 
-<!-- 31. default — Same Model, Same Prompt — ~2 clicks -->
+<!-- 32. default — Same Model, Same Prompt — ~2 clicks -->
 
 That leverage, made visible. Justin Schroeder ran the same model twice
 on the same one-shot prompt: a small explorable zen garden. Same provider,
@@ -120,7 +120,7 @@ disappoints, the first place to look is not the model.
 
 ---
 
-<!-- 32. default — Guardrails — ~3 clicks -->
+<!-- 33. default — Guardrails — ~3 clicks -->
 
 The model in the middle of that machine is stochastic. So the next question is
 reliability.
@@ -149,7 +149,7 @@ test can settle.
 
 ---
 
-<!-- 33. default — Set the Constraints Around Your Agents — ~3 clicks -->
+<!-- 34. default — Set the Constraints Around Your Agents — ~3 clicks -->
 
 Tests and reviews are two gates. This is the full ring: eight things you might
 care about, running from correctness and security around to cost and
@@ -170,7 +170,7 @@ line to designing the gates, and the gates decide what is good enough to ship.
 
 ---
 
-<!-- 34. default — From Issue to Pull Request: One Command — ~3 clicks -->
+<!-- 35. default — From Issue to Pull Request: One Command — ~3 clicks -->
 
 That ring, composed into a pipeline. One command, a Linear issue ID, and out
 the other end a pull request. It is an orchestrator, not a monolith: it
