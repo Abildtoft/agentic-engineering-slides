@@ -382,6 +382,7 @@ ADDITIONAL POINTS:
 - "Most bugs won't be coding bugs. They'll be 'you asked for the wrong thing' bugs" is the one-line version of "are we solving the right problem?" from the review slide
 - "Meat proxies" who shove tickets into agents and report back is the bottom rung of the agency ladder, named from the other side
 - "The terminal is dead," from a self-described lover of the terminal, in a deck whose main tool slide is a CLI. Good for a smile if the room is technical
+- Callback, if the room needs it: DHH said the first line at the end of Section 1 as an observation ("We're not going to write the vast majority of code by hand any longer"). Ball's second line is what that observation was for
 
 DELIVERY:
 - Read the two lines as one thought with a beat between them, not as a contradiction
@@ -420,10 +421,14 @@ KEY POINTS:
 - Three-part cadence: change is real, change is historical, craft remains
 - The audience leaves with empowerment, not existential uncertainty
 
+ADDITIONAL POINTS:
+- Optional Copenhagen close, from DHH's Rails World keynote: he opened on a portrait of the Danish royal family by Laurits Tuxen, his great-great-grandfather, which he says still hangs in Copenhagen. After the Kodak Brownie, painters "realized that depicting reality as perfectly as possible was no longer really an economically viable skill", and moved on: the Skagen painters to impressionism, Picasso to cubism. The same words as his line at the end of Section 1, over a century earlier. The craft didn't end; it moved
+
 DELIVERY:
 - Let this land slowly. Each v-click should breathe.
 
 SOURCE: Addy Osmani, "The Best Engineers Never Just Wrote Code" (x.com/addyosmani/status/2007899127925854536)
+SOURCE: David Heinemeier Hansson, Rails World 2026 opening keynote (youtube.com/watch?v=vDjW_dRyKXY, 04:38–07:26) — the Tuxen portrait and the Brownie; see sources/dhh-over-my-dead-pencil.md
 -->
 
 ---
