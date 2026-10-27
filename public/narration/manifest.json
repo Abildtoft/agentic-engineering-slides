@@ -5573,6 +5573,109 @@
       ]
     },
     "62": {
+      "hash": "e26acb135b38",
+      "audio": "/narration/slide-62-e26acb135b38.mp3",
+      "duration": 49.870045,
+      "cues": [
+        15.7725,
+        28.333333333333332
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:13",
+      "transcript": "So what do you do when the product is already confusing? The reflex is a\ncleanup sprint. Remember Karri Saarinen from Linear, and the middle of\nsoftware work? He has a warning about that reflex. Frantically fixing a\nconfusing product caused by frantic shipping is just more of the same. Pause and step back. Get the team clear on what you're building and\nwhy. Have clarity to guide the shape: what ships, and what doesn't. That\npause is not caution. It is the clarity work this whole section has been\nabout. Quality is a way of working, not a cleanup sprint. And Linear\npractises it. Every Wednesday, its engineers show each other the small quality\nfixes they made that week, often half an hour of work each. More than a\nthousand of them in two years. Saarinen's co-founder put it this way: we\nneeded quality to be a habit, like brushing your teeth. No one ever says they\ndon't have time to brush their teeth.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 2.6,
+          "text": "So what do you do when the product is already confusing?"
+        },
+        {
+          "start": 2.717,
+          "end": 5,
+          "text": "The reflex is a cleanup sprint."
+        },
+        {
+          "start": 5.059,
+          "end": 8.533,
+          "text": "Remember Karri Saarinen from Linear, and the middle of software work?"
+        },
+        {
+          "start": 8.733,
+          "end": 10.667,
+          "text": "He has a warning about that reflex."
+        },
+        {
+          "start": 10.756,
+          "end": 14.533,
+          "text": "Frantically fixing a confusing product caused by frantic shipping is just"
+        },
+        {
+          "start": 14.6,
+          "end": 17.333,
+          "text": "more of the same. Pause and step back."
+        },
+        {
+          "start": 17.45,
+          "end": 20.067,
+          "text": "Get the team clear on what you're building and why."
+        },
+        {
+          "start": 20.16,
+          "end": 21.933,
+          "text": "Have clarity to guide the shape:"
+        },
+        {
+          "start": 21.96,
+          "end": 23.6,
+          "text": "what ships, and what doesn't."
+        },
+        {
+          "start": 23.693,
+          "end": 25.267,
+          "text": "That pause is not caution."
+        },
+        {
+          "start": 25.444,
+          "end": 28.467,
+          "text": "It is the clarity work this whole section has been about."
+        },
+        {
+          "start": 28.583,
+          "end": 31.467,
+          "text": "Quality is a way of working, not a cleanup sprint."
+        },
+        {
+          "start": 31.55,
+          "end": 36,
+          "text": "And Linear practises it. Every Wednesday, its engineers show each other the"
+        },
+        {
+          "start": 36.044,
+          "end": 39.2,
+          "text": "small quality fixes they made that week, often half an hour of"
+        },
+        {
+          "start": 39.24,
+          "end": 42.2,
+          "text": "work each. More than a thousand of them in two years."
+        },
+        {
+          "start": 42.422,
+          "end": 44.2,
+          "text": "Saarinen's co-founder put it this way:"
+        },
+        {
+          "start": 44.4,
+          "end": 47.333,
+          "text": "we needed quality to be a habit, like brushing your teeth."
+        },
+        {
+          "start": 47.511,
+          "end": 49.87,
+          "text": "No one ever says they don't have time to brush their teeth."
+        }
+      ]
+    },
+    "63": {
       "hash": "f41089ad40e4",
       "audio": "/narration/slide-57-f41089ad40e4.mp3",
       "duration": 10.868005,
@@ -5602,7 +5705,7 @@
         }
       ]
     },
-    "63": {
+    "64": {
       "hash": "74dab4143957",
       "audio": "/narration/slide-58-74dab4143957.mp3",
       "duration": 54.605125,
@@ -5721,7 +5824,7 @@
         }
       ]
     },
-    "64": {
+    "65": {
       "hash": "e6ac3268a55a",
       "audio": "/narration/slide-59-e6ac3268a55a.mp3",
       "duration": 47.271497,
@@ -5808,7 +5911,7 @@
         }
       ]
     },
-    "65": {
+    "66": {
       "hash": "c68ac6501470",
       "audio": "/narration/slide-60-c68ac6501470.mp3",
       "duration": 37.608889,
@@ -5881,7 +5984,7 @@
         }
       ]
     },
-    "66": {
+    "67": {
       "hash": "6f0188e1bc71",
       "audio": "/narration/slide-61-6f0188e1bc71.mp3",
       "duration": 47.674649,
@@ -5984,7 +6087,7 @@
         }
       ]
     },
-    "67": {
+    "68": {
       "hash": "60af4f9b6bbd",
       "audio": "/narration/slide-62-60af4f9b6bbd.mp3",
       "duration": 69.68102,
@@ -6108,7 +6211,7 @@
         }
       ]
     },
-    "68": {
+    "69": {
       "hash": "3d9e086966e9",
       "audio": "/narration/slide-63-3d9e086966e9.mp3",
       "duration": 66.409592,
@@ -6226,7 +6329,7 @@
         }
       ]
     },
-    "69": {
+    "70": {
       "hash": "e408278c4e12",
       "audio": "/narration/slide-64-e408278c4e12.mp3",
       "duration": 30.6139,
@@ -6288,7 +6391,7 @@
         }
       ]
     },
-    "70": {
+    "71": {
       "hash": "af6611d6008c",
       "audio": "/narration/slide-65-af6611d6008c.mp3",
       "duration": 31.541224,
@@ -6357,7 +6460,7 @@
         }
       ]
     },
-    "71": {
+    "72": {
       "hash": "c28c64e5ecde",
       "audio": "/narration/slide-66-c28c64e5ecde.mp3",
       "duration": 17.476984,

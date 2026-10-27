@@ -558,7 +558,7 @@ KEY POINTS:
 - thdxr: easy to prompt features into existence, so the bar for what ships drops
 - Closing line is the section's takeaway: building is cheap, curating is hard
 
-BRIDGE: "So what survives when execution gets cheap?"
+BRIDGE: "And if the product is already confusing? The reflex is a cleanup sprint. Karri Saarinen has a warning about that reflex."
 
 ADDITIONAL POINTS:
 - Trimmed beats to say verbally: "PMs and POs don't just ship features — they also kill them" (the old first click), and the full courage line includes "this adds complexity"
@@ -572,9 +572,54 @@ ADDITIONAL POINTS:
 DELIVERY:
 - Optional verbal: "One practitioner nailed this: 'It's easy to prompt a new feature into existence, so the bar for what ships drops.' That's the accumulation trap. The bar should stay high."
 - If you use the Willison line: "This cuts both ways. Demand for libraries drops, but the open source ecosystem is also flooded with low-quality AI contributions. Some maintainers are asking GitHub to disable PRs entirely. The irony: agents are built on open source, and they're simultaneously undermining it."
-- Hold on the last line for 2-3 seconds before advancing — it is the single sentence the audience should carry into the close
+- Hold on the last line for 2-3 seconds before advancing — it is the section's takeaway, and the Saarinen quote next turns it into a way of working
 
 SOURCE: "On Subtraction" (x.com/ryolu_/status/2015824853121477198)
 SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+-->
+
+---
+layout: quote
+class: quote-long
+---
+
+<div class="quote-progressive">
+  <div class="quote-progressive-line">“Frantically fixing a confusing product caused by frantic shipping is just more of the same.</div>
+
+  <v-click>
+    <div class="quote-progressive-line">Pause and step back. Get the team clear on what you’re building and why. Have clarity to guide the shape, what ships and what doesn’t.</div>
+  </v-click>
+
+  <v-click>
+    <div class="quote-progressive-line">Quality is a way of working, not a cleanup sprint.”</div>
+  </v-click>
+</div>
+
+Karri Saarinen, Linear CEO
+
+<!--
+KEY POINTS:
+- The practice half of the accumulation slide. Once the product is already confusing, the reflex is a cleanup sprint, and a sprint is frantic shipping pointed at the mess
+- He doesn't mention AI, and doesn't need to: frantic shipping is the accumulation trap, and agents make it cheaper than ever
+- The middle line is the section tagline in a practitioner's words: clear on what and why is choosing the work; clarity about what ships and what doesn't is setting the bar
+- "Quality is a way of working" is the third verb, improving the loop. It is the section's last sentence
+
+BRIDGE: "So what survives when execution gets cheap?"
+
+ADDITIONAL POINTS:
+- Callback: Saarinen gave Section 2 its "middle", the place that absorbed most of the time, attention and craft of software teams. This is what happens when that middle compresses and nothing else about how the team decides changes
+- Linear practises the last line. Its "Quality Wednesdays" (Tuomas Artman, Saarinen's co-founder, August 2025) give one of the three weekly standups to small polish fixes, many taking 30 minutes or less and none more than an hour or so: "more than 1,000 small acts of polish" in two years. Artman: "We needed quality to be a habit, like brushing your teeth. Something you just do without thinking too much about it. No one ever says they don't have time to brush their teeth"
+- thdxr's line on the accumulation slide has two halves: "100x more value in fixing what we have and improving our process of how we build things." Saarinen's point is that the first half alone, done frantically, is more of the same. The second half is the one that sticks
+- The "On Subtraction" post behind the accumulation headline lands in the same place: "think slower, then act fast. slow down after the burst"
+- If challenged with Section 6's "playing defense is its own risk": Lin warns against waiting for the world to hand you clarity; Saarinen asks the team to make its own. One is waiting for clarity, the other is producing it. The pause is clarity-merchant work, not caution
+
+DELIVERY:
+- Name the callback before the first line: "Remember Karri Saarinen, from the middle of software work?"
+- First line on arrival. Let "frantically… frantic" be audible — the repetition is the point
+- Click, and actually pause before "Pause and step back"
+- Click the last line, read it flat, and hold. Then cut to the next chapter
+
+SOURCE: Karri Saarinen, X post, 5 October 2026 (@karrisaarinen) — see sources/karri-saarinen-quality-is-a-way-of-working.md
+SOURCE: Tuomas Artman, "Quality Wednesdays: How we trained our team to see what doesn't work" (linear.app/now/quality-wednesdays, 13 August 2025)
 -->
