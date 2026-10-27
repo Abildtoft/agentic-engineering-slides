@@ -248,6 +248,21 @@ export function buildCaptions(text, wordTimestamps, duration) {
 }
 
 /**
+ * Captions for a manifest entry the build is about to write.
+ *
+ * Only fresh synthesis has word timings. A reused or carried-through entry
+ * keeps the captions it already has while its prose is unchanged, because
+ * re-running buildCaptions without timings swaps a voice-timed set for the
+ * even-spaced fallback. Every filtered build used to do that to every slide
+ * it didn't voice. Changed prose, or an entry from before captions existed,
+ * still gets the fallback.
+ */
+export function captionsFor(previous, text, words, duration) {
+  if (!words && previous?.transcript === text && previous.captions?.length) return previous.captions
+  return buildCaptions(text, words, duration)
+}
+
+/**
  * Reads every narration file and pairs it back onto the deck, refusing to
  * proceed on a count mismatch. This is the one place the (file, index) key is
  * validated — a section that gained a slide since the narration was written

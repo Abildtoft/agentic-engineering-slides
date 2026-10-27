@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { buildCaptions, resolveCues, scaleWordTimes, wordsFromAlignment } from '../scripts/narration-lib.mjs'
+import { buildCaptions, captionsFor, resolveCues, scaleWordTimes, wordsFromAlignment } from '../scripts/narration-lib.mjs'
 
 test('wordsFromAlignment groups characters into whitespace-separated words', () => {
   const text = 'One  2026\nthree.'
@@ -51,6 +51,23 @@ test('buildCaptions distributes cached prose deterministically across duration',
   assert.equal(captions.length, 2)
   assert.deepEqual(captions.map(caption => [caption.start, caption.end]), [[0, 10], [10, 20]])
   assert.equal(captions.map(caption => caption.text).join(' '), 'One two three four five. Six seven eight nine ten.')
+})
+
+test('captionsFor keeps voice-timed captions on reuse and rebuilds them when the prose changes', () => {
+  const text = 'One two three four five. Six seven eight nine ten.'
+  const words = text.split(' ').map((word, index) => ({ word, start: index * 0.4, end: index * 0.4 + 0.3 }))
+  const timed = buildCaptions(text, words, 5)
+  const previous = { transcript: text, captions: timed }
+
+  // A reused entry has no word timings; recomputing would swap the voice-timed
+  // set for the even-spaced fallback.
+  assert.equal(captionsFor(previous, text, null, 5), timed)
+  assert.notDeepEqual(buildCaptions(text, null, 5), timed)
+
+  const revised = 'One two three four five.'
+  assert.deepEqual(captionsFor(previous, revised, null, 5), buildCaptions(revised, null, 5))
+  assert.deepEqual(captionsFor({ transcript: text }, text, null, 5), buildCaptions(text, null, 5))
+  assert.deepEqual(captionsFor(previous, text, words, 5), timed)
 })
 
 test('resolveCues ignores HeyGen sentinel timestamps', () => {

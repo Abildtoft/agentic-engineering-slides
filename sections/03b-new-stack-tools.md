@@ -608,7 +608,7 @@ KEY POINTS:
 - `--ship` authorizes the irreversible tail; without it, stops review-ready
 - What crosses to you is evidence: a green PR, gates cleared, verification passed — human judgment approves the intent and owns the result
 
-BRIDGE: "That's my harness. The second half is about the cost nobody puts on the invoice." (If the room wants a demo, questions or a break, this is the natural place to offer one.)
+BRIDGE: "That's my harness. It stops at a pull request, and the last call is still mine. Martin Gratzer drew what happens when you let it go one step further."
 
 ADDITIONAL POINTS:
 - The ring's gates are wired into the loop; the composed skills are issue implementation, code review, convention review, refactor discovery, verification, PR creation, CI fixing — the command owns only their sequencing, convergence criteria, and handoffs
@@ -626,4 +626,56 @@ DELIVERY:
 - If asked what happens when it fails: it stops at the blocker with the evidence preserved — a failed gate is a stop, not a warning
 
 SOURCE: kramme-cc-workflow plugin, `kramme:linear:issue-to-pr` skill (personal workflow, live demo material)
+-->
+
+---
+layout: default
+class: text-center
+# The diagram reads $clicks without consuming any (1 brings in October's
+# pipeline, 2 the loop that shapes the system), so the count has to be
+# declared. Click 2 also lands the payoff line.
+clicks: 2
+narrator: hidden
+---
+
+# From the Middle to Both Ends
+
+<p class="text-sm mt-2 mb-1 opacity-70">Martin Gratzer’s own workflow, eight months apart</p>
+
+<BothEndsDiagram size="lg" />
+
+<v-click at="2">
+
+<p class="text-lg mt-3">Less time inside each change. <strong>More time on the problem going in, and the system around it.</strong></p>
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Someone else's workflow, eight months apart, and the slide says so. Gratzer's own summary: "No human in the middle, a human at both ends."
+- February is where most of the room is: plan the issue with the agent, the agent implements and self-reviews, then every PR waits for a human's line comments and a human merge
+- October: shape the issue up front, then `ship` → `guard` → `land` inside the repo's guardrails. Low risk merges itself; anything else comes to him with a list of where to look
+- The other end: shape the system. Find where an agent drifted, ask where it could have been avoided, fix it there
+- "Review didn't go away either, it moved."
+
+BRIDGE: "That's where the first half of this talk leads. The second half is about the cost nobody puts on the invoice." (If the room wants a demo, questions or a break, this is the natural place to offer one.)
+
+ADDITIONAL POINTS:
+- The three commands, if asked: `ship` implements the issue, runs the app and writes what it saw into the PR's "Exercised" section, then a fresh-context reviewer, not the session that wrote the code, reviews the diff. `guard` carries the PR through CI, review feedback and mergeability. `land` judges a green PR's risk in fresh context, on the head commit
+- Why `guard` never merges, in his words: "a loop that fixes its own PR shouldn't also approve it." Separation of duties, inside one person's harness
+- How `land` decides: mechanical checks first (size, migrations, CI changes, security-sensitive paths, weakened tests), and then "the verdict is low risk only if the reviewer can name what the checks would miss." Auto-merge is opt-in per repository, a line in AGENTS.md (`Auto-merge: low-risk`), and it merges only the commit it judged. Same markdown-as-program idea as earlier in this section
+- The measured version, from one of his projects: 126 inline review comments on 25 agent PRs in January; none across 159 PRs in September and October
+- Planning didn't shrink: "In February I called planning the step where the human adds the most value, and that hasn't changed." It became sparring rather than dictating
+- His harness is Forge, his own set of agent skills (github.com/mgratzer/forge). The band says "repo + harness" where his diagram says "repo + Forge", because "harness" is the word this section built
+- Name his limits before the room does, they're his own: solo projects "without a team or compliance around them", a friend's project in the same setup that "has no users yet", and auto-merge switched on a few days before he published, "so it's too early to say how often land is right." At work, he notes, there is compliance and there is knowledge sharing
+- Accountability stays put: "I decide whether a repository's guardrails are good enough." That is the ownership check from Section 4's antidote, applied to the system instead of the diff
+- Contrast for Q&A: Thorsten Ball says code review is already dead (Section 6 notes); Gratzer's numbers say it moved. Osmani's selective review (Section 4) is the team-scale version of the same fork
+
+DELIVERY:
+- Say up front that this is his workflow, not mine. Mine, on the previous slide, stops at a pull request; his goes one step further
+- Arrival: let February build and call it what it is: "This is most of us." The PR waits for a human, every time
+- Click 1: walk ship, guard, land quickly. Slow down on the fork: "Low risk merges on its own." Expect a reaction, and let it happen
+- Click 2: point at the dashed loop. Every drift becomes a guardrail. Read the payoff line, then hand the room his caveats yourself; they set up the next section better than any objection would
+
+SOURCE: Martin Gratzer, "Reforging the Workflow: Where the Human Goes When Agents Ship" (mgratzer.com/posts/reforging-the-workflow, 22 October 2026) — diagram redrawn in deck style; see sources/martin-gratzer-reforging-the-workflow.md
 -->

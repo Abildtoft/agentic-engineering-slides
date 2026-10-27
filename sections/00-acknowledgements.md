@@ -48,4 +48,5 @@ SOURCE: Luke Wroblewski, "Design Systems for AI Agents" and "Finally, the Handof
 SOURCE: Jenny Wen, Hatch Conference keynote, via Simon Willison (simonwillison.net/2026/Jan/24/dont-trust-the-process/)
 SOURCE: Jenny Wanger, "Building alone, faster" (jennywanger.com/articles/building-alone-faster/)
 SOURCE: Figma, 2026 AI report (figma.com/blog/2026-ai-report/); Designer Fund and Foundation Capital, AI in Design Report 2026 (stateofaidesign.com)
+SOURCE: Martin Gratzer, "Reforging the Workflow: Where the Human Goes When Agents Ship" (mgratzer.com/posts/reforging-the-workflow)
 -->

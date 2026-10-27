@@ -206,5 +206,29 @@ never claimed as a pass.
 pass. If it hits a blocker it stops, with the evidence preserved. A failed
 gate is a stop, not a warning. And so your loop shrinks to two moments:
 approve the intent, then review the evidence and own the result. That is my
-harness. And the second half of this talk is about the cost nobody puts on
-the invoice.
+harness. It stops at a pull request, and the last call is still mine.
+
+---
+
+<!-- 38. default — From the Middle to Both Ends — ~2 clicks -->
+
+Martin Gratzer drew what happens when you let it go one step further. This is
+his own workflow, eight months apart. In February he worked the way most of us
+still do. He planned the issue with the agent, the agent implemented it and
+checked its own work, and then he read the pull request, left line comments,
+and made the final call on every merge. A human in the middle.
+[click] By October, he shapes the issue up front, sparring with the agent
+rather than dictating to it. Then his harness ships the change, runs it, and
+has a fresh reviewer read the diff. It guards the change through the checks
+and the feedback, but never merges it, because a loop that fixes its own pull
+request should not also approve it. And it lands the change with a risk
+verdict on the exact commit. Low risk merges on its own. Everything else comes
+back to him, with a short list of where to look.
+[click] The time that freed up goes to the other end: shaping the system.
+Wherever an agent drifts, he asks where it could have been prevented, and
+fixes it there. In January he left 126 review comments on 25 pull requests. In
+September and October, none, across 159. Review did not go away. It moved. He
+is candid that these are solo projects, with no team and no compliance around
+them, and that auto-merge is only days old. But this is where the first half of
+this talk leads. The second half is about what it costs: the part nobody puts
+on the invoice.
