@@ -1,11 +1,11 @@
-<!-- 46. section — What Matters -->
+<!-- 49. section — What Matters -->
 
 We have diagnosed the risks. Now let's name what endures. What capabilities
 become more valuable when the cost of execution collapses?
 
 ---
 
-<!-- 47. quote — ~2 clicks -->
+<!-- 50. quote — ~2 clicks -->
 
 Robert Martin captured the experience perfectly. In his words: it is amazing
 how much work it is to wrestle these agents to my will.
@@ -19,7 +19,7 @@ judgment get applied? Zoom out from the agent loop, and there are three places.
 
 ---
 
-<!-- 48. default — Three Loops. Three Clocks. — ~1 clicks -->
+<!-- 51. default — Three Loops. Three Clocks. — ~1 clicks -->
 
 Three nested loops, running on three different clocks. The centre ring is the
 one from the harness section. The agent turns a spec into tested software, and
@@ -38,7 +38,7 @@ judgment is the compounding asset.
 
 ---
 
-<!-- 49. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
+<!-- 52. statement — The fastest way to build is to find the cheapest way to learn. — ~2 clicks -->
 
 Which leads to a line that should sound like a contradiction for a second. The
 fastest way to build is to find the cheapest way to learn.
@@ -56,7 +56,7 @@ experiment now. But cheap learning is what earns the right to build.
 
 ---
 
-<!-- 50. statement — The prototype is the new brief. — ~3 clicks -->
+<!-- 53. statement — The prototype is the new brief. — ~3 clicks -->
 
 The artifact was never the job. But it is now the cheapest evidence that the
 thinking happened. Andrew Chen's phrasing is that the prototype is the new
@@ -84,7 +84,23 @@ or real users, everything from the guardrails section applies.
 
 ---
 
-<!-- 51. default — The Long Tail of Internal Software — ~3 clicks -->
+<!-- 54. statement — Code is work an AI can check. Good design still isn't. — ~2 clicks -->
+
+So who decides which prototypes die? Remember why software went first, back at
+the start of this talk. Code is work an AI can check. Run it, test it, see if
+it broke. Good design still has no test like that. You can check the contrast
+ratio, and this deck does. You cannot check whether it is the right screen.
+[click] Remember Jenny Wen and the seven coding agents? This is her own
+answer, from a keynote in Berlin. In a world where anyone can make anything,
+what matters is your ability to choose and curate what you make.
+[click] Agents can generate the options. Choosing between them, and owning the
+choice, is the design job now. Wen is careful about this. She expects AI to
+get better at taste. What does not move is that someone has to be accountable
+for what ships.
+
+---
+
+<!-- 55. default — The Long Tail of Internal Software — ~3 clicks -->
 
 Now, do not mistake cheaper learning for shrinking demand. The opposite is
 happening, and it lands first here. Every team runs on invisible workflows.
@@ -106,7 +122,7 @@ retires these tools. Hold that thought.
 
 ---
 
-<!-- 52. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
+<!-- 56. statement — A failure mode is just building yesteryear's software faster. — ~2 clicks -->
 
 So if the work expands, the question becomes what kind of work. Because there
 is a failure mode here, and it is just building yesteryear's software faster.
@@ -120,7 +136,7 @@ at all.
 
 ---
 
-<!-- 53. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
+<!-- 57. default — Humans find new nodes. AI maps the edges. — ~1 clicks -->
 
 Choosing what is worth building is frontier work, and there is a clean
 division of labour for it. Think of knowledge as a graph. Facts are nodes, and
@@ -137,7 +153,7 @@ maps the edges.
 
 ---
 
-<!-- 54. default — Clarity Merchants — ~3 clicks -->
+<!-- 58. default — Clarity Merchants — ~3 clicks -->
 
 That makes the human work more specific. We become clarity merchants. I
 studied philosophy before I ever wrote code, and for twenty years that looked
@@ -159,7 +175,7 @@ speed.
 
 ---
 
-<!-- 55. default — How much of the problem do you own? — ~1 clicks -->
+<!-- 59. default — How much of the problem do you own? — ~1 clicks -->
 
 There is a sharper way to ask what all that clarity work adds up to. How much
 of the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.
@@ -178,7 +194,7 @@ own after it leaves your hands.
 
 ---
 
-<!-- 56. statement — The ladder has a rung zero: deciding to climb it. — ~1 clicks -->
+<!-- 60. statement — The ladder has a rung zero: deciding to climb it. — ~1 clicks -->
 
 And there is a rung the ladder doesn't draw. Call it rung zero: deciding to
 climb at all. Agents can run rungs one through six for you. Nothing anywhere
@@ -191,7 +207,7 @@ things happen. Hold on to rung zero. It comes back at the end of the talk.
 
 ---
 
-<!-- 57. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
+<!-- 61. statement — Many products don't die from missing features. They die from accumulation. — ~2 clicks -->
 
 Now back up the ladder to rung seven, and scale it to a whole product.
 Many products do not die

@@ -1545,6 +1545,80 @@
       ]
     },
     "20": {
+      "hash": "92201a2f36a1",
+      "audio": "/narration/slide-20-92201a2f36a1.mp3",
+      "duration": 42.258367,
+      "cues": [
+        6.85,
+        15.000000000000002,
+        20.150000000000002
+      ],
+      "narrationKey": "02-disappearing-middle:5",
+      "transcript": "And that is not one design leader's impression. Two large surveys this year\nmeasured the crossover, and it runs in both directions. Figma surveyed designers, developers and product managers. In one\nyear, the share of developers doing design work rose from 44% to 60%. And the share of designers doing development work doubled, from 21%\nto 41%. A second survey, of more than 900 designers, found that half of them\nhave pushed AI-generated code to production. Not only design engineers.\nProduct designers and brand designers too. Treat both surveys as directional.\nThey are self-reported, and neither publisher is neutral. Figma sells the\ncanvas. But the direction is hard to miss. The walls are coming down from both\nsides.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 2.6,
+          "text": "And that is not one design leader's impression."
+        },
+        {
+          "start": 2.65,
+          "end": 5.867,
+          "text": "Two large surveys this year measured the crossover, and it runs in"
+        },
+        {
+          "start": 5.907,
+          "end": 10.2,
+          "text": "both directions. Figma surveyed designers, developers and product managers."
+        },
+        {
+          "start": 10.244,
+          "end": 12.933,
+          "text": "In one year, the share of developers doing design work rose from"
+        },
+        {
+          "start": 13.067,
+          "end": 17.867,
+          "text": "44% to 60%. And the share of designers doing development work doubled,"
+        },
+        {
+          "start": 17.907,
+          "end": 22.933,
+          "text": "from 21% to 41%. A second survey, of more than 900 designers,"
+        },
+        {
+          "start": 22.967,
+          "end": 26.133,
+          "text": "found that half of them have pushed AI-generated code to production."
+        },
+        {
+          "start": 26.283,
+          "end": 30.467,
+          "text": "Not only design engineers. Product designers and brand designers too."
+        },
+        {
+          "start": 30.623,
+          "end": 32.933,
+          "text": "Treat both surveys as directional."
+        },
+        {
+          "start": 33.04,
+          "end": 36.133,
+          "text": "They are self-reported, and neither publisher is neutral."
+        },
+        {
+          "start": 36.367,
+          "end": 39.933,
+          "text": "Figma sells the canvas. But the direction is hard to miss."
+        },
+        {
+          "start": 40.033,
+          "end": 42.258,
+          "text": "The walls are coming down from both sides."
+        }
+      ]
+    },
+    "21": {
       "hash": "4a27815c2be3",
       "audio": "/narration/slide-19-4a27815c2be3.mp3",
       "duration": 60.807823,
@@ -1553,7 +1627,7 @@
         38.65,
         55.65
       ],
-      "narrationKey": "02-disappearing-middle:5",
+      "narrationKey": "02-disappearing-middle:6",
       "transcript": "For a long time, product, design and engineering handed work to each other in\nsequence. We always wanted it to be a Venn diagram. In practice it was a\nwaterfall. And the walls between the disciplines were built from one thing:\nimplementation was expensive, so you had to be careful about what reached it. Take that cost out, and the walls start to go with it. I watched it\nhappen in my own calendar the week I wrote this. I spent part of that week\nprogramming product launch videos, while our media team was using an agent to\nbuild a 3D web application from scratch. The engineer was doing media work,\nthe media team was doing engineering, and nobody had scheduled the swap. The\nthree disciplines do not collapse into one, but they overlap far more than\nthey used to. And what sits in the overlap is judgment. That is the thing that does\nnot compress. Some teams have a name for the person who lives there: the\nproduct engineer, who frames the problem, ships the code and measures the\noutcome. I do not think every company will adopt that title. I do think that\nis the zone the market is rewarding. Three job titles. One job: turning ambiguity into clarity.",
       "captions": [
         {
@@ -1663,7 +1737,7 @@
         }
       ]
     },
-    "21": {
+    "22": {
       "hash": "c25c0614545d",
       "audio": "/narration/slide-20-c25c0614545d.mp3",
       "duration": 52.949456,
@@ -1672,7 +1746,7 @@
         16.25583333333333,
         39.79416666666667
       ],
-      "narrationKey": "02-disappearing-middle:6",
+      "narrationKey": "02-disappearing-middle:7",
       "transcript": "There is an old pattern here, and it is worth seeing it in full. When weaving sped up, yarn became the constraint. When spinning caught\nup, the constraint moved to raw cotton. And when the cotton gin flooded the\nmarket with cotton, the constraint snapped back to weaving, and the power loom\nanswered it. It never ends. It circles. Every time a bottleneck is removed, the constraint moves upstream. Not\naway. Upstream. The same thing is happening in radiology right now. Geoffrey\nHinton predicted AI would replace radiologists within five years. Instead,\nsalaries went up 44%, and AI mammography catches 29% more cancers. When the\ncost collapsed, demand exploded, and the constraint moved to the humans\ninterpreting the results. So the middle is compressing, and the constraint is moving to clarity,\njudgment and system design. Armin Ronacher has the operating principle: figure\nout your bottleneck, automate it, then find the next bottleneck. That is the\nnew stack.",
       "captions": [
         {
@@ -1757,7 +1831,7 @@
         }
       ]
     },
-    "22": {
+    "23": {
       "hash": "9a3ff55ad865",
       "audio": "/narration/slide-21-9a3ff55ad865.mp3",
       "duration": 19.061814,
@@ -1807,7 +1881,7 @@
         }
       ]
     },
-    "23": {
+    "24": {
       "hash": "b5cfcb3b9275",
       "audio": "/narration/slide-22-b5cfcb3b9275.mp3",
       "duration": 50.942177,
@@ -1906,7 +1980,7 @@
         }
       ]
     },
-    "24": {
+    "25": {
       "hash": "31e506741f2e",
       "audio": "/narration/slide-23-31e506741f2e.mp3",
       "duration": 53.144218,
@@ -2005,7 +2079,7 @@
         }
       ]
     },
-    "25": {
+    "26": {
       "hash": "dfa7251d2434",
       "audio": "/narration/slide-24-dfa7251d2434.mp3",
       "duration": 56.206395,
@@ -2110,7 +2184,7 @@
         }
       ]
     },
-    "26": {
+    "27": {
       "hash": "bf852b0f5689",
       "audio": "/narration/slide-25-bf852b0f5689.mp3",
       "duration": 29.275397,
@@ -2160,7 +2234,7 @@
         }
       ]
     },
-    "27": {
+    "28": {
       "hash": "40120d8d2aa7",
       "audio": "/narration/slide-26-40120d8d2aa7.mp3",
       "duration": 48.065147,
@@ -2248,7 +2322,7 @@
         }
       ]
     },
-    "28": {
+    "29": {
       "hash": "e7db8fdbfbd4",
       "audio": "/narration/slide-27-e7db8fdbfbd4.mp3",
       "duration": 48.414512,
@@ -2336,7 +2410,7 @@
         }
       ]
     },
-    "29": {
+    "30": {
       "hash": "344675ee5640",
       "audio": "/narration/slide-28-344675ee5640.mp3",
       "duration": 58.210113,
@@ -2450,7 +2524,7 @@
         }
       ]
     },
-    "30": {
+    "31": {
       "hash": "b93d369c2e7d",
       "audio": "/narration/slide-29-b93d369c2e7d.mp3",
       "duration": 61.271837,
@@ -2564,7 +2638,110 @@
         }
       ]
     },
-    "31": {
+    "32": {
+      "hash": "235abb8ae1cc",
+      "audio": "/narration/slide-32-235abb8ae1cc.mp3",
+      "duration": 53.005465,
+      "cues": [
+        7.950000000000001,
+        19.460833333333333
+      ],
+      "narrationKey": "03b-new-stack-tools:5",
+      "transcript": "So what actually crosses that bridge? More and more, it is the design system\nitself. It used to be documentation. Now it steers the agents. Luke Wroblewski, who wrote Mobile First, put it in two sentences.\nDesign teams have spent years trying to get people to actually read their\ndesign system documentation. Agents read it every single time. So the work divides. Designers write down the grid, the breakpoints\nand the motion. Engineers write down the tests and the conventions. Both live\nin versioned files that every agent inherits, so the handoff stops being a\nfile you pass across a wall. It becomes the context everyone builds from. The\nrepo behind these slides works this way. Its agent instructions carry the\ndesign rules: the motion timings, a colour palette tested for colour\nblindness, contrast floors for its backgrounds. Every agent that works on this\ndeck reads them first. For the designers here, this is the most direct lever\nyou have on what the agents build.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 1.533,
+          "text": "So what actually crosses that bridge?"
+        },
+        {
+          "start": 1.733,
+          "end": 4.867,
+          "text": "More and more, it is the design system itself."
+        },
+        {
+          "start": 5.022,
+          "end": 6.4,
+          "text": "It used to be documentation."
+        },
+        {
+          "start": 6.533,
+          "end": 8.067,
+          "text": "Now it steers the agents."
+        },
+        {
+          "start": 8.2,
+          "end": 12.133,
+          "text": "Luke Wroblewski, who wrote Mobile First, put it in two sentences."
+        },
+        {
+          "start": 12.267,
+          "end": 15.533,
+          "text": "Design teams have spent years trying to get people to actually read"
+        },
+        {
+          "start": 15.556,
+          "end": 19.533,
+          "text": "their design system documentation. Agents read it every single time."
+        },
+        {
+          "start": 19.711,
+          "end": 23.2,
+          "text": "So the work divides. Designers write down the grid, the breakpoints and"
+        },
+        {
+          "start": 23.217,
+          "end": 26.533,
+          "text": "the motion. Engineers write down the tests and the conventions."
+        },
+        {
+          "start": 26.653,
+          "end": 30.467,
+          "text": "Both live in versioned files that every agent inherits, so the handoff"
+        },
+        {
+          "start": 30.511,
+          "end": 32.733,
+          "text": "stops being a file you pass across a wall."
+        },
+        {
+          "start": 32.956,
+          "end": 35.2,
+          "text": "It becomes the context everyone builds from."
+        },
+        {
+          "start": 35.35,
+          "end": 37.6,
+          "text": "The repo behind these slides works this way."
+        },
+        {
+          "start": 37.717,
+          "end": 40.2,
+          "text": "Its agent instructions carry the design rules:"
+        },
+        {
+          "start": 40.217,
+          "end": 44.067,
+          "text": "the motion timings, a colour palette tested for colour blindness, contrast"
+        },
+        {
+          "start": 44.124,
+          "end": 47.667,
+          "text": "floors for its backgrounds. Every agent that works on this deck reads"
+        },
+        {
+          "start": 47.693,
+          "end": 51.2,
+          "text": "them first. For the designers here, this is the most direct lever"
+        },
+        {
+          "start": 51.233,
+          "end": 53.005,
+          "text": "you have on what the agents build."
+        }
+      ]
+    },
+    "33": {
       "hash": "aa4482a9f91d",
       "audio": "/narration/slide-30-aa4482a9f91d.mp3",
       "duration": 64.737234,
@@ -2572,7 +2749,7 @@
         24.083333333333332,
         44.339166666666664
       ],
-      "narrationKey": "03b-new-stack-tools:5",
+      "narrationKey": "03b-new-stack-tools:6",
       "transcript": "You have now seen the pieces. Context files, skills, MCP servers. This is the\nmachine they all plug into. Context goes in. The model reasons and decides. It\ntakes action: shell commands, tools, MCPs. Results get persisted and observed,\nthrough tests and logs and screenshots, and feed back to the model. And the\ncycle repeats. Read, think, act, observe, again. The model is one box. Everything else is the harness. An agent is a\nmodel plus a harness. That includes specialised agents: one persona, a narrow\ntoolset, a single job, each one a markdown file you can version. One team\nwent from thirtieth to fifth on a coding benchmark by changing only the\nharness. Same model. The leverage is in the system around it. Which gives you the operating rule. When an agent fails, do not just\nfix the output. Improve the harness, so the whole loop gets better. Mitchell\nHashimoto's version: the model is the engine. The harness is the car. And if\nyou would rather stay in the kitchen: the model is the chef, and the harness\nis everything that lets the chef cook the same dish twice.",
       "captions": [
         {
@@ -2697,7 +2874,7 @@
         }
       ]
     },
-    "32": {
+    "34": {
       "hash": "42f068d6bfb4",
       "audio": "/narration/slide-31-42f068d6bfb4.mp3",
       "duration": 43.936825,
@@ -2705,7 +2882,7 @@
         22.35,
         32.3625
       ],
-      "narrationKey": "03b-new-stack-tools:6",
+      "narrationKey": "03b-new-stack-tools:7",
       "transcript": "That leverage, made visible. Justin Schroeder ran the same model twice\non the same one-shot prompt: a small explorable zen garden. Same provider,\nsame quantisation, even the same system prompt. The only variable is the\nharness. With a weak harness, this is what came back: a bare disc, a few\nfloating poles, the pieces of a garden that never became one. And with a strong harness — same model, same words — paths, a koi\npond, lanterns, light coming through the trees. A place you can actually walk\naround in. Everything you would control for in an experiment is controlled here.\nThe difference on screen is the harness. So when an agent's output\ndisappoints, the first place to look is not the model.",
       "captions": [
         {
@@ -2775,7 +2952,7 @@
         }
       ]
     },
-    "33": {
+    "35": {
       "hash": "4349b8176611",
       "audio": "/narration/slide-32-4349b8176611.mp3",
       "duration": 89.606644,
@@ -2784,7 +2961,7 @@
         12.15,
         75.48333333333333
       ],
-      "narrationKey": "03b-new-stack-tools:7",
+      "narrationKey": "03b-new-stack-tools:8",
       "transcript": "The model in the middle of that machine is stochastic. So the next question is\nreliability. Same prompt, different result. Every time. Reliability does not come\nfrom a perfected prompt. It comes from the system around the model. Two rails keep the loop honest, and they are ones you already know.\nTests, and reviews. Part of that enforcement runs inside the loop itself,\nthrough hooks. A hook is a small automatic rule that fires at a fixed moment:\nbefore a command runs, or after a file is written. And where a skill was soft\nguidance the model interprets, a hook is hard — not a suggestion, just\nsomething that happens, every time. Hooks block a destructive command before\nit runs, format the file after every write, reject the output if it fails\nvalidation. That first one is not theoretical for me. I once spent\nseveral hours building out specs, then watched an agent delete them before I\nhad saved them anywhere. Unrecoverable. My harness now has a hook that blocks\ndeletion outright and makes the agent use the operating system's trash can\ninstead, like everyone else in the company. Tests close the loop. The agent\ntries, fails, and retries on\nits own, which is exactly what that bounce in the diagram is drawing. Simon\nWillison, one of the most experienced developers working with these tools,\nsays tests are free now, effectively free, and no longer remotely optional. Name the pattern: explicit gates around probabilistic agents. Automate\nwhat can be measured, and assign ownership where judgment remains. The system\nneeds hard checkpoints, but it also needs named humans for the questions no\ntest can settle.",
       "captions": [
         {
@@ -2924,7 +3101,7 @@
         }
       ]
     },
-    "34": {
+    "36": {
       "hash": "504dedfa7eb6",
       "audio": "/narration/slide-33-504dedfa7eb6.mp3",
       "duration": 69.341088,
@@ -2933,7 +3110,7 @@
         40.93666666666667,
         54.060833333333335
       ],
-      "narrationKey": "03b-new-stack-tools:8",
+      "narrationKey": "03b-new-stack-tools:9",
       "transcript": "Tests and reviews are two gates. This is the full ring: eight things you might\ncare about, running from correctness and security around to cost and\ncomprehensibility. Some become deterministic\nchecks; others remain explicit, accountable judgments. The ring is not equally\nthick everywhere. Scale it by blast radius, code lifespan, and who must\nunderstand the result, not by whether the author was a human or an agent. The agent works inside the ring. It produces more code than you can\nread, and an attempt that fails a gate bounces straight back. You never see\nit. Addy Osmani calls this the inner loop, and it is not yours anymore.\nInvestigate, implement, test, report. What clears every gate crosses out of the agent's loop and into yours.\nDecide, verify, approve, own. That one you still hold. Only output that clears\nevery gate ships. So the boundary is evidence. Diffs, tests, logs, a short why. Not\ntrust, and not your reading speed. You moved from reading the output line by\nline to designing the gates, and the gates decide what is good enough to ship.",
       "captions": [
         {
@@ -3048,7 +3225,7 @@
         }
       ]
     },
-    "35": {
+    "37": {
       "hash": "497a2e635dc2",
       "audio": "/narration/slide-34-497a2e635dc2.mp3",
       "duration": 63.390748,
@@ -3057,7 +3234,7 @@
         17.71,
         41.59
       ],
-      "narrationKey": "03b-new-stack-tools:9",
+      "narrationKey": "03b-new-stack-tools:10",
       "transcript": "That ring, composed into a pipeline. One command, a Linear issue ID, and out\nthe other end a pull request. It is an orchestrator, not a monolith: it\ncomposes narrower skills and owns only the sequencing and the handoffs. It starts with a read-only preflight, then implements the issue on its\nown branch. Then the quality loop, which is where most of the wall-clock time\ngoes and none of my attention. Code review, convention review, refactor gates, all run\nagainst the diff. Findings get fixed, the gates run again, and a remediation\nbudget stops it looping forever. It never widens the scope to make a finding\ndisappear. Then a fresh, full verification run. A gap is reported as a gap,\nnever claimed as a pass. Then the pull request, and the automated checks rerun until they\npass. If it hits a blocker it stops, with the evidence preserved. A failed\ngate is a stop, not a warning. And so your loop shrinks to two moments:\napprove the intent, then review the evidence and own the result. That is my\nharness. And the second half of this talk is about the cost nobody puts on\nthe invoice.",
       "captions": [
         {
@@ -3157,7 +3334,7 @@
         }
       ]
     },
-    "36": {
+    "38": {
       "hash": "2b8cba8e9149",
       "audio": "/narration/slide-35-2b8cba8e9149.mp3",
       "duration": 34.596893,
@@ -3222,7 +3399,7 @@
         }
       ]
     },
-    "37": {
+    "39": {
       "hash": "7a393fcb941d",
       "audio": "/narration/slide-36-7a393fcb941d.mp3",
       "duration": 40.284286,
@@ -3301,7 +3478,7 @@
         }
       ]
     },
-    "38": {
+    "40": {
       "hash": "d9de371ae1ce",
       "audio": "/narration/slide-37-d9de371ae1ce.mp3",
       "duration": 43.011995,
@@ -3396,7 +3573,7 @@
         }
       ]
     },
-    "39": {
+    "41": {
       "hash": "2495e89a1a5d",
       "audio": "/narration/slide-38-2495e89a1a5d.mp3",
       "duration": 37.736372,
@@ -3479,7 +3656,7 @@
         }
       ]
     },
-    "40": {
+    "42": {
       "hash": "8b822d17c188",
       "audio": "/narration/slide-39-8b822d17c188.mp3",
       "duration": 50.474263,
@@ -3568,7 +3745,7 @@
         }
       ]
     },
-    "41": {
+    "43": {
       "hash": "5418b753bbc3",
       "audio": "/narration/slide-40-5418b753bbc3.mp3",
       "duration": 35.87195,
@@ -3631,7 +3808,7 @@
         }
       ]
     },
-    "42": {
+    "44": {
       "hash": "d3a1a3cf6a98",
       "audio": "/narration/slide-41-d3a1a3cf6a98.mp3",
       "duration": 73.614127,
@@ -3759,7 +3936,7 @@
         }
       ]
     },
-    "43": {
+    "45": {
       "hash": "5dd01a488096",
       "audio": "/narration/slide-42-5dd01a488096.mp3",
       "duration": 55.459864,
@@ -3872,7 +4049,101 @@
         }
       ]
     },
-    "44": {
+    "46": {
+      "hash": "2fc62b4fac3d",
+      "audio": "/narration/slide-46-2fc62b4fac3d.mp3",
+      "duration": 55.076077,
+      "cues": [
+        7.616666666666666,
+        14.466666666666667,
+        30.616666666666667
+      ],
+      "narrationKey": "04-cognitive-debt:8",
+      "transcript": "Now run that spiral across a whole team, because the next symptom does not\nlive in any one head. It lives between people. AI mostly speeds up individuals. Each role solves its own piece of the\nproblem, faster, and alone with its own agent. The designer survey from earlier measured what that does. A year ago,\n5% of designers said AI had reduced collaboration. This year, 20%. As the\nreport puts it, work is moving faster, but some of the connective tissue of\ncollaboration has not kept pace. And collaboration you put off does not disappear. At a panel in Denver\nin September, a design leader described product managers building prototypes\noutside the design system, and the design team backtracking to clean up after\nthem. Design debt and technical debt, paid by someone else. Jenny Wanger, who\nwrote up that panel, has the line for it. The trio that used to build the\nthing together has stopped building it together.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 3.267,
+          "text": "Now run that spiral across a whole team, because the next symptom"
+        },
+        {
+          "start": 3.333,
+          "end": 5.333,
+          "text": "does not live in any one head."
+        },
+        {
+          "start": 5.556,
+          "end": 9.733,
+          "text": "It lives between people. AI mostly speeds up individuals."
+        },
+        {
+          "start": 9.827,
+          "end": 13.733,
+          "text": "Each role solves its own piece of the problem, faster, and alone"
+        },
+        {
+          "start": 13.76,
+          "end": 17.733,
+          "text": "with its own agent. The designer survey from earlier measured what that"
+        },
+        {
+          "start": 17.813,
+          "end": 22.533,
+          "text": "does. A year ago, 5% of designers said AI had reduced collaboration."
+        },
+        {
+          "start": 22.627,
+          "end": 27.8,
+          "text": "This year, 20%. As the report puts it, work is moving faster,"
+        },
+        {
+          "start": 27.833,
+          "end": 30.733,
+          "text": "but some of the connective tissue of collaboration has not kept pace."
+        },
+        {
+          "start": 30.867,
+          "end": 33.8,
+          "text": "And collaboration you put off does not disappear."
+        },
+        {
+          "start": 34.067,
+          "end": 37.867,
+          "text": "At a panel in Denver in September, a design leader described product"
+        },
+        {
+          "start": 37.918,
+          "end": 41.867,
+          "text": "managers building prototypes outside the design system, and the design team"
+        },
+        {
+          "start": 41.907,
+          "end": 43.467,
+          "text": "backtracking to clean up after them."
+        },
+        {
+          "start": 43.591,
+          "end": 47,
+          "text": "Design debt and technical debt, paid by someone else."
+        },
+        {
+          "start": 47.156,
+          "end": 50.933,
+          "text": "Jenny Wanger, who wrote up that panel, has the line for it."
+        },
+        {
+          "start": 51.1,
+          "end": 54.4,
+          "text": "The trio that used to build the thing together has stopped building"
+        },
+        {
+          "start": 54.444,
+          "end": 55.076,
+          "text": "it together."
+        }
+      ]
+    },
+    "47": {
       "hash": "059d71271dbd",
       "audio": "/narration/slide-43-059d71271dbd.mp3",
       "duration": 41.213946,
@@ -3880,7 +4151,7 @@
         21.083333333333336,
         33.70583333333334
       ],
-      "narrationKey": "04-cognitive-debt:8",
+      "narrationKey": "04-cognitive-debt:9",
       "transcript": "So let's exhale. I have now spent five minutes telling you that your\nconfidence is a symptom, and I promise that is as grim as this talk gets.\nThis is a choice, not a fate. And the stakes are real: in\nsecurity, privacy and compliance, a comprehension failure becomes an incident,\na fine, lost trust. But fear of harm cannot be the whole operating model. Simon Willison again: having poor quality code from an agent is a\nchoice that you make. Poor output is a harness failure, not a model\nlimitation. The quality of what the agents produce reflects the quality of the\nsystem you built around them. So the goal is thoughtful deployment, not paralysis. Build safeguards.\nHold people accountable. And keep capturing the upside.",
       "captions": [
         {
@@ -3955,7 +4226,7 @@
         }
       ]
     },
-    "45": {
+    "48": {
       "hash": "9b0b40e4f970",
       "audio": "/narration/slide-44-9b0b40e4f970.mp3",
       "duration": 62.337574,
@@ -3964,7 +4235,7 @@
         34.4,
         44.516666666666666
       ],
-      "narrationKey": "04-cognitive-debt:9",
+      "narrationKey": "04-cognitive-debt:10",
       "transcript": "Here is the antidote, as three team operating rules. Raise the intake bar\nbefore review starts: require stated intent, a readable diff, test output, and\nproof the tests actually ran. Read changes to tests especially carefully. An\nagent can make a failing change green by rewriting the assertion around its new\nbehavior. It is the same trick every student discovers eventually; the agent\njust does it politely, and at scale. The spec. Intent, authored by a human. Ask why, not just what. If you\ncannot explain your own change in the commit message, the debt has already\nstarted accumulating. The explainability gate. No merge until the author can explain the\nintent, the tradeoffs and the failure modes. At least one human fully\nunderstands each change before it ships. And the ownership check. One named human owns the change end to end.\nIf that fails, slow down and re-scope. That is the operating model, and it\nconnects straight back to the harness discipline from earlier: the harness is\nthe preventive mechanism. The final question is what kind of people this model\nrewards.",
       "captions": [
         {
@@ -4064,7 +4335,7 @@
         }
       ]
     },
-    "46": {
+    "49": {
       "hash": "b4fc53292301",
       "audio": "/narration/slide-45-b4fc53292301.mp3",
       "duration": 8.006576,
@@ -4089,7 +4360,7 @@
         }
       ]
     },
-    "47": {
+    "50": {
       "hash": "76a2b979ec4d",
       "audio": "/narration/slide-46-76a2b979ec4d.mp3",
       "duration": 30.207732,
@@ -4157,7 +4428,7 @@
         }
       ]
     },
-    "48": {
+    "51": {
       "hash": "0003b0affd9b",
       "audio": "/narration/slide-47-0003b0affd9b.mp3",
       "duration": 55.079093,
@@ -4259,7 +4530,7 @@
         }
       ]
     },
-    "49": {
+    "52": {
       "hash": "a549e172a62d",
       "audio": "/narration/slide-48-a549e172a62d.mp3",
       "duration": 50.738571,
@@ -4352,7 +4623,7 @@
         }
       ]
     },
-    "50": {
+    "53": {
       "hash": "cb3b5ebf344d",
       "audio": "/narration/slide-49-cb3b5ebf344d.mp3",
       "duration": 92.673447,
@@ -4511,7 +4782,105 @@
         }
       ]
     },
-    "51": {
+    "54": {
+      "hash": "2a1e71c5bfff",
+      "audio": "/narration/slide-54-2a1e71c5bfff.mp3",
+      "duration": 41.468005,
+      "cues": [
+        16.7425,
+        27.740833333333335
+      ],
+      "narrationKey": "05-pipeline-and-what-matters:5",
+      "transcript": "So who decides which prototypes die? Remember why software went first, back at\nthe start of this talk. Code is work an AI can check. Run it, test it, see if\nit broke. Good design still has no test like that. You can check the contrast\nratio, and this deck does. You cannot check whether it is the right screen. Remember Jenny Wen and the seven coding agents? This is her own\nanswer, from a keynote in Berlin. In a world where anyone can make anything,\nwhat matters is your ability to choose and curate what you make. Agents can generate the options. Choosing between them, and owning the\nchoice, is the design job now. Wen is careful about this. She expects AI to\nget better at taste. What does not move is that someone has to be accountable\nfor what ships.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 2.067,
+          "text": "So who decides which prototypes die?"
+        },
+        {
+          "start": 2.148,
+          "end": 5.2,
+          "text": "Remember why software went first, back at the start of this talk."
+        },
+        {
+          "start": 5.373,
+          "end": 7.6,
+          "text": "Code is work an AI can check."
+        },
+        {
+          "start": 7.717,
+          "end": 9.867,
+          "text": "Run it, test it, see if it broke."
+        },
+        {
+          "start": 10,
+          "end": 12.133,
+          "text": "Good design still has no test like that."
+        },
+        {
+          "start": 12.15,
+          "end": 14.6,
+          "text": "You can check the contrast ratio, and this deck does."
+        },
+        {
+          "start": 14.667,
+          "end": 16.933,
+          "text": "You cannot check whether it is the right screen."
+        },
+        {
+          "start": 16.992,
+          "end": 19.467,
+          "text": "Remember Jenny Wen and the seven coding agents?"
+        },
+        {
+          "start": 19.547,
+          "end": 22.267,
+          "text": "This is her own answer, from a keynote in Berlin."
+        },
+        {
+          "start": 22.4,
+          "end": 25.667,
+          "text": "In a world where anyone can make anything, what matters is your"
+        },
+        {
+          "start": 25.708,
+          "end": 27.867,
+          "text": "ability to choose and curate what you make."
+        },
+        {
+          "start": 27.991,
+          "end": 29.867,
+          "text": "Agents can generate the options."
+        },
+        {
+          "start": 29.933,
+          "end": 33.933,
+          "text": "Choosing between them, and owning the choice, is the design job now."
+        },
+        {
+          "start": 34.1,
+          "end": 35.733,
+          "text": "Wen is careful about this."
+        },
+        {
+          "start": 35.85,
+          "end": 37.933,
+          "text": "She expects AI to get better at taste."
+        },
+        {
+          "start": 38.027,
+          "end": 40.6,
+          "text": "What does not move is that someone has to be accountable for"
+        },
+        {
+          "start": 40.64,
+          "end": 41.468,
+          "text": "what ships."
+        }
+      ]
+    },
+    "55": {
       "hash": "8637556cb7d1",
       "audio": "/narration/slide-50-8637556cb7d1.mp3",
       "duration": 68.267891,
@@ -4520,7 +4889,7 @@
         31.63916666666667,
         51.72
       ],
-      "narrationKey": "05-pipeline-and-what-matters:5",
+      "narrationKey": "05-pipeline-and-what-matters:6",
       "transcript": "Now, do not mistake cheaper learning for shrinking demand. The opposite is\nhappening, and it lands first here. Every team runs on invisible workflows.\nThe report assembled by hand every Monday, the data moved by copy and paste,\nthe checklist that lives in someone's head. Rank every one of them by payoff\nand you get this curve. The head is the roadmap. It is the only part that ever\ngot built. Everything else was too small for a development project and too\nspecific to buy off the shelf. Below the build threshold. So it stayed manual. As production cost collapses, the threshold drops. And demand expands.\nAn economist would call this Jevons Paradox: when coal engines got more\nefficient, we did not use less coal, we used more. The backlog nobody ever\nwrote down becomes buildable. Ask yourself what you assemble by hand every\nweek. That list is the backlog. Internal tools are also the safest place to start: known users, low\nblast radius, and the guardrails story works at small scale. One honest\ncaveat. The threshold drops, it does not vanish. Someone still owns, runs and\nretires these tools. Hold that thought.",
       "captions": [
         {
@@ -4635,7 +5004,7 @@
         }
       ]
     },
-    "52": {
+    "56": {
       "hash": "d8863eac6749",
       "audio": "/narration/slide-51-d8863eac6749.mp3",
       "duration": 32.869637,
@@ -4643,7 +5012,7 @@
         9.527500000000002,
         23.21666666666667
       ],
-      "narrationKey": "05-pipeline-and-what-matters:6",
+      "narrationKey": "05-pipeline-and-what-matters:7",
       "transcript": "So if the work expands, the question becomes what kind of work. Because there\nis a failure mode here, and it is just building yesteryear's software faster. If AI only helps you ship the apps you would have built five years\nago, you have changed throughput, not strategy. Modern tools, old mental\nmodel. The dangerous version of AI adoption is not failure. It is succeeding\nat the old game. The question is not how much more can we build. It is what becomes\nworth building now. And what should become a workflow, or a skill, or nothing\nat all.",
       "captions": [
         {
@@ -4703,7 +5072,7 @@
         }
       ]
     },
-    "53": {
+    "57": {
       "hash": "933ae9779a67",
       "audio": "/narration/slide-52-933ae9779a67.mp3",
       "duration": 39.589229,
@@ -4712,7 +5081,7 @@
         22.883333333333336,
         25.416666666666668
       ],
-      "narrationKey": "05-pipeline-and-what-matters:7",
+      "narrationKey": "05-pipeline-and-what-matters:8",
       "transcript": "Choosing what is worth building is frontier work, and there is a clean\ndivision of labour for it. Think of knowledge as a graph. Facts are nodes, and\nthe connections between them are edges. AI searches the known graph densely.\nIt is excellent at finding correlations inside what is already mapped. New nodes come from somewhere else. They come from humans wandering\nbeyond the current point of view. That is where the best discoveries have\nalways come from. Put the two together and you get the combined model. Not AI replacing human exploration. More human-chosen frontier points,\neach one explored more deeply than a human ever could. The human job is\nchoosing which points deserve the machine's depth. Humans find new nodes. AI\nmaps the edges.",
       "captions": [
         {
@@ -4792,7 +5161,7 @@
         }
       ]
     },
-    "54": {
+    "58": {
       "hash": "1d72a7ec5f26",
       "audio": "/narration/slide-53-1d72a7ec5f26.mp3",
       "duration": 64.885261,
@@ -4801,7 +5170,7 @@
         28.736666666666668,
         50.733333333333334
       ],
-      "narrationKey": "05-pipeline-and-what-matters:8",
+      "narrationKey": "05-pipeline-and-what-matters:9",
       "transcript": "That makes the human work more specific. We become clarity merchants. I\nstudied philosophy before I ever wrote code, and for twenty years that looked\nlike a detour. It turns out it was vocational training. We were never\nbottlenecked by typing speed. We are bottlenecked by coherence. Frame the problem before the agent writes a line, which includes\ndeciding what the smallest useful version is. Design the context so the same\nmistake cannot happen three times. That is what an agent instructions file is\nfor. Spot the flaw that clean code is hiding: the wrong abstraction, the\nmissing edge case, the architecture that will not scale. And articulate why an\ninteraction is wrong. The principle, not the vibe. None of this is\nengineering-only work. Most companies apply AI at the feature layer. The\nwinners rethink at the strategy layer, and this list is strategy-layer work. The core work has not changed. The boundaries have. An agent can generate\nfive features in a day. Integrating them into a system that makes sense is\nstill your job, and focus, finishing and judgment scale with you, not with AI\nspeed.",
       "captions": [
         {
@@ -4911,14 +5280,14 @@
         }
       ]
     },
-    "55": {
+    "59": {
       "hash": "8b2d82a5f13f",
       "audio": "/narration/slide-54-8b2d82a5f13f.mp3",
       "duration": 56.053061,
       "cues": [
         22.1975
       ],
-      "narrationKey": "05-pipeline-and-what-matters:9",
+      "narrationKey": "05-pipeline-and-what-matters:10",
       "transcript": "There is a sharper way to ask what all that clarity work adds up to. How much\nof the problem do you own? Addy Osmani draws it as a ladder. Flag the problem.\nExecute a fix. Diagnose the cause. Propose options. Recommend one. Resolve it\nyourself. And at the top, discern: decide whether it was worth doing at all.\nGood engineers live at recommend from day one, and earn resolve. Agents can run rungs one through six for you, and it is getting cheap\nfast. They can assist with rung seven too, but accountability for discernment\nnever gets cheap. It looks like doing nothing, which is why it is hard to grant\nand harder to trust. It means you priced the fix against everything else on the\ntable and put your name on the tradeoff.\nDeciding it was not worth doing. Deciding the evidence is good enough to ship.\nBeing the person who can explain why when you turn out to be wrong. Agency was\nnever about how much you can do. It is about how much of the problem you still\nown after it leaves your hands.",
       "captions": [
         {
@@ -5033,14 +5402,14 @@
         }
       ]
     },
-    "56": {
+    "60": {
       "hash": "3eeadb8bc520",
       "audio": "/narration/slide-55-3eeadb8bc520.mp3",
       "duration": 33.551973,
       "cues": [
         12.453333333333333
       ],
-      "narrationKey": "05-pipeline-and-what-matters:10",
+      "narrationKey": "05-pipeline-and-what-matters:11",
       "transcript": "And there is a rung the ladder doesn't draw. Call it rung zero: deciding to\nclimb at all. Agents can run rungs one through six for you. Nothing anywhere\nin that stack decides a problem is worth picking up in the first place. Mitchell Hashimoto — he built Terraform, he's building Ghostty — spent\nyears around unusually effective people and landed on this: the difference\nbetween mediocre and excellent work and outcomes is predominantly one of\nagency. They don't wait for things to happen to them; they go out and make\nthings happen. Hold on to rung zero. It comes back at the end of the talk.",
       "captions": [
         {
@@ -5100,7 +5469,7 @@
         }
       ]
     },
-    "57": {
+    "61": {
       "hash": "2976a4fa8c0f",
       "audio": "/narration/slide-56-2976a4fa8c0f.mp3",
       "duration": 51.003855,
@@ -5108,7 +5477,7 @@
         18.960833333333333,
         30.700000000000003
       ],
-      "narrationKey": "05-pipeline-and-what-matters:11",
+      "narrationKey": "05-pipeline-and-what-matters:12",
       "transcript": "Now back up the ladder to rung seven, and scale it to a whole product.\nMany products do not die\nfrom missing features. They die from accumulation. It is easy to prompt a new\nfeature into existence, so naturally the bar for what ships drops. That is the\naccumulation trap, and it is the flip side of the long tail I just sold you. Great product people fall in love with the problem, not the roadmap.\nThey ship features, and they kill them. They have the guts to say: this is not\nsolving it. This adds complexity. This does not matter. And it is not only a product skill. Product managers kill features. Designers\nsimplify flows. Engineers remove abstractions. Subtraction is a\ncross-discipline skill — the same discipline as those thrown-away projects\nfrom the first section, applied to a living product. Addition gets cheaper\nevery quarter. Subtraction never does.",
       "captions": [
         {
@@ -5203,7 +5572,7 @@
         }
       ]
     },
-    "58": {
+    "62": {
       "hash": "f41089ad40e4",
       "audio": "/narration/slide-57-f41089ad40e4.mp3",
       "duration": 10.868005,
@@ -5233,7 +5602,7 @@
         }
       ]
     },
-    "59": {
+    "63": {
       "hash": "74dab4143957",
       "audio": "/narration/slide-58-74dab4143957.mp3",
       "duration": 54.605125,
@@ -5352,7 +5721,7 @@
         }
       ]
     },
-    "60": {
+    "64": {
       "hash": "e6ac3268a55a",
       "audio": "/narration/slide-59-e6ac3268a55a.mp3",
       "duration": 47.271497,
@@ -5439,7 +5808,7 @@
         }
       ]
     },
-    "61": {
+    "65": {
       "hash": "c68ac6501470",
       "audio": "/narration/slide-60-c68ac6501470.mp3",
       "duration": 37.608889,
@@ -5512,7 +5881,7 @@
         }
       ]
     },
-    "62": {
+    "66": {
       "hash": "6f0188e1bc71",
       "audio": "/narration/slide-61-6f0188e1bc71.mp3",
       "duration": 47.674649,
@@ -5615,7 +5984,7 @@
         }
       ]
     },
-    "63": {
+    "67": {
       "hash": "60af4f9b6bbd",
       "audio": "/narration/slide-62-60af4f9b6bbd.mp3",
       "duration": 69.68102,
@@ -5739,7 +6108,7 @@
         }
       ]
     },
-    "64": {
+    "68": {
       "hash": "3d9e086966e9",
       "audio": "/narration/slide-63-3d9e086966e9.mp3",
       "duration": 66.409592,
@@ -5857,7 +6226,7 @@
         }
       ]
     },
-    "65": {
+    "69": {
       "hash": "e408278c4e12",
       "audio": "/narration/slide-64-e408278c4e12.mp3",
       "duration": 30.6139,
@@ -5919,7 +6288,7 @@
         }
       ]
     },
-    "66": {
+    "70": {
       "hash": "af6611d6008c",
       "audio": "/narration/slide-65-af6611d6008c.mp3",
       "duration": 31.541224,
@@ -5988,7 +6357,7 @@
         }
       ]
     },
-    "67": {
+    "71": {
       "hash": "c28c64e5ecde",
       "audio": "/narration/slide-66-c28c64e5ecde.mp3",
       "duration": 17.476984,

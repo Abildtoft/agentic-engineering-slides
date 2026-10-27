@@ -72,7 +72,24 @@ at once.
 
 ---
 
-<!-- 20. default — One Surviving Skill Set — ~1 clicks -->
+<!-- 20. default — The Crossover Runs Both Ways — ~3 clicks -->
+
+And that is not one design leader's impression. Two large surveys this year
+measured the crossover, and it runs in both directions.
+[click] Figma surveyed designers, developers and product managers. In one
+year, the share of developers doing design work rose from 44% to 60%.
+[click] And the share of designers doing development work doubled, from 21%
+to 41%.
+[click] A second survey, of more than 900 designers, found that half of them
+have pushed AI-generated code to production. Not only design engineers.
+Product designers and brand designers too. Treat both surveys as directional.
+They are self-reported, and neither publisher is neutral. Figma sells the
+canvas. But the direction is hard to miss. The walls are coming down from both
+sides.
+
+---
+
+<!-- 21. default — One Surviving Skill Set — ~1 clicks -->
 
 For a long time, product, design and engineering handed work to each other in
 sequence. We always wanted it to be a Venn diagram. In practice it was a
@@ -94,7 +111,7 @@ is the zone the market is rewarding.
 
 ---
 
-<!-- 21. default — The Bottleneck Cascade — ~3 clicks -->
+<!-- 22. default — The Bottleneck Cascade — ~3 clicks -->
 
 There is an old pattern here, and it is worth seeing it in full.
 [click] When weaving sped up, yarn became the constraint. When spinning caught
