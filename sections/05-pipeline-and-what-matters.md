@@ -139,6 +139,7 @@ ADDITIONAL POINTS:
 - The author or maintainer is accountable for the whole learning system: selecting the work, defining the criteria, and improving the loop that produces the product — the maintainer's leverage is in the loops that decide what to build and whether it worked (trimmed from the slide, say it over the first click)
 - The outer loop is the only one that produces real-world evidence
 - Knapp's reframe backs this: sprints used to reduce uncertainty because building was expensive; when building trends to zero, the sprint is about deciding what is worth standing behind
+- INNOQ's Agentic Trio makes the same call about the capacity agents free up: "The obvious move would be to put the freed capacity into more output." Their answer is to spend it on checking that problems are real — "Teams that check whether a problem is real before they build anything build less that isn't needed" — because "the goal is better outcomes for users and organisations, not more generated code"
 - Careful framing on the second click: the cheapest-experiment point is exactly why Chen's "prototype is the new PRD" works
 - The honest defense against the accumulation trap later in this section
 - Sets up "a failure mode is just building yesteryear's software faster", two slides ahead — throughput without learning is just faster wrongness
@@ -151,6 +152,7 @@ DELIVERY:
 SOURCE: Andrew Ng, "Loop Engineering" (x.com/AndrewYNg/status/2071988145667928442)
 SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
 SOURCE: Andrew Chen (x.com/andrewchen/status/2025022470550684037)
+SOURCE: Daniel Westheide and Fabian Walther (INNOQ), "The Agentic Trio" (agentictrio.org/en/, 22 October 2026) — see sources/agentic-trio.md
 -->
 
 ---
@@ -183,12 +185,14 @@ KEY POINTS:
 - The kill rate is the feature, not the waste
 - A prototype is not a product — guardrails apply the moment it's real
 
-BRIDGE: "And don't mistake cheaper learning for shrinking demand. The opposite is happening."
+BRIDGE: "Most prototypes should die. So who decides which ones?"
 
 ADDITIONAL POINTS:
 - Reworded to "brief" so it lands for non-product audiences
 - Tools like Lovable, v0, Bolt, and Claude Artifacts turn a written concept into something clickable — name the tools verbally rather than on the slide, they date fast
 - The division of labor that follows: domain people build the throwaway draft, developers harden only what earns survival — that is how prototyping protects development hours instead of consuming them
+- Colin Matthews' "product leverage ladder" is that division of labour in three rungs: a web prototype that only communicates (Lovable, Replit); a prototype built by Claude Code or Codex inside the real codebase, so it reuses real components; then agent-opened pull requests for small changes that an engineer reviews and merges. Knowing whether a problem needs a doc, a prototype or a PR is the skill
+- The practitioner version of the guardrail caveat, from Jenny Wanger's Denver panel: "Prototypes are meant to be just that. They can't go into production." (Jake Taylor, JumpCloud) and "We don't ship prototypes. We ship hardened products." (Wanger)
 - A dead prototype is validated learning at the lowest possible price; a dead production feature is not
 - Honesty note: the moment a prototype touches real data or real users, the guardrails story from Section 3 applies — this is exactly why cheap drafts don't make developers optional
 - Connects back to "a failure mode is just building yesteryear's software faster": the prototype is how you avoid scoping the wrong thing at production quality
@@ -199,6 +203,62 @@ DELIVERY:
 
 SOURCE: Andrew Chen, "the prototype is the new PRD" (x.com/andrewchen/status/2025022470550684037)
 SOURCE: Jake Knapp on design sprints, via Lenny Rachitsky (x.com/lennysan/status/2024300694891864304)
+SOURCE: Colin Matthews, "How top PMs increase their leverage with AI" (lennysnewsletter.com/p/how-top-pms-increase-their-leverage, 30 June 2026) — see sources/colin-matthews-product-leverage-ladder.md
+SOURCE: Jenny Wanger, "Building alone, faster" (jennywanger.com/articles/building-alone-faster/, 1 October 2026) — see sources/jenny-wanger-building-alone-faster.md
+-->
+
+---
+layout: statement
+class: statement-wide
+# The headline carries an explicit break, so the title is pinned here: Slidev
+# otherwise takes the raw heading line, <br /> included.
+title: Code is work an AI can check. Good design still isn't.
+---
+
+<!-- Explicit break: the balanced wrap otherwise splits "can / check", cutting
+     the Section 1 phrase this slide calls back to. Each sentence fits on one
+     line in both themes' fonts. -->
+# Code is work an AI can check.<br />Good design still isn't.
+
+<v-click>
+
+> “In a world where anyone can make anything — what matters is your ability to choose and curate what you make.”
+>
+> Jenny Wen
+
+</v-click>
+<v-click>
+
+Agents can generate the options. **Choosing between them — and owning the choice — is the design job now.**
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Callback to Section 1: software went first because code is work an AI can check — run it, test it, see if it broke. Whether a design is right has no test like that
+- Jenny Wen's own answer to the Section 2 scene: when anyone can make anything, the skill is choosing and curating what you make
+- The previous slide made options nearly free. That moves the design job from producing options to judging them
+- "Owning the choice" is rung 7 of the agency ladder in design's language: the accountability doesn't get cheap
+
+BRIDGE: "And don't mistake cheaper learning for shrinking demand. The opposite is happening."
+
+ADDITIONAL POINTS:
+- Be precise about "check". The measurable parts of design are checkable — contrast, accessibility, visual regressions — and this deck measures its own text contrast on every shader backdrop. What no test tells you is whether it's the right screen, the right flow, the right thing to leave out. That gap is the slide
+- Why the slide ends on owning the choice, not on taste: in Lenny Rachitsky's summary of her podcast, Wen expects AI to get better at taste and judgment, and thinks designers may be holding onto taste as a moat too tightly. What survives is that someone has to be accountable for what ships
+- Paul Graham, February 2026, almost word for word: "When anyone can make anything, the big differentiator is what you choose to make"
+- Kate Moran (Nielsen Norman Group) draws the same line for products that generate their own UI: in vibe coding the AI is accountable for execution quality; once the AI decides what interface to generate, "it's accountable for the design decision" — "That judgment call is the defining act of genUI"
+- Where the choosing happens: Wen still argues for the canvas, which lets you diverge across eight to ten directions without the investment bias of having built one (Section 3b's Figma slide)
+- The close comes back to this: "Taste and the courage to subtract" on What Survives
+
+DELIVERY:
+- Land the headline cold; the room heard its first half in Section 1
+- Name the callback before the quote: "Remember Jenny Wen's seven coding agents? This is her answer"
+- Optional verbal: "You can check the contrast ratio. You can't check whether it's the right screen."
+
+SOURCE: Jenny Wen, Hatch Conference keynote, Berlin, September 2025, via Simon Willison, "Don't 'Trust the Process'" (simonwillison.net/2026/Jan/24/dont-trust-the-process/) — see sources/jenny-wen-dont-trust-the-process.md
+SOURCE: Jenny Wen on Lenny's Podcast, "The design process is dead. Here's what's replacing it" (lennysnewsletter.com/p/the-design-process-is-dead, 1 March 2026) — see sources/jenny-wen-design-in-ai-era.md
+SOURCE: Paul Graham (x.com/paulg/status/2022604692178522562) — see sources/taste-even-more-important.md
+SOURCE: Kate Moran, "GenUI vs. Vibe Coding: Who's Designing?" (nngroup.com/articles/genui-vs-vibe/, 27 March 2026)
 -->
 
 ---

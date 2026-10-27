@@ -170,6 +170,7 @@ DELIVERY:
 - Address the non-developers in the room directly — this is the slide that keeps them in the talk
 - Two clicks: the broad claim first, then the reason software leads
 - Don't over-explain the feedback-loop point; one sentence, then move
+- Say "code is work an AI can check" exactly as written: Section 5 cashes it in for design ("Code is work an AI can check. Good design still isn't."), and the callback only lands if the room heard the phrase here
 
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897) — task vs. job framing; AI as a wave on the scale of internet/mobile touching every profession
 -->

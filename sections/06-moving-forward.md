@@ -84,6 +84,8 @@ ADDITIONAL POINTS:
 - Kellogg reinforces the right column: knowledge workers have transferable skills (writing, analysis, design, judgment) that make "sideways moves" into adjacent roles natural — unlike manufacturing displacement where retraining was a leap
 - Savkin's shift rewards autonomous decision-making, product ownership, and AI-native workflows at the individual level; small self-directed teams, less micromanagement, and constant experimentation at the org level
 - Optional verbal on the final click: "Some orgs are already here. Others are years behind. That's why the industry feels so uneven right now."
+- Evidence for the final click, from the designer survey: 73% of designers feel rising expectations around output, quality and speed, but only 28% of leaders say their company has formally updated evaluation, comp or hiring — 8% changed performance metrics, 4% compensation. The work changed; the operating model mostly hasn't
+- Both columns now have design slides behind them: "Translation and handoff work" is the design system replacing the handoff (Section 3b); "Taste and the courage to subtract" is "Good design still isn't" (Section 5)
 
 DELIVERY:
 - Draw the line explicitly: "If your value proposition is primarily on the left, you have work to do. If you can own a problem end to end, the tools just made you more powerful."
@@ -98,6 +100,7 @@ SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/stat
 SOURCE: Kellogg, "Why I'm Not Worried About Running Out of Work" (kellblog.com, March 2026)
 SOURCE: Shreyas Doshi, "Why Product Sense Is the Only Product Skill That Will Matter in the AI Age" (shreyasdoshi.substack.com/p/why-product-sense-is-the-only-product)
 SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
+SOURCE: Designer Fund and Foundation Capital, "AI in Design Report 2026" (designerfund.com/blog/ai-in-design-2026) — see sources/ai-in-design-report-2026.md
 -->
 
 ---
@@ -278,6 +281,7 @@ ADDITIONAL POINTS:
 - Human in the loop is the Section 4 antidote applied at pilot scale
 - Savkin's org-level pattern — small self-directed teams, constant experimentation — is what the third pilot grows into
 - Evans backs the posture: immersion beats waiting for clarity, for organizations as much as for individuals
+- Why "write down what works" beats a strategy memo, from the designer survey: in a year, learning from peers rose from 24% to 80% while taking recommendations from leadership fell from 32% to 16%. Designers at companies with a culture of tinkering are 2x more likely to feel more creative and capable, even though they also face a higher bar. A finished pilot, written down, is the thing peers actually learn from
 
 DELIVERY:
 - This is the leadership slide — aim it at whoever owns the "we should have a strategy" feeling
@@ -288,6 +292,7 @@ SOURCE: Mitchell Hashimoto, X post, September 11, 2026 (x.com/mitchellh/status/2
 SOURCE: Victor Savkin, X thread, March 21, 2026 (x.com/victorsavkin/status/2035420412042268833)
 SOURCE: Boris Cherny, X post, July 15, 2026 (x.com/bcherny/status/2077460395279692197)
 SOURCE: Lenny Rachitsky summarizing Benedict Evans (x.com/lennysan/status/2061452384153505897)
+SOURCE: Designer Fund and Foundation Capital, "AI in Design Report 2026" (designerfund.com/blog/ai-in-design-2026) — see sources/ai-in-design-report-2026.md
 -->
 
 ---
