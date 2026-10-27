@@ -106,6 +106,7 @@ ADDITIONAL POINTS:
 - Start with one file at root. Add directory-level files only when you see repeated mistakes
 - An accessibility audit agent is only as good as the guidelines you give it
 - For designers: your Figma component documentation and design tokens are context inputs exactly as AGENTS.md is for engineers
+- Plant it and keep moving: Section 3b's design-system slide pays this click off ("The design system was documentation. Now it steers the agents.")
 
 DELIVERY:
 - Land the opener and pause — the audience will nod because they've lived the copy-paste phase

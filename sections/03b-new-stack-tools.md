@@ -265,11 +265,12 @@ KEY POINTS:
 - New workflow: Claude Code -> Figma handoff via `generate_figma_design`
 - Cross-functional leverage, not just a developer trick
 
-BRIDGE: "You've now seen the pieces — context files, skills, MCP servers. Here's the machine they all plug into."
+BRIDGE: "So what actually crosses that bridge? More and more, it's the design system itself."
 
 ADDITIONAL POINTS:
 - Emphasize handoff quality: less ambiguity and fewer interpretation errors
-- Constraint: this handoff path requires the remote Figma MCP server and currently supports Claude Code and Codex
+- Constraint: sending a running UI back to Figma needs the remote Figma MCP server and a supported client. Figma's help page now says only "select clients" and lists about 27 MCP clients overall, so check Figma's MCP catalog before presenting rather than naming two
+- If challenged on "one source of truth": Georgi Balinov (Progress) calls that the open question — "not whether agents belong on the canvas, but whose canvas—whose source of truth—they end up working on": the design file, the codebase, or the running product. The tools pull both ways. Figma's code layers put live code on the canvas ("Design is a process. Code is material, just like images, vectors and design layers." — Config 2026), while Claude Design packages a prototype into "a handoff bundle that you can pass to Claude Code." The next slide's answer works for either: make the system something agents read
 - Diagram simplified for legibility: the user-prompt node, the implementation-plan/PR step, the MCP-client hop and the handoff_checklist Prompt are elided — narrate the user's ask ("implement the approved pricing frame") and the plan+PR step over the arrows. If asked how prompts fit, the kitchen slide's three capability types cover it
 
 DELIVERY:
@@ -283,6 +284,55 @@ DELIVERY:
 
 SOURCE: Figma Help Center, "Use Figma MCP in Claude Code, Codex CLI, and Cursor" (help.figma.com/hc/en-us/articles/32132100833559-Use-Figma-MCP-in-Claude-Code-Codex-CLI-and-Cursor)
 SOURCE: Figma Developers, "Figma Dev Mode MCP Server" (www.figma.com/developers/mcp)
+SOURCE: Georgi Balinov, "Designing on the Canvas, with Agents" (progress.com/blogs/designing-on-the-canvas-with-agents, 11 August 2026)
+SOURCE: Figma, "Config 2026: New Materials, New Tools and a More Expressive Canvas" (figma.com/blog/config-2026-recap/, 24 June 2026)
+SOURCE: Anthropic, "Introducing Claude Design by Anthropic Labs" (anthropic.com/news/claude-design-anthropic-labs, 17 April 2026)
+-->
+
+---
+layout: statement
+class: statement-wide
+---
+
+# The design system was documentation. Now it steers the agents.
+
+<v-click>
+
+> “Design teams have spent years trying to get people to actually read their design system documentation. Agents read it every single time.”
+>
+> Luke Wroblewski
+
+</v-click>
+<v-click>
+
+Designers write down the grid, the breakpoints, the motion. Engineers write down the tests and the conventions. **The handoff stops being a file — it becomes the context every agent inherits.**
+
+</v-click>
+
+<!--
+KEY POINTS:
+- The Figma bridge carries design data to the agent; this is what it does to the design system itself
+- Wroblewski: "a design system for agents is a steering layer for a site's design and front-end code"
+- The most-ignored document in a design org becomes the one every agent reads first, on every change
+- Division of labour: designers encode the visual rules, engineers the tests, configuration and conventions — versioned files every new workspace inherits
+- For designers in the room: this is the most direct lever you have on what agents build
+
+BRIDGE: "You've now seen the pieces — context files, skills, MCP servers. Here's the machine they all plug into."
+
+ADDITIONAL POINTS:
+- First-party example: this deck's agent instructions carry its design rules — motion tokens, a categorical palette validated for colour-blind separation, contrast floors measured on its shader backdrops, "never hardcode hex values." Every agent session on the repo loads them first. Same file as "Markdown Is the Program Now"
+- Why the docs stopped going stale: on Wroblewski's sites the design-system pages are generated from the same code as the site, so the documentation can't drift. His failure case: "Inevitably the design system ends up describing a product that no longer exists"
+- The flip side: whatever is in the system gets applied at agent speed. A stale or ambiguous system is now amplified, not ignored — which is why its quality matters more than it used to
+- The handoff didn't vanish into a better file format. Wroblewski's own diagnosis is that AI first made it worse — everyone threw more work over the wall, faster — and the fix was shared context, not faster handoffs
+- Bias note: Wroblewski's examples are sites built with Intent, his own product
+
+DELIVERY:
+- Land the headline, then click the quote. The laugh is on "actually read"; let it happen
+- On the last click, look at the designers: this is your lever now
+- Keep it short; the harness diagram is next and needs the room's attention
+
+SOURCE: Luke Wroblewski, "Design Systems for AI Agents" (lukew.com/ff/2164/design-systems-for-ai-agents, 1 October 2026) — see sources/wroblewski-design-systems-for-ai-agents.md
+SOURCE: Luke Wroblewski, "Finally, the Handoff is Dead" (lukew.com/ff/2150/finally-the-handoff-is-dead, 30 April 2026) — see sources/wroblewski-handoff-is-dead.md
 -->
 
 ---
