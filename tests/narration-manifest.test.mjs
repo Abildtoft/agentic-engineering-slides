@@ -9,7 +9,7 @@ const manifest = JSON.parse(await readFile(join(narrationDir, 'manifest.json'), 
 const mascot = JSON.parse(await readFile(join(narrationDir, 'mascot.json'), 'utf-8'))
 
 test('every narrated slide carries a bounded transcript and captions', () => {
-  assert.equal(Object.keys(manifest.slides).length, 72)
+  assert.equal(Object.keys(manifest.slides).length, 73)
 
   for (const [no, slide] of Object.entries(manifest.slides)) {
     assert.ok(slide.transcript, `slide ${no} has a transcript`)
@@ -30,10 +30,12 @@ test('every narrated slide carries a bounded transcript and captions', () => {
 test('the optimized mascot manifest covers every speech source with a local asset', async () => {
   assert.equal(mascot.mascot.size, 512)
   assert.equal(mascot.mascot.fps, 24)
-  assert.equal(Object.keys(mascot.slides).length, 72)
+  assert.equal(Object.keys(mascot.slides).length, Object.keys(manifest.slides).length)
 
-  for (const [no, clip] of Object.entries(mascot.slides)) {
-    const speech = (manifest.slides[no].video ?? manifest.slides[no].audio).split('/').pop()
+  for (const [no, speechEntry] of Object.entries(manifest.slides)) {
+    const clip = mascot.slides[no]
+    assert.ok(clip, `slide ${no} has a tracked mascot clip`)
+    const speech = (speechEntry.video ?? speechEntry.audio).split('/').pop()
     assert.equal(clip.source, speech, `slide ${no} mascot matches current speech`)
     await access(join(narrationDir, clip.video.split('/').pop()))
   }
@@ -42,7 +44,7 @@ test('the optimized mascot manifest covers every speech source with a local asse
 test('diagram slides hide the tile and nothing pauses the narration', async () => {
   const deck = await loadDeck()
   const hidden = deck.slides.filter(slide => slide.frontmatter?.narrator === 'hidden').map(slide => slide.index + 1)
-  const expected = [10, 11, 16, 21, 29, 30, 31, 33, 34, 35, 36, 37, 43, 51, 55, 57, 59]
+  const expected = [10, 11, 16, 21, 29, 30, 31, 33, 34, 35, 36, 37, 38, 44, 52, 56, 58, 60]
 
   assert.deepEqual(hidden, expected)
   // The Temperature Check intermission was cut with its slide; the player

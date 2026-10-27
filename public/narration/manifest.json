@@ -3226,115 +3226,263 @@
       ]
     },
     "37": {
-      "hash": "497a2e635dc2",
-      "audio": "/narration/slide-34-497a2e635dc2.mp3",
-      "duration": 63.390748,
+      "hash": "aa1a7a928042",
+      "audio": "/narration/slide-37-aa1a7a928042.mp3",
+      "duration": 63.732449,
       "cues": [
-        13.772500000000003,
-        17.71,
-        41.59
+        13.505833333333335,
+        17.963333333333335,
+        41.00333333333333
       ],
       "narrationKey": "03b-new-stack-tools:10",
-      "transcript": "That ring, composed into a pipeline. One command, a Linear issue ID, and out\nthe other end a pull request. It is an orchestrator, not a monolith: it\ncomposes narrower skills and owns only the sequencing and the handoffs. It starts with a read-only preflight, then implements the issue on its\nown branch. Then the quality loop, which is where most of the wall-clock time\ngoes and none of my attention. Code review, convention review, refactor gates, all run\nagainst the diff. Findings get fixed, the gates run again, and a remediation\nbudget stops it looping forever. It never widens the scope to make a finding\ndisappear. Then a fresh, full verification run. A gap is reported as a gap,\nnever claimed as a pass. Then the pull request, and the automated checks rerun until they\npass. If it hits a blocker it stops, with the evidence preserved. A failed\ngate is a stop, not a warning. And so your loop shrinks to two moments:\napprove the intent, then review the evidence and own the result. That is my\nharness. And the second half of this talk is about the cost nobody puts on\nthe invoice.",
+      "transcript": "That ring, composed into a pipeline. One command, a Linear issue ID, and out\nthe other end a pull request. It is an orchestrator, not a monolith: it\ncomposes narrower skills and owns only the sequencing and the handoffs. It starts with a read-only preflight, then implements the issue on its\nown branch. Then the quality loop, which is where most of the wall-clock time\ngoes and none of my attention. Code review, convention review, refactor gates, all run\nagainst the diff. Findings get fixed, the gates run again, and a remediation\nbudget stops it looping forever. It never widens the scope to make a finding\ndisappear. Then a fresh, full verification run. A gap is reported as a gap,\nnever claimed as a pass. Then the pull request, and the automated checks rerun until they\npass. If it hits a blocker it stops, with the evidence preserved. A failed\ngate is a stop, not a warning. And so your loop shrinks to two moments:\napprove the intent, then review the evidence and own the result. That is my\nharness. It stops at a pull request, and the last call is still mine.",
       "captions": [
         {
           "start": 0,
-          "end": 1.941,
+          "end": 2,
           "text": "That ring, composed into a pipeline."
         },
         {
-          "start": 1.941,
-          "end": 5.822,
+          "start": 2.167,
+          "end": 5.4,
           "text": "One command, a Linear issue ID, and out the other end a"
         },
         {
-          "start": 5.822,
-          "end": 8.732,
+          "start": 5.467,
+          "end": 8.693,
           "text": "pull request. It is an orchestrator, not a monolith:"
         },
         {
-          "start": 8.732,
-          "end": 12.613,
+          "start": 8.747,
+          "end": 13.6,
           "text": "it composes narrower skills and owns only the sequencing and the handoffs."
         },
         {
-          "start": 12.613,
-          "end": 16.495,
+          "start": 13.756,
+          "end": 17.333,
           "text": "It starts with a read-only preflight, then implements the issue on its"
         },
         {
-          "start": 16.495,
-          "end": 20.376,
+          "start": 17.367,
+          "end": 20.2,
           "text": "own branch. Then the quality loop, which is where most of the"
         },
         {
-          "start": 20.376,
-          "end": 22.963,
+          "start": 20.24,
+          "end": 22.667,
           "text": "wall-clock time goes and none of my attention."
         },
         {
-          "start": 22.963,
-          "end": 26.521,
+          "start": 22.853,
+          "end": 27.067,
           "text": "Code review, convention review, refactor gates, all run against the diff."
         },
         {
-          "start": 26.521,
-          "end": 30.402,
+          "start": 27.213,
+          "end": 31.333,
           "text": "Findings get fixed, the gates run again, and a remediation budget stops"
         },
         {
-          "start": 30.402,
-          "end": 34.283,
+          "start": 31.378,
+          "end": 34.667,
           "text": "it looping forever. It never widens the scope to make a finding"
         },
         {
-          "start": 34.283,
-          "end": 36.547,
+          "start": 34.72,
+          "end": 37.867,
           "text": "disappear. Then a fresh, full verification run."
         },
         {
-          "start": 36.547,
-          "end": 40.428,
+          "start": 38.067,
+          "end": 41.133,
           "text": "A gap is reported as a gap, never claimed as a pass."
         },
         {
-          "start": 40.428,
-          "end": 44.309,
+          "start": 41.253,
+          "end": 45.467,
           "text": "Then the pull request, and the automated checks rerun until they pass."
         },
         {
-          "start": 44.309,
-          "end": 47.866,
+          "start": 45.644,
+          "end": 49.067,
           "text": "If it hits a blocker it stops, with the evidence preserved."
         },
         {
-          "start": 47.866,
-          "end": 50.777,
+          "start": 49.333,
+          "end": 51.8,
           "text": "A failed gate is a stop, not a warning."
         },
         {
-          "start": 50.777,
-          "end": 53.365,
+          "start": 51.95,
+          "end": 54.533,
           "text": "And so your loop shrinks to two moments:"
         },
         {
-          "start": 53.365,
-          "end": 56.922,
+          "start": 54.575,
+          "end": 58,
           "text": "approve the intent, then review the evidence and own the result."
         },
         {
-          "start": 56.922,
-          "end": 60.803,
-          "text": "That is my harness. And the second half of this talk is"
+          "start": 58.133,
+          "end": 61.667,
+          "text": "That is my harness. It stops at a pull request, and the"
         },
         {
-          "start": 60.803,
-          "end": 63.391,
-          "text": "about the cost nobody puts on the invoice."
+          "start": 61.72,
+          "end": 63.732,
+          "text": "last call is still mine."
         }
       ]
     },
     "38": {
+      "hash": "e06461d5cfc4",
+      "audio": "/narration/slide-38-e06461d5cfc4.mp3",
+      "duration": 79.410113,
+      "cues": [
+        19.683333333333337,
+        45.75000000000001
+      ],
+      "narrationKey": "03b-new-stack-tools:11",
+      "transcript": "Martin Gratzer drew what happens when you let it go one step further. This is\nhis own workflow, eight months apart. In February he worked the way most of us\nstill do. He planned the issue with the agent, the agent implemented it and\nchecked its own work, and then he read the pull request, left line comments,\nand made the final call on every merge. A human in the middle. By October, he shapes the issue up front, sparring with the agent\nrather than dictating to it. Then his harness ships the change, runs it, and\nhas a fresh reviewer read the diff. It guards the change through the checks\nand the feedback, but never merges it, because a loop that fixes its own pull\nrequest should not also approve it. And it lands the change with a risk\nverdict on the exact commit. Low risk merges on its own. Everything else comes\nback to him, with a short list of where to look. The time that freed up goes to the other end: shaping the system.\nWherever an agent drifts, he asks where it could have been prevented, and\nfixes it there. In January he left 126 review comments on 25 pull requests. In\nSeptember and October, none, across 159. Review did not go away. It moved. He\nis candid that these are solo projects, with no team and no compliance around\nthem, and that auto-merge is only days old. But this is where the first half of\nthis talk leads. The second half is about what it costs: the part nobody puts\non the invoice.",
+      "captions": [
+        {
+          "start": 0,
+          "end": 2.8,
+          "text": "Martin Gratzer drew what happens when you let it go one step"
+        },
+        {
+          "start": 2.833,
+          "end": 5.867,
+          "text": "further. This is his own workflow, eight months apart."
+        },
+        {
+          "start": 6.044,
+          "end": 8.8,
+          "text": "In February he worked the way most of us still do."
+        },
+        {
+          "start": 8.911,
+          "end": 11.6,
+          "text": "He planned the issue with the agent, the agent implemented it and"
+        },
+        {
+          "start": 11.642,
+          "end": 14.8,
+          "text": "checked its own work, and then he read the pull request, left"
+        },
+        {
+          "start": 14.84,
+          "end": 17.867,
+          "text": "line comments, and made the final call on every merge."
+        },
+        {
+          "start": 18.067,
+          "end": 19.767,
+          "text": "A human in the middle."
+        },
+        {
+          "start": 19.933,
+          "end": 23.133,
+          "text": "By October, he shapes the issue up front, sparring with the agent"
+        },
+        {
+          "start": 23.162,
+          "end": 24.533,
+          "text": "rather than dictating to it."
+        },
+        {
+          "start": 24.667,
+          "end": 28,
+          "text": "Then his harness ships the change, runs it, and has a fresh"
+        },
+        {
+          "start": 28.037,
+          "end": 30.867,
+          "text": "reviewer read the diff. It guards the change through the checks and"
+        },
+        {
+          "start": 30.883,
+          "end": 34.067,
+          "text": "the feedback, but never merges it, because a loop that fixes its"
+        },
+        {
+          "start": 34.083,
+          "end": 36.467,
+          "text": "own pull request should not also approve it."
+        },
+        {
+          "start": 36.667,
+          "end": 39.533,
+          "text": "And it lands the change with a risk verdict on the exact"
+        },
+        {
+          "start": 39.591,
+          "end": 41.8,
+          "text": "commit. Low risk merges on its own."
+        },
+        {
+          "start": 41.854,
+          "end": 45.333,
+          "text": "Everything else comes back to him, with a short list of where"
+        },
+        {
+          "start": 45.356,
+          "end": 48.667,
+          "text": "to look. The time that freed up goes to the other end:"
+        },
+        {
+          "start": 48.7,
+          "end": 52.267,
+          "text": "shaping the system. Wherever an agent drifts, he asks where it could"
+        },
+        {
+          "start": 52.28,
+          "end": 54.2,
+          "text": "have been prevented, and fixes it there."
+        },
+        {
+          "start": 54.423,
+          "end": 59.2,
+          "text": "In January he left 126 review comments on 25 pull requests."
+        },
+        {
+          "start": 59.356,
+          "end": 63.267,
+          "text": "In September and October, none, across 159."
+        },
+        {
+          "start": 63.362,
+          "end": 64.8,
+          "text": "Review did not go away."
+        },
+        {
+          "start": 64.889,
+          "end": 68.467,
+          "text": "It moved. He is candid that these are solo projects, with no"
+        },
+        {
+          "start": 68.533,
+          "end": 72.133,
+          "text": "team and no compliance around them, and that auto-merge is only days"
+        },
+        {
+          "start": 72.2,
+          "end": 75.133,
+          "text": "old. But this is where the first half of this talk leads."
+        },
+        {
+          "start": 75.233,
+          "end": 77.667,
+          "text": "The second half is about what it costs:"
+        },
+        {
+          "start": 77.683,
+          "end": 79.41,
+          "text": "the part nobody puts on the invoice."
+        }
+      ]
+    },
+    "39": {
       "hash": "2b8cba8e9149",
       "audio": "/narration/slide-35-2b8cba8e9149.mp3",
       "duration": 34.596893,
@@ -3399,7 +3547,7 @@
         }
       ]
     },
-    "39": {
+    "40": {
       "hash": "7a393fcb941d",
       "audio": "/narration/slide-36-7a393fcb941d.mp3",
       "duration": 40.284286,
@@ -3478,7 +3626,7 @@
         }
       ]
     },
-    "40": {
+    "41": {
       "hash": "d9de371ae1ce",
       "audio": "/narration/slide-37-d9de371ae1ce.mp3",
       "duration": 43.011995,
@@ -3573,7 +3721,7 @@
         }
       ]
     },
-    "41": {
+    "42": {
       "hash": "2495e89a1a5d",
       "audio": "/narration/slide-38-2495e89a1a5d.mp3",
       "duration": 37.736372,
@@ -3656,7 +3804,7 @@
         }
       ]
     },
-    "42": {
+    "43": {
       "hash": "8b822d17c188",
       "audio": "/narration/slide-39-8b822d17c188.mp3",
       "duration": 50.474263,
@@ -3745,7 +3893,7 @@
         }
       ]
     },
-    "43": {
+    "44": {
       "hash": "5418b753bbc3",
       "audio": "/narration/slide-40-5418b753bbc3.mp3",
       "duration": 35.87195,
@@ -3808,7 +3956,7 @@
         }
       ]
     },
-    "44": {
+    "45": {
       "hash": "d3a1a3cf6a98",
       "audio": "/narration/slide-41-d3a1a3cf6a98.mp3",
       "duration": 73.614127,
@@ -3936,7 +4084,7 @@
         }
       ]
     },
-    "45": {
+    "46": {
       "hash": "5dd01a488096",
       "audio": "/narration/slide-42-5dd01a488096.mp3",
       "duration": 55.459864,
@@ -4049,7 +4197,7 @@
         }
       ]
     },
-    "46": {
+    "47": {
       "hash": "2fc62b4fac3d",
       "audio": "/narration/slide-46-2fc62b4fac3d.mp3",
       "duration": 55.076077,
@@ -4143,7 +4291,7 @@
         }
       ]
     },
-    "47": {
+    "48": {
       "hash": "059d71271dbd",
       "audio": "/narration/slide-43-059d71271dbd.mp3",
       "duration": 41.213946,
@@ -4226,7 +4374,7 @@
         }
       ]
     },
-    "48": {
+    "49": {
       "hash": "9b0b40e4f970",
       "audio": "/narration/slide-44-9b0b40e4f970.mp3",
       "duration": 62.337574,
@@ -4335,7 +4483,7 @@
         }
       ]
     },
-    "49": {
+    "50": {
       "hash": "b4fc53292301",
       "audio": "/narration/slide-45-b4fc53292301.mp3",
       "duration": 8.006576,
@@ -4360,7 +4508,7 @@
         }
       ]
     },
-    "50": {
+    "51": {
       "hash": "76a2b979ec4d",
       "audio": "/narration/slide-46-76a2b979ec4d.mp3",
       "duration": 30.207732,
@@ -4428,7 +4576,7 @@
         }
       ]
     },
-    "51": {
+    "52": {
       "hash": "0003b0affd9b",
       "audio": "/narration/slide-47-0003b0affd9b.mp3",
       "duration": 55.079093,
@@ -4530,7 +4678,7 @@
         }
       ]
     },
-    "52": {
+    "53": {
       "hash": "a549e172a62d",
       "audio": "/narration/slide-48-a549e172a62d.mp3",
       "duration": 50.738571,
@@ -4623,7 +4771,7 @@
         }
       ]
     },
-    "53": {
+    "54": {
       "hash": "cb3b5ebf344d",
       "audio": "/narration/slide-49-cb3b5ebf344d.mp3",
       "duration": 92.673447,
@@ -4782,7 +4930,7 @@
         }
       ]
     },
-    "54": {
+    "55": {
       "hash": "2a1e71c5bfff",
       "audio": "/narration/slide-54-2a1e71c5bfff.mp3",
       "duration": 41.468005,
@@ -4880,7 +5028,7 @@
         }
       ]
     },
-    "55": {
+    "56": {
       "hash": "8637556cb7d1",
       "audio": "/narration/slide-50-8637556cb7d1.mp3",
       "duration": 68.267891,
@@ -5004,7 +5152,7 @@
         }
       ]
     },
-    "56": {
+    "57": {
       "hash": "d8863eac6749",
       "audio": "/narration/slide-51-d8863eac6749.mp3",
       "duration": 32.869637,
@@ -5072,7 +5220,7 @@
         }
       ]
     },
-    "57": {
+    "58": {
       "hash": "933ae9779a67",
       "audio": "/narration/slide-52-933ae9779a67.mp3",
       "duration": 39.589229,
@@ -5161,7 +5309,7 @@
         }
       ]
     },
-    "58": {
+    "59": {
       "hash": "1d72a7ec5f26",
       "audio": "/narration/slide-53-1d72a7ec5f26.mp3",
       "duration": 64.885261,
@@ -5280,7 +5428,7 @@
         }
       ]
     },
-    "59": {
+    "60": {
       "hash": "8b2d82a5f13f",
       "audio": "/narration/slide-54-8b2d82a5f13f.mp3",
       "duration": 56.053061,
@@ -5402,7 +5550,7 @@
         }
       ]
     },
-    "60": {
+    "61": {
       "hash": "3eeadb8bc520",
       "audio": "/narration/slide-55-3eeadb8bc520.mp3",
       "duration": 33.551973,
@@ -5469,7 +5617,7 @@
         }
       ]
     },
-    "61": {
+    "62": {
       "hash": "2976a4fa8c0f",
       "audio": "/narration/slide-56-2976a4fa8c0f.mp3",
       "duration": 51.003855,
@@ -5572,7 +5720,7 @@
         }
       ]
     },
-    "62": {
+    "63": {
       "hash": "e26acb135b38",
       "audio": "/narration/slide-62-e26acb135b38.mp3",
       "duration": 49.870045,
@@ -5675,7 +5823,7 @@
         }
       ]
     },
-    "63": {
+    "64": {
       "hash": "f41089ad40e4",
       "audio": "/narration/slide-57-f41089ad40e4.mp3",
       "duration": 10.868005,
@@ -5705,7 +5853,7 @@
         }
       ]
     },
-    "64": {
+    "65": {
       "hash": "74dab4143957",
       "audio": "/narration/slide-58-74dab4143957.mp3",
       "duration": 54.605125,
@@ -5824,7 +5972,7 @@
         }
       ]
     },
-    "65": {
+    "66": {
       "hash": "e6ac3268a55a",
       "audio": "/narration/slide-59-e6ac3268a55a.mp3",
       "duration": 47.271497,
@@ -5911,7 +6059,7 @@
         }
       ]
     },
-    "66": {
+    "67": {
       "hash": "c68ac6501470",
       "audio": "/narration/slide-60-c68ac6501470.mp3",
       "duration": 37.608889,
@@ -5984,7 +6132,7 @@
         }
       ]
     },
-    "67": {
+    "68": {
       "hash": "6f0188e1bc71",
       "audio": "/narration/slide-61-6f0188e1bc71.mp3",
       "duration": 47.674649,
@@ -6087,7 +6235,7 @@
         }
       ]
     },
-    "68": {
+    "69": {
       "hash": "60af4f9b6bbd",
       "audio": "/narration/slide-62-60af4f9b6bbd.mp3",
       "duration": 69.68102,
@@ -6211,7 +6359,7 @@
         }
       ]
     },
-    "69": {
+    "70": {
       "hash": "3d9e086966e9",
       "audio": "/narration/slide-63-3d9e086966e9.mp3",
       "duration": 66.409592,
@@ -6329,7 +6477,7 @@
         }
       ]
     },
-    "70": {
+    "71": {
       "hash": "e408278c4e12",
       "audio": "/narration/slide-64-e408278c4e12.mp3",
       "duration": 30.6139,
@@ -6391,7 +6539,7 @@
         }
       ]
     },
-    "71": {
+    "72": {
       "hash": "af6611d6008c",
       "audio": "/narration/slide-65-af6611d6008c.mp3",
       "duration": 31.541224,
@@ -6460,7 +6608,7 @@
         }
       ]
     },
-    "72": {
+    "73": {
       "hash": "c28c64e5ecde",
       "audio": "/narration/slide-66-c28c64e5ecde.mp3",
       "duration": 17.476984,
