@@ -53,8 +53,8 @@ import { join } from 'node:path'
 import {
   CUE_LEAD_SECONDS,
   ROOT,
-  buildCaptions,
   buildIndex,
+  captionsFor,
   loadDeck,
   resolveCues,
   scaleWordTimes,
@@ -244,7 +244,7 @@ const withNarrationMetadata = (built, entry, words = null) => ({
   ...built,
   narrationKey: narrationKeyFor(entry),
   transcript: entry.text,
-  captions: buildCaptions(entry.text, words, built.duration),
+  captions: captionsFor(built, entry.text, words, built.duration),
 })
 let spent = 0
 let reused = 0

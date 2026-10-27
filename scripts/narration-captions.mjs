@@ -3,11 +3,12 @@
  * manifest without calling the TTS API or touching media assets.
  *
  * Fresh synthesis writes captions from exact word timings. This command is the
- * zero-cost migration for cached clips built before captions existed.
+ * zero-cost migration for cached clips built before captions existed; entries
+ * that already carry captions for their current prose keep them.
  */
 import { readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { ROOT, buildCaptions, buildIndex, loadDeck } from './narration-lib.mjs'
+import { ROOT, buildIndex, captionsFor, loadDeck } from './narration-lib.mjs'
 
 const manifestPath = join(ROOT, 'public', 'narration', 'manifest.json')
 const manifest = JSON.parse(await readFile(manifestPath, 'utf-8'))
@@ -24,7 +25,7 @@ if (problems.length) {
     manifest.slides[entry.no] = {
       ...built,
       transcript: entry.text,
-      captions: buildCaptions(entry.text, null, built.duration),
+      captions: captionsFor(built, entry.text, null, built.duration),
     }
     updated++
   }
