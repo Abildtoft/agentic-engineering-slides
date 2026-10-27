@@ -181,10 +181,11 @@ KEY POINTS:
 - Discover-diverge-converge assumed implementation was the bottleneck
 - Not anti-design — the operating model changes for everyone
 
-BRIDGE: "So if implementation stops being the bottleneck, what skill survives across all three disciplines?"
+BRIDGE: "And that isn't one design leader's impression. You can measure it — and it runs both ways."
 
 ADDITIONAL POINTS:
 - The teller matters: a design leader at the company building the agents
+- WORDING: the on-slide lines condense Lenny Rachitsky's summary of the podcast, not Wen's own sentence — hence "via Lenny Rachitsky". His takeaway reads: "The classic discover-diverge-converge loop that designers have relied on for years doesn't work when engineers can spin up seven coding agents and ship a working version before a designer finishes exploring options." If someone asks for her verbatim words, her own answer is the Section 5 slide "Code is work an AI can check"
 - When implementation compresses, the design process must adapt too
 - Andrew Chen's "the prototype is the new PRD" used to share this slide; it now lives solely in Section 5 ("The prototype is the new brief"), so the point lands once, as a fresh beat — mention product work verbally here instead
 - Boris offers the operating proof point: on the Claude Code team, PRDs gave way to many fast prototypes before shipping
@@ -195,7 +196,83 @@ DELIVERY:
 - If there are designers in the room, make eye contact. This is for them.
 - Verbal addition: "This is not just engineering getting faster. This is the entire rhythm of collaboration shifting — and Section 5 shows what it does to product work."
 
-SOURCE: Jenny Wen (Design Lead, Anthropic; formerly Design Director, Notion), via Lenny Rachitsky (x.com/lennysan/status/2028484407108194507)
+SOURCE: Jenny Wen (Design Lead, Anthropic; formerly Director of Design, Figma — FigJam and Slides), via Lenny Rachitsky (x.com/lennysan/status/2028484407108194507, 2 March 2026), summarising her Lenny's Podcast episode "The design process is dead. Here's what's replacing it" (lennysnewsletter.com/p/the-design-process-is-dead, 1 March 2026) — see sources/jenny-wen-design-in-ai-era.md
+-->
+
+---
+class: v-center
+---
+
+# The Crossover Runs Both Ways
+
+<div class="crossover-stats mt-10">
+
+<v-click>
+
+<p><span class="crossover-num">60%</span> of developers do design work, up from 44%</p>
+
+</v-click>
+<v-click>
+
+<p><span class="crossover-num">41%</span> of designers do development work, up from 21%</p>
+
+</v-click>
+<v-click>
+
+<p><span class="crossover-num">Half</span> of designers have pushed AI-generated code to production</p>
+
+</v-click>
+
+</div>
+
+<p class="text-sm opacity-55 mt-6 mb-0">Surveys by Figma (2025 → 2026) and Designer Fund (2026). Self-reported and directional — and neither publisher is neutral.</p>
+
+<style>
+/* Same treatment as the adoption funnel in Section 1: numbers right-aligned in
+   a shared column, brand-coloured like the agenda counters, so the three
+   crossings read down the page as one set. "Half" is the source's own word —
+   it gives no finer figure — so the column is sized to fit it. */
+.crossover-stats p {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0 0 1.3rem;
+}
+.crossover-num {
+  color: var(--brand-primary);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 2.6rem;
+  line-height: 1;
+  min-width: 7rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+</style>
+
+<!--
+KEY POINTS:
+- Wen's scene runs one way: engineers outrunning designers. The surveys say the crossover runs both ways
+- Figma, 8,403 responses across ten markets, 2025 to 2026: developers doing design work 44% → 60%; designers taking part in development doubled, 21% → 41%
+- Designer Fund and Foundation Capital, 900+ designers: half have pushed AI-generated code to production — product and brand designers too, not only design engineers
+- The disciplines overlap; they don't merge. The next slide is what sits in the overlap
+
+BRIDGE: "The walls are coming down from both sides. So what's left in the middle?"
+
+ADDITIONAL POINTS:
+- More from the designer survey: 65% of designers are taking on more product or engineering work, and 40% see PMs and engineers doing more design
+- Say the caveat line out loud. Both are self-reported; Figma sells the canvas its report favours, and Designer Fund and Foundation Capital are investors with a self-selected sample. Same treatment as the company-reported figures in Section 1: a direction, not a measurement
+- Even the canvas vendor isn't claiming the canvas is dying: 76% still do at least half their work there, and 90% say design is at least as important as before AI — nearly six in ten say more important, and 65% of developers agree
+- LinkedIn went furthest: it replaced its Associate Product Manager program with an Associate Product Builder program that teaches coding, design and PM together, and introduced a formal "Full Stack Builder" title and career ladder (Tomer Cohen, LinkedIn's chief product officer, on Lenny's Podcast, December 2025)
+
+DELIVERY:
+- Three clicks, one number each; read them flat and let the numbers carry it
+- Slow down on the third. Half the designers have shipped AI-generated code to production — that's the number designers in the room will repeat afterwards
+
+SOURCE: Madeline Stafford and Shane Johnston, "Figma's 2026 AI report: Can AI help us collaborate better?" (figma.com/blog/2026-ai-report/, 24 June 2026) — see sources/figma-2026-ai-report.md
+SOURCE: Designer Fund and Foundation Capital, "AI in Design Report 2026" (stateofaidesign.com; summary at designerfund.com/blog/ai-in-design-2026) — see sources/ai-in-design-report-2026.md
+SOURCE: Tomer Cohen on Lenny's Podcast, "Why LinkedIn is replacing PMs" (lennysnewsletter.com/p/why-linkedin-is-replacing-pms, 4 December 2025)
 -->
 
 ---
@@ -227,6 +304,7 @@ BRIDGE: "And once you see that convergence, the bottleneck shift becomes easier 
 ADDITIONAL POINTS:
 - State the walls argument over the diagram rather than on a slide before it: the walls between design, product, and engineering were built from implementation complexity, so as that complexity compresses, so do the walls. Distinct disciplines remain; their operating model converges around shared judgment
 - Ayres supplies the market evidence that this is already priced in: layoffs eliminated production design roles while demand surged for strategic hybrids who ship end-to-end; she calls this the "Super IC" — companies now demand senior ICs who set direction, make autonomous decisions, ship to production, and measure results
+- Overlap, not merger, is where most practitioners land. INNOQ's Agentic Trio keeps all three disciplines but hands them delivery too — "PM, UX and engineering share responsibility for both", and "The Agentic Trio has no delivery-only roles." Colin Matthews to PMs: "it does not make sense to spend time being a worse engineer than the rest of your team." The maximalist counter, if the room wants it: Thorsten Ball predicts "the triad of PM/Design/Eng will disappear" (his Section 6 quote is the same post)
 - The per-role translation (trimmed from the slide, say it over the converged diagram): Design — articulating intent, judging quality; Product — creating clarity, setting priorities; Engineering — designing systems, verifying correctness
 - The Product Engineer caption names the convergence point: overlapping capabilities and end-to-end ownership, not a mandate that every org adopt one new title
 - Sergio's framing is a market signal: more teams now expect end-to-end ownership
@@ -246,6 +324,8 @@ SOURCE: Adapted in-house from a reference graphic shared by the speaker.
 SOURCE: Sergio Rocks on the rise of the Product Engineer (x.com/SergioRocks/status/2029558863901389076)
 SOURCE: PostHog, "WTF does a product manager do? (and why engineers should care)" (x.com/posthog/status/2032169174496076171)
 SOURCE: Carly Ayres, "Designers! Designers! Designers!" (carly.substack.com/p/designers-designers-designers)
+SOURCE: Daniel Westheide and Fabian Walther (INNOQ), "The Agentic Trio" (agentictrio.org/en/, 22 October 2026) — see sources/agentic-trio.md
+SOURCE: Colin Matthews, "How top PMs increase their leverage with AI" (lennysnewsletter.com/p/how-top-pms-increase-their-leverage, 30 June 2026) — see sources/colin-matthews-product-leverage-ladder.md
 -->
 
 ---
