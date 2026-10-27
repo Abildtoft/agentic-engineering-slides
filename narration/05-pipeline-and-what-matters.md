@@ -222,3 +222,22 @@ simplify flows. Engineers remove abstractions. Subtraction is a
 cross-discipline skill — the same discipline as those thrown-away projects
 from the first section, applied to a living product. Addition gets cheaper
 every quarter. Subtraction never does.
+
+---
+
+<!-- 62. quote — ~2 clicks -->
+
+So what do you do when the product is already confusing? The reflex is a
+cleanup sprint. Remember Karri Saarinen from Linear, and the middle of
+software work? He has a warning about that reflex. Frantically fixing a
+confusing product caused by frantic shipping is just more of the same.
+[click] Pause and step back. Get the team clear on what you're building and
+why. Have clarity to guide the shape: what ships, and what doesn't. That
+pause is not caution. It is the clarity work this whole section has been
+about.
+[click] Quality is a way of working, not a cleanup sprint. And Linear
+practises it. Every Wednesday, its engineers show each other the small quality
+fixes they made that week, often half an hour of work each. More than a
+thousand of them in two years. Saarinen's co-founder put it this way: we
+needed quality to be a habit, like brushing your teeth. No one ever says they
+don't have time to brush their teeth.
