@@ -190,6 +190,7 @@ BRIDGE: "And once you start thinking in layered controls, the Swiss-cheese model
 ADDITIONAL POINTS:
 - Trimmed qualifier, say verbally: the full closing question is "are we solving the right problem *under the right constraints*"
 - A reviewer of agent-written code may be the first human to see it. The job is no longer only checking an author's reasoning; it is recovering intent that the diff never captured
+- The design version of reviewing evidence instead of diffs: Wroblewski has agents "take before and after screenshots of their UI changes and place them side by side in a note," so reviewers can "judge results without reading any code" — with the design system open beside them, the same reference the agents build from
 - If asked "so do you read all the code?": no, and Osmani says the same. More code means more selective human review. Low-blast-radius changes on less sensitive code can skip a deep human read once the agent review is clean, and there are a lot of those. Core and sensitive paths keep an owner and human sign-off
 - Put this in the cognitive-debt section because the review model now directly sets up the layered-failure argument
 - Explicitly anchor the layer concept to the Swiss-cheese model (James Reason)
@@ -202,6 +203,7 @@ DELIVERY:
 SOURCE: Ankit Jain, "How to Kill the Code Review" (latent.space/p/reviews-dead)
 SOURCE: Addy Osmani, "Agentic Code Review" (addyosmani.com/blog/agentic-code-review/)
 SOURCE: Addy Osmani on selective human review (x.com/addyosmani/status/2097027173941141799, 9/7/26) — see sources/osmani-selective-human-review.md
+SOURCE: Luke Wroblewski, "Many Agents, Many Views" (lukew.com/ff/2165/many-agents-many-views, 5 October 2026)
 -->
 
 ---
@@ -321,7 +323,7 @@ KEY POINTS:
 - thdxr: agents have "eroded our ability to delay gratification"
 - No moralising — the mechanism is predictable, and predictable means manageable
 
-BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default."
+BRIDGE: "Leave that spiral unchecked, and you stop outsourcing effort occasionally and start outsourcing it by default. Now run it across a whole team."
 
 ADDITIONAL POINTS:
 - Variable-ratio reinforcement, the same schedule that makes gambling compulsive — each response partially satisfies but opens a new question. "Epistemic rabbit holes" is the researchers' term
@@ -347,6 +349,61 @@ SOURCE: thdxr (x.com/thdxr/status/2031377117007454421)
 SOURCE: Katie Parrott, "AI Was Supposed to Free My Time. It Consumed It." (every.to/working-overtime/ai-was-supposed-to-free-my-time-it-consumed-it)
 SOURCE: M. Karen Shen (UBC), research on compulsive chatbot use — "AI genie phenomenon" and "epistemic rabbit holes"
 SOURCE: B.F. Skinner, variable-ratio reinforcement schedules (1950s)
+-->
+
+---
+class: v-center
+---
+
+# Single-Player Mode
+
+<v-click>
+
+**AI mostly speeds up individuals.** Each role solves its own piece — faster, and alone.
+
+</v-click>
+<v-click>
+
+Designers who say AI *reduced* collaboration went from **5% to 20%** in a year.
+
+</v-click>
+<v-click>
+
+Collaboration you put off doesn't disappear. **It comes back as design and technical debt.**
+
+> “The trio that used to build the thing together has stopped building it together.”
+>
+> Jenny Wanger
+
+</v-click>
+
+<!--
+KEY POINTS:
+- Cognitive debt at team scale: the plot gets lost between people, not only inside one head
+- Everyone is faster, each alone with their own agent — product, design and engineering each solving their own piece
+- Designer Fund's survey: designers saying AI reduced collaboration went from 5% to 20% in a year. "Work is moving faster, but some of the connective tissue of collaboration hasn't kept pace"
+- Deferred collaboration ("we'll loop them in later") is debt, paid by whoever cleans up
+- Wanger's line names it for the trio
+
+BRIDGE: "So let's exhale."
+
+ADDITIONAL POINTS:
+- The concrete case, from the Denver panel Wanger wrote up (Jake Taylor, who leads product design and research at JumpCloud): PMs build prototypes outside the design system, and the design team backtracks to clean up after them — "a debt that you rack up"
+- Wroblewski's diagnosis, same idea: "AI tools are making individuals faster, but speed isn't the problem. Cohesion is." And: "Everyone's productive, but are they aligned?"
+- The structural answer is already on the table: the shared design system from Section 3b. Parallel work stays coherent when everyone, and every agent, builds from the same encoded rules — Taylor's PMs were building outside it
+- Counterpoint, if challenged: Figma's 2026 survey points the other way — 41% say AI meaningfully changes how teams work together, up from 7% two years earlier, and "AI used to be a solo act." Both can hold: AI changes collaboration, and the direction depends on the team. Figma sells a multiplayer canvas; the designer survey's sample is self-selected and heavy on AI (91% use it weekly), which makes its 20% more striking, not less
+- The panel stopped short of "solo builders replace teams": engineers and QA still gate what ships. Wanger: "We don't ship prototypes. We ship hardened products."
+- "AI is still single-player" — the line behind the title — is Wanger's too, read aloud to open that panel
+
+DELIVERY:
+- Three clicks: the claim, the number, the debt
+- Read Wanger's line slowly; everyone who has worked in a trio will recognise it
+- Two Jennys in this talk: Wen (design at Anthropic) and Wanger (product coach). Use the surname
+
+SOURCE: Jenny Wanger, "Building alone, faster: a panel on what AI is doing to the product trio" (jennywanger.com/articles/building-alone-faster/, 1 October 2026) — write-up of "Blurred Lines", AI & Product Colorado, Denver, 14 September 2026; see sources/jenny-wanger-building-alone-faster.md
+SOURCE: Designer Fund and Foundation Capital, "AI in Design Report 2026" (designerfund.com/blog/ai-in-design-2026) — see sources/ai-in-design-report-2026.md
+SOURCE: Luke Wroblewski, "Finally, the Handoff is Dead" (lukew.com/ff/2150/finally-the-handoff-is-dead, 30 April 2026)
+SOURCE: Madeline Stafford and Shane Johnston, Figma's 2026 AI report (figma.com/blog/2026-ai-report/)
 -->
 
 ---
