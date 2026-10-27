@@ -44,4 +44,8 @@ SOURCE: Ryan Lopopolo / OpenAI, "Harness engineering" (openai.com/index/harness-
 SOURCE: Martin Eriksson, "When Software Becomes Cheap, Strategy Becomes Everything" (thedecisionstack.com/when-software-becomes-cheap-strategy-becomes-everything/)
 SOURCE: Matteo Collina, "Software Engineering Splits in Three" (adventures.nodeland.dev/archive/software-engineering-splits-in-three/)
 SOURCE: Simon Willison, Pragmatic Summit Fireside Chat (simonwillison.net/2026/Mar/14/pragmatic-summit/)
+SOURCE: Luke Wroblewski, "Design Systems for AI Agents" and "Finally, the Handoff is Dead" (lukew.com/ff/2164/, lukew.com/ff/2150/)
+SOURCE: Jenny Wen, Hatch Conference keynote, via Simon Willison (simonwillison.net/2026/Jan/24/dont-trust-the-process/)
+SOURCE: Jenny Wanger, "Building alone, faster" (jennywanger.com/articles/building-alone-faster/)
+SOURCE: Figma, 2026 AI report (figma.com/blog/2026-ai-report/); Designer Fund and Foundation Capital, AI in Design Report 2026 (stateofaidesign.com)
 -->

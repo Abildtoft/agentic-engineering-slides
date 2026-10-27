@@ -1,6 +1,6 @@
 # Jenny Wen on design in the AI era
 
-Jenny Wen, Design Lead at Anthropic (formerly Design Director at Notion, 12–15 reports). Key takeaways shared by Lenny Rachitsky:
+Jenny Wen, Design Lead at Anthropic (formerly Director of Design at Figma, where she led FigJam and Slides with 12–15 reports; before that Dropbox, Square and Shopify). Key takeaways from her Lenny's Podcast episode, "The design process is dead. Here's what's replacing it" (1 March 2026), shared by Lenny Rachitsky on X on 2 March 2026. The wording below is Lenny's summary, not Wen's verbatim speech; her own words are in [[jenny-wen-dont-trust-the-process]]:
 
 1. Traditional design process breaking down. The discover-diverge-converge loop doesn't work when engineers spin up seven coding agents and ship a working version before a designer finishes exploring options.
 
@@ -22,4 +22,9 @@ Jenny Wen, Design Lead at Anthropic (formerly Design Director at Notion, 12–15
 
 10. Low-leverage work is often highest-leverage for managers. Dogfooding, repro-ing bugs, fixing small issues creates deep product familiarity and earns team trust.
 
+## Wording on the deck
+
+Lenny's takeaway 1 reads, in full: "The traditional design process is breaking down. The classic discover-diverge-converge loop that designers have relied on for years doesn't work when engineers can spin up seven coding agents and ship a working version before a designer finishes exploring options." The Section 2 quote slide condenses that sentence, which is why its attribution carries "via Lenny Rachitsky". The episode page itself is paywalled past its outline and does not carry the seven-agents line.
+
 https://x.com/lennysan/status/2028484407108194507
+https://www.lennysnewsletter.com/p/the-design-process-is-dead
