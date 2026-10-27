@@ -178,6 +178,7 @@ ADDITIONAL POINTS:
 - Useful bridge from org design into individual responsibility: the posture of the company shapes the expectations placed on the people inside it
 - Immersion is not a guarantee, but it is the only useful posture: understand what AI can do, how it changes the work, and how to become valuable in the new environment
 - Professional-services pyramid structures may change sharply; associates and entry-level paths deserve special attention because the old apprenticeship model assumed lots of routine middle work
+- If someone sets this against Saarinen's "pause and step back" at the end of Section 5: Lin's defensive team waits for the world to hand it clarity, while Saarinen's team stops to make its own. Waiting for clarity versus producing it
 - Keep the slide tight and declarative; do not read the whole post aloud
 
 DELIVERY:
